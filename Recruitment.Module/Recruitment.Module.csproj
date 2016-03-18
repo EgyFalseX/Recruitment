@@ -244,6 +244,7 @@
       <DependentUpon>rec_Work_Type.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\DomainObject1.cs" />
+    <Compile Include="Core\SqlOp.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>

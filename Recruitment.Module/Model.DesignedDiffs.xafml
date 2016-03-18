@@ -3,35 +3,35 @@
   <BOModel>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant" Caption="Applicant" ImageName="Applicant16" DefaultListViewImage="Applicant16" DefaultDetailViewImage="Applicant16">
       <OwnMembers>
-        <Member Name="applicant_birth_date" Caption="Birth Date" />
-        <Member Name="applicant_city_id" Caption="City" />
+        <Member Name="applicant_birth_date" Caption="Birth Date" EditMask="yyyy-MM-dd" DisplayFormat="{0:yyyy-MM-dd}" />
+        <Member Name="applicant_city_id" Caption="City" LookupProperty="city_name" />
         <Member Name="applicant_date_in" Caption="Entry Date" AllowEdit="False" />
         <Member Name="applicant_driving_license" Caption="Driving License" />
         <Member Name="applicant_email" Caption="Email" />
         <Member Name="applicant_id" Caption="ID" AllowEdit="False" />
-        <Member Name="applicant_industry_id" Caption="Industry" />
-        <Member Name="applicant_marital_status_id" Caption="Marital Status" />
-        <Member Name="applicant_military_id" Caption="Military Status" />
+        <Member Name="applicant_industry_id" Caption="Industry" LookupProperty="industry_name" />
+        <Member Name="applicant_marital_status_id" Caption="Marital Status" LookupProperty="marital_status_name" />
+        <Member Name="applicant_military_id" Caption="Military Status" LookupProperty="military_name" />
         <Member Name="applicant_mobile" Caption="Mobile" />
         <Member Name="applicant_name" Caption="Name" />
-        <Member Name="applicant_nationality_id" Caption="Nationality" />
+        <Member Name="applicant_nationality_id" Caption="Nationality" LookupProperty="nationality_name" />
         <Member Name="applicant_phone" Caption="Phone" />
-        <Member Name="applicant_position_id" Caption="Position" />
+        <Member Name="applicant_position_id" Caption="Position" LookupProperty="position_name" />
         <Member Name="applicant_salary" Caption="Salary" />
         <Member Name="applicant_skill" Caption="Skills" />
         <Member Name="applicant_summary" Caption="Summary" />
         <Member Name="applicant_user_id" Caption="Entry User" AllowEdit="False" />
-        <Member Name="applicant_work_type_id" Caption="Work Type" />
-        <Member Name="rec_Applicant_Courses" Caption="Applicant Courses" />
+        <Member Name="applicant_work_type_id" Caption="Work Type" LookupProperty="work_type_name" />
+        <Member Name="rec_Applicant_Courses" Caption="Applicant Courses" LookupProperty="app_crs_title" />
         <Member Name="rec_Applicant_Educations" Caption="Applicant Educations" />
-        <Member Name="rec_Applicant_Experiences" Caption="Applicant Experiences" />
-        <Member Name="rec_Applicant_Projects" Caption="Applicant Projects" />
-        <Member Name="rec_Applicant_Studys" Caption="Applicant Studies" />
+        <Member Name="rec_Applicant_Experiences" Caption="Applicant Experiences" LookupProperty="app_exp_title" />
+        <Member Name="rec_Applicant_Projects" Caption="Applicant Projects" LookupProperty="app_prj_title" />
+        <Member Name="rec_Applicant_Studys" Caption="Applicant Studies" LookupProperty="degree_id_field_of_research" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Course" Caption="Applicant Course">
       <OwnMembers>
-        <Member Name="app_crs_applicant_id" Caption="Applicant" />
+        <Member Name="app_crs_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
         <Member Name="app_crs_date_in" Caption="Entry Date" AllowEdit="False" />
         <Member Name="app_crs_id" Caption="ID" AllowEdit="False" />
         <Member Name="app_crs_provider" Caption="Provider" />
@@ -42,7 +42,7 @@
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Education" Caption="Applicant Education">
       <OwnMembers>
-        <Member Name="app_edu_applicant_id" Caption="Applicant" />
+        <Member Name="app_edu_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
         <Member Name="app_edu_date_in" Caption="Entry Date" AllowEdit="False" />
         <Member Name="app_edu_degree_id" Caption="Degree" />
         <Member Name="app_edu_faculty_id" Caption="Faculty" />
@@ -55,7 +55,7 @@
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Experience" Caption="Applicant Experience">
       <OwnMembers>
-        <Member Name="app_exp_applicant_id" Caption="Applicant" />
+        <Member Name="app_exp_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
         <Member Name="app_exp_city_id" Caption="City" />
         <Member Name="app_exp_date_in" Caption="Entry Date" AllowEdit="False" />
         <Member Name="app_exp_description" Caption="Description" />
@@ -71,7 +71,7 @@
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Project" Caption="Applicant Project">
       <OwnMembers>
-        <Member Name="app_prj_applicant_id" Caption="Applicant" />
+        <Member Name="app_prj_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
         <Member Name="app_prj_company_name" Caption="Company" />
         <Member Name="app_prj_date" Caption="Date" />
         <Member Name="app_prj_date_in" Caption="Entry Date" AllowEdit="False" />
@@ -84,7 +84,7 @@
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Study" Caption="Applicant Study">
       <OwnMembers>
-        <Member Name="app_grd_applicant_id" Caption="Applicant" />
+        <Member Name="app_grd_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
         <Member Name="app_grd_date_in" Caption="Entry Date" AllowEdit="False" />
         <Member Name="app_grd_degree_id" Caption="Degree" />
         <Member Name="app_grd_grade_year" Caption="Grade Year" />
@@ -99,13 +99,13 @@
         <Member Name="app_tag_date_in" Caption="Entry Date" AllowEdit="False" />
         <Member Name="app_tag_id" Caption="ID" AllowEdit="False" />
         <Member Name="app_tag_user_id" Caption="Entry User" AllowEdit="False" />
-        <Member Name="CompoundKey1.app_tag_applicant_id" Caption="Applicant" />
-        <Member Name="CompoundKey1.app_tag_tag_id" Caption="Tag" />
+        <Member Name="CompoundKey1.app_tag_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
+        <Member Name="CompoundKey1.app_tag_tag_id" Caption="Tag" LookupProperty="tag_name" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_City" Caption="City" DefaultDetailViewImage="">
       <OwnMembers>
-        <Member Name="city_country_id" Caption="Country" />
+        <Member Name="city_country_id" Caption="Country" LookupProperty="country_name" />
         <Member Name="city_id" Caption="ID" AllowEdit="False" />
         <Member Name="city_name" Caption="Name" />
         <Member Name="rec_Applicants" Caption="Applicants" />
@@ -115,7 +115,7 @@
       <OwnMembers>
         <Member Name="country_id" Caption="ID" AllowEdit="False" />
         <Member Name="country_name" Caption="Name" />
-        <Member Name="rec_Citys" Caption="Cities" />
+        <Member Name="rec_Citys" Caption="Cities" LookupProperty="city_name" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Degree" Caption="Degree">
@@ -123,7 +123,7 @@
         <Member Name="degree_id" Caption="ID" AllowEdit="False" />
         <Member Name="degree_name" Caption="Name" />
         <Member Name="rec_Applicant_Educations" Caption="Applicant Educations" />
-        <Member Name="rec_Applicant_Studys" Caption="Applicant Studies" />
+        <Member Name="rec_Applicant_Studys" Caption="Applicant Studies" LookupProperty="degree_id_field_of_research" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer" Caption="Employer">
@@ -145,41 +145,41 @@
         <Member Name="industry_id" Caption="ID" AllowEdit="False" />
         <Member Name="industry_name" Caption="Name" />
         <Member Name="rec_Applicant_Educations" Caption="Applicant Educations" />
-        <Member Name="rec_Applicant_Experiences" Caption="Applicant Experiences" />
-        <Member Name="rec_Applicants" Caption="Applicants" />
+        <Member Name="rec_Applicant_Experiences" Caption="Applicant Experiences" LookupProperty="app_exp_title" />
+        <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Marital_Status" Caption="Marital Status">
       <OwnMembers>
         <Member Name="marital_status_id" Caption="ID" AllowEdit="False" />
         <Member Name="marital_status_name" Caption="Name" />
-        <Member Name="rec_Applicants" Caption="Applicants" />
+        <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Military_Status" Caption="Military Status">
       <OwnMembers>
         <Member Name="military_id" Caption="ID" AllowEdit="False" />
         <Member Name="military_name" Caption="Name" />
-        <Member Name="rec_Applicants" Caption="Applicants" />
+        <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Nationality" Caption="Nationality">
       <OwnMembers>
         <Member Name="nationality_id" Caption="ID" AllowEdit="False" />
         <Member Name="nationality_name" Caption="Name" />
-        <Member Name="rec_Applicants" Caption="Applicants" />
+        <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Position" Caption="Position">
       <OwnMembers>
         <Member Name="position_id" Caption="ID" AllowEdit="False" />
         <Member Name="position_name" Caption="Name" />
-        <Member Name="rec_Applicants" Caption="Applicants" />
+        <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Study_Grade" Caption="Study Grade">
       <OwnMembers>
-        <Member Name="rec_Applicant_Studys" Caption="Applicant Studies" />
+        <Member Name="rec_Applicant_Studys" Caption="Applicant Studies" LookupProperty="degree_id_field_of_research" />
         <Member Name="study_grade_id" Caption="ID" AllowEdit="False" />
         <Member Name="study_grade_name" Caption="Name" />
       </OwnMembers>
@@ -199,21 +199,20 @@
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Work_Type" Caption="Work Type">
       <OwnMembers>
-        <Member Name="rec_Applicant_Experiences" Caption="Applicant Experiences" />
-        <Member Name="rec_Applicants" Caption="Applicants" />
+        <Member Name="rec_Applicant_Experiences" Caption="Applicant Experiences" LookupProperty="app_exp_title" />
+        <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" />
         <Member Name="work_type_id" Caption="ID" AllowEdit="False" />
         <Member Name="work_type_name" Caption="Name" />
       </OwnMembers>
     </Class>
   </BOModel>
-  <NavigationItems>
+  <NavigationItems NavigationStyle="TreeList" StartupNavigationItem="">
     <Items>
       <Item Id="Code" Caption="Code" ImageName="BO_Folder" Index="0" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="rec_City_ListView" Caption="City" Index="0" ViewId="rec_City_ListView" IsNewNode="True" />
           <Item Id="rec_Country_ListView" ViewId="rec_Country_ListView" ObjectKey="" Caption="Country" Index="1" IsNewNode="True" />
           <Item Id="rec_Degree_ListView" ViewId="rec_Degree_ListView" ObjectKey="" Caption="Degree" IsNewNode="True" />
-          <Item Id="rec_Employer_ListView" ViewId="rec_Employer_ListView" ObjectKey="" Caption="Employer" IsNewNode="True" />
           <Item Id="rec_Faculty_ListView" ViewId="rec_Faculty_ListView" ObjectKey="" Caption="Faculty" IsNewNode="True" />
           <Item Id="rec_Industry_ListView" ViewId="rec_Industry_ListView" ObjectKey="" Caption="Industry" IsNewNode="True" />
           <Item Id="rec_Marital_Status_ListView" ViewId="rec_Marital_Status_ListView" ObjectKey="" Caption="Marital Status" IsNewNode="True" />
@@ -235,6 +234,7 @@
           <Item Id="rec_Applicant_Project_ListView" ViewId="rec_Applicant_Project_ListView" ObjectKey="" Caption="Applicant Project" IsNewNode="True" />
           <Item Id="rec_Applicant_Study_ListView" ViewId="rec_Applicant_Study_ListView" ObjectKey="" Caption="Applicant Study" IsNewNode="True" />
           <Item Id="rec_Applicant_Tag_ListView" ViewId="rec_Applicant_Tag_ListView" ObjectKey="" Caption="Applicant Tag" IsNewNode="True" />
+          <Item Id="rec_Employer_ListView" ViewId="rec_Employer_ListView" ObjectKey="" IsNewNode="True" />
         </Items>
       </Item>
       <Item Id="Default" Index="2">
@@ -264,7 +264,7 @@
       </Item>
     </Items>
   </NavigationItems>
-  <Options>
+  <Options DataAccessMode="Server">
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
   <SchemaModules>
@@ -272,4 +272,20 @@
     <SchemaModule Name="SchedulerModuleBase" Version="15.2.5.0" IsNewNode="True" />
     <SchemaModule Name="SystemModule" Version="15.2.5.0" IsNewNode="True" />
   </SchemaModules>
+  <Validation>
+    <Contexts>
+      <ValidationContext Id="EntryIsNotValid" Caption="Entry is not valid" AllowInplaceValidation="False" IsNewNode="True" />
+    </Contexts>
+    <Rules>
+      <RuleRequiredField Id="@city_country_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_City" TargetPropertyName="city_country_id" IsNewNode="True" />
+      <RuleRequiredField Id="@city_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_City" TargetPropertyName="city_name" IsNewNode="True" />
+    </Rules>
+  </Validation>
+  <Views>
+    <DetailView Id="rec_Applicant_Course_DetailView">
+      <Items>
+        <PropertyEditor Id="app_crs_applicant_id" LookupProperty="applicant_name" />
+      </Items>
+    </DetailView>
+  </Views>
 </Application>

@@ -30,6 +30,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<string>("city_name", ref fcity_name, value); }
         }
         rec_Country fcity_country_id;
+        [Indexed(Name = @"icity_country_id_rec_City")]
         [Association(@"rec_CityReferencesrec_Country")]
         public rec_Country city_country_id
         {

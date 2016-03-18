@@ -15,8 +15,19 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     public partial class rec_City
     {
         public rec_City(Session session) : base(session) { }
-        public override void AfterConstruction() { base.AfterConstruction();}
-        
+        public override void AfterConstruction()
+        {
+            base.AfterConstruction();
+            Session.ObjectSaving += Session_ObjectSaving;
+        }
+        private void Session_ObjectSaving(object sender, ObjectManipulationEventArgs e)
+        {
+            Module.BusinessObjects.Recruitment.rec_City item = (Module.BusinessObjects.Recruitment.rec_City)e.Object;
+            //object userid = SecuritySystem.CurrentUserId;
+            DateTime datetime = Core.SqlOp.GetServerDateTime(Session);
+            
+        }
+
     }
 
 }

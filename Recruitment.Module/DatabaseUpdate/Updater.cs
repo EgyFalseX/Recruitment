@@ -71,5 +71,6 @@ namespace Recruitment.Module.DatabaseUpdate {
             }
             return defaultRole;
         }
+        
     }
 }
