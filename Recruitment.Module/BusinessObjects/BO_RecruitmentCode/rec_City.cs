@@ -25,9 +25,21 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             Module.BusinessObjects.Recruitment.rec_City item = (Module.BusinessObjects.Recruitment.rec_City)e.Object;
             //object userid = SecuritySystem.CurrentUserId;
             DateTime datetime = Core.SqlOp.GetServerDateTime(Session);
-            
-        }
 
+        }
+        //Audit Trail
+        private XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> auditTrail;
+        public XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> AuditTrail
+        {
+            get
+            {
+                if (auditTrail == null)
+                {
+                    auditTrail = DevExpress.Persistent.BaseImpl.AuditedObjectWeakReference.GetAuditTrail(Session, this);
+                }
+                return auditTrail;
+            }
+        }
     }
 
 }

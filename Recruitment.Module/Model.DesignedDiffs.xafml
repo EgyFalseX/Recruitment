@@ -1,35 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="Recruitment" Logo="ExpressAppLogo">
   <BOModel>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant" Caption="Applicant" ImageName="Applicant16" DefaultListViewImage="Applicant16" DefaultDetailViewImage="Applicant16">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant" Caption="Applicant" ImageName="rec_Applicant16" DefaultListViewImage="rec_Applicant16" DefaultDetailViewImage="rec_Applicant16">
       <OwnMembers>
-        <Member Name="applicant_birth_date" Caption="Birth Date" EditMask="yyyy-MM-dd" DisplayFormat="{0:yyyy-MM-dd}" />
-        <Member Name="applicant_city_id" Caption="City" LookupProperty="city_name" />
-        <Member Name="applicant_date_in" Caption="Entry Date" AllowEdit="False" />
-        <Member Name="applicant_driving_license" Caption="Driving License" />
-        <Member Name="applicant_email" Caption="Email" />
-        <Member Name="applicant_id" Caption="ID" AllowEdit="False" />
-        <Member Name="applicant_industry_id" Caption="Industry" LookupProperty="industry_name" />
-        <Member Name="applicant_marital_status_id" Caption="Marital Status" LookupProperty="marital_status_name" />
-        <Member Name="applicant_military_id" Caption="Military Status" LookupProperty="military_name" />
-        <Member Name="applicant_mobile" Caption="Mobile" />
-        <Member Name="applicant_name" Caption="Name" />
-        <Member Name="applicant_nationality_id" Caption="Nationality" LookupProperty="nationality_name" />
-        <Member Name="applicant_phone" Caption="Phone" />
-        <Member Name="applicant_position_id" Caption="Position" LookupProperty="position_name" />
-        <Member Name="applicant_salary" Caption="Salary" />
-        <Member Name="applicant_skill" Caption="Skills" />
-        <Member Name="applicant_summary" Caption="Summary" />
-        <Member Name="applicant_user_id" Caption="Entry User" AllowEdit="False" />
-        <Member Name="applicant_work_type_id" Caption="Work Type" LookupProperty="work_type_name" />
-        <Member Name="rec_Applicant_Courses" Caption="Applicant Courses" LookupProperty="app_crs_title" />
-        <Member Name="rec_Applicant_Educations" Caption="Applicant Educations" />
-        <Member Name="rec_Applicant_Experiences" Caption="Applicant Experiences" LookupProperty="app_exp_title" />
-        <Member Name="rec_Applicant_Projects" Caption="Applicant Projects" LookupProperty="app_prj_title" />
-        <Member Name="rec_Applicant_Studys" Caption="Applicant Studies" LookupProperty="degree_id_field_of_research" />
+        <Member Name="applicant_birth_date" Caption="Birth Date" EditMask="yyyy-MM-dd" DisplayFormat="{0:yyyy-MM-dd}" Index="0" />
+        <Member Name="applicant_city_id" Caption="City" LookupProperty="city_name" Index="1" />
+        <Member Name="applicant_date_in" Caption="Entry Date" AllowEdit="False" Index="2" />
+        <Member Name="applicant_driving_license" Caption="Driving License" Index="3" />
+        <Member Name="applicant_email" Caption="Email" Index="4" />
+        <Member Name="applicant_id" Caption="ID" AllowEdit="False" Index="5" />
+        <Member Name="applicant_industry_id" Caption="Industry" LookupProperty="industry_name" Index="6" />
+        <Member Name="applicant_gender_id" Index="8" LookupProperty="rec_gender_name" Caption="Gender" />
+        <Member Name="applicant_marital_status_id" Caption="Marital Status" LookupProperty="marital_status_name" Index="9" />
+        <Member Name="applicant_military_id" Caption="Military Status" LookupProperty="military_name" Index="10" />
+        <Member Name="applicant_mobile" Caption="Mobile" Index="11" />
+        <Member Name="applicant_name" Caption="Name" Index="12" />
+        <Member Name="applicant_national_id" Caption="National" Index="13" />
+        <Member Name="applicant_nationality_id" Caption="National ID" LookupProperty="nationality_name" Index="14" />
+        <Member Name="applicant_phone" Caption="Phone" Index="15" />
+        <Member Name="applicant_position_id" Caption="Position" LookupProperty="position_name" Index="16" />
+        <Member Name="applicant_salary" Caption="Salary" Index="17" />
+        <Member Name="applicant_skill" Caption="Skills" Index="18" />
+        <Member Name="applicant_summary" Caption="Summary" Index="19" />
+        <Member Name="applicant_user_id" Caption="Entry User" AllowEdit="False" Index="20" />
+        <Member Name="applicant_work_type_id" Caption="Work Type" LookupProperty="work_type_name" Index="21" />
+        <Member Name="rec_Applicant_Courses" Caption="Applicant Courses" LookupProperty="app_crs_title" Index="22" />
+        <Member Name="rec_Applicant_Educations" Caption="Applicant Educations" Index="23" />
+        <Member Name="rec_Applicant_Experiences" Caption="Applicant Experiences" LookupProperty="app_exp_title" Index="24" />
+        <Member Name="rec_Applicant_Projects" Caption="Applicant Projects" LookupProperty="app_prj_title" Index="25" />
+        <Member Name="rec_Applicant_Studys" Caption="Applicant Studies" LookupProperty="degree_id_field_of_research" Index="26" />
+        <Member Name="AuditTrail" Index="27" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Course" Caption="Applicant Course">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Course" Caption="Applicant Course" ImageName="rec_Applicant_Course16">
       <OwnMembers>
         <Member Name="app_crs_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
         <Member Name="app_crs_date_in" Caption="Entry Date" AllowEdit="False" />
@@ -40,7 +43,7 @@
         <Member Name="app_crs_year" Caption="Year" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Education" Caption="Applicant Education">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Education" Caption="Applicant Education" ImageName="rec_Applicant_Education16">
       <OwnMembers>
         <Member Name="app_edu_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
         <Member Name="app_edu_date_in" Caption="Entry Date" AllowEdit="False" />
@@ -53,156 +56,183 @@
         <Member Name="app_edu_year" Caption="Year" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Experience" Caption="Applicant Experience">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Experience" Caption="Applicant Experience" ImageName="rec_Applicant_Experience16">
       <OwnMembers>
-        <Member Name="app_exp_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
-        <Member Name="app_exp_city_id" Caption="City" />
-        <Member Name="app_exp_date_in" Caption="Entry Date" AllowEdit="False" />
-        <Member Name="app_exp_description" Caption="Description" />
-        <Member Name="app_exp_end_date" Caption="End Date" DisplayFormat="{0:yyyy-MM-dd}" EditMask="yyyy-MM-dd" />
-        <Member Name="app_exp_id" Caption="ID" AllowEdit="False" />
-        <Member Name="app_exp_industry_id" Caption="Industry" />
-        <Member Name="app_exp_start_date" Caption="Start Date" DisplayFormat="{0:yyyy-MM-dd}" EditMask="yyyy-MM-dd" />
-        <Member Name="app_exp_title" Caption="Title" />
-        <Member Name="app_exp_user_id" Caption="Entry Date" AllowEdit="False" />
-        <Member Name="app_exp_work_type_id" Caption="Work Type" />
-        <Member Name="employer_name" Caption="Employer" />
+        <Member Name="app_exp_applicant_id" Caption="Applicant" LookupProperty="applicant_name" Index="0" />
+        <Member Name="app_exp_city_id" Caption="City" Index="1" />
+        <Member Name="app_exp_date_in" Caption="Entry Date" AllowEdit="False" Index="2" />
+        <Member Name="app_exp_description" Caption="Description" Index="3" />
+        <Member Name="app_exp_end_date" Caption="End Date" DisplayFormat="{0:yyyy-MM-dd}" EditMask="yyyy-MM-dd" Index="4" />
+        <Member Name="app_exp_id" Caption="ID" AllowEdit="False" Index="5" />
+        <Member Name="app_exp_industry_id" Caption="Industry" Index="6" />
+        <Member Name="app_exp_start_date" Caption="Start Date" DisplayFormat="{0:yyyy-MM-dd}" EditMask="yyyy-MM-dd" Index="7" />
+        <Member Name="app_exp_title" Caption="Title" Index="8" />
+        <Member Name="app_exp_user_id" Caption="Entry Date" AllowEdit="False" Index="9" />
+        <Member Name="app_exp_work_type_id" Caption="Work Type" Index="10" />
+        <Member Name="employer_name" Caption="Employer" Index="11" />
+        <Member Name="AuditTrail" Index="12" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Project" Caption="Applicant Project">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Project" Caption="Applicant Project" ImageName="rec_Applicant_Project16">
       <OwnMembers>
-        <Member Name="app_prj_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
-        <Member Name="app_prj_company_name" Caption="Company" />
-        <Member Name="app_prj_date" Caption="Date" />
-        <Member Name="app_prj_date_in" Caption="Entry Date" AllowEdit="False" />
-        <Member Name="app_prj_description" Caption="Description" />
-        <Member Name="app_prj_id" Caption="ID" AllowEdit="False" />
-        <Member Name="app_prj_title" Caption="Title" />
-        <Member Name="app_prj_url" Caption="URL" />
-        <Member Name="app_prj_user_id" Caption="Entry User" AllowEdit="False" />
+        <Member Name="app_prj_applicant_id" Caption="Applicant" LookupProperty="applicant_name" Index="0" />
+        <Member Name="app_prj_company_name" Caption="Company" Index="1" />
+        <Member Name="app_prj_date" Caption="Date" Index="2" />
+        <Member Name="app_prj_date_in" Caption="Entry Date" AllowEdit="False" Index="3" />
+        <Member Name="app_prj_description" Caption="Description" Index="4" />
+        <Member Name="app_prj_id" Caption="ID" AllowEdit="False" Index="5" />
+        <Member Name="app_prj_title" Caption="Title" Index="6" />
+        <Member Name="app_prj_url" Caption="URL" Index="7" />
+        <Member Name="app_prj_user_id" Caption="Entry User" AllowEdit="False" Index="8" />
+        <Member Name="AuditTrail" Index="9" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Study" Caption="Applicant Study">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Study" Caption="Applicant Study" ImageName="rec_Applicant_Study16">
       <OwnMembers>
-        <Member Name="app_grd_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
-        <Member Name="app_grd_date_in" Caption="Entry Date" AllowEdit="False" />
-        <Member Name="app_grd_degree_id" Caption="Degree" />
-        <Member Name="app_grd_grade_year" Caption="Grade Year" />
-        <Member Name="app_grd_id" Caption="ID" AllowEdit="False" />
-        <Member Name="app_grd_study_grade_id" Caption="Grade Level" />
-        <Member Name="app_grd_user_id" Caption="Entry User" AllowEdit="False" />
-        <Member Name="degree_id_field_of_research" Caption="Field of Research" />
+        <Member Name="app_grd_applicant_id" Caption="Applicant" LookupProperty="applicant_name" Index="0" />
+        <Member Name="app_grd_date_in" Caption="Entry Date" AllowEdit="False" Index="1" />
+        <Member Name="app_grd_degree_id" Caption="Degree" Index="2" />
+        <Member Name="app_grd_grade_year" Caption="Grade Year" Index="3" />
+        <Member Name="app_grd_id" Caption="ID" AllowEdit="False" Index="4" />
+        <Member Name="app_grd_study_grade_id" Caption="Grade Level" Index="5" />
+        <Member Name="app_grd_user_id" Caption="Entry User" AllowEdit="False" Index="6" />
+        <Member Name="degree_id_field_of_research" Caption="Field of Research" Index="7" />
+        <Member Name="AuditTrail" Index="8" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Tag" Caption="Applicant Tag">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Tag" Caption="Applicant Tag" ImageName="rec_Applicant_Tag16">
       <OwnMembers>
-        <Member Name="app_tag_date_in" Caption="Entry Date" AllowEdit="False" />
-        <Member Name="app_tag_id" Caption="ID" AllowEdit="False" />
-        <Member Name="app_tag_user_id" Caption="Entry User" AllowEdit="False" />
-        <Member Name="CompoundKey1.app_tag_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
-        <Member Name="CompoundKey1.app_tag_tag_id" Caption="Tag" LookupProperty="tag_name" />
+        <Member Name="app_tag_date_in" Caption="Entry Date" AllowEdit="False" Index="0" />
+        <Member Name="app_tag_id" Caption="ID" AllowEdit="False" Index="1" />
+        <Member Name="app_tag_user_id" Caption="Entry User" AllowEdit="False" Index="2" />
+        <Member Name="CompoundKey1" Index="3" />
+        <Member Name="CompoundKey1.app_tag_applicant_id" Caption="Applicant" LookupProperty="applicant_name" Index="4" />
+        <Member Name="CompoundKey1.app_tag_tag_id" Caption="Tag" LookupProperty="tag_name" Index="5" />
+        <Member Name="AuditTrail" Index="6" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_City" Caption="City" DefaultDetailViewImage="">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_City" Caption="City" DefaultDetailViewImage="" ImageName="rec_City16">
       <OwnMembers>
-        <Member Name="city_country_id" Caption="Country" LookupProperty="country_name" />
-        <Member Name="city_id" Caption="ID" AllowEdit="False" />
-        <Member Name="city_name" Caption="Name" />
-        <Member Name="rec_Applicants" Caption="Applicants" />
+        <Member Name="city_country_id" Caption="Country" LookupProperty="country_name" Index="0" />
+        <Member Name="city_id" Caption="ID" AllowEdit="False" Index="1" />
+        <Member Name="city_name" Caption="Name" Index="2" />
+        <Member Name="rec_Applicants" Caption="Applicants" Index="3" />
+        <Member Name="AuditTrail" Index="4" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Country" Caption="Country">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Country" Caption="Country" ImageName="rec_Country16">
       <OwnMembers>
-        <Member Name="country_id" Caption="ID" AllowEdit="False" />
-        <Member Name="country_name" Caption="Name" />
-        <Member Name="rec_Citys" Caption="Cities" LookupProperty="city_name" />
+        <Member Name="country_id" Caption="ID" AllowEdit="False" Index="0" />
+        <Member Name="country_name" Caption="Name" Index="1" />
+        <Member Name="rec_Citys" Caption="Cities" LookupProperty="city_name" Index="2" />
+        <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Degree" Caption="Degree">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Degree" Caption="Degree" ImageName="rec_Degree16">
       <OwnMembers>
-        <Member Name="degree_id" Caption="ID" AllowEdit="False" />
-        <Member Name="degree_name" Caption="Name" />
-        <Member Name="rec_Applicant_Educations" Caption="Applicant Educations" />
-        <Member Name="rec_Applicant_Studys" Caption="Applicant Studies" LookupProperty="degree_id_field_of_research" />
+        <Member Name="degree_id" Caption="ID" AllowEdit="False" Index="0" />
+        <Member Name="degree_name" Caption="Name" Index="1" />
+        <Member Name="rec_Applicant_Educations" Caption="Applicant Educations" Index="2" />
+        <Member Name="rec_Applicant_Studys" Caption="Applicant Studies" LookupProperty="degree_id_field_of_research" Index="3" />
+        <Member Name="AuditTrail" Index="4" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer" Caption="Employer">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer" Caption="Employer" ImageName="rec_Employer16">
       <OwnMembers>
-        <Member Name="employer_Address" Caption="Address" />
-        <Member Name="employer_id" Caption="ID" AllowEdit="False" />
-        <Member Name="employer_name" Caption="Name" />
+        <Member Name="employer_Address" Caption="Address" Index="0" />
+        <Member Name="employer_id" Caption="ID" AllowEdit="False" Index="1" />
+        <Member Name="employer_name" Caption="Name" Index="2" />
+        <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Faculty" Caption="Faculty">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Faculty" Caption="Faculty" ImageName="rec_Faculty16">
       <OwnMembers>
-        <Member Name="faculty_id" Caption="ID" AllowEdit="False" />
-        <Member Name="faculty_name" Caption="Name" />
-        <Member Name="rec_Applicant_Educations" Caption="Applicant Educations" />
+        <Member Name="faculty_id" Caption="ID" AllowEdit="False" Index="0" />
+        <Member Name="faculty_name" Caption="Name" Index="1" />
+        <Member Name="rec_Applicant_Educations" Caption="Applicant Educations" Index="2" />
+        <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Industry" Caption="Industry">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Gender" ImageName="rec_Gender16">
       <OwnMembers>
-        <Member Name="industry_id" Caption="ID" AllowEdit="False" />
-        <Member Name="industry_name" Caption="Name" />
-        <Member Name="rec_Applicant_Educations" Caption="Applicant Educations" />
-        <Member Name="rec_Applicant_Experiences" Caption="Applicant Experiences" LookupProperty="app_exp_title" />
-        <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" />
+        <Member Name="rec_Applicants" Index="0" Caption="Applicants" />
+        <Member Name="rec_gender_id" Index="1" AllowEdit="False" />
+        <Member Name="rec_gender_name" Index="2" Caption="Name" />
+        <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Marital_Status" Caption="Marital Status">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Industry" Caption="Industry" ImageName="rec_Industry16">
       <OwnMembers>
-        <Member Name="marital_status_id" Caption="ID" AllowEdit="False" />
-        <Member Name="marital_status_name" Caption="Name" />
-        <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" />
+        <Member Name="industry_id" Caption="ID" AllowEdit="False" Index="0" />
+        <Member Name="industry_name" Caption="Name" Index="1" />
+        <Member Name="rec_Applicant_Educations" Caption="Applicant Educations" Index="2" />
+        <Member Name="rec_Applicant_Experiences" Caption="Applicant Experiences" LookupProperty="app_exp_title" Index="3" />
+        <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" Index="4" />
+        <Member Name="AuditTrail" Index="5" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Military_Status" Caption="Military Status">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Marital_Status" Caption="Marital Status" ImageName="rec_Marital_Status16">
       <OwnMembers>
-        <Member Name="military_id" Caption="ID" AllowEdit="False" />
-        <Member Name="military_name" Caption="Name" />
-        <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" />
+        <Member Name="marital_status_id" Caption="ID" AllowEdit="False" Index="0" />
+        <Member Name="marital_status_name" Caption="Name" Index="1" />
+        <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" Index="2" />
+        <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Nationality" Caption="Nationality">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Military_Status" Caption="Military Status" ImageName="rec_Military_Status16">
       <OwnMembers>
-        <Member Name="nationality_id" Caption="ID" AllowEdit="False" />
-        <Member Name="nationality_name" Caption="Name" />
-        <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" />
+        <Member Name="military_id" Caption="ID" AllowEdit="False" Index="0" />
+        <Member Name="military_name" Caption="Name" Index="1" />
+        <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" Index="2" />
+        <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Position" Caption="Position">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Nationality" Caption="Nationality" ImageName="rec_Nationality16">
       <OwnMembers>
-        <Member Name="position_id" Caption="ID" AllowEdit="False" />
-        <Member Name="position_name" Caption="Name" />
-        <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" />
+        <Member Name="nationality_id" Caption="ID" AllowEdit="False" Index="0" />
+        <Member Name="nationality_name" Caption="Name" Index="1" />
+        <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" Index="2" />
+        <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Study_Grade" Caption="Study Grade">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Position" Caption="Position" ImageName="rec_Position16">
       <OwnMembers>
-        <Member Name="rec_Applicant_Studys" Caption="Applicant Studies" LookupProperty="degree_id_field_of_research" />
-        <Member Name="study_grade_id" Caption="ID" AllowEdit="False" />
-        <Member Name="study_grade_name" Caption="Name" />
+        <Member Name="position_id" Caption="ID" AllowEdit="False" Index="0" />
+        <Member Name="position_name" Caption="Name" Index="1" />
+        <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" Index="2" />
+        <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Tag" Caption="Tag">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Study_Grade" Caption="Study Grade" ImageName="rec_Study_Grade16">
       <OwnMembers>
-        <Member Name="tag_id" Caption="ID" AllowEdit="False" />
-        <Member Name="tag_name" Caption="Name" />
+        <Member Name="rec_Applicant_Studys" Caption="Applicant Studies" LookupProperty="degree_id_field_of_research" Index="0" />
+        <Member Name="study_grade_id" Caption="ID" AllowEdit="False" Index="1" />
+        <Member Name="study_grade_name" Caption="Name" Index="2" />
+        <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_University" Caption="University">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Tag" Caption="Tag" ImageName="rec_Applicant_Tag16">
       <OwnMembers>
-        <Member Name="rec_Applicant_Educations" Caption="Applicant Educations" />
-        <Member Name="university_id" Caption="ID" AllowEdit="False" />
-        <Member Name="university_name" Caption="Name" />
+        <Member Name="tag_id" Caption="ID" AllowEdit="False" Index="0" />
+        <Member Name="tag_name" Caption="Name" Index="1" />
+        <Member Name="AuditTrail" Index="2" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Work_Type" Caption="Work Type">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_University" Caption="University" ImageName="rec_University16">
       <OwnMembers>
-        <Member Name="rec_Applicant_Experiences" Caption="Applicant Experiences" LookupProperty="app_exp_title" />
-        <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" />
-        <Member Name="work_type_id" Caption="ID" AllowEdit="False" />
-        <Member Name="work_type_name" Caption="Name" />
+        <Member Name="rec_Applicant_Educations" Caption="Applicant Educations" Index="0" />
+        <Member Name="university_id" Caption="ID" AllowEdit="False" Index="1" />
+        <Member Name="university_name" Caption="Name" Index="2" />
+        <Member Name="AuditTrail" Index="3" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Work_Type" Caption="Work Type" ImageName="rec_Work_Type16">
+      <OwnMembers>
+        <Member Name="rec_Applicant_Experiences" Caption="Applicant Experiences" LookupProperty="app_exp_title" Index="0" />
+        <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" Index="1" />
+        <Member Name="work_type_id" Caption="ID" AllowEdit="False" Index="2" />
+        <Member Name="work_type_name" Caption="Name" Index="3" />
+        <Member Name="AuditTrail" Index="4" />
       </OwnMembers>
     </Class>
   </BOModel>
@@ -214,6 +244,7 @@
           <Item Id="rec_Country_ListView" ViewId="rec_Country_ListView" ObjectKey="" Caption="Country" Index="1" IsNewNode="True" />
           <Item Id="rec_Degree_ListView" ViewId="rec_Degree_ListView" ObjectKey="" Caption="Degree" IsNewNode="True" />
           <Item Id="rec_Faculty_ListView" ViewId="rec_Faculty_ListView" ObjectKey="" Caption="Faculty" IsNewNode="True" />
+          <Item Id="rec_Gender_ListView" ViewId="rec_Gender_ListView" ObjectKey="" Caption="Gender" IsNewNode="True" />
           <Item Id="rec_Industry_ListView" ViewId="rec_Industry_ListView" ObjectKey="" Caption="Industry" IsNewNode="True" />
           <Item Id="rec_Marital_Status_ListView" ViewId="rec_Marital_Status_ListView" ObjectKey="" Caption="Marital Status" IsNewNode="True" />
           <Item Id="rec_Military_Status_ListView" ViewId="rec_Military_Status_ListView" ObjectKey="" Caption="Military Status" IsNewNode="True" />
@@ -230,7 +261,7 @@
           <Item Id="rec_Applicant_Course_ListView" ViewId="rec_Applicant_Course_ListView" ObjectKey="" Caption="Applicant Course" IsNewNode="True" />
           <Item Id="rec_Applicant_Education_ListView" ViewId="rec_Applicant_Education_ListView" ObjectKey="" Caption="Applicant Education" IsNewNode="True" />
           <Item Id="rec_Applicant_Experience_ListView" ViewId="rec_Applicant_Experience_ListView" ObjectKey="" Caption="Applicant Experience" IsNewNode="True" />
-          <Item Id="rec_Applicant_ListView" ViewId="rec_Applicant_ListView" ObjectKey="" Caption="Applicant" ImageName="Applicant32" IsNewNode="True" />
+          <Item Id="rec_Applicant_ListView" ViewId="rec_Applicant_ListView" ObjectKey="" Caption="Applicant" ImageName="rec_Applicant16" IsNewNode="True" />
           <Item Id="rec_Applicant_Project_ListView" ViewId="rec_Applicant_Project_ListView" ObjectKey="" Caption="Applicant Project" IsNewNode="True" />
           <Item Id="rec_Applicant_Study_ListView" ViewId="rec_Applicant_Study_ListView" ObjectKey="" Caption="Applicant Study" IsNewNode="True" />
           <Item Id="rec_Applicant_Tag_ListView" ViewId="rec_Applicant_Tag_ListView" ObjectKey="" Caption="Applicant Tag" IsNewNode="True" />
@@ -251,6 +282,7 @@
           <Item Id="rec_Degree_ListView" Removed="True" />
           <Item Id="rec_Employer_ListView" Removed="True" />
           <Item Id="rec_Faculty_ListView" Removed="True" />
+          <Item Id="rec_Gender_ListView" Removed="True" />
           <Item Id="rec_Industry_ListView" Removed="True" />
           <Item Id="rec_Marital_Status_ListView" Removed="True" />
           <Item Id="rec_Military_Status_ListView" Removed="True" />
@@ -277,15 +309,230 @@
       <ValidationContext Id="EntryIsNotValid" Caption="Entry is not valid" AllowInplaceValidation="False" IsNewNode="True" />
     </Contexts>
     <Rules>
-      <RuleRequiredField Id="@city_country_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_City" TargetPropertyName="city_country_id" IsNewNode="True" />
-      <RuleRequiredField Id="@city_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_City" TargetPropertyName="city_name" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_applicant_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant" TargetPropertyName="applicant_name" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Course_app_crs_applicant_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Course" TargetPropertyName="app_crs_applicant_id" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Course_app_crs_provider_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Course" TargetPropertyName="app_crs_provider" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Course_app_crs_title_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Course" TargetPropertyName="app_crs_title" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Education_app_edu_applicant_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Education" TargetPropertyName="app_edu_applicant_id" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Experience_app_exp_applicant_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Experience" TargetPropertyName="app_exp_applicant_id" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Experience_app_exp_end_date_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Experience" TargetPropertyName="app_exp_end_date" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Experience_app_exp_start_date_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Experience" TargetPropertyName="app_exp_start_date" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Experience_app_exp_title_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Experience" TargetPropertyName="app_exp_title" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Project_app_prj_applicant_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Project" TargetPropertyName="app_prj_applicant_id" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Project_app_prj_company_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Project" TargetPropertyName="app_prj_company_name" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Project_app_prj_title_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Project" TargetPropertyName="app_prj_title" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Study_app_grd_applicant_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Study" TargetPropertyName="app_grd_applicant_id" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Study_app_grd_degree_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Study" TargetPropertyName="app_grd_degree_id" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Study_app_grd_grade_year_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Study" TargetPropertyName="app_grd_grade_year" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Study_app_grd_study_grade_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Study" TargetPropertyName="app_grd_study_grade_id" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Study_degree_id_field_of_research_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Study" TargetPropertyName="degree_id_field_of_research" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Tag_app_app_tag_tag_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Tag" TargetPropertyName="CompoundKey1.app_tag_tag_id" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Tag_app_tag_applicant_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Tag" TargetPropertyName="CompoundKey1.app_tag_applicant_id" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_City_city_country_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_City" TargetPropertyName="city_country_id" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_City_city_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_City" TargetPropertyName="city_name" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Country_country_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Country" TargetPropertyName="country_name" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Degree_degree_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Degree" TargetPropertyName="degree_name" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Employer_employer_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer" TargetPropertyName="employer_name" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Faculty_faculty_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Faculty" TargetPropertyName="faculty_name" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Gender_rec_gender_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Gender" TargetPropertyName="rec_gender_name" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Industry_industry_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Industry" TargetPropertyName="industry_name" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Marital_Status_marital_status_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Marital_Status" TargetPropertyName="marital_status_name" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Military_Status_military_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Military_Status" TargetPropertyName="military_name" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Nationality_Status_nationality_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Nationality" TargetPropertyName="nationality_name" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Position_Status_position_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Position" TargetPropertyName="position_name" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Study_Grade_Status_study_grade_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Study_Grade" TargetPropertyName="study_grade_name" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Tag_study_tag_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Tag" TargetPropertyName="tag_name" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_University_university_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_University" TargetPropertyName="university_name" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Work_Type_work_type_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Work_Type" TargetPropertyName="work_type_name" IsNewNode="True" />
     </Rules>
   </Validation>
   <Views>
-    <DetailView Id="rec_Applicant_Course_DetailView">
-      <Items>
-        <PropertyEditor Id="app_crs_applicant_id" LookupProperty="applicant_name" />
-      </Items>
+    <DetailView Id="rec_Applicant_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="38.508557457212717">
+            <LayoutGroup Id="rec_Applicant" RelativeSize="100">
+              <LayoutGroup Id="rec_Applicant_col1" RelativeSize="50.056625141562854">
+                <LayoutItem Id="applicant_id" RelativeSize="11.428571428571429" />
+                <LayoutItem Id="applicant_name" RelativeSize="8.5714285714285712" />
+                <LayoutItem Id="applicant_email" RelativeSize="8.5714285714285712" />
+                <LayoutItem Id="applicant_city_id" RelativeSize="8.5714285714285712" />
+                <LayoutItem Id="applicant_phone" RelativeSize="8.5714285714285712" />
+                <LayoutItem Id="applicant_mobile" RelativeSize="8.5714285714285712" />
+                <LayoutItem Id="applicant_national_id" ViewItem="applicant_national_id" Index="6" RelativeSize="8.5714285714285712" IsNewNode="True" />
+                <LayoutItem Id="applicant_nationality_id" RelativeSize="8.5714285714285712" Index="7" />
+                <LayoutItem Id="applicant_gender_id" ViewItem="applicant_gender_id" Index="8" RelativeSize="8.5714285714285712" IsNewNode="True" />
+                <LayoutItem Id="applicant_marital_status_id" RelativeSize="8.5714285714285712" Index="9" />
+                <LayoutItem Id="applicant_military_id" RelativeSize="11.428571428571429" Index="10" />
+                <LayoutItem Id="applicant_birth_date" RelativeSize="10.526315789473685" Index="11" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="rec_Applicant_col2" RelativeSize="49.943374858437146">
+                <LayoutItem Id="applicant_birth_date" ViewItem="applicant_birth_date" Index="0" RelativeSize="11.428571428571429" IsNewNode="True" />
+                <LayoutItem Id="applicant_work_type_id" RelativeSize="8.5714285714285712" Index="1" />
+                <LayoutItem Id="applicant_salary" RelativeSize="8.5714285714285712" Index="2" />
+                <LayoutItem Id="applicant_industry_id" RelativeSize="8.5714285714285712" Index="3" />
+                <LayoutItem Id="applicant_position_id" RelativeSize="8.5714285714285712" Index="4" />
+                <LayoutItem Id="applicant_driving_license" RelativeSize="8.5714285714285712" Index="5" />
+                <LayoutItem Id="applicant_user_id" RelativeSize="8.5714285714285712" Index="6" />
+                <LayoutItem Id="applicant_date_in" RelativeSize="37.142857142857146" Index="7" />
+                <LayoutItem Id="applicant_gender_id" RelativeSize="37.142857142857146" Index="7" Removed="True" />
+                <LayoutItem Id="applicant_national_id" RelativeSize="9.375" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" Direction="Horizontal" RelativeSize="4.0342298288508553">
+            <LayoutItem Id="applicant_summary" Index="0" RelativeSize="49.944751381215468" />
+            <LayoutItem Id="applicant_skill" Index="1" RelativeSize="50.055248618784532" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="57.457212713936428">
+            <LayoutGroup Id="rec_Applicant_Courses" Index="0" RelativeSize="100">
+              <LayoutItem Id="rec_Applicant_Courses" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="rec_Applicant_Educations" Index="1" RelativeSize="100">
+              <LayoutItem Id="rec_Applicant_Educations" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="rec_Applicant_Experiences" Index="2" RelativeSize="100">
+              <LayoutItem Id="rec_Applicant_Experiences" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="rec_Applicant_Projects" Index="3" RelativeSize="100">
+              <LayoutItem Id="rec_Applicant_Projects" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="rec_Applicant_Studys" Index="4" RelativeSize="100">
+              <LayoutItem Id="rec_Applicant_Studys" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" Index="5" RelativeSize="100">
+              <LayoutItem Id="AuditTrail" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_City_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="rec_Applicants" Index="0" />
+            <LayoutGroup Id="AuditTrail" Index="1" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Country_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="rec_Citys" Index="0" />
+            <LayoutGroup Id="AuditTrail" Index="1" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="rec_Country_ListView" MasterDetailMode="ListViewAndDetailView">
+      <SplitLayout SplitterPosition="400" />
+    </ListView>
+    <DetailView Id="rec_Degree_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="rec_Applicant_Educations" Index="0" />
+            <LayoutGroup Id="rec_Applicant_Studys" Index="1" />
+            <LayoutGroup Id="AuditTrail" Index="2" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Faculty_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="rec_Applicant_Educations" Index="0" />
+            <LayoutGroup Id="AuditTrail" Index="1" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Industry_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="rec_Applicants" Index="0" />
+            <LayoutGroup Id="rec_Applicant_Educations" Index="1" />
+            <LayoutGroup Id="rec_Applicant_Experiences" Index="2" />
+            <LayoutGroup Id="AuditTrail" Index="3" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Marital_Status_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="rec_Applicants" Index="0" />
+            <LayoutGroup Id="AuditTrail" Index="1" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Military_Status_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="rec_Applicants" Index="0" />
+            <LayoutGroup Id="AuditTrail" Index="1" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Nationality_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="rec_Applicants" Index="0" />
+            <LayoutGroup Id="AuditTrail" Index="1" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Position_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="rec_Applicants" Index="0" />
+            <LayoutGroup Id="AuditTrail" Index="1" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Study_Grade_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="rec_Applicant_Studys" Index="0" />
+            <LayoutGroup Id="AuditTrail" Index="1" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_University_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="rec_Applicant_Educations" Index="0" />
+            <LayoutGroup Id="AuditTrail" Index="1" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Work_Type_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="rec_Applicants" Index="0" />
+            <LayoutGroup Id="rec_Applicant_Experiences" Index="1" />
+            <LayoutGroup Id="AuditTrail" Index="2" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
     </DetailView>
   </Views>
 </Application>

@@ -207,6 +207,10 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Faculty.Designer.cs">
       <DependentUpon>rec_Faculty.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Gender.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Gender.Designer.cs">
+      <DependentUpon>rec_Gender.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Industry.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Industry.Designer.cs">
       <DependentUpon>rec_Industry.cs</DependentUpon>
@@ -287,8 +291,50 @@
     <None Include="FunctionalTests\config.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\Applicant32.png" />
-    <EmbeddedResource Include="Images\Applicant16.png" />
+    <EmbeddedResource Include="Images\rec_Applicant32.png" />
+    <EmbeddedResource Include="Images\rec_Applicant16.png" />
+    <EmbeddedResource Include="Images\Recruitment16.png" />
+    <EmbeddedResource Include="Images\Recruitment32.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Course16.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Course32.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Education16.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Education32.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Experience16.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Experience32.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Project16.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Project32.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Study16.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Study32.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Tag16.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Tag32.png" />
+    <EmbeddedResource Include="Images\rec_City16.png" />
+    <EmbeddedResource Include="Images\rec_City32.png" />
+    <EmbeddedResource Include="Images\rec_Country16.png" />
+    <EmbeddedResource Include="Images\rec_Country32.png" />
+    <EmbeddedResource Include="Images\rec_Degree16.png" />
+    <EmbeddedResource Include="Images\rec_Degree32.png" />
+    <EmbeddedResource Include="Images\rec_Employer16.png" />
+    <EmbeddedResource Include="Images\rec_Employer32.png" />
+    <EmbeddedResource Include="Images\rec_Faculty16.png" />
+    <EmbeddedResource Include="Images\rec_Faculty32.png" />
+    <EmbeddedResource Include="Images\rec_Gender16.png" />
+    <EmbeddedResource Include="Images\rec_Gender32.png" />
+    <EmbeddedResource Include="Images\rec_Industry16.png" />
+    <EmbeddedResource Include="Images\rec_Industry32.png" />
+    <EmbeddedResource Include="Images\rec_Marital_Status16.png" />
+    <EmbeddedResource Include="Images\rec_Marital_Status32.png" />
+    <EmbeddedResource Include="Images\rec_Military_Status16.png" />
+    <EmbeddedResource Include="Images\rec_Military_Status32.png" />
+    <EmbeddedResource Include="Images\rec_Nationality16.png" />
+    <EmbeddedResource Include="Images\rec_Nationality32.png" />
+    <EmbeddedResource Include="Images\rec_Position16.png" />
+    <EmbeddedResource Include="Images\rec_Position32.png" />
+    <EmbeddedResource Include="Images\rec_Study_Grade16.png" />
+    <EmbeddedResource Include="Images\rec_Study_Grade32.png" />
+    <EmbeddedResource Include="Images\rec_University16.png" />
+    <EmbeddedResource Include="Images\rec_University32.png" />
+    <EmbeddedResource Include="Images\rec_Work_Type16.png" />
+    <EmbeddedResource Include="Images\rec_Work_Type32.png" />
     <Content Include="Welcome.html" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

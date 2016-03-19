@@ -37,6 +37,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<string>("applicant_email", ref fapplicant_email, value); }
         }
         rec_City fapplicant_city_id;
+        [Indexed(Name = @"iapplicant_city_id_rec_Applicant")]
         [Association(@"rec_ApplicantReferencesrec_City")]
         public rec_City applicant_city_id
         {
@@ -58,6 +59,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<string>("applicant_mobile", ref fapplicant_mobile, value); }
         }
         rec_Nationality fapplicant_nationality_id;
+        [Indexed(Name = @"iapplicant_nationality_id_rec_Applicant")]
         [Association(@"rec_ApplicantReferencesrec_Nationality")]
         public rec_Nationality applicant_nationality_id
         {
@@ -65,6 +67,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<rec_Nationality>("applicant_nationality_id", ref fapplicant_nationality_id, value); }
         }
         rec_Marital_Status fapplicant_marital_status_id;
+        [Indexed(Name = @"iapplicant_marital_status_id_rec_Applicant")]
         [Association(@"rec_ApplicantReferencesrec_Marital_Status")]
         public rec_Marital_Status applicant_marital_status_id
         {
@@ -72,6 +75,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<rec_Marital_Status>("applicant_marital_status_id", ref fapplicant_marital_status_id, value); }
         }
         rec_Military_Status fapplicant_military_id;
+        [Indexed(Name = @"iapplicant_military_id_rec_Applicant")]
         [Association(@"rec_ApplicantReferencesrec_Military_Status")]
         public rec_Military_Status applicant_military_id
         {
@@ -85,6 +89,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<DateTime>("applicant_birth_date", ref fapplicant_birth_date, value); }
         }
         rec_Work_Type fapplicant_work_type_id;
+        [Indexed(Name = @"iapplicant_work_type_id_rec_Applicant")]
         [Association(@"rec_ApplicantReferencesrec_Work_Type")]
         public rec_Work_Type applicant_work_type_id
         {
@@ -98,6 +103,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<double>("applicant_salary", ref fapplicant_salary, value); }
         }
         rec_Industry fapplicant_industry_id;
+        [Indexed(Name = @"iapplicant_industry_id_rec_Applicant")]
         [Association(@"rec_ApplicantReferencesrec_Industry")]
         public rec_Industry applicant_industry_id
         {
@@ -105,6 +111,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<rec_Industry>("applicant_industry_id", ref fapplicant_industry_id, value); }
         }
         rec_Position fapplicant_position_id;
+        [Indexed(Name = @"iapplicant_position_id_rec_Applicant")]
         [Association(@"rec_ApplicantReferencesrec_Position")]
         public rec_Position applicant_position_id
         {
@@ -142,6 +149,21 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         {
             get { return fapplicant_date_in; }
             set { SetPropertyValue<DateTime>("applicant_date_in", ref fapplicant_date_in, value); }
+        }
+        string fapplicant_national_id;
+        [Size(50)]
+        public string applicant_national_id
+        {
+            get { return fapplicant_national_id; }
+            set { SetPropertyValue<string>("applicant_national_id", ref fapplicant_national_id, value); }
+        }
+        rec_Gender fapplicant_gender_id;
+        [Indexed(Name = @"iapplicant_gender_id_rec_Applicant")]
+        [Association(@"rec_ApplicantReferencesrec_Gender")]
+        public rec_Gender applicant_gender_id
+        {
+            get { return fapplicant_gender_id; }
+            set { SetPropertyValue<rec_Gender>("applicant_gender_id", ref fapplicant_gender_id, value); }
         }
         [Association(@"rec_Applicant_CourseReferencesrec_Applicant")]
         public XPCollection<rec_Applicant_Course> rec_Applicant_Courses { get { return GetCollection<rec_Applicant_Course>("rec_Applicant_Courses"); } }
