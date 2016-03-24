@@ -17,7 +17,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     public partial class rec_Military_Status : XPLiteObject
     {
         int fmilitary_id;
-        [Key]
+        [Key(true)]
         public int military_id
         {
             get { return fmilitary_id; }

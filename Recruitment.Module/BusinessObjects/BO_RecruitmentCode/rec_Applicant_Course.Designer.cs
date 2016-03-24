@@ -17,7 +17,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     public partial class rec_Applicant_Course : XPLiteObject
     {
         int fapp_crs_id;
-        [Key]
+        [Key(true)]
         public int app_crs_id
         {
             get { return fapp_crs_id; }
@@ -47,18 +47,6 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         {
             get { return fapp_crs_year; }
             set { SetPropertyValue<int>("app_crs_year", ref fapp_crs_year, value); }
-        }
-        int fapp_crs_user_id;
-        public int app_crs_user_id
-        {
-            get { return fapp_crs_user_id; }
-            set { SetPropertyValue<int>("app_crs_user_id", ref fapp_crs_user_id, value); }
-        }
-        DateTime fapp_crs_date_in;
-        public DateTime app_crs_date_in
-        {
-            get { return fapp_crs_date_in; }
-            set { SetPropertyValue<DateTime>("app_crs_date_in", ref fapp_crs_date_in, value); }
         }
     }
 

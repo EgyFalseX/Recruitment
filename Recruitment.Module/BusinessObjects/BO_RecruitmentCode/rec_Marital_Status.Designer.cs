@@ -17,7 +17,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     public partial class rec_Marital_Status : XPLiteObject
     {
         int fmarital_status_id;
-        [Key]
+        [Key(true)]
         public int marital_status_id
         {
             get { return fmarital_status_id; }

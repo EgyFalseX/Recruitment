@@ -17,7 +17,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     public partial class rec_Gender : XPLiteObject
     {
         int frec_gender_id;
-        [Key]
+        [Key(true)]
         public int rec_gender_id
         {
             get { return frec_gender_id; }

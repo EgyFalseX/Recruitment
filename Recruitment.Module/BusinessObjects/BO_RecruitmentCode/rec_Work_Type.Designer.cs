@@ -17,7 +17,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     public partial class rec_Work_Type : XPLiteObject
     {
         int fwork_type_id;
-        [Key]
+        [Key(true)]
         public int work_type_id
         {
             get { return fwork_type_id; }

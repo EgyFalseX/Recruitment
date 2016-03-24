@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="applicant_date_in" Caption="Entry Date" AllowEdit="False" Index="2" />
+        <Member Name="applicant_user_id" Caption="Entry User" AllowEdit="False" Index="20" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Course">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="app_crs_date_in" Caption="Entry Date" AllowEdit="False" />
+        <Member Name="app_crs_user_id" Caption="Entry User" AllowEdit="False" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Education">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="app_edu_date_in" Caption="Entry Date" AllowEdit="False" />
+        <Member Name="app_edu_user_id" Caption="Entry User" AllowEdit="False" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Experience">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="app_exp_date_in" Caption="Entry Date" AllowEdit="False" Index="2" />
+        <Member Name="app_exp_user_id" Caption="Entry Date" AllowEdit="False" Index="9" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Project">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="app_prj_date_in" Caption="Entry Date" AllowEdit="False" Index="3" />
+        <Member Name="app_prj_user_id" Caption="Entry User" AllowEdit="False" Index="8" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Study">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="app_grd_date_in" Caption="Entry Date" AllowEdit="False" Index="1" />
+        <Member Name="app_grd_user_id" Caption="Entry User" AllowEdit="False" Index="6" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Views Id="Views">
+    <DetailView Id="rec_Applicant_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="rec_Applicant">
+              <LayoutGroup Id="rec_Applicant_col1">
+                <LayoutItem Id="applicant_birth_date" RelativeSize="10.526315789473685" Index="11" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="rec_Applicant_col2">
+                <LayoutItem Id="applicant_user_id" RelativeSize="8.5714285714285712" Index="6" />
+                <LayoutItem Id="applicant_date_in" RelativeSize="37.142857142857146" Index="7" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

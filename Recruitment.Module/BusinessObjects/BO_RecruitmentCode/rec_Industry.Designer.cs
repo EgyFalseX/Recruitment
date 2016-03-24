@@ -17,7 +17,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     public partial class rec_Industry : XPLiteObject
     {
         int findustry_id;
-        [Key]
+        [Key(true)]
         public int industry_id
         {
             get { return findustry_id; }

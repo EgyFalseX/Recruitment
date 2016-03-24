@@ -17,7 +17,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     public partial class rec_Applicant : XPLiteObject
     {
         int fapplicant_id;
-        [Key]
+        [Key(true)]
         public int applicant_id
         {
             get { return fapplicant_id; }
@@ -138,18 +138,6 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return fapplicant_summary; }
             set { SetPropertyValue<string>("applicant_summary", ref fapplicant_summary, value); }
         }
-        int fapplicant_user_id;
-        public int applicant_user_id
-        {
-            get { return fapplicant_user_id; }
-            set { SetPropertyValue<int>("applicant_user_id", ref fapplicant_user_id, value); }
-        }
-        DateTime fapplicant_date_in;
-        public DateTime applicant_date_in
-        {
-            get { return fapplicant_date_in; }
-            set { SetPropertyValue<DateTime>("applicant_date_in", ref fapplicant_date_in, value); }
-        }
         string fapplicant_national_id;
         [Size(50)]
         public string applicant_national_id
@@ -164,6 +152,13 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         {
             get { return fapplicant_gender_id; }
             set { SetPropertyValue<rec_Gender>("applicant_gender_id", ref fapplicant_gender_id, value); }
+        }
+        string fapplicant_address;
+        [Size(255)]
+        public string applicant_address
+        {
+            get { return fapplicant_address; }
+            set { SetPropertyValue<string>("applicant_address", ref fapplicant_address, value); }
         }
         [Association(@"rec_Applicant_CourseReferencesrec_Applicant")]
         public XPCollection<rec_Applicant_Course> rec_Applicant_Courses { get { return GetCollection<rec_Applicant_Course>("rec_Applicant_Courses"); } }

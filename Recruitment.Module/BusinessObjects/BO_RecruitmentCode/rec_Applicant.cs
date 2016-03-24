@@ -9,7 +9,6 @@ using DevExpress.ExpressApp;
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
-    //[ImageName("BO_Contact")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     //[NavigationItem("Data Entry")]
@@ -30,7 +29,17 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
                 return auditTrail;
             }
         }
-
+        byte[] frec_Applicant_image;
+        [Size(SizeAttribute.Unlimited)]
+        [ImageEditor(DetailViewImageEditorFixedHeight = 128, DetailViewImageEditorFixedWidth = 128, ListViewImageEditorCustomHeight = 32, ImageSizeMode = ImageSizeMode.AutoSize)]
+        public byte[] rec_Applicant_image
+        {
+            get { return frec_Applicant_image; }
+            set { SetPropertyValue<byte[]>("rec_Applicant_image", ref frec_Applicant_image, value); }
+        }
+        [Association(@"rec_Applicant-PortfolioFileData")]
+        public XPCollection<rec_PortfolioFileData> rec_Applicant_rec_PortfolioFileData
+        { get { return GetCollection<rec_PortfolioFileData>("rec_Applicant_rec_PortfolioFileData"); } }
     }
 
 }

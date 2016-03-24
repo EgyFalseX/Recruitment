@@ -17,7 +17,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     public partial class rec_Applicant_Project : XPLiteObject
     {
         int fapp_prj_id;
-        [Key]
+        [Key(true)]
         public int app_prj_id
         {
             get { return fapp_prj_id; }
@@ -60,18 +60,6 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         {
             get { return fapp_prj_description; }
             set { SetPropertyValue<string>("app_prj_description", ref fapp_prj_description, value); }
-        }
-        int fapp_prj_user_id;
-        public int app_prj_user_id
-        {
-            get { return fapp_prj_user_id; }
-            set { SetPropertyValue<int>("app_prj_user_id", ref fapp_prj_user_id, value); }
-        }
-        DateTime fapp_prj_date_in;
-        public DateTime app_prj_date_in
-        {
-            get { return fapp_prj_date_in; }
-            set { SetPropertyValue<DateTime>("app_prj_date_in", ref fapp_prj_date_in, value); }
         }
     }
 

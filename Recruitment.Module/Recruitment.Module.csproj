@@ -159,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\ConnectionHelper.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\PortfolioFileData.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant.Designer.cs">
       <DependentUpon>rec_Applicant.cs</DependentUpon>
@@ -248,6 +249,12 @@
       <DependentUpon>rec_Work_Type.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\DomainObject1.cs" />
+    <Compile Include="Controllers\TestCtr.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\TestCtr.Designer.cs">
+      <DependentUpon>TestCtr.cs</DependentUpon>
+    </Compile>
     <Compile Include="Core\SqlOp.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
@@ -335,6 +342,14 @@
     <EmbeddedResource Include="Images\rec_University32.png" />
     <EmbeddedResource Include="Images\rec_Work_Type16.png" />
     <EmbeddedResource Include="Images\rec_Work_Type32.png" />
+    <None Include="UnusableNodes.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes1.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Welcome.html" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
