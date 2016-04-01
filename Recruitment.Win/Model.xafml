@@ -1,5 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application>
+  <BOModel>
+    <Class Name="DevExpress.ExpressApp.Security.Strategy.SecuritySystemTypePermissionsObjectBase" DefaultListViewAllowEdit="True" />
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="MyDetails" Removed="True" />
+          <Item Id="SecuritySystemRole_ListView" Removed="True" />
+          <Item Id="SecuritySystemUser_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Users_Security">
+        <Items>
+          <Item Id="MyDetails" ViewId="SecuritySystemUser_DetailView" ObjectKey="@CurrentUserID" Caption="My Details" ImageName="BO_MyDetails" IsNewNode="True" />
+          <Item Id="SecuritySystemRole_ListView" ViewId="SecuritySystemRole_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="SecuritySystemUser_ListView" ViewId="SecuritySystemUser_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Workflow" ImageName="BO_WorkflowDefinition" />
+    </Items>
+  </NavigationItems>
   <Options Skin="Visual Studio 2013 Blue" UIType="TabbedMDI" FormStyle="Ribbon">
     <RibbonOptions RibbonControlStyle="Office2013" />
   </Options>

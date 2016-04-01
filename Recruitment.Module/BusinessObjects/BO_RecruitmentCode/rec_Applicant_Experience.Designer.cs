@@ -24,6 +24,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("app_exp_id", ref fapp_exp_id, value); }
         }
         rec_Applicant fapp_exp_applicant_id;
+        [Indexed(Name = @"iapp_exp_applicant_id_rec_Applicant_Experience")]
         [Association(@"rec_Applicant_ExperienceReferencesrec_Applicant")]
         public rec_Applicant app_exp_applicant_id
         {
@@ -55,6 +56,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<DateTime>("app_exp_end_date", ref fapp_exp_end_date, value); }
         }
         rec_Industry fapp_exp_industry_id;
+        [Indexed(Name = @"iapp_exp_industry_id_rec_Applicant_Experience")]
         [Association(@"rec_Applicant_ExperienceReferencesrec_Industry")]
         public rec_Industry app_exp_industry_id
         {
@@ -62,17 +64,12 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<rec_Industry>("app_exp_industry_id", ref fapp_exp_industry_id, value); }
         }
         rec_Work_Type fapp_exp_work_type_id;
+        [Indexed(Name = @"iapp_exp_work_type_id_rec_Applicant_Experience")]
         [Association(@"rec_Applicant_ExperienceReferencesrec_Work_Type")]
         public rec_Work_Type app_exp_work_type_id
         {
             get { return fapp_exp_work_type_id; }
             set { SetPropertyValue<rec_Work_Type>("app_exp_work_type_id", ref fapp_exp_work_type_id, value); }
-        }
-        int fapp_exp_city_id;
-        public int app_exp_city_id
-        {
-            get { return fapp_exp_city_id; }
-            set { SetPropertyValue<int>("app_exp_city_id", ref fapp_exp_city_id, value); }
         }
         string fapp_exp_description;
         [Size(1000)]

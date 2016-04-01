@@ -24,14 +24,14 @@ namespace Recruitment.Module.DatabaseUpdate {
             //    theObject = ObjectSpace.CreateObject<DomainObject1>();
             //    theObject.Name = name;
             //}
-            SecuritySystemUser sampleUser = ObjectSpace.FindObject<SecuritySystemUser>(new BinaryOperator("UserName", "User"));
-            if(sampleUser == null) {
-                sampleUser = ObjectSpace.CreateObject<SecuritySystemUser>();
-                sampleUser.UserName = "User";
-                sampleUser.SetPassword("");
-            }
-            SecuritySystemRole defaultRole = CreateDefaultRole();
-            sampleUser.Roles.Add(defaultRole);
+            //SecuritySystemUser sampleUser = ObjectSpace.FindObject<SecuritySystemUser>(new BinaryOperator("UserName", "User"));
+            //if(sampleUser == null) {
+            //    sampleUser = ObjectSpace.CreateObject<SecuritySystemUser>();
+            //    sampleUser.UserName = "User";
+            //    sampleUser.SetPassword("");
+            //}
+            //SecuritySystemRole defaultRole = CreateDefaultRole();
+            //sampleUser.Roles.Add(defaultRole);
 
             SecuritySystemUser userAdmin = ObjectSpace.FindObject<SecuritySystemUser>(new BinaryOperator("UserName", "Admin"));
             if(userAdmin == null) {
@@ -47,8 +47,10 @@ namespace Recruitment.Module.DatabaseUpdate {
                 adminRole.Name = "Administrators";
             }
             adminRole.IsAdministrative = true;
-			userAdmin.Roles.Add(adminRole);
-     		ObjectSpace.CommitChanges();
+            adminRole.CanEditModel = false;
+            userAdmin.Roles.Add(adminRole);
+            ObjectSpace.CommitChanges();
+            
         }
         public override void UpdateDatabaseBeforeUpdateSchema() {
             base.UpdateDatabaseBeforeUpdateSchema();

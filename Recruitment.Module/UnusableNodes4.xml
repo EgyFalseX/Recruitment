@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Status">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="rec_Employer_Order_Detail_Accept_Applicats" Caption="Accepted Applicats" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Accept_Applicat">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="rec_employer_order_detail_accept_applicat_id" Index="0" Caption="ID" />
+        <Member Name="rec_employer_order_detail_accept_applicat_applicant_id" Index="1" Caption="Applicant" LookupProperty="applicant_name" />
+        <Member Name="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_id" Index="5" Caption="Order Detail" LookupProperty="CustomName" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Views Id="Views">
+    <DetailView Id="rec_Applicant_Status_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="rec_Employer_Order_Detail_Accept_Applicats" RelativeSize="100" Index="1">
+              <LayoutItem Id="rec_Employer_Order_Detail_Accept_Applicats" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Employer_Order_Detail_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="88.533333333333331">
+            <LayoutItem Id="AuditTrail" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Employer_Order_Detail_Accept_Applicat_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="rec_Employer_Order_Detail_Accept_Applicat">
+              <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_id" Index="0" RelativeSize="37.2093023255814" />
+              <LayoutItem Id="rec_employer_order_detail_accept_applicat_applicant_id" Index="1" RelativeSize="27.906976744186046" />
+              <LayoutItem Id="rec_employer_order_detail_accept_applicat_id" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="Default">
+        <Items Id="Items">
+          <Item Id="rec_Employer_Order_Detail_Accept_Applicat_ListView" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

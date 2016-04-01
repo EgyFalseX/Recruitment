@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="rec_Employer_Order_Detail_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="rec_Employer_Order_Detail">
+              <LayoutItem Id="rec_employer_order_detail_rec_employer_order_id" Index="0" RelativeSize="37.2093023255814" />
+              <LayoutItem Id="rec_employer_order_detail_industry_id" Index="1" RelativeSize="27.906976744186046" />
+              <LayoutItem Id="rec_employer_order_detail_count" Index="2" RelativeSize="34.883720930232556" />
+              <LayoutItem Id="rec_employer_order_detail_id" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

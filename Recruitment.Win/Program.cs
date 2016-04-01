@@ -22,7 +22,7 @@ namespace Recruitment.Win {
 #endif
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            EditModelPermission.AlwaysGranted = System.Diagnostics.Debugger.IsAttached;
+            EditModelPermission.AlwaysGranted = false;//EditModelPermission.AlwaysGranted = System.Diagnostics.Debugger.IsAttached;
             RecruitmentWindowsFormsApplication winApplication = new RecruitmentWindowsFormsApplication() { DelayedViewItemsInitialization = true };
             // Refer to the https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112680.aspx help article for more details on how to provide a custom splash form.
             //winApplication.SplashScreen = new DevExpress.ExpressApp.Win.Utils.DXSplashScreen("YourSplashImage.png");

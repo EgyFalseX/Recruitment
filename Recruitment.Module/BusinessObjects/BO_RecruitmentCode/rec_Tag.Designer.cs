@@ -29,6 +29,9 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return ftag_name; }
             set { SetPropertyValue<string>("tag_name", ref ftag_name, value); }
         }
+        [Association(@"rec_Applicant_TagReferencesrec_Tag")]
+        public XPCollection<rec_Applicant_Tag> rec_Applicant_Tags { get { return GetCollection<rec_Applicant_Tag>("rec_Applicant_Tags"); } }
+
     }
 
 }

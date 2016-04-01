@@ -29,17 +29,18 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
                 return auditTrail;
             }
         }
+        [Association(@"rec_Applicant-PortfolioFileData")]
+        public XPCollection<rec_PortfolioFileData> rec_Applicant_rec_PortfolioFileData
+        { get { return GetCollection<rec_PortfolioFileData>("rec_Applicant_rec_PortfolioFileData"); } }
+
         byte[] frec_Applicant_image;
         [Size(SizeAttribute.Unlimited)]
-        [ImageEditor(DetailViewImageEditorFixedHeight = 128, DetailViewImageEditorFixedWidth = 128, ListViewImageEditorCustomHeight = 32, ImageSizeMode = ImageSizeMode.AutoSize)]
+        [ImageEditor(DetailViewImageEditorFixedHeight = 128, DetailViewImageEditorFixedWidth = 128, ListViewImageEditorCustomHeight = 64, ImageSizeMode = ImageSizeMode.StretchImage)]
         public byte[] rec_Applicant_image
         {
             get { return frec_Applicant_image; }
             set { SetPropertyValue<byte[]>("rec_Applicant_image", ref frec_Applicant_image, value); }
         }
-        [Association(@"rec_Applicant-PortfolioFileData")]
-        public XPCollection<rec_PortfolioFileData> rec_Applicant_rec_PortfolioFileData
-        { get { return GetCollection<rec_PortfolioFileData>("rec_Applicant_rec_PortfolioFileData"); } }
     }
 
 }

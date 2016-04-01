@@ -35,6 +35,54 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return femployer_Address; }
             set { SetPropertyValue<string>("employer_Address", ref femployer_Address, value); }
         }
+        string femployer_email;
+        [Size(50)]
+        public string employer_email
+        {
+            get { return femployer_email; }
+            set { SetPropertyValue<string>("employer_email", ref femployer_email, value); }
+        }
+        int femployer_city_id;
+        public int employer_city_id
+        {
+            get { return femployer_city_id; }
+            set { SetPropertyValue<int>("employer_city_id", ref femployer_city_id, value); }
+        }
+        int femployer_gender_id;
+        public int employer_gender_id
+        {
+            get { return femployer_gender_id; }
+            set { SetPropertyValue<int>("employer_gender_id", ref femployer_gender_id, value); }
+        }
+        string femployer_national_id;
+        [Size(50)]
+        public string employer_national_id
+        {
+            get { return femployer_national_id; }
+            set { SetPropertyValue<string>("employer_national_id", ref femployer_national_id, value); }
+        }
+        string femployer_phone;
+        [Size(50)]
+        public string employer_phone
+        {
+            get { return femployer_phone; }
+            set { SetPropertyValue<string>("employer_phone", ref femployer_phone, value); }
+        }
+        string femployer_mobile;
+        [Size(50)]
+        public string employer_mobile
+        {
+            get { return femployer_mobile; }
+            set { SetPropertyValue<string>("employer_mobile", ref femployer_mobile, value); }
+        }
+        int femployer_nationality_id;
+        public int employer_nationality_id
+        {
+            get { return femployer_nationality_id; }
+            set { SetPropertyValue<int>("employer_nationality_id", ref femployer_nationality_id, value); }
+        }
+        [Association(@"rec_Employer_OrderReferencesrec_Employer")]
+        public XPCollection<rec_Employer_Order> rec_Employer_Orders { get { return GetCollection<rec_Employer_Order>("rec_Employer_Orders"); } }
     }
 
 }

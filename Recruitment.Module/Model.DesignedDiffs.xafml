@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="Recruitment" Logo="Recruitment32" Company="Mohamed Aly Omar">
   <BOModel>
+    <Class Name="DevExpress.Persistent.BaseImpl.AuditDataItemPersistent" DefaultListViewShowAutoFilterRow="True" />
+    <Class Name="DevExpress.Persistent.BaseImpl.AuditedObjectWeakReference" DefaultListViewShowAutoFilterRow="True" />
+    <Class Name="DevExpress.Persistent.BaseImpl.BaseObject" DefaultListViewShowAutoFilterRow="True" />
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant" Caption="Applicant" ImageName="rec_Applicant16" DefaultListViewImage="rec_Applicant16" DefaultDetailViewImage="rec_Applicant16" DefaultListViewShowAutoFilterRow="True">
       <OwnMembers>
         <Member Name="applicant_birth_date" Caption="Birth Date" EditMask="yyyy-MM-dd" DisplayFormat="{0:yyyy-MM-dd}" Index="0" />
@@ -31,6 +34,10 @@
         <Member Name="rec_Applicant_rec_PortfolioFileData" Index="25" Caption="Applicant Attachments" />
         <Member Name="applicant_address" Index="26" Caption="Address" />
         <Member Name="AuditTrail" Index="27" />
+        <Member Name="applicant_rec_applicant_status_id" Caption="Status" LookupProperty="rec_applicant_status_name" />
+        <Member Name="rec_Applicant_Tags" Caption="Applicant Tags" LookupProperty="tag_name" />
+        <Member Name="rec_Employer_Order_Detail_Calls" Caption="Orders Calls" />
+        <Member Name="rec_Employer_Order_Detail_Suggest_Applicats" Caption="Suggested In Orders" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Course" Caption="Applicant Course" ImageName="rec_Applicant_Course16" DefaultListViewShowAutoFilterRow="True">
@@ -39,31 +46,30 @@
         <Member Name="app_crs_id" Caption="ID" AllowEdit="False" />
         <Member Name="app_crs_provider" Caption="Provider" />
         <Member Name="app_crs_title" Caption="Title" />
-        <Member Name="app_crs_year" Caption="Year" />
+        <Member Name="app_crs_year" Caption="Year" DisplayFormat="{0:d}" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Education" Caption="Applicant Education" ImageName="rec_Applicant_Education16" DefaultListViewShowAutoFilterRow="True">
       <OwnMembers>
         <Member Name="app_edu_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
-        <Member Name="app_edu_degree_id" Caption="Degree" />
-        <Member Name="app_edu_faculty_id" Caption="Faculty" />
+        <Member Name="app_edu_degree_id" Caption="Degree" LookupProperty="degree_name" />
+        <Member Name="app_edu_faculty_id" Caption="Faculty" LookupProperty="faculty_name" />
         <Member Name="app_edu_id" Caption="ID" AllowEdit="False" />
-        <Member Name="app_edu_Industry" Caption="Industry" />
-        <Member Name="app_edu_university_id" Caption="University" />
-        <Member Name="app_edu_year" Caption="Year" />
+        <Member Name="app_edu_Industry" Caption="Industry" LookupProperty="industry_name" />
+        <Member Name="app_edu_university_id" Caption="University" LookupProperty="university_name" />
+        <Member Name="app_edu_year" Caption="Year" DisplayFormat="{0:d}" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Experience" Caption="Applicant Experience" ImageName="rec_Applicant_Experience16" DefaultListViewShowAutoFilterRow="True">
       <OwnMembers>
         <Member Name="app_exp_applicant_id" Caption="Applicant" LookupProperty="applicant_name" Index="0" />
-        <Member Name="app_exp_city_id" Caption="City" Index="1" />
         <Member Name="app_exp_description" Caption="Description" Index="3" />
         <Member Name="app_exp_end_date" Caption="End Date" DisplayFormat="{0:yyyy-MM-dd}" EditMask="yyyy-MM-dd" Index="4" />
         <Member Name="app_exp_id" Caption="ID" AllowEdit="False" Index="5" />
-        <Member Name="app_exp_industry_id" Caption="Industry" Index="6" />
+        <Member Name="app_exp_industry_id" Caption="Industry" Index="6" LookupProperty="industry_name" />
         <Member Name="app_exp_start_date" Caption="Start Date" DisplayFormat="{0:yyyy-MM-dd}" EditMask="yyyy-MM-dd" Index="7" />
         <Member Name="app_exp_title" Caption="Title" Index="8" />
-        <Member Name="app_exp_work_type_id" Caption="Work Type" Index="10" />
+        <Member Name="app_exp_work_type_id" Caption="Work Type" Index="10" LookupProperty="work_type_name" />
         <Member Name="employer_name" Caption="Employer" Index="11" />
         <Member Name="AuditTrail" Index="12" />
       </OwnMembers>
@@ -72,7 +78,7 @@
       <OwnMembers>
         <Member Name="app_prj_applicant_id" Caption="Applicant" LookupProperty="applicant_name" Index="0" />
         <Member Name="app_prj_company_name" Caption="Company" Index="1" />
-        <Member Name="app_prj_date" Caption="Date" Index="2" />
+        <Member Name="app_prj_date" Caption="Date" Index="2" DisplayFormat="{0:yyyy-MM-dd}" EditMask="yyyy-MM-dd" />
         <Member Name="app_prj_description" Caption="Description" Index="4" />
         <Member Name="app_prj_id" Caption="ID" AllowEdit="False" Index="5" />
         <Member Name="app_prj_title" Caption="Title" Index="6" />
@@ -80,26 +86,39 @@
         <Member Name="AuditTrail" Index="9" />
       </OwnMembers>
     </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Status" DefaultDetailViewImage="rec_Applicant_Status16" DefaultListViewImage="rec_Applicant_Status16" ImageName="rec_Applicant_Status16" Caption="Applicant Status" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="rec_applicant_status_id" Caption="ID" />
+        <Member Name="rec_applicant_status_name" Caption="Name" />
+        <Member Name="rec_Applicants" Caption="Applicants" />
+        <Member Name="rec_Employer_Order_Detail_Accept_Applicats" Caption="Order Accepted Applicats" />
+      </OwnMembers>
+    </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Study" Caption="Applicant Study" ImageName="rec_Applicant_Study16" DefaultListViewShowAutoFilterRow="True">
       <OwnMembers>
         <Member Name="app_grd_applicant_id" Caption="Applicant" LookupProperty="applicant_name" Index="0" />
-        <Member Name="app_grd_degree_id" Caption="Degree" Index="2" />
-        <Member Name="app_grd_grade_year" Caption="Grade Year" Index="3" />
+        <Member Name="app_grd_degree_id" Caption="Degree" Index="2" LookupProperty="degree_name" />
+        <Member Name="app_grd_grade_year" Caption="Grade Year" Index="3" DisplayFormat="{0:d}" />
         <Member Name="app_grd_id" Caption="ID" AllowEdit="False" Index="4" />
-        <Member Name="app_grd_study_grade_id" Caption="Grade Level" Index="5" />
+        <Member Name="app_grd_study_grade_id" Caption="Grade Level" Index="5" LookupProperty="study_grade_name" />
         <Member Name="degree_id_field_of_research" Caption="Field of Research" Index="7" />
         <Member Name="AuditTrail" Index="8" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Tag" Caption="Applicant Tag" ImageName="rec_Applicant_Tag16" DefaultListViewShowAutoFilterRow="True">
       <OwnMembers>
-        <Member Name="app_tag_date_in" Caption="Entry Date" AllowEdit="False" Index="0" />
-        <Member Name="app_tag_id" Caption="ID" AllowEdit="False" Index="1" />
-        <Member Name="app_tag_user_id" Caption="Entry User" AllowEdit="False" Index="2" />
-        <Member Name="CompoundKey1" Index="3" />
-        <Member Name="CompoundKey1.app_tag_applicant_id" Caption="Applicant" LookupProperty="applicant_name" Index="4" />
-        <Member Name="CompoundKey1.app_tag_tag_id" Caption="Tag" LookupProperty="tag_name" Index="5" />
-        <Member Name="AuditTrail" Index="6" />
+        <Member Name="app_tag_id" Caption="ID" AllowEdit="False" Index="-1" />
+        <Member Name="app_tag_applicant_id" Caption="Applicant" LookupProperty="applicant_name" Index="0" />
+        <Member Name="app_tag_tag_id" LookupProperty="tag_name" Caption="Tag" Index="1" />
+        <Member Name="AuditTrail" Index="2" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Call_Result" Caption="Call Result" DefaultDetailViewImage="rec_call_result16" DefaultListViewImage="rec_call_result16" ImageName="rec_call_result16" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="rec_call_result_id" Index="0" Caption="ID" />
+        <Member Name="rec_call_result_name" Index="1" Caption="Name" />
+        <Member Name="rec_Employer_Order_Detail_Calls" Index="2" Caption="Order Calls" />
+        <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_City" Caption="City" DefaultDetailViewImage="" ImageName="rec_City16" DefaultListViewShowAutoFilterRow="True">
@@ -128,12 +147,79 @@
         <Member Name="AuditTrail" Index="4" />
       </OwnMembers>
     </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Doc_Info" DefaultDetailViewImage="rec_Doc_Info16" DefaultListViewImage="rec_Doc_Info16" ImageName="rec_Doc_Info16" Caption="Document Information" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="rec_doc_info_id" Caption="ID" Index="0" />
+        <Member Name="rec_doc_info_name" Caption="Name" Index="1" />
+        <Member Name="rec_Industry_Require_Doc_Infos" Caption="Industry Required Document" Index="2" />
+        <Member Name="AuditTrail" Index="3" />
+      </OwnMembers>
+    </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer" Caption="Employer" ImageName="rec_Employer16" DefaultListViewShowAutoFilterRow="True">
       <OwnMembers>
         <Member Name="employer_Address" Caption="Address" Index="0" />
         <Member Name="employer_id" Caption="ID" AllowEdit="False" Index="1" />
         <Member Name="employer_name" Caption="Name" Index="2" />
         <Member Name="AuditTrail" Index="3" />
+        <Member Name="rec_Employer_Orders" Caption="Employer Orders" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order" Caption="Employer Orders" DefaultDetailViewImage="rec_employer_order16" DefaultListViewImage="rec_employer_order16" ImageName="rec_employer_order16" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="rec_employer_order_date" Index="0" Caption="Order Date" DisplayFormat="{0:yyyy-MM-dd}" EditMask="yyyy-MM-dd" />
+        <Member Name="rec_employer_order_description" Index="1" Caption="Description" />
+        <Member Name="rec_Employer_Order_Details" Index="2" Caption="Order Details" />
+        <Member Name="rec_employer_order_employer_id" Index="3" Caption="Employer" LookupProperty="employer_name" />
+        <Member Name="rec_employer_order_id" Index="4" Caption="ID" />
+        <Member Name="CustomName" Index="5" />
+        <Member Name="AuditTrail" Index="6" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail" Caption="Order Details" DefaultDetailViewImage="rec_employer_order_detail16" DefaultListViewImage="rec_employer_order_detail16" ImageName="rec_employer_order_detail16" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="rec_employer_order_detail_id" Index="0" Caption="ID" />
+        <Member Name="rec_employer_order_detail_rec_employer_order_id" Index="1" Caption="Order" />
+        <Member Name="rec_employer_order_detail_industry_id" Index="2" Caption="Industry" LookupProperty="industry_name" />
+        <Member Name="rec_employer_order_detail_count" Index="3" Caption="Count" />
+        <Member Name="AuditTrail" Index="4" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Accept_Applicat" Caption="Order Accepted Applicat" ImageName="rec_employer_order_detail_accept_applicat16" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="rec_employer_order_detail_accept_applicat_description" Index="2" Caption="Description" />
+        <Member Name="rec_Employer_Order_Detail_Accept_Applicat_Docs" Index="3" Caption="Applicat Required Documents" LookupProperty="rec_doc_info_name" />
+        <Member Name="rec_employer_order_detail_accept_applicat_rec_applicant_status_id" Caption="Status" Index="4" LookupProperty="rec_applicant_status_name" />
+        <Member Name="AuditTrail" Index="6" />
+        <Member Name="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" Caption="Suggest Applicat" LookupProperty="CustomName" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Accept_Applicat_Doc" Caption="Accepted Applicat Required Documents" ImageName="rec_employer_order_detail_accept_applicat_doc16" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_description" Caption="Description" />
+        <Member Name="rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_id" Caption="ID" />
+        <Member Name="rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_employer_order_detail_accept_applicat_id" Caption="Applicat" LookupProperty="CustomName" />
+        <Member Name="rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_industry_require_doc_info_id" Caption="Document" LookupProperty="rec_industry_require_doc_info_rec_doc_info_id.rec_doc_info_name" />
+        <Member Name="rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_require_doc_status_id" Caption="Status" LookupProperty="rec_require_doc_status_name" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Call" Caption="Order Call" ImageName="rec_employer_order_detail_call16" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="rec_employer_order_detail_call_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
+        <Member Name="rec_employer_order_detail_call_date" Caption="Date" DisplayFormat="{0:yyyy-MM-dd}" EditMask="yyyy-MM-dd" />
+        <Member Name="rec_employer_order_detail_call_description" Caption="Description" />
+        <Member Name="rec_employer_order_detail_call_id" Caption="ID" />
+        <Member Name="rec_employer_order_detail_call_rec_call_result_id" Caption="Call Result" LookupProperty="rec_call_result_name" />
+        <Member Name="rec_employer_order_detail_call_rec_employer_order_detail_id" Caption="Order detail" LookupProperty="CustomName" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Suggest_Applicat" Caption="Order Suggested Applicats" ImageName="rec_employer_order_detail_suggest_applicat16" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="rec_Employer_Order_Detail_Accept_Applicats" Caption="Order Accepted Applicats" />
+        <Member Name="rec_employer_order_detail_suggest_applicat_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
+        <Member Name="rec_employer_order_detail_suggest_applicat_description" Caption="Description" />
+        <Member Name="rec_employer_order_detail_suggest_applicat_id" Caption="ID" />
+        <Member Name="rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id" Caption="Order Detail" LookupProperty="CustomName" />
+        <Member Name="rec_employer_order_detail_suggest_applicat_rec_suggest_applicat_source_id" Caption="Applicat Source" LookupProperty="rec_suggest_applicat_source_name" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Faculty" Caption="Faculty" ImageName="rec_Faculty16" DefaultListViewShowAutoFilterRow="True">
@@ -144,7 +230,7 @@
         <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Gender" ImageName="rec_Gender16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Gender" ImageName="rec_Gender16" DefaultListViewShowAutoFilterRow="True" Caption="Gender">
       <OwnMembers>
         <Member Name="rec_Applicants" Index="0" Caption="Applicants" />
         <Member Name="rec_gender_id" Index="1" AllowEdit="False" Caption="ID" />
@@ -160,6 +246,14 @@
         <Member Name="rec_Applicant_Experiences" Caption="Applicant Experiences" LookupProperty="app_exp_title" Index="3" />
         <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" Index="4" />
         <Member Name="AuditTrail" Index="5" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Industry_Require_Doc_Info" Caption="Industry Required Documents" ImageName="rec_industry_require_doc16" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="rec_Employer_Order_Detail_Accept_Applicat_Docs" Caption="Order Accepted Applicat Documents" />
+        <Member Name="rec_industry_require_doc_info_id" Caption="ID" />
+        <Member Name="rec_industry_require_doc_info_industry_id" Caption="Industry" LookupProperty="industry_name" />
+        <Member Name="rec_industry_require_doc_info_rec_doc_info_id" Caption="Document" LookupProperty="rec_doc_info_name" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Marital_Status" Caption="Marital Status" ImageName="rec_Marital_Status16" DefaultListViewShowAutoFilterRow="True">
@@ -201,12 +295,26 @@
         <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Require_Doc_Status" Caption="Required Document Status" ImageName="rec_require_doc_status16" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="rec_Employer_Order_Detail_Accept_Applicat_Docs" Caption="Orders Accepted Applicats Documents" />
+        <Member Name="rec_require_doc_status_id" Caption="ID" />
+        <Member Name="rec_require_doc_status_name" Caption="Name" />
+      </OwnMembers>
+    </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Study_Grade" Caption="Study Grade" ImageName="rec_Study_Grade16" DefaultListViewShowAutoFilterRow="True">
       <OwnMembers>
         <Member Name="rec_Applicant_Studys" Caption="Applicant Studies" LookupProperty="degree_id_field_of_research" Index="0" />
         <Member Name="study_grade_id" Caption="ID" AllowEdit="False" Index="1" />
         <Member Name="study_grade_name" Caption="Name" Index="2" />
         <Member Name="AuditTrail" Index="3" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Suggest_Applicat_Source" Caption="Applicat Source" ImageName="rec_suggest_applicat_source16" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="rec_Employer_Order_Detail_Suggest_Applicats" Caption="Orders Applicats" />
+        <Member Name="rec_suggest_applicat_source_id" Caption="ID" />
+        <Member Name="rec_suggest_applicat_source_name" Caption="Name" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Tag" Caption="Tag" ImageName="rec_Applicant_Tag16" DefaultListViewShowAutoFilterRow="True">
@@ -236,25 +344,31 @@
   </BOModel>
   <NavigationItems NavigationStyle="TreeList" GenerateRelatedViewVariantsGroup="False" StartupNavigationItem="">
     <Items>
-      <Item Id="Code" Caption="Code" ImageName="BO_Folder" Index="0" IsNewNode="True">
+      <Item Id="Generalode" Caption="General" ImageName="BO_State" Index="0" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="rec_City_ListView" Caption="City" Index="0" ViewId="rec_City_ListView" IsNewNode="True" />
           <Item Id="rec_Country_ListView" ViewId="rec_Country_ListView" ObjectKey="" Caption="Country" Index="1" IsNewNode="True" />
+          <Item Id="rec_Applicant_Status_ListView" ViewId="rec_Applicant_Status_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="rec_Call_Result_ListView" ViewId="rec_Call_Result_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="rec_Degree_ListView" ViewId="rec_Degree_ListView" ObjectKey="" Caption="Degree" IsNewNode="True" />
+          <Item Id="rec_Doc_Info_ListView" ViewId="rec_Doc_Info_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="rec_Faculty_ListView" ViewId="rec_Faculty_ListView" ObjectKey="" Caption="Faculty" IsNewNode="True" />
           <Item Id="rec_Gender_ListView" ViewId="rec_Gender_ListView" ObjectKey="" Caption="Gender" IsNewNode="True" />
           <Item Id="rec_Industry_ListView" ViewId="rec_Industry_ListView" ObjectKey="" Caption="Industry" IsNewNode="True" />
+          <Item Id="rec_Industry_Require_Doc_Info_ListView" ViewId="rec_Industry_Require_Doc_Info_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="rec_Marital_Status_ListView" ViewId="rec_Marital_Status_ListView" ObjectKey="" Caption="Marital Status" IsNewNode="True" />
           <Item Id="rec_Military_Status_ListView" ViewId="rec_Military_Status_ListView" ObjectKey="" Caption="Military Status" IsNewNode="True" />
           <Item Id="rec_Nationality_ListView" ViewId="rec_Nationality_ListView" ObjectKey="" Caption="Nationality" IsNewNode="True" />
           <Item Id="rec_Position_ListView" ViewId="rec_Position_ListView" ObjectKey="" Caption="Position" IsNewNode="True" />
+          <Item Id="rec_Require_Doc_Status_ListView" ViewId="rec_Require_Doc_Status_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="rec_Study_Grade_ListView" ViewId="rec_Study_Grade_ListView" ObjectKey="" Caption="Study Grade" IsNewNode="True" />
+          <Item Id="rec_Suggest_Applicat_Source_ListView" ViewId="rec_Suggest_Applicat_Source_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="rec_Tag_ListView" ViewId="rec_Tag_ListView" ObjectKey="" Caption="Tag" IsNewNode="True" />
           <Item Id="rec_University_ListView" ViewId="rec_University_ListView" ObjectKey="" Caption="University" IsNewNode="True" />
           <Item Id="rec_Work_Type_ListView" ViewId="rec_Work_Type_ListView" ObjectKey="" Caption="Work Type" IsNewNode="True" />
         </Items>
       </Item>
-      <Item Id="Data Entry" Caption="Data Entry" ImageName="BO_Folder" Index="1" IsNewNode="True">
+      <Item Id="ApplicatNode" Caption="Applicat" ImageName="rec_Applicant16" Index="1" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="rec_Applicant_ListView" ViewId="rec_Applicant_ListView" ObjectKey="" Caption="Applicant" ImageName="rec_Applicant16" Index="0" IsNewNode="True" />
           <Item Id="rec_PortfolioFileData_ListView" ViewId="rec_PortfolioFileData_ListView" ObjectKey="" Index="1" IsNewNode="True" />
@@ -264,36 +378,61 @@
           <Item Id="rec_Applicant_Project_ListView" ViewId="rec_Applicant_Project_ListView" ObjectKey="" Caption="Applicant Project" Index="5" IsNewNode="True" />
           <Item Id="rec_Applicant_Study_ListView" ViewId="rec_Applicant_Study_ListView" ObjectKey="" Caption="Applicant Study" Index="6" IsNewNode="True" />
           <Item Id="rec_Applicant_Tag_ListView" ViewId="rec_Applicant_Tag_ListView" ObjectKey="" Caption="Applicant Tag" Index="7" IsNewNode="True" />
-          <Item Id="rec_Employer_ListView" ViewId="rec_Employer_ListView" ObjectKey="" Index="8" IsNewNode="True" />
         </Items>
       </Item>
-      <Item Id="Default" Index="2">
+      <Item Id="EmployerNode" Caption="Employer" Index="2" ImageName="rec_Employer16" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="rec_Employer_ListView" ViewId="rec_Employer_ListView" ObjectKey="" Index="0" IsNewNode="True" />
+          <Item Id="rec_Employer_Order_ListView" ViewId="rec_Employer_Order_ListView" ObjectKey="" Index="1" IsNewNode="True" />
+          <Item Id="rec_Employer_Order_Detail_ListView" ViewId="rec_Employer_Order_Detail_ListView" ObjectKey="" Index="2" IsNewNode="True" />
+          <Item Id="rec_Employer_Order_Detail_Call_ListView" ViewId="rec_Employer_Order_Detail_Call_ListView" ObjectKey="" Index="3" IsNewNode="True" />
+          <Item Id="rec_Employer_Order_Detail_Suggest_Applicat_ListView" ViewId="rec_Employer_Order_Detail_Suggest_Applicat_ListView" ObjectKey="" Index="4" IsNewNode="True" />
+          <Item Id="rec_Employer_Order_Detail_Accept_Applicat_ListView" ViewId="rec_Employer_Order_Detail_Accept_Applicat_ListView" ObjectKey="" Index="5" IsNewNode="True" />
+          <Item Id="rec_Employer_Order_Detail_Accept_Applicat_Doc_ListView" ViewId="rec_Employer_Order_Detail_Accept_Applicat_Doc_ListView" ObjectKey="" Index="6" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Default" Index="3" ImageName="ModelEditor_Action_Modules" Caption="Event">
         <Items>
           <Item Id="rec_Applicant_Course_ListView" Removed="True" />
           <Item Id="rec_Applicant_Education_ListView" Removed="True" />
           <Item Id="rec_Applicant_Experience_ListView" Removed="True" />
           <Item Id="rec_Applicant_ListView" Removed="True" />
           <Item Id="rec_Applicant_Project_ListView" Removed="True" />
+          <Item Id="rec_Applicant_Status_ListView" Removed="True" />
           <Item Id="rec_Applicant_Study_ListView" Removed="True" />
           <Item Id="rec_Applicant_Tag_ListView" Removed="True" />
+          <Item Id="rec_Call_Result_ListView" Removed="True" />
           <Item Id="rec_City_ListView" Removed="True" />
           <Item Id="rec_Country_ListView" Removed="True" />
           <Item Id="rec_Degree_ListView" Removed="True" />
+          <Item Id="rec_Doc_Info_ListView" Removed="True" />
           <Item Id="rec_Employer_ListView" Removed="True" />
+          <Item Id="rec_Employer_Order_Detail_Accept_Applicat_Doc_ListView" Removed="True" />
+          <Item Id="rec_Employer_Order_Detail_Call_ListView" Removed="True" />
+          <Item Id="rec_Employer_Order_Detail_ListView" Removed="True" />
+          <Item Id="rec_Employer_Order_Detail_Suggest_Applicat_ListView" Removed="True" />
+          <Item Id="rec_Employer_Order_ListView" Removed="True" />
           <Item Id="rec_Faculty_ListView" Removed="True" />
           <Item Id="rec_Gender_ListView" Removed="True" />
           <Item Id="rec_Industry_ListView" Removed="True" />
+          <Item Id="rec_Industry_Require_Doc_Info_ListView" Removed="True" />
           <Item Id="rec_Marital_Status_ListView" Removed="True" />
           <Item Id="rec_Military_Status_ListView" Removed="True" />
           <Item Id="rec_Nationality_ListView" Removed="True" />
           <Item Id="rec_PortfolioFileData_ListView" Removed="True" />
           <Item Id="rec_Position_ListView" Removed="True" />
+          <Item Id="rec_Require_Doc_Status_ListView" Removed="True" />
           <Item Id="rec_Study_Grade_ListView" Removed="True" />
+          <Item Id="rec_Suggest_Applicat_Source_ListView" Removed="True" />
           <Item Id="rec_Tag_ListView" Removed="True" />
           <Item Id="rec_University_ListView" Removed="True" />
           <Item Id="rec_Work_Type_ListView" Removed="True" />
         </Items>
       </Item>
+      <Item Id="KPI" ImageName="BO_KPI_Definition" />
+      <Item Id="Reports" ImageName="Action_Report_ShowDesigner" />
+      <Item Id="State Machine" ImageName="BO_StateMachine" />
+      <Item Id="Users_Security" Caption="Users &amp; Security" ImageName="Action_Security_ChangePassword" IsNewNode="True" />
     </Items>
   </NavigationItems>
   <Options DataAccessMode="Server">
@@ -326,8 +465,8 @@
       <RuleRequiredField Id="@rec_Applicant_Study_app_grd_grade_year_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Study" TargetPropertyName="app_grd_grade_year" IsNewNode="True" />
       <RuleRequiredField Id="@rec_Applicant_Study_app_grd_study_grade_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Study" TargetPropertyName="app_grd_study_grade_id" IsNewNode="True" />
       <RuleRequiredField Id="@rec_Applicant_Study_degree_id_field_of_research_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Study" TargetPropertyName="degree_id_field_of_research" IsNewNode="True" />
-      <RuleRequiredField Id="@rec_Applicant_Tag_app_app_tag_tag_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Tag" TargetPropertyName="CompoundKey1.app_tag_tag_id" IsNewNode="True" />
-      <RuleRequiredField Id="@rec_Applicant_Tag_app_tag_applicant_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Tag" TargetPropertyName="CompoundKey1.app_tag_applicant_id" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Tag_app_app_tag_tag_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Tag" TargetPropertyName="app_tag_tag_id" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Applicant_Tag_app_tag_applicant_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Tag" TargetPropertyName="app_tag_applicant_id" IsNewNode="True" />
       <RuleRequiredField Id="@rec_City_city_country_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_City" TargetPropertyName="city_country_id" IsNewNode="True" />
       <RuleRequiredField Id="@rec_City_city_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_City" TargetPropertyName="city_name" IsNewNode="True" />
       <RuleRequiredField Id="@rec_Country_country_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Country" TargetPropertyName="country_name" IsNewNode="True" />
@@ -350,20 +489,16 @@
   <Views>
     <ListView Id="AuditDataItemPersistent_ListView">
       <Columns>
-        <ColumnInfo Id="ModifiedOn" Index="0" Width="77" />
-        <ColumnInfo Id="UserName" Width="122" Index="1" />
-        <ColumnInfo Id="OperationType" Width="114" />
-        <ColumnInfo Id="PropertyName" Width="112" />
-        <ColumnInfo Id="OldValue" Index="4" Width="110" />
-        <ColumnInfo Id="NewValue" Index="5" Width="109" />
-        <ColumnInfo Id="Description" Index="6" />
+        <ColumnInfo Id="UserName" Width="108" />
+        <ColumnInfo Id="OldValue" Index="4" />
+        <ColumnInfo Id="NewValue" Index="5" />
       </Columns>
     </ListView>
     <DetailView Id="rec_Applicant_Course_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="20.158102766798418">
-            <LayoutGroup Id="rec_Applicant_Course" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicant_Course" RelativeSize="100" Caption="General information">
               <LayoutGroup Id="rec_Applicant_Course_col1" RelativeSize="50">
                 <LayoutItem Id="app_crs_applicant_id" Index="0" RelativeSize="50" />
                 <LayoutItem Id="app_crs_title" Index="1" RelativeSize="50" />
@@ -386,7 +521,7 @@
         <LayoutGroup Id="Main" RelativeSize="100">
           <TabbedGroup Id="GeneralInfo" CaptionLocation="Top" Index="0" RelativeSize="44.268774703557312" IsNewNode="True">
             <LayoutGroup Id="GeneralItem" ShowCaption="True" Index="0" RelativeSize="100" Direction="Horizontal" Caption="General" IsNewNode="True">
-              <LayoutGroup Id="Auto1c30ebdf-ff96-46b7-be3e-b7e116891b8a" ShowCaption="False" Caption="Auto1c30ebdf-ff96-46b7-be3e-b7e116891b8a(4)" Index="0" RelativeSize="49.100719424460429" IsNewNode="True">
+              <LayoutGroup Id="Auto1c30ebdf-ff96-46b7-be3e-b7e116891b8a" ShowCaption="False" Caption="Auto1c30ebdf-ff96-46b7-be3e-b7e116891b8a(4)" Index="0" RelativeSize="48.152866242038215" IsNewNode="True">
                 <LayoutItem Id="applicant_name" ViewItem="applicant_name" Index="0" RelativeSize="17.391304347826086" IsNewNode="True" />
                 <LayoutItem Id="applicant_national_id" ViewItem="applicant_national_id" Index="1" RelativeSize="13.043478260869565" IsNewNode="True" />
                 <LayoutItem Id="applicant_birth_date" ViewItem="applicant_birth_date" Index="2" RelativeSize="13.043478260869565" IsNewNode="True" />
@@ -395,7 +530,7 @@
                 <LayoutItem Id="applicant_military_id" ViewItem="applicant_military_id" Index="5" RelativeSize="13.043478260869565" IsNewNode="True" />
                 <LayoutItem Id="applicant_driving_license" ViewItem="applicant_driving_license" Index="6" RelativeSize="17.391304347826086" IsNewNode="True" />
               </LayoutGroup>
-              <LayoutGroup Id="Auto5a45bc7c-f56d-4743-b397-4587813a1c75" ShowCaption="False" Caption="Auto5a45bc7c-f56d-4743-b397-4587813a1c75(12)" Index="1" RelativeSize="50.899280575539571" IsNewNode="True">
+              <LayoutGroup Id="Auto5a45bc7c-f56d-4743-b397-4587813a1c75" ShowCaption="False" Caption="Auto5a45bc7c-f56d-4743-b397-4587813a1c75(12)" Index="1" RelativeSize="51.847133757961785" IsNewNode="True">
                 <LayoutItem Id="rec_Applicant_image" ViewItem="rec_Applicant_image" Index="0" RelativeSize="100" ShowCaption="False" IsNewNode="True" />
               </LayoutGroup>
             </LayoutGroup>
@@ -408,10 +543,11 @@
               <LayoutItem Id="applicant_address" ViewItem="applicant_address" Index="5" RelativeSize="30.434782608695652" IsNewNode="True" />
             </LayoutGroup>
             <LayoutGroup Id="CareerItem" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="2" Caption="Career" RelativeSize="100" IsNewNode="True">
-              <LayoutItem Id="applicant_position_id" ViewItem="applicant_position_id" Index="0" RelativeSize="17.391304347826086" IsNewNode="True" />
-              <LayoutItem Id="applicant_industry_id" ViewItem="applicant_industry_id" Index="1" RelativeSize="13.043478260869565" IsNewNode="True" />
-              <LayoutItem Id="applicant_salary" ViewItem="applicant_salary" Index="2" RelativeSize="13.043478260869565" IsNewNode="True" />
-              <LayoutItem Id="applicant_work_type_id" ViewItem="applicant_work_type_id" Index="3" RelativeSize="56.521739130434781" IsNewNode="True" />
+              <LayoutItem Id="applicant_rec_applicant_status_id" ViewItem="applicant_rec_applicant_status_id" Index="0" RelativeSize="17.391304347826086" IsNewNode="True" />
+              <LayoutItem Id="applicant_position_id" ViewItem="applicant_position_id" Index="1" RelativeSize="13.043478260869565" IsNewNode="True" />
+              <LayoutItem Id="applicant_industry_id" ViewItem="applicant_industry_id" Index="2" RelativeSize="13.043478260869565" IsNewNode="True" />
+              <LayoutItem Id="applicant_salary" ViewItem="applicant_salary" Index="3" RelativeSize="13.043478260869565" IsNewNode="True" />
+              <LayoutItem Id="applicant_work_type_id" ViewItem="applicant_work_type_id" Index="4" RelativeSize="43.478260869565219" IsNewNode="True" />
             </LayoutGroup>
             <LayoutGroup Id="OtherItem" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="3" Caption="Other" RelativeSize="100" IsNewNode="True">
               <LayoutItem Id="applicant_skill" ViewItem="applicant_skill" Index="0" RelativeSize="17.391304347826086" IsNewNode="True" />
@@ -437,7 +573,16 @@
             <LayoutGroup Id="rec_Applicant_Studys" RelativeSize="100" Index="5">
               <LayoutItem Id="rec_Applicant_Studys" RelativeSize="100" />
             </LayoutGroup>
-            <LayoutGroup Id="AuditTrail" RelativeSize="100" Index="6">
+            <LayoutGroup Id="rec_Applicant_Tags" Index="6" RelativeSize="100">
+              <LayoutItem Id="rec_Applicant_Tags" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="rec_Employer_Order_Detail_Calls" Index="7" RelativeSize="100">
+              <LayoutItem Id="rec_Employer_Order_Detail_Calls" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="rec_Employer_Order_Detail_Suggest_Applicats" Index="8" RelativeSize="100">
+              <LayoutItem Id="rec_Employer_Order_Detail_Suggest_Applicats" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" RelativeSize="100" Index="9">
               <LayoutItem Id="AuditTrail" RelativeSize="100" />
             </LayoutGroup>
           </TabbedGroup>
@@ -453,7 +598,7 @@
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="16.8">
-            <LayoutGroup Id="rec_Applicant_Education" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicant_Education" RelativeSize="100" Caption="General information">
               <LayoutGroup Id="rec_Applicant_Education_col1" RelativeSize="50">
                 <LayoutItem Id="app_edu_applicant_id" Index="0" RelativeSize="36.363636363636367" />
                 <LayoutItem Id="app_edu_university_id" Index="1" RelativeSize="27.272727272727273" />
@@ -477,19 +622,17 @@
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="19.6">
-            <LayoutGroup Id="rec_Applicant_Experience" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicant_Experience" RelativeSize="100" Caption="General information">
               <LayoutGroup Id="rec_Applicant_Experience_col1" RelativeSize="50">
                 <LayoutItem Id="app_exp_applicant_id" Index="0" RelativeSize="28.571428571428573" />
                 <LayoutItem Id="app_exp_title" Index="1" RelativeSize="21.428571428571427" />
                 <LayoutItem Id="employer_name" Index="2" RelativeSize="21.428571428571427" />
-                <LayoutItem Id="app_exp_start_date" Index="3" RelativeSize="28.571428571428573" />
                 <LayoutItem Id="app_exp_id" Removed="True" />
               </LayoutGroup>
               <LayoutGroup Id="rec_Applicant_Experience_col2" RelativeSize="50">
                 <LayoutItem Id="app_exp_end_date" RelativeSize="28.571428571428573" />
                 <LayoutItem Id="app_exp_industry_id" RelativeSize="21.428571428571427" />
                 <LayoutItem Id="app_exp_work_type_id" RelativeSize="21.428571428571427" />
-                <LayoutItem Id="app_exp_city_id" RelativeSize="28.571428571428573" />
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
@@ -539,6 +682,7 @@
         <ColumnInfo Id="applicant_birth_date" PropertyName="applicant_birth_date" Width="68" Index="-1" IsNewNode="True" />
         <ColumnInfo Id="applicant_driving_license" PropertyName="applicant_driving_license" Width="91" Index="-1" IsNewNode="True" />
         <ColumnInfo Id="applicant_email" PropertyName="applicant_email" Width="91" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="applicant_gender_id" PropertyName="applicant_gender_id" Width="55" Index="-1" IsNewNode="True" />
         <ColumnInfo Id="applicant_id" PropertyName="applicant_id" Width="50" Index="-1" IsNewNode="True" />
         <ColumnInfo Id="applicant_marital_status_id" PropertyName="applicant_marital_status_id" Width="86" Index="-1" IsNewNode="True" />
         <ColumnInfo Id="applicant_military_id" PropertyName="applicant_military_id" Width="88" Index="-1" IsNewNode="True" />
@@ -548,21 +692,47 @@
         <ColumnInfo Id="applicant_salary" PropertyName="applicant_salary" Width="50" Index="-1" IsNewNode="True" />
         <ColumnInfo Id="applicant_skill" PropertyName="applicant_skill" Width="70" Index="-1" IsNewNode="True" />
         <ColumnInfo Id="applicant_summary" PropertyName="applicant_summary" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="applicant_work_type_id" PropertyName="applicant_work_type_id" Width="72" Index="-1" IsNewNode="True" />
         <ColumnInfo Id="rec_Applicant_image" PropertyName="rec_Applicant_image" Width="79" Index="0" IsNewNode="True" />
         <ColumnInfo Id="applicant_name" PropertyName="applicant_name" Width="145" Index="1" IsNewNode="True" />
         <ColumnInfo Id="applicant_city_id" PropertyName="applicant_city_id" Width="39" Index="2" IsNewNode="True" />
         <ColumnInfo Id="applicant_phone" PropertyName="applicant_phone" Width="97" Index="3" IsNewNode="True" />
         <ColumnInfo Id="applicant_mobile" PropertyName="applicant_mobile" Width="97" Index="4" IsNewNode="True" />
-        <ColumnInfo Id="applicant_work_type_id" PropertyName="applicant_work_type_id" Width="72" Index="5" IsNewNode="True" />
-        <ColumnInfo Id="applicant_industry_id" PropertyName="applicant_industry_id" Width="61" Index="6" IsNewNode="True" />
-        <ColumnInfo Id="applicant_gender_id" PropertyName="applicant_gender_id" Width="55" Index="7" IsNewNode="True" />
+        <ColumnInfo Id="applicant_industry_id" PropertyName="applicant_industry_id" Width="61" Index="5" IsNewNode="True" />
+        <ColumnInfo Id="applicant_rec_applicant_status_id" PropertyName="applicant_rec_applicant_status_id" Index="6" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="rec_Applicant_LookupListView" FilterEnabled="True" Filter="">
+      <Columns>
+        <ColumnInfo Id="applicant_address" Index="-1" Removed="True" />
+        <ColumnInfo Id="applicant_birth_date" Index="-1" Removed="True" />
+        <ColumnInfo Id="applicant_city_id" Index="-1" Width="0" />
+        <ColumnInfo Id="applicant_driving_license" Index="-1" Width="120" Removed="True" />
+        <ColumnInfo Id="applicant_email" Index="-1" Width="91" />
+        <ColumnInfo Id="applicant_gender_id" Index="-1" Removed="True" />
+        <ColumnInfo Id="applicant_marital_status_id" Index="-1" Removed="True" />
+        <ColumnInfo Id="applicant_military_id" Index="-1" Removed="True" />
+        <ColumnInfo Id="applicant_mobile" Index="-1" Removed="True" />
+        <ColumnInfo Id="applicant_national_id" Index="-1" Removed="True" />
+        <ColumnInfo Id="applicant_nationality_id" Index="-1" Removed="True" />
+        <ColumnInfo Id="applicant_phone" Index="-1" Removed="True" />
+        <ColumnInfo Id="applicant_position_id" Index="-1" Removed="True" />
+        <ColumnInfo Id="applicant_rec_applicant_status_id" Index="-1" Width="81" />
+        <ColumnInfo Id="applicant_salary" Index="-1" Removed="True" />
+        <ColumnInfo Id="applicant_work_type_id" Index="-1" Removed="True" />
+        <ColumnInfo Id="rec_Applicant_image" Index="-1" Removed="True" />
+        <ColumnInfo Id="applicant_id" MaxLength="0" Index="0" />
+        <ColumnInfo Id="applicant_name" Index="1" Width="151" />
+        <ColumnInfo Id="applicant_industry_id" Index="2" Width="100" />
+        <ColumnInfo Id="applicant_skill" Removed="True" />
+        <ColumnInfo Id="applicant_summary" Removed="True" />
       </Columns>
     </ListView>
     <DetailView Id="rec_Applicant_Project_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="16.4">
-            <LayoutGroup Id="rec_Applicant_Project" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicant_Project" RelativeSize="100" Caption="General information">
               <LayoutGroup Id="rec_Applicant_Project_col1" RelativeSize="50">
                 <LayoutItem Id="app_prj_applicant_id" Index="0" RelativeSize="36.363636363636367" />
                 <LayoutItem Id="app_prj_title" Index="1" RelativeSize="63.636363636363633" />
@@ -584,11 +754,44 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="rec_Applicant_rec_Applicant_rec_PortfolioFileData_ListView">
+      <Columns>
+        <ColumnInfo Id="DocumentType" Width="96" />
+      </Columns>
+    </ListView>
+    <DetailView Id="rec_Applicant_Status_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="5.0666666666666664">
+            <LayoutGroup Id="rec_Applicant_Status" Caption="rec_Applicant_Status" RelativeSize="100">
+              <LayoutItem Id="rec_applicant_status_name" Index="0" RelativeSize="100" />
+              <LayoutItem Id="rec_applicant_status_id" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="94.933333333333337">
+            <LayoutGroup Id="rec_Applicants" RelativeSize="100" Index="0" Removed="True">
+              <LayoutItem Id="rec_Applicants" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" Index="2" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="rec_Applicant_Status_ListView">
+      <Columns>
+        <ColumnInfo Id="rec_applicant_status_name" Width="178" />
+      </Columns>
+    </ListView>
+    <ListView Id="rec_Applicant_Status_LookupListView">
+      <Columns>
+        <ColumnInfo Id="rec_applicant_status_name" Width="153" />
+      </Columns>
+    </ListView>
     <DetailView Id="rec_Applicant_Study_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="16.8">
-            <LayoutGroup Id="rec_Applicant_Study" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicant_Study" RelativeSize="100" Caption="General information">
               <LayoutGroup Id="rec_Applicant_Study_col1" RelativeSize="50">
                 <LayoutItem Id="app_grd_applicant_id" Index="0" RelativeSize="36.363636363636367" />
                 <LayoutItem Id="app_grd_degree_id" Index="1" RelativeSize="63.636363636363633" />
@@ -610,23 +813,36 @@
     <DetailView Id="rec_Applicant_Tag_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="16.8">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="8.2666666666666675">
             <LayoutGroup Id="rec_Applicant_Tag" RelativeSize="100">
-              <LayoutGroup Id="rec_Applicant_Tag_col1" RelativeSize="50">
-                <LayoutItem Id="app_tag_user_id" Index="0" RelativeSize="36.363636363636367" />
-                <LayoutItem Id="app_tag_date_in" Index="1" RelativeSize="63.636363636363633" />
-                <LayoutItem Id="app_tag_id" Removed="True" />
-              </LayoutGroup>
-              <LayoutGroup Id="rec_Applicant_Tag_col2" RelativeSize="50">
-                <LayoutItem Id="CompoundKey1" RelativeSize="36.363636363636367" />
-                <LayoutItem Id="CompoundKey1.app_tag_applicant_id" RelativeSize="27.272727272727273" />
-                <LayoutItem Id="CompoundKey1.app_tag_tag_id" RelativeSize="36.363636363636367" />
-              </LayoutGroup>
+              <LayoutItem Id="app_tag_applicant_id" Index="0" RelativeSize="51.612903225806448" />
+              <LayoutItem Id="app_tag_tag_id" Index="1" RelativeSize="48.387096774193552" />
+              <LayoutItem Id="app_tag_id" Removed="True" />
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="83.2">
+          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="91.733333333333334">
             <LayoutItem Id="AuditTrail" RelativeSize="100" />
           </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Call_Result_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="5.0666666666666664">
+            <LayoutGroup Id="rec_Call_Result" Caption="rec_Call_Result" RelativeSize="100">
+              <LayoutItem Id="rec_call_result_name" Index="0" RelativeSize="100" />
+              <LayoutItem Id="rec_call_result_id" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="94.933333333333337">
+            <LayoutGroup Id="rec_Employer_Order_Detail_Calls" Index="0" RelativeSize="100" Removed="True">
+              <LayoutItem Id="rec_Employer_Order_Detail_Calls" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" Index="1" RelativeSize="100">
+              <LayoutItem Id="AuditTrail" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>
@@ -641,7 +857,7 @@
             </LayoutGroup>
           </LayoutGroup>
           <TabbedGroup Id="Tabs" RelativeSize="91.733333333333334">
-            <LayoutGroup Id="rec_Applicants" Index="0" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicants" Index="0" RelativeSize="100" Removed="True">
               <LayoutItem Id="rec_Applicants" RelativeSize="100" />
             </LayoutGroup>
             <LayoutGroup Id="AuditTrail" Index="1" RelativeSize="100">
@@ -685,13 +901,33 @@
             </LayoutGroup>
           </LayoutGroup>
           <TabbedGroup Id="Tabs" RelativeSize="94.933333333333337">
-            <LayoutGroup Id="rec_Applicant_Educations" Index="0" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicant_Educations" Index="0" RelativeSize="100" Removed="True">
               <LayoutItem Id="rec_Applicant_Educations" RelativeSize="100" />
             </LayoutGroup>
-            <LayoutGroup Id="rec_Applicant_Studys" Index="1" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicant_Studys" Index="1" RelativeSize="100" Removed="True">
               <LayoutItem Id="rec_Applicant_Studys" RelativeSize="100" />
             </LayoutGroup>
             <LayoutGroup Id="AuditTrail" Index="2" RelativeSize="100">
+              <LayoutItem Id="AuditTrail" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Doc_Info_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="5.0666666666666664">
+            <LayoutGroup Id="rec_Doc_Info" Caption="rec_Doc_Info" RelativeSize="100">
+              <LayoutItem Id="rec_doc_info_name" Index="0" RelativeSize="100" />
+              <LayoutItem Id="rec_doc_info_id" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="94.933333333333337">
+            <LayoutGroup Id="rec_Industry_Require_Doc_Infos" Index="0" RelativeSize="100" Removed="True">
+              <LayoutItem Id="rec_Industry_Require_Doc_Infos" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" Index="1" RelativeSize="100">
               <LayoutItem Id="AuditTrail" RelativeSize="100" />
             </LayoutGroup>
           </TabbedGroup>
@@ -702,18 +938,164 @@
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="8.2666666666666675">
-            <LayoutGroup Id="rec_Employer" RelativeSize="100">
-              <LayoutItem Id="employer_name" Index="0" RelativeSize="51.612903225806448" />
-              <LayoutItem Id="employer_Address" Index="1" RelativeSize="48.387096774193552" />
-              <LayoutItem Id="employer_id" Removed="True" />
+            <LayoutGroup Id="rec_Employer" RelativeSize="100" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="rec_Employer_Orders" Index="0" />
+            <LayoutGroup Id="AuditTrail" Index="1" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Employer_Order_Detail_Accept_Applicat_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="11.466666666666667">
+            <LayoutGroup Id="rec_Employer_Order_Detail_Accept_Applicat" RelativeSize="100">
+              <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_applicant_status_id" Index="2" RelativeSize="34.883720930232556" />
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="91.733333333333334">
+          <LayoutGroup Id="SizeableEditors" RelativeSize="4.4">
+            <LayoutItem Id="rec_employer_order_detail_accept_applicat_description" RelativeSize="100" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="84.13333333333334">
+            <LayoutGroup Id="rec_Employer_Order_Detail_Accept_Applicat_Docs" Index="0" RelativeSize="100">
+              <LayoutItem Id="rec_Employer_Order_Detail_Accept_Applicat_Docs" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" Index="1" RelativeSize="100">
+              <LayoutItem Id="AuditTrail" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Employer_Order_Detail_Accept_Applicat_Doc_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="11.466666666666667">
+            <LayoutGroup Id="rec_Employer_Order_Detail_Accept_Applicat_Doc" RelativeSize="100">
+              <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_employer_order_detail_accept_applicat_id" Index="0" RelativeSize="37.2093023255814" />
+              <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_industry_require_doc_info_id" Index="1" RelativeSize="27.906976744186046" />
+              <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_require_doc_status_id" Index="2" RelativeSize="34.883720930232556" />
+              <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_id" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="4.4">
+            <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_description" RelativeSize="100" />
+          </LayoutGroup>
+          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="84.13333333333334">
             <LayoutItem Id="AuditTrail" RelativeSize="100" />
           </LayoutGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <DetailView Id="rec_Employer_Order_Detail_Call_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="13.2">
+            <LayoutGroup Id="rec_Employer_Order_Detail_Call" RelativeSize="100" Caption="Call Details">
+              <LayoutGroup Id="rec_Employer_Order_Detail_Call_col1" RelativeSize="50">
+                <LayoutItem Id="rec_employer_order_detail_call_rec_employer_order_detail_id" Index="0" RelativeSize="50" />
+                <LayoutItem Id="rec_employer_order_detail_call_applicant_id" Index="1" RelativeSize="50" />
+                <LayoutItem Id="rec_employer_order_detail_call_id" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="rec_Employer_Order_Detail_Call_col2" RelativeSize="50">
+                <LayoutItem Id="rec_employer_order_detail_call_date" RelativeSize="50" />
+                <LayoutItem Id="rec_employer_order_detail_call_rec_call_result_id" RelativeSize="50" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="4.4">
+            <LayoutItem Id="rec_employer_order_detail_call_description" RelativeSize="100" />
+          </LayoutGroup>
+          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="82.4">
+            <LayoutItem Id="AuditTrail" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Employer_Order_Detail_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="13.6">
+            <LayoutGroup Id="rec_Employer_Order_Detail" RelativeSize="100" Caption="General information">
+              <LayoutGroup Id="rec_Employer_Order_Detail_col1" RelativeSize="50">
+                <LayoutItem Id="CustomName" RelativeSize="50" />
+                <LayoutItem Id="rec_employer_order_detail_rec_employer_order_id" Index="1" RelativeSize="50" />
+                <LayoutItem Id="rec_employer_order_detail_id" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="rec_Employer_Order_Detail_col2" RelativeSize="50">
+                <LayoutItem Id="rec_employer_order_detail_industry_id" RelativeSize="50" />
+                <LayoutItem Id="rec_employer_order_detail_count" RelativeSize="50" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="86.4">
+            <LayoutGroup Id="rec_Employer_Order_Detail_Suggest_Applicats" Index="0" Caption="Order Suggested Applicats" RelativeSize="100">
+              <LayoutItem Id="rec_Employer_Order_Detail_Suggest_Applicats" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="rec_Employer_Order_Detail_Calls" Caption="Order Calls" RelativeSize="100">
+              <LayoutItem Id="rec_Employer_Order_Detail_Calls" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" Index="2" RelativeSize="100">
+              <LayoutItem Id="AuditTrail" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Employer_Order_Detail_Suggest_Applicat_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="13.2">
+            <LayoutGroup Id="rec_Employer_Order_Detail_Suggest_Applicat" RelativeSize="100" Caption="General information">
+              <LayoutGroup Id="rec_Employer_Order_Detail_Suggest_Applicat_col1" RelativeSize="50">
+                <LayoutItem Id="CustomName" RelativeSize="50" />
+                <LayoutItem Id="rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id" Index="1" RelativeSize="50" />
+                <LayoutItem Id="rec_employer_order_detail_suggest_applicat_id" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="rec_Employer_Order_Detail_Suggest_Applicat_col2" RelativeSize="50">
+                <LayoutItem Id="rec_employer_order_detail_suggest_applicat_applicant_id" RelativeSize="50" />
+                <LayoutItem Id="rec_employer_order_detail_suggest_applicat_rec_suggest_applicat_source_id" RelativeSize="50" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="4.4">
+            <LayoutItem Id="rec_employer_order_detail_suggest_applicat_description" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Employer_Order_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="8.2666666666666675">
+            <LayoutGroup Id="rec_Employer_Order" RelativeSize="100">
+              <LayoutItem Id="rec_employer_order_employer_id" Index="0" RelativeSize="51.612903225806448" />
+              <LayoutItem Id="rec_employer_order_date" Index="1" RelativeSize="48.387096774193552" />
+              <LayoutItem Id="CustomName" Removed="True" />
+              <LayoutItem Id="rec_employer_order_id" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="4.4">
+            <LayoutItem Id="rec_employer_order_description" RelativeSize="100" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="87.333333333333329">
+            <LayoutGroup Id="rec_Employer_Order_Details" Index="0" RelativeSize="100">
+              <LayoutItem Id="rec_Employer_Order_Details" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" Index="1" RelativeSize="100">
+              <LayoutItem Id="AuditTrail" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="rec_Employer_Order_ListView">
+      <Columns>
+        <ColumnInfo Id="CustomName" Removed="True" />
+      </Columns>
+    </ListView>
     <DetailView Id="rec_Faculty_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
@@ -724,7 +1106,7 @@
             </LayoutGroup>
           </LayoutGroup>
           <TabbedGroup Id="Tabs" RelativeSize="94.933333333333337">
-            <LayoutGroup Id="rec_Applicant_Educations" Index="0" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicant_Educations" Index="0" RelativeSize="100" Removed="True">
               <LayoutItem Id="rec_Applicant_Educations" RelativeSize="100" />
             </LayoutGroup>
             <LayoutGroup Id="AuditTrail" Index="1" RelativeSize="100">
@@ -747,7 +1129,7 @@
             <LayoutGroup Id="AuditTrail" RelativeSize="100">
               <LayoutItem Id="AuditTrail" RelativeSize="100" />
             </LayoutGroup>
-            <LayoutGroup Id="rec_Applicants" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicants" RelativeSize="100" Removed="True">
               <LayoutItem Id="rec_Applicants" RelativeSize="100" />
             </LayoutGroup>
           </TabbedGroup>
@@ -765,23 +1147,46 @@
             </LayoutGroup>
           </LayoutGroup>
           <TabbedGroup Id="Tabs" RelativeSize="94.933333333333337">
-            <LayoutGroup Id="rec_Applicants" Index="0" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicants" Index="0" RelativeSize="100" Removed="True">
               <LayoutItem Id="rec_Applicants" RelativeSize="100" />
             </LayoutGroup>
-            <LayoutGroup Id="rec_Applicant_Educations" Index="1" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicant_Educations" Index="1" RelativeSize="100" Removed="True">
               <LayoutItem Id="rec_Applicant_Educations" RelativeSize="100" />
             </LayoutGroup>
-            <LayoutGroup Id="rec_Applicant_Experiences" Index="2" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicant_Experiences" Index="2" RelativeSize="100" Removed="True">
               <LayoutItem Id="rec_Applicant_Experiences" RelativeSize="100" />
             </LayoutGroup>
             <LayoutGroup Id="AuditTrail" Index="3" RelativeSize="100">
+              <LayoutItem Id="AuditTrail" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="rec_Employer_Order_Details" Removed="True" />
+            <LayoutGroup Id="rec_Industry_Require_Doc_Infos" Removed="True" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="rec_Industry_rec_Applicants_ListView" IsGroupPanelVisible="True" IsFooterVisible="True" />
+    <DetailView Id="rec_Industry_Require_Doc_Info_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="8.2666666666666675">
+            <LayoutGroup Id="rec_Industry_Require_Doc_Info" RelativeSize="100">
+              <LayoutItem Id="rec_industry_require_doc_info_rec_doc_info_id" Index="0" RelativeSize="51.612903225806448" />
+              <LayoutItem Id="rec_industry_require_doc_info_industry_id" Index="1" RelativeSize="48.387096774193552" />
+              <LayoutItem Id="rec_industry_require_doc_info_id" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="91.733333333333334">
+            <LayoutGroup Id="rec_Employer_Order_Detail_Accept_Applicat_Docs" Index="0" RelativeSize="100">
+              <LayoutItem Id="rec_Employer_Order_Detail_Accept_Applicat_Docs" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" Index="1" RelativeSize="100">
               <LayoutItem Id="AuditTrail" RelativeSize="100" />
             </LayoutGroup>
           </TabbedGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>
-    <ListView Id="rec_Industry_rec_Applicants_ListView" IsGroupPanelVisible="True" IsFooterVisible="True" />
     <DetailView Id="rec_Marital_Status_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
@@ -792,7 +1197,7 @@
             </LayoutGroup>
           </LayoutGroup>
           <TabbedGroup Id="Tabs" RelativeSize="94.933333333333337">
-            <LayoutGroup Id="rec_Applicants" Index="0" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicants" Index="0" RelativeSize="100" Removed="True">
               <LayoutItem Id="rec_Applicants" RelativeSize="100" />
             </LayoutGroup>
             <LayoutGroup Id="AuditTrail" Index="1" RelativeSize="100">
@@ -813,7 +1218,7 @@
             </LayoutGroup>
           </LayoutGroup>
           <TabbedGroup Id="Tabs" RelativeSize="94.933333333333337">
-            <LayoutGroup Id="rec_Applicants" Index="0" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicants" Index="0" RelativeSize="100" Removed="True">
               <LayoutItem Id="rec_Applicants" RelativeSize="100" />
             </LayoutGroup>
             <LayoutGroup Id="AuditTrail" Index="1" RelativeSize="100">
@@ -834,7 +1239,7 @@
             </LayoutGroup>
           </LayoutGroup>
           <TabbedGroup Id="Tabs" RelativeSize="94.933333333333337">
-            <LayoutGroup Id="rec_Applicants" Index="0" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicants" Index="0" RelativeSize="100" Removed="True">
               <LayoutItem Id="rec_Applicants" RelativeSize="100" />
             </LayoutGroup>
             <LayoutGroup Id="AuditTrail" Index="1" RelativeSize="100">
@@ -863,7 +1268,7 @@
             </LayoutGroup>
           </LayoutGroup>
           <TabbedGroup Id="Tabs" RelativeSize="94.933333333333337">
-            <LayoutGroup Id="rec_Applicants" Index="0" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicants" Index="0" RelativeSize="100" Removed="True">
               <LayoutItem Id="rec_Applicants" RelativeSize="100" />
             </LayoutGroup>
             <LayoutGroup Id="AuditTrail" Index="1" RelativeSize="100">
@@ -874,6 +1279,26 @@
       </Layout>
     </DetailView>
     <ListView Id="rec_Position_rec_Applicants_ListView" IsGroupPanelVisible="True" IsFooterVisible="True" />
+    <DetailView Id="rec_Require_Doc_Status_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="5.0666666666666664">
+            <LayoutGroup Id="rec_Require_Doc_Status" Caption="rec_Require_Doc_Status" RelativeSize="100">
+              <LayoutItem Id="rec_require_doc_status_name" Index="0" RelativeSize="100" />
+              <LayoutItem Id="rec_require_doc_status_id" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="94.933333333333337">
+            <LayoutGroup Id="rec_Employer_Order_Detail_Accept_Applicat_Docs" Index="0" RelativeSize="100" Removed="True">
+              <LayoutItem Id="rec_Employer_Order_Detail_Accept_Applicat_Docs" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" Index="1" RelativeSize="100">
+              <LayoutItem Id="AuditTrail" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <DetailView Id="rec_Study_Grade_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
@@ -884,10 +1309,30 @@
             </LayoutGroup>
           </LayoutGroup>
           <TabbedGroup Id="Tabs" RelativeSize="94.933333333333337">
-            <LayoutGroup Id="rec_Applicant_Studys" Index="0" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicant_Studys" Index="0" RelativeSize="100" Removed="True">
               <LayoutItem Id="rec_Applicant_Studys" RelativeSize="100" />
             </LayoutGroup>
             <LayoutGroup Id="AuditTrail" Index="1" RelativeSize="100">
+              <LayoutItem Id="AuditTrail" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Suggest_Applicat_Source_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="5.0666666666666664">
+            <LayoutGroup Id="rec_Suggest_Applicat_Source" Caption="rec_Suggest_Applicat_Source" RelativeSize="100">
+              <LayoutItem Id="rec_suggest_applicat_source_name" Index="0" RelativeSize="100" />
+              <LayoutItem Id="rec_suggest_applicat_source_id" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="94.933333333333337">
+            <LayoutGroup Id="rec_Employer_Order_Detail_Suggest_Applicats" RelativeSize="100" Index="0" Removed="True">
+              <LayoutItem Id="rec_Employer_Order_Detail_Suggest_Applicats" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" RelativeSize="100" Index="1">
               <LayoutItem Id="AuditTrail" RelativeSize="100" />
             </LayoutGroup>
           </TabbedGroup>
@@ -903,9 +1348,6 @@
               <LayoutItem Id="tag_id" Removed="True" />
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="94.933333333333337">
-            <LayoutItem Id="AuditTrail" RelativeSize="100" />
-          </LayoutGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>
@@ -919,7 +1361,7 @@
             </LayoutGroup>
           </LayoutGroup>
           <TabbedGroup Id="Tabs" RelativeSize="94.933333333333337">
-            <LayoutGroup Id="rec_Applicant_Educations" Index="0" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicant_Educations" Index="0" RelativeSize="100" Removed="True">
               <LayoutItem Id="rec_Applicant_Educations" RelativeSize="100" />
             </LayoutGroup>
             <LayoutGroup Id="AuditTrail" Index="1" RelativeSize="100">
@@ -939,10 +1381,10 @@
             </LayoutGroup>
           </LayoutGroup>
           <TabbedGroup Id="Tabs" RelativeSize="94.933333333333337">
-            <LayoutGroup Id="rec_Applicants" Index="0" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicants" Index="0" RelativeSize="100" Removed="True">
               <LayoutItem Id="rec_Applicants" RelativeSize="100" />
             </LayoutGroup>
-            <LayoutGroup Id="rec_Applicant_Experiences" Index="1" RelativeSize="100">
+            <LayoutGroup Id="rec_Applicant_Experiences" Index="1" RelativeSize="100" Removed="True">
               <LayoutItem Id="rec_Applicant_Experiences" RelativeSize="100" />
             </LayoutGroup>
             <LayoutGroup Id="AuditTrail" Index="2" RelativeSize="100">

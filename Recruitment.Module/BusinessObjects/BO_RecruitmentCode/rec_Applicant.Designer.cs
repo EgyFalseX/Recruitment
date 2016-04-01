@@ -160,6 +160,14 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return fapplicant_address; }
             set { SetPropertyValue<string>("applicant_address", ref fapplicant_address, value); }
         }
+        rec_Applicant_Status fapplicant_rec_applicant_status_id;
+        [Indexed(Name = @"iapplicant_rec_applicant_status_id_rec_Applicant")]
+        [Association(@"rec_ApplicantReferencesrec_Applicant_Status")]
+        public rec_Applicant_Status applicant_rec_applicant_status_id
+        {
+            get { return fapplicant_rec_applicant_status_id; }
+            set { SetPropertyValue<rec_Applicant_Status>("applicant_rec_applicant_status_id", ref fapplicant_rec_applicant_status_id, value); }
+        }
         [Association(@"rec_Applicant_CourseReferencesrec_Applicant")]
         public XPCollection<rec_Applicant_Course> rec_Applicant_Courses { get { return GetCollection<rec_Applicant_Course>("rec_Applicant_Courses"); } }
         [Association(@"rec_Applicant_EducationReferencesrec_Applicant")]
@@ -170,6 +178,12 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         public XPCollection<rec_Applicant_Project> rec_Applicant_Projects { get { return GetCollection<rec_Applicant_Project>("rec_Applicant_Projects"); } }
         [Association(@"rec_Applicant_StudyReferencesrec_Applicant")]
         public XPCollection<rec_Applicant_Study> rec_Applicant_Studys { get { return GetCollection<rec_Applicant_Study>("rec_Applicant_Studys"); } }
+        [Association(@"rec_Employer_Order_Detail_CallReferencesrec_Applicant")]
+        public XPCollection<rec_Employer_Order_Detail_Call> rec_Employer_Order_Detail_Calls { get { return GetCollection<rec_Employer_Order_Detail_Call>("rec_Employer_Order_Detail_Calls"); } }
+        [Association(@"rec_Employer_Order_Detail_Suggest_ApplicatReferencesrec_Applicant")]
+        public XPCollection<rec_Employer_Order_Detail_Suggest_Applicat> rec_Employer_Order_Detail_Suggest_Applicats { get { return GetCollection<rec_Employer_Order_Detail_Suggest_Applicat>("rec_Employer_Order_Detail_Suggest_Applicats"); } }
+        [Association(@"rec_Applicant_TagReferencesrec_Applicant")]
+        public XPCollection<rec_Applicant_Tag> rec_Applicant_Tags { get { return GetCollection<rec_Applicant_Tag>("rec_Applicant_Tags"); } }
     }
 
 }

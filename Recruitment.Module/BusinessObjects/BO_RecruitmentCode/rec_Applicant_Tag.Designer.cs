@@ -17,32 +17,29 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     public partial class rec_Applicant_Tag : XPLiteObject
     {
         int fapp_tag_id;
+        [Indexed(Name = @"rec_Applicant_Tag.app_tag_id", Unique = true)]
+        [Key(true)]
         public int app_tag_id
         {
             get { return fapp_tag_id; }
             set { SetPropertyValue<int>("app_tag_id", ref fapp_tag_id, value); }
         }
-        int fapp_tag_user_id;
-        public int app_tag_user_id
+        rec_Applicant fapp_tag_applicant_id;
+        [Indexed(Name = @"rec_Applicant_Tag.app_tag_applicant_id")]
+        [Association(@"rec_Applicant_TagReferencesrec_Applicant")]
+        public rec_Applicant app_tag_applicant_id
         {
-            get { return fapp_tag_user_id; }
-            set { SetPropertyValue<int>("app_tag_user_id", ref fapp_tag_user_id, value); }
+            get { return fapp_tag_applicant_id; }
+            set { SetPropertyValue<rec_Applicant>("app_tag_applicant_id", ref fapp_tag_applicant_id, value); }
         }
-        DateTime fapp_tag_date_in;
-        public DateTime app_tag_date_in
+        rec_Tag fapp_tag_tag_id;
+        [Indexed(Name = @"rec_Applicant_Tag.app_tag_tag_id")]
+        [Association(@"rec_Applicant_TagReferencesrec_Tag")]
+        public rec_Tag app_tag_tag_id
         {
-            get { return fapp_tag_date_in; }
-            set { SetPropertyValue<DateTime>("app_tag_date_in", ref fapp_tag_date_in, value); }
+            get { return fapp_tag_tag_id; }
+            set { SetPropertyValue<rec_Tag>("app_tag_tag_id", ref fapp_tag_tag_id, value); }
         }
-        public struct CompoundKey1Struct
-        {
-            [Persistent("app_tag_applicant_id")]
-            public int app_tag_applicant_id { get; set; }
-            [Persistent("app_tag_tag_id")]
-            public int app_tag_tag_id { get; set; }
-        }
-        [Key, Persistent]
-        public CompoundKey1Struct CompoundKey1;
     }
 
 }

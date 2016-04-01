@@ -180,6 +180,10 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Project.Designer.cs">
       <DependentUpon>rec_Applicant_Project.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Status.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Status.Designer.cs">
+      <DependentUpon>rec_Applicant_Status.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Study.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Study.Designer.cs">
       <DependentUpon>rec_Applicant_Study.cs</DependentUpon>
@@ -187,6 +191,10 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Tag.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Tag.Designer.cs">
       <DependentUpon>rec_Applicant_Tag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Call_Result.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Call_Result.Designer.cs">
+      <DependentUpon>rec_Call_Result.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_City.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_City.Designer.cs">
@@ -200,9 +208,37 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Degree.Designer.cs">
       <DependentUpon>rec_Degree.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Doc_Info.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Doc_Info.Designer.cs">
+      <DependentUpon>rec_Doc_Info.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer.Designer.cs">
       <DependentUpon>rec_Employer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order.Designer.cs">
+      <DependentUpon>rec_Employer_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail.Designer.cs">
+      <DependentUpon>rec_Employer_Order_Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Accept_Applicat.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Accept_Applicat.Designer.cs">
+      <DependentUpon>rec_Employer_Order_Detail_Accept_Applicat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Accept_Applicat_Doc.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Accept_Applicat_Doc.Designer.cs">
+      <DependentUpon>rec_Employer_Order_Detail_Accept_Applicat_Doc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Call.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Call.Designer.cs">
+      <DependentUpon>rec_Employer_Order_Detail_Call.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Suggest_Applicat.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Suggest_Applicat.Designer.cs">
+      <DependentUpon>rec_Employer_Order_Detail_Suggest_Applicat.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Faculty.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Faculty.Designer.cs">
@@ -215,6 +251,10 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Industry.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Industry.Designer.cs">
       <DependentUpon>rec_Industry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Industry_Require_Doc_Info.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Industry_Require_Doc_Info.Designer.cs">
+      <DependentUpon>rec_Industry_Require_Doc_Info.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Marital_Status.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Marital_Status.Designer.cs">
@@ -232,9 +272,17 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Position.Designer.cs">
       <DependentUpon>rec_Position.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Require_Doc_Status.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Require_Doc_Status.Designer.cs">
+      <DependentUpon>rec_Require_Doc_Status.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Study_Grade.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Study_Grade.Designer.cs">
       <DependentUpon>rec_Study_Grade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Suggest_Applicat_Source.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Suggest_Applicat_Source.Designer.cs">
+      <DependentUpon>rec_Suggest_Applicat_Source.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Tag.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Tag.Designer.cs">
@@ -248,7 +296,16 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Work_Type.Designer.cs">
       <DependentUpon>rec_Work_Type.cs</DependentUpon>
     </Compile>
-    <Compile Include="BusinessObjects\DomainObject1.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\StoredProcHelper.cs" />
+    <Compile Include="Controllers\ctr_RoleCRUD.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ctr_RoleCRUD.Designer.cs">
+      <DependentUpon>ctr_RoleCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ctr_ShowFooter.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controllers\TestCtr.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -266,6 +323,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controllers\ctr_RoleCRUD.resx">
+      <DependentUpon>ctr_RoleCRUD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     <EmbeddedResource Include="Module.resx">
       <SubType>Designer</SubType>
@@ -347,6 +407,66 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="UnusableNodes1.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes2.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="Images\rec_call_result16.png" />
+    <EmbeddedResource Include="Images\rec_call_result32.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Status16.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Status32.png" />
+    <EmbeddedResource Include="Images\rec_Doc_Info16.png" />
+    <EmbeddedResource Include="Images\rec_Doc_Info32.png" />
+    <EmbeddedResource Include="Images\rec_employer_order16.png" />
+    <EmbeddedResource Include="Images\rec_employer_order32.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail16.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail32.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail_accept_applicat16.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail_accept_applicat32.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail_accept_applicat_doc16.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail_accept_applicat_doc32.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail_call16.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail_call32.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail_suggest_applicat16.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail_suggest_applicat32.png" />
+    <EmbeddedResource Include="Images\rec_industry_require_doc16.png" />
+    <EmbeddedResource Include="Images\rec_industry_require_doc32.png" />
+    <EmbeddedResource Include="Images\rec_require_doc_status16.png" />
+    <EmbeddedResource Include="Images\rec_require_doc_status32.png" />
+    <EmbeddedResource Include="Images\rec_suggest_applicat_source16.png" />
+    <EmbeddedResource Include="Images\rec_suggest_applicat_source32.png" />
+    <None Include="UnusableNodes3.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes4.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes5.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes6.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes7.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes8.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes9.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes10.xml">
       <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
       <SubType>Designer</SubType>
     </None>
