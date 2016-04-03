@@ -42,17 +42,21 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return femployer_email; }
             set { SetPropertyValue<string>("employer_email", ref femployer_email, value); }
         }
-        int femployer_city_id;
-        public int employer_city_id
+        rec_City femployer_city_id;
+        [Indexed(Name = @"iemployer_city_id_rec_Employer")]
+        [Association(@"rec_EmployerReferencesrec_City")]
+        public rec_City employer_city_id
         {
             get { return femployer_city_id; }
-            set { SetPropertyValue<int>("employer_city_id", ref femployer_city_id, value); }
+            set { SetPropertyValue<rec_City>("employer_city_id", ref femployer_city_id, value); }
         }
-        int femployer_gender_id;
-        public int employer_gender_id
+        rec_Gender femployer_gender_id;
+        [Indexed(Name = @"iemployer_gender_id_rec_Employer")]
+        [Association(@"rec_EmployerReferencesrec_Gender")]
+        public rec_Gender employer_gender_id
         {
             get { return femployer_gender_id; }
-            set { SetPropertyValue<int>("employer_gender_id", ref femployer_gender_id, value); }
+            set { SetPropertyValue<rec_Gender>("employer_gender_id", ref femployer_gender_id, value); }
         }
         string femployer_national_id;
         [Size(50)]
@@ -75,11 +79,19 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return femployer_mobile; }
             set { SetPropertyValue<string>("employer_mobile", ref femployer_mobile, value); }
         }
-        int femployer_nationality_id;
-        public int employer_nationality_id
+        rec_Nationality femployer_nationality_id;
+        [Indexed(Name = @"iemployer_nationality_id_rec_Employer")]
+        [Association(@"rec_EmployerReferencesrec_Nationality")]
+        public rec_Nationality employer_nationality_id
         {
             get { return femployer_nationality_id; }
-            set { SetPropertyValue<int>("employer_nationality_id", ref femployer_nationality_id, value); }
+            set { SetPropertyValue<rec_Nationality>("employer_nationality_id", ref femployer_nationality_id, value); }
+        }
+        string femployer_company_name;
+        public string employer_company_name
+        {
+            get { return femployer_company_name; }
+            set { SetPropertyValue<string>("employer_company_name", ref femployer_company_name, value); }
         }
         [Association(@"rec_Employer_OrderReferencesrec_Employer")]
         public XPCollection<rec_Employer_Order> rec_Employer_Orders { get { return GetCollection<rec_Employer_Order>("rec_Employer_Orders"); } }

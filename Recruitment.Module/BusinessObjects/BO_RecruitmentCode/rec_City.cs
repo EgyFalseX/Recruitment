@@ -24,7 +24,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         {
             Module.BusinessObjects.Recruitment.rec_City item = (Module.BusinessObjects.Recruitment.rec_City)e.Object;
             //object userid = SecuritySystem.CurrentUserId;
-            DateTime datetime = Core.SqlOp.GetServerDateTime(Session);
+            //DateTime datetime = Core.SqlOp.GetServerDateTime(Session);
 
         }
         //Audit Trail

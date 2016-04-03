@@ -42,6 +42,23 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
                 
             }
         }
+        [NonPersistent]
+        [EditorAlias("ProgressProperty")]
+        public double Progress
+        {
+            get
+            {
+                double order_Percent = 0;
+                if (rec_Employer_Order_Details != null)
+                {
+                    foreach (rec_Employer_Order_Detail detail in rec_Employer_Order_Details)
+                        order_Percent += detail.Progress;
+                    return order_Percent / (rec_Employer_Order_Details.Count == 0 ? 1 : rec_Employer_Order_Details.Count);
+                }
+                else
+                    return 0;
+            }
+        }
     }
 
 }

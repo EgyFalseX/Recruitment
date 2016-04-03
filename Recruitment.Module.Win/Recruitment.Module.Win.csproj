@@ -235,6 +235,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Editors\WinProgressPropertyEditor.cs" />
     <Compile Include="WinModule.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -32,7 +32,6 @@ namespace Recruitment.Module.Controllers
         {
             base.OnActivated();
             // Perform various tasks depending on the target View.
-
             var list = ((IList<enum_Priv_Item>)Enum.GetValues(typeof(enum_Priv_Item)))
                 .Select(t => new ChoiceActionItem(t.ToString(), t)).ToArray();
 

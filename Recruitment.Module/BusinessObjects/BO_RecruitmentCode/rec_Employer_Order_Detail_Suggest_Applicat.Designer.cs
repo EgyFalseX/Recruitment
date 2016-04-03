@@ -56,6 +56,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         [Association(@"rec_Employer_Order_Detail_Accept_ApplicatReferencesrec_Employer_Order_Detail_Suggest_Applicat"), Aggregated]
         public XPCollection<rec_Employer_Order_Detail_Accept_Applicat> rec_Employer_Order_Detail_Accept_Applicats { get { return GetCollection<rec_Employer_Order_Detail_Accept_Applicat>("rec_Employer_Order_Detail_Accept_Applicats"); } }
+
     }
 
 }

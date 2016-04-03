@@ -297,6 +297,12 @@
       <DependentUpon>rec_Work_Type.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\StoredProcHelper.cs" />
+    <Compile Include="Controllers\ctr_Order_Accept_App.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ctr_Order_Accept_App.Designer.cs">
+      <DependentUpon>ctr_Order_Accept_App.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\ctr_RoleCRUD.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -313,6 +319,7 @@
       <DependentUpon>TestCtr.cs</DependentUpon>
     </Compile>
     <Compile Include="Core\SqlOp.cs" />
+    <Compile Include="Core\Typez.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
@@ -323,6 +330,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controllers\ctr_Order_Accept_App.resx">
+      <DependentUpon>ctr_Order_Accept_App.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controllers\ctr_RoleCRUD.resx">
       <DependentUpon>ctr_RoleCRUD.cs</DependentUpon>
     </EmbeddedResource>
@@ -467,6 +477,14 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="UnusableNodes10.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes13.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes14.xml">
       <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
       <SubType>Designer</SubType>
     </None>
