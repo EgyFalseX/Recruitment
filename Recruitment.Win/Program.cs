@@ -39,8 +39,13 @@ namespace Recruitment.Win {
                 winApplication.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
             }
             try {
-                winApplication.Setup();
-                winApplication.Start();
+                //((WinApplication)winApplication).GetUserChoice("Eshtaaaaaaaaaa?", MessageBoxButtons.YesNo);
+                if (FXFW.SqlDB.LoadSqlDBPath("Recruitment") /*&& Authentication()*/)
+                {
+                    winApplication.ConnectionString = FXFW.SqlDB.SqlConStr;// set connection string.
+                    winApplication.Setup();
+                    winApplication.Start();
+                }
             }
             catch(Exception e) {
                 winApplication.HandleException(e);

@@ -101,10 +101,8 @@
     <Reference Include="DevExpress.ExpressApp.Workflow.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Xpo.v15.2">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Xpo.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Persistent.BaseImpl.EF.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v15.2.Core">
       <SpecificVersion>False</SpecificVersion>
@@ -240,6 +238,10 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Suggest_Applicat.Designer.cs">
       <DependentUpon>rec_Employer_Order_Detail_Suggest_Applicat.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Status.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Status.Designer.cs">
+      <DependentUpon>rec_Employer_Order_Status.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Faculty.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Faculty.Designer.cs">
       <DependentUpon>rec_Faculty.cs</DependentUpon>
@@ -297,6 +299,7 @@
       <DependentUpon>rec_Work_Type.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\StoredProcHelper.cs" />
+    <Compile Include="BusinessObjects\dc_Msg.cs" />
     <Compile Include="Controllers\ctr_Order_Accept_App.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -485,6 +488,12 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="UnusableNodes14.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="Images\rec_Employer_Order_Status16.png" />
+    <EmbeddedResource Include="Images\rec_Employer_Order_Status32.png" />
+    <None Include="UnusableNodes15.xml">
       <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
       <SubType>Designer</SubType>
     </None>

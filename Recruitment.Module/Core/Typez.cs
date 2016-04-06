@@ -16,7 +16,10 @@ namespace Recruitment.Module.Core
         public enum enum_rec_Applicant_Status
         {
             Ready = 1,
-            Busy = 2
+            Busy = 2,
+            Accepted = 3,
+            Refused = 4,
+            WaitingConfirmation = 5,
         }
         public enum enum_rec_Employer_Order_Status
         {
@@ -26,5 +29,6 @@ namespace Recruitment.Module.Core
             Pasued = 4,
 
         }
+
     }
 }

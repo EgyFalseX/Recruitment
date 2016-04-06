@@ -48,7 +48,7 @@
             this.action_Order_Accept_App_Refused.Caption = "Applicant Refused";
             this.action_Order_Accept_App_Refused.Category = "Edit";
             this.action_Order_Accept_App_Refused.ConfirmationMessage = "You will remove selected applicant(s) from accepted list, Are you sure?";
-            this.action_Order_Accept_App_Refused.Id = "faa23f75-03b8-443e-a107-9567d6ad1646";
+            this.action_Order_Accept_App_Refused.Id = "action_Order_Accept_App_Refused";
             this.action_Order_Accept_App_Refused.ImageName = "Action_Deny";
             this.action_Order_Accept_App_Refused.TargetObjectType = typeof(Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Suggest_Applicat);
             this.action_Order_Accept_App_Refused.ToolTip = null;

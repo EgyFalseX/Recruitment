@@ -22,8 +22,11 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         {
             base.OnSaving();
             //stop audit
-            DevExpress.Persistent.AuditTrail.AuditTrailService.Instance.EndSessionAudit(Session);
-
+            //DevExpress.Persistent.AuditTrail.AuditTrailService.Instance.EndSessionAudit(Session);
+            if (this.IsDeleted)
+            {
+                return;
+            }
             int industry = this.frec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_industry_id.industry_id;
             XPCollection<rec_Industry_Require_Doc_Info> Docs = new XPCollection<rec_Industry_Require_Doc_Info>(Session, new BinaryOperator("rec_industry_require_doc_info_industry_id", industry));
             XPCollection<rec_Require_Doc_Status> doc_status = new XPCollection<rec_Require_Doc_Status>(Session);
@@ -38,7 +41,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
                 this.rec_Employer_Order_Detail_Accept_Applicat_Docs.Add(doc);
             }
             //stop audit
-            DevExpress.Persistent.AuditTrail.AuditTrailService.Instance.BeginSessionAudit(Session, DevExpress.Persistent.AuditTrail.AuditTrailStrategy.OnObjectChanged);
+            //DevExpress.Persistent.AuditTrail.AuditTrailService.Instance.BeginSessionAudit(Session, DevExpress.Persistent.AuditTrail.AuditTrailStrategy.OnObjectChanged);
         }
 
         //Audit Trail

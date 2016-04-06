@@ -43,6 +43,13 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return frec_employer_order_description; }
             set { SetPropertyValue<string>("rec_employer_order_description", ref frec_employer_order_description, value); }
         }
+        rec_Employer_Order_Status frec_employer_order_rec_employer_order_status_id;
+        [Association(@"rec_Employer_OrderReferencesrec_Employer_Order_Status")]
+        public rec_Employer_Order_Status rec_employer_order_rec_employer_order_status_id
+        {
+            get { return frec_employer_order_rec_employer_order_status_id; }
+            set { SetPropertyValue<rec_Employer_Order_Status>("rec_employer_order_rec_employer_order_status_id", ref frec_employer_order_rec_employer_order_status_id, value); }
+        }
         [Association(@"rec_Employer_Order_DetailReferencesrec_Employer_Order")]
         public XPCollection<rec_Employer_Order_Detail> rec_Employer_Order_Details { get { return GetCollection<rec_Employer_Order_Detail>("rec_Employer_Order_Details"); } }
     }

@@ -33,6 +33,8 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         public XPCollection<rec_Applicant> rec_Applicants { get { return GetCollection<rec_Applicant>("rec_Applicants"); } }
         [Association(@"rec_Employer_Order_Detail_Accept_ApplicatReferencesrec_Applicant_Status")]
         public XPCollection<rec_Employer_Order_Detail_Accept_Applicat> rec_Employer_Order_Detail_Accept_Applicats { get { return GetCollection<rec_Employer_Order_Detail_Accept_Applicat>("rec_Employer_Order_Detail_Accept_Applicats"); } }
+        [Association(@"rec_Employer_Order_Detail_Suggest_ApplicatReferencesrec_Applicant_Status")]
+        public XPCollection<rec_Employer_Order_Detail_Suggest_Applicat> rec_Employer_Order_Detail_Suggest_Applicats { get { return GetCollection<rec_Employer_Order_Detail_Suggest_Applicat>("rec_Employer_Order_Detail_Suggest_Applicats"); } }
     }
 
 }
