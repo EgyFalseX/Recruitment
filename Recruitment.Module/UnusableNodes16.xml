@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Status" Caption="Order Status" ImageName="rec_Employer_Order_Status16" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="rec_employer_order_status_id" Caption="ID" />
+        <Member Name="rec_employer_order_status_name" Caption="Name" />
+        <Member Name="rec_Employer_Orders" Caption="Employer Orders" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Views Id="Views">
+    <DetailView Id="rec_Employer_Order_Status_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="5.0666666666666664">
+            <LayoutGroup Id="rec_Employer_Order_Status" Caption="rec_Employer_Order_Status" RelativeSize="100">
+              <LayoutItem Id="rec_employer_order_status_name" Index="0" RelativeSize="100" />
+              <LayoutItem Id="rec_employer_order_status_id" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="rec_Employer_Orders" Index="0" Removed="True" />
+            <LayoutGroup Id="AuditTrail" Index="1" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="rec_Employer_Order_Status_rec_Employer_Orders_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="CustomName" Index="-1" />
+        <ColumnInfo Id="Progress" Index="-1" />
+        <ColumnInfo Id="rec_employer_order_employer_id" Index="0" />
+        <ColumnInfo Id="rec_employer_order_date" Index="1" />
+      </Columns>
+    </ListView>
+    <DetailView Id="rec_Employer_Order_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="rec_Employer_Order">
+              <LayoutGroup Id="rec_Employer_Order_col2">
+                <LayoutItem Id="rec_employer_order_rec_employer_order_status_id" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="Generalode">
+        <Items Id="Items">
+          <Item Id="rec_Employer_Order_Status_ListView" ViewId="rec_Employer_Order_Status_ListView" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

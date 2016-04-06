@@ -30,8 +30,6 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return frec_employer_order_status_name; }
             set { SetPropertyValue<string>("rec_employer_order_status_name", ref frec_employer_order_status_name, value); }
         }
-        [Association(@"rec_Employer_OrderReferencesrec_Employer_Order_Status")]
-        public XPCollection<rec_Employer_Order> rec_Employer_Orders { get { return GetCollection<rec_Employer_Order>("rec_Employer_Orders"); } }
     }
 
 }

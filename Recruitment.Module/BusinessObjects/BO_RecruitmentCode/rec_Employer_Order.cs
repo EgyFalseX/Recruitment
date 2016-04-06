@@ -12,6 +12,13 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         public rec_Employer_Order(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
+        Core.Typez.enum_rec_Employer_Order_Status frec_employer_order_rec_employer_order_status_id;
+        //[Association(@"rec_Employer_OrderReferencesrec_Employer_Order_Status")]
+        public Core.Typez.enum_rec_Employer_Order_Status rec_employer_order_rec_employer_order_status_id
+        {
+            get { return frec_employer_order_rec_employer_order_status_id; }
+            set { SetPropertyValue<Core.Typez.enum_rec_Employer_Order_Status>("rec_employer_order_rec_employer_order_status_id", ref frec_employer_order_rec_employer_order_status_id, value); }
+        }
         //Audit Trail
         private XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> auditTrail;
         public XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> AuditTrail

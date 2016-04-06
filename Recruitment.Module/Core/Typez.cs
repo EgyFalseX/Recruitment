@@ -23,9 +23,13 @@ namespace Recruitment.Module.Core
         }
         public enum enum_rec_Employer_Order_Status
         {
-            In_Progress = 1,
+            [DevExpress.Persistent.Base.ImageName("State_Task_InProgress")]
+            InProgress = 1,
+            [DevExpress.Persistent.Base.ImageName("State_Task_Completed")]
             Completed = 2,
+            [DevExpress.Persistent.Base.ImageName("Action_Delete")]
             Canceled = 3,
+            [DevExpress.Persistent.Base.ImageName("State_Task_Deferred")]
             Pasued = 4,
 
         }

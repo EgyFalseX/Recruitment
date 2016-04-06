@@ -136,8 +136,8 @@ namespace Recruitment.Module.DatabaseUpdate {
                 rec_Applicant_Status_5.rec_applicant_status_id = 5;
                 rec_Applicant_Status_5.rec_applicant_status_name = "Refused";
             }
-            // rec_Employer_Order_Status
-            rec_Employer_Order_Status rec_Employer_Order_Status_1 = ObjectSpace.FindObject<rec_Employer_Order_Status>(new BinaryOperator("rec_employer_order_status_id", 1));
+            //rec_Employer_Order_Status
+           rec_Employer_Order_Status rec_Employer_Order_Status_1 = ObjectSpace.FindObject<rec_Employer_Order_Status>(new BinaryOperator("rec_employer_order_status_id", 1));
             if (rec_Employer_Order_Status_1 == null)
             {
                 rec_Employer_Order_Status_1 = ObjectSpace.CreateObject<rec_Employer_Order_Status>();
@@ -165,13 +165,6 @@ namespace Recruitment.Module.DatabaseUpdate {
                 rec_Employer_Order_Status_4.rec_employer_order_status_id = 4;
                 rec_Employer_Order_Status_4.rec_employer_order_status_name = "Pasued";
             }
-            //rec_Employer_Order_Status rec_Employer_Order_Status_5 = ObjectSpace.FindObject<rec_Employer_Order_Status>(new BinaryOperator("rec_employer_order_status_id", 5));
-            //if (rec_Employer_Order_Status_5 == null)
-            //{
-            //    rec_Employer_Order_Status_5 = ObjectSpace.CreateObject<rec_Employer_Order_Status>();
-            //    rec_Employer_Order_Status_5.rec_employer_order_status_id = 5;
-            //    rec_Employer_Order_Status_5.rec_employer_order_status_name = "aaaaaaaaa";
-            //}
             ObjectSpace.CommitChanges();
         }
         

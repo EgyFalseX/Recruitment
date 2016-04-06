@@ -50,7 +50,7 @@ namespace Recruitment.Module.Controllers
                     Active = false;
                     break;
                 }
-                if (item.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id.rec_employer_order_status_id != (int)Core.Typez.enum_rec_Employer_Order_Status.In_Progress)
+                if (item.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id == Core.Typez.enum_rec_Employer_Order_Status.InProgress)
                 {
                     Active = false;
                     break;
