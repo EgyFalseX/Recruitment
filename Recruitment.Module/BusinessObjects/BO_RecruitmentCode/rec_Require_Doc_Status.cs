@@ -7,7 +7,7 @@ using DevExpress.Persistent.Base;
 
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
-    [DefaultClassOptions]
+    //[DefaultClassOptions]
     public partial class rec_Require_Doc_Status
     {
         public rec_Require_Doc_Status(Session session) : base(session) { }

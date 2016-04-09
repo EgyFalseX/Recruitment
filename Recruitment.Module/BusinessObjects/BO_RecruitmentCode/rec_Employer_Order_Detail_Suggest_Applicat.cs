@@ -13,7 +13,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         public rec_Employer_Order_Detail_Suggest_Applicat(Session session) : base(session) { }
         public override void AfterConstruction() {
             base.AfterConstruction();
-            frec_employer_order_detail_suggest_applicat_rec_applicant_status_id = Session.GetObjectByKey<rec_Applicant_Status>(Core.Typez.enum_rec_Applicant_Status.WaitingConfirmation);
+            frec_employer_order_detail_suggest_applicat_rec_applicant_status_id = Session.GetObjectByKey<rec_Applicant_Status>((int)Core.Typez.enum_rec_Applicant_Status.WaitingConfirmation);
         }
         //Audit Trail
         private XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> auditTrail;

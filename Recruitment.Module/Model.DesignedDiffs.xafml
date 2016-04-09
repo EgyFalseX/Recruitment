@@ -185,9 +185,9 @@
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order" Caption="Employer Orders" DefaultDetailViewImage="rec_employer_order16" DefaultListViewImage="rec_employer_order16" ImageName="rec_employer_order16" DefaultListViewShowAutoFilterRow="True">
       <AppearanceRules>
-        <AppearanceRule Id="rec_Employer_Order_Status_Canceled" TargetItems="rec_employer_order_rec_employer_order_status_id" Enabled="True" Criteria="[rec_employer_order_rec_employer_order_status_id] = 3" FontColor="DarkRed" FontStyle="Italic" AppearanceItemType="ViewItem" IsNewNode="True" />
-        <AppearanceRule Id="rec_Employer_Order_Status_Completed" TargetItems="rec_employer_order_rec_employer_order_status_id" Criteria="[rec_employer_order_rec_employer_order_status_id] = 2" FontColor="DarkGreen" AppearanceItemType="ViewItem" IsNewNode="True" />
-        <AppearanceRule Id="rec_Employer_Order_Status_Pause" TargetItems="rec_employer_order_rec_employer_order_status_id" Criteria="[rec_employer_order_rec_employer_order_status_id] = 4" FontColor="Olive" AppearanceItemType="ViewItem" IsNewNode="True" />
+        <AppearanceRule Id="rec_Employer_Order_Status_Canceled" TargetItems="*" Enabled="True" Criteria="[rec_employer_order_rec_employer_order_status_id] = 3" FontColor="DarkRed" FontStyle="Strikeout" AppearanceItemType="ViewItem" IsNewNode="True" />
+        <AppearanceRule Id="rec_Employer_Order_Status_Completed" TargetItems="*" Criteria="[rec_employer_order_rec_employer_order_status_id] = 2" FontColor="DarkGreen" AppearanceItemType="ViewItem" IsNewNode="True" />
+        <AppearanceRule Id="rec_Employer_Order_Status_Pause" TargetItems="*" Criteria="[rec_employer_order_rec_employer_order_status_id] = 4" FontColor="Olive" AppearanceItemType="ViewItem" IsNewNode="True" />
       </AppearanceRules>
       <OwnMembers>
         <Member Name="rec_employer_order_date" Index="0" Caption="Order Date" DisplayFormat="{0:yyyy-MM-dd}" EditMask="yyyy-MM-dd" />
@@ -454,7 +454,6 @@
           <Item Id="rec_Nationality_ListView" Removed="True" />
           <Item Id="rec_PortfolioFileData_ListView" Removed="True" />
           <Item Id="rec_Position_ListView" Removed="True" />
-          <Item Id="rec_Require_Doc_Status_ListView" Removed="True" />
           <Item Id="rec_Study_Grade_ListView" Removed="True" />
           <Item Id="rec_Suggest_Applicat_Source_ListView" Removed="True" />
           <Item Id="rec_Tag_ListView" Removed="True" />

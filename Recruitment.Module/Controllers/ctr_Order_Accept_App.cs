@@ -42,8 +42,8 @@ namespace Recruitment.Module.Controllers
             
             bool Active = true;
             
-            System.Collections.ArrayList lst = (System.Collections.ArrayList)View.SelectedObjects;
-            foreach (rec_Employer_Order_Detail_Suggest_Applicat item in lst)
+            //System.Collections.ArrayList lst = (System.Collections.ArrayList)View.SelectedObjects;
+            foreach (rec_Employer_Order_Detail_Suggest_Applicat item in View.SelectedObjects)
             {
                 if (item.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id == null)
                 {
