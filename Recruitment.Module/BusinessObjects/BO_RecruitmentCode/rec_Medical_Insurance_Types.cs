@@ -4,17 +4,14 @@ using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
 using DevExpress.Persistent.Base;
-using DevExpress.ExpressApp;
+
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
-    //[ImageName("BO_Contact")]
-    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
-    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
-    //[Persistent("DatabaseTableName")]
-    public partial class rec_Applicant_Study
+    [DevExpress.ExpressApp.DC.XafDefaultProperty("rec_medical_insurance_types_name")]
+    public partial class rec_Medical_Insurance_Types
     {
-        public rec_Applicant_Study(Session session) : base(session) { }
+        public rec_Medical_Insurance_Types(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
         //Audit Trail
         private XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> auditTrail;
@@ -29,7 +26,6 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
                 return auditTrail;
             }
         }
-
     }
 
 }

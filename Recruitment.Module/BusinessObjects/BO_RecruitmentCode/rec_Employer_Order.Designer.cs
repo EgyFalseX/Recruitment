@@ -44,6 +44,19 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return frec_employer_order_description; }
             set { SetPropertyValue<string>("rec_employer_order_description", ref frec_employer_order_description, value); }
         }
+        rec_Delivery_Type frec_employer_order_rec_delivery_type_id;
+        [Association(@"rec_Employer_OrderReferencesrec_Delivery_Type")]
+        public rec_Delivery_Type rec_employer_order_rec_delivery_type_id
+        {
+            get { return frec_employer_order_rec_delivery_type_id; }
+            set { SetPropertyValue<rec_Delivery_Type>("rec_employer_order_rec_delivery_type_id", ref frec_employer_order_rec_delivery_type_id, value); }
+        }
+        DateTime frec_employer_order_delivery_date;
+        public DateTime rec_employer_order_delivery_date
+        {
+            get { return frec_employer_order_delivery_date; }
+            set { SetPropertyValue<DateTime>("rec_employer_order_delivery_date", ref frec_employer_order_delivery_date, value); }
+        }
         [Association(@"rec_Employer_Order_DetailReferencesrec_Employer_Order")]
         public XPCollection<rec_Employer_Order_Detail> rec_Employer_Order_Details { get { return GetCollection<rec_Employer_Order_Detail>("rec_Employer_Order_Details"); } }
     }

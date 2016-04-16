@@ -8,6 +8,7 @@ using DevExpress.Persistent.Base;
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
+    [DevExpress.ExpressApp.DC.XafDefaultProperty("rec_suggest_applicat_source_name")]
     public partial class rec_Suggest_Applicat_Source
     {
         public rec_Suggest_Applicat_Source(Session session) : base(session) { }

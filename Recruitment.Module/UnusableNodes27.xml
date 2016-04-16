@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="rec_Employer_DetailView">
+      <Layout Id="Layout">
+        <LayoutItem Id="employer_id_TempModelNoded7837193-e54a-472b-88a1-71b767abc0a9" Removed="True" />
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="rec_Employer">
+              <LayoutGroup Id="rec_Employer_col1">
+                <LayoutItem Id="employer_national_id" ViewItem="employer_national_id" />
+                <LayoutItem Id="employer_gender_id" ViewItem="employer_gender_id" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="ApplicatNode">
+        <Items Id="Items">
+          <Item Id="rec_Applicant_Study_ListView" ViewId="rec_Applicant_Study_ListView" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="employer_gender_id" Caption="Gender" LookupProperty="rec_gender_name" />
+        <Member Name="employer_national_id" Caption="National ID" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Gender">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="rec_Employers" Caption="Employers" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Views Id="Views">
+    <ListView Id="rec_Employer_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="employer_gender_id" Index="-1" />
+        <ColumnInfo Id="employer_national_id" Index="-1" />
+      </Columns>
+    </ListView>
+    <DetailView Id="rec_Employer_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="rec_Employer">
+              <LayoutGroup Id="rec_Employer_col1">
+                <LayoutItem Id="employer_national_id" ViewItem="employer_national_id" />
+                <LayoutItem Id="employer_gender_id" ViewItem="employer_gender_id" />
+              </LayoutGroup>
+              <LayoutGroup Id="rec_Employer_col2">
+                <LayoutItem Id="employer_phone" ViewItem="employer_phone" Index="3" RelativeSize="11.538461538461538" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="rec_Employer_LookupListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="employer_gender_id" Index="-1" />
+        <ColumnInfo Id="employer_national_id" Index="-1" />
+      </Columns>
+    </ListView>
+    <DetailView Id="rec_Employer_Order_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="rec_Employer_Order">
+              <LayoutGroup Id="rec_Employer_Order_col2">
+                <LayoutItem Id="rec_employer_order_id" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Gender_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="rec_Employers" Removed="True" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="ApplicatNode">
+        <Items Id="Items">
+          <Item Id="rec_Applicant_Study_ListView" ViewId="rec_Applicant_Study_ListView" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

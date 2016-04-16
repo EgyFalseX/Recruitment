@@ -8,11 +8,12 @@ using DevExpress.ExpressApp;
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
+    [DevExpress.ExpressApp.DC.XafDefaultProperty("work_type_name")]
     //[ImageName("BO_Contact")]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
-    
+
     public partial class rec_Work_Type
     {
         public rec_Work_Type(Session session) : base(session) { }

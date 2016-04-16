@@ -12,6 +12,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     //[NavigationItem("Data Entry")]
+    [DevExpress.ExpressApp.DC.XafDefaultProperty("applicant_name")]
     public partial class rec_Applicant
     {
         public rec_Applicant(Session session) : base(session) { }

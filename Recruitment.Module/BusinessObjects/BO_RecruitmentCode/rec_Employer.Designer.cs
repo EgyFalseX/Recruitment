@@ -23,12 +23,6 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return femployer_id; }
             set { SetPropertyValue<int>("employer_id", ref femployer_id, value); }
         }
-        string femployer_name;
-        public string employer_name
-        {
-            get { return femployer_name; }
-            set { SetPropertyValue<string>("employer_name", ref femployer_name, value); }
-        }
         string femployer_Address;
         public string employer_Address
         {
@@ -49,21 +43,6 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         {
             get { return femployer_city_id; }
             set { SetPropertyValue<rec_City>("employer_city_id", ref femployer_city_id, value); }
-        }
-        rec_Gender femployer_gender_id;
-        [Indexed(Name = @"iemployer_gender_id_rec_Employer")]
-        [Association(@"rec_EmployerReferencesrec_Gender")]
-        public rec_Gender employer_gender_id
-        {
-            get { return femployer_gender_id; }
-            set { SetPropertyValue<rec_Gender>("employer_gender_id", ref femployer_gender_id, value); }
-        }
-        string femployer_national_id;
-        [Size(50)]
-        public string employer_national_id
-        {
-            get { return femployer_national_id; }
-            set { SetPropertyValue<string>("employer_national_id", ref femployer_national_id, value); }
         }
         string femployer_phone;
         [Size(50)]
@@ -93,8 +72,31 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return femployer_company_name; }
             set { SetPropertyValue<string>("employer_company_name", ref femployer_company_name, value); }
         }
+        string femployer_owner_name;
+        public string employer_owner_name
+        {
+            get { return femployer_owner_name; }
+            set { SetPropertyValue<string>("employer_owner_name", ref femployer_owner_name, value); }
+        }
+        string femployer_website;
+        [Size(50)]
+        public string employer_website
+        {
+            get { return femployer_website; }
+            set { SetPropertyValue<string>("employer_website", ref femployer_website, value); }
+        }
+        int femployer_postal_code;
+        public int employer_postal_code
+        {
+            get { return femployer_postal_code; }
+            set { SetPropertyValue<int>("employer_postal_code", ref femployer_postal_code, value); }
+        }
         [Association(@"rec_Employer_OrderReferencesrec_Employer")]
         public XPCollection<rec_Employer_Order> rec_Employer_Orders { get { return GetCollection<rec_Employer_Order>("rec_Employer_Orders"); } }
+        [Association(@"rec_Employer_IndustryReferencesrec_Employer")]
+        public XPCollection<rec_Employer_Industry> rec_Employer_Industrys { get { return GetCollection<rec_Employer_Industry>("rec_Employer_Industrys"); } }
+        [Association(@"rec_Employer_PersonReferencesrec_Employer")]
+        public XPCollection<rec_Employer_Person> rec_Employer_Persons { get { return GetCollection<rec_Employer_Person>("rec_Employer_Persons"); } }
     }
 
 }

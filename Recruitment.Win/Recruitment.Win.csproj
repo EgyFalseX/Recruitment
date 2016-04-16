@@ -239,8 +239,9 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
-    <Reference Include="FXFW">
-      <HintPath>..\..\FXFW\Releases\FXFW.dll</HintPath>
+    <Reference Include="FXFW, Version=1.0.0.5, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\FXFW\Releases\x86\FXFW.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -285,8 +286,16 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\AppUpdater.cs" />
+    <Compile Include="Core\SessionExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\WaitWindowFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\WaitWindowFrm.designer.cs">
+      <DependentUpon>WaitWindowFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WinApplication.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -304,6 +313,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\WaitWindowFrm.resx">
+      <DependentUpon>WaitWindowFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WinApplication.resx">
       <DependentUpon>WinApplication.cs</DependentUpon>
       <SubType>Designer</SubType>

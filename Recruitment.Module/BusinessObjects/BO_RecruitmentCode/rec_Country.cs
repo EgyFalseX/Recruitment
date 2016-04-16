@@ -12,10 +12,18 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
+    [DevExpress.ExpressApp.DC.XafDefaultProperty("country_name")]
     public partial class rec_Country
     {
         public rec_Country(Session session) : base(session) { }
-        public override void AfterConstruction() { base.AfterConstruction(); }
+        public override void AfterConstruction() { base.AfterConstruction(); rec_Citys.ListChanged += Rec_Citys_ListChanged; }
+
+        private void Rec_Citys_ListChanged(object sender, ListChangedEventArgs e)
+        {
+            int inx = e.NewIndex;
+            object obj = this.rec_Citys;
+        }
+
         //Audit Trail
         private XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> auditTrail;
         public XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> AuditTrail

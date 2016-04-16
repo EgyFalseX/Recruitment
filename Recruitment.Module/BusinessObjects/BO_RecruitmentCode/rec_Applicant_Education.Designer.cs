@@ -24,6 +24,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("app_edu_id", ref fapp_edu_id, value); }
         }
         rec_Applicant fapp_edu_applicant_id;
+        [Indexed(Name = @"iapp_edu_applicant_id_rec_Applicant_Education")]
         [Association(@"rec_Applicant_EducationReferencesrec_Applicant")]
         public rec_Applicant app_edu_applicant_id
         {
@@ -31,6 +32,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<rec_Applicant>("app_edu_applicant_id", ref fapp_edu_applicant_id, value); }
         }
         rec_University fapp_edu_university_id;
+        [Indexed(Name = @"iapp_edu_university_id_rec_Applicant_Education")]
         [Association(@"rec_Applicant_EducationReferencesrec_University")]
         public rec_University app_edu_university_id
         {
@@ -38,6 +40,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<rec_University>("app_edu_university_id", ref fapp_edu_university_id, value); }
         }
         rec_Faculty fapp_edu_faculty_id;
+        [Indexed(Name = @"iapp_edu_faculty_id_rec_Applicant_Education")]
         [Association(@"rec_Applicant_EducationReferencesrec_Faculty")]
         public rec_Faculty app_edu_faculty_id
         {
@@ -45,6 +48,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<rec_Faculty>("app_edu_faculty_id", ref fapp_edu_faculty_id, value); }
         }
         rec_Degree fapp_edu_degree_id;
+        [Indexed(Name = @"iapp_edu_degree_id_rec_Applicant_Education")]
         [Association(@"rec_Applicant_EducationReferencesrec_Degree")]
         public rec_Degree app_edu_degree_id
         {
@@ -52,6 +56,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<rec_Degree>("app_edu_degree_id", ref fapp_edu_degree_id, value); }
         }
         rec_Industry fapp_edu_Industry;
+        [Indexed(Name = @"iapp_edu_Industry_rec_Applicant_Education")]
         [Association(@"rec_Applicant_EducationReferencesrec_Industry")]
         public rec_Industry app_edu_Industry
         {
@@ -63,6 +68,13 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         {
             get { return fapp_edu_year; }
             set { SetPropertyValue<int>("app_edu_year", ref fapp_edu_year, value); }
+        }
+        rec_Study_Grade fapp_edu_study_grade_id;
+        [Association(@"rec_Applicant_EducationReferencesrec_Study_Grade")]
+        public rec_Study_Grade app_edu_study_grade_id
+        {
+            get { return fapp_edu_study_grade_id; }
+            set { SetPropertyValue<rec_Study_Grade>("app_edu_study_grade_id", ref fapp_edu_study_grade_id, value); }
         }
     }
 

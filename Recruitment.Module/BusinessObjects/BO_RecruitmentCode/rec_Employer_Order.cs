@@ -39,7 +39,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             {
                 if (rec_employer_order_employer_id != null)
                 {
-                    return string.Format("{0} - {1}", frec_employer_order_id, rec_employer_order_employer_id.employer_name);
+                    return string.Format("{0} - {1}", frec_employer_order_id, rec_employer_order_employer_id.employer_company_name);
                 }
                 else
                 {

@@ -31,6 +31,8 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         [Association(@"rec_ApplicantReferencesrec_Position")]
         public XPCollection<rec_Applicant> rec_Applicants { get { return GetCollection<rec_Applicant>("rec_Applicants"); } }
+        [Association(@"rec_Employer_Order_DetailReferencesrec_Position")]
+        public XPCollection<rec_Employer_Order_Detail> rec_Employer_Order_Details { get { return GetCollection<rec_Employer_Order_Detail>("rec_Employer_Order_Details"); } }
     }
 
 }

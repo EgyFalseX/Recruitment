@@ -29,8 +29,8 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return fstudy_grade_name; }
             set { SetPropertyValue<string>("study_grade_name", ref fstudy_grade_name, value); }
         }
-        [Association(@"rec_Applicant_StudyReferencesrec_Study_Grade")]
-        public XPCollection<rec_Applicant_Study> rec_Applicant_Studys { get { return GetCollection<rec_Applicant_Study>("rec_Applicant_Studys"); } }
+        [Association(@"rec_Applicant_EducationReferencesrec_Study_Grade")]
+        public XPCollection<rec_Applicant_Education> rec_Applicant_Educations { get { return GetCollection<rec_Applicant_Education>("rec_Applicant_Educations"); } }
     }
 
 }

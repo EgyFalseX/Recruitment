@@ -176,8 +176,6 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         public XPCollection<rec_Applicant_Experience> rec_Applicant_Experiences { get { return GetCollection<rec_Applicant_Experience>("rec_Applicant_Experiences"); } }
         [Association(@"rec_Applicant_ProjectReferencesrec_Applicant")]
         public XPCollection<rec_Applicant_Project> rec_Applicant_Projects { get { return GetCollection<rec_Applicant_Project>("rec_Applicant_Projects"); } }
-        [Association(@"rec_Applicant_StudyReferencesrec_Applicant")]
-        public XPCollection<rec_Applicant_Study> rec_Applicant_Studys { get { return GetCollection<rec_Applicant_Study>("rec_Applicant_Studys"); } }
         [Association(@"rec_Employer_Order_Detail_CallReferencesrec_Applicant")]
         public XPCollection<rec_Employer_Order_Detail_Call> rec_Employer_Order_Detail_Calls { get { return GetCollection<rec_Employer_Order_Detail_Call>("rec_Employer_Order_Detail_Calls"); } }
         [Association(@"rec_Employer_Order_Detail_Suggest_ApplicatReferencesrec_Applicant")]

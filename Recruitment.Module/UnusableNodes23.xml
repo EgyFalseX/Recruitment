@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="employer_name" Caption="Name" Index="2" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Views Id="Views">
+    <ListView Id="rec_Employer_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="employer_name" Index="1" Width="94" />
+      </Columns>
+    </ListView>
+    <DetailView Id="rec_Employer_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="rec_Employer">
+              <LayoutGroup Id="rec_Employer_col1">
+                <LayoutItem Id="employer_name" Index="0" RelativeSize="13.793103448275861" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="rec_Employer_LookupListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="employer_name" Index="0" />
+      </Columns>
+    </ListView>
+    <ListView Id="rec_Employer_Order_LookupListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="rec_employer_order_employer_id.employer_name" PropertyName="rec_employer_order_employer_id.employer_name" Index="1" Caption="Employer" Width="91" />
+      </Columns>
+    </ListView>
+    <ListView Id="rec_Employer_Order_rec_Employer_Order_Details_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="rec_employer_order_detail_rec_employer_order_id.rec_employer_order_employer_id.employer_name" PropertyName="rec_employer_order_detail_rec_employer_order_id.rec_employer_order_employer_id.employer_name" Index="1" Caption="Employer" Width="86" />
+      </Columns>
+    </ListView>
+    <ListView Id="rec_Employer_Order_Detail_LookupListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="rec_employer_order_detail_rec_employer_order_id.rec_employer_order_employer_id.employer_name" PropertyName="rec_employer_order_detail_rec_employer_order_id.rec_employer_order_employer_id.employer_name" Index="1" Caption="Employer" />
+      </Columns>
+    </ListView>
+    <ListView Id="rec_Employer_Order_Detail_Accept_Applicat_LookupListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_employer_id.employer_name" PropertyName="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_employer_id.employer_name" Index="2" Caption="Employer" />
+      </Columns>
+    </ListView>
+    <ListView Id="rec_Employer_Order_Detail_Call_LookupListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="rec_employer_order_detail_call_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_employer_id.employer_name" PropertyName="rec_employer_order_detail_call_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_employer_id.employer_name" Index="1" Caption="Employer" />
+      </Columns>
+    </ListView>
+    <ListView Id="rec_Employer_Order_Detail_Suggest_Applicat_LookupListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_employer_id.employer_name" PropertyName="rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_employer_id.employer_name" Index="1" Caption="Employer" />
+      </Columns>
+    </ListView>
+  </Views>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="ApplicatNode">
+        <Items Id="Items">
+          <Item Id="rec_Applicant_Study_ListView" ViewId="rec_Applicant_Study_ListView" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

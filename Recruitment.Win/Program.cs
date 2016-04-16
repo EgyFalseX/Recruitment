@@ -20,6 +20,7 @@ namespace Recruitment.Win {
 #if EASYTEST
             DevExpress.ExpressApp.Win.EasyTest.EasyTestRemotingRegistration.Register();
 #endif
+            Core.AppUpdater.PerformChangeExe();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             EditModelPermission.AlwaysGranted = false;//EditModelPermission.AlwaysGranted = System.Diagnostics.Debugger.IsAttached;
@@ -43,6 +44,7 @@ namespace Recruitment.Win {
                 if (FXFW.SqlDB.LoadSqlDBPath("Recruitment") /*&& Authentication()*/)
                 {
                     winApplication.ConnectionString = FXFW.SqlDB.SqlConStr;// set connection string.
+                    winApplication.LoggedOn += Core.AppUpdater.WinApplication_LoggedOn;
                     winApplication.Setup();
                     winApplication.Start();
                 }
@@ -51,5 +53,7 @@ namespace Recruitment.Win {
                 winApplication.HandleException(e);
             }
         }
+
+        
     }
 }

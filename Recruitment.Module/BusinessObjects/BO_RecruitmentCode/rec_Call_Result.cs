@@ -8,6 +8,7 @@ using DevExpress.Persistent.Base;
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
+    [DevExpress.ExpressApp.DC.XafDefaultProperty("rec_call_result_name")]
     public partial class rec_Call_Result
     {
         public rec_Call_Result(Session session) : base(session) { }

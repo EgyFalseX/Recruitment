@@ -8,6 +8,7 @@ using DevExpress.ExpressApp;
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
+    [DevExpress.ExpressApp.DC.XafDefaultProperty("rec_gender_name")]
     //[ImageName("BO_Contact")]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]

@@ -32,8 +32,6 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         [Association(@"rec_Applicant_EducationReferencesrec_Degree")]
         public XPCollection<rec_Applicant_Education> rec_Applicant_Educations { get { return GetCollection<rec_Applicant_Education>("rec_Applicant_Educations"); } }
-        [Association(@"rec_Applicant_StudyReferencesrec_Degree")]
-        public XPCollection<rec_Applicant_Study> rec_Applicant_Studys { get { return GetCollection<rec_Applicant_Study>("rec_Applicant_Studys"); } }
     }
 
 }

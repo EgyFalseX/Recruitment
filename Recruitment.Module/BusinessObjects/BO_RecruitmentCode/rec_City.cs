@@ -12,17 +12,19 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
+    [DevExpress.ExpressApp.DC.XafDefaultProperty("city_name")]
+    //[DefaultProperty("city_name")]
     public partial class rec_City
     {
         public rec_City(Session session) : base(session) { }
         public override void AfterConstruction()
         {
             base.AfterConstruction();
-            Session.ObjectSaving += Session_ObjectSaving;
+            //Session.ObjectSaving += Session_ObjectSaving;
         }
         private void Session_ObjectSaving(object sender, ObjectManipulationEventArgs e)
         {
-            Module.BusinessObjects.Recruitment.rec_City item = (Module.BusinessObjects.Recruitment.rec_City)e.Object;
+            //rec_City item = (rec_City)e.Object;
             //object userid = SecuritySystem.CurrentUserId;
             //DateTime datetime = Core.SqlOp.GetServerDateTime(Session);
 
