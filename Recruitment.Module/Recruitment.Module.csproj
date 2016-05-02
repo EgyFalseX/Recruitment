@@ -347,11 +347,11 @@
     <Compile Include="Controllers\ctr_ShowFooter.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controllers\TestCtr.cs">
+    <Compile Include="Controllers\ctr_IntiNew.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controllers\TestCtr.Designer.cs">
-      <DependentUpon>TestCtr.cs</DependentUpon>
+    <Compile Include="Controllers\ctr_IntiNew.Designer.cs">
+      <DependentUpon>ctr_IntiNew.cs</DependentUpon>
     </Compile>
     <Compile Include="Core\SqlOp.cs" />
     <Compile Include="Core\Typez.cs" />
@@ -370,6 +370,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\ctr_RoleCRUD.resx">
       <DependentUpon>ctr_RoleCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\ctr_IntiNew.resx">
+      <DependentUpon>ctr_IntiNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml">
       <SubType>Designer</SubType>

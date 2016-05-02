@@ -20,6 +20,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
 
         private void Rec_Citys_ListChanged(object sender, ListChangedEventArgs e)
         {
+            
             int inx = e.NewIndex;
             object obj = this.rec_Citys;
         }

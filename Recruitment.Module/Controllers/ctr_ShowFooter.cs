@@ -1,12 +1,8 @@
 ﻿using DevExpress.ExpressApp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Recruitment.Module.Controllers
 {
+    // ReSharper disable once InconsistentNaming
     public class ctr_ShowFooter : ViewController<ListView>
     {
         protected override void OnActivated()

@@ -1,6 +1,6 @@
 ﻿namespace Recruitment.Module.Controllers
 {
-    partial class TestCtr
+    partial class ctr_IntiNew
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+
         }
 
         #endregion
