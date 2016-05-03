@@ -3,11 +3,13 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
+using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.Persistent.Base;
 
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
+    [Appearance("Apr_Status", TargetItems = "*", Criteria = "rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id IS NOT NULL And rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id <> 1", Enabled = false)]
     public partial class rec_Employer_Order_Detail
     {
         public rec_Employer_Order_Detail(Session session) : base(session) { }
@@ -24,8 +26,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
                 }
                 return auditTrail;
             }
-        }
-        [NonPersistent]
+        }[NonPersistent]
         public string CustomName
         {
             get

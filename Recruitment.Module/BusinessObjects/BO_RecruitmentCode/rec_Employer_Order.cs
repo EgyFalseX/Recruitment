@@ -3,15 +3,22 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
+using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.Persistent.Base;
+using Recruitment.Module.Core;
 
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
+    [Appearance("Apr_Status", TargetItems = "*", Criteria = "rec_employer_order_rec_employer_order_status_id <> 1", Enabled = false)]
     public partial class rec_Employer_Order
     {
         public rec_Employer_Order(Session session) : base(session) { }
-        public override void AfterConstruction() { base.AfterConstruction(); }
+        public override void AfterConstruction()
+        {
+            base.AfterConstruction();
+            this.frec_employer_order_rec_employer_order_status_id = Typez.enum_rec_Employer_Order_Status.InProgress;
+        }
         Core.Typez.enum_rec_Employer_Order_Status frec_employer_order_rec_employer_order_status_id;
         //[Association(@"rec_Employer_OrderReferencesrec_Employer_Order_Status")]
         public Core.Typez.enum_rec_Employer_Order_Status rec_employer_order_rec_employer_order_status_id
@@ -67,5 +74,4 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             }
         }
     }
-
-}
+    }

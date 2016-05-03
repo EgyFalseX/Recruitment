@@ -36,7 +36,11 @@ namespace Recruitment.Module.Controllers
         {
             ctr_Order_Accept_App ctr = Frame.GetController<ctr_Order_Accept_App>();
             if (View.SelectedObjects.Count == 0 || ctr == null)
+            {
+                action_Order_Accept_App_Accept.Active.SetItemValue("No item selected", false);
+                action_Order_Accept_App_Refused.Active.SetItemValue("No item selected", false);
                 return;
+            }
 
             IObjectSpace objSpc = Application.CreateObjectSpace();
             
@@ -72,10 +76,12 @@ namespace Recruitment.Module.Controllers
         }
         private void action_Order_Accept_App_Accept_Execute(object sender, SimpleActionExecuteEventArgs e)
         {
+            if (e.SelectedObjects.Count == 0)
+                return;
             IObjectSpace objSpc = Application.CreateObjectSpace();
             int ObjectToSave = 0;
-            rec_Applicant_Status accept_Status = objSpc.FindObject<rec_Applicant_Status>(new BinaryOperator("rec_applicant_status_id", (int)Core.Typez.enum_rec_Applicant_Status.Ready));
-            rec_Applicant_Status suggest_Status = objSpc.FindObject<rec_Applicant_Status>(new BinaryOperator("rec_applicant_status_id", Core.Typez.enum_rec_Applicant_Status.Accepted));
+            rec_Applicant_Status accept_Status = objSpc.FindObject<rec_Applicant_Status>(new BinaryOperator("rec_applicant_status_id", (int)Core.Typez.enum_rec_Suggest_Applicant_Status.WaitingConfirmation));
+            rec_Applicant_Status suggest_Status = objSpc.FindObject<rec_Applicant_Status>(new BinaryOperator("rec_applicant_status_id", Core.Typez.enum_rec_Suggest_Applicant_Status.Accepted));
             if (accept_Status == null || suggest_Status == null)
                 return;
 
@@ -100,10 +106,12 @@ namespace Recruitment.Module.Controllers
         }
         private void action_Order_Accept_App_Refused_Execute(object sender, SimpleActionExecuteEventArgs e)
         {
+            if (e.SelectedObjects.Count == 0)
+                return;
             IObjectSpace objSpc = Application.CreateObjectSpace();
             int ObjectToSave = 0;
-            rec_Applicant_Status accept_Status = objSpc.FindObject<rec_Applicant_Status>(new BinaryOperator("rec_applicant_status_id", (int)Core.Typez.enum_rec_Applicant_Status.Ready));
-            rec_Applicant_Status suggest_Status = objSpc.FindObject<rec_Applicant_Status>(new BinaryOperator("rec_applicant_status_id", Core.Typez.enum_rec_Applicant_Status.Refused));
+            rec_Applicant_Status accept_Status = objSpc.FindObject<rec_Applicant_Status>(new BinaryOperator("rec_applicant_status_id", (int)Core.Typez.enum_rec_Suggest_Applicant_Status.WaitingConfirmation));
+            rec_Applicant_Status suggest_Status = objSpc.FindObject<rec_Applicant_Status>(new BinaryOperator("rec_applicant_status_id", Core.Typez.enum_rec_Suggest_Applicant_Status.Refused));
             if (accept_Status == null || suggest_Status == null)
                 return;
 

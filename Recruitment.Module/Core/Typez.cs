@@ -10,15 +10,24 @@ namespace Recruitment.Module.Core
     {
         public enum enum_Doc_Status
         {
+            [DevExpress.Persistent.Base.ImageName("State_Task_Completed")]
             Completed = 1,
+            [DevExpress.Persistent.Base.ImageName("State_Task_InProgress")]
             InProgress = 2
         }
         public enum enum_rec_Applicant_Status
         {
+            [DevExpress.Persistent.Base.ImageName("State_Validation_Information")]
             Ready = 1,
+            [DevExpress.Persistent.Base.ImageName("State_Task_Deferred")]
             Busy = 2,
+        }public enum enum_rec_Suggest_Applicant_Status
+        {
+            [DevExpress.Persistent.Base.ImageName("State_Task_Completed")]
             Accepted = 3,
+            [DevExpress.Persistent.Base.ImageName("State_Validation_Invalid")]
             Refused = 4,
+            [DevExpress.Persistent.Base.ImageName("State_Task_Deferred")]
             WaitingConfirmation = 5,
         }
         public enum enum_rec_Employer_Order_Status

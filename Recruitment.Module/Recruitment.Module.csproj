@@ -338,6 +338,12 @@
     <Compile Include="Controllers\ctr_Order_Accept_App.Designer.cs">
       <DependentUpon>ctr_Order_Accept_App.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\ctr_Order_Edit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ctr_Order_Edit.Designer.cs">
+      <DependentUpon>ctr_Order_Edit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\ctr_RoleCRUD.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -452,18 +458,6 @@
     <EmbeddedResource Include="Images\rec_University32.png" />
     <EmbeddedResource Include="Images\rec_Work_Type16.png" />
     <EmbeddedResource Include="Images\rec_Work_Type32.png" />
-    <None Include="UnusableNodes.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes1.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes2.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
     <EmbeddedResource Include="Images\rec_call_result16.png" />
     <EmbeddedResource Include="Images\rec_call_result32.png" />
     <EmbeddedResource Include="Images\rec_Applicant_Status16.png" />
@@ -488,112 +482,24 @@
     <EmbeddedResource Include="Images\rec_require_doc_status32.png" />
     <EmbeddedResource Include="Images\rec_suggest_applicat_source16.png" />
     <EmbeddedResource Include="Images\rec_suggest_applicat_source32.png" />
-    <None Include="UnusableNodes3.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes4.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes5.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes6.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes7.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes8.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes10.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes13.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes14.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
     <EmbeddedResource Include="Images\rec_Employer_Order_Status16.png" />
     <EmbeddedResource Include="Images\rec_Employer_Order_Status32.png" />
-    <None Include="UnusableNodes15.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
     <EmbeddedResource Include="Images\State_Task_Pause.png" />
-    <None Include="UnusableNodes16.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes17.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes18.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes19.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes20.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes22.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes23.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
     <EmbeddedResource Include="Images\rec_Employer_Industry16.png" />
     <EmbeddedResource Include="Images\rec_Employer_Industry32.png" />
     <EmbeddedResource Include="Images\rec_Employer_Person16.png" />
     <EmbeddedResource Include="Images\rec_Employer_Person32.png" />
     <EmbeddedResource Include="Images\rec_Delivery_Type16.png" />
     <EmbeddedResource Include="Images\rec_Delivery_Type32.png" />
-    <None Include="UnusableNodes24.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
     <EmbeddedResource Include="Images\rec_Housing_Type16.png" />
     <EmbeddedResource Include="Images\rec_Housing_Type32.png" />
-    <None Include="UnusableNodes25.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
     <EmbeddedResource Include="Images\rec_Annual_Vacation_Type16.png" />
     <EmbeddedResource Include="Images\rec_Annual_Vacation_Type32.png" />
     <EmbeddedResource Include="Images\rec_Medical_Insurance_Types16.png" />
     <EmbeddedResource Include="Images\rec_Medical_Insurance_Types32.png" />
-    <None Include="UnusableNodes26.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
     <EmbeddedResource Include="Images\rec_Ticket_Type16.png" />
     <EmbeddedResource Include="Images\rec_Ticket_Type32.png" />
-    <None Include="UnusableNodes9.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes27.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes28.xml">
+    <None Include="UnusableNodes.xml">
       <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
       <SubType>Designer</SubType>
     </None>
