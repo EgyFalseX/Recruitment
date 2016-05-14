@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using DevExpress.Persistent.Base;
 using DevExpress.ExpressApp;
+using Recruitment.Module.Core;
 
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
@@ -33,7 +34,14 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         [Association(@"rec_Applicant-PortfolioFileData")]
         public XPCollection<rec_PortfolioFileData> rec_Applicant_rec_PortfolioFileData
         { get { return GetCollection<rec_PortfolioFileData>("rec_Applicant_rec_PortfolioFileData"); } }
-
+        Typez.enum_rec_Applicant_Status fapplicant_rec_applicant_status_id;
+        [Indexed(Name = @"iapplicant_rec_applicant_status_id_rec_Applicant")]
+        //[Association(@"rec_ApplicantReferencesrec_Applicant_Status")]
+        public Typez.enum_rec_Applicant_Status applicant_rec_applicant_status_id
+        {
+            get { return fapplicant_rec_applicant_status_id; }
+            set { SetPropertyValue<Typez.enum_rec_Applicant_Status>("applicant_rec_applicant_status_id", ref fapplicant_rec_applicant_status_id, value); }
+        }
         byte[] frec_Applicant_image;
         [Size(SizeAttribute.Unlimited)]
         [ImageEditor(DetailViewImageEditorFixedHeight = 128, DetailViewImageEditorFixedWidth = 128, ListViewImageEditorCustomHeight = 64, ImageSizeMode = ImageSizeMode.StretchImage)]

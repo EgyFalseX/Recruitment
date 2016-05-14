@@ -10,7 +10,8 @@ using Recruitment.Module.Core;
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
-    [Appearance("Apr_Status", TargetItems = "*", Criteria = "rec_employer_order_rec_employer_order_status_id <> 1", Enabled = false)]
+    [Appearance("Apr_Status", TargetItems = "*", Criteria = "rec_employer_order_rec_employer_order_status_id <> 1 " +
+                                                            " AND rec_employer_order_rec_employer_order_status_id <> 4", Enabled = false)]
     public partial class rec_Employer_Order
     {
         public rec_Employer_Order(Session session) : base(session) { }

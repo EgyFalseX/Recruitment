@@ -15,8 +15,7 @@ namespace Recruitment.Module.Core
             [DevExpress.Persistent.Base.ImageName("State_Task_InProgress")]
             InProgress = 2
         }
-        public enum enum_rec_Applicant_Status
-        {
+        public enum enum_rec_Applicant_Status{
             [DevExpress.Persistent.Base.ImageName("State_Validation_Information")]
             Ready = 1,
             [DevExpress.Persistent.Base.ImageName("State_Task_Deferred")]

@@ -35,16 +35,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         public rec_Country city_country_id
         {
             get { return fcity_country_id; }
-            set
-            {
-                SetPropertyValue<rec_Country>("city_country_id", ref fcity_country_id, value);
-                //if (!IsLoading && !IsSaving && value != null)
-                //{
-                //    this.city_country_id.country_id = value.;
-
-                //}
-            }
-
+            set { SetPropertyValue<rec_Country>("city_country_id", ref fcity_country_id, value); }
         }
         [Association(@"rec_ApplicantReferencesrec_City")]
         public XPCollection<rec_Applicant> rec_Applicants { get { return GetCollection<rec_Applicant>("rec_Applicants"); } }

@@ -5,17 +5,27 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.Persistent.Base;
+using Recruitment.Module.Core;
 
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
-    [Appearance("Apr_Status", TargetItems = "*", Criteria = "rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id IS NOT NULL And rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id <> 1", Enabled = false)]
+    [Appearance("Apr_Status", TargetItems = "*", Criteria = "rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id IS NOT NULL " +
+                                                            " And rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id <> 1" +
+                                                            " And rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id <> 4", Enabled = false)]
     public partial class rec_Employer_Order_Detail_Suggest_Applicat
     {
         public rec_Employer_Order_Detail_Suggest_Applicat(Session session) : base(session) { }
         public override void AfterConstruction() {
             base.AfterConstruction();
-            frec_employer_order_detail_suggest_applicat_rec_applicant_status_id = Session.GetObjectByKey<rec_Applicant_Status>((int)Core.Typez.enum_rec_Suggest_Applicant_Status.WaitingConfirmation);
+            frec_employer_order_detail_suggest_applicat_rec_applicant_status_id = Typez.enum_rec_Suggest_Applicant_Status.WaitingConfirmation;
+        }
+        Typez.enum_rec_Suggest_Applicant_Status frec_employer_order_detail_suggest_applicat_rec_applicant_status_id;
+        //[Association(@"rec_Employer_Order_Detail_Suggest_ApplicatReferencesrec_Applicant_Status")]
+        public Typez.enum_rec_Suggest_Applicant_Status rec_employer_order_detail_suggest_applicat_rec_applicant_status_id
+        {
+            get { return frec_employer_order_detail_suggest_applicat_rec_applicant_status_id; }
+            set { SetPropertyValue<Typez.enum_rec_Suggest_Applicant_Status>("rec_employer_order_detail_suggest_applicat_rec_applicant_status_id", ref frec_employer_order_detail_suggest_applicat_rec_applicant_status_id, value); }
         }
         //Audit Trail
         private XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> auditTrail;

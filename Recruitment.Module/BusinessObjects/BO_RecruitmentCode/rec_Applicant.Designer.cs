@@ -160,14 +160,6 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return fapplicant_address; }
             set { SetPropertyValue<string>("applicant_address", ref fapplicant_address, value); }
         }
-        rec_Applicant_Status fapplicant_rec_applicant_status_id;
-        [Indexed(Name = @"iapplicant_rec_applicant_status_id_rec_Applicant")]
-        [Association(@"rec_ApplicantReferencesrec_Applicant_Status")]
-        public rec_Applicant_Status applicant_rec_applicant_status_id
-        {
-            get { return fapplicant_rec_applicant_status_id; }
-            set { SetPropertyValue<rec_Applicant_Status>("applicant_rec_applicant_status_id", ref fapplicant_rec_applicant_status_id, value); }
-        }
         [Association(@"rec_Applicant_CourseReferencesrec_Applicant")]
         public XPCollection<rec_Applicant_Course> rec_Applicant_Courses { get { return GetCollection<rec_Applicant_Course>("rec_Applicant_Courses"); } }
         [Association(@"rec_Applicant_EducationReferencesrec_Applicant")]

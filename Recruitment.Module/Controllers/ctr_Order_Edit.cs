@@ -29,76 +29,80 @@ namespace Recruitment.Module.Controllers
         }
         private void ActivateControls()
         {
+            //return;
             //activate/deactivate CRUD for rec_Employer_Order depend on its Status
             if (View.ObjectTypeInfo.Type == typeof(rec_Employer_Order))
             {
-                bool active = View.SelectedObjects.Cast<rec_Employer_Order>().All(order => order.rec_employer_order_rec_employer_order_status_id == Typez.enum_rec_Employer_Order_Status.InProgress);
+                bool active = View.SelectedObjects.Cast<rec_Employer_Order>().All(order => order.rec_employer_order_rec_employer_order_status_id == Typez.enum_rec_Employer_Order_Status.InProgress 
+                || order.rec_employer_order_rec_employer_order_status_id == Typez.enum_rec_Employer_Order_Status.Pasued);
                 Frame.GetController<ModificationsController>().SaveAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
                 Frame.GetController<ModificationsController>().SaveAndCloseAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
                 Frame.GetController<ModificationsController>().SaveAndNewAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
                 Frame.GetController<DeleteObjectsViewController>().DeleteAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
-                Frame.GetController<ctr_Order_Accept_App>().Actions["action_Order_Accept_App_Accept"].Active.SetItemValue("Only In Progress Order Can Modify", active);
-                Frame.GetController<ctr_Order_Accept_App>().Actions["action_Order_Accept_App_Refused"].Active.SetItemValue("Only In Progress Order Can Modify", active);
+                Frame.GetController<ctr_Order_Suggest_App>().Actions["action_Order_Suggest_App_Status_Changer"].Active.SetItemValue("Only In Progress Order Can Modify", active);
                 return;
             }
             //activate/deactivate CRUD for rec_Employer_Order_Detail depend on its Order Status
-            if (View.ObjectTypeInfo.Type == typeof(rec_Employer_Order_Detail)){
-                bool active = View.SelectedObjects.Cast<rec_Employer_Order_Detail>().All(order => order.rec_employer_order_detail_rec_employer_order_id == null || order.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id == Typez.enum_rec_Employer_Order_Status.InProgress);
+            if (View.ObjectTypeInfo.Type == typeof(rec_Employer_Order_Detail)){bool active = View.SelectedObjects.Cast<rec_Employer_Order_Detail>().All(order => order.rec_employer_order_detail_rec_employer_order_id == null 
+                || order.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id == Typez.enum_rec_Employer_Order_Status.InProgress 
+                || order.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id == Typez.enum_rec_Employer_Order_Status.Pasued);
                 Frame.GetController<ModificationsController>().SaveAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
                 Frame.GetController<ModificationsController>().SaveAndCloseAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
                 Frame.GetController<ModificationsController>().SaveAndNewAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
                 Frame.GetController<DeleteObjectsViewController>().DeleteAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
-                Frame.GetController<ctr_Order_Accept_App>().Actions["action_Order_Accept_App_Accept"].Active.SetItemValue("Only In Progress Order Can Modify", active);
-                Frame.GetController<ctr_Order_Accept_App>().Actions["action_Order_Accept_App_Refused"].Active.SetItemValue("Only In Progress Order Can Modify", active);
+                Frame.GetController<ctr_Order_Suggest_App>().Actions["action_Order_Suggest_App_Status_Changer"].Active.SetItemValue("Only In Progress Order Can Modify", active);
                 return;
             }
             //activate/deactivate CRUD for rec_Employer_Order_Detail_Call depend on its Order Status
             if (View.ObjectTypeInfo.Type == typeof(rec_Employer_Order_Detail_Call)){
-                bool active = View.SelectedObjects.Cast<rec_Employer_Order_Detail_Call>().All(item => item.rec_employer_order_detail_call_rec_employer_order_detail_id == null || item.rec_employer_order_detail_call_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id == Typez.enum_rec_Employer_Order_Status.InProgress);
+                bool active = View.SelectedObjects.Cast<rec_Employer_Order_Detail_Call>().All(item => item.rec_employer_order_detail_call_rec_employer_order_detail_id == null 
+                || item.rec_employer_order_detail_call_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id == Typez.enum_rec_Employer_Order_Status.InProgress 
+                || item.rec_employer_order_detail_call_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id == Typez.enum_rec_Employer_Order_Status.Pasued);
                 Frame.GetController<ModificationsController>().SaveAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
                 Frame.GetController<ModificationsController>().SaveAndCloseAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
                 Frame.GetController<ModificationsController>().SaveAndNewAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
                 Frame.GetController<DeleteObjectsViewController>().DeleteAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
-                Frame.GetController<ctr_Order_Accept_App>().Actions["action_Order_Accept_App_Accept"].Active.SetItemValue("Only In Progress Order Can Modify", active);
-                Frame.GetController<ctr_Order_Accept_App>().Actions["action_Order_Accept_App_Refused"].Active.SetItemValue("Only In Progress Order Can Modify", active);
+                Frame.GetController<ctr_Order_Suggest_App>().Actions["action_Order_Suggest_App_Status_Changer"].Active.SetItemValue("Only In Progress Order Can Modify", active);
                 return;
             }
             //activate/deactivate CRUD for rec_Employer_Order_Detail_Suggest_Applicat depend on its Order Status
             if (View.ObjectTypeInfo.Type == typeof(rec_Employer_Order_Detail_Suggest_Applicat))
             {
-                bool active = View.SelectedObjects.Cast<rec_Employer_Order_Detail_Suggest_Applicat>().All(item => item.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id == null || item.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id == Typez.enum_rec_Employer_Order_Status.InProgress);
+                bool active = View.SelectedObjects.Cast<rec_Employer_Order_Detail_Suggest_Applicat>().All(item => item.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id == null 
+                || item.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id == Typez.enum_rec_Employer_Order_Status.InProgress 
+                || item.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id == Typez.enum_rec_Employer_Order_Status.Pasued);
                 Frame.GetController<ModificationsController>().SaveAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
                 Frame.GetController<ModificationsController>().SaveAndCloseAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
                 Frame.GetController<ModificationsController>().SaveAndNewAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
                 Frame.GetController<DeleteObjectsViewController>().DeleteAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
-                Frame.GetController<ctr_Order_Accept_App>().Actions["action_Order_Accept_App_Accept"].Active.SetItemValue("Only In Progress Order Can Modify", active);
-                Frame.GetController<ctr_Order_Accept_App>().Actions["action_Order_Accept_App_Refused"].Active.SetItemValue("Only In Progress Order Can Modify", active);
+                Frame.GetController<ctr_Order_Suggest_App>().Actions["action_Order_Suggest_App_Status_Changer"].Active.SetItemValue("Only In Progress Order Can Modify", active);
                 return;
             }
             //activate/deactivate CRUD for rec_Employer_Order_Detail_Accept_Applicat depend on its Order Status
             if (View.ObjectTypeInfo.Type == typeof(rec_Employer_Order_Detail_Accept_Applicat))
             {
-                bool active = View.SelectedObjects.Cast<rec_Employer_Order_Detail_Accept_Applicat>().All(item => item.rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id == null || item.rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id == Typez.enum_rec_Employer_Order_Status.InProgress);
+                bool active = View.SelectedObjects.Cast<rec_Employer_Order_Detail_Accept_Applicat>().All(item => item.rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id == null 
+                || item.rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id == Typez.enum_rec_Employer_Order_Status.InProgress 
+                || item.rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id == Typez.enum_rec_Employer_Order_Status.Pasued);
                 Frame.GetController<ModificationsController>().SaveAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
                 Frame.GetController<ModificationsController>().SaveAndCloseAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
                 Frame.GetController<ModificationsController>().SaveAndNewAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
                 Frame.GetController<DeleteObjectsViewController>().DeleteAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
-                Frame.GetController<ctr_Order_Accept_App>().Actions["action_Order_Accept_App_Accept"].Active.SetItemValue("Only In Progress Order Can Modify", active);
-                Frame.GetController<ctr_Order_Accept_App>().Actions["action_Order_Accept_App_Refused"].Active.SetItemValue("Only In Progress Order Can Modify", active);
+                Frame.GetController<ctr_Order_Suggest_App>().Actions["action_Order_Suggest_App_Status_Changer"].Active.SetItemValue("Only In Progress Order Can Modify", active);
                 return;
             }
             //activate/deactivate CRUD for rec_Employer_Order_Detail_Accept_Applicat_Doc depend on its Order Status
             if (View.ObjectTypeInfo.Type == typeof(rec_Employer_Order_Detail_Accept_Applicat_Doc))
             {
-                bool active = View.SelectedObjects.Cast<rec_Employer_Order_Detail_Accept_Applicat_Doc>().All(item => item.rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_employer_order_detail_accept_applicat_id.rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id == null || item.rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_employer_order_detail_accept_applicat_id.rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id == Typez.enum_rec_Employer_Order_Status.InProgress);
+                bool active = View.SelectedObjects.Cast<rec_Employer_Order_Detail_Accept_Applicat_Doc>().All(item => item.rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_employer_order_detail_accept_applicat_id == null 
+                || item.rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_employer_order_detail_accept_applicat_id.rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id == Typez.enum_rec_Employer_Order_Status.InProgress
+                || item.rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_employer_order_detail_accept_applicat_id.rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id == Typez.enum_rec_Employer_Order_Status.Pasued);
                 Frame.GetController<ModificationsController>().SaveAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
                 Frame.GetController<ModificationsController>().SaveAndCloseAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
                 Frame.GetController<ModificationsController>().SaveAndNewAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
                 Frame.GetController<DeleteObjectsViewController>().DeleteAction.Active.SetItemValue("Only In Progress Order Can Modify", active);
-                Frame.GetController<ctr_Order_Accept_App>().Actions["action_Order_Accept_App_Accept"].Active.SetItemValue("Only In Progress Order Can Modify", active);
-                Frame.GetController<ctr_Order_Accept_App>().Actions["action_Order_Accept_App_Refused"].Active.SetItemValue("Only In Progress Order Can Modify", active);
-                return;
-            }
+                Frame.GetController<ctr_Order_Suggest_App>().Actions["action_Order_Suggest_App_Status_Changer"].Active.SetItemValue("Only In Progress Order Can Modify", active);
+                return;}
         }
         protected override void OnActivated()
         {

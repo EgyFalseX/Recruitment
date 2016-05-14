@@ -22,9 +22,9 @@ namespace Recruitment.Module.Controllers
             if (ctr == null || Frame.GetType() != typeof(NestedFrame))
                 return;
             _parentObj = ((NestedFrame)Frame).ViewItem.View.CurrentObject;
-            ctr.ObjectCreated += TestCtr_ObjectCreated;
+            ctr.ObjectCreated += IntiNew_ObjectCreated;
         }
-        private void TestCtr_ObjectCreated(object sender, ObjectCreatedEventArgs e)
+        private void IntiNew_ObjectCreated(object sender, ObjectCreatedEventArgs e)
         {
             foreach (PropertyInfo prop in e.CreatedObject.GetType().GetProperties())
             {
@@ -38,6 +38,6 @@ namespace Recruitment.Module.Controllers
             var ctr = Frame.GetController<NewObjectViewController>();
             if (ctr == null || Frame.GetType() != typeof(NestedFrame))
                 return;
-            ctr.ObjectCreated -= TestCtr_ObjectCreated;
+            ctr.ObjectCreated -= IntiNew_ObjectCreated;
         }}
 }
