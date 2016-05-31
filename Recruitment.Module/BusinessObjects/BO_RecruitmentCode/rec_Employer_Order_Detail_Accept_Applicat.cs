@@ -20,7 +20,6 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         public override void AfterConstruction() { base.AfterConstruction();
             this.frec_employer_order_detail_accept_applicat_rec_applicant_status_id = Session.FindObject<rec_Applicant_Status>(CriteriaOperator.Parse("rec_applicant_status_id = ?", 1));
                 }
-
         protected override void OnSaving()
         {
             base.OnSaving();
@@ -63,26 +62,33 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
 
         [NonPersistent]
         [DevExpress.Persistent.Base.EditorAlias("ProgressProperty")]
-        public double Progress
+        public double OperationProgress
         {
             get
             {
-                return 0.0;
-                double output = 0.0;
-                double completed = 0.0;
-                if (rec_Employer_Order_Detail_Accept_Applicat_Docs != null)
-                {
-                    foreach (rec_Employer_Order_Detail_Accept_Applicat_Doc item in rec_Employer_Order_Detail_Accept_Applicat_Docs)
-                    {
-                        if (item.rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_require_doc_status_id.rec_require_doc_status_id == (int)Core.Typez.enum_Doc_Status.Completed)
-                            completed++;
-                    }
-                    output = completed / rec_Employer_Order_Detail_Accept_Applicat_Docs.Count;
-                }
-                return output;
+                //XPQuery<int> qry = new XPQuery<User>(work).Where(user => user.UserName == "Sam").FirstOrDefault();
+                double total = Convert.ToDouble(Session.Evaluate<rec_Employer_Order_Detail_Accept_Applicat_Doc>(CriteriaOperator.Parse("Count"), 
+                    CriteriaOperator.Parse("rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_employer_order_detail_accept_applicat_id = ?", this.rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id)));
+
+                double completed = Convert.ToDouble(Session.Evaluate<rec_Employer_Order_Detail_Accept_Applicat_Doc>(CriteriaOperator.Parse("Count"),
+                    CriteriaOperator.Parse("rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_employer_order_detail_accept_applicat_id = ? " +
+                                           "AND rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_require_doc_status_id = ?"
+                                           , this.rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id
+                                           , (int)Core.Typez.enum_Doc_Status.Completed)));
+
+                return total <= 0 ? 0.0 : completed / total;
+                //double output = 0.0;//double completed = 0.0;//if (rec_Employer_Order_Detail_Accept_Applicat_Docs != null)
+                //{
+                //    foreach (rec_Employer_Order_Detail_Accept_Applicat_Doc item in rec_Employer_Order_Detail_Accept_Applicat_Docs)
+                //    {
+                //        if (item.rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_require_doc_status_id.rec_require_doc_status_id == (int)Core.Typez.enum_Doc_Status.Completed)
+                //            completed++;
+                //    }
+                //    output = completed / rec_Employer_Order_Detail_Accept_Applicat_Docs.Count;
+                //}
+                //return output;
             }
         }
-
     }
 
 }

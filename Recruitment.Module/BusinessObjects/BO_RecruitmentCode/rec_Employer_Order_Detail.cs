@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.Persistent.Base;
+using Recruitment.Module.Core;
 
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
@@ -47,11 +48,20 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         [NonPersistent]
         [EditorAlias("ProgressProperty")]
-        public double Progress
+        public double RecruitmentProgress
         {
             get
             {
+                //XPView view = new XPView(Session, typeof(rec_Employer_Order_Detail));view.AddProperty("RealPrice", "iif(RebatePercent == 0, ArticlePrice, ArticlePrice - (ArticlePrice * RebatePercent / 100))");
+                double completed = Convert.ToDouble(Session.Evaluate<rec_Employer_Order_Detail_Suggest_Applicat>(CriteriaOperator.Parse("Count"),
+                   CriteriaOperator.Parse("rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id = ? " +
+                                          "AND rec_employer_order_detail_suggest_applicat_rec_applicant_status_id != ?"
+                                          , this.frec_employer_order_detail_id
+                                          , (int)Typez.enum_rec_Suggest_Applicant_Status.Refused)));
+
+                return this.rec_employer_order_detail_count <= 0 ? 0.0 : completed / this.rec_employer_order_detail_count;
                 //double accepted_app = 0;
+                return 0.0;
                 double accepted_doc = 0;
                 if (rec_Employer_Order_Detail_Suggest_Applicats != null)
                 {
@@ -60,11 +70,35 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
                         if (Suggest.rec_Employer_Order_Detail_Accept_Applicats == null)
                             continue;
                         foreach (rec_Employer_Order_Detail_Accept_Applicat Accept in Suggest.rec_Employer_Order_Detail_Accept_Applicats)
-                            accepted_doc += Accept.Progress;
+                            accepted_doc += Accept.OperationProgress;
                     }
                 }
                 return accepted_doc / (frec_employer_order_detail_count == 0 ? 1 : frec_employer_order_detail_count);
             }
         }
+        [NonPersistent]
+        [DevExpress.Persistent.Base.EditorAlias("ProgressProperty")]
+        public double OperationProgress
+        {
+            get
+            {
+                double total = Convert.ToDouble(Session.Evaluate<rec_Employer_Order_Detail_Accept_Applicat_Doc>(CriteriaOperator.Parse("Count"),
+                    CriteriaOperator.Parse("rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_employer_order_detail_accept_applicat_id" +
+                                           ".rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" +
+                                           ".rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id = ?"
+                    , this.frec_employer_order_detail_id)));
+
+                double completed = Convert.ToDouble(Session.Evaluate<rec_Employer_Order_Detail_Accept_Applicat_Doc>(CriteriaOperator.Parse("Count"),
+                    CriteriaOperator.Parse("rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_employer_order_detail_accept_applicat_id" +
+                                           ".rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" +
+                                           ".rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id = ?" +
+                                           " AND rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_require_doc_status_id = ?"
+                    , this.frec_employer_order_detail_id, (int)Core.Typez.enum_Doc_Status.Completed)));
+
+                return total <= 0 ? 0.0 : completed / total;
+
+            }
+        }
+
     }
 }

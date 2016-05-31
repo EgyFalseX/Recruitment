@@ -19,7 +19,7 @@ namespace Recruitment.Module.Controllers
             base.OnViewControlsCreated();
             // Access and customize the target View control.
             var ctr = Frame.GetController<NewObjectViewController>();
-            if (ctr == null || Frame.GetType() != typeof(NestedFrame))
+            if (ctr == null || Frame.GetType() != typeof(NestedFrame) || ((NestedFrame)Frame).ViewItem.View == null)
                 return;
             _parentObj = ((NestedFrame)Frame).ViewItem.View.CurrentObject;
             ctr.ObjectCreated += IntiNew_ObjectCreated;

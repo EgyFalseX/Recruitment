@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="rec_Employer_Order_Detail_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SizeableEditors">
+            <LayoutItem Id="Progress" ViewItem="Progress" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Employer_Order_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="rec_Employer_Order">
+              <LayoutGroup Id="rec_Employer_Order_col2">
+                <LayoutGroup Id="Auto6ddb3aab-6956-438b-aa8a-553da4536726">
+                  <LayoutGroup Id="Autoc562a650-1ea2-449c-acff-84f80fcc790a">
+                    <LayoutGroup Id="Auto66a14801-a6cb-478e-9764-2ae7fcf3e2b6">
+                      <LayoutItem Id="Progress" ViewItem="Progress" />
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="ApplicatNode">
+        <Items Id="Items">
+          <Item Id="rec_Applicant_Study_ListView" ViewId="rec_Applicant_Study_ListView" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>
