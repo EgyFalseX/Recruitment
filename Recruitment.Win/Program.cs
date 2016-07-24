@@ -36,9 +36,10 @@ namespace Recruitment.Win {
                 winApplication.ConnectionString = ConfigurationManager.ConnectionStrings["EasyTestConnectionString"].ConnectionString;
             }
 #endif
-            if(System.Diagnostics.Debugger.IsAttached && winApplication.CheckCompatibilityType == CheckCompatibilityType.DatabaseSchema) {
-                winApplication.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
-            }
+            winApplication.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
+            //if (System.Diagnostics.Debugger.IsAttached && winApplication.CheckCompatibilityType == CheckCompatibilityType.DatabaseSchema) {
+            //    winApplication.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;}
+            
             try {
                 //((WinApplication)winApplication).GetUserChoice("Eshtaaaaaaaaaa?", MessageBoxButtons.YesNo);
                 if (FXFW.SqlDB.LoadSqlDBPath("Recruitment") /*&& Authentication()*/)

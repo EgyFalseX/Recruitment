@@ -9,3 +9,12 @@ select new {Id = grp.Key, Count = grp.Count()}
 join order_details in Rec_Employer_Order_Details on subQ_sugCount.Id equals order_details.Rec_employer_order_detail_id
 select new {Percent = subQ_sugCount.Count * 1.0 / order_details.Rec_employer_order_detail_count}).Average(per=>per.Percent)
 _________________________________________________________________________
+
+TO DO :
+
+1- Can't assigned app to more that 1 order suggestion
+2- Can't add app with status busy to any order
+3- Can't change app status when he is in open order with status waiting for confirmation or accepted (Customer validation)
+4- when add call you can change his status
+
+RuleObjectExists
