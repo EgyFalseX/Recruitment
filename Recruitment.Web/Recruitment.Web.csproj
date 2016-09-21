@@ -268,41 +268,106 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Default.aspx" />
-    <Content Include="Error.aspx" />
+    <Content Include="App\Default.aspx" />
+    <Content Include="App\Error.aspx" />
+    <Content Include="App\Images\Logo.png" />
+    <Content Include="css\1-col-portfolio.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\jquery.smartmenus.bootstrap.css" />
+    <Content Include="css\owl\owl.carousel.css" />
+    <Content Include="css\owl\owl.carousel.js" />
+    <Content Include="css\owl\owl.theme.css" />
+    <Content Include="css\owl\owl.transitions.css" />
+    <Content Include="fonts\font-awesome.min.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Images\Logo.png" />
+    <Content Include="img\12.jpg" />
+    <Content Include="img\13.jpg" />
+    <Content Include="img\14.jpg" />
+    <Content Include="img\700x300.jpg" />
+    <Content Include="img\agsquare_%402X.png" />
+    <Content Include="img\banner.jpg" />
+    <Content Include="img\banner1.jpg" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\portfolio\item01.jpg" />
+    <Content Include="img\portfolio\item02.jpg" />
+    <Content Include="img\portfolio\item03.jpg" />
+    <Content Include="img\portfolio\item04.jpg" />
+    <Content Include="img\portfolio\item05.jpg" />
+    <Content Include="img\portfolio\item06.jpg" />
+    <Content Include="img\products\1.jpg" />
+    <Content Include="img\products\2.jpg" />
+    <Content Include="img\products\3.jpg" />
+    <Content Include="img\triangular_%402X.png" />
+    <Content Include="index.aspx" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\contact.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.smartmenus.bootstrap.js" />
+    <Content Include="js\jquery.smartmenus.js" />
+    <Content Include="js\tutorial.js" />
+    <Content Include="js\wow.min.js" />
     <Content Include="Login.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Default.aspx.designer.cs">
+    <Compile Include="App\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Error.aspx.designer.cs">
+    <Compile Include="App\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="WebApplication.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Error.aspx.cs">
-      <DependentUpon>Error.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -329,8 +394,18 @@
   <ItemGroup>
     <Content Include="Model.Desktop.xafml" />
     <Content Include="Model.Tablet.xafml" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="ReadMe.txt" />
     <Content Include="Web.config" />
+    <Content Include="MasterPage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
