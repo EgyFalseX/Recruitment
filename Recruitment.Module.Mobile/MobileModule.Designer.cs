@@ -24,11 +24,10 @@
         /// </summary>
         private void InitializeComponent() {
             // 
-            // RecruitmentCTPMobileModule
+            // RecruitmentMobileModule
             // 
             this.RequiredModuleTypes.Add(typeof(Recruitment.Module.RecruitmentModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Mobile.SystemModule.SystemMobileModule));
-			this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.FileAttachments.Mobile.FileAttachmentsMobileModule));
 			this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.ReportsV2.Mobile.ReportsMobileModuleV2));
         }
 

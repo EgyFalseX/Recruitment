@@ -8,15 +8,14 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Security.ClientServer;
-using Recruitment.Module.Mobile;
 
 namespace Recruitment.Mobile {
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/DevExpressExpressAppWebWebApplicationMembersTopicAll.aspx
-    public partial class RecruitmentCTPMobileApplication : MobileApplication {
+    public partial class RecruitmentMobileApplication : MobileApplication {
         private DevExpress.ExpressApp.SystemModule.SystemModule module1;
         private DevExpress.ExpressApp.Mobile.SystemModule.SystemMobileModule module2;
         private Recruitment.Module.RecruitmentModule module3;
-        private RecruitmentMobileModule module4;
+        private Recruitment.Module.Mobile.RecruitmentMobileModule module4;
         private DevExpress.ExpressApp.Security.SecurityModule securityModule1;
         private DevExpress.ExpressApp.Security.SecurityStrategyComplex securityStrategyComplex1;
         private DevExpress.ExpressApp.Security.AuthenticationStandard authenticationStandard1;
@@ -25,7 +24,6 @@ namespace Recruitment.Mobile {
         private DevExpress.ExpressApp.Chart.ChartModule chartModule;
         private DevExpress.ExpressApp.CloneObject.CloneObjectModule cloneObjectModule;
         private DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule conditionalAppearanceModule;
-        private DevExpress.ExpressApp.FileAttachments.Mobile.FileAttachmentsMobileModule fileAttachmentsMobileModule;
         private DevExpress.ExpressApp.Kpi.KpiModule kpiModule;
         private DevExpress.ExpressApp.Notifications.NotificationsModule notificationsModule;
         private DevExpress.ExpressApp.PivotChart.PivotChartModuleBase pivotChartModuleBase;
@@ -38,10 +36,9 @@ namespace Recruitment.Mobile {
         private DevExpress.ExpressApp.TreeListEditors.TreeListEditorsModuleBase treeListEditorsModuleBase;
         private DevExpress.ExpressApp.Validation.ValidationModule validationModule;
         private DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule viewVariantsModule;
-        private Accounting.AccountingModule accountingModule1;
         private DevExpress.ExpressApp.Workflow.WorkflowModule workflowModule;
 
-        public RecruitmentCTPMobileApplication() {
+        public RecruitmentMobileApplication() {
 			SecurityAdapterHelper.Enable();
 		    Tracing.Initialize();
             if(ConfigurationManager.ConnectionStrings["ConnectionString"] != null) {
@@ -76,7 +73,7 @@ namespace Recruitment.Mobile {
             }
 			return dataStoreProvider;
         }
-        private void RecruitmentCTPMobileApplication_DatabaseVersionMismatch(object sender, DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs e) {
+        private void RecruitmentMobileApplication_DatabaseVersionMismatch(object sender, DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs e) {
 #if EASYTEST
             e.Updater.Update();
             e.Handled = true;
@@ -112,7 +109,6 @@ namespace Recruitment.Mobile {
             this.chartModule = new DevExpress.ExpressApp.Chart.ChartModule();
             this.cloneObjectModule = new DevExpress.ExpressApp.CloneObject.CloneObjectModule();
             this.conditionalAppearanceModule = new DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule();
-            this.fileAttachmentsMobileModule = new DevExpress.ExpressApp.FileAttachments.Mobile.FileAttachmentsMobileModule();
             this.kpiModule = new DevExpress.ExpressApp.Kpi.KpiModule();
             this.notificationsModule = new DevExpress.ExpressApp.Notifications.NotificationsModule();
             this.pivotChartModuleBase = new DevExpress.ExpressApp.PivotChart.PivotChartModuleBase();
@@ -126,53 +122,39 @@ namespace Recruitment.Mobile {
             this.validationModule = new DevExpress.ExpressApp.Validation.ValidationModule();
             this.viewVariantsModule = new DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule();
             this.workflowModule = new DevExpress.ExpressApp.Workflow.WorkflowModule();
-            this.accountingModule1 = new Accounting.AccountingModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // securityStrategyComplex1
             // 
             this.securityStrategyComplex1.Authentication = this.authenticationStandard1;
-            this.securityStrategyComplex1.RoleType = typeof(DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyRole);
-            this.securityStrategyComplex1.UserType = typeof(DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser);
+            this.securityStrategyComplex1.RoleType = typeof(DevExpress.ExpressApp.Security.Strategy.SecuritySystemRole);
+            this.securityStrategyComplex1.UserType = typeof(DevExpress.ExpressApp.Security.Strategy.SecuritySystemUser);
+            // 
+            // securityModule1
+            // 
+            this.securityModule1.UserType = typeof(DevExpress.ExpressApp.Security.Strategy.SecuritySystemUser);
             // 
             // authenticationStandard1
             // 
             this.authenticationStandard1.LogonParametersType = typeof(DevExpress.ExpressApp.Security.AuthenticationStandardLogonParameters);
-            // 
+            //
             // auditTrailModule
-            // 
+            //
             this.auditTrailModule.AuditDataItemPersistentType = typeof(DevExpress.Persistent.BaseImpl.AuditDataItemPersistent);
-            // 
-            // notificationsModule
-            // 
-            this.notificationsModule.CanAccessPostponedItems = false;
-            this.notificationsModule.NotificationsRefreshInterval = System.TimeSpan.Parse("00:05:00");
-            this.notificationsModule.NotificationsStartDelay = System.TimeSpan.Parse("00:00:05");
-            this.notificationsModule.ShowNotificationsWindow = true;
-            // 
-            // pivotChartModuleBase
-            // 
-            this.pivotChartModuleBase.DataAccessMode = DevExpress.ExpressApp.CollectionSourceDataAccessMode.Client;
-            this.pivotChartModuleBase.ShowAdditionalNavigation = true;
-            // 
+            //
             // reportsModuleV2
-            // 
+            //
             this.reportsModuleV2.EnableInplaceReports = true;
             this.reportsModuleV2.ReportDataType = typeof(DevExpress.Persistent.BaseImpl.ReportDataV2);
+            this.reportsModuleV2.ShowAdditionalNavigation = false;
             this.reportsModuleV2.ReportStoreMode = DevExpress.ExpressApp.ReportsV2.ReportStoreModes.XML;
-            this.reportsModuleV2.ShowAdditionalNavigation = true;
-            // 
+            //
             // stateMachineModule
-            // 
+            //
             this.stateMachineModule.StateMachineStorageType = typeof(DevExpress.ExpressApp.StateMachine.Xpo.XpoStateMachine);
-            // 
-            // validationModule
-            // 
-            this.validationModule.AllowValidationDetailsAccess = true;
-            this.validationModule.IgnoreWarningAndInformationRules = false;
-            // 
+            //
             // workflowModule
-            // 
+            //
             this.workflowModule.RunningWorkflowInstanceInfoType = typeof(DevExpress.ExpressApp.Workflow.Xpo.XpoRunningWorkflowInstanceInfo);
             this.workflowModule.StartWorkflowRequestType = typeof(DevExpress.ExpressApp.Workflow.Xpo.XpoStartWorkflowRequest);
             this.workflowModule.UserActivityVersionType = typeof(DevExpress.ExpressApp.Workflow.Versioning.XpoUserActivityVersion);
@@ -181,37 +163,35 @@ namespace Recruitment.Mobile {
             this.workflowModule.WorkflowInstanceKeyType = typeof(DevExpress.Workflow.Xpo.XpoInstanceKey);
             this.workflowModule.WorkflowInstanceType = typeof(DevExpress.Workflow.Xpo.XpoWorkflowInstance);
             // 
-            // RecruitmentCTPMobileApplication
+            // RecruitmentMobileApplication
             // 
             this.ApplicationName = "Recruitment";
             this.CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
             this.Modules.Add(this.module1);
-            this.Modules.Add(this.securityModule1);
             this.Modules.Add(this.module2);
+            this.Modules.Add(this.module3);
+            this.Modules.Add(this.module4);
+            this.Modules.Add(this.securityModule1);
+            this.Security = this.securityStrategyComplex1;
             this.Modules.Add(this.auditTrailModule);
             this.Modules.Add(this.objectsModule);
             this.Modules.Add(this.chartModule);
             this.Modules.Add(this.cloneObjectModule);
             this.Modules.Add(this.conditionalAppearanceModule);
-            this.Modules.Add(this.validationModule);
             this.Modules.Add(this.kpiModule);
             this.Modules.Add(this.notificationsModule);
             this.Modules.Add(this.pivotChartModuleBase);
             this.Modules.Add(this.pivotGridModule);
             this.Modules.Add(this.reportsModuleV2);
+            this.Modules.Add(this.reportsMobileModuleV2);
             this.Modules.Add(this.schedulerModuleBase);
             this.Modules.Add(this.scriptRecorderModuleBase);
             this.Modules.Add(this.stateMachineModule);
             this.Modules.Add(this.treeListEditorsModuleBase);
+            this.Modules.Add(this.validationModule);
             this.Modules.Add(this.viewVariantsModule);
             this.Modules.Add(this.workflowModule);
-            this.Modules.Add(this.accountingModule1);
-            this.Modules.Add(this.module3);
-            this.Modules.Add(this.fileAttachmentsMobileModule);
-            this.Modules.Add(this.reportsMobileModuleV2);
-            this.Modules.Add(this.module4);
-            this.Security = this.securityStrategyComplex1;
-            this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.RecruitmentCTPMobileApplication_DatabaseVersionMismatch);
+            this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.RecruitmentMobileApplication_DatabaseVersionMismatch);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

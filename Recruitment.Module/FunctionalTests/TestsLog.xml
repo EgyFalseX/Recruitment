@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<Tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Date="10/15/2016">
+  <Test Name="sample" ApplicationName="Recruitment.Win" Result="Warning" Elapsed="00:00:13.1353411" Started="10/15/2016 8:46:26 AM" ApplicationViews="sample_Recruitment.Win_View.jpeg" MachineName="FALSEX-PC" IP="10.71.34.1">
+    <Error Type="System.Exception">
+      <Message><![CDATA[There is an error on running the file ""E:\WorkArea\Projects\FalseX\Recruitment\Recruitment.Module\FunctionalTests\..\..\Recruitment.Win\Bin\EasyTest\Recruitment.Win.exe"", inner exception: "The directory name is invalid"================================================================================
+The error occurred:
+
+	Type:       Exception
+	Message:    There is an error on running the file ""E:\WorkArea\Projects\FalseX\Recruitment\Recruitment.Module\FunctionalTests\..\..\Recruitment.Win\Bin\EasyTest\Recruitment.Win.exe"", inner exception: "The directory name is invalid"
+	Data:       0 entries
+	Stack trace:
+
+   at DevExpress.EasyTest.Framework.Utils.WinApplicationAdapter.InternalRun(String appName, String arguments)
+   at DevExpress.ExpressApp.EasyTest.WinAdapter.WinAdapter.InternalRun(String appName, String arguments)
+   at DevExpress.EasyTest.Framework.Utils.WinApplicationAdapter.RunApplication(TestApplication testApplication)
+   at DevExpress.EasyTest.Framework.TestExecutor.RunApplication(IApplicationAdapter adapter, String applicationName)
+   at DevExpress.EasyTest.Framework.TestExecutor.ExecuteCommands(IApplicationAdapter adapter, String& applicationName)
+	----------------
+	InnerException:
+
+			Type:       Win32Exception
+			Message:    The directory name is invalid
+			Data:       0 entries
+			Stack trace:
+
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start()
+   at DevExpress.EasyTest.Framework.Utils.WinApplicationAdapter.InternalRun(String appName, String arguments)
+			InnerException is null
+]]></Message>
+    </Error>
+    <Error Type="System.Net.Sockets.SocketException">
+      <Message><![CDATA[No connection could be made because the target machine actively refused it 127.0.0.1:4100================================================================================
+The error occurred:
+
+	Type:       SocketException
+	Message:    No connection could be made because the target machine actively refused it 127.0.0.1:4100
+	Data:       0 entries
+	Stack trace:
+
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(AddressFamily family)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at DevExpress.ExpressApp.EasyTest.WinAdapter.WinEasyTestCommandAdapter.Disconnect()
+   at DevExpress.ExpressApp.EasyTest.WinAdapter.WinAdapter.KillApplication(TestApplication testApplication, KillApplicationConext context)
+   at DevExpress.EasyTest.Framework.TestExecutor.CloseApplication(String applicationName, KillApplicationConext context)
+   at DevExpress.EasyTest.Framework.TestExecutor.RunApplicationTest(Stream testStream, String applicationName)
+	InnerException is null
+]]></Message>
+    </Error>
+  </Test>
+  <Test Name="sample" ApplicationName="Recruitment.Web" Result="Warning" Elapsed="00:03:39.7481619" Started="10/15/2016 8:46:39 AM" ApplicationViews="sample_Recruitment.Web_View.jpeg" MachineName="FALSEX-PC" IP="10.71.34.1">
+    <Error Type="DevExpress.EasyTest.Framework.EasyTestException">
+      <Message><![CDATA[Browser is not responding., line 6]]></Message>
+    </Error>
+    <Error Type="System.Windows.Automation.ElementNotAvailableException">
+      <Message><![CDATA[Unrecognized error.================================================================================
+The error occurred:
+
+	Type:       ElementNotAvailableException
+	Message:    Unrecognized error.
+	Data:       0 entries
+	Stack trace:
+
+   at MS.Internal.Automation.UiaCoreApi.CheckError(Int32 hr)
+   at MS.Internal.Automation.UiaCoreApi.UiaNodeFromHandle(IntPtr hwnd)
+   at System.Windows.Automation.AutomationElement.FromHandle(IntPtr hwnd)
+   at DevExpress.ExpressApp.EasyTest.WebAdapter.XafWebBrowser.get_BrowserWindowProcessId()
+   at DevExpress.ExpressApp.EasyTest.WebAdapter.XafWebBrowser.DevExpress.ExpressApp.EasyTest.WebAdapter.IEasyTestWebBrowser.Close()
+   at DevExpress.ExpressApp.EasyTest.WebAdapter.WebAdapter.CloseWebBrowser()
+   at DevExpress.ExpressApp.EasyTest.WebAdapter.WebAdapter.KillApplication(TestApplication testApplication, KillApplicationConext context)
+   at DevExpress.EasyTest.Framework.TestExecutor.CloseApplication(String applicationName, KillApplicationConext context)
+   at DevExpress.EasyTest.Framework.TestExecutor.RunApplicationTest(Stream testStream, String applicationName)
+	InnerException is null
+]]></Message>
+    </Error>
+    <Error Type="System.Windows.Automation.ElementNotAvailableException">
+      <Message><![CDATA[Unrecognized error.================================================================================
+The error occurred:
+
+	Type:       ElementNotAvailableException
+	Message:    Unrecognized error.
+	Data:       0 entries
+	Stack trace:
+
+   at MS.Internal.Automation.UiaCoreApi.CheckError(Int32 hr)
+   at MS.Internal.Automation.UiaCoreApi.UiaNodeFromHandle(IntPtr hwnd)
+   at System.Windows.Automation.AutomationElement.FromHandle(IntPtr hwnd)
+   at DevExpress.ExpressApp.EasyTest.WebAdapter.XafWebBrowser.get_BrowserWindowProcessId()
+   at DevExpress.ExpressApp.EasyTest.WebAdapter.XafWebBrowser.DevExpress.ExpressApp.EasyTest.WebAdapter.IEasyTestWebBrowser.Close()
+   at DevExpress.ExpressApp.EasyTest.WebAdapter.WebAdapter.CloseWebBrowser()
+   at DevExpress.ExpressApp.EasyTest.WebAdapter.WebAdapter.Dispose()
+   at DevExpress.EasyTest.Framework.TestExecutor.RunApplicationTest(Stream testStream, String applicationName)
+   at DevExpress.EasyTest.Framework.TestExecutor.RunTestCore(Stream testStream)
+	InnerException is null
+]]></Message>
+    </Error>
+  </Test>
+</Tests>

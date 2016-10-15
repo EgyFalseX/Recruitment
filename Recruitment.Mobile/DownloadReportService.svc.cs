@@ -5,5 +5,5 @@ using System.Linq;
 using DevExpress.ExpressApp.ReportsV2.Mobile;
 
 namespace Recruitment.Mobile {
-    public class DownloadReportService : XafDownloadReportService<RecruitmentCTPMobileApplication> { }
+    public class DownloadReportService : XafDownloadReportService<RecruitmentMobileApplication> { }
 }

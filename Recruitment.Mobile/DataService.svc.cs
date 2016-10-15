@@ -2,6 +2,6 @@
 using DevExpress.ExpressApp.Mobile.Services;
 
 namespace Recruitment.Mobile {
-    public class DataService : MobileDataService<RecruitmentCTPMobileApplication> {
+    public class DataService : MobileDataService<RecruitmentMobileApplication> {
 	}
 }

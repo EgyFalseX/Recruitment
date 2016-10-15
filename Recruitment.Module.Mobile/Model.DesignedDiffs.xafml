@@ -1,20 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0"?>
 <Application>
   <NavigationItems>
     <Items>
       <Item Id="Default" IsNewNode="True">
-        <Items IsNewNode="True">
-          <Item Id="AboutInfo" ViewId="AboutInfo_DetailView" IsNewNode="True" />
+        <Items>
+          <Item Id="AboutInfo" ViewId="AboutInfo_DetailView" IsNewNode="True"/>
         </Items>
       </Item>
     </Items>
   </NavigationItems>
-  <SchemaModules>
-    <SchemaModule Name="CloneObjectModule" Version="16.1.6.0" IsNewNode="True" />
-    <SchemaModule Name="SchedulerModuleBase" Version="16.1.6.0" IsNewNode="True" />
-    <SchemaModule Name="SystemModule" Version="16.1.6.0" IsNewNode="True" />
-  </SchemaModules>
   <Views>
-    <DetailView Id="AboutInfo_DetailView" MobileVisible="True" />
+    <DetailView Id="AboutInfo_DetailView" MobileVisible="True"></DetailView>
   </Views>
 </Application>
