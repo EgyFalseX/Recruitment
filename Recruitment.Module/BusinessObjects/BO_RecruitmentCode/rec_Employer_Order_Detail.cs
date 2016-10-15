@@ -61,19 +61,19 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
 
                 return this.rec_employer_order_detail_count <= 0 ? 0.0 : completed / this.rec_employer_order_detail_count;
                 //double accepted_app = 0;
-                return 0.0;
-                double accepted_doc = 0;
-                if (rec_Employer_Order_Detail_Suggest_Applicats != null)
-                {
-                    foreach (rec_Employer_Order_Detail_Suggest_Applicat Suggest in rec_Employer_Order_Detail_Suggest_Applicats)
-                    {
-                        if (Suggest.rec_Employer_Order_Detail_Accept_Applicats == null)
-                            continue;
-                        foreach (rec_Employer_Order_Detail_Accept_Applicat Accept in Suggest.rec_Employer_Order_Detail_Accept_Applicats)
-                            accepted_doc += Accept.OperationProgress;
-                    }
-                }
-                return accepted_doc / (frec_employer_order_detail_count == 0 ? 1 : frec_employer_order_detail_count);
+                //return 0.0;
+                //double accepted_doc = 0;
+                //if (rec_Employer_Order_Detail_Suggest_Applicats != null)
+                //{
+                //    foreach (rec_Employer_Order_Detail_Suggest_Applicat Suggest in rec_Employer_Order_Detail_Suggest_Applicats)
+                //    {
+                //        if (Suggest.rec_Employer_Order_Detail_Accept_Applicats == null)
+                //            continue;
+                //        foreach (rec_Employer_Order_Detail_Accept_Applicat Accept in Suggest.rec_Employer_Order_Detail_Accept_Applicats)
+                //            accepted_doc += Accept.OperationProgress;
+                //    }
+                //}
+                //return accepted_doc / (frec_employer_order_detail_count == 0 ? 1 : frec_employer_order_detail_count);
             }
         }
         [NonPersistent]

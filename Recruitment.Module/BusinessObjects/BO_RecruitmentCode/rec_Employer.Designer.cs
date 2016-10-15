@@ -91,6 +91,12 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return femployer_postal_code; }
             set { SetPropertyValue<int>("employer_postal_code", ref femployer_postal_code, value); }
         }
+        int faccount_id;
+        public int account_id
+        {
+            get { return faccount_id; }
+            set { SetPropertyValue<int>("account_id", ref faccount_id, value); }
+        }
         [Association(@"rec_Employer_OrderReferencesrec_Employer")]
         public XPCollection<rec_Employer_Order> rec_Employer_Orders { get { return GetCollection<rec_Employer_Order>("rec_Employer_Orders"); } }
         [Association(@"rec_Employer_IndustryReferencesrec_Employer")]

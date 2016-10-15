@@ -162,6 +162,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\acc_Account_Applicant.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\acc_Account_Applicant.Designer.cs">
+      <DependentUpon>acc_Account_Applicant.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\AppDependenceFile.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\AppDependenceFile.Designer.cs">
       <DependentUpon>AppDependenceFile.cs</DependentUpon>
@@ -506,7 +510,29 @@
     <EmbeddedResource Include="Images\rec_Ticket_Type16.png" />
     <EmbeddedResource Include="Images\rec_Ticket_Type32.png" />
     <Content Include="Information.txt" />
+    <None Include="UnusableNodes1.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes2.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes3.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes4.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Welcome.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Accounting\Accounting.csproj">
+      <Project>{e1f786d2-e67f-4566-bb09-1b8e2b817911}</Project>
+      <Name>Accounting</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

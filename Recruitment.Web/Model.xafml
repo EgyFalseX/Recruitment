@@ -2,13 +2,6 @@
 <Application>
   <NavigationItems>
     <Items>
-      <Item Id="Default">
-        <Items>
-          <Item Id="MyDetails" Removed="True" />
-          <Item Id="SecuritySystemRole_ListView" Removed="True" />
-          <Item Id="SecuritySystemUser_ListView" Removed="True" />
-        </Items>
-      </Item>
       <Item Id="Users_Security">
         <Items>
           <Item Id="MyDetails" ViewId="SecuritySystemUser_DetailView" ObjectKey="@CurrentUserID" Caption="My Details" ImageName="BO_MyDetails" IsNewNode="True" />
@@ -19,11 +12,11 @@
     </Items>
   </NavigationItems>
   <SchemaModules>
-    <SchemaModule Name="CloneObjectModule" Version="15.2.5.0" IsNewNode="True" />
-    <SchemaModule Name="SchedulerAspNetModule" Version="15.2.5.0" IsNewNode="True" />
-    <SchemaModule Name="SchedulerModuleBase" Version="15.2.5.0" IsNewNode="True" />
-    <SchemaModule Name="SystemAspNetModule" Version="15.2.5.0" IsNewNode="True" />
-    <SchemaModule Name="SystemModule" Version="15.2.5.0" IsNewNode="True" />
+    <SchemaModule Name="CloneObjectModule" Version="16.1.6.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerAspNetModule" Version="16.1.6.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="16.1.6.0" IsNewNode="True" />
+    <SchemaModule Name="SystemAspNetModule" Version="16.1.6.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="16.1.6.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <DetailView Id="SecuritySystemRole_DetailView">

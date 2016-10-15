@@ -1,17 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+using DevExpress.ExpressApp.Templates;
+using DevExpress.ExpressApp.Web;
+using DevExpress.ExpressApp.Web.Templates;
+using DevExpress.ExpressApp.Web.Templates.ActionContainers;
 
-namespace Recruitment.Web
+public partial class Default : BaseXafPage
 {
-    public partial class Default : System.Web.UI.Page
+    protected override ContextActionsMenu CreateContextActionsMenu()
     {
-        protected void Page_Load(object sender, EventArgs e)
+        return new ContextActionsMenu(this, "Edit", "RecordEdit", "ObjectsCreation", "ListView", "Reports");
+    }
+    public override Control InnerContentPlaceHolder
+    {
+        get
         {
-
+            return Content;
         }
     }
 }

@@ -41,6 +41,8 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         [Association(@"rec_Employer_Order_Detail_Accept_Applicat_DocReferencesrec_Employer_Order_Detail_Accept_Applicat")]
         public XPCollection<rec_Employer_Order_Detail_Accept_Applicat_Doc> rec_Employer_Order_Detail_Accept_Applicat_Docs { get { return GetCollection<rec_Employer_Order_Detail_Accept_Applicat_Doc>("rec_Employer_Order_Detail_Accept_Applicat_Docs"); } }
+        [Association(@"acc_Account_ApplicantReferencesrec_Employer_Order_Detail_Accept_Applicat")]
+        public XPCollection<acc_Account_Applicant> acc_Account_Applicants { get { return GetCollection<acc_Account_Applicant>("acc_Account_Applicants"); } }
     }
 
 }

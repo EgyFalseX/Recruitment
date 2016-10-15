@@ -17,7 +17,11 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     public partial class rec_Applicant
     {
         public rec_Applicant(Session session) : base(session) { }
-        public override void AfterConstruction() { base.AfterConstruction(); }
+        public override void AfterConstruction()
+        {
+            base.AfterConstruction(); 
+            this.applicant_rec_applicant_status_id = Typez.enum_rec_Applicant_Status.Ready;
+        }
         //Audit Trail
         private XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> auditTrail;
         public XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> AuditTrail

@@ -283,6 +283,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Accounting\Accounting.csproj">
+      <Project>{e1f786d2-e67f-4566-bb09-1b8e2b817911}</Project>
+      <Name>Accounting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Recruitment.Module\Recruitment.Module.csproj">
       <Project>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</Project>
       <Name>Recruitment.Module</Name>

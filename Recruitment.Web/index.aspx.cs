@@ -5,10 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class preview_dotnet_templates_1_col_portfolio_index : System.Web.UI.Page
+namespace Recruitment.Web
 {
-    protected void Page_Load(object sender, EventArgs e)
+    public partial class index : System.Web.UI.Page
     {
-
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            //Response.Redirect("~/App/Default.aspx");
+        }
     }
 }

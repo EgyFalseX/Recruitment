@@ -5,13 +5,6 @@
   </BOModel>
   <NavigationItems>
     <Items>
-      <Item Id="Default">
-        <Items>
-          <Item Id="MyDetails" Removed="True" />
-          <Item Id="SecuritySystemRole_ListView" Removed="True" />
-          <Item Id="SecuritySystemUser_ListView" Removed="True" />
-        </Items>
-      </Item>
       <Item Id="Users_Security">
         <Items>
           <Item Id="MyDetails" ViewId="SecuritySystemUser_DetailView" ObjectKey="@CurrentUserID" Caption="My Details" ImageName="BO_MyDetails" IsNewNode="True" />
@@ -26,11 +19,11 @@
     <RibbonOptions RibbonControlStyle="Office2013" />
   </Options>
   <SchemaModules>
-    <SchemaModule Name="CloneObjectModule" Version="15.2.9.0" IsNewNode="True" />
-    <SchemaModule Name="SchedulerModuleBase" Version="15.2.9.0" IsNewNode="True" />
-    <SchemaModule Name="SchedulerWindowsFormsModule" Version="15.2.9.0" IsNewNode="True" />
-    <SchemaModule Name="SystemModule" Version="15.2.9.0" IsNewNode="True" />
-    <SchemaModule Name="SystemWindowsFormsModule" Version="15.2.9.0" IsNewNode="True" />
+    <SchemaModule Name="CloneObjectModule" Version="16.1.6.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="16.1.6.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerWindowsFormsModule" Version="16.1.6.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="16.1.6.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="16.1.6.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <DetailView Id="SecuritySystemRole_DetailView">
