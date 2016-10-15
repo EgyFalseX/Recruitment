@@ -1,5 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application>
+  <BOModel>
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Journal_Entry" ObjectCaptionFormat="{0:entry_text}">
+      <OwnMembers>
+        <Member Name="JournalCaption" LookupProperty="entry_text" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Localization>
+    <LocalizationGroup Name="Enums">
+      <LocalizationGroup Name="DevExpress.XtraPrinting.ExportTarget" IsNewNode="True" />
+    </LocalizationGroup>
+  </Localization>
   <NavigationItems>
     <Items>
       <Item Id="Generalode" Caption="General" ImageName="BO_State" Index="0" IsNewNode="True" Removed="True">
@@ -47,7 +59,11 @@
         <Items>
           <Item Id="acc_Account_ListView" Removed="True" />
           <Item Id="acc_Banks_ListView" Removed="True" />
-          <Item Id="acc_Journal_Entry_ListView" Removed="True" />
+          <Item Id="acc_Journal_Entry_ListView" ViewId="acc_Journal_Entry_ListView" IsNewNode="True" Removed="True">
+            <Items IsNewNode="True">
+              <Item Id="acc_Journal_Entry_Detail_ListView" ViewId="acc_Journal_Entry_Detail_ListView" IsNewNode="True" />
+            </Items>
+          </Item>
         </Items>
       </Item>
       <Item Id="Default">
@@ -56,11 +72,12 @@
           <Item Id="rec_Employer_ListView" ViewId="rec_Employer_ListView" ObjectKey="" Index="0" IsNewNode="True" />
           <Item Id="acc_Account_ListView" ViewId="acc_Account_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="acc_Banks_ListView" ViewId="acc_Bank_ListView" IsNewNode="True" />
-          <Item Id="acc_Journal_Entry_ListView" ViewId="acc_Journal_Entry_ListView" IsNewNode="True">
-            <Items IsNewNode="True">
-              <Item Id="acc_Journal_Entry_Detail_ListView" ViewId="acc_Journal_Entry_Detail_ListView" IsNewNode="True" />
-            </Items>
-          </Item>
+          <Item Id="ReportsV2" ViewId="ReportDataV2_ListView" ObjectKey="" Caption="Reports" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Reports">
+        <Items>
+          <Item Id="ReportsV2" Removed="True" />
         </Items>
       </Item>
     </Items>
@@ -70,4 +87,689 @@
     <SchemaModule Name="SchedulerModuleBase" Version="16.1.6.0" IsNewNode="True" />
     <SchemaModule Name="SystemModule" Version="16.1.6.0" IsNewNode="True" />
   </SchemaModules>
+  <Views>
+    <ListView Id="acc_Account_acc_Journal_Entry_Details_ListView">
+      <Columns>
+        <ColumnInfo Id="JournalCaption" Index="-1" />
+        <ColumnInfo Id="account_id" Index="0" />
+        <ColumnInfo Id="jour_entry_id" Index="1" />
+        <ColumnInfo Id="debit" Index="2" />
+        <ColumnInfo Id="credit" Index="3" />
+        <ColumnInfo Id="entry_text" Index="4" />
+      </Columns>
+    </ListView>
+    <DetailView Id="acc_Account_Applicant_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" ViewItem="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" Index="0" RelativeSize="3.9119804400977993" IsNewNode="True" />
+          <LayoutItem Id="account_id" ViewItem="account_id" Index="1" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutGroup Id="AuditTrail_Group" RelativeSize="93.154034229828852" Index="2" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="7.5794621026894866" Removed="True">
+            <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" ViewItem="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" Index="0" RelativeSize="51.612903225806448" IsNewNode="True" />
+            <LayoutItem Id="account_id" ViewItem="account_id" Index="1" RelativeSize="48.387096774193552" IsNewNode="True" />
+            <LayoutGroup Id="acc_Account_Applicant" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="acc_Account_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="16.014669926650367">
+            <LayoutGroup Id="acc_Account_col1" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="account_name" ViewItem="account_name" Index="0" RelativeSize="24.427480916030536" IsNewNode="True" />
+              <LayoutItem Id="parent_account_id" ViewItem="parent_account_id" Index="1" RelativeSize="18.3206106870229" IsNewNode="True" />
+              <LayoutItem Id="account_type_id" ViewItem="account_type_id" Index="2" RelativeSize="18.3206106870229" IsNewNode="True" />
+              <LayoutItem Id="acc_nature_id" ViewItem="acc_nature_id" Index="3" RelativeSize="18.3206106870229" IsNewNode="True" />
+              <LayoutItem Id="closed" ViewItem="closed" Index="4" RelativeSize="20.610687022900763" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="acc_Account" Direction="Vertical" Removed="True">
+              <LayoutGroup Id="acc_Account_col1" RelativeSize="100">
+                <LayoutItem Id="parent_account_id" Index="1" RelativeSize="18.045112781954888" />
+                <LayoutItem Id="account_type_id" ViewItem="account_type_id" Index="2" RelativeSize="18.045112781954888" IsNewNode="True" />
+                <LayoutItem Id="acc_nature_id" ViewItem="acc_nature_id" Index="3" RelativeSize="18.045112781954888" IsNewNode="True" />
+                <LayoutItem Id="closed" ViewItem="closed" Index="4" RelativeSize="21.804511278195488" IsNewNode="True" />
+                <LayoutItem Id="account_name" RelativeSize="24.060150375939848" />
+              </LayoutGroup>
+              <LayoutGroup Id="acc_Account_col2" Caption="acc_Account_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="acc_nature_id" Index="0" RelativeSize="36.363636363636367" Removed="True" />
+                <LayoutItem Id="closed" Index="0" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="account_type_id" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Index="2" RelativeSize="81.051344743276289">
+            <LayoutGroup Id="acc_AccountCollection" RelativeSize="100">
+              <LayoutItem Id="acc_AccountCollection" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="acc_Journal_Entry_Details" RelativeSize="100" Index="1">
+              <LayoutItem Id="acc_Journal_Entry_Details" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" RelativeSize="100" Index="2">
+              <LayoutItem Id="AuditTrail" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="acc_Bank_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="bank_name" ViewItem="bank_name" Index="0" RelativeSize="3.9119804400977993" IsNewNode="True" />
+          <LayoutItem Id="bank_acc_number" ViewItem="bank_acc_number" Index="1" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="bank_acc_name" ViewItem="bank_acc_name" Index="2" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="bank_address" ViewItem="bank_address" Index="3" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="bank_phone" ViewItem="bank_phone" Index="4" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="bank_fax" ViewItem="bank_fax" Index="5" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="bank_note" ViewItem="bank_note" CaptionLocation="Top" Index="6" RelativeSize="37.04156479217604" IsNewNode="True" />
+          <LayoutGroup Id="SizeableEditors" RelativeSize="37.04156479217604" Index="6" Removed="True" />
+          <LayoutGroup Id="AuditTrail_Group" RelativeSize="44.376528117359413" Index="7" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="18.948655256723715" Removed="True">
+            <LayoutItem Id="bank_name" ViewItem="bank_name" Index="0" RelativeSize="20.64516129032258" IsNewNode="True" />
+            <LayoutItem Id="bank_acc_number" ViewItem="bank_acc_number" Index="1" RelativeSize="15.483870967741936" IsNewNode="True" />
+            <LayoutItem Id="bank_acc_name" ViewItem="bank_acc_name" Index="2" RelativeSize="15.483870967741936" IsNewNode="True" />
+            <LayoutItem Id="bank_address" ViewItem="bank_address" Index="3" RelativeSize="15.483870967741936" IsNewNode="True" />
+            <LayoutItem Id="bank_phone" ViewItem="bank_phone" Index="4" RelativeSize="15.483870967741936" IsNewNode="True" />
+            <LayoutItem Id="bank_fax" ViewItem="bank_fax" Index="5" RelativeSize="17.419354838709676" IsNewNode="True" />
+            <LayoutGroup Id="acc_Bank" Direction="Vertical" Removed="True">
+              <LayoutItem Id="bank_name" ViewItem="bank_name" Index="0" RelativeSize="20" IsNewNode="True" />
+              <LayoutItem Id="bank_acc_number" ViewItem="bank_acc_number" Index="1" RelativeSize="15" IsNewNode="True" />
+              <LayoutItem Id="bank_acc_name" ViewItem="bank_acc_name" Index="2" RelativeSize="15" IsNewNode="True" />
+              <LayoutItem Id="bank_address" ViewItem="bank_address" Index="3" RelativeSize="15" IsNewNode="True" />
+              <LayoutItem Id="bank_phone" ViewItem="bank_phone" Index="4" RelativeSize="15" IsNewNode="True" />
+              <LayoutItem Id="bank_fax" ViewItem="bank_fax" Index="5" RelativeSize="20" IsNewNode="True" />
+              <LayoutGroup Id="acc_Bank_col1" RelativeSize="100" Removed="True">
+                <LayoutItem Id="bank_address" ViewItem="bank_address" Index="3" RelativeSize="15" IsNewNode="True" />
+                <LayoutItem Id="bank_phone" ViewItem="bank_phone" Index="4" RelativeSize="15" IsNewNode="True" />
+                <LayoutItem Id="bank_fax" ViewItem="bank_fax" Index="5" RelativeSize="20" IsNewNode="True" />
+                <LayoutItem Id="bank_acc_name" RelativeSize="15" />
+                <LayoutItem Id="bank_acc_number" RelativeSize="15" />
+                <LayoutItem Id="bank_name" RelativeSize="20" />
+              </LayoutGroup>
+              <LayoutGroup Id="acc_Bank_col2" Caption="acc_Bank_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="bank_fax" Index="0" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="bank_phone" Index="0" RelativeSize="28.571428571428573" Removed="True" />
+                <LayoutItem Id="bank_address" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="acc_Journal_Entry_acc_Journal_Entry_Details_ListView">
+      <Columns>
+        <ColumnInfo Id="account_id.account_name" PropertyName="account_id.account_name" Index="-1" Width="218" IsNewNode="True" />
+        <ColumnInfo Id="JournalCaption" Index="-1" />
+        <ColumnInfo Id="account_id" Index="0" Width="213" />
+        <ColumnInfo Id="debit" Index="1" />
+        <ColumnInfo Id="credit" Index="2" />
+        <ColumnInfo Id="entry_text" Index="3" />
+      </Columns>
+    </ListView>
+    <DetailView Id="acc_Journal_Entry_Detail_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="jour_entry_id" ViewItem="jour_entry_id" Index="0" RelativeSize="3.9119804400977993" IsNewNode="True" />
+          <LayoutItem Id="account_id" ViewItem="account_id" Index="1" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="credit" ViewItem="credit" Index="2" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="debit" ViewItem="debit" Index="3" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="entry_text" ViewItem="entry_text" Index="4" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="jour_entry_detail_id" ViewItem="jour_entry_detail_id" Index="5" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="description" ViewItem="description" CaptionLocation="Top" Index="6" RelativeSize="35.696821515892424" IsNewNode="True" />
+          <LayoutGroup Id="SizeableEditors" RelativeSize="35.696821515892424" Index="6" Removed="True">
+            <LayoutItem Id="description" RelativeSize="100" Index="0" />
+            <LayoutGroup Id="Auto7c6c11e1-9645-45a0-8e4c-4c618b0fb70a" Caption="Auto7c6c11e1-9645-45a0-8e4c-4c618b0fb70a(11)" RelativeSize="13.186813186813186" Direction="Horizontal" Removed="True">
+              <LayoutItem Id="jour_entry_detail_id" RelativeSize="100" Index="0" Removed="True" />
+              <LayoutItem Id="jour_entry_id" RelativeSize="50" Index="1" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="AuditTrail_Group" RelativeSize="45.721271393643029" Index="7" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="18.948655256723715" Removed="True">
+            <LayoutItem Id="jour_entry_id" ViewItem="jour_entry_id" Index="0" RelativeSize="20.64516129032258" IsNewNode="True" />
+            <LayoutItem Id="account_id" ViewItem="account_id" Index="1" RelativeSize="15.483870967741936" IsNewNode="True" />
+            <LayoutItem Id="credit" ViewItem="credit" Index="2" RelativeSize="15.483870967741936" IsNewNode="True" />
+            <LayoutItem Id="debit" ViewItem="debit" Index="3" RelativeSize="15.483870967741936" IsNewNode="True" />
+            <LayoutItem Id="entry_text" ViewItem="entry_text" Index="4" RelativeSize="15.483870967741936" IsNewNode="True" />
+            <LayoutItem Id="jour_entry_detail_id" ViewItem="jour_entry_detail_id" Index="5" RelativeSize="17.419354838709676" IsNewNode="True" />
+            <LayoutGroup Id="acc_Journal_Entry_Detail" Direction="Vertical" Removed="True">
+              <LayoutItem Id="jour_entry_id" ViewItem="jour_entry_id" Index="0" RelativeSize="20" IsNewNode="True" />
+              <LayoutItem Id="account_id" ViewItem="account_id" Index="1" RelativeSize="15" IsNewNode="True" />
+              <LayoutItem Id="credit" ViewItem="credit" Index="2" RelativeSize="15" IsNewNode="True" />
+              <LayoutItem Id="debit" ViewItem="debit" Index="3" RelativeSize="15" IsNewNode="True" />
+              <LayoutItem Id="entry_text" ViewItem="entry_text" Index="4" RelativeSize="15" IsNewNode="True" />
+              <LayoutItem Id="jour_entry_detail_id" ViewItem="jour_entry_detail_id" Index="5" RelativeSize="20" IsNewNode="True" />
+              <LayoutGroup Id="acc_Journal_Entry_Detail_col1" RelativeSize="100" Removed="True">
+                <LayoutItem Id="jour_entry_id" ViewItem="jour_entry_id" Index="0" RelativeSize="20" IsNewNode="True" />
+                <LayoutItem Id="account_id" RelativeSize="15" Index="1" />
+                <LayoutItem Id="credit" Index="2" RelativeSize="15" />
+                <LayoutItem Id="debit" ViewItem="debit" Index="3" RelativeSize="15" IsNewNode="True" />
+                <LayoutItem Id="entry_text" ViewItem="entry_text" Index="4" RelativeSize="15" IsNewNode="True" />
+                <LayoutItem Id="jour_entry_detail_id" ViewItem="jour_entry_detail_id" Index="5" RelativeSize="20" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="acc_Journal_Entry_Detail_col2" RelativeSize="50" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="debit" Index="0" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="entry_text" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="acc_Journal_Entry_Detail_ListView">
+      <Columns>
+        <ColumnInfo Id="JournalCaption" Index="-1" />
+        <ColumnInfo Id="account_id" Index="0" Width="143" />
+        <ColumnInfo Id="jour_entry_id" Index="1" />
+        <ColumnInfo Id="debit" Index="2" />
+        <ColumnInfo Id="credit" Index="3" />
+        <ColumnInfo Id="entry_text" Index="4" />
+      </Columns>
+    </ListView>
+    <ListView Id="acc_Journal_Entry_Detail_LookupListView">
+      <Columns>
+        <ColumnInfo Id="JournalCaption" Index="-1" />
+        <ColumnInfo Id="account_id" PropertyName="account_id" Index="0" Width="143" IsNewNode="True" />
+        <ColumnInfo Id="jour_entry_id" PropertyName="jour_entry_id" Index="1" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="acc_Journal_Entry_DetailView">
+      <Items>
+        <PropertyEditor Id="JournalCaption" Removed="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="year_id" ViewItem="year_id" Index="0" RelativeSize="3.9119804400977993" IsNewNode="True" />
+          <LayoutItem Id="entry_date" ViewItem="entry_date" Index="1" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="voucher_no" ViewItem="voucher_no" Index="2" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="entry_text" ViewItem="entry_text" Index="3" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="closed" ViewItem="closed" Index="4" RelativeSize="2.5672371638141809" IsNewNode="True" />
+          <LayoutItem Id="jour_entry_id" ViewItem="jour_entry_id" Index="5" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="JournalCaption" ViewItem="JournalCaption" Index="6" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="description" ViewItem="description" CaptionLocation="Top" Index="7" RelativeSize="42.542787286063572" IsNewNode="True" />
+          <LayoutGroup Id="SizeableEditors" RelativeSize="42.542787286063572" Index="7" Removed="True" />
+          <TabbedGroup Id="Tabs" RelativeSize="36.308068459657704" Index="8" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="27.750611246943766" Removed="True">
+            <LayoutItem Id="year_id" ViewItem="year_id" Index="0" RelativeSize="14.096916299559471" IsNewNode="True" />
+            <LayoutItem Id="entry_date" ViewItem="entry_date" Index="1" RelativeSize="10.572687224669604" IsNewNode="True" />
+            <LayoutItem Id="voucher_no" ViewItem="voucher_no" Index="2" RelativeSize="10.572687224669604" IsNewNode="True" />
+            <LayoutItem Id="entry_text" ViewItem="entry_text" Index="3" RelativeSize="10.572687224669604" IsNewNode="True" />
+            <LayoutItem Id="closed" ViewItem="closed" Index="4" RelativeSize="9.251101321585903" IsNewNode="True" />
+            <LayoutItem Id="jour_entry_id" ViewItem="jour_entry_id" Index="5" RelativeSize="10.572687224669604" IsNewNode="True" />
+            <LayoutItem Id="JournalCaption" ViewItem="JournalCaption" Index="6" RelativeSize="10.572687224669604" IsNewNode="True" />
+            <LayoutGroup Id="Auto91d8e199-93b0-4d3c-9ce8-028c7ead42d1" Caption="Auto91d8e199-93b0-4d3c-9ce8-028c7ead42d1(11)" RelativeSize="23.788546255506606" Direction="Horizontal" Index="7">
+              <LayoutItem Id="JournalCaption" RelativeSize="100" Index="0" Removed="True" />
+              <LayoutItem Id="jour_entry_id" RelativeSize="49.867724867724867" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="acc_Journal_Entry" RelativeSize="94.7136563876652" Direction="Vertical" Removed="True">
+              <LayoutItem Id="year_id" ViewItem="year_id" Index="0" RelativeSize="17.679558011049725" IsNewNode="True" />
+              <LayoutItem Id="entry_date" ViewItem="entry_date" Index="1" RelativeSize="13.259668508287293" IsNewNode="True" />
+              <LayoutItem Id="voucher_no" ViewItem="voucher_no" Index="2" RelativeSize="13.259668508287293" IsNewNode="True" />
+              <LayoutItem Id="entry_text" ViewItem="entry_text" Index="3" RelativeSize="13.259668508287293" IsNewNode="True" />
+              <LayoutItem Id="closed" ViewItem="closed" Index="4" RelativeSize="11.602209944751381" IsNewNode="True" />
+              <LayoutItem Id="jour_entry_id" ViewItem="jour_entry_id" Index="5" RelativeSize="13.259668508287293" IsNewNode="True" />
+              <LayoutItem Id="JournalCaption" ViewItem="JournalCaption" Index="6" RelativeSize="17.679558011049725" IsNewNode="True" />
+              <LayoutGroup Id="acc_Journal_Entry_col1" RelativeSize="49.863387978142079" Removed="True">
+                <LayoutItem Id="entry_date" ViewItem="entry_date" Index="1" RelativeSize="13.259668508287293" IsNewNode="True" />
+                <LayoutItem Id="voucher_no" ViewItem="voucher_no" Index="2" RelativeSize="13.259668508287293" IsNewNode="True" />
+                <LayoutItem Id="entry_text" Index="3" RelativeSize="13.259668508287293" />
+                <LayoutItem Id="closed" ViewItem="closed" Index="4" RelativeSize="11.602209944751381" IsNewNode="True" />
+                <LayoutItem Id="jour_entry_id" ViewItem="jour_entry_id" Index="5" RelativeSize="13.259668508287293" IsNewNode="True" />
+                <LayoutItem Id="JournalCaption" ViewItem="JournalCaption" Index="6" RelativeSize="17.679558011049725" IsNewNode="True" />
+                <LayoutItem Id="year_id" RelativeSize="17.679558011049725" />
+              </LayoutGroup>
+              <LayoutGroup Id="acc_Journal_Entry_col2" RelativeSize="50.136612021857921" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="closed" Index="0" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="voucher_no" Index="0" RelativeSize="36.363636363636367" Removed="True" />
+                <LayoutItem Id="entry_date" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="acc_Journal_Entry_ListView">
+      <Columns>
+        <ColumnInfo Id="JournalCaption" Index="-1" Removed="True" />
+        <ColumnInfo Id="jour_entry_id" Index="0" Width="31" />
+        <ColumnInfo Id="entry_text" Index="1" Width="120" />
+        <ColumnInfo Id="entry_date" Index="2" Width="72" />
+        <ColumnInfo Id="year_id" Index="3" Width="71" />
+        <ColumnInfo Id="closed" Index="4" Width="52" />
+        <ColumnInfo Id="voucher_no" Index="5" Width="86" />
+      </Columns>
+      <RowLayout>
+        <LayoutItem Id="JournalCaption" Removed="True" />
+      </RowLayout>
+    </ListView>
+    <ListView Id="acc_Journal_Entry_LookupListView">
+      <Columns>
+        <ColumnInfo Id="JournalCaption" Index="-1" Removed="True" />
+        <ColumnInfo Id="jour_entry_id" PropertyName="jour_entry_id" Index="0" Width="54" IsNewNode="True" />
+        <ColumnInfo Id="entry_text" PropertyName="entry_text" Index="1" Width="218" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="acc_Nature_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="acc_nature_name" ViewItem="acc_nature_name" Index="0" RelativeSize="3.9119804400977993" IsNewNode="True" />
+          <TabbedGroup Id="Tabs" RelativeSize="96.088019559902207" />
+          <LayoutGroup Id="SimpleEditors" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="acc_Option_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutItem Id="acc_option_name" ViewItem="acc_option_name" Index="0" RelativeSize="4.2666666666666666" IsNewNode="True" />
+          <LayoutItem Id="acc_option_value" ViewItem="acc_option_value" Index="1" RelativeSize="95.733333333333334" IsNewNode="True" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100" Removed="True">
+            <LayoutItem Id="acc_option_name" ViewItem="acc_option_name" Index="0" RelativeSize="4.2666666666666666" IsNewNode="True" />
+            <LayoutItem Id="acc_option_value" ViewItem="acc_option_value" Index="1" RelativeSize="95.733333333333334" IsNewNode="True" />
+            <LayoutGroup Id="acc_Option" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="acc_Option_LookupListView">
+      <Columns>
+        <ColumnInfo Id="acc_option_value" Index="-1" />
+        <ColumnInfo Id="acc_option_name" Index="0" />
+      </Columns>
+    </ListView>
+    <ListView Id="acc_Year_acc_Journal_Entrys_ListView">
+      <Columns>
+        <ColumnInfo Id="JournalCaption" Index="-1" />
+        <ColumnInfo Id="jour_entry_id" Index="0" Width="34" />
+        <ColumnInfo Id="entry_text" Index="1" Width="165" />
+        <ColumnInfo Id="year_id" Index="2" />
+        <ColumnInfo Id="entry_date" Index="3" />
+        <ColumnInfo Id="closed" Index="4" />
+        <ColumnInfo Id="voucher_no" Index="5" />
+      </Columns>
+    </ListView>
+    <DetailView Id="acc_Year_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="year_name" ViewItem="year_name" Index="0" RelativeSize="3.9119804400977993" IsNewNode="True" />
+          <LayoutItem Id="year_start_date" ViewItem="year_start_date" Index="1" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="year_end_date" ViewItem="year_end_date" Index="2" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <TabbedGroup Id="Tabs" RelativeSize="90.2200488997555" Index="3">
+            <LayoutGroup Id="acc_Journal_Entrys" RelativeSize="100" Index="0">
+              <LayoutItem Id="acc_Journal_Entrys" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" RelativeSize="100" Index="1">
+              <LayoutItem Id="AuditTrail" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+          <LayoutGroup Id="SimpleEditors" RelativeSize="10.513447432762836" Removed="True">
+            <LayoutItem Id="year_name" ViewItem="year_name" Index="0" RelativeSize="37.2093023255814" IsNewNode="True" />
+            <LayoutItem Id="year_start_date" ViewItem="year_start_date" Index="1" RelativeSize="27.906976744186046" IsNewNode="True" />
+            <LayoutItem Id="year_end_date" ViewItem="year_end_date" Index="2" RelativeSize="34.883720930232556" IsNewNode="True" />
+            <LayoutGroup Id="acc_Year" Removed="True">
+              <LayoutItem Id="year_start_date" ViewItem="year_start_date" Index="1" RelativeSize="27.906976744186046" IsNewNode="True" />
+              <LayoutItem Id="year_end_date" ViewItem="year_end_date" Index="2" RelativeSize="34.883720930232556" IsNewNode="True" />
+              <LayoutGroup Id="Auto7a037e5a-5188-4f14-9898-42f3c247fd6f" Caption="Auto7a037e5a-5188-4f14-9898-42f3c247fd6f(5)" Direction="Horizontal" Index="3" RelativeSize="13.043478260869565" Removed="True">
+                <LayoutItem Id="year_end_date" Index="0" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="year_start_date" Removed="True" />
+              </LayoutGroup>
+              <LayoutItem Id="year_name" RelativeSize="37.2093023255814" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="AppDependenceFile_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutItem Id="FileName" ViewItem="FileName" Index="0" RelativeSize="4.2666666666666666" IsNewNode="True" />
+          <LayoutItem Id="FileVersion" ViewItem="FileVersion" Index="1" RelativeSize="3.2" IsNewNode="True" />
+          <LayoutGroup Id="FileData_Group" Direction="Vertical" RelativeSize="92.533333333333331" Index="2">
+            <LayoutItem Id="FileData" RelativeSize="100" />
+          </LayoutGroup>
+          <LayoutGroup Id="SimpleEditors" RelativeSize="8.2666666666666675" Removed="True">
+            <LayoutItem Id="FileName" ViewItem="FileName" Index="0" RelativeSize="51.612903225806448" IsNewNode="True" />
+            <LayoutItem Id="FileVersion" ViewItem="FileVersion" Index="1" RelativeSize="48.387096774193552" IsNewNode="True" />
+            <LayoutGroup Id="AppDependenceFile" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Annual_Vacation_Type_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="rec_annual_vacation_type_name" ViewItem="rec_annual_vacation_type_name" Index="0" RelativeSize="3.9119804400977993" IsNewNode="True" />
+          <TabbedGroup Id="Tabs" RelativeSize="96.088019559902207" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="4.6454767726161368" Caption="SimpleEditors" Removed="True">
+            <LayoutItem Id="rec_annual_vacation_type_name" ViewItem="rec_annual_vacation_type_name" Index="0" RelativeSize="100" IsNewNode="True" />
+            <LayoutGroup Id="rec_Annual_Vacation_Type" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="rec_Annual_Vacation_Type_rec_Employer_Order_Details_ListView">
+      <Columns>
+        <ColumnInfo Id="CustomName" Index="-1" />
+        <ColumnInfo Id="rec_employer_order_detail_rec_employer_order_id" Index="0" />
+        <ColumnInfo Id="RecruitmentProgress" Index="1" />
+        <ColumnInfo Id="OperationProgress" Index="2" />
+        <ColumnInfo Id="rec_employer_order_detail_industry_id" Index="3" />
+        <ColumnInfo Id="rec_employer_order_detail_count" Index="4" />
+        <ColumnInfo Id="rec_employer_order_detail_visa_name" Index="5" />
+        <ColumnInfo Id="rec_employer_order_detail_rec_medical_insurance_types_id" Index="6" />
+        <ColumnInfo Id="rec_employer_order_detail_can_bring_family" Index="7" />
+        <ColumnInfo Id="rec_employer_order_detail_position_id" Index="8" />
+        <ColumnInfo Id="rec_employer_order_detail_salary" Index="9" />
+        <ColumnInfo Id="rec_employer_order_detail_rec_housing_type" Index="10" />
+        <ColumnInfo Id="rec_employer_order_detail_housing_value" Index="11" />
+        <ColumnInfo Id="rec_employer_order_detail_experience_years" Index="12" />
+        <ColumnInfo Id="rec_employer_order_detail_rec_residence_type_id" Index="13" />
+        <ColumnInfo Id="rec_employer_order_detail_rec_ticket_type_id" Index="14" />
+        <ColumnInfo Id="rec_employer_order_detail_working_hours" Index="15" />
+        <ColumnInfo Id="rec_employer_order_detail_annual_vacation_days" Index="16" />
+        <ColumnInfo Id="rec_employer_order_detail_overtime" Index="17" />
+      </Columns>
+    </ListView>
+    <DetailView Id="rec_Applicant_Course_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="app_crs_applicant_id" ViewItem="app_crs_applicant_id" Index="0" RelativeSize="3.9119804400977993" IsNewNode="True" />
+          <LayoutItem Id="app_crs_provider" ViewItem="app_crs_provider" Index="1" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="app_crs_title" ViewItem="app_crs_title" Index="2" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="app_crs_year" ViewItem="app_crs_year" Index="3" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutGroup Id="AuditTrail_Group" RelativeSize="87.286063569682156" Index="4" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="13.447432762836186" Removed="True">
+            <LayoutItem Id="app_crs_applicant_id" ViewItem="app_crs_applicant_id" Index="0" RelativeSize="29.09090909090909" IsNewNode="True" />
+            <LayoutItem Id="app_crs_provider" ViewItem="app_crs_provider" Index="1" RelativeSize="21.818181818181817" IsNewNode="True" />
+            <LayoutItem Id="app_crs_title" ViewItem="app_crs_title" Index="2" RelativeSize="21.818181818181817" IsNewNode="True" />
+            <LayoutItem Id="app_crs_year" ViewItem="app_crs_year" Index="3" RelativeSize="27.272727272727273" IsNewNode="True" />
+            <LayoutGroup Id="rec_Applicant_Course" Direction="Vertical" Removed="True">
+              <LayoutItem Id="app_crs_applicant_id" ViewItem="app_crs_applicant_id" Index="0" RelativeSize="28.571428571428573" IsNewNode="True" />
+              <LayoutItem Id="app_crs_provider" ViewItem="app_crs_provider" Index="1" RelativeSize="21.428571428571427" IsNewNode="True" />
+              <LayoutItem Id="app_crs_title" ViewItem="app_crs_title" Index="2" RelativeSize="21.428571428571427" IsNewNode="True" />
+              <LayoutItem Id="app_crs_year" ViewItem="app_crs_year" Index="3" RelativeSize="28.571428571428573" IsNewNode="True" />
+              <LayoutGroup Id="rec_Applicant_Course_col1" Removed="True" />
+              <LayoutGroup Id="rec_Applicant_Course_col2" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Applicant_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="GeneralInfo" RelativeSize="43.643031784841078">
+            <LayoutGroup Id="GeneralItem" Direction="Vertical">
+              <LayoutItem Id="rec_Applicant_image" ShowCaption="False" ViewItem="rec_Applicant_image" Index="0" RelativeSize="45.425867507886437" IsNewNode="True" />
+              <LayoutItem Id="applicant_name" ViewItem="applicant_name" Index="1" RelativeSize="7.5709779179810726" IsNewNode="True" />
+              <LayoutItem Id="applicant_national_id" ViewItem="applicant_national_id" Index="2" RelativeSize="7.5709779179810726" IsNewNode="True" />
+              <LayoutItem Id="applicant_birth_date" ViewItem="applicant_birth_date" Index="3" RelativeSize="7.5709779179810726" IsNewNode="True" />
+              <LayoutItem Id="applicant_gender_id" ViewItem="applicant_gender_id" Index="4" RelativeSize="7.5709779179810726" IsNewNode="True" />
+              <LayoutItem Id="applicant_marital_status_id" ViewItem="applicant_marital_status_id" Index="5" RelativeSize="7.5709779179810726" IsNewNode="True" />
+              <LayoutItem Id="applicant_military_id" ViewItem="applicant_military_id" Index="6" RelativeSize="7.5709779179810726" IsNewNode="True" />
+              <LayoutItem Id="applicant_driving_license" ViewItem="applicant_driving_license" Index="7" RelativeSize="9.14826498422713" IsNewNode="True" />
+              <LayoutGroup Id="Auto1c30ebdf-ff96-46b7-be3e-b7e116891b8a" RelativeSize="100" Removed="True">
+                <LayoutItem Id="rec_Applicant_image" ShowCaption="False" ViewItem="rec_Applicant_image" Index="7" RelativeSize="45.425867507886437" IsNewNode="True" />
+                <LayoutItem Id="applicant_birth_date" RelativeSize="7.5709779179810726" />
+                <LayoutItem Id="applicant_driving_license" RelativeSize="6.6246056782334382" />
+                <LayoutItem Id="applicant_gender_id" RelativeSize="7.5709779179810726" />
+                <LayoutItem Id="applicant_marital_status_id" RelativeSize="7.5709779179810726" />
+                <LayoutItem Id="applicant_military_id" RelativeSize="7.5709779179810726" />
+                <LayoutItem Id="applicant_name" RelativeSize="10.094637223974763" />
+                <LayoutItem Id="applicant_national_id" RelativeSize="7.5709779179810726" />
+              </LayoutGroup>
+              <LayoutGroup Id="Auto5a45bc7c-f56d-4743-b397-4587813a1c75" Direction="Horizontal" RelativeSize="69.230769230769226" Removed="True">
+                <LayoutItem Id="rec_Applicant_image" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="AddressContractItem">
+              <LayoutItem Id="applicant_nationality_id" RelativeSize="8.8328075709779181" />
+              <LayoutItem Id="applicant_city_id" RelativeSize="7.5709779179810726" />
+              <LayoutItem Id="applicant_email" RelativeSize="7.5709779179810726" />
+              <LayoutItem Id="applicant_phone" RelativeSize="7.5709779179810726" />
+              <LayoutItem Id="applicant_mobile" RelativeSize="7.5709779179810726" />
+              <LayoutItem Id="applicant_address" RelativeSize="60.883280757097793" />
+            </LayoutGroup>
+            <LayoutGroup Id="CareerItem">
+              <LayoutItem Id="applicant_rec_applicant_status_id" RelativeSize="8.8328075709779181" />
+              <LayoutItem Id="applicant_position_id" RelativeSize="7.5709779179810726" />
+              <LayoutItem Id="applicant_industry_id" RelativeSize="7.5709779179810726" />
+              <LayoutItem Id="applicant_salary" RelativeSize="7.5709779179810726" />
+              <LayoutItem Id="applicant_work_type_id" RelativeSize="68.454258675078862" />
+            </LayoutGroup>
+            <LayoutGroup Id="OtherItem">
+              <LayoutItem Id="applicant_skill" RelativeSize="19.558359621451103" />
+              <LayoutItem Id="applicant_summary" RelativeSize="80.4416403785489" />
+            </LayoutGroup>
+          </TabbedGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="56.356968215158922">
+            <LayoutGroup Id="rec_Applicant_Tags" Index="5" />
+            <LayoutGroup Id="rec_Employer_Order_Detail_Calls" Index="6" />
+            <LayoutGroup Id="rec_Employer_Order_Detail_Suggest_Applicats" Index="7" />
+            <LayoutGroup Id="AuditTrail" Index="8" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Applicant_Education_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="app_edu_applicant_id" ViewItem="app_edu_applicant_id" Index="0" RelativeSize="3.9119804400977993" IsNewNode="True" />
+          <LayoutItem Id="app_edu_university_id" ViewItem="app_edu_university_id" Index="1" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="app_edu_faculty_id" ViewItem="app_edu_faculty_id" Index="2" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="app_edu_degree_id" ViewItem="app_edu_degree_id" Index="3" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="app_edu_Industry" ViewItem="app_edu_Industry" Index="4" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="app_edu_study_grade_id" ViewItem="app_edu_study_grade_id" Index="5" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="app_edu_year" ViewItem="app_edu_year" Index="6" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutGroup Id="AuditTrail_Group" RelativeSize="78.4841075794621" Index="7" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="22.249388753056234" Removed="True">
+            <LayoutItem Id="app_edu_applicant_id" ViewItem="app_edu_applicant_id" Index="0" RelativeSize="17.582417582417584" IsNewNode="True" />
+            <LayoutItem Id="app_edu_university_id" ViewItem="app_edu_university_id" Index="1" RelativeSize="13.186813186813186" IsNewNode="True" />
+            <LayoutItem Id="app_edu_faculty_id" ViewItem="app_edu_faculty_id" Index="2" RelativeSize="13.186813186813186" IsNewNode="True" />
+            <LayoutItem Id="app_edu_degree_id" ViewItem="app_edu_degree_id" Index="3" RelativeSize="13.186813186813186" IsNewNode="True" />
+            <LayoutItem Id="app_edu_Industry" ViewItem="app_edu_Industry" Index="4" RelativeSize="13.186813186813186" IsNewNode="True" />
+            <LayoutItem Id="app_edu_study_grade_id" ViewItem="app_edu_study_grade_id" Index="5" RelativeSize="13.186813186813186" IsNewNode="True" />
+            <LayoutItem Id="app_edu_year" ViewItem="app_edu_year" Index="6" RelativeSize="16.483516483516482" IsNewNode="True" />
+            <LayoutGroup Id="rec_Applicant_Education" Direction="Vertical" Removed="True">
+              <LayoutItem Id="app_edu_applicant_id" ViewItem="app_edu_applicant_id" Index="0" RelativeSize="17.391304347826086" IsNewNode="True" />
+              <LayoutItem Id="app_edu_university_id" ViewItem="app_edu_university_id" Index="1" RelativeSize="13.043478260869565" IsNewNode="True" />
+              <LayoutItem Id="app_edu_faculty_id" ViewItem="app_edu_faculty_id" Index="2" RelativeSize="13.043478260869565" IsNewNode="True" />
+              <LayoutItem Id="app_edu_degree_id" ViewItem="app_edu_degree_id" Index="3" RelativeSize="13.043478260869565" IsNewNode="True" />
+              <LayoutItem Id="app_edu_Industry" ViewItem="app_edu_Industry" Index="4" RelativeSize="13.043478260869565" IsNewNode="True" />
+              <LayoutItem Id="app_edu_study_grade_id" ViewItem="app_edu_study_grade_id" Index="5" RelativeSize="13.043478260869565" IsNewNode="True" />
+              <LayoutItem Id="app_edu_year" ViewItem="app_edu_year" Index="6" RelativeSize="17.391304347826086" IsNewNode="True" />
+              <LayoutGroup Id="rec_Applicant_Education_col1" RelativeSize="100" Removed="True">
+                <LayoutItem Id="app_edu_degree_id" ViewItem="app_edu_degree_id" Index="3" RelativeSize="13.043478260869565" IsNewNode="True" />
+                <LayoutItem Id="app_edu_Industry" ViewItem="app_edu_Industry" Index="4" RelativeSize="13.043478260869565" IsNewNode="True" />
+                <LayoutItem Id="app_edu_study_grade_id" Index="5" RelativeSize="13.043478260869565" />
+                <LayoutItem Id="app_edu_year" ViewItem="app_edu_year" Index="6" RelativeSize="17.391304347826086" IsNewNode="True" />
+                <LayoutItem Id="app_edu_applicant_id" RelativeSize="17.391304347826086" />
+                <LayoutItem Id="app_edu_faculty_id" RelativeSize="13.043478260869565" />
+                <LayoutItem Id="app_edu_university_id" RelativeSize="13.043478260869565" />
+              </LayoutGroup>
+              <LayoutGroup Id="rec_Applicant_Education_col2" RelativeSize="50" Caption="rec_Applicant_Education_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="app_edu_Industry" Index="0" RelativeSize="23.529411764705884" Removed="True" />
+                <LayoutItem Id="app_edu_year" Index="0" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="app_edu_degree_id" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Applicant_Experience_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="app_exp_applicant_id" ViewItem="app_exp_applicant_id" Index="0" RelativeSize="3.9119804400977993" IsNewNode="True" />
+          <LayoutItem Id="app_exp_title" ViewItem="app_exp_title" Index="1" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="employer_name" ViewItem="employer_name" Index="2" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="app_exp_start_date" ViewItem="app_exp_start_date" Index="3" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="app_exp_end_date" ViewItem="app_exp_end_date" Index="4" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="app_exp_industry_id" ViewItem="app_exp_industry_id" Index="5" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="app_exp_work_type_id" ViewItem="app_exp_work_type_id" Index="6" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="app_exp_description" ViewItem="app_exp_description" Index="7" RelativeSize="8.1907090464547672" IsNewNode="True" />
+          <LayoutGroup Id="SizeableEditors" RelativeSize="8.1907090464547672" Index="7" Removed="True" />
+          <LayoutGroup Id="AuditTrail_Group" RelativeSize="70.293398533007334" Index="8" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="21.882640586797066" Removed="True">
+            <LayoutItem Id="app_exp_applicant_id" ViewItem="app_exp_applicant_id" Index="0" RelativeSize="17.877094972067038" IsNewNode="True" />
+            <LayoutItem Id="app_exp_title" ViewItem="app_exp_title" Index="1" RelativeSize="13.407821229050279" IsNewNode="True" />
+            <LayoutItem Id="employer_name" ViewItem="employer_name" Index="2" RelativeSize="13.407821229050279" IsNewNode="True" />
+            <LayoutItem Id="app_exp_start_date" ViewItem="app_exp_start_date" Index="3" RelativeSize="13.407821229050279" IsNewNode="True" />
+            <LayoutItem Id="app_exp_end_date" ViewItem="app_exp_end_date" Index="4" RelativeSize="13.407821229050279" IsNewNode="True" />
+            <LayoutItem Id="app_exp_industry_id" ViewItem="app_exp_industry_id" Index="5" RelativeSize="13.407821229050279" IsNewNode="True" />
+            <LayoutItem Id="app_exp_work_type_id" ViewItem="app_exp_work_type_id" Index="6" RelativeSize="15.083798882681565" IsNewNode="True" />
+            <LayoutGroup Id="rec_Applicant_Experience" Direction="Vertical" Removed="True">
+              <LayoutItem Id="app_exp_applicant_id" ViewItem="app_exp_applicant_id" Index="0" RelativeSize="17.391304347826086" IsNewNode="True" />
+              <LayoutItem Id="app_exp_title" ViewItem="app_exp_title" Index="1" RelativeSize="13.043478260869565" IsNewNode="True" />
+              <LayoutItem Id="employer_name" ViewItem="employer_name" Index="2" RelativeSize="13.043478260869565" IsNewNode="True" />
+              <LayoutItem Id="app_exp_start_date" ViewItem="app_exp_start_date" Index="3" RelativeSize="13.043478260869565" IsNewNode="True" />
+              <LayoutItem Id="app_exp_end_date" ViewItem="app_exp_end_date" Index="4" RelativeSize="13.043478260869565" IsNewNode="True" />
+              <LayoutItem Id="app_exp_industry_id" ViewItem="app_exp_industry_id" Index="5" RelativeSize="13.043478260869565" IsNewNode="True" />
+              <LayoutItem Id="app_exp_work_type_id" ViewItem="app_exp_work_type_id" Index="6" RelativeSize="17.391304347826086" IsNewNode="True" />
+              <LayoutGroup Id="rec_Applicant_Experience_col1" RelativeSize="100" Removed="True">
+                <LayoutItem Id="app_exp_start_date" ViewItem="app_exp_start_date" Index="3" RelativeSize="13.043478260869565" IsNewNode="True" />
+                <LayoutItem Id="app_exp_end_date" ViewItem="app_exp_end_date" Index="4" RelativeSize="13.043478260869565" IsNewNode="True" />
+                <LayoutItem Id="app_exp_industry_id" ViewItem="app_exp_industry_id" Index="5" RelativeSize="13.043478260869565" IsNewNode="True" />
+                <LayoutItem Id="app_exp_work_type_id" ViewItem="app_exp_work_type_id" Index="6" RelativeSize="17.391304347826086" IsNewNode="True" />
+                <LayoutItem Id="app_exp_applicant_id" RelativeSize="17.391304347826086" />
+                <LayoutItem Id="app_exp_title" RelativeSize="13.043478260869565" />
+                <LayoutItem Id="employer_name" RelativeSize="13.043478260869565" />
+              </LayoutGroup>
+              <LayoutGroup Id="rec_Applicant_Experience_col2" Caption="rec_Applicant_Experience_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="app_exp_end_date" Index="0" Removed="True" />
+                <LayoutItem Id="app_exp_industry_id" Index="0" RelativeSize="23.529411764705884" Removed="True" />
+                <LayoutItem Id="app_exp_work_type_id" Index="0" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="app_exp_start_date" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="rec_Applicant_ListView" IsGroupPanelVisible="False">
+      <Columns>
+        <ColumnInfo Id="applicant_address" Index="-1" />
+        <ColumnInfo Id="applicant_birth_date" Index="-1" />
+        <ColumnInfo Id="applicant_city_id" Index="-1" />
+        <ColumnInfo Id="applicant_driving_license" Index="-1" />
+        <ColumnInfo Id="applicant_email" Index="-1" />
+        <ColumnInfo Id="applicant_gender_id" Index="-1" />
+        <ColumnInfo Id="applicant_marital_status_id" Index="-1" />
+        <ColumnInfo Id="applicant_military_id" Index="-1" />
+        <ColumnInfo Id="applicant_national_id" Index="-1" />
+        <ColumnInfo Id="applicant_nationality_id" Index="-1" />
+        <ColumnInfo Id="applicant_phone" Index="-1" />
+        <ColumnInfo Id="applicant_position_id" Index="-1" />
+        <ColumnInfo Id="applicant_salary" Index="-1" />
+        <ColumnInfo Id="applicant_work_type_id" Index="-1" />
+        <ColumnInfo Id="rec_Applicant_image" Index="-1" />
+        <ColumnInfo Id="applicant_mobile" Index="2" />
+        <ColumnInfo Id="applicant_industry_id" Index="3" />
+      </Columns>
+    </ListView>
+    <ListView Id="rec_Applicant_ListView_Lite" IsGroupPanelVisible="False" Removed="True">
+      <Columns>
+        <ColumnInfo Id="applicant_city_id" Index="-1" />
+        <ColumnInfo Id="applicant_industry_id" Index="-1" />
+        <ColumnInfo Id="applicant_name" Index="-1" />
+        <ColumnInfo Id="applicant_phone" Index="-1" />
+        <ColumnInfo Id="applicant_rec_applicant_status_id" Index="-1" />
+        <ColumnInfo Id="rec_Applicant_image" Index="-1" />
+        <ColumnInfo Id="applicant_mobile" Index="0" />
+      </Columns>
+    </ListView>
+    <ListView Id="rec_Applicant_LookupListView">
+      <Columns>
+        <ColumnInfo Id="applicant_name" Index="0" />
+        <ColumnInfo Id="applicant_id" Index="1" />
+      </Columns>
+    </ListView>
+    <DetailView Id="rec_Applicant_Project_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="app_prj_applicant_id" ViewItem="app_prj_applicant_id" Index="0" RelativeSize="3.9119804400977993" IsNewNode="True" />
+          <LayoutItem Id="app_prj_company_name" ViewItem="app_prj_company_name" Index="1" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="app_prj_title" ViewItem="app_prj_title" Index="2" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="app_prj_date" ViewItem="app_prj_date" Index="3" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="app_prj_url" ViewItem="app_prj_url" Index="4" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="app_prj_description" ViewItem="app_prj_description" Index="5" RelativeSize="12.469437652811736" IsNewNode="True" />
+          <LayoutGroup Id="AuditTrail_Group" RelativeSize="71.882640586797066" Index="6" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="28.117359413202934" Removed="True">
+            <LayoutItem Id="app_prj_applicant_id" ViewItem="app_prj_applicant_id" Index="0" RelativeSize="13.913043478260869" IsNewNode="True" />
+            <LayoutItem Id="app_prj_company_name" ViewItem="app_prj_company_name" Index="1" RelativeSize="10.434782608695652" IsNewNode="True" />
+            <LayoutItem Id="app_prj_title" ViewItem="app_prj_title" Index="2" RelativeSize="10.434782608695652" IsNewNode="True" />
+            <LayoutItem Id="app_prj_date" ViewItem="app_prj_date" Index="3" RelativeSize="10.434782608695652" IsNewNode="True" />
+            <LayoutItem Id="app_prj_url" ViewItem="app_prj_url" Index="4" RelativeSize="10.434782608695652" IsNewNode="True" />
+            <LayoutItem Id="app_prj_description" ViewItem="app_prj_description" Index="5" RelativeSize="44.347826086956523" IsNewNode="True" />
+            <LayoutGroup Id="rec_Applicant_Project" Direction="Vertical" Removed="True">
+              <LayoutItem Id="app_prj_applicant_id" ViewItem="app_prj_applicant_id" Index="0" RelativeSize="16.842105263157894" IsNewNode="True" />
+              <LayoutItem Id="app_prj_company_name" ViewItem="app_prj_company_name" Index="1" RelativeSize="12.631578947368421" IsNewNode="True" />
+              <LayoutItem Id="app_prj_title" ViewItem="app_prj_title" Index="2" RelativeSize="12.631578947368421" IsNewNode="True" />
+              <LayoutItem Id="app_prj_date" ViewItem="app_prj_date" Index="3" RelativeSize="12.631578947368421" IsNewNode="True" />
+              <LayoutItem Id="app_prj_url" ViewItem="app_prj_url" Index="4" RelativeSize="12.631578947368421" IsNewNode="True" />
+              <LayoutItem Id="app_prj_description" ViewItem="app_prj_description" Index="5" RelativeSize="32.631578947368418" IsNewNode="True" />
+              <LayoutGroup Id="rec_Applicant_Project_col1" Removed="True">
+                <LayoutItem Id="app_prj_company_name" ViewItem="app_prj_company_name" Index="1" RelativeSize="12.631578947368421" IsNewNode="True" />
+                <LayoutItem Id="app_prj_title" Index="2" RelativeSize="12.631578947368421" />
+                <LayoutItem Id="app_prj_date" ViewItem="app_prj_date" Index="3" RelativeSize="12.631578947368421" IsNewNode="True" />
+                <LayoutItem Id="app_prj_url" ViewItem="app_prj_url" Index="4" RelativeSize="12.631578947368421" IsNewNode="True" />
+                <LayoutItem Id="app_prj_description" ViewItem="app_prj_description" Index="5" RelativeSize="32.631578947368418" IsNewNode="True" />
+                <LayoutItem Id="app_prj_applicant_id" RelativeSize="16.842105263157894" />
+              </LayoutGroup>
+              <LayoutGroup Id="rec_Applicant_Project_col2" Caption="rec_Applicant_Project_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="app_prj_date" Index="0" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="app_prj_url" Index="0" RelativeSize="36.363636363636367" Removed="True" />
+                <LayoutItem Id="app_prj_company_name" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="0.73349633251833746" Caption="Description" Direction="Horizontal" Removed="True">
+            <LayoutItem Id="app_prj_description" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Employer_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="employer_logo" ShowCaption="False" ViewItem="employer_logo" Index="0" RelativeSize="17.359413202933986" IsNewNode="True" />
+          <LayoutItem Id="employer_company_name" ViewItem="employer_company_name" Index="1" RelativeSize="3.9119804400977993" IsNewNode="True" />
+          <LayoutItem Id="employer_owner_name" ViewItem="employer_owner_name" Index="2" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="employer_mobile" ViewItem="employer_mobile" Index="3" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="employer_phone" ViewItem="employer_phone" Index="4" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="employer_nationality_id" ViewItem="employer_nationality_id" Index="5" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="employer_city_id" ViewItem="employer_city_id" Index="6" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="employer_Address" ViewItem="employer_Address" Index="7" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="employer_email" ViewItem="employer_email" Index="8" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="employer_website" ViewItem="employer_website" Index="9" RelativeSize="2.93398533007335" IsNewNode="True" />
+          <LayoutItem Id="employer_postal_code" ViewItem="employer_postal_code" Index="10" RelativeSize="3.9119804400977993" IsNewNode="True" />
+          <TabbedGroup Id="Tabs" RelativeSize="51.344743276283616" Index="11" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="48.655256723716384" Caption="SimpleEditors" Removed="True">
+            <LayoutItem Id="employer_company_name" ViewItem="employer_company_name" Index="0" RelativeSize="8.0402010050251249" IsNewNode="True" />
+            <LayoutGroup Id="rec_Employer" ShowCaption="True" Caption="General Informaiton" Index="0" RelativeSize="67.129629629629633" Removed="True">
+              <LayoutItem Id="employer_company_name" ViewItem="employer_company_name" Index="0" RelativeSize="12.5" IsNewNode="True" />
+              <LayoutItem Id="employer_owner_name" ViewItem="employer_owner_name" Index="1" RelativeSize="9.375" IsNewNode="True" />
+              <LayoutItem Id="employer_mobile" ViewItem="employer_mobile" Index="2" RelativeSize="9.375" IsNewNode="True" />
+              <LayoutItem Id="employer_phone" ViewItem="employer_phone" Index="3" RelativeSize="9.375" IsNewNode="True" />
+              <LayoutItem Id="employer_nationality_id" ViewItem="employer_nationality_id" Index="4" RelativeSize="9.375" IsNewNode="True" />
+              <LayoutItem Id="employer_city_id" ViewItem="employer_city_id" Index="5" RelativeSize="9.375" IsNewNode="True" />
+              <LayoutItem Id="employer_Address" ViewItem="employer_Address" Index="6" RelativeSize="9.375" IsNewNode="True" />
+              <LayoutItem Id="employer_email" ViewItem="employer_email" Index="7" RelativeSize="9.375" IsNewNode="True" />
+              <LayoutItem Id="employer_website" ViewItem="employer_website" Index="8" RelativeSize="9.375" IsNewNode="True" />
+              <LayoutItem Id="employer_postal_code" ViewItem="employer_postal_code" Index="9" RelativeSize="12.5" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutItem Id="employer_owner_name" ViewItem="employer_owner_name" Index="1" RelativeSize="6.0301507537688446" IsNewNode="True" />
+            <LayoutItem Id="employer_mobile" ViewItem="employer_mobile" Index="2" RelativeSize="6.0301507537688446" IsNewNode="True" />
+            <LayoutItem Id="employer_phone" ViewItem="employer_phone" Index="3" RelativeSize="6.0301507537688446" IsNewNode="True" />
+            <LayoutItem Id="employer_nationality_id" ViewItem="employer_nationality_id" Index="4" RelativeSize="6.0301507537688446" IsNewNode="True" />
+            <LayoutItem Id="employer_city_id" ViewItem="employer_city_id" Index="5" RelativeSize="6.0301507537688446" IsNewNode="True" />
+            <LayoutItem Id="employer_Address" ViewItem="employer_Address" Index="6" RelativeSize="6.0301507537688446" IsNewNode="True" />
+            <LayoutItem Id="employer_email" ViewItem="employer_email" Index="7" RelativeSize="6.0301507537688446" IsNewNode="True" />
+            <LayoutItem Id="employer_website" ViewItem="employer_website" Index="8" RelativeSize="6.0301507537688446" IsNewNode="True" />
+            <LayoutItem Id="employer_postal_code" ViewItem="employer_postal_code" Index="9" RelativeSize="8.0402010050251249" IsNewNode="True" />
+            <LayoutItem Id="employer_logo" RelativeSize="35.678391959798994" Index="10" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
 </Application>

@@ -36,6 +36,7 @@ namespace Recruitment.Mobile {
         private DevExpress.ExpressApp.TreeListEditors.TreeListEditorsModuleBase treeListEditorsModuleBase;
         private DevExpress.ExpressApp.Validation.ValidationModule validationModule;
         private DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule viewVariantsModule;
+        private Accounting.AccountingModule accountingModule1;
         private DevExpress.ExpressApp.Workflow.WorkflowModule workflowModule;
 
         public RecruitmentMobileApplication() {
@@ -122,6 +123,7 @@ namespace Recruitment.Mobile {
             this.validationModule = new DevExpress.ExpressApp.Validation.ValidationModule();
             this.viewVariantsModule = new DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule();
             this.workflowModule = new DevExpress.ExpressApp.Workflow.WorkflowModule();
+            this.accountingModule1 = new Accounting.AccountingModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // securityStrategyComplex1
@@ -130,31 +132,43 @@ namespace Recruitment.Mobile {
             this.securityStrategyComplex1.RoleType = typeof(DevExpress.ExpressApp.Security.Strategy.SecuritySystemRole);
             this.securityStrategyComplex1.UserType = typeof(DevExpress.ExpressApp.Security.Strategy.SecuritySystemUser);
             // 
-            // securityModule1
-            // 
-            this.securityModule1.UserType = typeof(DevExpress.ExpressApp.Security.Strategy.SecuritySystemUser);
-            // 
             // authenticationStandard1
             // 
             this.authenticationStandard1.LogonParametersType = typeof(DevExpress.ExpressApp.Security.AuthenticationStandardLogonParameters);
-            //
+            // 
             // auditTrailModule
-            //
+            // 
             this.auditTrailModule.AuditDataItemPersistentType = typeof(DevExpress.Persistent.BaseImpl.AuditDataItemPersistent);
-            //
+            // 
+            // notificationsModule
+            // 
+            this.notificationsModule.CanAccessPostponedItems = false;
+            this.notificationsModule.NotificationsRefreshInterval = System.TimeSpan.Parse("00:05:00");
+            this.notificationsModule.NotificationsStartDelay = System.TimeSpan.Parse("00:00:05");
+            this.notificationsModule.ShowNotificationsWindow = true;
+            // 
+            // pivotChartModuleBase
+            // 
+            this.pivotChartModuleBase.DataAccessMode = DevExpress.ExpressApp.CollectionSourceDataAccessMode.Client;
+            this.pivotChartModuleBase.ShowAdditionalNavigation = false;
+            // 
             // reportsModuleV2
-            //
+            // 
             this.reportsModuleV2.EnableInplaceReports = true;
             this.reportsModuleV2.ReportDataType = typeof(DevExpress.Persistent.BaseImpl.ReportDataV2);
-            this.reportsModuleV2.ShowAdditionalNavigation = false;
             this.reportsModuleV2.ReportStoreMode = DevExpress.ExpressApp.ReportsV2.ReportStoreModes.XML;
-            //
+            // 
             // stateMachineModule
-            //
+            // 
             this.stateMachineModule.StateMachineStorageType = typeof(DevExpress.ExpressApp.StateMachine.Xpo.XpoStateMachine);
-            //
+            // 
+            // validationModule
+            // 
+            this.validationModule.AllowValidationDetailsAccess = true;
+            this.validationModule.IgnoreWarningAndInformationRules = false;
+            // 
             // workflowModule
-            //
+            // 
             this.workflowModule.RunningWorkflowInstanceInfoType = typeof(DevExpress.ExpressApp.Workflow.Xpo.XpoRunningWorkflowInstanceInfo);
             this.workflowModule.StartWorkflowRequestType = typeof(DevExpress.ExpressApp.Workflow.Xpo.XpoStartWorkflowRequest);
             this.workflowModule.UserActivityVersionType = typeof(DevExpress.ExpressApp.Workflow.Versioning.XpoUserActivityVersion);
@@ -168,29 +182,30 @@ namespace Recruitment.Mobile {
             this.ApplicationName = "Recruitment";
             this.CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
             this.Modules.Add(this.module1);
-            this.Modules.Add(this.module2);
-            this.Modules.Add(this.module3);
-            this.Modules.Add(this.module4);
             this.Modules.Add(this.securityModule1);
-            this.Security = this.securityStrategyComplex1;
+            this.Modules.Add(this.module2);
             this.Modules.Add(this.auditTrailModule);
             this.Modules.Add(this.objectsModule);
             this.Modules.Add(this.chartModule);
             this.Modules.Add(this.cloneObjectModule);
             this.Modules.Add(this.conditionalAppearanceModule);
+            this.Modules.Add(this.validationModule);
             this.Modules.Add(this.kpiModule);
             this.Modules.Add(this.notificationsModule);
             this.Modules.Add(this.pivotChartModuleBase);
             this.Modules.Add(this.pivotGridModule);
             this.Modules.Add(this.reportsModuleV2);
-            this.Modules.Add(this.reportsMobileModuleV2);
             this.Modules.Add(this.schedulerModuleBase);
             this.Modules.Add(this.scriptRecorderModuleBase);
             this.Modules.Add(this.stateMachineModule);
             this.Modules.Add(this.treeListEditorsModuleBase);
-            this.Modules.Add(this.validationModule);
             this.Modules.Add(this.viewVariantsModule);
             this.Modules.Add(this.workflowModule);
+            this.Modules.Add(this.accountingModule1);
+            this.Modules.Add(this.module3);
+            this.Modules.Add(this.reportsMobileModuleV2);
+            this.Modules.Add(this.module4);
+            this.Security = this.securityStrategyComplex1;
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.RecruitmentMobileApplication_DatabaseVersionMismatch);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

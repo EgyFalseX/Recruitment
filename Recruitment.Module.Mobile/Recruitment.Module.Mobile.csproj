@@ -131,6 +131,7 @@
       <DependentUpon>MobileModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Recruitment.Module\Recruitment.Module.csproj">
