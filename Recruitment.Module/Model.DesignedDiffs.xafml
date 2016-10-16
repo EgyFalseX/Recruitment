@@ -45,7 +45,7 @@
         <Member Name="applicant_nationality_id" Caption="Nationality" LookupProperty="nationality_name" Index="12" />
         <Member Name="applicant_phone" Caption="Phone" Index="13" />
         <Member Name="applicant_position_id" Caption="Position" LookupProperty="position_name" Index="14" />
-        <Member Name="applicant_salary" Caption="Salary" Index="15" />
+        <Member Name="applicant_salary" Caption="Salary" Index="15" EditMask="#" DisplayFormat="{0:#}" />
         <Member Name="applicant_skill" Caption="Skills" Index="16" />
         <Member Name="applicant_summary" Caption="Summary" Index="17" />
         <Member Name="rec_Applicant_image" Index="18" Caption="Image" />

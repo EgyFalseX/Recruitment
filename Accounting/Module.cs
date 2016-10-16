@@ -5,6 +5,8 @@ using DevExpress.ExpressApp;
 using System.ComponentModel;
 using DevExpress.ExpressApp.DC;
 using System.Collections.Generic;
+using Accounting.BusinessObjects.Recruitment;
+using Accounting.Report;
 using Accounting.Rule;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
@@ -15,6 +17,7 @@ using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp.Model.Core;
 using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
+using DevExpress.ExpressApp.ReportsV2;
 using DevExpress.ExpressApp.Validation;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.Persistent.Validation;
@@ -32,18 +35,22 @@ namespace Accounting {
             // #if DEBUG
             // Database.SetInitializer(new DropCreateDatabaseIfModelChanges<AccountingDbContext>());
             // #endif 
-        }public AccountingModule() {
+        }
+        public AccountingModule() {
             InitializeComponent();
             BaseObject.OidInitializationMode = OidInitializationMode.AfterConstruction;
         }
         public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {
             ModuleUpdater updater = new DatabaseUpdate.Updater(objectSpace, versionFromDB);
-            return new ModuleUpdater[] { updater };
+            PredefinedReportsUpdater reportsUpdater = new PredefinedReportsUpdater(Application, objectSpace, versionFromDB);
+            reportsUpdater.AddPredefinedReport<acc_Journal_Entry_01>("Account Details", typeof(acc_Journal_Entry));
+            return new ModuleUpdater[] { updater, reportsUpdater };
         }
         public override void Setup(XafApplication application) {
             base.Setup(application);
             // Manage various aspects of the application UI and behavior at the module level.
-        }public override void Setup(ApplicationModulesManager moduleManager)
+        }
+        public override void Setup(ApplicationModulesManager moduleManager)
         {
             base.Setup(moduleManager);
             ValidationRulesRegistrator.RegisterRule(moduleManager, typeof(JournalEntryBalanceRule), typeof(IRuleBaseProperties));
