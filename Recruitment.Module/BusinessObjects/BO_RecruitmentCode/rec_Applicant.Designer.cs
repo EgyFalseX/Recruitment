@@ -160,6 +160,13 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return fapplicant_address; }
             set { SetPropertyValue<string>("applicant_address", ref fapplicant_address, value); }
         }
+        string fapplicant_mobile2;
+        [Size(50)]
+        public string applicant_mobile2
+        {
+            get { return fapplicant_mobile2; }
+            set { SetPropertyValue<string>("applicant_mobile2", ref fapplicant_mobile2, value); }
+        }
         [Association(@"rec_Applicant_CourseReferencesrec_Applicant")]
         public XPCollection<rec_Applicant_Course> rec_Applicant_Courses { get { return GetCollection<rec_Applicant_Course>("rec_Applicant_Courses"); } }
         [Association(@"rec_Applicant_EducationReferencesrec_Applicant")]
@@ -174,6 +181,12 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         public XPCollection<rec_Employer_Order_Detail_Suggest_Applicat> rec_Employer_Order_Detail_Suggest_Applicats { get { return GetCollection<rec_Employer_Order_Detail_Suggest_Applicat>("rec_Employer_Order_Detail_Suggest_Applicats"); } }
         [Association(@"rec_Applicant_TagReferencesrec_Applicant")]
         public XPCollection<rec_Applicant_Tag> rec_Applicant_Tags { get { return GetCollection<rec_Applicant_Tag>("rec_Applicant_Tags"); } }
+        [Association(@"rec_Applicant_IndustryReferencesrec_Applicant")]
+        public XPCollection<rec_Applicant_Industry> rec_Applicant_Industrys { get { return GetCollection<rec_Applicant_Industry>("rec_Applicant_Industrys"); } }
+        [Association(@"rec_Applicant_LangaugeReferencesrec_Applicant")]
+        public XPCollection<rec_Applicant_Langauge> rec_Applicant_Langauges { get { return GetCollection<rec_Applicant_Langauge>("rec_Applicant_Langauges"); } }
+        [Association(@"rec_Applicant_CountryReferencesrec_Applicant")]
+        public XPCollection<rec_Applicant_Country> rec_Applicant_Countrys { get { return GetCollection<rec_Applicant_Country>("rec_Applicant_Countrys"); } }
     }
 
 }

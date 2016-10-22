@@ -125,6 +125,10 @@
     <Compile Include="BusinessObjects\BO_AccountingCode\acc_Bank.Designer.cs">
       <DependentUpon>acc_Bank.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_AccountingCode\acc_Currency.cs" />
+    <Compile Include="BusinessObjects\BO_AccountingCode\acc_Currency.Designer.cs">
+      <DependentUpon>acc_Currency.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_AccountingCode\acc_Journal_Entry.cs" />
     <Compile Include="BusinessObjects\BO_AccountingCode\acc_Journal_Entry.Designer.cs">
       <DependentUpon>acc_Journal_Entry.cs</DependentUpon>
@@ -250,7 +254,10 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Images\acc_Currency16.png" />
+    <EmbeddedResource Include="Images\acc_Currency32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

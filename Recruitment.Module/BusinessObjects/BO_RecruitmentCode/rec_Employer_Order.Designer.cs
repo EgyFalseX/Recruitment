@@ -45,6 +45,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<string>("rec_employer_order_description", ref frec_employer_order_description, value); }
         }
         rec_Delivery_Type frec_employer_order_rec_delivery_type_id;
+        [Indexed(Name = @"irec_employer_order_rec_delivery_type_id_rec_Employer_Order")]
         [Association(@"rec_Employer_OrderReferencesrec_Delivery_Type")]
         public rec_Delivery_Type rec_employer_order_rec_delivery_type_id
         {
@@ -59,6 +60,8 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         [Association(@"rec_Employer_Order_DetailReferencesrec_Employer_Order")]
         public XPCollection<rec_Employer_Order_Detail> rec_Employer_Order_Details { get { return GetCollection<rec_Employer_Order_Detail>("rec_Employer_Order_Details"); } }
+        [Association(@"rec_Employer_Order_InterviewReferencesrec_Employer_Order")]
+        public XPCollection<rec_Employer_Order_Interview> rec_Employer_Order_Interviews { get { return GetCollection<rec_Employer_Order_Interview>("rec_Employer_Order_Interviews"); } }
     }
 
 }

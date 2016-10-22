@@ -171,6 +171,7 @@
       <DependentUpon>AppDependenceFile.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\ConnectionHelper.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\PortfolioFileData_Emp.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\PortfolioFileData.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Annual_Vacation_Type.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Annual_Vacation_Type.Designer.cs">
@@ -179,6 +180,10 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant.Designer.cs">
       <DependentUpon>rec_Applicant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Country.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Country.Designer.cs">
+      <DependentUpon>rec_Applicant_Country.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Course.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Course.Designer.cs">
@@ -191,6 +196,14 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Experience.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Experience.Designer.cs">
       <DependentUpon>rec_Applicant_Experience.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Industry.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Industry.Designer.cs">
+      <DependentUpon>rec_Applicant_Industry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Langauge.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Langauge.Designer.cs">
+      <DependentUpon>rec_Applicant_Langauge.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Project.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Applicant_Project.Designer.cs">
@@ -260,6 +273,10 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Suggest_Applicat.Designer.cs">
       <DependentUpon>rec_Employer_Order_Detail_Suggest_Applicat.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Interview.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Interview.Designer.cs">
+      <DependentUpon>rec_Employer_Order_Interview.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Status.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Status.Designer.cs">
       <DependentUpon>rec_Employer_Order_Status.cs</DependentUpon>
@@ -287,6 +304,18 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Industry_Require_Doc_Info.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Industry_Require_Doc_Info.Designer.cs">
       <DependentUpon>rec_Industry_Require_Doc_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Job.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Job.Designer.cs">
+      <DependentUpon>rec_Job.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Langauge.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Langauge.Designer.cs">
+      <DependentUpon>rec_Langauge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Langauge_Level.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Langauge_Level.Designer.cs">
+      <DependentUpon>rec_Langauge_Level.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Marital_Status.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Marital_Status.Designer.cs">
@@ -509,23 +538,9 @@
     <EmbeddedResource Include="Images\rec_Medical_Insurance_Types32.png" />
     <EmbeddedResource Include="Images\rec_Ticket_Type16.png" />
     <EmbeddedResource Include="Images\rec_Ticket_Type32.png" />
+    <EmbeddedResource Include="Images\rec_Employer_Order_Interview16.png" />
+    <EmbeddedResource Include="Images\rec_Employer_Order_Interview32.png" />
     <Content Include="Information.txt" />
-    <None Include="UnusableNodes1.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes2.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes3.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes4.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Welcome.html" />
   </ItemGroup>
   <ItemGroup>
@@ -533,6 +548,9 @@
       <Project>{e1f786d2-e67f-4566-bb09-1b8e2b817911}</Project>
       <Name>Accounting</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Rule\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

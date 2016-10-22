@@ -3,6 +3,7 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Accounting.BusinessObjects.Recruitment;
 using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.Persistent.Base;
 using Recruitment.Module.Core;
@@ -29,7 +30,14 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
                 }
                 return auditTrail;
             }
-        }[NonPersistent]
+        }
+        acc_Currency frec_employer_order_detail_currency_id;
+        public acc_Currency rec_employer_order_detail_currency_id
+        {
+            get { return frec_employer_order_detail_currency_id; }
+            set { SetPropertyValue<acc_Currency>("rec_employer_order_detail_currency_id", ref frec_employer_order_detail_currency_id, value); }
+        }
+        [NonPersistent]
         public string CustomName
         {
             get

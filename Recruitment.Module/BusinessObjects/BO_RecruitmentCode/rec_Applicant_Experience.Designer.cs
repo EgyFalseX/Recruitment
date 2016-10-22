@@ -78,6 +78,20 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return fapp_exp_description; }
             set { SetPropertyValue<string>("app_exp_description", ref fapp_exp_description, value); }
         }
+        rec_Job fapp_exp_job_id;
+        [Indexed(Name = @"iapp_exp_job_id_rec_Applicant_Experience")]
+        [Association(@"rec_Applicant_ExperienceReferencesrec_Job")]
+        public rec_Job app_exp_job_id
+        {
+            get { return fapp_exp_job_id; }
+            set { SetPropertyValue<rec_Job>("app_exp_job_id", ref fapp_exp_job_id, value); }
+        }
+        bool fapp_exp_end_date_till_now;
+        public bool app_exp_end_date_till_now
+        {
+            get { return fapp_exp_end_date_till_now; }
+            set { SetPropertyValue<bool>("app_exp_end_date_till_now", ref fapp_exp_end_date_till_now, value); }
+        }
     }
 
 }

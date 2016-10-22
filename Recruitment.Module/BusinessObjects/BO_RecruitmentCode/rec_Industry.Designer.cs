@@ -41,6 +41,8 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         public XPCollection<rec_Industry_Require_Doc_Info> rec_Industry_Require_Doc_Infos { get { return GetCollection<rec_Industry_Require_Doc_Info>("rec_Industry_Require_Doc_Infos"); } }
         [Association(@"rec_Employer_IndustryReferencesrec_Industry")]
         public XPCollection<rec_Employer_Industry> rec_Employer_Industrys { get { return GetCollection<rec_Employer_Industry>("rec_Employer_Industrys"); } }
+        [Association(@"rec_Applicant_IndustryReferencesrec_Industry")]
+        public XPCollection<rec_Applicant_Industry> rec_Applicant_Industrys { get { return GetCollection<rec_Applicant_Industry>("rec_Applicant_Industrys"); } }
     }
 
 }

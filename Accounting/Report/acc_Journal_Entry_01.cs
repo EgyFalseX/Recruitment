@@ -11,6 +11,9 @@ namespace Accounting.Report
         public acc_Journal_Entry_01()
         {
             InitializeComponent();
+            //            dsMain.CriteriaString = @"[year_id.year_id] = ?paramYear And [entry_date] Between(?paramStartDate, ?paramEndDate) And 
+            //([acc_Journal_Entry_Details][[account_id.account_id] In(?paramAccount) )";//Or[account_id.parent_account_id.account_id] In(?paramAccount)]
+
         }
 
     }

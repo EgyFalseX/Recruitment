@@ -53,6 +53,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<string>("rec_employer_order_detail_visa_name", ref frec_employer_order_detail_visa_name, value); }
         }
         rec_Medical_Insurance_Types frec_employer_order_detail_rec_medical_insurance_types_id;
+        [Indexed(Name = @"irec_employer_order_detail_rec_medical_insurance_types_id_rec_Employer_Order_Detail")]
         [Association(@"rec_Employer_Order_DetailReferencesrec_Medical_Insurance_Types")]
         public rec_Medical_Insurance_Types rec_employer_order_detail_rec_medical_insurance_types_id
         {
@@ -66,6 +67,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<bool>("rec_employer_order_detail_can_bring_family", ref frec_employer_order_detail_can_bring_family, value); }
         }
         rec_Position frec_employer_order_detail_position_id;
+        [Indexed(Name = @"irec_employer_order_detail_position_id_rec_Employer_Order_Detail")]
         [Association(@"rec_Employer_Order_DetailReferencesrec_Position")]
         public rec_Position rec_employer_order_detail_position_id
         {
@@ -79,6 +81,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<double>("rec_employer_order_detail_salary", ref frec_employer_order_detail_salary, value); }
         }
         rec_Housing_Type frec_employer_order_detail_rec_housing_type;
+        [Indexed(Name = @"irec_employer_order_detail_rec_housing_type_rec_Employer_Order_Detail")]
         [Association(@"rec_Employer_Order_DetailReferencesrec_Housing_Type")]
         public rec_Housing_Type rec_employer_order_detail_rec_housing_type
         {
@@ -91,13 +94,8 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return frec_employer_order_detail_housing_value; }
             set { SetPropertyValue<double>("rec_employer_order_detail_housing_value", ref frec_employer_order_detail_housing_value, value); }
         }
-        short frec_employer_order_detail_experience_years;
-        public short rec_employer_order_detail_experience_years
-        {
-            get { return frec_employer_order_detail_experience_years; }
-            set { SetPropertyValue<short>("rec_employer_order_detail_experience_years", ref frec_employer_order_detail_experience_years, value); }
-        }
         rec_Residence_Type frec_employer_order_detail_rec_residence_type_id;
+        [Indexed(Name = @"irec_employer_order_detail_rec_residence_type_id_rec_Employer_Order_Detail")]
         [Association(@"rec_Employer_Order_DetailReferencesrec_Residence_Type")]
         public rec_Residence_Type rec_employer_order_detail_rec_residence_type_id
         {
@@ -105,6 +103,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<rec_Residence_Type>("rec_employer_order_detail_rec_residence_type_id", ref frec_employer_order_detail_rec_residence_type_id, value); }
         }
         rec_Ticket_Type frec_employer_order_detail_rec_ticket_type_id;
+        [Indexed(Name = @"irec_employer_order_detail_rec_ticket_type_id_rec_Employer_Order_Detail")]
         [Association(@"rec_Employer_Order_DetailReferencesrec_Ticket_Type")]
         public rec_Ticket_Type rec_employer_order_detail_rec_ticket_type_id
         {
@@ -124,6 +123,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("rec_employer_order_detail_annual_vacation_days", ref frec_employer_order_detail_annual_vacation_days, value); }
         }
         rec_Annual_Vacation_Type frec_employer_order_detail_rec_annual_vacation_type_id;
+        [Indexed(Name = @"irec_employer_order_detail_rec_annual_vacation_type_id_rec_Employer_Order_Detail")]
         [Association(@"rec_Employer_Order_DetailReferencesrec_Annual_Vacation_Type")]
         public rec_Annual_Vacation_Type rec_employer_order_detail_rec_annual_vacation_type_id
         {
@@ -142,6 +142,18 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         {
             get { return frec_employer_order_detail_description; }
             set { SetPropertyValue<string>("rec_employer_order_detail_description", ref frec_employer_order_detail_description, value); }
+        }
+        short frec_employer_order_detail_experience_years_start;
+        public short rec_employer_order_detail_experience_years_start
+        {
+            get { return frec_employer_order_detail_experience_years_start; }
+            set { SetPropertyValue<short>("rec_employer_order_detail_experience_years_start", ref frec_employer_order_detail_experience_years_start, value); }
+        }
+        short frec_employer_order_detail_experience_years_end;
+        public short rec_employer_order_detail_experience_years_end
+        {
+            get { return frec_employer_order_detail_experience_years_end; }
+            set { SetPropertyValue<short>("rec_employer_order_detail_experience_years_end", ref frec_employer_order_detail_experience_years_end, value); }
         }
         [Association(@"rec_Employer_Order_Detail_CallReferencesrec_Employer_Order_Detail")]
         public XPCollection<rec_Employer_Order_Detail_Call> rec_Employer_Order_Detail_Calls { get { return GetCollection<rec_Employer_Order_Detail_Call>("rec_Employer_Order_Detail_Calls"); } }

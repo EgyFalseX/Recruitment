@@ -32,13 +32,19 @@
         <Member Name="bank_phone" Caption="Bank Phone" />
       </OwnMembers>
     </Class>
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Currency" Caption="Currency">
+      <OwnMembers>
+        <Member Name="currency_id" Caption="ID" />
+        <Member Name="currency_name" Caption="currency name" />
+      </OwnMembers>
+    </Class>
     <Class Name="Accounting.BusinessObjects.Recruitment.acc_Journal_Entry" Caption="Journal Entry" DefaultListViewShowAutoFilterRow="True">
       <OwnMembers>
         <Member Name="acc_Journal_Entry_Details" Caption="Journal Entry Details" Index="0" />
         <Member Name="AuditTrail" Index="1" />
         <Member Name="closed" Caption="Closed" Index="2" ImageForTrue="Action_Grant" />
         <Member Name="description" Caption="Description" Index="3" />
-        <Member Name="entry_date" Caption="Entry Date" DisplayFormat="{0:yyyy-MM-dd}" EditMask="yyyy-MM-dd" EditMaskType="DateTime" Index="4" />
+        <Member Name="entry_date" Caption="Entry Date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" EditMaskType="DateTime" Index="4" />
         <Member Name="entry_text" Caption="Entry Text" Index="5" />
         <Member Name="jour_entry_id" Caption="ID" Index="6" />
         <Member Name="JournalCaption" Index="7" />
@@ -72,10 +78,10 @@
     </Class>
     <Class Name="Accounting.BusinessObjects.Recruitment.acc_Year" DefaultListViewShowAutoFilterRow="True" Caption="Fiscal Year">
       <OwnMembers>
-        <Member Name="year_end_date" Caption="End Date" DisplayFormat="{0:yyyy-MM-dd}" EditMask="yyyy-MM-dd" EditMaskType="DateTime" />
+        <Member Name="year_end_date" Caption="End Date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" EditMaskType="DateTime" />
         <Member Name="year_id" Caption="ID" />
         <Member Name="year_name" Caption="Name" />
-        <Member Name="year_start_date" Caption="Start Date" DisplayFormat="{0:yyyy-MM-dd}" EditMask="yyyy-MM-dd" EditMaskType="DateTime" />
+        <Member Name="year_start_date" Caption="Start Date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" EditMaskType="DateTime" />
       </OwnMembers>
     </Class>
     <Class Name="DevExpress.Persistent.BaseImpl.AuditDataItemPersistent" DefaultListViewShowAutoFilterRow="True">
@@ -98,6 +104,7 @@
         <Items IsNewNode="True">
           <Item Id="acc_Account_ListView" ViewId="acc_Account_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="acc_Banks_ListView" ViewId="acc_Bank_ListView" IsNewNode="True" />
+          <Item Id="acc_Currancy_ListView" ObjectKey="" Caption="Currancy" ViewId="acc_Currency_ListView" IsNewNode="True" />
           <Item Id="acc_Journal_Entry_ListView" ViewId="acc_Journal_Entry_ListView" ImageName="acc_Journal_Entry16" IsNewNode="True">
             <Items IsNewNode="True">
               <Item Id="acc_Journal_Entry_Detail_ListView" ViewId="acc_Journal_Entry_Detail_ListView" ImageName="acc_Journal_Entry_Detail16" IsNewNode="True" />
@@ -123,6 +130,7 @@
       <RuleRequiredField Id="@acc_Account_account_type_id_vld_req" TargetContextIDs="Save" TargetType="Accounting.BusinessObjects.Recruitment.acc_Account" TargetPropertyName="account_type_id" Name="Account - Account type required" IsNewNode="True" />
       <RuleRequiredField Id="@acc_Account_closed_vld_req" TargetContextIDs="Save" TargetType="Accounting.BusinessObjects.Recruitment.acc_Account" TargetPropertyName="closed" Name="Account - Closed required" IsNewNode="True" />
       <RuleRequiredField Id="@acc_Bank_bank_name_vld_req" TargetContextIDs="Save" TargetType="Accounting.BusinessObjects.Recruitment.acc_Bank" TargetPropertyName="bank_name" Name="Bank - Name required" IsNewNode="True" />
+      <RuleRequiredField Id="@acc_Currency_currency_name_vld_req" TargetContextIDs="Save" TargetType="Accounting.BusinessObjects.Recruitment.acc_Currency" TargetPropertyName="currency_name" Name="Currency - Name required" IsNewNode="True" />
       <RuleRequiredField Id="@acc_Journal_Entry_closed_vld_req" TargetContextIDs="Save" TargetType="Accounting.BusinessObjects.Recruitment.acc_Journal_Entry" TargetPropertyName="closed" Name="Journal Entry - Closed required" IsNewNode="True" />
       <RuleRequiredField Id="@acc_Journal_Entry_Detail_account_id_vld_req" TargetContextIDs="Save" TargetType="Accounting.BusinessObjects.Recruitment.acc_Journal_Entry_Detail" TargetPropertyName="account_id" Name="Journal Entry Detail - Account required" IsNewNode="True" />
       <RuleRequiredField Id="@acc_Journal_Entry_Detail_credit_vld_req" TargetContextIDs="Save" TargetType="Accounting.BusinessObjects.Recruitment.acc_Journal_Entry_Detail" TargetPropertyName="credit" Name="Journal Entry - Credit required" IsNewNode="True" />
@@ -213,6 +221,21 @@
             <LayoutItem Id="bank_note" RelativeSize="100" CaptionLocation="Top" />
           </LayoutGroup>
           <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="42.542787286063572">
+            <LayoutItem Id="AuditTrail" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="acc_Currency_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="5.0666666666666664">
+            <LayoutGroup Id="acc_Currency" Caption="acc_Currency" RelativeSize="100">
+              <LayoutItem Id="currency_name" Index="0" RelativeSize="100" />
+              <LayoutItem Id="currency_id" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="94.933333333333337">
             <LayoutItem Id="AuditTrail" RelativeSize="100" />
           </LayoutGroup>
         </LayoutGroup>

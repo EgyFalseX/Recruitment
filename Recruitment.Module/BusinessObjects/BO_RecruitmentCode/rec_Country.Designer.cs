@@ -31,6 +31,8 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         [Association(@"rec_CityReferencesrec_Country")]
         public XPCollection<rec_City> rec_Citys { get { return GetCollection<rec_City>("rec_Citys"); } }
+        [Association(@"rec_Applicant_CountryReferencesrec_Country")]
+        public XPCollection<rec_Applicant_Country> rec_Applicant_Countrys { get { return GetCollection<rec_Applicant_Country>("rec_Applicant_Countrys"); } }
     }
 
 }

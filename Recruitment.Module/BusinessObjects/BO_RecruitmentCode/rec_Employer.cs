@@ -27,6 +27,9 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
                 return auditTrail;
             }
         }
+        [Association(@"rec_Employer-PortfolioFileData")]
+        public XPCollection<rec_PortfolioFileData_Emp> rec_Employer_rec_PortfolioFileData_Emp
+        { get { return GetCollection<rec_PortfolioFileData_Emp>("rec_Employer_rec_PortfolioFileData_Emp"); } }
         byte[] femployer_logo;
         [Size(SizeAttribute.Unlimited)]
         [ImageEditor(DetailViewImageEditorFixedHeight = 128, DetailViewImageEditorFixedWidth = 128, ListViewImageEditorCustomHeight = 64, ImageSizeMode = ImageSizeMode.StretchImage)]

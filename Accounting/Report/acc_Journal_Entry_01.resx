@@ -123,13 +123,13 @@
   <metadata name="dsAccount.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 95</value>
   </metadata>
+  <metadata name="dsCompany.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 134</value>
+  </metadata>
   <metadata name="dsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="dsMain.CriteriaString" xml:space="preserve">
-    <value>[year_id.year_id] = ?paramYear And [entry_date] Between(?paramStartDate, ?paramEndDate) And [acc_Journal_Entry_Details][[account_id.account_id] In (?paramAccount) Or [account_id.parent_account_id.account_id] In (?paramAccount)]</value>
+    <value>[jour_entry_id.year_id.year_id] = ?paramYear And [jour_entry_id.entry_date] Between(?paramStartDate, ?paramEndDate) And ([account_id.account_id] In (?paramAccount) Or [account_id.parent_account_id.account_id] In (?paramAccount))</value>
   </data>
-  <metadata name="dsCompany.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 134</value>
-  </metadata>
 </root>
