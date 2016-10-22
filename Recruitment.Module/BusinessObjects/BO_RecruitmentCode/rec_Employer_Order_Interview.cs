@@ -8,7 +8,7 @@ using DevExpress.Persistent.Base;
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
-    [NavigationItem("Employer")]
+    [NavigationItem("EmployerNode")]
     [ImageName("rec_Employer_Order_Interview16")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("rec_employer_order_interview_date")]
     public partial class rec_Employer_Order_Interview
