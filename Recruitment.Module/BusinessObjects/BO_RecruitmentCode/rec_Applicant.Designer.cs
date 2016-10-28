@@ -187,6 +187,8 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         public XPCollection<rec_Applicant_Langauge> rec_Applicant_Langauges { get { return GetCollection<rec_Applicant_Langauge>("rec_Applicant_Langauges"); } }
         [Association(@"rec_Applicant_CountryReferencesrec_Applicant")]
         public XPCollection<rec_Applicant_Country> rec_Applicant_Countrys { get { return GetCollection<rec_Applicant_Country>("rec_Applicant_Countrys"); } }
+        [Association(@"rec_Employer_Order_Detail_Connection_DetailReferencesrec_Applicant")]
+        public XPCollection<rec_Employer_Order_Detail_Connection_Detail> rec_Employer_Order_Detail_Connection_Details { get { return GetCollection<rec_Employer_Order_Detail_Connection_Detail>("rec_Employer_Order_Detail_Connection_Details"); } }
     }
 
 }

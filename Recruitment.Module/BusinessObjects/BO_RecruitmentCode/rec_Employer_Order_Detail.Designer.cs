@@ -159,6 +159,8 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         public XPCollection<rec_Employer_Order_Detail_Call> rec_Employer_Order_Detail_Calls { get { return GetCollection<rec_Employer_Order_Detail_Call>("rec_Employer_Order_Detail_Calls"); } }
         [Association(@"rec_Employer_Order_Detail_Suggest_ApplicatReferencesrec_Employer_Order_Detail")]
         public XPCollection<rec_Employer_Order_Detail_Suggest_Applicat> rec_Employer_Order_Detail_Suggest_Applicats { get { return GetCollection<rec_Employer_Order_Detail_Suggest_Applicat>("rec_Employer_Order_Detail_Suggest_Applicats"); } }
+        [Association(@"rec_Employer_Order_Detail_ConnectionReferencesrec_Employer_Order_Detail")]
+        public XPCollection<rec_Employer_Order_Detail_Connection> rec_Employer_Order_Detail_Connections { get { return GetCollection<rec_Employer_Order_Detail_Connection>("rec_Employer_Order_Detail_Connections"); } }
     }
 
 }

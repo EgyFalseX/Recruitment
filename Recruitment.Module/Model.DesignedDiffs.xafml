@@ -64,6 +64,7 @@
         <Member Name="rec_Applicant_Langauges" Caption="Applicant Langauges" />
         <Member Name="rec_Applicant_Tags" Caption="Applicant Tags" LookupProperty="tag_name" />
         <Member Name="rec_Employer_Order_Detail_Calls" Caption="Orders Calls" />
+        <Member Name="rec_Employer_Order_Detail_Connection_Details" Caption="Order Connection" />
         <Member Name="rec_Employer_Order_Detail_Suggest_Applicats" Caption="Suggested In Orders" />
       </OwnMembers>
     </Class>
@@ -262,6 +263,7 @@
         <Member Name="rec_employer_order_detail_annual_vacation_days" Caption="Annual Vacation Days" />
         <Member Name="rec_Employer_Order_Detail_Calls" Caption="Order Calls" />
         <Member Name="rec_employer_order_detail_can_bring_family" Caption="Can Bring Family" />
+        <Member Name="rec_Employer_Order_Detail_Connections" Caption="Employer Order Connections" />
         <Member Name="rec_employer_order_detail_currency_id" Caption="Currency" />
         <Member Name="rec_employer_order_detail_description" Caption="Description" />
         <Member Name="rec_employer_order_detail_experience_years_end" Caption="Experience Years To" />
@@ -308,6 +310,21 @@
         <Member Name="rec_employer_order_detail_call_rec_employer_order_detail_id" Caption="Order detail" LookupProperty="CustomName" />
       </OwnMembers>
     </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Connection" Caption="Employer Order Connections" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="rec_employer_order_detail_connection_date" Caption="Date" DisplayFormat="{0:dd/MM/yyyy HH:MM tt}" EditMask="dd/MM/yyyy HH:MM tt" EditMaskType="DateTime" />
+        <Member Name="rec_Employer_Order_Detail_Connection_Details" Caption="Connection Applicant" />
+        <Member Name="rec_employer_order_detail_connection_id" Caption="ID" />
+        <Member Name="rec_employer_order_detail_id" Caption="Order Detail" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Connection_Detail" Caption="Employer Order Connections Detail" DefaultListViewAllowEdit="True" DefaultListViewNewItemRowPosition="Bottom" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="rec_employer_order_detail_connection_detail_applicant_id" Caption="Applicant" DataSourceCriteria="[rec_Employer_Order_Detail_Suggest_Applicats][[rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_id] = '@rec_employer_order_detail_connection_id.rec_employer_order_detail_id.rec_employer_order_detail_id'] And Not [rec_Employer_Order_Detail_Connection_Details][[rec_employer_order_detail_connection_id.rec_employer_order_detail_connection_id] = '@rec_employer_order_detail_connection_id.rec_employer_order_detail_connection_id']" />
+        <Member Name="rec_employer_order_detail_connection_detail_id" Caption="ID" />
+        <Member Name="rec_employer_order_detail_connection_id" Caption="Order Connections" />
+      </OwnMembers>
+    </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Suggest_Applicat" Caption="Order Suggested Applicats" ImageName="rec_employer_order_detail_suggest_applicat16" DefaultListViewShowAutoFilterRow="True">
       <OwnMembers>
         <Member Name="rec_Employer_Order_Detail_Accept_Applicats" Caption="Order Accepted Applicats" />
@@ -319,7 +336,7 @@
         <Member Name="rec_employer_order_detail_suggest_applicat_rec_suggest_applicat_source_id" Caption="Applicat Source" LookupProperty="rec_suggest_applicat_source_name" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Interview" Caption="Employer Order Interview">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Interview" Caption="Employer Order Interview" DefaultListViewShowAutoFilterRow="True">
       <OwnMembers>
         <Member Name="rec_employer_order_id" Caption="Order" />
         <Member Name="rec_employer_order_interview_date" Caption="Date" />
@@ -369,6 +386,10 @@
         <Member Name="rec_Applicant_Experiences" Caption="Applicant Experiences" LookupProperty="app_exp_title" Index="3" />
         <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" Index="4" />
         <Member Name="AuditTrail" Index="5" />
+        <Member Name="rec_Applicant_Industrys" Caption="Applicant Industries" />
+        <Member Name="rec_Employer_Industrys" Caption="Employer Industries" />
+        <Member Name="rec_Employer_Order_Details" Caption="Order Details" />
+        <Member Name="rec_Industry_Require_Doc_Infos" Caption="Industry Require Doc Info" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Industry_Require_Doc_Info" Caption="Industry Required Documents" ImageName="rec_industry_require_doc16" DefaultListViewShowAutoFilterRow="True">
@@ -436,6 +457,13 @@
       <OwnMembers>
         <Member Name="applicant_id" Caption="Applicants" Index="0" LookupProperty="applicant_name" />
         <Member Name="DocumentType" Caption="Document Type" Index="1" />
+        <Member Name="AuditTrail" Index="2" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_PortfolioFileData_Emp" Caption="Employer Attachments" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="employer_id" Caption="Employer" Index="0" />
+        <Member Name="DocumentType" Index="1" />
         <Member Name="AuditTrail" Index="2" />
       </OwnMembers>
     </Class>
@@ -563,15 +591,39 @@
       </Item>
       <Item Id="EmployerNode" Caption="Employer" Index="2" ImageName="rec_Employer16" IsNewNode="True">
         <Items IsNewNode="True">
-          <Item Id="rec_Employer_ListView" ViewId="rec_Employer_ListView" ObjectKey="" Index="0" IsNewNode="True" />
-          <Item Id="rec_Employer_Person" Caption="Employer Person" ViewId="rec_Employer_Person_ListView" Index="1" IsNewNode="True" />
-          <Item Id="rec_Employer_Industry" Caption="Employer Industry" ViewId="rec_Employer_Industry_ListView" Index="2" IsNewNode="True" />
-          <Item Id="rec_Employer_Order_ListView" ViewId="rec_Employer_Order_ListView" ObjectKey="" Index="3" IsNewNode="True" />
-          <Item Id="rec_Employer_Order_Detail_ListView" ViewId="rec_Employer_Order_Detail_ListView" ObjectKey="" Index="4" IsNewNode="True" />
-          <Item Id="rec_Employer_Order_Detail_Call_ListView" ViewId="rec_Employer_Order_Detail_Call_ListView" ObjectKey="" Index="5" IsNewNode="True" />
-          <Item Id="rec_Employer_Order_Detail_Suggest_Applicat_ListView" ViewId="rec_Employer_Order_Detail_Suggest_Applicat_ListView" ObjectKey="" Index="6" IsNewNode="True" />
-          <Item Id="rec_Employer_Order_Detail_Accept_Applicat_ListView" ViewId="rec_Employer_Order_Detail_Accept_Applicat_ListView" ObjectKey="" Index="7" IsNewNode="True" />
-          <Item Id="rec_Employer_Order_Detail_Accept_Applicat_Doc_ListView" ViewId="rec_Employer_Order_Detail_Accept_Applicat_Doc_ListView" ObjectKey="" Index="8" IsNewNode="True" />
+          <Item Id="rec_Employer_ListView" ViewId="rec_Employer_ListView" ObjectKey="" Index="0" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="rec_Employer_Person" Caption="Employer Person" ViewId="rec_Employer_Person_ListView" Index="1" IsNewNode="True" />
+              <Item Id="rec_Employer_Industry" Caption="Employer Industry" ViewId="rec_Employer_Industry_ListView" Index="2" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="rec_Employer_Order_ListView" ViewId="rec_Employer_Order_ListView" ObjectKey="" Index="3" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="rec_Employer_Order_Detail_ListView" ViewId="rec_Employer_Order_Detail_ListView" ObjectKey="" Index="4" IsNewNode="True">
+                <Items IsNewNode="True">
+                  <Item Id="rec_Employer_Order_Detail_Call_ListView" ViewId="rec_Employer_Order_Detail_Call_ListView" ObjectKey="" Index="5" IsNewNode="True" />
+                  <Item Id="rec_Employer_Order_Detail_Suggest_Applicat_ListView" ViewId="rec_Employer_Order_Detail_Suggest_Applicat_ListView" ObjectKey="" Index="6" IsNewNode="True">
+                    <Items IsNewNode="True">
+                      <Item Id="rec_Employer_Order_Detail_Accept_Applicat_ListView" ViewId="rec_Employer_Order_Detail_Accept_Applicat_ListView" ObjectKey="" Index="7" IsNewNode="True">
+                        <Items IsNewNode="True">
+                          <Item Id="rec_Employer_Order_Detail_Accept_Applicat_Doc_ListView" ViewId="rec_Employer_Order_Detail_Accept_Applicat_Doc_ListView" ObjectKey="" Index="8" IsNewNode="True" />
+                        </Items>
+                      </Item>
+                    </Items>
+                  </Item>
+                  <Item Id="rec_Employer_Order_Detail_Connection_ListView" ViewId="rec_Employer_Order_Detail_Connection_ListView" ObjectKey="" IsNewNode="True">
+                    <Items IsNewNode="True">
+                      <Item Id="rec_Employer_Order_Detail_Connection_Detail_ListView" ViewId="rec_Employer_Order_Detail_Connection_Detail_ListView" ObjectKey="" IsNewNode="True" />
+                    </Items>
+                  </Item>
+                </Items>
+              </Item>
+              <Item Id="rec_Employer_Order_Interview_ListView" ViewId="rec_Employer_Order_Interview_ListView" ObjectKey="" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="rec_Employer_Order_Detail_Connection_Detail_ListView" Removed="True" />
+          <Item Id="rec_Employer_Order_Detail_Connection_ListView" Removed="True" />
+          <Item Id="rec_Employer_Order_Interview_ListView" Removed="True" />
         </Items>
       </Item>
       <Item Id="Applicant">
@@ -645,6 +697,10 @@
       <RuleRequiredField Id="@rec_Employer_employer_owner_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer" TargetPropertyName="employer_owner_name" Name="Employer - company owner required" IsNewNode="True" />
       <RuleRequiredField Id="@rec_Employer_Order_delivery_date_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order" TargetPropertyName="rec_employer_order_delivery_date" Name="Employer Order - delivery date required" IsNewNode="True" />
       <RuleRequiredField Id="@rec_Employer_Order_delivery_type_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order" TargetPropertyName="rec_employer_order_rec_delivery_type_id" Name="Employer Order - delivery type required" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Employer_Order_Detail_Connection_Detail_rec_employer_order_detail_connection_detail_applicant_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Connection_Detail" TargetPropertyName="rec_employer_order_detail_connection_detail_applicant_id" Name="Connection Applicant - Applicant required" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Employer_Order_Detail_Connection_Detail_rec_employer_order_detail_connection_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Connection_Detail" TargetPropertyName="rec_employer_order_detail_connection_id" Name="Connection Applicant - Connection required" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Employer_Order_Detail_Connection_rec_employer_order_detail_connection_date_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Connection" TargetPropertyName="rec_employer_order_detail_connection_date" Name="Connection - Date required" IsNewNode="True" />
+      <RuleRequiredField Id="@rec_Employer_Order_Detail_Connection_rec_employer_order_detail_idtails_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Connection" TargetPropertyName="rec_employer_order_detail_id" Name="Connection Applicant - Order required" IsNewNode="True" />
       <RuleRequiredField Id="@rec_Employer_Order_Detail_count_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail" TargetPropertyName="rec_employer_order_detail_count" Name="Employer Order Detail - count required" IsNewNode="True" />
       <RuleRequiredField Id="@rec_Employer_Order_Detail_industry_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail" TargetPropertyName="rec_employer_order_detail_industry_id" Name="Employer Order Detail - industry required" IsNewNode="True" />
       <RuleRequiredField Id="@rec_Employer_Order_Detail_order_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail" TargetPropertyName="rec_employer_order_detail_rec_employer_order_id" Name="Employer Order Detail - order Id required" IsNewNode="True" />
@@ -1440,6 +1496,54 @@
         <ColumnInfo Id="rec_employer_order_detail_call_rec_call_result_id" Index="5" />
       </Columns>
     </ListView>
+    <DetailView Id="rec_Employer_Order_Detail_Connection_Detail_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="8.2666666666666675">
+            <LayoutGroup Id="rec_Employer_Order_Detail_Connection_Detail" RelativeSize="100">
+              <LayoutItem Id="rec_employer_order_detail_connection_id" Index="0" RelativeSize="51.612903225806448" />
+              <LayoutItem Id="rec_employer_order_detail_connection_detail_applicant_id" Index="1" RelativeSize="48.387096774193552" />
+              <LayoutItem Id="rec_employer_order_detail_connection_detail_id" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="91.733333333333334">
+            <LayoutItem Id="AuditTrail" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="rec_Employer_Order_Detail_Connection_Detail_LookupListView">
+      <Columns>
+        <ColumnInfo Id="rec_employer_order_detail_connection_id.rec_employer_order_detail_id" PropertyName="rec_employer_order_detail_connection_id.rec_employer_order_detail_id" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="rec_employer_order_detail_connection_id.rec_employer_order_detail_connection_date" PropertyName="rec_employer_order_detail_connection_id.rec_employer_order_detail_connection_date" Index="2" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="rec_Employer_Order_Detail_Connection_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="12.252964426877471">
+            <LayoutGroup Id="rec_Employer_Order_Detail_Connection" RelativeSize="100">
+              <LayoutItem Id="rec_employer_order_detail_id" Index="0" RelativeSize="51.612903225806448" />
+              <LayoutItem Id="rec_employer_order_detail_connection_date" Index="1" RelativeSize="48.387096774193552" />
+              <LayoutItem Id="rec_employer_order_detail_connection_id" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="87.747035573122531">
+            <LayoutGroup Id="rec_Employer_Order_Detail_Connection_Details" RelativeSize="100" Index="0">
+              <LayoutItem Id="rec_Employer_Order_Detail_Connection_Details" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" RelativeSize="100" Index="1">
+              <LayoutItem Id="AuditTrail" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="rec_Employer_Order_Detail_Connection_LookupListView">
+      <Columns>
+        <ColumnInfo Id="rec_employer_order_detail_id" PropertyName="rec_employer_order_detail_id" Index="1" IsNewNode="True" />
+      </Columns>
+    </ListView>
     <DetailView Id="rec_Employer_Order_Detail_DetailView">
       <Items>
         <PropertyEditor Id="rec_employer_order_detail_rec_employer_order_id" DataSourceCriteria="[rec_employer_order_rec_employer_order_status_id] = ##Enum#Recruitment.Module.Core.Typez+enum_rec_Employer_Order_Status,InProgress#" />
@@ -1824,21 +1928,30 @@
             </LayoutGroup>
           </LayoutGroup>
           <TabbedGroup Id="Tabs" RelativeSize="94.933333333333337">
-            <LayoutGroup Id="AuditTrail" Index="0" RelativeSize="100">
-              <LayoutItem Id="AuditTrail" RelativeSize="100" />
-            </LayoutGroup>
-            <LayoutGroup Id="rec_Applicants" Index="0" RelativeSize="100" Removed="True">
+            <LayoutGroup Id="rec_Applicants" RelativeSize="100" Index="0">
               <LayoutItem Id="rec_Applicants" RelativeSize="100" />
             </LayoutGroup>
-            <LayoutGroup Id="rec_Applicant_Educations" Index="1" RelativeSize="100" Removed="True">
+            <LayoutGroup Id="rec_Employer_Industrys" RelativeSize="100" Index="1">
+              <LayoutItem Id="rec_Employer_Industrys" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="rec_Applicant_Educations" RelativeSize="100" Index="2">
               <LayoutItem Id="rec_Applicant_Educations" RelativeSize="100" />
             </LayoutGroup>
-            <LayoutGroup Id="rec_Applicant_Experiences" Index="2" RelativeSize="100" Removed="True">
+            <LayoutGroup Id="rec_Applicant_Experiences" RelativeSize="100" Index="3">
               <LayoutItem Id="rec_Applicant_Experiences" RelativeSize="100" />
             </LayoutGroup>
-            <LayoutGroup Id="rec_Employer_Industrys" Removed="True" />
-            <LayoutGroup Id="rec_Employer_Order_Details" Removed="True" />
-            <LayoutGroup Id="rec_Industry_Require_Doc_Infos" Removed="True" />
+            <LayoutGroup Id="rec_Employer_Order_Details" RelativeSize="100" Index="4">
+              <LayoutItem Id="rec_Employer_Order_Details" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="rec_Industry_Require_Doc_Infos" RelativeSize="100" Index="5">
+              <LayoutItem Id="rec_Industry_Require_Doc_Infos" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="rec_Applicant_Industrys" RelativeSize="100" Index="6">
+              <LayoutItem Id="rec_Applicant_Industrys" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" RelativeSize="100" Index="7">
+              <LayoutItem Id="AuditTrail" RelativeSize="100" />
+            </LayoutGroup>
           </TabbedGroup>
         </LayoutGroup>
       </Layout>

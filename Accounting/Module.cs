@@ -43,6 +43,7 @@ namespace Accounting {
         public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {
             ModuleUpdater updater = new DatabaseUpdate.Updater(objectSpace, versionFromDB);
             PredefinedReportsUpdater reportsUpdater = new PredefinedReportsUpdater(Application, objectSpace, versionFromDB);
+            //reportsUpdater.UseMultipleUpdaters = true;
             reportsUpdater.AddPredefinedReport<acc_Journal_Entry_01>("Account Details", typeof(acc_Journal_Entry_Detail));
             return new ModuleUpdater[] { updater, reportsUpdater };
         }

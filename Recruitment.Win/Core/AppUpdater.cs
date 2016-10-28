@@ -261,7 +261,8 @@ namespace Recruitment.Win.Core
 
         public static void WinApplication_LoggedOn(object sender, LogonEventArgs e)
         {
-            UpdateCheck((WinApplication)sender);
+            //stop this till we finish building 
+            //UpdateCheck((WinApplication)sender);
         }
 
     }

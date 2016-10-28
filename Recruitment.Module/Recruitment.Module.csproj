@@ -71,6 +71,7 @@
     <Reference Include="DevExpress.ExpressApp.PivotGrid.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.ExpressApp.Reports.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.ReportsV2.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -269,6 +270,14 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Call.Designer.cs">
       <DependentUpon>rec_Employer_Order_Detail_Call.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Connection.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Connection.Designer.cs">
+      <DependentUpon>rec_Employer_Order_Detail_Connection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Connection_Detail.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Connection_Detail.Designer.cs">
+      <DependentUpon>rec_Employer_Order_Detail_Connection_Detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Suggest_Applicat.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Suggest_Applicat.Designer.cs">
       <DependentUpon>rec_Employer_Order_Detail_Suggest_Applicat.cs</DependentUpon>
@@ -383,6 +392,12 @@
     <Compile Include="Controllers\ctr_Order_Edit.Designer.cs">
       <DependentUpon>ctr_Order_Edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\ctr_PrintConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ctr_PrintConnection.Designer.cs">
+      <DependentUpon>ctr_PrintConnection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\ctr_RoleCRUD.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -408,10 +423,20 @@
       <DependentUpon>Module.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\rec_Applicant_01.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rec_Applicant_01.Designer.cs">
+      <DependentUpon>rec_Applicant_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\RepParamObjCri.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controllers\ctr_Order_Suggest_App.resx">
       <DependentUpon>ctr_Order_Suggest_App.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\ctr_PrintConnection.resx">
+      <DependentUpon>ctr_PrintConnection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\ctr_RoleCRUD.resx">
       <DependentUpon>ctr_RoleCRUD.cs</DependentUpon>
@@ -427,6 +452,9 @@
       <DependentUpon>Module.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Report\rec_Applicant_01.resx">
+      <DependentUpon>rec_Applicant_01.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="BusinessObjects\BO_Recruitment.xpo" />
@@ -540,6 +568,9 @@
     <EmbeddedResource Include="Images\rec_Ticket_Type32.png" />
     <EmbeddedResource Include="Images\rec_Employer_Order_Interview16.png" />
     <EmbeddedResource Include="Images\rec_Employer_Order_Interview32.png" />
+    <EmbeddedResource Include="Images\rec_Employer_Order_Detail_Connection16.png" />
+    <EmbeddedResource Include="Images\rec_Employer_Order_Detail_Connection32.png" />
+    <Content Include="backup code.txt" />
     <Content Include="Information.txt" />
     <Content Include="Welcome.html" />
   </ItemGroup>

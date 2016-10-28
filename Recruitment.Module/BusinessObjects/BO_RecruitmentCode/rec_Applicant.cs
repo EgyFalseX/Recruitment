@@ -27,9 +27,9 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
      , SkipNullOrEmptyValues = false
      )
  ]
-
     public partial class rec_Applicant
-    {public rec_Applicant(Session session) : base(session) { }
+    {
+        public rec_Applicant(Session session) : base(session) { }
         public override void AfterConstruction()
         {
             base.AfterConstruction(); 

@@ -239,6 +239,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ctr_ReportV2SetPreviewType_Win.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ctr_ReportV2SetPreviewType_Win.Designer.cs">
+      <DependentUpon>ctr_ReportV2SetPreviewType_Win.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editors\WinProgressPropertyEditor.cs" />
     <Compile Include="WinModule.cs">
       <SubType>Component</SubType>
