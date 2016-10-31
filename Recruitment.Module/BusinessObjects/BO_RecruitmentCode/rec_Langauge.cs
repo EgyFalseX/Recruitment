@@ -11,6 +11,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     [NavigationItem("General")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("langauge_name")]
     [ImageName("rec_Nationality16")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Langauge")]
     public partial class rec_Langauge
     {
         public rec_Langauge(Session session) : base(session) { }

@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int fapp_prj_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int app_prj_id
         {
             get { return fapp_prj_id; }
@@ -25,30 +26,35 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         rec_Applicant fapp_prj_applicant_id;
         [Association(@"rec_Applicant_ProjectReferencesrec_Applicant")]
+        [DevExpress.Xpo.DisplayName(@"Applicant")]
         public rec_Applicant app_prj_applicant_id
         {
             get { return fapp_prj_applicant_id; }
             set { SetPropertyValue<rec_Applicant>("app_prj_applicant_id", ref fapp_prj_applicant_id, value); }
         }
         string fapp_prj_title;
+        [DevExpress.Xpo.DisplayName(@"Title")]
         public string app_prj_title
         {
             get { return fapp_prj_title; }
             set { SetPropertyValue<string>("app_prj_title", ref fapp_prj_title, value); }
         }
         string fapp_prj_company_name;
+        [DevExpress.Xpo.DisplayName(@"Company name")]
         public string app_prj_company_name
         {
             get { return fapp_prj_company_name; }
             set { SetPropertyValue<string>("app_prj_company_name", ref fapp_prj_company_name, value); }
         }
         string fapp_prj_url;
+        [DevExpress.Xpo.DisplayName(@"URL")]
         public string app_prj_url
         {
             get { return fapp_prj_url; }
             set { SetPropertyValue<string>("app_prj_url", ref fapp_prj_url, value); }
         }
         DateTime fapp_prj_date;
+        [DevExpress.Xpo.DisplayName(@"Date")]
         public DateTime app_prj_date
         {
             get { return fapp_prj_date; }
@@ -56,6 +62,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string fapp_prj_description;
         [Size(1000)]
+        [DevExpress.Xpo.DisplayName(@"Description")]
         public string app_prj_description
         {
             get { return fapp_prj_description; }

@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int fapp_trv_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int app_trv_id
         {
             get { return fapp_trv_id; }
@@ -26,6 +27,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Applicant fapp_trv_applicant_id;
         [Indexed(Name = @"iapp_trv_applicant_id_rec_Applicant_Country")]
         [Association(@"rec_Applicant_CountryReferencesrec_Applicant")]
+        [DevExpress.Xpo.DisplayName(@"Applicant")]
         public rec_Applicant app_trv_applicant_id
         {
             get { return fapp_trv_applicant_id; }
@@ -34,12 +36,14 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Country fapp_trv_country_id;
         [Indexed(Name = @"iapp_trv_country_id_rec_Applicant_Country")]
         [Association(@"rec_Applicant_CountryReferencesrec_Country")]
+        [DevExpress.Xpo.DisplayName(@"Country")]
         public rec_Country app_trv_country_id
         {
             get { return fapp_trv_country_id; }
             set { SetPropertyValue<rec_Country>("app_trv_country_id", ref fapp_trv_country_id, value); }
         }
         int fapp_trv_year;
+        [DevExpress.Xpo.DisplayName(@"Year")]
         public int app_trv_year
         {
             get { return fapp_trv_year; }

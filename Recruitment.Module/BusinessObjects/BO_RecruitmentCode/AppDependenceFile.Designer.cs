@@ -18,12 +18,14 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         string fFileName;
         [Key]
+        [DevExpress.Xpo.DisplayName(@"File Name")]
         public string FileName
         {
             get { return fFileName; }
             set { SetPropertyValue<string>("FileName", ref fFileName, value); }
         }
         long fFileVersion;
+        [DevExpress.Xpo.DisplayName(@"File Version")]
         public long FileVersion
         {
             get { return fFileVersion; }
@@ -31,6 +33,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         byte[] fFileData;
         [Size(SizeAttribute.Unlimited)]
+        [DevExpress.Xpo.DisplayName(@"File Data")]
         public byte[] FileData
         {
             get { return fFileData; }

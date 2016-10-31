@@ -19,6 +19,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Employer_Order_Detail_Suggest_Applicat frec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id;
         [Key]
         [Association(@"rec_Employer_Order_Detail_Accept_ApplicatReferencesrec_Employer_Order_Detail_Suggest_Applicat")]
+        [DevExpress.Xpo.DisplayName(@"Suggested Applicant")]
         public rec_Employer_Order_Detail_Suggest_Applicat rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id
         {
             get { return frec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id; }
@@ -26,6 +27,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string frec_employer_order_detail_accept_applicat_description;
         [Size(1000)]
+        [DevExpress.Xpo.DisplayName(@"Description")]
         public string rec_employer_order_detail_accept_applicat_description
         {
             get { return frec_employer_order_detail_accept_applicat_description; }
@@ -34,13 +36,16 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Applicant_Status frec_employer_order_detail_accept_applicat_rec_applicant_status_id;
         [Indexed(Name = @"irec_employer_order_detail_accept_applicat_rec_applicant_status_id_rec_Employer_Order_Detail_Accept_Applicat")]
         [Association(@"rec_Employer_Order_Detail_Accept_ApplicatReferencesrec_Applicant_Status")]
+        [DevExpress.Xpo.DisplayName(@"Status")]
         public rec_Applicant_Status rec_employer_order_detail_accept_applicat_rec_applicant_status_id
         {
             get { return frec_employer_order_detail_accept_applicat_rec_applicant_status_id; }
             set { SetPropertyValue<rec_Applicant_Status>("rec_employer_order_detail_accept_applicat_rec_applicant_status_id", ref frec_employer_order_detail_accept_applicat_rec_applicant_status_id, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Accepted Applicants Docs")]
         [Association(@"rec_Employer_Order_Detail_Accept_Applicat_DocReferencesrec_Employer_Order_Detail_Accept_Applicat")]
         public XPCollection<rec_Employer_Order_Detail_Accept_Applicat_Doc> rec_Employer_Order_Detail_Accept_Applicat_Docs { get { return GetCollection<rec_Employer_Order_Detail_Accept_Applicat_Doc>("rec_Employer_Order_Detail_Accept_Applicat_Docs"); } }
+        [DevExpress.Xpo.DisplayName(@"Applicant Accounts")]
         [Association(@"acc_Account_ApplicantReferencesrec_Employer_Order_Detail_Accept_Applicat")]
         public XPCollection<acc_Account_Applicant> acc_Account_Applicants { get { return GetCollection<acc_Account_Applicant>("acc_Account_Applicants"); } }
     }

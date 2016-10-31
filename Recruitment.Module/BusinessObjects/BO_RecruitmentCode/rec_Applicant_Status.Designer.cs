@@ -18,17 +18,20 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int frec_applicant_status_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int rec_applicant_status_id
         {
             get { return frec_applicant_status_id; }
             set { SetPropertyValue<int>("rec_applicant_status_id", ref frec_applicant_status_id, value); }
         }
         string frec_applicant_status_name;
+        [DevExpress.Xpo.DisplayName(@"Status name")]
         public string rec_applicant_status_name
         {
             get { return frec_applicant_status_name; }
             set { SetPropertyValue<string>("rec_applicant_status_name", ref frec_applicant_status_name, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Order Accepted Applicats Status")]
         [Association(@"rec_Employer_Order_Detail_Accept_ApplicatReferencesrec_Applicant_Status")]
         public XPCollection<rec_Employer_Order_Detail_Accept_Applicat> rec_Employer_Order_Detail_Accept_Applicats { get { return GetCollection<rec_Employer_Order_Detail_Accept_Applicat>("rec_Employer_Order_Detail_Accept_Applicats"); } }
     }

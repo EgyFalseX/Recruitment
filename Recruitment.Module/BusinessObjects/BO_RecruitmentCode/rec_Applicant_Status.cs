@@ -8,6 +8,7 @@ using DevExpress.Persistent.Base;
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Applicant Status")]
     public partial class rec_Applicant_Status
     {
         public rec_Applicant_Status(Session session) : base(session) { }

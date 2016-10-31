@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int frec_lang_level_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int rec_lang_level_id
         {
             get { return frec_lang_level_id; }
@@ -25,11 +26,13 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string frec_lang_level_name;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Level")]
         public string rec_lang_level_name
         {
             get { return frec_lang_level_name; }
             set { SetPropertyValue<string>("rec_lang_level_name", ref frec_lang_level_name, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Applicant Langauges")]
         [Association(@"rec_Applicant_LangaugeReferencesrec_Langauge_Level")]
         public XPCollection<rec_Applicant_Langauge> rec_Applicant_Langauges { get { return GetCollection<rec_Applicant_Langauge>("rec_Applicant_Langauges"); } }
     }

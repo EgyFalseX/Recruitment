@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int frec_ticket_type_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int rec_ticket_type_id
         {
             get { return frec_ticket_type_id; }
@@ -25,11 +26,13 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string frec_ticket_type_name;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Ticket type")]
         public string rec_ticket_type_name
         {
             get { return frec_ticket_type_name; }
             set { SetPropertyValue<string>("rec_ticket_type_name", ref frec_ticket_type_name, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Order Details")]
         [Association(@"rec_Employer_Order_DetailReferencesrec_Ticket_Type")]
         public XPCollection<rec_Employer_Order_Detail> rec_Employer_Order_Details { get { return GetCollection<rec_Employer_Order_Detail>("rec_Employer_Order_Details"); } }
     }

@@ -3,11 +3,13 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
+using DevExpress.ExpressApp.DC;
 using DevExpress.Persistent.Base;
 
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
+    [XafDisplayName("Applicant Account")]
     public partial class acc_Account_Applicant
     {
         public acc_Account_Applicant(Session session) : base(session) { }

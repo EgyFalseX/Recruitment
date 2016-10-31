@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int frec_employer_order_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int rec_employer_order_id
         {
             get { return frec_employer_order_id; }
@@ -26,12 +27,14 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Employer frec_employer_order_employer_id;
         [Indexed(Name = @"irec_employer_order_employer_id_rec_Employer_Order")]
         [Association(@"rec_Employer_OrderReferencesrec_Employer")]
+        [DevExpress.Xpo.DisplayName(@"Employer")]
         public rec_Employer rec_employer_order_employer_id
         {
             get { return frec_employer_order_employer_id; }
             set { SetPropertyValue<rec_Employer>("rec_employer_order_employer_id", ref frec_employer_order_employer_id, value); }
         }
         DateTime frec_employer_order_date;
+        [DevExpress.Xpo.DisplayName(@"Order date")]
         public DateTime rec_employer_order_date
         {
             get { return frec_employer_order_date; }
@@ -39,6 +42,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string frec_employer_order_description;
         [Size(1000)]
+        [DevExpress.Xpo.DisplayName(@"Description")]
         public string rec_employer_order_description
         {
             get { return frec_employer_order_description; }
@@ -47,19 +51,23 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Delivery_Type frec_employer_order_rec_delivery_type_id;
         [Indexed(Name = @"irec_employer_order_rec_delivery_type_id_rec_Employer_Order")]
         [Association(@"rec_Employer_OrderReferencesrec_Delivery_Type")]
+        [DevExpress.Xpo.DisplayName(@"Delivery type")]
         public rec_Delivery_Type rec_employer_order_rec_delivery_type_id
         {
             get { return frec_employer_order_rec_delivery_type_id; }
             set { SetPropertyValue<rec_Delivery_Type>("rec_employer_order_rec_delivery_type_id", ref frec_employer_order_rec_delivery_type_id, value); }
         }
         DateTime frec_employer_order_delivery_date;
+        [DevExpress.Xpo.DisplayName(@"Delivery date")]
         public DateTime rec_employer_order_delivery_date
         {
             get { return frec_employer_order_delivery_date; }
             set { SetPropertyValue<DateTime>("rec_employer_order_delivery_date", ref frec_employer_order_delivery_date, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Order Details")]
         [Association(@"rec_Employer_Order_DetailReferencesrec_Employer_Order")]
         public XPCollection<rec_Employer_Order_Detail> rec_Employer_Order_Details { get { return GetCollection<rec_Employer_Order_Detail>("rec_Employer_Order_Details"); } }
+        [DevExpress.Xpo.DisplayName(@"Order Interviews")]
         [Association(@"rec_Employer_Order_InterviewReferencesrec_Employer_Order")]
         public XPCollection<rec_Employer_Order_Interview> rec_Employer_Order_Interviews { get { return GetCollection<rec_Employer_Order_Interview>("rec_Employer_Order_Interviews"); } }
     }

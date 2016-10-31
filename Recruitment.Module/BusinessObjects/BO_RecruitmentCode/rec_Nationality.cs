@@ -9,6 +9,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("nationality_name")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Nationality")]
     //[ImageName("BO_Contact")]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]

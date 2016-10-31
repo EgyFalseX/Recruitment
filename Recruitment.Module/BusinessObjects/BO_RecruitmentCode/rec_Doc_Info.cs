@@ -9,6 +9,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("rec_doc_info_name")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Document info")]
     public partial class rec_Doc_Info
     {
         public rec_Doc_Info(Session session) : base(session) { }

@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int frec_employer_order_interview_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int rec_employer_order_interview_id
         {
             get { return frec_employer_order_interview_id; }
@@ -25,12 +26,14 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         rec_Employer_Order frec_employer_order_id;
         [Association(@"rec_Employer_Order_InterviewReferencesrec_Employer_Order")]
+        [DevExpress.Xpo.DisplayName(@"b")]
         public rec_Employer_Order rec_employer_order_id
         {
             get { return frec_employer_order_id; }
             set { SetPropertyValue<rec_Employer_Order>("rec_employer_order_id", ref frec_employer_order_id, value); }
         }
         DateTime frec_employer_order_interview_date;
+        [DevExpress.Xpo.DisplayName(@"Interview date")]
         public DateTime rec_employer_order_interview_date
         {
             get { return frec_employer_order_interview_date; }
@@ -38,6 +41,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string frec_employer_order_interview_note;
         [Size(1000)]
+        [DevExpress.Xpo.DisplayName(@"Note")]
         public string rec_employer_order_interview_note
         {
             get { return frec_employer_order_interview_note; }

@@ -9,6 +9,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("rec_delivery_type_name")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Delivery Type")]
     public partial class rec_Delivery_Type
     {
         public rec_Delivery_Type(Session session) : base(session) { }

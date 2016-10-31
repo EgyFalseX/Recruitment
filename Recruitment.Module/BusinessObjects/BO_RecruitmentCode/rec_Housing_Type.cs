@@ -9,6 +9,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("rec_housing_name")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Housing Type")]
     public partial class rec_Housing_Type
     {
         public rec_Housing_Type(Session session) : base(session) { }

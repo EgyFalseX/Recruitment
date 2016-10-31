@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int fjob_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int job_id
         {
             get { return fjob_id; }
@@ -25,11 +26,13 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string fjob_name;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Job name")]
         public string job_name
         {
             get { return fjob_name; }
             set { SetPropertyValue<string>("job_name", ref fjob_name, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Applicant Experiences")]
         [Association(@"rec_Applicant_ExperienceReferencesrec_Job")]
         public XPCollection<rec_Applicant_Experience> rec_Applicant_Experiences { get { return GetCollection<rec_Applicant_Experience>("rec_Applicant_Experiences"); } }
     }

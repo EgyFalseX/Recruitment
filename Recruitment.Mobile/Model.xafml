@@ -50,11 +50,6 @@
           <Item Id="rec_Applicant_ListView" Removed="True" />
         </Items>
       </Item>
-      <Item Id="EmployerNode">
-        <Items>
-          <Item Id="rec_Employer_ListView" Removed="True" />
-        </Items>
-      </Item>
       <Item Id="Accounting">
         <Items>
           <Item Id="acc_Account_ListView" Removed="True" />
@@ -461,7 +456,6 @@
         <ColumnInfo Id="rec_employer_order_detail_salary" Index="9" />
         <ColumnInfo Id="rec_employer_order_detail_rec_housing_type" Index="10" />
         <ColumnInfo Id="rec_employer_order_detail_housing_value" Index="11" />
-        <ColumnInfo Id="rec_employer_order_detail_experience_years" Index="12" />
         <ColumnInfo Id="rec_employer_order_detail_rec_residence_type_id" Index="13" />
         <ColumnInfo Id="rec_employer_order_detail_rec_ticket_type_id" Index="14" />
         <ColumnInfo Id="rec_employer_order_detail_working_hours" Index="15" />

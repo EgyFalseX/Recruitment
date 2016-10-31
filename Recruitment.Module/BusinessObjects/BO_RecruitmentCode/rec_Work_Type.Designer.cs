@@ -18,19 +18,23 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int fwork_type_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int work_type_id
         {
             get { return fwork_type_id; }
             set { SetPropertyValue<int>("work_type_id", ref fwork_type_id, value); }
         }
         string fwork_type_name;
+        [DevExpress.Xpo.DisplayName(@"Work type")]
         public string work_type_name
         {
             get { return fwork_type_name; }
             set { SetPropertyValue<string>("work_type_name", ref fwork_type_name, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Applicants")]
         [Association(@"rec_ApplicantReferencesrec_Work_Type")]
         public XPCollection<rec_Applicant> rec_Applicants { get { return GetCollection<rec_Applicant>("rec_Applicants"); } }
+        [DevExpress.Xpo.DisplayName(@"Applicant Experiences")]
         [Association(@"rec_Applicant_ExperienceReferencesrec_Work_Type")]
         public XPCollection<rec_Applicant_Experience> rec_Applicant_Experiences { get { return GetCollection<rec_Applicant_Experience>("rec_Applicant_Experiences"); } }
     }

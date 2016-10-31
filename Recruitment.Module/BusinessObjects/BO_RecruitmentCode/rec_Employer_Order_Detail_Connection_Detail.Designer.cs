@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int frec_employer_order_detail_connection_detail_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int rec_employer_order_detail_connection_detail_id
         {
             get { return frec_employer_order_detail_connection_detail_id; }
@@ -26,6 +27,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Employer_Order_Detail_Connection frec_employer_order_detail_connection_id;
         [Indexed(Name = @"irec_employer_order_detail_connection_id_rec_Employer_Order_Detail_Connection_Detail")]
         [Association(@"rec_Employer_Order_Detail_Connection_DetailReferencesrec_Employer_Order_Detail_Connection")]
+        [DevExpress.Xpo.DisplayName(@"Connection")]
         public rec_Employer_Order_Detail_Connection rec_employer_order_detail_connection_id
         {
             get { return frec_employer_order_detail_connection_id; }
@@ -33,6 +35,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         rec_Applicant frec_employer_order_detail_connection_detail_applicant_id;
         [Association(@"rec_Employer_Order_Detail_Connection_DetailReferencesrec_Applicant")]
+        [DevExpress.Xpo.DisplayName(@"Applicant")]
         public rec_Applicant rec_employer_order_detail_connection_detail_applicant_id
         {
             get { return frec_employer_order_detail_connection_detail_applicant_id; }

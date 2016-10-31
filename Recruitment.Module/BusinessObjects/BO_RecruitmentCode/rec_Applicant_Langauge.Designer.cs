@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int fapp_lang_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int app_lang_id
         {
             get { return fapp_lang_id; }
@@ -26,6 +27,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Applicant fapp_lang_applicant_id;
         [Indexed(Name = @"iapp_lang_applicant_id_rec_Applicant_Langauge")]
         [Association(@"rec_Applicant_LangaugeReferencesrec_Applicant")]
+        [DevExpress.Xpo.DisplayName(@"Applicant")]
         public rec_Applicant app_lang_applicant_id
         {
             get { return fapp_lang_applicant_id; }
@@ -34,6 +36,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Langauge fapp_lang_langauge_id;
         [Indexed(Name = @"iapp_lang_langauge_id_rec_Applicant_Langauge")]
         [Association(@"rec_Applicant_LangaugeReferencesrec_Langauge")]
+        [DevExpress.Xpo.DisplayName(@"Langauge")]
         public rec_Langauge app_lang_langauge_id
         {
             get { return fapp_lang_langauge_id; }
@@ -41,6 +44,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         rec_Langauge_Level frec_lang_level_id;
         [Association(@"rec_Applicant_LangaugeReferencesrec_Langauge_Level")]
+        [DevExpress.Xpo.DisplayName(@"Level")]
         public rec_Langauge_Level rec_lang_level_id
         {
             get { return frec_lang_level_id; }

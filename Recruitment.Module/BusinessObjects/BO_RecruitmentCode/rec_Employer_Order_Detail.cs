@@ -11,6 +11,7 @@ using Recruitment.Module.Core;
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Order Detail")]
     [Appearance("Apr_Status", TargetItems = "*", Criteria = "rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id IS NOT NULL " +
                                                             " And rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id <> 1 " +
                                                             " And rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id <> 4", Enabled = false)]

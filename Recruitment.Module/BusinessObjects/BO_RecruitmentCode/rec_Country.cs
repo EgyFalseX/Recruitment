@@ -13,6 +13,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("country_name")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Country")]
     public partial class rec_Country
     {
         public rec_Country(Session session) : base(session) { }

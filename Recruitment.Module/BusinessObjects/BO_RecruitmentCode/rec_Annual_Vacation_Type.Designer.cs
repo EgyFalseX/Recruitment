@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int frec_annual_vacation_type_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"ID")]
         public int rec_annual_vacation_type_id
         {
             get { return frec_annual_vacation_type_id; }
@@ -25,11 +26,13 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string frec_annual_vacation_type_name;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Vacation type")]
         public string rec_annual_vacation_type_name
         {
             get { return frec_annual_vacation_type_name; }
             set { SetPropertyValue<string>("rec_annual_vacation_type_name", ref frec_annual_vacation_type_name, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Order Details")]
         [Association(@"rec_Employer_Order_DetailReferencesrec_Annual_Vacation_Type")]
         public XPCollection<rec_Employer_Order_Detail> rec_Employer_Order_Details { get { return GetCollection<rec_Employer_Order_Detail>("rec_Employer_Order_Details"); } }
     }

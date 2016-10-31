@@ -18,29 +18,38 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int findustry_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int industry_id
         {
             get { return findustry_id; }
             set { SetPropertyValue<int>("industry_id", ref findustry_id, value); }
         }
         string findustry_name;
+        [DevExpress.Xpo.DisplayName(@"Industry name")]
         public string industry_name
         {
             get { return findustry_name; }
             set { SetPropertyValue<string>("industry_name", ref findustry_name, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Applicants")]
         [Association(@"rec_ApplicantReferencesrec_Industry")]
         public XPCollection<rec_Applicant> rec_Applicants { get { return GetCollection<rec_Applicant>("rec_Applicants"); } }
+        [DevExpress.Xpo.DisplayName(@"Applicant Educations")]
         [Association(@"rec_Applicant_EducationReferencesrec_Industry")]
         public XPCollection<rec_Applicant_Education> rec_Applicant_Educations { get { return GetCollection<rec_Applicant_Education>("rec_Applicant_Educations"); } }
+        [DevExpress.Xpo.DisplayName(@"Applicant Experiences")]
         [Association(@"rec_Applicant_ExperienceReferencesrec_Industry")]
         public XPCollection<rec_Applicant_Experience> rec_Applicant_Experiences { get { return GetCollection<rec_Applicant_Experience>("rec_Applicant_Experiences"); } }
+        [DevExpress.Xpo.DisplayName(@"Order Details")]
         [Association(@"rec_Employer_Order_DetailReferencesrec_Industry")]
         public XPCollection<rec_Employer_Order_Detail> rec_Employer_Order_Details { get { return GetCollection<rec_Employer_Order_Detail>("rec_Employer_Order_Details"); } }
+        [DevExpress.Xpo.DisplayName(@"Require Docs")]
         [Association(@"rec_Industry_Require_Doc_InfoReferencesrec_Industry")]
         public XPCollection<rec_Industry_Require_Doc_Info> rec_Industry_Require_Doc_Infos { get { return GetCollection<rec_Industry_Require_Doc_Info>("rec_Industry_Require_Doc_Infos"); } }
+        [DevExpress.Xpo.DisplayName(@"Employer Industries")]
         [Association(@"rec_Employer_IndustryReferencesrec_Industry")]
         public XPCollection<rec_Employer_Industry> rec_Employer_Industrys { get { return GetCollection<rec_Employer_Industry>("rec_Employer_Industrys"); } }
+        [DevExpress.Xpo.DisplayName(@"Applicant Industries")]
         [Association(@"rec_Applicant_IndustryReferencesrec_Industry")]
         public XPCollection<rec_Applicant_Industry> rec_Applicant_Industrys { get { return GetCollection<rec_Applicant_Industry>("rec_Applicant_Industrys"); } }
     }

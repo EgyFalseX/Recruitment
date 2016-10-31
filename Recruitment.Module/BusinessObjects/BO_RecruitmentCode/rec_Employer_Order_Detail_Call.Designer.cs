@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int frec_employer_order_detail_call_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int rec_employer_order_detail_call_id
         {
             get { return frec_employer_order_detail_call_id; }
@@ -25,6 +26,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         rec_Employer_Order_Detail frec_employer_order_detail_call_rec_employer_order_detail_id;
         [Association(@"rec_Employer_Order_Detail_CallReferencesrec_Employer_Order_Detail")]
+        [DevExpress.Xpo.DisplayName(@"Order Detail")]
         public rec_Employer_Order_Detail rec_employer_order_detail_call_rec_employer_order_detail_id
         {
             get { return frec_employer_order_detail_call_rec_employer_order_detail_id; }
@@ -33,12 +35,14 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Applicant frec_employer_order_detail_call_applicant_id;
         [Indexed(Name = @"irec_employer_order_detail_call_applicant_id_rec_Employer_Order_Detail_Call")]
         [Association(@"rec_Employer_Order_Detail_CallReferencesrec_Applicant")]
+        [DevExpress.Xpo.DisplayName(@"Applicant")]
         public rec_Applicant rec_employer_order_detail_call_applicant_id
         {
             get { return frec_employer_order_detail_call_applicant_id; }
             set { SetPropertyValue<rec_Applicant>("rec_employer_order_detail_call_applicant_id", ref frec_employer_order_detail_call_applicant_id, value); }
         }
         DateTime frec_employer_order_detail_call_date;
+        [DevExpress.Xpo.DisplayName(@"Call date")]
         public DateTime rec_employer_order_detail_call_date
         {
             get { return frec_employer_order_detail_call_date; }
@@ -47,6 +51,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Call_Result frec_employer_order_detail_call_rec_call_result_id;
         [Indexed(Name = @"irec_employer_order_detail_call_rec_call_result_id_rec_Employer_Order_Detail_Call")]
         [Association(@"rec_Employer_Order_Detail_CallReferencesrec_Call_Result")]
+        [DevExpress.Xpo.DisplayName(@"Call result")]
         public rec_Call_Result rec_employer_order_detail_call_rec_call_result_id
         {
             get { return frec_employer_order_detail_call_rec_call_result_id; }
@@ -54,6 +59,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string frec_employer_order_detail_call_description;
         [Size(1000)]
+        [DevExpress.Xpo.DisplayName(@"Description")]
         public string rec_employer_order_detail_call_description
         {
             get { return frec_employer_order_detail_call_description; }

@@ -8,6 +8,7 @@ using DevExpress.Persistent.Base;
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Employer Person")]
     public partial class rec_Employer_Person
     {
         public rec_Employer_Person(Session session) : base(session) { }

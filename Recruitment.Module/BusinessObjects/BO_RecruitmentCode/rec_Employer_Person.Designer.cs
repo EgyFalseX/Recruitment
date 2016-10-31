@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int femployer_person_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int employer_person_id
         {
             get { return femployer_person_id; }
@@ -25,18 +26,21 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         rec_Employer femployer_id;
         [Association(@"rec_Employer_PersonReferencesrec_Employer")]
+        [DevExpress.Xpo.DisplayName(@"Employer")]
         public rec_Employer employer_id
         {
             get { return femployer_id; }
             set { SetPropertyValue<rec_Employer>("employer_id", ref femployer_id, value); }
         }
         string fperson_name;
+        [DevExpress.Xpo.DisplayName(@"Person name")]
         public string person_name
         {
             get { return fperson_name; }
             set { SetPropertyValue<string>("person_name", ref fperson_name, value); }
         }
         string fperson_title;
+        [DevExpress.Xpo.DisplayName(@"Title")]
         public string person_title
         {
             get { return fperson_title; }
@@ -44,6 +48,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string fperson_mobile;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Mobile")]
         public string person_mobile
         {
             get { return fperson_mobile; }
@@ -51,6 +56,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string fperson_phone;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Phone")]
         public string person_phone
         {
             get { return fperson_phone; }
@@ -58,6 +64,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string fperson_mail;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Email")]
         public string person_mail
         {
             get { return fperson_mail; }

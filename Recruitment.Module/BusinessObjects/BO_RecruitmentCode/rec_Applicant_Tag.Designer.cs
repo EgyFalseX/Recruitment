@@ -19,6 +19,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         int fapp_tag_id;
         [Indexed(Name = @"rec_Applicant_Tag.app_tag_id", Unique = true)]
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int app_tag_id
         {
             get { return fapp_tag_id; }
@@ -27,6 +28,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Applicant fapp_tag_applicant_id;
         [Indexed(Name = @"rec_Applicant_Tag.app_tag_applicant_id")]
         [Association(@"rec_Applicant_TagReferencesrec_Applicant")]
+        [DevExpress.Xpo.DisplayName(@"Applicant")]
         public rec_Applicant app_tag_applicant_id
         {
             get { return fapp_tag_applicant_id; }
@@ -35,6 +37,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Tag fapp_tag_tag_id;
         [Indexed(Name = @"rec_Applicant_Tag.app_tag_tag_id")]
         [Association(@"rec_Applicant_TagReferencesrec_Tag")]
+        [DevExpress.Xpo.DisplayName(@"Tag")]
         public rec_Tag app_tag_tag_id
         {
             get { return fapp_tag_tag_id; }

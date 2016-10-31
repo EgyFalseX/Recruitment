@@ -8,6 +8,7 @@ using DevExpress.Persistent.Base;
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Industry Required Document")]
     public partial class rec_Industry_Require_Doc_Info
     {
         public rec_Industry_Require_Doc_Info(Session session) : base(session) { }

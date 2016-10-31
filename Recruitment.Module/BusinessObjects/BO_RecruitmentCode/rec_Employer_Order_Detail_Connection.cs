@@ -9,9 +9,10 @@ using DevExpress.Persistent.Validation;
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
-    [NavigationItem("EmployerNode")]
+    [NavigationItem("Employer")]
     [ImageName("rec_Employer_Order_Detail_Connection16")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("rec_employer_order_detail_connection_date")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Order Connection")]
     public partial class rec_Employer_Order_Detail_Connection
     {
         public rec_Employer_Order_Detail_Connection(Session session) : base(session) { }

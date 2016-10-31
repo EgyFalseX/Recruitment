@@ -11,6 +11,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     [NavigationItem("General")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("job_name")]
     [ImageName("BO_Position_v92")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Job")]
     public partial class rec_Job
     {
         public rec_Job(Session session) : base(session) { }

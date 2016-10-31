@@ -9,6 +9,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("rec_ticket_type_name")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Ticket Type")]
     public partial class rec_Ticket_Type
     {
         public rec_Ticket_Type(Session session) : base(session) { }

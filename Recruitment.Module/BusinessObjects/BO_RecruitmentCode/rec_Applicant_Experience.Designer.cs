@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int fapp_exp_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int app_exp_id
         {
             get { return fapp_exp_id; }
@@ -26,30 +27,35 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Applicant fapp_exp_applicant_id;
         [Indexed(Name = @"iapp_exp_applicant_id_rec_Applicant_Experience")]
         [Association(@"rec_Applicant_ExperienceReferencesrec_Applicant")]
+        [DevExpress.Xpo.DisplayName(@"Applicant")]
         public rec_Applicant app_exp_applicant_id
         {
             get { return fapp_exp_applicant_id; }
             set { SetPropertyValue<rec_Applicant>("app_exp_applicant_id", ref fapp_exp_applicant_id, value); }
         }
         string fapp_exp_title;
+        [DevExpress.Xpo.DisplayName(@"Title")]
         public string app_exp_title
         {
             get { return fapp_exp_title; }
             set { SetPropertyValue<string>("app_exp_title", ref fapp_exp_title, value); }
         }
         string femployer_name;
+        [DevExpress.Xpo.DisplayName(@"Employer Name")]
         public string employer_name
         {
             get { return femployer_name; }
             set { SetPropertyValue<string>("employer_name", ref femployer_name, value); }
         }
         DateTime fapp_exp_start_date;
+        [DevExpress.Xpo.DisplayName(@"From date")]
         public DateTime app_exp_start_date
         {
             get { return fapp_exp_start_date; }
             set { SetPropertyValue<DateTime>("app_exp_start_date", ref fapp_exp_start_date, value); }
         }
         DateTime fapp_exp_end_date;
+        [DevExpress.Xpo.DisplayName(@"To date")]
         public DateTime app_exp_end_date
         {
             get { return fapp_exp_end_date; }
@@ -58,6 +64,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Industry fapp_exp_industry_id;
         [Indexed(Name = @"iapp_exp_industry_id_rec_Applicant_Experience")]
         [Association(@"rec_Applicant_ExperienceReferencesrec_Industry")]
+        [DevExpress.Xpo.DisplayName(@"Industry")]
         public rec_Industry app_exp_industry_id
         {
             get { return fapp_exp_industry_id; }
@@ -66,6 +73,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Work_Type fapp_exp_work_type_id;
         [Indexed(Name = @"iapp_exp_work_type_id_rec_Applicant_Experience")]
         [Association(@"rec_Applicant_ExperienceReferencesrec_Work_Type")]
+        [DevExpress.Xpo.DisplayName(@"Work type")]
         public rec_Work_Type app_exp_work_type_id
         {
             get { return fapp_exp_work_type_id; }
@@ -73,6 +81,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string fapp_exp_description;
         [Size(1000)]
+        [DevExpress.Xpo.DisplayName(@"Description")]
         public string app_exp_description
         {
             get { return fapp_exp_description; }
@@ -81,12 +90,14 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Job fapp_exp_job_id;
         [Indexed(Name = @"iapp_exp_job_id_rec_Applicant_Experience")]
         [Association(@"rec_Applicant_ExperienceReferencesrec_Job")]
+        [DevExpress.Xpo.DisplayName(@"Job")]
         public rec_Job app_exp_job_id
         {
             get { return fapp_exp_job_id; }
             set { SetPropertyValue<rec_Job>("app_exp_job_id", ref fapp_exp_job_id, value); }
         }
         bool fapp_exp_end_date_till_now;
+        [DevExpress.Xpo.DisplayName(@"Work till now")]
         public bool app_exp_end_date_till_now
         {
             get { return fapp_exp_end_date_till_now; }

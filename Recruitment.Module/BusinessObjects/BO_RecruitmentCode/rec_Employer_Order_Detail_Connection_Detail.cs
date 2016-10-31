@@ -8,9 +8,10 @@ using DevExpress.Persistent.Base;
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
-    [NavigationItem("EmployerNode")]
-    [ImageName("rec_Employer_Order_Detail_Connection_Detail16")]
+    [NavigationItem("Employer")]
+    [ImageName("rec_Employer_Order_Detail_Connection16")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("rec_employer_order_detail_connection_detail_applicant_id")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Order Connection Applicant")]
     public partial class rec_Employer_Order_Detail_Connection_Detail
     {
         public rec_Employer_Order_Detail_Connection_Detail(Session session) : base(session) { }

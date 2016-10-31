@@ -15,6 +15,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     //[Persistent("DatabaseTableName")]
     //[NavigationItem("Data Entry")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("applicant_name")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Applicant")]
     [RuleObjectExists(
      "MyObject.Exists", DefaultContexts.Save
      ,
@@ -34,7 +35,8 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         {
             base.AfterConstruction(); 
             this.applicant_rec_applicant_status_id = Typez.enum_rec_Applicant_Status.Ready;
-        }//Audit Trail
+        }
+        //Audit Trail
         private XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> auditTrail;
         public XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> AuditTrail
         {

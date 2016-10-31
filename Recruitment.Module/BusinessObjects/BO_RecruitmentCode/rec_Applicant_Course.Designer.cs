@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int fapp_crs_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int app_crs_id
         {
             get { return fapp_crs_id; }
@@ -25,24 +26,28 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         rec_Applicant fapp_crs_applicant_id;
         [Association(@"rec_Applicant_CourseReferencesrec_Applicant")]
+        [DevExpress.Xpo.DisplayName(@"Applicant")]
         public rec_Applicant app_crs_applicant_id
         {
             get { return fapp_crs_applicant_id; }
             set { SetPropertyValue<rec_Applicant>("app_crs_applicant_id", ref fapp_crs_applicant_id, value); }
         }
         string fapp_crs_title;
+        [DevExpress.Xpo.DisplayName(@"Title")]
         public string app_crs_title
         {
             get { return fapp_crs_title; }
             set { SetPropertyValue<string>("app_crs_title", ref fapp_crs_title, value); }
         }
         string fapp_crs_provider;
+        [DevExpress.Xpo.DisplayName(@"Provider")]
         public string app_crs_provider
         {
             get { return fapp_crs_provider; }
             set { SetPropertyValue<string>("app_crs_provider", ref fapp_crs_provider, value); }
         }
         int fapp_crs_year;
+        [DevExpress.Xpo.DisplayName(@"Year")]
         public int app_crs_year
         {
             get { return fapp_crs_year; }

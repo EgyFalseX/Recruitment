@@ -18,12 +18,14 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int femployer_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int employer_id
         {
             get { return femployer_id; }
             set { SetPropertyValue<int>("employer_id", ref femployer_id, value); }
         }
         string femployer_Address;
+        [DevExpress.Xpo.DisplayName(@"Address")]
         public string employer_Address
         {
             get { return femployer_Address; }
@@ -31,6 +33,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string femployer_email;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Email")]
         public string employer_email
         {
             get { return femployer_email; }
@@ -39,6 +42,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_City femployer_city_id;
         [Indexed(Name = @"iemployer_city_id_rec_Employer")]
         [Association(@"rec_EmployerReferencesrec_City")]
+        [DevExpress.Xpo.DisplayName(@"City")]
         public rec_City employer_city_id
         {
             get { return femployer_city_id; }
@@ -46,6 +50,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string femployer_phone;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Phone")]
         public string employer_phone
         {
             get { return femployer_phone; }
@@ -53,6 +58,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string femployer_mobile;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Mobile")]
         public string employer_mobile
         {
             get { return femployer_mobile; }
@@ -61,18 +67,21 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Nationality femployer_nationality_id;
         [Indexed(Name = @"iemployer_nationality_id_rec_Employer")]
         [Association(@"rec_EmployerReferencesrec_Nationality")]
+        [DevExpress.Xpo.DisplayName(@"Nationality")]
         public rec_Nationality employer_nationality_id
         {
             get { return femployer_nationality_id; }
             set { SetPropertyValue<rec_Nationality>("employer_nationality_id", ref femployer_nationality_id, value); }
         }
         string femployer_company_name;
+        [DevExpress.Xpo.DisplayName(@"Company name")]
         public string employer_company_name
         {
             get { return femployer_company_name; }
             set { SetPropertyValue<string>("employer_company_name", ref femployer_company_name, value); }
         }
         string femployer_owner_name;
+        [DevExpress.Xpo.DisplayName(@"Owner")]
         public string employer_owner_name
         {
             get { return femployer_owner_name; }
@@ -80,27 +89,33 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string femployer_website;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Website")]
         public string employer_website
         {
             get { return femployer_website; }
             set { SetPropertyValue<string>("employer_website", ref femployer_website, value); }
         }
         int femployer_postal_code;
+        [DevExpress.Xpo.DisplayName(@"Postal code")]
         public int employer_postal_code
         {
             get { return femployer_postal_code; }
             set { SetPropertyValue<int>("employer_postal_code", ref femployer_postal_code, value); }
         }
         int faccount_id;
+        [DevExpress.Xpo.DisplayName(@"Account id")]
         public int account_id
         {
             get { return faccount_id; }
             set { SetPropertyValue<int>("account_id", ref faccount_id, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Employer Orders")]
         [Association(@"rec_Employer_OrderReferencesrec_Employer")]
         public XPCollection<rec_Employer_Order> rec_Employer_Orders { get { return GetCollection<rec_Employer_Order>("rec_Employer_Orders"); } }
+        [DevExpress.Xpo.DisplayName(@"Employer Industries")]
         [Association(@"rec_Employer_IndustryReferencesrec_Employer")]
         public XPCollection<rec_Employer_Industry> rec_Employer_Industrys { get { return GetCollection<rec_Employer_Industry>("rec_Employer_Industrys"); } }
+        [DevExpress.Xpo.DisplayName(@"Employer Persons")]
         [Association(@"rec_Employer_PersonReferencesrec_Employer")]
         public XPCollection<rec_Employer_Person> rec_Employer_Persons { get { return GetCollection<rec_Employer_Person>("rec_Employer_Persons"); } }
     }

@@ -167,6 +167,10 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\acc_Account_Applicant.Designer.cs">
       <DependentUpon>acc_Account_Applicant.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\AppCompany.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\AppCompany.Designer.cs">
+      <DependentUpon>AppCompany.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\AppDependenceFile.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\AppDependenceFile.Designer.cs">
       <DependentUpon>AppDependenceFile.cs</DependentUpon>
@@ -380,6 +384,7 @@
     </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\StoredProcHelper.cs" />
     <Compile Include="BusinessObjects\dc_Msg.cs" />
+    <Compile Include="BusinessObjects\Notification\Notify.cs" />
     <Compile Include="Controllers\ctr_Order_Suggest_App.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -571,6 +576,10 @@
     <EmbeddedResource Include="Images\rec_Employer_Order_Detail_Connection16.png" />
     <EmbeddedResource Include="Images\rec_Employer_Order_Detail_Connection32.png" />
     <Content Include="backup code.txt" />
+    <EmbeddedResource Include="Images\Event16.png" />
+    <EmbeddedResource Include="Images\Event32.png" />
+    <EmbeddedResource Include="Images\Scheduler16.png" />
+    <EmbeddedResource Include="Images\Scheduler32.png" />
     <Content Include="Information.txt" />
     <Content Include="Welcome.html" />
   </ItemGroup>

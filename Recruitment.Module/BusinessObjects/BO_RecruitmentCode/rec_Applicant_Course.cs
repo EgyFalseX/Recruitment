@@ -12,6 +12,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Applicant Course")]
     public partial class rec_Applicant_Course
     {
         public rec_Applicant_Course(Session session) : base(session) { }

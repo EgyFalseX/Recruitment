@@ -13,6 +13,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("city_name")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("City")]
     //[DefaultProperty("city_name")]
     public partial class rec_City
     {

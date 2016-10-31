@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int femployer_industry_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int employer_industry_id
         {
             get { return femployer_industry_id; }
@@ -25,6 +26,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         rec_Employer femployer_id;
         [Association(@"rec_Employer_IndustryReferencesrec_Employer")]
+        [DevExpress.Xpo.DisplayName(@"Employer")]
         public rec_Employer employer_id
         {
             get { return femployer_id; }
@@ -32,6 +34,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         rec_Industry findustry_id;
         [Association(@"rec_Employer_IndustryReferencesrec_Industry")]
+        [DevExpress.Xpo.DisplayName(@"Industry")]
         public rec_Industry industry_id
         {
             get { return findustry_id; }

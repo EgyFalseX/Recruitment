@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int frec_industry_require_doc_info_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int rec_industry_require_doc_info_id
         {
             get { return frec_industry_require_doc_info_id; }
@@ -25,6 +26,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         rec_Doc_Info frec_industry_require_doc_info_rec_doc_info_id;
         [Association(@"rec_Industry_Require_Doc_InfoReferencesrec_Doc_Info")]
+        [DevExpress.Xpo.DisplayName(@"Document")]
         public rec_Doc_Info rec_industry_require_doc_info_rec_doc_info_id
         {
             get { return frec_industry_require_doc_info_rec_doc_info_id; }
@@ -32,11 +34,13 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         rec_Industry frec_industry_require_doc_info_industry_id;
         [Association(@"rec_Industry_Require_Doc_InfoReferencesrec_Industry")]
+        [DevExpress.Xpo.DisplayName(@"Industry")]
         public rec_Industry rec_industry_require_doc_info_industry_id
         {
             get { return frec_industry_require_doc_info_industry_id; }
             set { SetPropertyValue<rec_Industry>("rec_industry_require_doc_info_industry_id", ref frec_industry_require_doc_info_industry_id, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Accepted Applicant Docs")]
         [Association(@"rec_Employer_Order_Detail_Accept_Applicat_DocReferencesrec_Industry_Require_Doc_Info")]
         public XPCollection<rec_Employer_Order_Detail_Accept_Applicat_Doc> rec_Employer_Order_Detail_Accept_Applicat_Docs { get { return GetCollection<rec_Employer_Order_Detail_Accept_Applicat_Doc>("rec_Employer_Order_Detail_Accept_Applicat_Docs"); } }
     }

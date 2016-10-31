@@ -11,6 +11,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     [NavigationItem("Applicant")]
     //[DevExpress.ExpressApp.DC.XafDefaultProperty("applicant_name")]
     [ImageName("rec_Industry16")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Applicant Industry")]
     public partial class rec_Applicant_Industry
     {
         public rec_Applicant_Industry(Session session) : base(session) { }

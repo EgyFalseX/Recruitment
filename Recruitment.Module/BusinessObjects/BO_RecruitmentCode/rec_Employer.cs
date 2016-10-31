@@ -9,6 +9,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("employer_company_name")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Employer")]
     public partial class rec_Employer
     {
         public rec_Employer(Session session) : base(session) { }

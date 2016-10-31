@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int fapp_indus_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int app_indus_id
         {
             get { return fapp_indus_id; }
@@ -25,6 +26,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         rec_Applicant fapp_indus_applicant_id;
         [Association(@"rec_Applicant_IndustryReferencesrec_Applicant")]
+        [DevExpress.Xpo.DisplayName(@"Applicant")]
         public rec_Applicant app_indus_applicant_id
         {
             get { return fapp_indus_applicant_id; }
@@ -32,6 +34,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         rec_Industry fapp_indus_industry_id;
         [Association(@"rec_Applicant_IndustryReferencesrec_Industry")]
+        [DevExpress.Xpo.DisplayName(@"Industry")]
         public rec_Industry app_indus_industry_id
         {
             get { return fapp_indus_industry_id; }

@@ -18,12 +18,14 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int fcity_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int city_id
         {
             get { return fcity_id; }
             set { SetPropertyValue<int>("city_id", ref fcity_id, value); }
         }
         string fcity_name;
+        [DevExpress.Xpo.DisplayName(@"City Name")]
         public string city_name
         {
             get { return fcity_name; }
@@ -32,13 +34,16 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Country fcity_country_id;
         [Indexed(Name = @"icity_country_id_rec_City")]
         [Association(@"rec_CityReferencesrec_Country")]
+        [DevExpress.Xpo.DisplayName(@"Country")]
         public rec_Country city_country_id
         {
             get { return fcity_country_id; }
             set { SetPropertyValue<rec_Country>("city_country_id", ref fcity_country_id, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Applicants")]
         [Association(@"rec_ApplicantReferencesrec_City")]
         public XPCollection<rec_Applicant> rec_Applicants { get { return GetCollection<rec_Applicant>("rec_Applicants"); } }
+        [DevExpress.Xpo.DisplayName(@"Employers")]
         [Association(@"rec_EmployerReferencesrec_City")]
         public XPCollection<rec_Employer> rec_Employers { get { return GetCollection<rec_Employer>("rec_Employers"); } }
     }

@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int frec_suggest_applicat_source_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int rec_suggest_applicat_source_id
         {
             get { return frec_suggest_applicat_source_id; }
@@ -25,11 +26,13 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string frec_suggest_applicat_source_name;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Source name")]
         public string rec_suggest_applicat_source_name
         {
             get { return frec_suggest_applicat_source_name; }
             set { SetPropertyValue<string>("rec_suggest_applicat_source_name", ref frec_suggest_applicat_source_name, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Suggested Applicants")]
         [Association(@"rec_Employer_Order_Detail_Suggest_ApplicatReferencesrec_Suggest_Applicat_Source")]
         public XPCollection<rec_Employer_Order_Detail_Suggest_Applicat> rec_Employer_Order_Detail_Suggest_Applicats { get { return GetCollection<rec_Employer_Order_Detail_Suggest_Applicat>("rec_Employer_Order_Detail_Suggest_Applicats"); } }
     }

@@ -30,6 +30,29 @@
         {
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
+            this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow3 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell9 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow4 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell10 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow5 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell13 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow17 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell55 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell56 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrCheckBox2 = new DevExpress.XtraReports.UI.XRCheckBox();
+            this.xrTableRow18 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell57 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell58 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow19 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell59 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell60 = new DevExpress.XtraReports.UI.XRTableCell();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
@@ -132,31 +155,9 @@
             this.xrTableCell46 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell52 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrCheckBox2 = new DevExpress.XtraReports.UI.XRCheckBox();
-            this.xrTableCell60 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell59 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableRow19 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell58 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell57 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableRow18 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell56 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell55 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableRow17 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell13 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableRow5 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell10 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableRow4 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell9 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableRow3 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.dsCompany = new DevExpress.Persistent.Base.ReportsV2.CollectionDataSource();
             this.dsMain = new DevExpress.Persistent.Base.ReportsV2.CollectionDataSource();
+            ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
@@ -169,7 +170,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.xrTable11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -195,6 +195,235 @@
             this.xrPictureBox1.Name = "xrPictureBox1";
             this.xrPictureBox1.SizeF = new System.Drawing.SizeF(96F, 96F);
             this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            // 
+            // xrTable2
+            // 
+            this.xrTable2.Dpi = 100F;
+            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 10F);
+            this.xrTable2.Name = "xrTable2";
+            this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
+            this.xrTableRow2,
+            this.xrTableRow3,
+            this.xrTableRow4,
+            this.xrTableRow5,
+            this.xrTableRow17,
+            this.xrTableRow18,
+            this.xrTableRow19});
+            this.xrTable2.SizeF = new System.Drawing.SizeF(340.625F, 175F);
+            this.xrTable2.StylePriority.UseTextAlignment = false;
+            this.xrTable2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // xrTableRow2
+            // 
+            this.xrTableRow2.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell6,
+            this.xrTableCell7});
+            this.xrTableRow2.Dpi = 100F;
+            this.xrTableRow2.Name = "xrTableRow2";
+            this.xrTableRow2.Weight = 1D;
+            // 
+            // xrTableCell6
+            // 
+            this.xrTableCell6.Dpi = 100F;
+            this.xrTableCell6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell6.Name = "xrTableCell6";
+            this.xrTableCell6.StylePriority.UseFont = false;
+            this.xrTableCell6.Text = "Name :";
+            this.xrTableCell6.Weight = 0.58715592631485869D;
+            // 
+            // xrTableCell7
+            // 
+            this.xrTableCell7.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "applicant_name")});
+            this.xrTableCell7.Dpi = 100F;
+            this.xrTableCell7.ForeColor = System.Drawing.Color.DimGray;
+            this.xrTableCell7.Name = "xrTableCell7";
+            this.xrTableCell7.StylePriority.UseForeColor = false;
+            this.xrTableCell7.Weight = 1.4128440736851413D;
+            // 
+            // xrTableRow3
+            // 
+            this.xrTableRow3.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell8,
+            this.xrTableCell9});
+            this.xrTableRow3.Dpi = 100F;
+            this.xrTableRow3.Name = "xrTableRow3";
+            this.xrTableRow3.Weight = 1D;
+            // 
+            // xrTableCell8
+            // 
+            this.xrTableCell8.Dpi = 100F;
+            this.xrTableCell8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell8.Name = "xrTableCell8";
+            this.xrTableCell8.StylePriority.UseFont = false;
+            this.xrTableCell8.Text = "Gender";
+            this.xrTableCell8.Weight = 0.58715592631485869D;
+            // 
+            // xrTableCell9
+            // 
+            this.xrTableCell9.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "applicant_gender_id.rec_gender_name")});
+            this.xrTableCell9.Dpi = 100F;
+            this.xrTableCell9.ForeColor = System.Drawing.Color.DimGray;
+            this.xrTableCell9.Name = "xrTableCell9";
+            this.xrTableCell9.StylePriority.UseForeColor = false;
+            this.xrTableCell9.Weight = 1.4128440736851413D;
+            // 
+            // xrTableRow4
+            // 
+            this.xrTableRow4.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell10,
+            this.xrTableCell11});
+            this.xrTableRow4.Dpi = 100F;
+            this.xrTableRow4.Name = "xrTableRow4";
+            this.xrTableRow4.Weight = 1D;
+            // 
+            // xrTableCell10
+            // 
+            this.xrTableCell10.Dpi = 100F;
+            this.xrTableCell10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell10.Name = "xrTableCell10";
+            this.xrTableCell10.StylePriority.UseFont = false;
+            this.xrTableCell10.Text = "Nationality :";
+            this.xrTableCell10.Weight = 0.58715592631485869D;
+            // 
+            // xrTableCell11
+            // 
+            this.xrTableCell11.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "applicant_nationality_id.nationality_name")});
+            this.xrTableCell11.Dpi = 100F;
+            this.xrTableCell11.ForeColor = System.Drawing.Color.DimGray;
+            this.xrTableCell11.Name = "xrTableCell11";
+            this.xrTableCell11.StylePriority.UseForeColor = false;
+            this.xrTableCell11.Weight = 1.4128440736851413D;
+            // 
+            // xrTableRow5
+            // 
+            this.xrTableRow5.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell12,
+            this.xrTableCell13});
+            this.xrTableRow5.Dpi = 100F;
+            this.xrTableRow5.Name = "xrTableRow5";
+            this.xrTableRow5.Weight = 1D;
+            // 
+            // xrTableCell12
+            // 
+            this.xrTableCell12.Dpi = 100F;
+            this.xrTableCell12.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell12.Name = "xrTableCell12";
+            this.xrTableCell12.StylePriority.UseFont = false;
+            this.xrTableCell12.Text = "Birth Date :";
+            this.xrTableCell12.Weight = 0.58715592631485869D;
+            // 
+            // xrTableCell13
+            // 
+            this.xrTableCell13.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "applicant_birth_date", "{0:dd/MM/yyyy}")});
+            this.xrTableCell13.Dpi = 100F;
+            this.xrTableCell13.ForeColor = System.Drawing.Color.DimGray;
+            this.xrTableCell13.Name = "xrTableCell13";
+            this.xrTableCell13.StylePriority.UseForeColor = false;
+            this.xrTableCell13.Weight = 1.4128440736851413D;
+            // 
+            // xrTableRow17
+            // 
+            this.xrTableRow17.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell55,
+            this.xrTableCell56});
+            this.xrTableRow17.Dpi = 100F;
+            this.xrTableRow17.Name = "xrTableRow17";
+            this.xrTableRow17.Weight = 1D;
+            // 
+            // xrTableCell55
+            // 
+            this.xrTableCell55.Dpi = 100F;
+            this.xrTableCell55.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell55.Name = "xrTableCell55";
+            this.xrTableCell55.StylePriority.UseFont = false;
+            this.xrTableCell55.Text = "Driving License";
+            this.xrTableCell55.Weight = 0.58715592631485869D;
+            // 
+            // xrTableCell56
+            // 
+            this.xrTableCell56.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrCheckBox2});
+            this.xrTableCell56.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "applicant_driving_license")});
+            this.xrTableCell56.Dpi = 100F;
+            this.xrTableCell56.ForeColor = System.Drawing.Color.DimGray;
+            this.xrTableCell56.Name = "xrTableCell56";
+            this.xrTableCell56.StylePriority.UseForeColor = false;
+            this.xrTableCell56.Text = "xrTableCell56";
+            this.xrTableCell56.Weight = 1.4128440736851413D;
+            // 
+            // xrCheckBox2
+            // 
+            this.xrCheckBox2.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("CheckState", null, "applicant_driving_license")});
+            this.xrCheckBox2.Dpi = 100F;
+            this.xrCheckBox2.LocationFloat = new DevExpress.Utils.PointFloat(9.999998F, 2.5F);
+            this.xrCheckBox2.Name = "xrCheckBox2";
+            this.xrCheckBox2.SizeF = new System.Drawing.SizeF(12.66428F, 12.70833F);
+            this.xrCheckBox2.StylePriority.UseTextAlignment = false;
+            this.xrCheckBox2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrTableRow18
+            // 
+            this.xrTableRow18.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell57,
+            this.xrTableCell58});
+            this.xrTableRow18.Dpi = 100F;
+            this.xrTableRow18.Name = "xrTableRow18";
+            this.xrTableRow18.Weight = 1D;
+            // 
+            // xrTableCell57
+            // 
+            this.xrTableCell57.Dpi = 100F;
+            this.xrTableCell57.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell57.Name = "xrTableCell57";
+            this.xrTableCell57.StylePriority.UseFont = false;
+            this.xrTableCell57.Text = "Marital Status";
+            this.xrTableCell57.Weight = 0.58715592631485869D;
+            // 
+            // xrTableCell58
+            // 
+            this.xrTableCell58.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "applicant_marital_status_id.marital_status_name")});
+            this.xrTableCell58.Dpi = 100F;
+            this.xrTableCell58.ForeColor = System.Drawing.Color.DimGray;
+            this.xrTableCell58.Name = "xrTableCell58";
+            this.xrTableCell58.StylePriority.UseForeColor = false;
+            this.xrTableCell58.Text = "xrTableCell58";
+            this.xrTableCell58.Weight = 1.4128440736851413D;
+            // 
+            // xrTableRow19
+            // 
+            this.xrTableRow19.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell59,
+            this.xrTableCell60});
+            this.xrTableRow19.Dpi = 100F;
+            this.xrTableRow19.Name = "xrTableRow19";
+            this.xrTableRow19.Weight = 1D;
+            // 
+            // xrTableCell59
+            // 
+            this.xrTableCell59.Dpi = 100F;
+            this.xrTableCell59.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell59.Name = "xrTableCell59";
+            this.xrTableCell59.StylePriority.UseFont = false;
+            this.xrTableCell59.Text = "Nationality";
+            this.xrTableCell59.Weight = 0.58715592631485869D;
+            // 
+            // xrTableCell60
+            // 
+            this.xrTableCell60.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "applicant_nationality_id.nationality_name")});
+            this.xrTableCell60.Dpi = 100F;
+            this.xrTableCell60.ForeColor = System.Drawing.Color.DimGray;
+            this.xrTableCell60.Name = "xrTableCell60";
+            this.xrTableCell60.StylePriority.UseForeColor = false;
+            this.xrTableCell60.Text = "xrTableCell60";
+            this.xrTableCell60.Weight = 1.4128440736851413D;
             // 
             // TopMargin
             // 
@@ -258,6 +487,7 @@
             this.xrpbLogo.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrpbLogo.Name = "xrpbLogo";
             this.xrpbLogo.SizeF = new System.Drawing.SizeF(96F, 96F);
+            this.xrpbLogo.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
             // 
             // ReportFooter
             // 
@@ -1227,239 +1457,10 @@
             this.xrLabel8.Text = "Travel";
             this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
-            // xrCheckBox2
-            // 
-            this.xrCheckBox2.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("CheckState", null, "applicant_driving_license")});
-            this.xrCheckBox2.Dpi = 100F;
-            this.xrCheckBox2.LocationFloat = new DevExpress.Utils.PointFloat(9.999998F, 2.5F);
-            this.xrCheckBox2.Name = "xrCheckBox2";
-            this.xrCheckBox2.SizeF = new System.Drawing.SizeF(12.66428F, 12.70833F);
-            this.xrCheckBox2.StylePriority.UseTextAlignment = false;
-            this.xrCheckBox2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrTableCell60
-            // 
-            this.xrTableCell60.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "applicant_nationality_id.nationality_name")});
-            this.xrTableCell60.Dpi = 100F;
-            this.xrTableCell60.ForeColor = System.Drawing.Color.DimGray;
-            this.xrTableCell60.Name = "xrTableCell60";
-            this.xrTableCell60.StylePriority.UseForeColor = false;
-            this.xrTableCell60.Text = "xrTableCell60";
-            this.xrTableCell60.Weight = 1.4128440736851413D;
-            // 
-            // xrTableCell59
-            // 
-            this.xrTableCell59.Dpi = 100F;
-            this.xrTableCell59.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrTableCell59.Name = "xrTableCell59";
-            this.xrTableCell59.StylePriority.UseFont = false;
-            this.xrTableCell59.Text = "Nationality";
-            this.xrTableCell59.Weight = 0.58715592631485869D;
-            // 
-            // xrTableRow19
-            // 
-            this.xrTableRow19.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell59,
-            this.xrTableCell60});
-            this.xrTableRow19.Dpi = 100F;
-            this.xrTableRow19.Name = "xrTableRow19";
-            this.xrTableRow19.Weight = 1D;
-            // 
-            // xrTableCell58
-            // 
-            this.xrTableCell58.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "applicant_marital_status_id.marital_status_name")});
-            this.xrTableCell58.Dpi = 100F;
-            this.xrTableCell58.ForeColor = System.Drawing.Color.DimGray;
-            this.xrTableCell58.Name = "xrTableCell58";
-            this.xrTableCell58.StylePriority.UseForeColor = false;
-            this.xrTableCell58.Text = "xrTableCell58";
-            this.xrTableCell58.Weight = 1.4128440736851413D;
-            // 
-            // xrTableCell57
-            // 
-            this.xrTableCell57.Dpi = 100F;
-            this.xrTableCell57.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrTableCell57.Name = "xrTableCell57";
-            this.xrTableCell57.StylePriority.UseFont = false;
-            this.xrTableCell57.Text = "Marital Status";
-            this.xrTableCell57.Weight = 0.58715592631485869D;
-            // 
-            // xrTableRow18
-            // 
-            this.xrTableRow18.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell57,
-            this.xrTableCell58});
-            this.xrTableRow18.Dpi = 100F;
-            this.xrTableRow18.Name = "xrTableRow18";
-            this.xrTableRow18.Weight = 1D;
-            // 
-            // xrTableCell56
-            // 
-            this.xrTableCell56.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrCheckBox2});
-            this.xrTableCell56.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "applicant_driving_license")});
-            this.xrTableCell56.Dpi = 100F;
-            this.xrTableCell56.ForeColor = System.Drawing.Color.DimGray;
-            this.xrTableCell56.Name = "xrTableCell56";
-            this.xrTableCell56.StylePriority.UseForeColor = false;
-            this.xrTableCell56.Text = "xrTableCell56";
-            this.xrTableCell56.Weight = 1.4128440736851413D;
-            // 
-            // xrTableCell55
-            // 
-            this.xrTableCell55.Dpi = 100F;
-            this.xrTableCell55.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrTableCell55.Name = "xrTableCell55";
-            this.xrTableCell55.StylePriority.UseFont = false;
-            this.xrTableCell55.Text = "Driving License";
-            this.xrTableCell55.Weight = 0.58715592631485869D;
-            // 
-            // xrTableRow17
-            // 
-            this.xrTableRow17.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell55,
-            this.xrTableCell56});
-            this.xrTableRow17.Dpi = 100F;
-            this.xrTableRow17.Name = "xrTableRow17";
-            this.xrTableRow17.Weight = 1D;
-            // 
-            // xrTableCell13
-            // 
-            this.xrTableCell13.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "applicant_birth_date", "{0:dd/MM/yyyy}")});
-            this.xrTableCell13.Dpi = 100F;
-            this.xrTableCell13.ForeColor = System.Drawing.Color.DimGray;
-            this.xrTableCell13.Name = "xrTableCell13";
-            this.xrTableCell13.StylePriority.UseForeColor = false;
-            this.xrTableCell13.Weight = 1.4128440736851413D;
-            // 
-            // xrTableCell12
-            // 
-            this.xrTableCell12.Dpi = 100F;
-            this.xrTableCell12.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrTableCell12.Name = "xrTableCell12";
-            this.xrTableCell12.StylePriority.UseFont = false;
-            this.xrTableCell12.Text = "Birth Date :";
-            this.xrTableCell12.Weight = 0.58715592631485869D;
-            // 
-            // xrTableRow5
-            // 
-            this.xrTableRow5.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell12,
-            this.xrTableCell13});
-            this.xrTableRow5.Dpi = 100F;
-            this.xrTableRow5.Name = "xrTableRow5";
-            this.xrTableRow5.Weight = 1D;
-            // 
-            // xrTableCell11
-            // 
-            this.xrTableCell11.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "applicant_nationality_id.nationality_name")});
-            this.xrTableCell11.Dpi = 100F;
-            this.xrTableCell11.ForeColor = System.Drawing.Color.DimGray;
-            this.xrTableCell11.Name = "xrTableCell11";
-            this.xrTableCell11.StylePriority.UseForeColor = false;
-            this.xrTableCell11.Weight = 1.4128440736851413D;
-            // 
-            // xrTableCell10
-            // 
-            this.xrTableCell10.Dpi = 100F;
-            this.xrTableCell10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrTableCell10.Name = "xrTableCell10";
-            this.xrTableCell10.StylePriority.UseFont = false;
-            this.xrTableCell10.Text = "Nationality :";
-            this.xrTableCell10.Weight = 0.58715592631485869D;
-            // 
-            // xrTableRow4
-            // 
-            this.xrTableRow4.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell10,
-            this.xrTableCell11});
-            this.xrTableRow4.Dpi = 100F;
-            this.xrTableRow4.Name = "xrTableRow4";
-            this.xrTableRow4.Weight = 1D;
-            // 
-            // xrTableCell9
-            // 
-            this.xrTableCell9.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "applicant_gender_id.rec_gender_name")});
-            this.xrTableCell9.Dpi = 100F;
-            this.xrTableCell9.ForeColor = System.Drawing.Color.DimGray;
-            this.xrTableCell9.Name = "xrTableCell9";
-            this.xrTableCell9.StylePriority.UseForeColor = false;
-            this.xrTableCell9.Weight = 1.4128440736851413D;
-            // 
-            // xrTableCell8
-            // 
-            this.xrTableCell8.Dpi = 100F;
-            this.xrTableCell8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrTableCell8.Name = "xrTableCell8";
-            this.xrTableCell8.StylePriority.UseFont = false;
-            this.xrTableCell8.Text = "Gender";
-            this.xrTableCell8.Weight = 0.58715592631485869D;
-            // 
-            // xrTableRow3
-            // 
-            this.xrTableRow3.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell8,
-            this.xrTableCell9});
-            this.xrTableRow3.Dpi = 100F;
-            this.xrTableRow3.Name = "xrTableRow3";
-            this.xrTableRow3.Weight = 1D;
-            // 
-            // xrTableCell7
-            // 
-            this.xrTableCell7.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "applicant_name")});
-            this.xrTableCell7.Dpi = 100F;
-            this.xrTableCell7.ForeColor = System.Drawing.Color.DimGray;
-            this.xrTableCell7.Name = "xrTableCell7";
-            this.xrTableCell7.StylePriority.UseForeColor = false;
-            this.xrTableCell7.Weight = 1.4128440736851413D;
-            // 
-            // xrTableCell6
-            // 
-            this.xrTableCell6.Dpi = 100F;
-            this.xrTableCell6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrTableCell6.Name = "xrTableCell6";
-            this.xrTableCell6.StylePriority.UseFont = false;
-            this.xrTableCell6.Text = "Name :";
-            this.xrTableCell6.Weight = 0.58715592631485869D;
-            // 
-            // xrTableRow2
-            // 
-            this.xrTableRow2.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell6,
-            this.xrTableCell7});
-            this.xrTableRow2.Dpi = 100F;
-            this.xrTableRow2.Name = "xrTableRow2";
-            this.xrTableRow2.Weight = 1D;
-            // 
-            // xrTable2
-            // 
-            this.xrTable2.Dpi = 100F;
-            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 10F);
-            this.xrTable2.Name = "xrTable2";
-            this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
-            this.xrTableRow2,
-            this.xrTableRow3,
-            this.xrTableRow4,
-            this.xrTableRow5,
-            this.xrTableRow17,
-            this.xrTableRow18,
-            this.xrTableRow19});
-            this.xrTable2.SizeF = new System.Drawing.SizeF(340.625F, 175F);
-            this.xrTable2.StylePriority.UseTextAlignment = false;
-            this.xrTable2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
             // dsCompany
             // 
             this.dsCompany.Name = "dsCompany";
-            this.dsCompany.ObjectTypeName = "Accounting.BusinessObjects.Recruitment.vacc_AppCompany";
+            this.dsCompany.ObjectTypeName = "Recruitment.Module.BusinessObjects.Recruitment.AppCompany";
             this.dsCompany.TopReturnedRecords = 0;
             // 
             // dsMain
@@ -1490,6 +1491,7 @@
             this.DataSource = this.dsMain;
             this.Margins = new System.Drawing.Printing.Margins(100, 100, 8, 0);
             this.Version = "16.1";
+            ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
@@ -1502,7 +1504,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.xrTable11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();

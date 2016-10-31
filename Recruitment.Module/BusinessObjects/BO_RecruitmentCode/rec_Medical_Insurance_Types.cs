@@ -9,6 +9,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("rec_medical_insurance_types_name")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Medical Insurance")]
     public partial class rec_Medical_Insurance_Types
     {
         public rec_Medical_Insurance_Types(Session session) : base(session) { }

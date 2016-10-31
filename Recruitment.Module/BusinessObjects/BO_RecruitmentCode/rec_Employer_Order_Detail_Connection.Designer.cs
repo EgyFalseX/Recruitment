@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int frec_employer_order_detail_connection_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int rec_employer_order_detail_connection_id
         {
             get { return frec_employer_order_detail_connection_id; }
@@ -25,17 +26,20 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         rec_Employer_Order_Detail frec_employer_order_detail_id;
         [Association(@"rec_Employer_Order_Detail_ConnectionReferencesrec_Employer_Order_Detail")]
+        [DevExpress.Xpo.DisplayName(@"Order detail")]
         public rec_Employer_Order_Detail rec_employer_order_detail_id
         {
             get { return frec_employer_order_detail_id; }
             set { SetPropertyValue<rec_Employer_Order_Detail>("rec_employer_order_detail_id", ref frec_employer_order_detail_id, value); }
         }
         DateTime frec_employer_order_detail_connection_date;
+        [DevExpress.Xpo.DisplayName(@"Connection date")]
         public DateTime rec_employer_order_detail_connection_date
         {
             get { return frec_employer_order_detail_connection_date; }
             set { SetPropertyValue<DateTime>("rec_employer_order_detail_connection_date", ref frec_employer_order_detail_connection_date, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Connection Applicants")]
         [Association(@"rec_Employer_Order_Detail_Connection_DetailReferencesrec_Employer_Order_Detail_Connection")]
         public XPCollection<rec_Employer_Order_Detail_Connection_Detail> rec_Employer_Order_Detail_Connection_Details { get { return GetCollection<rec_Employer_Order_Detail_Connection_Detail>("rec_Employer_Order_Detail_Connection_Details"); } }
     }

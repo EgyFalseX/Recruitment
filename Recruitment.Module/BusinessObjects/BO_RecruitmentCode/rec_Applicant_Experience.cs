@@ -15,6 +15,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Applicant Experience")]
     [Appearance("rec_Applicant_Experience_app_exp_end_date", TargetItems = "app_exp_end_date"
         , Visibility = ViewItemVisibility.Hide, Criteria = "app_exp_end_date_till_now", Context = "DetailView")]
     

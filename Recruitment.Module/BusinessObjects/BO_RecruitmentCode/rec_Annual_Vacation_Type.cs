@@ -9,6 +9,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("rec_annual_vacation_type_name")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Annual Vacation")]
     public partial class rec_Annual_Vacation_Type
     {
         public rec_Annual_Vacation_Type(Session session) : base(session) { }

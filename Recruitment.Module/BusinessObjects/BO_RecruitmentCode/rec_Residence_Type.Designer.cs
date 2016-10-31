@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int frec_residence_type_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int rec_residence_type_id
         {
             get { return frec_residence_type_id; }
@@ -25,11 +26,13 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string frec_residence_type_name;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Residence type")]
         public string rec_residence_type_name
         {
             get { return frec_residence_type_name; }
             set { SetPropertyValue<string>("rec_residence_type_name", ref frec_residence_type_name, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Order Details")]
         [Association(@"rec_Employer_Order_DetailReferencesrec_Residence_Type")]
         public XPCollection<rec_Employer_Order_Detail> rec_Employer_Order_Details { get { return GetCollection<rec_Employer_Order_Detail>("rec_Employer_Order_Details"); } }
     }

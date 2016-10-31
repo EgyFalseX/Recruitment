@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int fdegree_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int degree_id
         {
             get { return fdegree_id; }
@@ -25,11 +26,13 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string fdegree_name;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Degree")]
         public string degree_name
         {
             get { return fdegree_name; }
             set { SetPropertyValue<string>("degree_name", ref fdegree_name, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Applicant Educations")]
         [Association(@"rec_Applicant_EducationReferencesrec_Degree")]
         public XPCollection<rec_Applicant_Education> rec_Applicant_Educations { get { return GetCollection<rec_Applicant_Education>("rec_Applicant_Educations"); } }
     }

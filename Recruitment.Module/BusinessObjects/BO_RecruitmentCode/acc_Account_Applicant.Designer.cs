@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int facc_account_id_applicant_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"ID")]
         public int acc_account_id_applicant_id
         {
             get { return facc_account_id_applicant_id; }
@@ -25,6 +26,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         rec_Employer_Order_Detail_Accept_Applicat frec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id;
         [Association(@"acc_Account_ApplicantReferencesrec_Employer_Order_Detail_Accept_Applicat")]
+        [DevExpress.Xpo.DisplayName(@"Related Order")]
         public rec_Employer_Order_Detail_Accept_Applicat rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id
         {
             get { return frec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id; }
@@ -32,6 +34,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         int faccount_id;
         [Indexed(Name = @"iaccount_id_acc_Account_Applicant")]
+        [DevExpress.Xpo.DisplayName(@"Account")]
         public int account_id
         {
             get { return faccount_id; }

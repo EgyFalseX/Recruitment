@@ -18,17 +18,20 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int ffaculty_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int faculty_id
         {
             get { return ffaculty_id; }
             set { SetPropertyValue<int>("faculty_id", ref ffaculty_id, value); }
         }
         string ffaculty_name;
+        [DevExpress.Xpo.DisplayName(@"Faculty name")]
         public string faculty_name
         {
             get { return ffaculty_name; }
             set { SetPropertyValue<string>("faculty_name", ref ffaculty_name, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Applicant Educations")]
         [Association(@"rec_Applicant_EducationReferencesrec_Faculty")]
         public XPCollection<rec_Applicant_Education> rec_Applicant_Educations { get { return GetCollection<rec_Applicant_Education>("rec_Applicant_Educations"); } }
     }

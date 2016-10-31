@@ -18,19 +18,23 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int fcountry_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int country_id
         {
             get { return fcountry_id; }
             set { SetPropertyValue<int>("country_id", ref fcountry_id, value); }
         }
         string fcountry_name;
+        [DevExpress.Xpo.DisplayName(@"Country name")]
         public string country_name
         {
             get { return fcountry_name; }
             set { SetPropertyValue<string>("country_name", ref fcountry_name, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Cities")]
         [Association(@"rec_CityReferencesrec_Country")]
         public XPCollection<rec_City> rec_Citys { get { return GetCollection<rec_City>("rec_Citys"); } }
+        [DevExpress.Xpo.DisplayName(@"Applicant Countries")]
         [Association(@"rec_Applicant_CountryReferencesrec_Country")]
         public XPCollection<rec_Applicant_Country> rec_Applicant_Countrys { get { return GetCollection<rec_Applicant_Country>("rec_Applicant_Countrys"); } }
     }

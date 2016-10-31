@@ -11,6 +11,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     [NavigationItem("Applicant")]
     //[DevExpress.ExpressApp.DC.XafDefaultProperty("applicant_name")]
     [ImageName("rec_Nationality16")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Applicant Langauge")]
     public partial class rec_Applicant_Langauge
     {
         public rec_Applicant_Langauge(Session session) : base(session) { }

@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int frec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_id
         {
             get { return frec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_id; }
@@ -25,6 +26,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         rec_Employer_Order_Detail_Accept_Applicat frec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_employer_order_detail_accept_applicat_id;
         [Association(@"rec_Employer_Order_Detail_Accept_Applicat_DocReferencesrec_Employer_Order_Detail_Accept_Applicat")]
+        [DevExpress.Xpo.DisplayName(@"Accepted_Applicant")]
         public rec_Employer_Order_Detail_Accept_Applicat rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_employer_order_detail_accept_applicat_id
         {
             get { return frec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_employer_order_detail_accept_applicat_id; }
@@ -33,6 +35,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Industry_Require_Doc_Info frec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_industry_require_doc_info_id;
         [Indexed(Name = @"irec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_industry_require_doc_info_id_rec_Employer__9B84962E")]
         [Association(@"rec_Employer_Order_Detail_Accept_Applicat_DocReferencesrec_Industry_Require_Doc_Info")]
+        [DevExpress.Xpo.DisplayName(@"Required Doc")]
         public rec_Industry_Require_Doc_Info rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_industry_require_doc_info_id
         {
             get { return frec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_industry_require_doc_info_id; }
@@ -41,6 +44,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Require_Doc_Status frec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_require_doc_status_id;
         [Indexed(Name = @"irec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_require_doc_status_id_rec_Employer_Order_D_AA983B19")]
         [Association(@"rec_Employer_Order_Detail_Accept_Applicat_DocReferencesrec_Require_Doc_Status")]
+        [DevExpress.Xpo.DisplayName(@"Status")]
         public rec_Require_Doc_Status rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_require_doc_status_id
         {
             get { return frec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_require_doc_status_id; }
@@ -48,6 +52,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string frec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_description;
         [Size(1000)]
+        [DevExpress.Xpo.DisplayName(@"Description")]
         public string rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_description
         {
             get { return frec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_description; }

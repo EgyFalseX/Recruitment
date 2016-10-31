@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int fmilitary_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int military_id
         {
             get { return fmilitary_id; }
@@ -25,11 +26,13 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string fmilitary_name;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Military status")]
         public string military_name
         {
             get { return fmilitary_name; }
             set { SetPropertyValue<string>("military_name", ref fmilitary_name, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Applicants")]
         [Association(@"rec_ApplicantReferencesrec_Military_Status")]
         public XPCollection<rec_Applicant> rec_Applicants { get { return GetCollection<rec_Applicant>("rec_Applicants"); } }
     }

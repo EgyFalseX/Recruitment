@@ -18,6 +18,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int frec_employer_order_status_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"Id")]
         public int rec_employer_order_status_id
         {
             get { return frec_employer_order_status_id; }
@@ -25,6 +26,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string frec_employer_order_status_name;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Status")]
         public string rec_employer_order_status_name
         {
             get { return frec_employer_order_status_name; }

@@ -11,6 +11,7 @@ using System.Linq;
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Employer Order")]
     [Appearance("Apr_Status", TargetItems = "*", Criteria = "rec_employer_order_rec_employer_order_status_id <> 1 " +
                                                             " AND rec_employer_order_rec_employer_order_status_id <> 4", Enabled = false)]
     public partial class rec_Employer_Order
