@@ -35,6 +35,7 @@ namespace Recruitment.Module.BusinessObjects.Filter
             set { SetPropertyValue("FilterName", ref _FilterName, value); }
         }
         [MemberDesignTimeVisibility(false)]
+        [Browsable(false)]
         private SecuritySystemUser _User;
         public SecuritySystemUser User
         {

@@ -56,6 +56,7 @@
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Workflow.WorkflowModule));
             this.RequiredModuleTypes.Add(typeof(Accounting.AccountingModule));
+            this.RequiredModuleTypes.Add(typeof(ControllerManagement.Module.ControllerManagementModule));
 
 		}
 

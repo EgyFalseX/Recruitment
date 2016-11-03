@@ -601,6 +601,10 @@
       <Project>{e1f786d2-e67f-4566-bb09-1b8e2b817911}</Project>
       <Name>Accounting</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ControllerManagement.Module\ControllerManagement.Module.csproj">
+      <Project>{56A1769D-B1C0-42D0-829E-51D87C5DE713}</Project>
+      <Name>ControllerManagement.Module</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Rule\" />

@@ -44,7 +44,7 @@
         <Member Name="applicant_gender_id" Index="6" LookupProperty="rec_gender_name" Caption="Gender" />
         <Member Name="applicant_marital_status_id" Caption="Marital Status" LookupProperty="marital_status_name" Index="7" />
         <Member Name="applicant_military_id" Caption="Military Status" LookupProperty="military_name" Index="8" />
-        <Member Name="applicant_mobile" Caption="Mobile" Index="9" DisplayFormat="\d{11,11}" EditMask="\d{11,11}" EditMaskType="RegEx" />
+        <Member Name="applicant_mobile" Caption="Mobile" Index="9" DisplayFormat="\d\d\d\d\d\d\d\d\d\d\d" EditMask="\d\d\d\d\d\d\d\d\d\d\d" EditMaskType="RegEx" />
         <Member Name="applicant_name" Caption="Name" Index="10" />
         <Member Name="applicant_national_id" Caption="National ID" Index="11" />
         <Member Name="applicant_nationality_id" Caption="Nationality" LookupProperty="nationality_name" Index="12" />
@@ -62,7 +62,7 @@
         <Member Name="rec_Applicant_rec_PortfolioFileData" Index="25" Caption="Applicant Attachments" />
         <Member Name="applicant_address" Index="26" Caption="Address" />
         <Member Name="AuditTrail" Index="27" />
-        <Member Name="applicant_mobile2" Caption="Mobile 2" DisplayFormat="\d{11,11}" EditMask="\d{11,11}" EditMaskType="RegEx" />
+        <Member Name="applicant_mobile2" Caption="Mobile 2" DisplayFormat="\d\d\d\d\d\d\d\d\d\d\d" EditMask="\d\d\d\d\d\d\d\d\d\d\d" EditMaskType="RegEx" />
         <Member Name="applicant_rec_applicant_status_id" Caption="Status" LookupProperty="rec_applicant_status_name" />
         <Member Name="rec_Applicant_Countrys" Caption="Applicant Travels" />
         <Member Name="rec_Applicant_Industrys" Caption="Applicant Industries" />

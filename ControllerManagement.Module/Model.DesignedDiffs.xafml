@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="ControllerManagement" Logo="ExpressAppLogo">
+  <ActionDesign>
+    <ActionToContainerMapping>
+      <ActionContainer Id="RecordEdit">
+        <ActionLink ActionId="actionEnableControllers" Index="10" />
+        <ActionLink ActionId="actionDisableControllers" Index="20" />
+        <ActionLink ActionId="actionDisableCustomControllers" Index="30" />
+      </ActionContainer>
+    </ActionToContainerMapping>
+  </ActionDesign>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="16.1.6.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="ControllerSettings_DetailView">
+      <Items>
+        <StaticText Id="Warning Message" Text="Warning: Disabling some controllers can cause the application to stop functioning or behave incorrectly. Changes will only take effect on newly created views." Caption="Warning Message(4)" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutItem Id="Warning Message" ViewItem="Warning Message" Index="0" RelativeSize="3.2894736842105261" IsNewNode="True" />
+          <LayoutGroup Id="Settings_Group" Direction="Vertical" Index="1" RelativeSize="96.71052631578948">
+            <LayoutItem Id="Settings" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ControllerSettings_Settings_ListView" AllowEdit="True" AllowNew="False" AllowDelete="False" AutoExpandAllGroups="True">
+      <Columns>
+        <ColumnInfo Id="Controller" Index="-1" AllowEdit="False" />
+        <ColumnInfo Id="IsCustom" Index="-1" />
+        <ColumnInfo Id="ControllerName" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="Active" Index="1" />
+        <ColumnInfo Id="Product" Index="2" SortIndex="-1" SortOrder="Ascending" GroupIndex="0" />
+        <ColumnInfo Id="Namespace" Index="3" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>
