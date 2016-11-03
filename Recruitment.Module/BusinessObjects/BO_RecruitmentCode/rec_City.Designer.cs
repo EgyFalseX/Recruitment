@@ -26,6 +26,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string fcity_name;
         [DevExpress.Xpo.DisplayName(@"City Name")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string city_name
         {
             get { return fcity_name; }

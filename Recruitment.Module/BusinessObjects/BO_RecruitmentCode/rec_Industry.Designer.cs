@@ -26,6 +26,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string findustry_name;
         [DevExpress.Xpo.DisplayName(@"Industry name")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string industry_name
         {
             get { return findustry_name; }

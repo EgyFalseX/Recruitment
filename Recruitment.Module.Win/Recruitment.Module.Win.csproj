@@ -245,6 +245,9 @@
     <Compile Include="Controllers\ctr_ReportV2SetPreviewType_Win.Designer.cs">
       <DependentUpon>ctr_ReportV2SetPreviewType_Win.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\Filter\WinShowFilterDialogController.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Editors\WinProgressPropertyEditor.cs" />
     <Compile Include="WinModule.cs">
       <SubType>Component</SubType>
@@ -294,6 +297,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

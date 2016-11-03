@@ -27,6 +27,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         string frec_medical_insurance_types_name;
         [Size(50)]
         [DevExpress.Xpo.DisplayName(@"Medical insurance")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string rec_medical_insurance_types_name
         {
             get { return frec_medical_insurance_types_name; }

@@ -18,6 +18,7 @@ namespace Accounting.BusinessObjects.Recruitment
     {
         int fbank_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"ID")]
         public int bank_id
         {
             get { return fbank_id; }
@@ -25,6 +26,7 @@ namespace Accounting.BusinessObjects.Recruitment
         }
         string fbank_name;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Bank name")]
         public string bank_name
         {
             get { return fbank_name; }
@@ -32,6 +34,7 @@ namespace Accounting.BusinessObjects.Recruitment
         }
         string fbank_acc_number;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Account number")]
         public string bank_acc_number
         {
             get { return fbank_acc_number; }
@@ -39,12 +42,14 @@ namespace Accounting.BusinessObjects.Recruitment
         }
         string fbank_acc_name;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Account name")]
         public string bank_acc_name
         {
             get { return fbank_acc_name; }
             set { SetPropertyValue<string>("bank_acc_name", ref fbank_acc_name, value); }
         }
         string fbank_address;
+        [DevExpress.Xpo.DisplayName(@"Address")]
         public string bank_address
         {
             get { return fbank_address; }
@@ -52,6 +57,7 @@ namespace Accounting.BusinessObjects.Recruitment
         }
         string fbank_phone;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Phone")]
         public string bank_phone
         {
             get { return fbank_phone; }
@@ -59,6 +65,7 @@ namespace Accounting.BusinessObjects.Recruitment
         }
         string fbank_fax;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Fax")]
         public string bank_fax
         {
             get { return fbank_fax; }
@@ -66,10 +73,19 @@ namespace Accounting.BusinessObjects.Recruitment
         }
         string fbank_note;
         [Size(500)]
+        [DevExpress.Xpo.DisplayName(@"Note")]
         public string bank_note
         {
             get { return fbank_note; }
             set { SetPropertyValue<string>("bank_note", ref fbank_note, value); }
+        }
+        string fbank_acc_id;
+        [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Account id")]
+        public string bank_acc_id
+        {
+            get { return fbank_acc_id; }
+            set { SetPropertyValue<string>("bank_acc_id", ref fbank_acc_id, value); }
         }
     }
 

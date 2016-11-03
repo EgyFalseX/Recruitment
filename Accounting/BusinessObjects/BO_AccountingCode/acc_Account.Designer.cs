@@ -18,6 +18,7 @@ namespace Accounting.BusinessObjects.Recruitment
     {
         int faccount_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"ID")]
         public int account_id
         {
             get { return faccount_id; }
@@ -25,6 +26,7 @@ namespace Accounting.BusinessObjects.Recruitment
         }
         string faccount_name;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Account name")]
         public string account_name
         {
             get { return faccount_name; }
@@ -32,6 +34,7 @@ namespace Accounting.BusinessObjects.Recruitment
         }
         acc_Account fparent_account_id;
         [Association(@"acc_AccountReferencesacc_Account")]
+        [DevExpress.Xpo.DisplayName(@"Parent account")]
         public acc_Account parent_account_id
         {
             get { return fparent_account_id; }
@@ -40,6 +43,7 @@ namespace Accounting.BusinessObjects.Recruitment
         acc_Account_Type faccount_type_id;
         [Indexed(Name = @"iaccount_type_id_acc_Account")]
         [Association(@"acc_AccountReferencesacc_Account_Type")]
+        [DevExpress.Xpo.DisplayName(@"Account type")]
         public acc_Account_Type account_type_id
         {
             get { return faccount_type_id; }
@@ -48,16 +52,27 @@ namespace Accounting.BusinessObjects.Recruitment
         acc_Nature facc_nature_id;
         [Indexed(Name = @"iacc_nature_id_acc_Account")]
         [Association(@"acc_AccountReferencesacc_Nature")]
+        [DevExpress.Xpo.DisplayName(@"Account nature")]
         public acc_Nature acc_nature_id
         {
             get { return facc_nature_id; }
             set { SetPropertyValue<acc_Nature>("acc_nature_id", ref facc_nature_id, value); }
         }
         bool fclosed;
+        [DevExpress.Xpo.DisplayName(@"Close account")]
         public bool closed
         {
             get { return fclosed; }
             set { SetPropertyValue<bool>("closed", ref fclosed, value); }
+        }
+        string faccount_code;
+        [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Account code")]
+        [DevExpress.Persistent.Validation.RuleRequiredField("acc_Account_account_code_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Account code must not be empty")]
+        public string account_code
+        {
+            get { return faccount_code; }
+            set { SetPropertyValue<string>("account_code", ref faccount_code, value); }
         }
         [Association(@"acc_AccountReferencesacc_Account")]
         public XPCollection<acc_Account> acc_AccountCollection { get { return GetCollection<acc_Account>("acc_AccountCollection"); } }

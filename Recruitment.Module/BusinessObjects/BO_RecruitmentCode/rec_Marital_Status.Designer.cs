@@ -26,6 +26,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string fmarital_status_name;
         [DevExpress.Xpo.DisplayName(@"Marital status")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string marital_status_name
         {
             get { return fmarital_status_name; }

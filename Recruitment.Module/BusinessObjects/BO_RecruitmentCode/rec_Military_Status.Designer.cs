@@ -27,6 +27,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         string fmilitary_name;
         [Size(50)]
         [DevExpress.Xpo.DisplayName(@"Military status")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string military_name
         {
             get { return fmilitary_name; }

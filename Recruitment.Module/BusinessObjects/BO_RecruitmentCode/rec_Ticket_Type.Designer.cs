@@ -27,6 +27,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         string frec_ticket_type_name;
         [Size(50)]
         [DevExpress.Xpo.DisplayName(@"Ticket type")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string rec_ticket_type_name
         {
             get { return frec_ticket_type_name; }

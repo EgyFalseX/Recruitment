@@ -27,6 +27,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         string flangauge_name;
         [Size(50)]
         [DevExpress.Xpo.DisplayName(@"Langauge name")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string langauge_name
         {
             get { return flangauge_name; }

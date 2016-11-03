@@ -14,6 +14,11 @@
     </Class>
     <Class Name="DevExpress.Persistent.BaseImpl.AuditedObjectWeakReference" DefaultListViewShowAutoFilterRow="True" />
     <Class Name="DevExpress.Persistent.BaseImpl.BaseObject" DefaultListViewShowAutoFilterRow="True" />
+    <Class Name="Recruitment.Module.BusinessObjects.Notification.Notify">
+      <OwnMembers>
+        <Member Name="AlarmTime" DisplayFormat="{0:dd/MM/yyyy hh:mm tt}" EditMask="dd/MM/yyyy hh:mm tt" />
+      </OwnMembers>
+    </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.acc_Account_Applicant" ImageName="acc_Account16" Caption="Applicant Accounts">
       <OwnMembers>
         <Member Name="acc_account_id_applicant_id" Caption="ID" />
@@ -862,19 +867,7 @@
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="18.21515892420538">
-            <LayoutGroup Id="Notify" RelativeSize="100">
-              <LayoutGroup Id="Notify_col1" RelativeSize="50">
-                <LayoutItem Id="Subject" RelativeSize="28.571428571428573" />
-                <LayoutItem Id="DueDate" RelativeSize="21.428571428571427" />
-                <LayoutItem Id="AlarmTime" ViewItem="AlarmTime" Index="2" RelativeSize="21.428571428571427" IsNewNode="True" />
-                <LayoutItem Id="AssignedTo" Index="3" RelativeSize="28.571428571428573" />
-              </LayoutGroup>
-              <LayoutGroup Id="Notify_col2" RelativeSize="50">
-                <LayoutItem Id="IsPostponed" Index="0" RelativeSize="28.571428571428573" />
-                <LayoutItem Id="RemindIn" Index="1" RelativeSize="71.428571428571431" />
-                <LayoutItem Id="AlarmTime" Removed="True" />
-              </LayoutGroup>
-            </LayoutGroup>
+            <LayoutGroup Id="Notify" RelativeSize="100" />
           </LayoutGroup>
           <LayoutGroup Id="SizeableEditors" RelativeSize="81.784841075794617">
             <LayoutItem Id="Description" RelativeSize="100" />

@@ -50,19 +50,22 @@ namespace Recruitment.Module {
 
         }
 
+        public override void ExtendModelInterfaces(DevExpress.ExpressApp.Model.ModelInterfaceExtenders extenders)
+        {
+            base.ExtendModelInterfaces(extenders);
+            extenders.Add<DevExpress.ExpressApp.Model.IModelListView, Core.IModelListViewExt>();
+        }
         public override void Setup(ApplicationModulesManager moduleManager)
         {
             base.Setup(moduleManager);
             //ValidationRulesRegistrator.RegisterRule(moduleManager, typeof(MobileLengthRule), typeof(IRuleBaseProperties));
         }
-
         void application_LoggedOn(object sender, LogonEventArgs e)
         {
             NotificationsModule notificationsModule = Application.Modules.FindModule<NotificationsModule>();
             DefaultNotificationsProvider notificationsProvider = notificationsModule.DefaultNotificationsProvider;
             notificationsProvider.CustomizeNotificationCollectionCriteria += notificationsProvider_CustomizeNotificationCollectionCriteria;
         }
-
         void notificationsProvider_CustomizeNotificationCollectionCriteria(object sender, CustomizeCollectionCriteriaEventArgs e)
         {
             if (e.Type == typeof (Notify))
@@ -70,5 +73,8 @@ namespace Recruitment.Module {
                 e.Criteria = CriteriaOperator.Parse("AssignedTo is null || AssignedTo.Oid == CurrentUserId()");
             }
         }
+
+
     }
+
 }

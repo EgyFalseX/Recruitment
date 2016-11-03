@@ -27,6 +27,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         string frec_suggest_applicat_source_name;
         [Size(50)]
         [DevExpress.Xpo.DisplayName(@"Source name")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string rec_suggest_applicat_source_name
         {
             get { return frec_suggest_applicat_source_name; }

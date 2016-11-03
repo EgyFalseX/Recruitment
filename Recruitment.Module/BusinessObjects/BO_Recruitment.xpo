@@ -428,7 +428,7 @@
             <field Id="449471e5-603a-463f-ac1f-e8fa8ad54ea4" name="city_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="city_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="4a60a91b-1b2f-4df3-84ee-3349b0bca797">
-            <field Id="2a1dc205-d610-420d-9ef1-92eb70dafb22" name="city_name" displayName="City Name" persistent="city_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+            <field Id="2a1dc205-d610-420d-9ef1-92eb70dafb22" name="city_name" displayName="City Name" persistent="city_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="b94bdb7a-c54d-45f5-911f-1712afda34b4">
             <field Id="9cbee4c9-f27b-4377-b4d0-bef21f2c76e2" name="city_country_id" columnType="Int32" displayName="Country" persistent="city_country_id" virtualColumnType="rec_Country" logicalType="rec_Country" delayedUpdateModifiedOnly="false" />
@@ -470,7 +470,7 @@
             <field Id="12e45d0f-c706-475f-b079-f6e99e47f4d4" name="country_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="country_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="12b59bc5-6162-4937-9ab1-9a219d409542">
-            <field Id="3175a632-cd10-4568-a167-eccaee068b7d" name="country_name" displayName="Country name" persistent="country_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+            <field Id="3175a632-cd10-4568-a167-eccaee068b7d" name="country_name" displayName="Country name" persistent="country_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -498,7 +498,7 @@
             <field Id="38ec71cb-95ab-439b-89db-cd9c26b1aed2" name="degree_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="degree_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="3374c2e7-690b-42bf-a3d8-4e31831b6ad7">
-            <field Id="b6f54cd7-f2ee-4d34-88a9-11a2032dfdcd" name="degree_name" displayName="Degree" persistent="degree_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+            <field Id="b6f54cd7-f2ee-4d34-88a9-11a2032dfdcd" name="degree_name" displayName="Degree" persistent="degree_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -538,7 +538,7 @@
             <field Id="8316cb2d-7c75-4793-9f1a-83ede360a326" name="employer_nationality_id" columnType="Int32" displayName="Nationality" persistent="employer_nationality_id" virtualColumnType="rec_Nationality" logicalType="rec_Nationality" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="41977ff3-58f0-4e68-bfd9-1b1696c970ff">
-            <field Id="94dddfb6-12ab-42ac-8694-dfc7d3000a47" name="employer_company_name" displayName="Company name" persistent="employer_company_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+            <field Id="94dddfb6-12ab-42ac-8694-dfc7d3000a47" name="employer_company_name" displayName="Company name" persistent="employer_company_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="0c910b94-b3e7-4201-90d3-a18a8dc496eb">
             <field Id="a6ef1441-96aa-4469-92ac-a4d7b91613b1" name="employer_owner_name" displayName="Owner" persistent="employer_owner_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
@@ -604,7 +604,7 @@
             <field Id="07860944-ee71-477d-9cc7-7f8ecd98ff41" name="faculty_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="faculty_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="f5d5b7ad-cb7b-4252-b2f8-a97900a3291e">
-            <field Id="cfb549df-5c21-48b7-a166-bf745f50cfe8" name="faculty_name" displayName="Faculty name" persistent="faculty_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+            <field Id="cfb549df-5c21-48b7-a166-bf745f50cfe8" name="faculty_name" displayName="Faculty name" persistent="faculty_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -626,7 +626,7 @@
             <field Id="59fc2ac4-e8ad-44ed-a91a-05b88d72a1a9" name="industry_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="industry_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="990dec7e-b993-4844-996b-78adbb24bad9">
-            <field Id="3c2f09a3-bc07-4f07-a135-3bf3afbe9021" name="industry_name" displayName="Industry name" persistent="industry_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+            <field Id="3c2f09a3-bc07-4f07-a135-3bf3afbe9021" name="industry_name" displayName="Industry name" persistent="industry_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -684,7 +684,7 @@
             <field Id="42b0bcf2-e148-4425-9a66-609301b29114" name="marital_status_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="marital_status_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="c74056fd-42e7-4fc2-a894-26559e84fba8">
-            <field Id="7edbba63-4091-48f5-850d-443d2dac1c55" name="marital_status_name" displayName="Marital status" persistent="marital_status_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+            <field Id="7edbba63-4091-48f5-850d-443d2dac1c55" name="marital_status_name" displayName="Marital status" persistent="marital_status_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -706,7 +706,7 @@
             <field Id="30701c2f-40e0-4324-b300-0ea8c11c42b0" name="military_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="military_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="f4f73bbd-4a01-4feb-b43a-ccb6b3c88e83">
-            <field Id="f0ab1700-49c2-44fd-a358-f4dc0969c801" name="military_name" displayName="Military status" persistent="military_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+            <field Id="f0ab1700-49c2-44fd-a358-f4dc0969c801" name="military_name" displayName="Military status" persistent="military_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -728,7 +728,7 @@
             <field Id="84ccfdf5-fd0b-4dfd-afdd-86a55957fec0" name="nationality_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="nationality_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="81bab4e1-b7c9-4147-8b91-ecc1cd7932f7">
-            <field Id="6684a02f-3640-4012-821e-d43f818a6887" name="nationality_name" displayName="Nationality name" persistent="nationality_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+            <field Id="6684a02f-3640-4012-821e-d43f818a6887" name="nationality_name" displayName="Nationality name" persistent="nationality_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -756,7 +756,7 @@
             <field Id="635bcc68-941e-4645-968e-a5a28c30a62b" name="position_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="position_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="8af50e39-d4d4-4b33-a5ac-eb3f9403c8b3">
-            <field Id="c3faab26-3400-4c2d-be49-ba2044043638" name="position_name" displayName="Position name" persistent="position_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+            <field Id="c3faab26-3400-4c2d-be49-ba2044043638" name="position_name" displayName="Position name" persistent="position_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -784,7 +784,7 @@
             <field Id="d776dd74-ee66-402b-affe-43598a0219fb" name="study_grade_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="study_grade_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="e8507736-713f-41e3-a356-cf45d7648468">
-            <field Id="97e17f84-fdb6-4f29-be01-166fe31d7eae" name="study_grade_name" displayName="Grade name" persistent="study_grade_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+            <field Id="97e17f84-fdb6-4f29-be01-166fe31d7eae" name="study_grade_name" displayName="Grade name" persistent="study_grade_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -806,7 +806,7 @@
             <field Id="37bd5949-2b0d-4ba2-8a6a-50c85f574782" name="tag_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="tag_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="cc9e5c87-6a72-42b5-ad04-7dacb9f132ea">
-            <field Id="2413a6d5-e6ce-4b56-95f5-6198f0c3eea5" name="tag_name" displayName="Tag name" persistent="tag_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+            <field Id="2413a6d5-e6ce-4b56-95f5-6198f0c3eea5" name="tag_name" displayName="Tag name" persistent="tag_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -828,7 +828,7 @@
             <field Id="df0964b3-f911-4fd6-9eb8-a0ec46ccaf1c" name="university_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="university_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="6fb243a0-4e11-41f3-8231-665cd9cdade3">
-            <field Id="4f0aa883-b6ce-4532-b8aa-bf58b1dec381" name="university_name" displayName="University name" persistent="university_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+            <field Id="4f0aa883-b6ce-4532-b8aa-bf58b1dec381" name="university_name" displayName="University name" persistent="university_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -850,7 +850,7 @@
             <field Id="e93fa287-a0ff-4fda-a65c-2271d8311eac" name="work_type_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="work_type_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="50da0db0-6e1d-49d9-8312-f923abb641fa">
-            <field Id="fa4fb28b-112e-4a90-bd4c-6bf9f7af7a14" name="work_type_name" displayName="Work type" persistent="work_type_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+            <field Id="fa4fb28b-112e-4a90-bd4c-6bf9f7af7a14" name="work_type_name" displayName="Work type" persistent="work_type_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -878,7 +878,7 @@
             <field Id="7144bde3-ab20-41f0-9e8c-c69977251237" name="rec_gender_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="rec_gender_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="837a9ec2-8b55-4734-b3dc-561e6730ab75">
-            <field Id="5d3199c3-503a-40c8-842e-27c2ba00dc5c" name="rec_gender_name" displayName="Gender_name" persistent="rec_gender_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+            <field Id="5d3199c3-503a-40c8-842e-27c2ba00dc5c" name="rec_gender_name" displayName="Gender_name" persistent="rec_gender_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -922,7 +922,7 @@
             <field Id="4988f05b-486c-4c46-9952-78bae4cd2653" name="rec_call_result_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="rec_call_result_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="20555dc8-b7b2-404f-af00-c507c269233d">
-            <field Id="60d36dd9-9737-4a4b-9798-7d74c065cf5b" name="rec_call_result_name" displayName="Result" persistent="rec_call_result_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+            <field Id="60d36dd9-9737-4a4b-9798-7d74c065cf5b" name="rec_call_result_name" displayName="Result" persistent="rec_call_result_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -944,7 +944,7 @@
             <field Id="03feddb9-cde6-47c5-8954-ab0f937f7658" name="rec_doc_info_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="rec_doc_info_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="df4f7531-ad28-4581-b5b6-3463aa6de101">
-            <field Id="7eb87b71-6f0d-4810-be72-80a28e552f1e" name="rec_doc_info_name" displayName="Doc name" persistent="rec_doc_info_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+            <field Id="7eb87b71-6f0d-4810-be72-80a28e552f1e" name="rec_doc_info_name" displayName="Doc name" persistent="rec_doc_info_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -1358,7 +1358,7 @@
             <field Id="a95bd365-4e09-4b9c-9095-6c31ffc1d29d" name="rec_require_doc_status_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="rec_require_doc_status_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="9f76a570-e2af-4a5e-b3a2-3d3bd8f2ee17">
-            <field Id="520453c2-9d78-4242-8f56-1081419474e4" name="rec_require_doc_status_name" displayName="Status name" persistent="rec_require_doc_status_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+            <field Id="520453c2-9d78-4242-8f56-1081419474e4" name="rec_require_doc_status_name" displayName="Status name" persistent="rec_require_doc_status_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -1380,7 +1380,7 @@
             <field Id="afe3a758-ebf5-4dc0-8731-bc008a401e3e" name="rec_suggest_applicat_source_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="rec_suggest_applicat_source_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="b886785a-c751-4f7a-b306-bde2bc160576">
-            <field Id="2d23c588-abd4-4647-a7ac-5e53c0994e76" name="rec_suggest_applicat_source_name" displayName="Source name" persistent="rec_suggest_applicat_source_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+            <field Id="2d23c588-abd4-4647-a7ac-5e53c0994e76" name="rec_suggest_applicat_source_name" displayName="Source name" persistent="rec_suggest_applicat_source_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -1542,7 +1542,7 @@
             <field Id="e37f74c1-bc6c-4cd2-823b-8161521d285e" name="rec_medical_insurance_types_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="rec_medical_insurance_types_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="c85810f3-b35b-4aff-af62-bb0a06525f7e">
-            <field Id="b75493e9-28aa-4ae6-b6bc-33a9b2a40b00" name="rec_medical_insurance_types_name" displayName="Medical insurance" persistent="rec_medical_insurance_types_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+            <field Id="b75493e9-28aa-4ae6-b6bc-33a9b2a40b00" name="rec_medical_insurance_types_name" displayName="Medical insurance" persistent="rec_medical_insurance_types_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -1564,7 +1564,7 @@
             <field Id="ea01428f-543e-4ab2-8186-65497e1eaa43" name="rec_delivery_type_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="rec_delivery_type_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="101dcb47-3a56-4806-84f0-f33925374115">
-            <field Id="9152bc8d-59e3-4e92-adb8-dd4a1453da79" name="rec_delivery_type_name" displayName="Delivery type" persistent="rec_delivery_type_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+            <field Id="9152bc8d-59e3-4e92-adb8-dd4a1453da79" name="rec_delivery_type_name" displayName="Delivery type" persistent="rec_delivery_type_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -1586,7 +1586,7 @@
             <field Id="811b6f21-bf21-45d8-a51a-c4b8bf97e4dd" name="rec_residence_type_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="rec_residence_type_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="36a34c31-be54-486e-beca-953eea4d6399">
-            <field Id="f6c57b6c-b624-49c8-beb9-6565b3d0fa03" name="rec_residence_type_name" displayName="Residence type" persistent="rec_residence_type_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+            <field Id="f6c57b6c-b624-49c8-beb9-6565b3d0fa03" name="rec_residence_type_name" displayName="Residence type" persistent="rec_residence_type_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -1608,7 +1608,7 @@
             <field Id="c7c940ca-2200-4646-b7a6-75e96ebb0307" name="rec_ticket_type_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="rec_ticket_type_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="f0a48565-d841-4cde-ad6c-47da46e40d3e">
-            <field Id="7cb0c584-99ea-4a28-8708-50789375bcd4" name="rec_ticket_type_name" displayName="Ticket type" persistent="rec_ticket_type_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+            <field Id="7cb0c584-99ea-4a28-8708-50789375bcd4" name="rec_ticket_type_name" displayName="Ticket type" persistent="rec_ticket_type_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -1630,7 +1630,7 @@
             <field Id="e0144026-bff4-4020-93d1-7e99e446d5a9" name="rec_annual_vacation_type_id" columnType="Int32" key="true" isIdentity="true" displayName="ID" persistent="rec_annual_vacation_type_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="ac8c11fe-03cf-4bf3-999c-59a04e1fb0c6">
-            <field Id="70dbb4f2-9acd-4750-9512-458eeccf6dc3" name="rec_annual_vacation_type_name" displayName="Vacation type" persistent="rec_annual_vacation_type_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+            <field Id="70dbb4f2-9acd-4750-9512-458eeccf6dc3" name="rec_annual_vacation_type_name" displayName="Vacation type" persistent="rec_annual_vacation_type_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -1667,7 +1667,7 @@
             <field Id="9020f9cd-985c-4ed3-bc16-2f71a33b8f12" name="rec_housing_type_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="rec_housing_type_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="fe45487d-2e1f-4eaf-9d6d-bdb914e993f5">
-            <field Id="934b9630-d18d-42a0-a42d-412d1e571e00" name="rec_housing_name" displayName="Housing" persistent="rec_housing_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+            <field Id="934b9630-d18d-42a0-a42d-412d1e571e00" name="rec_housing_name" displayName="Housing" persistent="rec_housing_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -1768,7 +1768,7 @@
             <field Id="9c59ad0c-3f6b-4411-9c2c-9113af6bf2a7" name="langauge_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="langauge_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="6549f36b-064d-4b7b-a591-4fe839d3ba41">
-            <field Id="01e29050-75fa-4621-8e2f-ec312cea5a61" name="langauge_name" displayName="Langauge name" persistent="langauge_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+            <field Id="01e29050-75fa-4621-8e2f-ec312cea5a61" name="langauge_name" displayName="Langauge name" persistent="langauge_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -1790,7 +1790,7 @@
             <field Id="359b840b-8917-4d54-9ade-1a905524c8ca" name="job_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="job_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="bb9c9b92-0986-488b-af8b-72c8b1dbd5b4">
-            <field Id="403fda01-4ddb-4948-aff2-f07339faa5c8" name="job_name" displayName="Job name" persistent="job_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+            <field Id="403fda01-4ddb-4948-aff2-f07339faa5c8" name="job_name" displayName="Job name" persistent="job_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -1850,7 +1850,7 @@
             <field Id="65580489-a00f-4934-8d35-3faacec94f6e" name="rec_lang_level_id" columnType="Int32" key="true" isIdentity="true" displayName="Id" persistent="rec_lang_level_id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="bde26674-bd11-43dd-83fe-74fd9755b366">
-            <field Id="b34ff62d-3cc1-4165-ae56-0cca5843f704" name="rec_lang_level_name" displayName="Level" persistent="rec_lang_level_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+            <field Id="b34ff62d-3cc1-4165-ae56-0cca5843f704" name="rec_lang_level_name" displayName="Level" persistent="rec_lang_level_name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" customAttributes="DevExpress.Persistent.Validation.RuleUniqueValue(&quot;&quot;, DevExpress.Persistent.Validation.DefaultContexts.Save, &quot;Object with the same name exists&quot;)" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>

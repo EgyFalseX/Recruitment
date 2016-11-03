@@ -26,6 +26,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string frec_require_doc_status_name;
         [DevExpress.Xpo.DisplayName(@"Status name")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string rec_require_doc_status_name
         {
             get { return frec_require_doc_status_name; }

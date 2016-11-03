@@ -8,11 +8,12 @@ using DevExpress.Persistent.Base;
 using DevExpress.Persistent.Base.General;
 using System.Drawing;
 using DevExpress.ExpressApp.Utils;
+using DevExpress.Persistent.Validation;
 
 namespace Accounting.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
-    [DevExpress.ExpressApp.DC.XafDefaultProperty("account_name")]
+    [DevExpress.ExpressApp.DC.XafDefaultProperty("account_code")]
     [ImageName("acc_Account16")]
 
     public partial class acc_Account : ITreeNode, ITreeNodeImageProvider
@@ -22,7 +23,6 @@ namespace Accounting.BusinessObjects.Recruitment
             closed = false;
         }
         public override void AfterConstruction() { base.AfterConstruction(); }
-       
         //Audit Trail
         private XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> auditTrail;
         public XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> AuditTrail

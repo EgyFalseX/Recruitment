@@ -1,0 +1,2105 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://www.devexpress.com/Support/Center/Example/Details/E1554 -->
+<html lang="en" class="dxChrome dxWindowsPlatform dxWebKitFamily dxBrowserVersion-54"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link id="notify-css" rel="Stylesheet" href="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/DXR.axd" type="text/css">
+
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta name="description" content="Feature-Complete Components, IDE Tools, and Business Application Frameworks for Visual Studio, Delphi and C++Builder">
+	<meta name="author" content="Developer Express Inc. &lt;info@devexpress.com&gt;">
+	<meta name="keywords" content="asp.net grid, web grid, asp.net datagrid, web datagrid, web data grid, aspx grid, asp.net data grid, aspx datagrid, aspx editors, aspx data grid, web db grid, asp.net, powerfull grid, aspx, visual studio .net, vs.net, grid vs.net,data grid, datagrid, winform, C#, vb.net, .net, data grid bound,data grid .net,data grid c#,data,grid,data grid control,grid component,grid vb.net,data grid dotnet,grid c#,unbound grid,grid dll,grid control,data grid unbound,data grid source,data grid library,grid programming,grid source code,grid dotnet,grid .net,grid tutorial,data grid vb.net,data grid component,grid unbound,grid library,data grid dll,win grid,grid ado,data grid component,data grid control,win form grid,win grid, reporting, .net report, scheduler, .net scheduler, asp.net scheduler, asp.net reports, refactor, refactoring, ide tools, ide addons, free ide addons">
+    <meta name="viewport" content="width=device-width">
+	<title>E1554 - How to show filter dialog before showing ListView | DevExpress Support Center</title>
+
+    <link rel="shortcut icon" href="https://www.devexpress.com/Support/Center/favicon.ico">
+    <link rel="apple-touch-icon" href="https://www.devexpress.com/Support/Center/apple-touch-icon.png">
+
+    <style>
+        button.purple, .button.purple, button.orange, .button.orange, .button.dark
+        , #top-navigation-bar, #navbar a, #filters .title > .f-subscribe > .f-btn, #float-panel > #filter-bar button
+        , .state > span, .vote-block, .quest .details
+        , .textbox, .selectbox, .memobox, .filebox, .V2Button,
+        div.TOCv3 div.TopBar ul.SubMenu,
+        div.TOCv3 div.SubMenuBack, .V3Button
+        {
+            behavior: url(/Support/Center/Content/scripts/pie/PIE.htc);
+        }
+        #overlay .popup button.orange, #overlay .slideBox .buttonHolder button.orange {
+            behavior: none;
+	        background: #f8981d;
+	        background-image: -moz-linear-gradient(top, #f8981d 0%, #f87a1d 100%);
+	        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f8981d), color-stop(100%, #f87a1d));
+	        background-image: -webkit-linear-gradient(top, #f8981d 0%, #f87a1d 100%);
+	        background-image: -o-linear-gradient(top, #f8981d 0%, #f87a1d 100%);
+	        background-image: -ms-linear-gradient(top, #f8981d 0%, #f87a1d 100%);
+	        background-image: linear-gradient(top, #f8981d 0%, #f87a1d 100%);
+	        -pie-background: linear-gradient(top, #f8981d 0%, #f87a1d 100%);
+            background-repeat: none;
+            background-color: transparent;
+        }
+    </style>
+    <link href="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/layout" rel="stylesheet">
+
+    
+    <script type="text/javascript" async="" src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/ga.js.download"></script><script src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/jquery-1.7.1.min.js.download" type="text/javascript"></script>
+    <script src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/jquery.cookie.js.download" type="text/javascript"></script>
+    <script src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/jquery-ui.min.js.download" type="text/javascript"></script>
+    <script src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/jquery.validate.min.js.download" type="text/javascript"></script>
+    <script src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/jquery.validate.unobtrusive.min.js.download" type="text/javascript"></script>
+    <script src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/jquery.unobtrusive-ajax.js.download" type="text/javascript"></script>
+    <script src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/js-fallbacks.js.download" type="text/javascript"></script>
+    <script src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/ajax.form.js.download" type="text/javascript"></script>
+    <script src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/jquery.tdebounce.min.js.download" type="text/javascript"></script>
+    <script src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/moment.js.download" type="text/javascript"></script>
+
+    <script src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/layout(1)"></script>
+
+
+
+    
+    <script type="text/javascript">
+        var scConfig = scConfig || {};
+        scConfig.validationLimits = {
+            maximumAttachmentSize: 31457280,
+            minimumTicketPostLength: 10,
+            maximumTicketPostLength: 30000,
+            minimumCommentLength: 3,
+            maximumSubjectLength: 250
+        };
+        scConfig.errorMessages = {
+            maxAttachmentSize: 'The maximum size of attached files is 30 MB.',
+            emptyAttachment: 'The attached file is empty. Zero-length files are not allowed.',
+            maxQuestionDescriptionLength_OnCreate: 'The description is too long. Please reduce its length or consider using the attachment.',
+            maxQuestionDescriptionLength_OnEdit: 'The description is too long. Please reduce its length.',
+            maxAnswerTextLength_OnCreate: 'The answer is too long. Please reduce its length or consider using the attachment.',
+            maxAnswerTextLength_OnEdit: 'The answer is too long.',
+            minAnswerTextLength: 'The answer is too short.',
+            maxCommentTextLength: 'The comment is too long. Please reduce its length or consider using the attachment.',
+            minCommentTextLength: 'The comment is too short.',
+            subjectIsRequired: 'The subject is required.',
+            subjectIsTooLong: 'The subject is too long.',
+            unknownError: 'An error occurred, please try again later.'
+        };
+    scConfig.originalCookie = "Active=&FavoritesOnly=False&MyTeamItemsOnly=False&MyItemsOnly=False&Answered=&PlatformName=Frameworks (XAF __AND__ XPO)&ProductName=AllProducts&TicketType=All&HasAnswers=&ApprovedByOwnerAnswers=&TicketListSortOrder=Relevance";
+    </script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-1384678-1']);
+        _gaq.push(['_setDomainName', '.devexpress.com']);
+        _gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_setAllowHash', false]);
+		_gaq.push(['_addIgnoredRef', '.devexpress.com']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+<script id="notify-js" type="text/javascript" src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/DXR(1).axd"></script>
+
+<script id="notify-js-init" type="text/javascript">
+    if(typeof jQuery != 'undefined') {
+        $(document).ready(function () {
+            window.wsNotifications = new NotificationController('https://www.devexpress.com/');
+        });
+    }
+</script>
+</head>
+<body>
+    <div id="notification-box" data-url="/Support/Center/Notification/Details" style="display:none"></div>
+    <div id="float-panel">
+        <div id="filter-bar" class="page-bar">
+            <div class="inner">
+                <span class="title">Current filter:</span>
+                <ul class="group h my-cntnr"></ul>
+                <ul class="group and"></ul>            
+                <ul class="group h fav-cntnr"></ul>
+                <ul class="group and"></ul>               
+                <ul class="group h team-cntnr"></ul>
+                <ul class="group and"></ul>
+                <ul class="group h owner-appr-cntnr"></ul>
+                <ul class="group and"></ul>
+                <ul class="group h dx-appr-cntnr"></ul>
+                <ul class="group and"></ul>
+                <ul class="group h sln-cntnr"></ul>
+                <ul class="group and"></ul>
+                <ul class="group h type-cntnr"></ul>
+                <ul class="group and"></ul>
+                <ul class="group h tag-cntnr"></ul>
+<form action="https://www.devexpress.com/Support/Center/Example/ClearFilters" method="post" novalidate="novalidate"> <button class="V3Button ClearButton" type="submit"><span>Clear</span></button> <input type="hidden" name="DXScript" id="DXScript" value="1_187,1_101,1_98,1_164,1_97,1_175,1_130,1_137,14_34,1_180,4_62,1_116,5_5,5_4,4_70,4_68,4_69,4_35,4_65,4_77,4_75,4_78,4_76,4_67,4_19,4_14,4_57,4_34,4_12,4_15,4_16,4_17,4_18,4_20,4_21,4_23,4_24,4_13,4_25,4_26,4_27,4_28,4_29,4_30,4_31,4_32,4_33,4_36,4_41,4_42,4_43,4_44,4_45,4_46,4_47,4_48,4_49,4_54,4_37,4_38,4_39,4_40,4_55,4_56,4_22,4_52,4_51,4_53,4_50,4_58,4_11,4_66,4_59,4_64,4_79,4_81,4_82,4_83,4_80,4_74,4_63,4_61,14_14,1_172,1_178,1_163,4_71,1_105,1_141,1_129,1_132,4_72,1_170,4_73,1_126,1_128,1_181,1_171,14_22,4_10"><input type="hidden" name="DXCss" id="DXCss" value="9990_3,/Support/Center/favicon.ico,/Support/Center/apple-touch-icon.png,/Support/Center/Content/styles/layout?v=_2lePyOg5e-PreFaQQkEhN7KBBrnKiWOq3rICel1_Dg1,1_7,1_16,1_8,1_6,4_1,4_2,4_0,5_1,5_0,1_1,1_14,https://www.devexpress.com/Support/Center/Example/Details/E1554"></form>            </div>
+        </div>
+    </div>
+    <div id="overlay" class="white">
+        <div id="dialog">
+            <div class="dialog-inside page-block">
+                <div class="dialog-text">You should refresh the page.</div>
+                <div class="dialog-cntrls">
+                    <button class="V3Button Orange dialog-button-ok" data-type="ok"><span class="label">Yes</span></button>
+                    <button class="V3Button Orange dialog-button-cancel" data-type="cancel"><span class="label">No</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- header -->
+    <div id="Header" class="TOCv3">
+        
+
+
+
+        
+<div class="TopBar GreyBar">
+    <div class="Content">
+        <script type="text/javascript">
+            var _wsTopBarMenu = new _wsTopBarMenuController();
+                </script>
+            <table class="p-f-left">
+                <tbody><tr>
+                    <td class="Message">
+                    </td>
+                    <td>
+                        <a id="TOCAccount" class="p-f-right" href="https://www.devexpress.com/Support/Center/ContactBase/Details/0a781668-1ac8-4817-a264-d9722e55c573" data-oid="0a781668-1ac8-4817-a264-d9722e55c573" data-employee="0">
+                            Welcome, Mohamed Omer (A849546)
+                        </a>
+                    </td>
+                    <td class="ItemSeparator">
+                        <div></div>
+                    </td>
+                    <td>
+                        <a class="p-f-right DownloadMyProducts" id="ctl00_TOC-Bar-DownloadProducts" href="https://www.devexpress.com/ClientCenter/DownloadManager/">
+                            <span></span>
+                            Download Your Products
+                        </a>
+                    </td>
+                    <td class="ItemSeparator">
+                        <div></div>
+                    </td>
+                    <td>
+                        <a id="TOCSignOut" class="p-f-right" href="https://www.devexpress.com/Support/Center/LogOn/SignOut">
+                            Log Out
+                        </a>
+                    </td>
+                </tr>
+            </tbody></table>
+        <div class="h-clear"></div>
+    </div>
+</div>
+
+        
+
+
+<div id="TOCBar" class="MainMenuBar FullContent">
+    <div id="Toolbar" class="Toolbar">
+        <a class="Item Cart Empty" title="Shopping Cart" href="https://www.devexpress.com/ClientCenter/Purchase/">
+                <span id="shopping-cart-quantity" data-url="/Support/Center/ContactBase/GetShoppingCartQuantity?userOid=0a781668-1ac8-4817-a264-d9722e55c573"></span>
+        </a>
+        <a class="Item Blog" title="Blogs" href="https://community.devexpress.com/blogs/"></a>
+        <div class="Item Search">
+            <div style="display: none;" class="Callout Hover">
+            </div>
+            <div style="left: -1286px; top: 53px; width: 1561px; display: none;" class="SubMenuBack Hover">
+                <div class="Content">
+                    <div class="SearchBox">
+                        <input id="tbSiteSearch" class="TextBox" value="Type keywords here" type="text" autocomplete="off"><input id="btnSiteSearch" class="ButtonSearch" type="button"><div class="h-clear">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var _wsToolBar = new _wsToolBarController();
+            window.SearchServiceUrl = 'https://search.devexpress.com/?q='
+        </script>
+    </div>
+    <ul id="TOCv3Menu" class="MainMenu">
+        <li class="Item"><span class="ItemTitle">Products</span><div class="Separator">
+        </div>
+            <div style="display: none;" class="Callout Hover">
+            </div>
+            <div style="left: -626px; width: 1561px; display: none;" class="SubMenu Hover">
+                <div class="SubMenuContainer">
+                    <div class="Content">
+                        <div class="Products Suites">
+                            <div class="GroupTitle">
+                                Suites
+                            </div>
+                            <div class="CategoryTitle">
+                                BEST VALUE
+                            </div>
+                            <div class="BestValueItem">
+                                <div class="Chicklet U">
+                                </div>
+                                <div class="CategoryItemLink">
+                                    <a href="https://www.devexpress.com/Subscriptions/Universal.xml">Universal</a>
+                                </div>
+                                <div class="CategoryItemDescription">
+                                    (includes all DevExpress .NET products in one integrated suite)
+                                </div>
+                            </div>
+                            <div class="BestValueItem">
+                                <div class="Chicklet DXP">
+                                </div>
+                                <div class="CategoryItemLink">
+                                    <a href="https://www.devexpress.com/Subscriptions/DXperience.xml">DXperience</a>
+                                </div>
+                                <div class="CategoryItemDescription">
+                                    (includes all DevExpress .NET Controls along with CodeRush)
+                                </div>
+                            </div>
+                            <a class="Compare" href="https://www.devexpress.com/Subscriptions/"></a>
+                        </div>
+                        <div class="Products GroupBreak Full NETProducts">
+                            <div class="GroupTitle">
+                                .NET Products
+                            </div>
+                            <div class="FirstColumn">
+                                <div class="CategoryTitle">
+                                    INDIVIDUAL PLATFORMS
+                                </div>
+
+                                        
+                <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Controls/WinForms/" target="_self">WinForms</a>
+    </div>
+
+        
+        
+                <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Controls/ASP/" target="_self">ASP.NET</a>
+    </div>
+
+        
+        
+                <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Controls/ASP/MVC/" target="_self">MVC</a>
+    </div>
+
+        
+        
+                <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Controls/WPF/" target="_self">WPF</a>
+    </div>
+
+        
+        
+                <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/" target="_self">Windows 10 Apps</a>
+    </div>
+
+        
+
+                                <div class="CategoryBreak">
+                                </div>
+                                <div class="CategoryTitle">
+                                    CROSS-PLATFORM
+                                </div>
+
+                                        
+                <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Subscriptions/Reporting/" target="_self">Reporting</a>
+    </div>
+
+        
+        
+                <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Document-Server/" target="_self">Document Generation</a>
+    </div>
+
+        
+
+                                <div class="CategoryBreak">
+								</div>
+                            </div>
+                            <div class="SecondColumn">
+                                <div class="CategoryTitle">
+                                    ENTERPRISE TOOLS
+                                </div>
+
+                                        
+                <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Report-Server/" target="_self">Report Server</a>
+    </div>
+
+        
+        
+                <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Dashboard/" target="_self">Analytics Dashboard</a>
+    </div>
+
+        
+
+
+                                <div class="CategoryBreak">
+                                </div>
+
+                                <div class="CategoryTitle">
+                                    FRAMEWORKS
+                                </div>
+                                    <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Application_Framework/" target="_self">eXpressApp Framework</a>
+    </div>
+
+                                <div class="CategoryBreak">
+                                </div>
+                                <div class="CategoryTitle">
+                                    CODE-DEBUG-REFACTOR
+                                </div>
+                                    <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/CodeRush/" target="_self">CodeRush for Visual Studio</a>
+    </div>
+
+                            </div>
+                            <div class="h-clear">
+							</div>
+                            <div class="WhatsNewColumn">
+                                <div class="CategoryItemLink">
+                                    <a href="https://www.devexpress.com/new" target="_self">Explore Our Newest Features</a>
+                                    <img src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/WhatsNewUnderline.png">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Products GroupBreak Other">
+                            <div class="FirstColumn">
+                                <div class="GroupTitle">
+                                    HTML JS Products
+                                </div>
+                                <div class="CategoryTitle">
+                                    HYBRID APPS
+                                </div>
+                                    <div class="CategoryItemLink">
+        <a href="https://js.devexpress.com/MobileDevelopment" target="_blank">DevExtreme Mobile</a>
+    </div>
+
+                                    <div class="CategoryItemLink">
+        <a href="https://js.devexpress.com/WebDevelopment" target="_blank">DevExtreme Web</a>
+    </div>
+
+                            </div>
+                            <div class="SecondColumn">
+                                <div class="GroupTitle">
+                                    Xamarin.Forms
+                                </div>
+                                <div class="CategoryTitle">
+                                    UI CONTROLS
+                                </div>
+                                    <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/Xamarin/" target="_blank">Free Data Grid</a>
+    </div>
+
+                            </div>
+                        </div>
+                        <div class="Products GroupBreak Other">
+                            <div class="FirstColumn">
+                                <div class="GroupTitle">
+                                    iOS
+                                </div>
+                                <div class="CategoryTitle">
+                                    NATIVE
+                                </div>
+                                    <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/iOS/DataExplorer/" target="_self">DataExplorer</a>
+    </div>
+
+                            </div>
+                            <div class="SecondColumn">
+                                <div class="GroupTitle">
+                                    Testing Tools
+                                </div>
+                                <div class="CategoryTitle">
+                                    WEB TESTING
+                                </div>
+                                    <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/HTML5-Testing/" target="_self">TestCafe</a>
+    </div>
+
+                            </div>
+                        </div>
+                        <div class="Products GroupBreak Other">
+                            <div class="GroupTitle">
+                                Delphi &amp; C++Builder Products
+                            </div>
+                            <div class="CategoryTitle">
+                                DELPHI &amp; C++BUILDER
+                            </div>
+                                <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/VCL/" target="_self">VCL</a>
+    </div>
+
+                        </div>
+                        <div class="h-clear">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="Item"><span class="ItemTitle">Free Trials &amp; Demos</span><div class="Separator">
+        </div>
+            <div class="Callout Hover">
+            </div>
+            <div class="SubMenu Hover">
+                <div class="SubMenuContainer">
+                    <div class="Content">
+                        <div class="Downloads Trial">
+                            <div class="FreeTrial">
+                            </div>
+                            <a class="Download" href="https://www.devexpress.com/Home/Try.xml"></a>
+                            <div class="CategoryItemDescription TrialDownloadDescription">
+                                (includes all DevExpress .NET products and free technical support)
+                            </div>
+                        </div>
+                        <div class="Downloads GroupBreak Full">
+                            <div class="GroupTitle">
+                                .NET Product Demos
+                            </div>
+                            <div class="FirstColumn">
+                                <div class="CategoryTitle">
+                                    BY PLATFORMS
+                                </div>
+
+                                        
+                <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Controls/WinForms/demos.xml" target="_self">WinForms</a>
+    </div>
+
+        
+        
+                <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Controls/ASP/demos.xml" target="_self">ASP.NET</a>
+    </div>
+
+        
+        
+                <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Controls/ASP/MVC/demos.xml" target="_self">MVC</a>
+    </div>
+
+        
+        
+                <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Controls/WPF/demos.xml" target="_self">WPF</a>
+    </div>
+
+        
+        
+                <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/demos.xml" target="_self">Windows 10 Apps</a>
+    </div>
+
+        
+
+                                <div class="CategoryBreak">
+                                </div>
+                                <div class="CategoryTitle">
+									CROSS-PLATFORM
+								</div>
+                                    <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Subscriptions/Reporting/demos.xml" target="_self">Reporting</a>
+    </div>
+
+                                    <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Document-Server/demos.xml" target="_self">Document Generation</a>
+    </div>
+
+                                <div class="CategoryBreak"></div>
+                            </div>
+                            <div class="SecondColumn">
+                                <div class="CategoryTitle">
+                                    ENTERPRISE TOOLS
+                                </div>
+                                    <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Report-Server/demos.xml" target="_self">Report Server</a>
+    </div>
+
+                                    <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Dashboard/demos.xml" target="_self">Analytics Dashboard</a>
+    </div>
+
+                                <div class="CategoryItemLink Dummy">
+                                </div>
+                                <div class="CategoryBreak">
+                                </div>
+                                <div class="CategoryTitle">
+                                    FRAMEWORKS
+                                </div>
+                                    <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Application_Framework/demos.xml" target="_self">eXpressApp Framework</a>
+    </div>
+
+                                <a class="ViewAllDemos" href="https://www.devexpress.com/Support/Demos/"></a>
+                            </div>
+                        </div>
+                        <div class="Downloads GroupBreak Other">
+                            <div class="GroupTitle">
+                                HTML Java Script Downloads
+                            </div>
+                            <div class="FirstColumn">
+                                <div class="CategoryTitle">
+                                    MOBILE
+                                </div>
+                                    <div class="CategoryItemLink">
+        <a href="https://js.devexpress.com/MobileDevelopment" target="_blank">DevExtreme Mobile</a>
+    </div>
+
+
+                            </div>
+                            <div class="SecondColumn">
+                                <div class="CategoryTitle">
+                                    HTML5 JS WIDGETS
+                                </div>
+                                    <div class="CategoryItemLink">
+        <a href="https://js.devexpress.com/WebDevelopment" target="_blank">DevExtreme Web</a>
+    </div>
+
+                            </div>
+                        </div>
+                        <div class="Downloads GroupBreak Other">
+                            <div class="GroupTitle">
+                                Testing Tools Downloads
+                            </div>
+                            <div class="CategoryTitle">
+								WEB TESTING
+							</div>
+                                <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/HTML5-Testing/" target="_blank">TestCafe</a>
+    </div>
+
+                        </div>
+                        <div class="Downloads GroupBreak Other">
+                            <div class="GroupTitle">
+                                Delphi &amp; C++Builder Downloads
+                            </div>
+                            <div class="CategoryTitle">
+                                CONTROLS
+                            </div>
+                                <div class="CategoryItemLink">
+        <a href="https://www.devexpress.com/Products/VCL/demos.xml" target="_self">VCL</a>
+    </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="Item"><span class="ItemTitle">Buy</span><div class="Separator">
+        </div>
+            <div class="Callout Hover">
+            </div>
+            <div class="SubMenu Hover">
+                <div class="SubMenuContainer">
+                    <div class="Content">
+                        <div class="Buy">
+                            <table class="BigIconItems" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td><a class="Icon Compare" href="https://www.devexpress.com/Subscriptions/"><span></span>Compare Features<br>
+                                            and Pricing</a></td>
+                                        <td><a class="Icon Buy" href="https://www.devexpress.com/Subscriptions/buy.xml"><span></span>Buy a New<br>
+                                            Product Subscription</a></td>
+                                        <td><a class="Icon Renew" href="https://www.devexpress.com/ClientCenter/Purchase/#Upgrades"><span></span>Renew an<br>
+                                            Existing Subscription</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="BigDescription">
+                                Need help or require more information?<br>
+                                Email us at <a href="mailto:info@devexpress.com">info@devexpress.com</a> or call +1 (818) 844-3383 between 7:30AM and 4:30PM Pacific Time.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="Item"><span class="ItemTitle">Support</span><div class="Separator">
+        </div>
+            <div class="Callout Hover">
+            </div>
+            <div class="SubMenu Hover">
+                <div class="SubMenuContainer">
+                    <div class="Content">
+                        <div class="Support Left">
+                            <div class="GroupTitle">Support Center</div>
+                            <table class="BigIconItems" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td><a class="Icon KB" href="https://www.devexpress.com/Support/Center/Question/List">
+                                            <span></span>Search the KB
+                                            </a>
+                                        </td>
+                                        <td><a class="Icon Q" href="https://www.devexpress.com/Support/Center/Question/ChangeFilterSet/1?FavoritesOnly=False&amp;MyItemsOnly=True&amp;MyTeamItemsOnly=False&amp;PlatformName=AllPlatforms&amp;ProductName=AllProducts&amp;TicketType=All">
+                                            <span></span>My Questions
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a class="Icon Examples" href="https://www.devexpress.com/Support/Center/Example/List"><span></span>Code Examples
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="Support">
+                            <div class="GroupTitle">Resources</div>
+                            <table class="BigIconItems" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a class="Icon GetStarted" href="https://www.devexpress.com/Support/GettingStarted/">
+                                                <span></span>Getting Started
+                                            </a>
+                                        </td>
+                                        <td><a class="Icon Doc" href="https://documentation.devexpress.com/"><span></span>Documentation</a></td>
+                                        <td><a class="Icon Demos" href="https://www.devexpress.com/Support/Demos/"><span></span>Demos</a></td>
+                                        <td><a class="Icon Training" href="https://www.devexpress.com/Home/Training/"><span></span>Training</a></td>
+                                        <td><a class="Icon Webinars" href="https://www.devexpress.com/Support/Webinars/"><span></span>Webinars</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="h-clear"></div>
+                        <div class="BigDescription AboutUsDescription">
+                            Contact our  <a id="TOC-AboutUsDescriptionLink" href="https://www.devexpress.com/Home/devexpress-cares.xml">Developer Advocates</a> anytime.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="Item"><span class="ItemTitle">My Account</span><div class="Separator">
+			</div><div class="Callout Hover" style="display: none;">
+			</div><div class="SubMenu Hover" style="left: -1123px; width: 1903px; display: none;">
+				<div class="SubMenuContainer">
+					<div class="Content">
+						<div class="MyAccount">
+							<table class="BigIconItems" border="0">
+								<tbody><tr>
+									<td><a href="https://www.devexpress.com/MyAccount/" class="Icon ManageAccount" id="ctl00_TOC-httpswwwdevexpresscomMyAccount"><span></span>Manage<br>Your Profile<div class="SubDescription">
+										Change your address<br>email and password
+									</div></a></td><td><a href="https://www.devexpress.com/ClientCenter/Contacts/Default.aspx" class="Icon ManageLicenses" id="ctl00_TOC-httpswwwdevexpresscomClientCenterContactsDefaultaspx"><span></span>Assign <br>Licenses<div class="SubDescription">
+										Manage licenses<br>for your dev team
+									</div></a></td><td><a href="https://www.devexpress.com/ClientCenter/Purchase/#Upgrades" class="Icon Renew" id="ctl00_TOC-httpswwwdevexpresscomClientCenterPurchaseUpgrades"><span></span>Renew an<br>Existing Subscription</a></td><td><a href="https://www.devexpress.com/ClientCenter/PurchaseHistory.aspx" class="Icon PurchaseHistory" id="ctl00_TOC-httpswwwdevexpresscomClientCenterPurchaseHistoryaspx"><span></span>Purchase<br>History<div class="SubDescription">
+										New order status<br>and previous purchases
+									</div></a></td><td class="Separator"></td><td class="Last"><a href="https://www.devexpress.com/ClientCenter/DownloadManager/" class="Icon Download" id="ctl00_TOC-httpswwwdevexpresscomClientCenterDownloadsRegisteredDownloads"><span></span>Download<br>Your Products</a></td>
+								</tr>
+							</tbody></table><div class="BigDescription">
+								Need help or require more information?<br>Email us at <a href="mailto:clientservices@devexpress.com">clientservices@devexpress.com</a> or call +1 (818) 844-3383 between 7:30AM and 4:30PM Pacific Time.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </li>
+        <li class="Item"><span class="ItemTitle">About Us</span><div class="Separator">
+			</div><div class="Callout Hover" style="display: none;">
+			</div><div class="SubMenu Hover" style="left: -1243px; width: 1903px; display: none;">
+				<div class="SubMenuContainer">
+					<div class="Content">
+						<div class="AboutUs Left">
+							<div class="GroupTitle">
+								Connect with DevExpress
+							</div><table class="BigIconItems" border="0">
+								<tbody><tr>
+									<td><a id="ctl00_TOC-httpscommunitydevexpresscomblogs" class="Icon Blogs" href="https://community.devexpress.com/blogs/"><span></span>Blogs</a></td><td><a id="ctl00_TOC-HomeCommunity" class="Icon Events" href="https://www.devexpress.com/Home/Community/"><span></span>Upcoming<br>Events</a></td><td><a id="ctl00_TOC-HomeTraining-1" class="Icon Training" href="https://www.devexpress.com/Home/Training/"><span></span>Training</a></td><td><a id="ctl00_TOC-SupportWebinars-1" class="Icon Webinars" href="https://www.devexpress.com/Support/Webinars/"><span></span>Webinars</a></td>
+								</tr>
+							</tbody></table>
+						</div><div class="AboutUs Right">
+							<div class="GroupTitle">
+								Learn More about DevExpress
+							</div><div class="h-clear">
+
+							</div><div class="p-f-left">
+								<div>
+									<a id="ctl00_TOC-httpswwwdevexpresscomHomeMissionxml" class="IconLink AboutUs" href="https://www.devexpress.com/Home/Mission.xml"><span></span>About Us</a><div class="h-clear">
+									</div>
+								</div><div>
+									<a id="ctl00_TOC-httpswwwdevexpresscomHomeAnnounces" class="IconLink News" href="https://www.devexpress.com/Home/Announces/"><span></span>News</a><div class="h-clear">
+									</div>
+								</div><div>
+									<a id="ctl00_TOC-httpswwwdevexpresscomHomeCommentsxml" class="IconLink Comments" href="https://www.devexpress.com/Home/Comments.xml"><span></span>User Comments</a><div class="h-clear">
+
+									</div>
+								</div><div>
+									<a id="ctl00_TOC-httpswwwdevexpresscomHomeCaseStudies" class="IconLink CaseStudies" href="https://www.devexpress.com/Home/Case-Studies/"><span></span>Case Studies</a><div class="h-clear">
+									</div>
+								</div>
+							</div><div class="GroupBreak NoSeparator">
+								<div>
+									<a id="ctl00_TOC-httpswwwdevexpresscomHomeAwardsxml" class="IconLink Awards" href="https://www.devexpress.com/Home/Awards.xml"><span></span>Our Awards</a><div class="h-clear">
+									</div>
+								</div><div>
+									<a id="ctl00_TOC-httpswwwdevexpresscomHomePublicationsxml" class="IconLink Review" href="https://www.devexpress.com/Home/Publications.xml"><span></span>Reviews &amp; Publications</a><div class="h-clear">
+
+									</div>
+								</div><div>
+									<a id="ctl00_TOC-httpswwwdevexpresscomHomeCommunityMVPxml" class="IconLink MVP" href="https://www.devexpress.com/Home/Community/MVP.xml"><span></span>MVP Program</a><div class="h-clear">
+									</div>
+								</div><div>
+									<a id="ctl00_TOC-httpswwwdevexpresscomHomeContactUsxml" class="IconLink ContactUs" href="https://www.devexpress.com/Home/ContactUs.xml"><span></span>Contact Us</a><div class="h-clear">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </li>
+    </ul>
+    <div style="left: -210px; top: 66px; width: 1561px; display: none;" class="SubMenuBack">
+    </div>
+    <script type="text/javascript">
+        var _wsMenu = new _wsMenuController();
+            </script>
+    <a class="Logo" title="DevExpress" href="http://www.devexpress.com/"></a>
+    <div class="h-clear">
+    </div>
+</div>
+
+    </div>
+
+    <!-- second level -->
+	<div class="SLNContainer">
+    <div id="SLNContent" class="SLN GreyBar">
+        <div class="Content">
+            <div class="PageTitleContainer">
+                <div class="PageTitle">
+                    Support Center
+                </div>
+            </div>
+                <ul>
+                    <li><a class="faq" href="https://www.devexpress.com/Support/Center/FAQ"><span>FAQ</span></a></li>
+                    <li style="background-color: rgb(74, 74, 74);"><a href="https://www.devexpress.com/Home/Training/"><span>Training Events</span></a></li>
+                    <li><a href="https://localization.devexpress.com/"><span>Localization</span></a></li>
+                    <li><a href="https://www.devexpress.com/Support/Center/VersionHistory"><span>Version History</span></a></li>
+                    <li class="Current"><a href="https://www.devexpress.com/Support/Center/Example/List/1"><span>Examples</span></a></li>
+                    <li><a href="https://www.devexpress.com/Support/Center/Question/List/1"><span>Tickets</span></a></li>
+                </ul>
+            <script type="text/javascript">
+                window.SLN = SLN();
+        </script>
+        </div>
+    </div>
+</div>
+
+
+ <div id="additionalHeaderBarContainer">
+    <div id="menubar">
+        <div id="ask-question-btn-container">
+
+            <a href="https://www.devexpress.com/Support/Center/Question/Create" id="ask-question-btn" class="V3Button"><span>Submit a Support Ticket</span></a>
+        </div>
+
+        <div class="searchFormHolder">
+<input id="searchFormAction" name="searchFormAction" type="hidden" value="/Support/Center/Search/ChangeFilterSet">
+            <form method="post" novalidate="novalidate" lpformnum="1">
+                <div class="textbox">
+                        
+                        <input id="PlatformName" name="PlatformName" type="hidden" value="Frameworks (XAF __AND__ XPO)">
+                        <input id="TechnologyName" name="TechnologyName" type="hidden" value="">
+                        <input id="ProductName" name="ProductName" type="hidden" value="AllProducts">
+                        <input data-val="true" data-val-required="The TicketType field is required." id="TicketType" name="TicketType" type="hidden" value="Examples">
+                        <input type="hidden" name="pageIndex" id="pageIndex" value="1">
+                        
+                    
+                    <a class="handle_clear" unselectable="on" style="display: none;"></a>
+                    <input type="text" autocomplete="off" tabindex="1" id="scSearchField" name="searchString">
+                    <span class="tb-placeholder" style="display: inline;">Type search string and press Enter</span>
+                </div>
+            <input type="hidden" name="DXScript" id="DXScript" value="1_187,1_101,1_98,1_164,1_97,1_175,1_130,1_137,14_34,1_180,4_62,1_116,5_5,5_4,4_70,4_68,4_69,4_35,4_65,4_77,4_75,4_78,4_76,4_67,4_19,4_14,4_57,4_34,4_12,4_15,4_16,4_17,4_18,4_20,4_21,4_23,4_24,4_13,4_25,4_26,4_27,4_28,4_29,4_30,4_31,4_32,4_33,4_36,4_41,4_42,4_43,4_44,4_45,4_46,4_47,4_48,4_49,4_54,4_37,4_38,4_39,4_40,4_55,4_56,4_22,4_52,4_51,4_53,4_50,4_58,4_11,4_66,4_59,4_64,4_79,4_81,4_82,4_83,4_80,4_74,4_63,4_61,14_14,1_172,1_178,1_163,4_71,1_105,1_141,1_129,1_132,4_72,1_170,4_73,1_126,1_128,1_181,1_171,14_22,4_10"><input type="hidden" name="DXCss" id="DXCss" value="9990_3,/Support/Center/favicon.ico,/Support/Center/apple-touch-icon.png,/Support/Center/Content/styles/layout?v=_2lePyOg5e-PreFaQQkEhN7KBBrnKiWOq3rICel1_Dg1,1_7,1_16,1_8,1_6,4_1,4_2,4_0,5_1,5_0,1_1,1_14,https://www.devexpress.com/Support/Center/Example/Details/E1554"></form>
+        </div>
+     </div>
+</div>
+
+    <div class="Content Main">
+       
+        <div id="layout" data-loginedin="1" data-loadedat="2016-11-01T07:06:54.824Z">
+        <div id="page" data-descriptor="e-details">
+          
+            <div id="header" class="page-block">
+
+            </div>
+            
+
+
+
+    <script src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/ticketDetails"></script>
+
+    <script id="dxis_307321961" src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/DXR(2).axd" type="text/javascript"></script><script id="dxss_1923021716" type="text/javascript">
+<!--
+ASPxHtmlEditorDialogSR={PasteFromWord:'Paste from Word',InsertImage:'Insert Image',ChangeImage:'Change Image',InsertLink:'Insert Link',ChangeLink:'Change Link',InsertTable:'Insert Table...',ChangeTable:'Table Properties...',ChangeTableCell:'Cell Properties...',ChangeTableColumn:'Column Properties...',ChangeTableRow:'Row Properties...',InsertFlash:'Insert Flash',ChangeFlash:'Change Flash',InsertVideo:'Insert Video',ChangeVideo:'Change Video',InsertAudio:'Insert Audio',ChangeAudio:'Change Audio',InsertYouTubeVideo:'Insert YouTube Video',ChangeYouTubeVideo:'Change YouTube Video'}
+//-->
+</script>
+    <link rel="stylesheet" type="text/css" href="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/DXR(3).axd">
+    <script type="text/javascript">
+        var ExampleFilesNotFoundMessage = "\u003cdiv class=\"not-found\"\u003e\r\n    \u003cdiv class=\"message\"\u003eThere is no code sample for selected version and language.\u003c/div\u003e\r\n    \u003cdiv class=\"tip\"\u003ePlease specify another language or/and version to see code samples.\u003c/div\u003e\r\n\u003c/div\u003e\r\n";
+        var ExampleConfig = {
+            routes: {
+                GetFileContent: "/Support/Center/Attachment/GetContentOfSolutionFile",
+                GetProject: "/Support/Center/Attachment/GetExample"},
+            solutions: [{"Oid":"63d36696-9431-4ac5-8b8b-35d4b29be59d","Name":"v2013 vol 1.4 - v2013 vol 2.6","Index":189,"ImplementationDetails":null,"Draft":false,"Filesets":[{"Oid":"974d0ed4-9a68-4fd2-8ea1-32cbdf5339d8","SolutionType":"VB.NET","Draft":false,"FilesInfo":[{"Oid":"df8d00c3-17b4-499c-b3a4-92ba32346a00","Name":"ViewFilterObject.vb","Default":false},{"Oid":"265883bc-758c-45a4-a391-cee7a779002c","Name":"ViewFilterContainer.vb","Default":false},{"Oid":"3bd7b446-1f1e-4249-b149-e17fadffc8ce","Name":"ShowFilterDialogController.vb","Default":false},{"Oid":"03f0f71d-0b38-4d3b-82a2-e93a94cce04e","Name":"Module.vb","Default":false},{"Oid":"db689618-934e-4872-a898-fc7923585ad8","Name":"ViewFilterContainerDetailViewController.vb","Default":true}]},{"Oid":"7a0096f0-eaae-417b-9017-6afbb466bd1a","SolutionType":"C#","Draft":false,"FilesInfo":[{"Oid":"9827c4f3-6338-4793-b729-6105e46b0c6c","Name":"ViewFilterContainer.cs","Default":false},{"Oid":"390f8a65-e0f0-400b-8a98-749149bc2664","Name":"ViewFilterObject.cs","Default":false},{"Oid":"4a74c37e-1029-47b1-ad1a-a7ab47714912","Name":"Module.cs","Default":false},{"Oid":"7e6d7a49-63be-4317-8ea0-c47d909cd736","Name":"ViewFilterContainerDetailViewController.cs","Default":false},{"Oid":"e8875f0e-e85e-46d4-898f-f43039b4c333","Name":"ShowFilterDialogController.cs","Default":true}]}]},{"Oid":"e8c4b15a-2c5d-4056-9559-47c947f8f1c8","Name":"v2014 vol 2.4 - v2016 vol 1.7","Index":229,"ImplementationDetails":"","Draft":false,"Filesets":[{"Oid":"f6613187-608f-4279-93f3-2faf6dbe83e3","SolutionType":"VB.NET","Draft":false,"FilesInfo":[{"Oid":"7494be87-4741-497b-a005-112514044b3f","Name":"WinShowFilterDialogController.vb","Default":false},{"Oid":"4e00838a-4e95-4bcb-8fd6-150b814df9cc","Name":"WinModule.vb","Default":false},{"Oid":"fa982d45-8874-4364-b285-4673f17bec78","Name":"ViewFilterObject.vb","Default":false},{"Oid":"1bf24353-5b81-4815-9c0d-64041665d5d2","Name":"ShowFilterDialogController.vb","Default":false},{"Oid":"cfa5311d-adc3-49e8-b0ca-6482e6bac7f8","Name":"Module.vb","Default":false},{"Oid":"24a6708d-6de2-4af2-9860-6a4d7ca4b805","Name":"NewViewFilterObjectController.vb","Default":false},{"Oid":"35f7915d-1eb2-4cf3-888b-8541e2523fa0","Name":"ViewFilterContainer.vb","Default":false}]},{"Oid":"b8c988a6-6dea-4ddf-a892-67aaab4bfe8e","SolutionType":"C#","Draft":false,"FilesInfo":[{"Oid":"b3ca0d1a-a157-42a0-b96f-38c9e27c79c3","Name":"ViewFilterContainer.cs","Default":false},{"Oid":"4412f6de-a5bd-4dd5-b461-4684284f5ef0","Name":"Module.cs","Default":false},{"Oid":"6dd64381-0885-41d8-ab12-61df5619133c","Name":"ShowFilterDialogController.cs","Default":true},{"Oid":"fc237700-1a14-419c-955a-73a472335c0a","Name":"WinShowFilterDialogController.cs","Default":false},{"Oid":"5ef02cda-6762-43e5-870c-91717f349f0f","Name":"ViewFilterObject.cs","Default":false},{"Oid":"30d7a10c-f10c-42a2-91d4-b68fe8140e6b","Name":"NewViewFilterObjectController.cs","Default":false},{"Oid":"eb8eb933-5e07-4785-85b9-f191f955731a","Name":"WinModule.cs","Default":false}]}]},{"Oid":"6d0e5fba-a3ab-11e3-a2ad-f0bf97cd35e4","Name":"v2013 vol 2.7 - v2014 vol 1.13","Index":205,"ImplementationDetails":null,"Draft":false,"Filesets":[{"Oid":"d8467df1-a3ab-11e3-a2ad-f0bf97cd35e4","SolutionType":"C#","Draft":false,"FilesInfo":[{"Oid":"1d2be948-cda8-4cda-b86f-7974b6ff0306","Name":"Module.cs","Default":false},{"Oid":"afd9f62f-2339-46b9-9e2d-9f54e043779a","Name":"ViewFilterContainer.cs","Default":false},{"Oid":"391cf048-22b6-4979-921c-a13046c1ecf4","Name":"ViewFilterObject.cs","Default":false},{"Oid":"0dee2bb9-42fe-4fe0-8681-b196073a4912","Name":"ShowFilterDialogController.cs","Default":true},{"Oid":"daa83a8a-8dbe-4859-889b-f70a1f17cd0d","Name":"NewViewFilterObjectController.cs","Default":false}]},{"Oid":"3e765cc1-2818-4446-bda4-fa790050e410","SolutionType":"VB.NET","Draft":false,"FilesInfo":[{"Oid":"666e5c23-5e78-4f22-b5c8-2242a0f05abe","Name":"ViewFilterContainer.vb","Default":false},{"Oid":"da746ab1-c28d-4cdf-926e-428331edd43f","Name":"ShowFilterDialogController.vb","Default":true},{"Oid":"34fe0e4d-3f38-40bd-a777-b31b14ebdf77","Name":"ViewFilterObject.vb","Default":false},{"Oid":"5ad96d66-cad6-4850-a369-c4b7847a58bd","Name":"NewViewFilterObjectController.vb","Default":false},{"Oid":"d2869ebc-7cb5-4a3e-b815-d3cfc05281f6","Name":"Module.vb","Default":false}]}]}]
+            };
+    </script>
+    <link rel="canonical" href="https://www.devexpress.com/Support/Center/Example/Details/E1554">
+    <script src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/exampleDetails"></script>
+
+<div id="inside" class="page-block two-columns">
+    <div id="content">
+        
+
+
+<div id="example" class="example" data-id="E1554">
+    <div class="post-inside">
+        <div class="post-name">
+            <div style="overflow: hidden;">
+                <div style="float: right; margin-left: 5px;">
+                        <button class="V3Button alternate toggle-favorite-trigger" data-track="True">
+                                <span data-text="Remove from Favorites">Add to Favorites</span>
+                        </button>
+                </div>
+                <div style="overflow: hidden;">
+                    <div class="post-type">
+<div class="list-icon">
+    <a href="https://www.devexpress.com/Support/Center/Example/Details/E1554" class="state" title="Example">
+        <span class="answered nometa">
+            <span class="data">E</span>
+			<span class="meta"></span>
+        </span>
+    </a>  
+	<div class="type-example bug"></div>        
+	<div class="status">
+		<div class="approved" title="Approved"></div>
+	</div>
+</div>
+
+                    </div>
+                    <h1 class="heading"><a href="https://www.devexpress.com/Support/Center/Example/Details/E1554">How to show filter dialog before showing ListView</a></h1>
+                    <div class="post-tags">
+                        <span>Tags:</span>
+                        <ul class="tags h">
+                                <li>
+                                    <span class="tag">
+                                        <a href="https://www.devexpress.com/Support/Center/Example/ChangeFilterSet?myItemsOnly=False&amp;technologyName=.NET&amp;platformName=AllPlatforms&amp;productName=AllProducts">.NET</a>,                            </span>
+                        </li>
+                                                            <li>
+                                    <span class="tag">
+                                        <a href="https://www.devexpress.com/Support/Center/Example/ChangeFilterSet?myItemsOnly=False&amp;technologyName=.NET&amp;platformName=Frameworks%20(XAF%20__AND__%20XPO)&amp;productName=AllProducts">Frameworks (XAF &amp; XPO)</a>,                            </span>
+                        </li>
+                                                            <li>
+                                    <span class="tag">
+                                        <a href="https://www.devexpress.com/Support/Center/Example/ChangeFilterSet?myItemsOnly=False&amp;technologyName=.NET&amp;platformName=Frameworks%20(XAF%20__AND__%20XPO)&amp;productName=eXpressApp%20Framework">eXpressApp Framework</a>
+                                    </span>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="post-vote left">
+
+
+
+<div class="vote-block">
+            <a title="Vote up!" class="radio up "><span class="vote-up-btn"></span></a>                                    
+<form action="https://www.devexpress.com/Support/Center/Example/Vote" class="vote-up-form" method="post" novalidate="novalidate"><input id="postOid" name="postOid" type="hidden" value="63a58213-f6d7-427c-8de5-edfdf30c9fa9"><input id="isVoteUp" name="isVoteUp" type="hidden" value="true">                <input type="submit" name="Submit" value="Vote">
+<input type="hidden" name="DXScript" id="DXScript" value="1_187,1_101,1_98,1_164,1_97,1_175,1_130,1_137,14_34,1_180,4_62,1_116,5_5,5_4,4_70,4_68,4_69,4_35,4_65,4_77,4_75,4_78,4_76,4_67,4_19,4_14,4_57,4_34,4_12,4_15,4_16,4_17,4_18,4_20,4_21,4_23,4_24,4_13,4_25,4_26,4_27,4_28,4_29,4_30,4_31,4_32,4_33,4_36,4_41,4_42,4_43,4_44,4_45,4_46,4_47,4_48,4_49,4_54,4_37,4_38,4_39,4_40,4_55,4_56,4_22,4_52,4_51,4_53,4_50,4_58,4_11,4_66,4_59,4_64,4_79,4_81,4_82,4_83,4_80,4_74,4_63,4_61,14_14,1_172,1_178,1_163,4_71,1_105,1_141,1_129,1_132,4_72,1_170,4_73,1_126,1_128,1_181,1_171,14_22,4_10"><input type="hidden" name="DXCss" id="DXCss" value="9990_3,/Support/Center/favicon.ico,/Support/Center/apple-touch-icon.png,/Support/Center/Content/styles/layout?v=_2lePyOg5e-PreFaQQkEhN7KBBrnKiWOq3rICel1_Dg1,1_7,1_16,1_8,1_6,4_1,4_2,4_0,5_1,5_0,1_1,1_14,https://www.devexpress.com/Support/Center/Example/Details/E1554"></form>        <div class="vote-score">
+            <span class="vote-current">1</span>
+        </div>
+<form action="https://www.devexpress.com/Support/Center/Example/Vote" class="vote-down-form" method="post" novalidate="novalidate"><input id="postOid" name="postOid" type="hidden" value="63a58213-f6d7-427c-8de5-edfdf30c9fa9"><input id="isVoteUp" name="isVoteUp" type="hidden" value="false">                <input type="submit" name="Submit" value="Vote">
+<input type="hidden" name="DXScript" id="DXScript" value="1_187,1_101,1_98,1_164,1_97,1_175,1_130,1_137,14_34,1_180,4_62,1_116,5_5,5_4,4_70,4_68,4_69,4_35,4_65,4_77,4_75,4_78,4_76,4_67,4_19,4_14,4_57,4_34,4_12,4_15,4_16,4_17,4_18,4_20,4_21,4_23,4_24,4_13,4_25,4_26,4_27,4_28,4_29,4_30,4_31,4_32,4_33,4_36,4_41,4_42,4_43,4_44,4_45,4_46,4_47,4_48,4_49,4_54,4_37,4_38,4_39,4_40,4_55,4_56,4_22,4_52,4_51,4_53,4_50,4_58,4_11,4_66,4_59,4_64,4_79,4_81,4_82,4_83,4_80,4_74,4_63,4_61,14_14,1_172,1_178,1_163,4_71,1_105,1_141,1_129,1_132,4_72,1_170,4_73,1_126,1_128,1_181,1_171,14_22,4_10"><input type="hidden" name="DXCss" id="DXCss" value="9990_3,/Support/Center/favicon.ico,/Support/Center/apple-touch-icon.png,/Support/Center/Content/styles/layout?v=_2lePyOg5e-PreFaQQkEhN7KBBrnKiWOq3rICel1_Dg1,1_7,1_16,1_8,1_6,4_1,4_2,4_0,5_1,5_0,1_1,1_14,https://www.devexpress.com/Support/Center/Example/Details/E1554"></form>            <a title="Vote down!" href="https://www.devexpress.com/Support/Center/Example/Details/E1554#" class="radio down "><span class="vote-down-btn"></span></a>
+</div>
+
+        </div>
+        <div class="post-body left">
+            <div class="post-data" style="background: none">
+                <div class="post-surface">
+                    <div class="post-variant">
+                        <div class="post-text">
+                            <div class="edited-text">
+                                <p><strong>Scenario:</strong></p>
+<p>When a user executes a navigation item that displays a large ListView, the application should display a popup window that allows you to define a filter for this ListView before loading records in it. This filter dialog should remember the user's choice and provide the capability to select one of the stored filters.</p>
+<p><strong>Ste</strong><strong>ps to implement:</strong></p>
+<p>1. Create a ListView model extender - <strong>IModelListViewExt</strong> - that adds the AdditionalCriteria property to the ListView model to store the filter selected by the user.</p>
+<p>2. Implement the <strong>ViewFilterContainer</strong> class whose DetailView is used as a filter dialog.</p>
+<p>3. Implement the <strong>ViewFilterObject</strong> class which is used to store filters.</p>
+<p>4. Implement the <strong>ShowFilterDialogController</strong> which shows the filter dialog instead of displaying the ListView, and then shows the filtered ListView. To do this, subscribe to the ShowNavigationItemController.ShowNavigationItemAction.Execute event and replace the ListView from the e.ShowViewParameters.CreatedView property with the ViewFilterContainer DetailView. Then show the filtered ListView via the XafApplication.ShowViewStrategy.ShowView&nbsp;method.</p>
+<p>5. Implement the <strong>NewViewFilterObjectController</strong> which sets the ObjectType property of the ViewFilterObject object created by the ViewFilterContainer.Filter lookup's New action.<br><br></p>
+<p><strong>ASP.NET:</strong><br><br>6. Since the specified filters&nbsp;are&nbsp;stored in the&nbsp;AdditionalCriteria model property, it is necessary to save the value of this property between sessions. For this purpose, enable the database model differences store, as described in the&nbsp;<a href="https://documentation.devexpress.com/#Xaf/CustomDocument3698">How to:&nbsp;Store&nbsp;the Application Model&nbsp;Differences&nbsp;in the&nbsp;Database</a>&nbsp;topic.<br><br><strong>WinForms:</strong><br><br>7. If your application uses <strong>MDI</strong>&nbsp;mode, note that when a&nbsp;View&nbsp;is already opened in an inactive tab, and you are opening it using the navigation panel again, the newly created View will not be used. Instead of this, the existing window will be activated, and&nbsp;your filter&nbsp;will be ignored. So, you will need to write additional code to filter&nbsp;the View&nbsp;displayed in&nbsp;this window. In this example, this is implemented through a custom Show View Strategy. See&nbsp;code from the&nbsp;<strong>WinShowFilterDialogController.cs</strong>&nbsp;and&nbsp;<strong>WinModule.cs</strong>&nbsp;files.</p>
+<p>&nbsp;</p>
+<p><strong>See Also:</strong><br> <a href="http://documentation.devexpress.com/#Xaf/CustomDocument3014"><u>How to: Use Criteria Property Editors</u></a><br> <a href="http://documentation.devexpress.com/#Xaf/CustomDocument2785"><u>How to: Extend the Application Model and Schema</u></a><br> <a href="http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppSystemModuleShowNavigationItemControllertopic"><u>ShowNavigationItemController Class</u></a><br> <a href="http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppSystemModuleDialogControllertopic"><u>Dialog Controller</u></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="post-meta">
+                <div class="toolbar hidden">
+                    <ul class="bar">
+                        <li class="box"><a class="btn"><span class="leave-cmnt-btn" title="Leave a comment on this post"></span></a></li>                     </ul>
+                </div>
+            </div>
+        </div>
+        <div class="post-cmnts clrbth">
+
+<ul class="cmnts" data-max-comments="0">
+            
+                <li class="ninja">
+
+<div class="cmnt post-only" data-id="6d021855-22ad-4632-ae61-8d7acdf39878" id="comment-6d021855-22ad-4632-ae61-8d7acdf39878" data-created="2012-11-13T14:21:47.607Z" data-modified="2012-11-13T14:21:47.607Z" data-private="0">
+    <div class="cmnt-meta">
+        <div class="user">
+                <div class="customer">
+                                            <span class="info">Pablo Mazaeda 1</span>
+                        <abbr role="datetime" class="date prettify" title="2012-11-13T14:21:47.607Z">4 years ago</abbr>
+
+                </div>
+        </div>
+        <div class="toolbar">
+            <ul class="bar">
+            </ul>
+        </div>
+    </div>
+    <div class="cmnt-data post-text-block">
+        <div class="cmnt-text">
+            <p>how do I do this for ASP.NET?</p>
+        </div>
+        
+
+
+</div>
+
+                </div></li>
+            
+            
+                <li class="ninja">
+
+<div class="cmnt post-only" data-id="ac8118f1-971a-11e3-98a0-00219b8b5047" id="comment-ac8118f1-971a-11e3-98a0-00219b8b5047" data-created="2014-02-16T14:57:38.250Z" data-modified="2014-02-16T14:57:38.250Z" data-private="0">
+    <div class="cmnt-meta">
+        <div class="user">
+                <div class="customer">
+                                            <a class="info" href="https://www.devexpress.com/Support/Center/ContactBase/Details/d73c519a-c5e4-42a5-b97c-45fc6424075d">Mandeep Singh 10</a>
+                        <abbr role="datetime" class="date prettify" title="2014-02-16T14:57:38.250Z">3 years ago</abbr>
+
+                </div>
+        </div>
+        <div class="toolbar">
+            <ul class="bar">
+            </ul>
+        </div>
+    </div>
+    <div class="cmnt-data post-text-block">
+        <div class="cmnt-text">
+            <p>Tried to download this Example. Returns the following error</p><p>Server Error in '/Support/Center' Application.</p>
+        </div>
+        
+
+
+</div>
+
+                </div></li>
+            
+            
+                <li class="ninja">
+
+<div class="cmnt post-only" data-id="004d1399-97a8-11e3-9adf-00219b8b2ca7" id="comment-004d1399-97a8-11e3-9adf-00219b8b2ca7" data-created="2014-02-17T07:49:17.957Z" data-modified="2014-02-17T07:49:17.957Z" data-private="0">
+    <div class="cmnt-meta">
+        <div class="user">
+                <div class="employee">
+                                            <a class="info" href="https://www.devexpress.com/Support/Center/ContactBase/Details/2a3ae727-fffb-4525-a5cb-8a915cf25fad">Anatol (DevExpress Support)</a>
+                        <abbr role="datetime" class="date prettify" title="2014-02-17T07:49:17.957Z">3 years ago</abbr>
+
+                </div>
+        </div>
+        <div class="toolbar">
+            <ul class="bar">
+            </ul>
+        </div>
+    </div>
+    <div class="cmnt-data post-text-block">
+        <div class="cmnt-text">
+            <p>This was likely a temporary issue. Please try to download the example once again.</p>
+        </div>
+        
+
+
+</div>
+
+                </div></li>
+            
+            
+                <li class="ninja">
+
+<div class="cmnt post-only" data-id="b0ba4e10-a37d-11e3-80b8-00155d624700" id="comment-b0ba4e10-a37d-11e3-80b8-00155d624700" data-created="2014-03-04T09:16:39.420Z" data-modified="2014-03-04T09:16:39.420Z" data-private="0">
+    <div class="cmnt-meta">
+        <div class="user">
+                <div class="customer">
+                                            <span class="info">Wieland Voß</span>
+                        <abbr role="datetime" class="date prettify" title="2014-03-04T09:16:39.420Z">3 years ago</abbr>
+
+                </div>
+        </div>
+        <div class="toolbar">
+            <ul class="bar">
+            </ul>
+        </div>
+    </div>
+    <div class="cmnt-data post-text-block">
+        <div class="cmnt-text">
+            <p>Hi Anatol,</p><p>how do we implement this solution for the asp.net environment? Simply importing DevExpress.ExpressApp.Web in ViewFilterContainerDetailViewController doesn't seem to meet our needs, since LookupPropertyEditor and LookupEdit are unknown.</p><p>Thank you<br>
+Wieland</p>
+        </div>
+        
+
+
+</div>
+
+                </div></li>
+            
+            
+                <li class="ninja">
+
+<div class="cmnt post-only" data-id="a76f81c0-a3b5-11e3-80b9-00155d624701" id="comment-a76f81c0-a3b5-11e3-80b9-00155d624701" data-created="2014-03-04T15:57:15.680Z" data-modified="2014-03-04T15:57:15.680Z" data-private="0">
+    <div class="cmnt-meta">
+        <div class="user">
+                <div class="employee">
+                                            <a class="info" href="https://www.devexpress.com/Support/Center/ContactBase/Details/2a3ae727-fffb-4525-a5cb-8a915cf25fad">Anatol (DevExpress Support)</a>
+                        <abbr role="datetime" class="date prettify" title="2014-03-04T15:57:15.680Z">3 years ago</abbr>
+
+                </div>
+        </div>
+        <div class="toolbar">
+            <ul class="bar">
+            </ul>
+        </div>
+    </div>
+    <div class="cmnt-data post-text-block">
+        <div class="cmnt-text">
+            <p>I have updated the example. Now its code is platform-independent and will work correctly in the ASP.NET project.</p>
+        </div>
+        
+
+
+</div>
+
+                </div></li>
+            
+            
+                <li class="ninja">
+
+<div class="cmnt post-only" data-id="68725e41-a47b-11e3-80b9-00155d624701" id="comment-68725e41-a47b-11e3-80b9-00155d624701" data-created="2014-03-05T15:32:50.510Z" data-modified="2014-03-05T15:32:50.510Z" data-private="0">
+    <div class="cmnt-meta">
+        <div class="user">
+                <div class="customer">
+                                            <span class="info">Wieland Voß</span>
+                        <abbr role="datetime" class="date prettify" title="2014-03-05T15:32:50.510Z">3 years ago</abbr>
+
+                </div>
+        </div>
+        <div class="toolbar">
+            <ul class="bar">
+            </ul>
+        </div>
+    </div>
+    <div class="cmnt-data post-text-block">
+        <div class="cmnt-text">
+            <p>Thank you for your quick answer!</p><p>The implementation works fine, but ,unfortunately, is way too slow in web-modus :(<br>
+It seems, that the generation of large lookup-lists (millions) during filter-creation takes a lot of time. Do you have any hint, how to prevent this behaviour?</p>
+        </div>
+        
+
+
+</div>
+
+                </div></li>
+            
+            
+                <li class="ninja">
+
+<div class="cmnt post-only" data-id="c269bc73-e49c-4994-bd2c-5dd3c3fe7460" id="comment-c269bc73-e49c-4994-bd2c-5dd3c3fe7460" data-created="2014-09-18T21:04:25.550Z" data-modified="2014-09-18T21:04:25.550Z" data-private="0">
+    <div class="cmnt-meta">
+        <div class="user">
+                <div class="customer">
+                                            <a class="info" href="https://www.devexpress.com/Support/Center/ContactBase/Details/c77322ad-ddca-11e2-9c52-001ec92e9322">Mauro Assis</a>
+                        <abbr role="datetime" class="date prettify" title="2014-09-18T21:04:25.550Z">3 years ago</abbr>
+
+                </div>
+        </div>
+        <div class="toolbar">
+            <ul class="bar">
+            </ul>
+        </div>
+    </div>
+    <div class="cmnt-data post-text-block">
+        <div class="cmnt-text">
+            <p>This is working great, but everytime I click a navigation item it creates a new "Default" filter. I'm using Web Application, would this matter?</p>
+        </div>
+        
+
+
+</div>
+
+                </div></li>
+            
+            
+                <li class="ninja">
+
+<div class="cmnt post-only" data-id="9c3c12c4-8df8-4988-a994-16d723d0df1b" id="comment-9c3c12c4-8df8-4988-a994-16d723d0df1b" data-created="2014-09-22T03:25:11.753Z" data-modified="2014-09-22T03:25:11.753Z" data-private="0">
+    <div class="cmnt-meta">
+        <div class="user">
+                <div class="customer">
+                                            <span class="info">Leandro Meneses 1</span>
+                        <abbr role="datetime" class="date prettify" title="2014-09-22T03:25:11.753Z">3 years ago</abbr>
+
+                </div>
+        </div>
+        <div class="toolbar">
+            <ul class="bar">
+            </ul>
+        </div>
+    </div>
+    <div class="cmnt-data post-text-block">
+        <div class="cmnt-text">
+            <p>Hi i need filter only one listview, solutio apply for all views. thanks</p>
+        </div>
+        
+
+
+</div>
+
+                </div></li>
+            
+            
+                <li class="ninja">
+
+<div class="cmnt post-only" data-id="af7725eb-87ce-446c-8172-eef78f65bd37" id="comment-af7725eb-87ce-446c-8172-eef78f65bd37" data-created="2014-09-24T14:36:47.387Z" data-modified="2014-09-24T14:36:47.387Z" data-private="0">
+    <div class="cmnt-meta">
+        <div class="user">
+                <div class="employee">
+                                            <a class="info" href="https://www.devexpress.com/Support/Center/ContactBase/Details/2a3ae727-fffb-4525-a5cb-8a915cf25fad">Anatol (DevExpress Support)</a>
+                        <abbr role="datetime" class="date prettify" title="2014-09-24T14:36:47.387Z">3 years ago</abbr>
+
+                </div>
+        </div>
+        <div class="toolbar">
+            <ul class="bar">
+            </ul>
+        </div>
+    </div>
+    <div class="cmnt-data post-text-block">
+        <div class="cmnt-text">
+            Wieland, I have not reproduced any performance issue in ASP.NET applications. I have checked SQL queries&nbsp;sent by this example. When a navigation item is clicked, records from the ListView that is about to be displayed are not loaded until the filter dialog is closed. So, please provide a sample project reproducing the issue.<br><br>Mauro,&nbsp;the Default filter can be created several times&nbsp;in ASP.NET, because the&nbsp;AdditionalCriteria value stored in the View model is not stored between sessions. To solve this issue, either store the selected filter in the database rather than in the Application Model, or configure your application to store all model differences in the database, as shown in the following example: <a href="https://www.devexpress.com/Support/Center/p/E968.aspx" data-ticket="E968">How to: Store Model Differences in Database</a>.<br><br>Leandro, you can check the Id&nbsp;of the created view in the&nbsp;ShowNavigationItemAction_Execute&nbsp;event handler and show the filter dialog only for the required ListView.
+        </div>
+        
+
+
+</div>
+
+                </div></li>
+            
+            
+                <li class="ninja">
+
+<div class="cmnt post-only" data-id="2c41088f-65ff-4fb9-86f4-9f05eca1f430" id="comment-2c41088f-65ff-4fb9-86f4-9f05eca1f430" data-created="2014-10-22T13:54:34.110Z" data-modified="2014-10-22T13:54:34.110Z" data-private="0">
+    <div class="cmnt-meta">
+        <div class="user">
+                <div class="customer">
+                                            <a class="info" href="https://www.devexpress.com/Support/Center/ContactBase/Details/c77322ad-ddca-11e2-9c52-001ec92e9322">Mauro Assis</a>
+                        <abbr role="datetime" class="date prettify" title="2014-10-22T13:54:34.110Z">3 years ago</abbr>
+
+                </div>
+        </div>
+        <div class="toolbar">
+            <ul class="bar">
+            </ul>
+        </div>
+    </div>
+    <div class="cmnt-data post-text-block">
+        <div class="cmnt-text">
+            <p>I've got irt working now. I changed 1st line of GetFilterObject method in ShowFilterDialogController to:</p><p>CriteriaOperator criteria = CriteriaOperator.Parse("ObjectType = ?", objectType);</p><p>Because ASP.NET won't store last criteria used. But I have another request though. Now I want a Delete button to appear (like this &lt;<a href="https://drive.google.com/file/d/0B1OV0NgtiOaXMTFkS19YaDdjRm8/view?usp=sharing%3E">https://drive.google.com/file/d/0B1OV0NgtiOaXMTFkS19YaDdjRm8/view?usp=sharing&gt;</a>;) in the dialog, allowing to delete a filter. Currently it shows only "New" and "Clear".</p>
+        </div>
+        
+
+
+</div>
+
+                </div></li>
+            
+            
+                <li class="ninja">
+
+<div class="cmnt post-only" data-id="9330db04-c8d3-4d0d-a017-e8a24ff3552a" id="comment-9330db04-c8d3-4d0d-a017-e8a24ff3552a" data-created="2014-10-23T10:07:37.293Z" data-modified="2014-10-23T10:07:37.293Z" data-private="0">
+    <div class="cmnt-meta">
+        <div class="user">
+                <div class="employee">
+                                            <a class="info" href="https://www.devexpress.com/Support/Center/ContactBase/Details/2a3ae727-fffb-4525-a5cb-8a915cf25fad">Anatol (DevExpress Support)</a>
+                        <abbr role="datetime" class="date prettify" title="2014-10-23T10:07:37.293Z">3 years ago</abbr>
+
+                </div>
+        </div>
+        <div class="toolbar">
+            <ul class="bar">
+            </ul>
+        </div>
+    </div>
+    <div class="cmnt-data post-text-block">
+        <div class="cmnt-text">
+            <p>To process your recent post more efficiently, I created a separate ticket on your behalf: <a href="https://www.devexpress.com/Support/Center/p/T164618.aspx" data-ticket="T164618">T164618: How to add a Delete button to the ASP.NET lookup editor</a>.&nbsp;I will post my answer there soon.</p>
+        </div>
+        
+
+
+</div>
+
+                </div></li>
+            
+            
+                <li class="ninja">
+
+<div class="cmnt post-only" data-id="3914fcdd-7bdf-403a-8f3c-01258388e21e" id="comment-3914fcdd-7bdf-403a-8f3c-01258388e21e" data-created="2014-10-23T10:09:05.777Z" data-modified="2014-10-23T10:09:05.777Z" data-private="0">
+    <div class="cmnt-meta">
+        <div class="user">
+                <div class="customer">
+                                            <a class="info" href="https://www.devexpress.com/Support/Center/ContactBase/Details/dc5a8175-1d93-4a73-887f-442f6e8e97b3">Martin Brekhof</a>
+                        <abbr role="datetime" class="date prettify" title="2014-10-23T10:09:05.777Z">3 years ago</abbr>
+
+                </div>
+        </div>
+        <div class="toolbar">
+            <ul class="bar">
+            </ul>
+        </div>
+    </div>
+    <div class="cmnt-data post-text-block">
+        <div class="cmnt-text">
+            <p>I must be missing something: it will not load in vs2012 with 13.2.9 (something about DXCore not loading) and the unpacked example could be platform independent but I only see a winforms implementatation. Any ideas?</p>
+        </div>
+        
+
+
+</div>
+
+                </div></li>
+            
+            
+                <li class="ninja">
+
+<div class="cmnt post-only" data-id="d2eba76b-6f35-41c7-9ede-9557c685f3eb" id="comment-d2eba76b-6f35-41c7-9ede-9557c685f3eb" data-created="2014-10-23T10:29:10.533Z" data-modified="2014-10-23T10:29:10.533Z" data-private="0">
+    <div class="cmnt-meta">
+        <div class="user">
+                <div class="employee">
+                                            <a class="info" href="https://www.devexpress.com/Support/Center/ContactBase/Details/2a3ae727-fffb-4525-a5cb-8a915cf25fad">Anatol (DevExpress Support)</a>
+                        <abbr role="datetime" class="date prettify" title="2014-10-23T10:29:10.533Z">3 years ago</abbr>
+
+                </div>
+        </div>
+        <div class="toolbar">
+            <ul class="bar">
+            </ul>
+        </div>
+    </div>
+    <div class="cmnt-data post-text-block">
+        <div class="cmnt-text">
+            <p>This example&nbsp;only has&nbsp;the&nbsp;WinForms version. In theory, since the code is platform-independent, it should work fine in ASP.NET after turning on the database model difference storage. However, we have not performed thorough testing of this scenario.<br>Please create a separate ticket regarding the issue&nbsp;with the&nbsp;Example&nbsp;Runner and describe your symptoms in greater detail. In addition, check whether or not this issue&nbsp;occurs when downloading&nbsp;other examples.</p>
+        </div>
+        
+
+
+</div>
+
+                </div></li>
+            
+            
+                <li class="ninja">
+
+<div class="cmnt post-only" data-id="2a01e040-e24d-46c7-a6b0-0a9a795d43f9" id="comment-2a01e040-e24d-46c7-a6b0-0a9a795d43f9" data-created="2015-05-25T17:17:38.363Z" data-modified="2015-05-25T17:17:38.363Z" data-private="0">
+    <div class="cmnt-meta">
+        <div class="user">
+                <div class="customer">
+                                            <span class="info">Gilson Appel</span>
+                        <abbr role="datetime" class="date prettify" title="2015-05-25T17:17:38.363Z">2 years ago</abbr>
+
+                </div>
+        </div>
+        <div class="toolbar">
+            <ul class="bar">
+            </ul>
+        </div>
+    </div>
+    <div class="cmnt-data post-text-block">
+        <div class="cmnt-text">
+            <p>Hello Anatol,</p><p>This approach isn't functional in TabbedMDI Mode for WinApplications. How can I create a new tab in my MainWindow?</p><p>--<br>Gilson</p>
+        </div>
+        
+
+
+</div>
+
+                </div></li>
+            
+            
+                <li class="ninja">
+
+<div class="cmnt post-only" data-id="bae5ec4f-cdc9-47a8-9c40-ce4ce07a3a64" id="comment-bae5ec4f-cdc9-47a8-9c40-ce4ce07a3a64" data-created="2015-05-26T18:36:56.070Z" data-modified="2015-05-26T18:36:56.070Z" data-private="0">
+    <div class="cmnt-meta">
+        <div class="user">
+                <div class="employee">
+                                            <a class="info" href="https://www.devexpress.com/Support/Center/ContactBase/Details/2a3ae727-fffb-4525-a5cb-8a915cf25fad">Anatol (DevExpress Support)</a>
+                        <abbr role="datetime" class="date prettify" title="2015-05-26T18:36:56.070Z">2 years ago</abbr>
+
+                </div>
+        </div>
+        <div class="toolbar">
+            <ul class="bar">
+            </ul>
+        </div>
+    </div>
+    <div class="cmnt-data post-text-block">
+        <div class="cmnt-text">
+            I have updated the example. Now it supports the TabbedMDI mode. I have changed the&nbsp;ShowFilterDialogController.dialogCotnroller_Accepting event handler and implemented the WinShowFilterDialogController class.
+        </div>
+        
+
+
+</div>
+
+                </div></li>
+            
+            
+                <li class="ninja">
+
+<div class="cmnt post-only" data-id="597e2f8a-eda0-444f-8eb8-39934614faaf" id="comment-597e2f8a-eda0-444f-8eb8-39934614faaf" data-created="2015-05-26T19:21:42.607Z" data-modified="2015-05-26T19:21:42.607Z" data-private="0">
+    <div class="cmnt-meta">
+        <div class="user">
+                <div class="customer">
+                                            <span class="info">Gilson Appel</span>
+                        <abbr role="datetime" class="date prettify" title="2015-05-26T19:21:42.607Z">2 years ago</abbr>
+
+                </div>
+        </div>
+        <div class="toolbar">
+            <ul class="bar">
+            </ul>
+        </div>
+    </div>
+    <div class="cmnt-data post-text-block">
+        <div class="cmnt-text">
+            <p>It's perfect, Anatol.</p><p>Thanks!</p>
+        </div>
+        
+
+
+</div>
+
+                </div></li>
+            
+
+</ul>
+<div class="cmnts-footer cmnts-controls">
+    <div class="show-cmnts-btn ">
+        <span class="show-cmnts-text" data-text="Hide comments">Show all comments</span>
+    </div>
+        <a class="leave-cmnts-btn">
+            <span class="leave-cmnts-text" data-active-text="Cancel" data-disactive-text="Leave a Comment">
+                Leave a Comment
+            </span>
+        </a>
+</div>
+
+
+<div class="add-comment-form " style="display: none;">
+<form action="https://www.devexpress.com/Support/Center/Comment/Add?oid=11519624-6088-4d78-a46e-3f7148bf00f7&amp;parent=63a58213-f6d7-427c-8de5-edfdf30c9fa9&amp;ticketOid=b84f639c-8a2a-4a96-a5d1-465e22f15da9&amp;type=ExampleComment" data-need-refresh="true" enctype="multipart/form-data" method="post" novalidate="novalidate"><input id="Text" name="Text" type="hidden" value="">                <div class="grid">
+                    <div class="row">
+                        <div class="cell">
+                            <div class="inner">
+                                <div class="message"></div>
+                                
+
+<div>
+	<div style="position:relative;width:0px;height:0px;">
+		<div class="dxKBSW">
+			<input id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_FFI" type="text" readonly="readonly" style="opacity:0;width:1px;height:1px;position:relative;background-color:transparent;display:block;margin:0;padding:0;border-width:0;font-size:0pt;">
+		</div>
+	</div><table class="dxheControl" cellspacing="0" cellpadding="0" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7" style="height:200px;width:100%;border-collapse:collapse;border-collapse:separate;">
+		<tbody><tr>
+			<td id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_MainCell" class="dx" style="height:100%;width:100%;"><table cellspacing="0" cellpadding="0" style="height:100%;width:100%;border-collapse:collapse;">
+				<tbody><tr id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TBRow">
+					<td><table class="dxtbControl" cellspacing="0" cellpadding="0" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD" style="background-color:White;width:100%;border-collapse:collapse;border-collapse:separate;">
+						<tbody><tr>
+							<td><table cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;border-collapse:separate;">
+								<tbody><tr>
+									<td><input type="hidden" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0CI" name="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0CI" value=""><div class="dxmLite dxm-ltr">
+										<div class="dxm-main dxm-horizontal dxmtb" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0" style="background-color:White;">
+											<ul class="dx dxm-image-l">
+												<li title="Bold (CTRL+B)" class="dxm-item" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI0_"><div class="dxm-content" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI0_T">
+													<img title="Bold (CTRL+B)" class="dxHtmlEditor_Icons_heBold dxm-image dx-vam" src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/DXR(4).axd" alt="Bold (CTRL+B)" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI0_Img">
+												</div></li><li class="dxm-spacing" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI0_II"></li><li title="Italic (Ctrl+I)" class="dxm-item" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI1_"><div class="dxm-content" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI1_T">
+													<img title="Italic (Ctrl+I)" class="dxHtmlEditor_Icons_heItalic dxm-image dx-vam" src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/DXR(4).axd" alt="Italic (Ctrl+I)" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI1_Img">
+												</div></li><li class="dxm-spacing" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI1_II"></li><li title="Remove Format" class="dxm-item dxm-disabled" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI2_" savedcursor="[object Object]"><div class="dxm-content dxm-disabled" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI2_T">
+													<img title="Remove Format" class="dxHtmlEditor_Icons_heRemoveFormat dxm-image dx-vam dxHtmlEditor_Icons_heRemoveFormatDisabled" src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/DXR(4).axd" alt="Remove Format" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI2_Img" saveddisabledstateitemsrc="/Support/Center/DXR.axd?r=1_19-CbfFd" saveddisabledstateitemclassname="dxHtmlEditor_Icons_heRemoveFormat dxm-image dx-vam">
+												</div></li><li class="dxm-separator" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI3_IS"><b></b></li><li title="Insert Link" class="dxm-item" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI3_"><div class="dxm-content" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI3_T">
+													<img title="Insert Link" class="dxm-image dx-vam" src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/link-button.png" alt="Insert Link" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI3_Img">
+												</div></li><li class="dxm-spacing" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI3_II"></li><li title="Remove Link" class="dxm-item dxm-disabled" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI4_" savedcursor="[object Object]"><div class="dxm-content dxm-disabled" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI4_T">
+													<img title="Remove Link" class="dxHtmlEditor_Icons_heUnlink dxm-image dx-vam dxHtmlEditor_Icons_heUnlinkDisabled" src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/DXR(4).axd" alt="Remove Link" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI4_Img" saveddisabledstateitemsrc="/Support/Center/DXR.axd?r=1_19-CbfFd" saveddisabledstateitemclassname="dxHtmlEditor_Icons_heUnlink dxm-image dx-vam">
+												</div></li><li class="dxm-spacing" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI4_II"></li><li title="Insert Code" class="dxm-item" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI5_"><div class="dxm-content" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI5_T">
+													<img title="Insert Code" class="dxm-image dx-vam" src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/syntaxhighlight.gif" alt="Insert Code" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI5_Img">
+												</div></li><li class="dxm-separator" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI6_IS"><b></b></li><li title="Full Screen (F11)" class="dxm-item" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI6_"><div class="dxm-content" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI6_T">
+													<img title="Full Screen (F11)" class="dxHtmlEditor_Icons_heFullscreen dxm-image dx-vam" src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/DXR(4).axd" alt="Full Screen (F11)" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0_DXI6_Img">
+												</div></li>
+											</ul>
+										</div><b class="dx-clear"></b>
+									</div><script id="dxss_1705113798" type="text/javascript">
+<!--
+aspxAddHoverItems('htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0',[[['dxm-hovered',''],['',''],['DXI0_','DXI1_','DXI2_','DXI3_','DXI4_','DXI5_','DXI6_'],['','T']]]);
+aspxAddSelectedItems('htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0',[[['dxm-checked',''],['',''],['DXI0_','DXI1_','DXI6_'],['','T']]]);
+aspxAddDisabledItems('htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0',[[['dxm-disabled'],[''],['DXI0_','DXI1_','DXI2_','DXI3_','DXI4_','DXI5_','DXI6_'],['','T'],[[{'spriteCssClass':'dxHtmlEditor_Icons_heBoldDisabled'}],[{'spriteCssClass':'dxHtmlEditor_Icons_heItalicDisabled'}],[{'spriteCssClass':'dxHtmlEditor_Icons_heRemoveFormatDisabled'}],[null],[{'spriteCssClass':'dxHtmlEditor_Icons_heUnlinkDisabled'}],[null],[{'spriteCssClass':'dxHtmlEditor_Icons_heFullscreenDisabled'}]],['Img','PImg']]]);
+
+var dxo = new ASPxClientHtmlEditorClasses.Controls.Toolbar('htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0');
+window['htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD_T0'] = dxo;
+dxo.uniqueID = 'htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7$TD$T0';
+dxo.Command.AddHandler(function (s, e) {aspxToolbarCommand(s, e.item, e.value);});
+dxo.CustomComboBoxInit.AddHandler(function (s, e) {aspxToolbarCustomComboBoxInit(s, e);});
+dxo.renderData={'':[[0],[1],[2],[3],[4],[5],[6]]};
+dxo.allowCheckItems=true;
+dxo.itemCheckedGroups=[['0'],['1'],['6']];
+dxo.CreateItems([['bold',,,,,[]],['italic',,,,,[]],['removeformat',,,,,[]],['customdialog;insertLink',,,,,[]],['unlink',,,,,[]],['customdialog;insertCode',,,,,[]],['fullscreen',,,,,[]]]);
+dxo.barDockControlName='htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD'
+dxo.AfterCreate();
+
+//-->
+</script></td>
+								</tr>
+							</tbody></table></td>
+						</tr>
+					</tbody></table><script id="dxss_843955324" type="text/javascript">
+<!--
+
+var dxo = new ASPxClientHtmlEditorClasses.Controls.BarDockControl('htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD');
+window['htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TD'] = dxo;
+dxo.uniqueID = 'htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7$TD';
+dxo.Command.AddHandler(function (s, e) {aspxHEToolbarCommand('htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7', e.item, e.value);});
+dxo.CustomComboBoxInit.AddHandler(function (s, e) {aspxHEToolbarCustomComboBoxInit('htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7', e.toolbar, e.item);});
+dxo.innerToolbarsCount = 1;dxo.AfterCreate();
+
+//-->
+</script></td>
+				</tr><tr>
+					<td id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_EdtCell" class="dxheContentArea" valign="top" style="background-color:White;height:100%;width:100%;padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;"><table cellspacing="0" cellpadding="0" style="height:100%;width:100%;border-collapse:collapse;border-collapse:separate;display:none;">
+						<tbody><tr>
+							<td id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DesignViewCell" class="dxheDesignViewArea dxheViewArea" valign="top" style="border-style:None;height:100%;width:100%;"><table id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DesignViewCell_EF" class="dxheErrorFrame" cellspacing="0" cellpadding="0" style="border-collapse:collapse;Width:100%;display:none;">
+		<tbody><tr>
+			<td class="dxhe"><table cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;">
+				<tbody><tr>
+					<td id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DesignViewCell_ETC" style="width:100%;">The HTML content is invalid</td><td style="width:4px;">&nbsp;</td><td id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DesignViewCell_EFCB" class="dxheErrorFrameCloseButton" onclick="aspxHEEFCBClick(event, &#39;htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7&#39;)"><img id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DesignViewCell_EFCBImg" class="dxHtmlEditor_heErrorFrameCloseButton" src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/DXR(4).axd" alt="Close"></td>
+				</tr>
+			</tbody></table></td>
+		</tr>
+	</tbody></table><iframe id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DesignIFrame" class="dxheDesignViewArea dxheViewArea" name="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DesignIFrame" src="javascript:false" frameborder="0" style="height: 100%; width: 100%; padding: 0px; border-style: none; border-width: 0px;" src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/saved_resource.html">
+
+							</iframe></td>
+						</tr>
+					</tbody></table></td>
+				</tr>
+			</tbody></table></td>
+		</tr>
+	</tbody><input type="hidden" name="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DXMVCHtmlEditor"></table><div id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DPP_PW-1" class="dxpcLite dxpclW" style="width:200px;cursor:default;z-index:10000;display:none;visibility:hidden;">
+		<div class="dxpc-mainDiv dxpc-shadow">
+			<div class="dxpc-header dxpc-withBtn" style="cursor:move;-khtml-user-select:none;" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DPP_PWH-1">
+				<div class="dxpc-closeBtn" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DPP_HCB-1">
+					<img class="dxWeb_pcCloseButton" src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/DXR(4).axd" alt="[Close]">
+				</div><div class="dxpc-headerContent">
+					<span class="dxpc-headerText dx-vam" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DPP_PWH-1T">Header</span>
+				</div><b class="dx-clear"></b>
+			</div><div class="dxpc-contentWrapper">
+				<div class="dxpc-content" style="padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DPP_PWC-1">
+					&nbsp;&nbsp;
+				</div>
+			</div>
+		</div>
+	</div><div id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DPP_DXPWMB-1" class="dxpcModalBackLite" style="opacity:0.01;z-index:9999;">
+
+	</div><table id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DPP_LP" class="dxpcLoadingPanel dxlpLoadingPanel" cellspacing="0" cellpadding="0" style="border-collapse:collapse;left:0px;top:0px;z-index:30000;display:none;">
+		<tbody><tr>
+			<td class="dx" style="padding-right:0px;"><img class="dxlp-loadingImage dxlp-imgPosLeft" src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/DXR(4).axd" alt="" align="middle"></td><td class="dx" style="padding-left:0px;"><span id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DPP_TL">Loading…</span></td>
+		</tr>
+	</tbody></table><div id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DPP_LD" class="dxpcLoadingDiv dxlpLoadingDiv dx-ft" style="left:0px;top:0px;z-index:29999;display:none;position:absolute;">
+
+	</div><script id="dxss_1611351238" type="text/javascript">
+<!--
+aspxAddHoverItems('htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DPP',[[['dxpc-closeBtnHover'],[''],['HCB-1']]]);
+
+var dxo = new ASPxClientPopupControl('htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DPP');
+window['htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_DPP'] = dxo;
+dxo.callBack = function(arg) { ; };
+dxo.uniqueID = 'htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7$DPP';
+dxo.popupAnimationType='fade';
+dxo.closeAction='CloseButton';
+dxo.closeOnEscape=true;
+dxo.popupHorizontalAlign='WindowCenter';
+dxo.popupVerticalAlign='WindowCenter';
+dxo.allowDragging=true;
+dxo.width=200;
+dxo.height=0;
+dxo.AfterCreate();
+
+//-->
+</script><table id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_EF" class="dxheErrorFrame" cellspacing="0" cellpadding="0" style="border-collapse:collapse;Width:100%;display:none;">
+		<tbody><tr>
+			<td class="dxhe"><table cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;">
+				<tbody><tr>
+					<td id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_ETC" style="width:100%;">The HTML content is invalid</td><td style="width:4px;">&nbsp;</td><td id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_EFCB" class="dxheErrorFrameCloseButton" onclick="aspxHEEFCBClick(event, &#39;htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7&#39;)"><img id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_EFCBImg" class="dxHtmlEditor_heErrorFrameCloseButton" src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/DXR(4).axd" alt="Close"></td>
+				</tr>
+			</tbody></table></td>
+		</tr>
+	</tbody></table><input type="hidden" name="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7$ClientState" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_ClientState" value="ActiveView|6|DesignCurrentWidth|3|100CurrentHeight|3|200IsPercentWidth|1|1Ribbon|0|"><input type="hidden" name="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7$CssFiles" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_CssFiles" value="[&#39;/Support/Center/DXR.axd?r=4_0-CbfFd&#39;,&#39;/Support/Center/Content/styles/customHtmlEditor.css&#39;]">
+<input type="hidden" name="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_Html" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_Html" value=""><input type="hidden" name="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_VS" id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_VS" value=""></div><table id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_LP" class="dxheLoadingPanel" cellspacing="0" cellpadding="0" style="border-collapse:collapse;left:0px;top:0px;z-index:30000;display:none;">
+	<tbody><tr>
+		<td class="dx" style="padding-right:0px;"><img class="dxlp-loadingImage dxlp-imgPosLeft" src="./E1554 - How to show filter dialog before showing ListView _ DevExpress Support Center_files/DXR(4).axd" alt="" align="middle"></td><td class="dx" style="padding-left:0px;"><span id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_TL">Loading…</span></td>
+	</tr>
+</tbody></table><div id="htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7_LD" class="dxheLoadingDiv dx-ft" style="left:0px;top:0px;z-index:29999;display:none;position:absolute;">
+
+</div><script id="dxss_2091723969" type="text/javascript">
+<!--
+aspxAddHoverItems('htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7',[[['dxheErrorFrameCloseButtonHover'],[''],['EFCB']]]);
+
+var dxo = new MVCxClientHtmlEditor('htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7');
+window['htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7'] = dxo;
+dxo.callBack = function(arg) { ; };
+dxo.clientEnabled = false;
+dxo.Init.AddHandler(dxHtmlEditorExtensions.events.onHtmlEditorInit);
+dxo.GotFocus.AddHandler(dxHtmlEditorExtensions.events.onHtmlEditorGotFocus);
+dxo.HtmlChanged.AddHandler(dxHtmlEditorExtensions.events.onHtmlChanged);
+dxo.CustomDialogOpened.AddHandler(dxHtmlEditorExtensions.events.onCustomDialogOpened);
+dxo.CustomDialogClosing.AddHandler(dxHtmlEditorExtensions.events.onCustomDialogClosing);
+dxo.CustomDialogClosed.AddHandler(dxHtmlEditorExtensions.events.onCustomDialogClosed);
+dxo.BeforePaste.AddHandler(dxHtmlEditorExtensions.events.beforePaste);
+dxo.appDomainPath = '/Support/Center/';
+dxo.uploadImageFileDirectoryPath = '/Support/Center/';
+dxo.uploadFlashFileDirectoryPath = '/Support/Center/';
+dxo.uploadAudioFileDirectoryPath = '/Support/Center/';
+dxo.uploadVideoFileDirectoryPath = '/Support/Center/';
+dxo.spellCheckerHelper.areDictionariesAssigned = false;
+dxo.spellCheckerHelper.scStartOptions = '111111Invariant Language (Invariant Country)';
+dxo.validationManager.clientValidationEnabled = false;
+dxo.validationManager.validationPatterns = [];
+dxo.validationManager.errorText = 'The HTML content is invalid';
+dxo.validationManager.isValid = true;
+dxo.shortcuts = ({'Ctrl+G':'','Ctrl+K':''});
+dxo.allowContextMenu = 'default';
+dxo.enterMode = 'BR';
+dxo.customDialogsCaptions = {'cd_insertLink':'Insert Link','cd_insertCode':'Insert Code'};
+dxo.templateHoverErrorFrameCloseButton = eval(({'element':'EFCB','postfixes':[''],'imageUrls':[''],'imagePostfixes':['Img'],'className':['dxheErrorFrameCloseButtonHover'],'cssText':[''],'name':'htmlEditor_11519624-6088-4d78-a46e-3f7148bf00f7'}));
+dxo.callbackUrl="/Support/Center/DXMvcExtensionsHelper/HtmlEditor";
+dxo.AfterCreate();
+
+//-->
+</script>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell half attachment-holder">
+                            <div class="inner">
+                                    &nbsp;
+                            </div>
+                        </div>
+                        <div class="cell half send-holder">
+                            <div class="inner">
+                                <div class="submit">
+                                    <button class="button-send V3Button" type="submit">
+                                        <span>Post Comment</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clrbth">
+                        </div>
+                    </div>
+                    <div class="validation-summary-valid validation-summary validation" data-valmsg-summary="true" style="display:none;"><ul><li style="display:none"></li>
+</ul></div>
+                </div>
+<input type="hidden" name="DXScript" id="DXScript" value="1_187,1_101,1_98,1_164,1_97,1_175,1_130,1_137,14_34,1_180,4_62,1_116,5_5,5_4,4_70,4_68,4_69,4_35,4_65,4_77,4_75,4_78,4_76,4_67,4_19,4_14,4_57,4_34,4_12,4_15,4_16,4_17,4_18,4_20,4_21,4_23,4_24,4_13,4_25,4_26,4_27,4_28,4_29,4_30,4_31,4_32,4_33,4_36,4_41,4_42,4_43,4_44,4_45,4_46,4_47,4_48,4_49,4_54,4_37,4_38,4_39,4_40,4_55,4_56,4_22,4_52,4_51,4_53,4_50,4_58,4_11,4_66,4_59,4_64,4_79,4_81,4_82,4_83,4_80,4_74,4_63,4_61,14_14,1_172,1_178,1_163,4_71,1_105,1_141,1_129,1_132,4_72,1_170,4_73,1_126,1_128,1_181,1_171,14_22,4_10"><input type="hidden" name="DXCss" id="DXCss" value="9990_3,/Support/Center/favicon.ico,/Support/Center/apple-touch-icon.png,/Support/Center/Content/styles/layout?v=_2lePyOg5e-PreFaQQkEhN7KBBrnKiWOq3rICel1_Dg1,1_7,1_16,1_8,1_6,4_1,4_2,4_0,5_1,5_0,1_1,1_14,https://www.devexpress.com/Support/Center/Example/Details/E1554"></form></div>
+
+        </div>
+    </div>
+    <div class="implementation-details ninja">
+        <span class="pseudo-link" id="show-implementation-details-btn" data-text="Hide Implementation Details">Show Implementation Details</span>
+        <div class="post-inside">
+            <div class="post-text ninja" id="implementation-details-text">
+            </div>
+        </div>
+    </div>
+    <div class="sources" style="margin-top: 10px;">
+        <div style="padding: 10px 0; background-color: #F1F1F1;">
+            <div class="grid" role="grid" style="margin: 0 auto; width: 99%">
+                <div class="row">
+                    <div class=" cell third" style="width: 391px; padding-left: 11px;">
+                        <div class="inner">
+                            <div id="ex-sb-files" class="selectbox sb_files" data-empty="Empty" data-text="Select file" data-tabidx="2" style="z-index: 0;">
+                                <select id="FileInfoSelectList" name="FileInfoSelectList" tabindex="2"><option value="6dd64381-0885-41d8-ab12-61df5619133c">ShowFilterDialogController.cs</option>
+<option value="4412f6de-a5bd-4dd5-b461-4684284f5ef0">Module.cs</option>
+<option value="30d7a10c-f10c-42a2-91d4-b68fe8140e6b">NewViewFilterObjectController.cs</option>
+<option value="b3ca0d1a-a157-42a0-b96f-38c9e27c79c3">ViewFilterContainer.cs</option>
+<option value="5ef02cda-6762-43e5-870c-91717f349f0f">ViewFilterObject.cs</option>
+<option value="eb8eb933-5e07-4785-85b9-f191f955731a" selected="selected">WinModule.cs</option>
+<option value="fc237700-1a14-419c-955a-73a472335c0a">WinShowFilterDialogController.cs</option>
+</select>
+                                <span class="sb-current" unselectable="on">WinModule.cs</span>
+                                <a class="sb-button tabel" tabindex="2" unselectable="0"></a>
+                                <ul class="sb-list ninja">
+                                            <li>
+                                                <div class="sb-item" data-value="6dd64381-0885-41d8-ab12-61df5619133c">ShowFilterDialogController.cs</div>
+                                            </li>
+                                            <li>
+                                                <div class="sb-item" data-value="4412f6de-a5bd-4dd5-b461-4684284f5ef0">Module.cs</div>
+                                            </li>
+                                            <li>
+                                                <div class="sb-item" data-value="30d7a10c-f10c-42a2-91d4-b68fe8140e6b">NewViewFilterObjectController.cs</div>
+                                            </li>
+                                            <li>
+                                                <div class="sb-item" data-value="b3ca0d1a-a157-42a0-b96f-38c9e27c79c3">ViewFilterContainer.cs</div>
+                                            </li>
+                                            <li>
+                                                <div class="sb-item" data-value="5ef02cda-6762-43e5-870c-91717f349f0f">ViewFilterObject.cs</div>
+                                            </li>
+                                            <li>
+                                                <div class="sb-item sb-selected" data-value="eb8eb933-5e07-4785-85b9-f191f955731a">WinModule.cs</div>
+                                            </li>
+                                            <li>
+                                                <div class="sb-item" data-value="fc237700-1a14-419c-955a-73a472335c0a">WinShowFilterDialogController.cs</div>
+                                            </li>
+                                </ul>
+                            <span class="loader hidden" style="display: none;"></span></div>
+                        </div>
+                    </div>
+                    <div class="cell third" style="width: 105px">
+                        <div class="inner">
+                            <div id="ex-sb-langs" class="selectbox sb_langs" data-empty="Empty" data-text="Select language" data-tabidx="3">
+                                <select id="LanguagesSelectList" name="LanguagesSelectList" tabindex="3"><option selected="selected" value="b8c988a6-6dea-4ddf-a892-67aaab4bfe8e">C#</option>
+<option value="f6613187-608f-4279-93f3-2faf6dbe83e3">VB.NET</option>
+</select>
+                                <span class="sb-current" unselectable="on">C#</span>
+                                <a class="sb-button tabel" tabindex="3" unselectable="0"></a>
+                                <ul class="sb-list ninja">
+                                            <li>
+                                                <div class="sb-item sb-selected" data-value="b8c988a6-6dea-4ddf-a892-67aaab4bfe8e">C#</div>
+                                            </li>
+                                            <li>
+                                                <div class="sb-item " data-value="f6613187-608f-4279-93f3-2faf6dbe83e3">VB.NET</div>
+                                            </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell third" style="width: 300px">
+                        <div class="inner">
+                            <div id="ex-sb-versions" class="selectbox sb_versions" data-empty="Empty" data-text="Select version" data-tabidx="4">
+                                <select id="SolutionsSelectList" name="SolutionsSelectList" tabindex="4"><option selected="selected" value="e8c4b15a-2c5d-4056-9559-47c947f8f1c8">v2014 vol 2.4 - v2016 vol 1.7</option>
+<option value="6d0e5fba-a3ab-11e3-a2ad-f0bf97cd35e4">v2013 vol 2.7 - v2014 vol 1.13</option>
+<option value="63d36696-9431-4ac5-8b8b-35d4b29be59d">v2013 vol 1.4 - v2013 vol 2.6</option>
+</select>
+                                <span class="sb-current" unselectable="on">v2014 vol 2.4 - v2016 vol 1.7</span>
+                                <a class="sb-button tabel" tabindex="4" unselectable="0"></a>
+                                <ul class="sb-list ninja">
+                                            <li>
+                                                <div class="sb-item sb-selected" data-value="e8c4b15a-2c5d-4056-9559-47c947f8f1c8">v2014 vol 2.4 - v2016 vol 1.7</div>
+                                            </li>
+                                            <li>
+                                                <div class="sb-item " data-value="6d0e5fba-a3ab-11e3-a2ad-f0bf97cd35e4">v2013 vol 2.7 - v2014 vol 1.13</div>
+                                            </li>
+                                            <li>
+                                                <div class="sb-item " data-value="63d36696-9431-4ac5-8b8b-35d4b29be59d">v2013 vol 1.4 - v2013 vol 2.6</div>
+                                            </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clrbth"></div>
+                </div>
+            </div>
+        </div>
+        <div id="example-content">    <div class="controls"><span class="pseudo-link show-modal">Open in popup window</span></div>
+    <div class="files">
+        <div class="surface">
+            <div class="items">
+                <div class="item">
+                    <div class="code">
+                           <pre class="cr-code"><code><span class="cr-aspx-text">using</span> <span class="cr-aspx-string">System</span><span class="cr-aspx-string">;</span>
+<span class="cr-aspx-text">using</span> <span class="cr-aspx-string">System</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">ComponentModel</span><span class="cr-aspx-string">;</span>
+
+<span class="cr-aspx-text">using</span> <span class="cr-aspx-string">DevExpress</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">ExpressApp</span><span class="cr-aspx-string">;</span>
+<span class="cr-aspx-text">using</span> <span class="cr-aspx-string">DevExpress</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">Persistent</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">BaseImpl</span><span class="cr-aspx-string">;</span>
+<span class="cr-aspx-text">using</span> <span class="cr-aspx-string">DevExpress</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">ExpressApp</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">Win</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">SystemModule</span><span class="cr-aspx-string">;</span>
+
+<span class="cr-aspx-text">namespace</span> <span class="cr-aspx-string">E1554</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">Module</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">Win</span> <span class="cr-aspx-string">{</span>
+    <span class="cr-aspx-string">[</span><span class="cr-aspx-string">ToolboxItemFilter</span><span class="cr-aspx-string">(</span><span class="cr-aspx-tag">"Xaf.Platform.Win"</span><span class="cr-aspx-string">)</span><span class="cr-aspx-string">]</span>
+    <span class="cr-aspx-text">public</span> <span class="cr-aspx-text">sealed</span> <span class="cr-aspx-text">partial</span> <span class="cr-aspx-text">class</span> <span class="cr-aspx-string">E1554WindowsFormsModule</span> <span class="cr-aspx-string">:</span> <span class="cr-aspx-string">ModuleBase</span> <span class="cr-aspx-string">{</span>
+        <span class="cr-aspx-text">public</span> <span class="cr-aspx-string">E1554WindowsFormsModule</span><span class="cr-aspx-string">(</span><span class="cr-aspx-string">)</span> <span class="cr-aspx-string">{</span>
+            <span class="cr-aspx-string">InitializeComponent</span><span class="cr-aspx-string">(</span><span class="cr-aspx-string">)</span><span class="cr-aspx-string">;</span>
+        <span class="cr-aspx-string">}</span>
+        <span class="cr-aspx-text">private</span> <span class="cr-aspx-text">void</span> <span class="cr-aspx-string">Application_CreateCustomModelDifferenceStore</span><span class="cr-aspx-string">(</span><span class="cr-aspx-string">Object</span> <span class="cr-aspx-string">sender</span><span class="cr-aspx-string">,</span> <span class="cr-aspx-string">CreateCustomModelDifferenceStoreEventArgs</span> <span class="cr-aspx-string">e</span><span class="cr-aspx-string">)</span> <span class="cr-aspx-string">{</span>
+            <span class="cr-aspx-string">e</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">Store</span> <span class="cr-aspx-string">=</span> <span class="cr-aspx-text">new</span> <span class="cr-aspx-string">ModelDifferenceDbStore</span><span class="cr-aspx-string">(</span><span class="cr-aspx-string">(</span><span class="cr-aspx-string">XafApplication</span><span class="cr-aspx-string">)</span><span class="cr-aspx-string">sender</span><span class="cr-aspx-string">,</span> <span class="cr-aspx-text">typeof</span><span class="cr-aspx-string">(</span><span class="cr-aspx-string">ModelDifference</span><span class="cr-aspx-string">)</span><span class="cr-aspx-string">,</span> <span class="cr-aspx-text">true</span><span class="cr-aspx-string">)</span><span class="cr-aspx-string">;</span>
+            <span class="cr-aspx-string">e</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">Handled</span> <span class="cr-aspx-string">=</span> <span class="cr-aspx-text">true</span><span class="cr-aspx-string">;</span>
+        <span class="cr-aspx-string">}</span>
+        <span class="cr-aspx-text">private</span> <span class="cr-aspx-text">void</span> <span class="cr-aspx-string">Application_CreateCustomUserModelDifferenceStore</span><span class="cr-aspx-string">(</span><span class="cr-aspx-string">Object</span> <span class="cr-aspx-string">sender</span><span class="cr-aspx-string">,</span> <span class="cr-aspx-string">CreateCustomModelDifferenceStoreEventArgs</span> <span class="cr-aspx-string">e</span><span class="cr-aspx-string">)</span> <span class="cr-aspx-string">{</span>
+            <span class="cr-aspx-string">e</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">Store</span> <span class="cr-aspx-string">=</span> <span class="cr-aspx-text">new</span> <span class="cr-aspx-string">ModelDifferenceDbStore</span><span class="cr-aspx-string">(</span><span class="cr-aspx-string">(</span><span class="cr-aspx-string">XafApplication</span><span class="cr-aspx-string">)</span><span class="cr-aspx-string">sender</span><span class="cr-aspx-string">,</span> <span class="cr-aspx-text">typeof</span><span class="cr-aspx-string">(</span><span class="cr-aspx-string">ModelDifference</span><span class="cr-aspx-string">)</span><span class="cr-aspx-string">,</span> <span class="cr-aspx-text">false</span><span class="cr-aspx-string">)</span><span class="cr-aspx-string">;</span>
+            <span class="cr-aspx-string">e</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">Handled</span> <span class="cr-aspx-string">=</span> <span class="cr-aspx-text">true</span><span class="cr-aspx-string">;</span>
+        <span class="cr-aspx-string">}</span>
+        <span class="cr-aspx-text">public</span> <span class="cr-aspx-text">override</span> <span class="cr-aspx-text">void</span> <span class="cr-aspx-string">Setup</span><span class="cr-aspx-string">(</span><span class="cr-aspx-string">XafApplication</span> <span class="cr-aspx-string">application</span><span class="cr-aspx-string">)</span> <span class="cr-aspx-string">{</span>
+            <span class="cr-aspx-text">base</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">Setup</span><span class="cr-aspx-string">(</span><span class="cr-aspx-string">application</span><span class="cr-aspx-string">)</span><span class="cr-aspx-string">;</span>
+            <span class="cr-aspx-string">application</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">ModelChanged</span> <span class="cr-aspx-string">+=</span> <span class="cr-aspx-text">new</span> <span class="cr-aspx-string">EventHandler</span><span class="cr-aspx-string">(</span><span class="cr-aspx-string">application_ModelChanged</span><span class="cr-aspx-string">)</span><span class="cr-aspx-string">;</span>
+            <span class="cr-aspx-string">application</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">CreateCustomModelDifferenceStore</span> <span class="cr-aspx-string">+=</span> <span class="cr-aspx-string">Application_CreateCustomModelDifferenceStore</span><span class="cr-aspx-string">;</span>
+            <span class="cr-aspx-string">application</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">CreateCustomUserModelDifferenceStore</span> <span class="cr-aspx-string">+=</span> <span class="cr-aspx-string">Application_CreateCustomUserModelDifferenceStore</span><span class="cr-aspx-string">;</span>
+        <span class="cr-aspx-string">}</span>
+
+        <span class="cr-aspx-text">void</span> <span class="cr-aspx-string">application_ModelChanged</span><span class="cr-aspx-string">(</span><span class="cr-aspx-text">object</span> <span class="cr-aspx-string">sender</span><span class="cr-aspx-string">,</span> <span class="cr-aspx-string">EventArgs</span> <span class="cr-aspx-string">e</span><span class="cr-aspx-string">)</span> <span class="cr-aspx-string">{</span>
+            <span class="cr-aspx-string">UIType</span> <span class="cr-aspx-string">uiType</span> <span class="cr-aspx-string">=</span> <span class="cr-aspx-string">(</span><span class="cr-aspx-string">(</span><span class="cr-aspx-string">IModelOptionsWin</span><span class="cr-aspx-string">)</span><span class="cr-aspx-string">Application</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">Model</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">Options</span><span class="cr-aspx-string">)</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">UIType</span><span class="cr-aspx-string">;</span>
+            <span class="cr-aspx-text">if</span> <span class="cr-aspx-string">(</span><span class="cr-aspx-string">uiType</span> <span class="cr-aspx-string">==</span> <span class="cr-aspx-string">UIType</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">StandardMDI</span><span class="cr-aspx-string">)</span> <span class="cr-aspx-string">{</span>
+                <span class="cr-aspx-string">Application</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">ShowViewStrategy</span> <span class="cr-aspx-string">=</span> <span class="cr-aspx-text">new</span> <span class="cr-aspx-string">MyMdiShowViewStrategy</span><span class="cr-aspx-string">(</span><span class="cr-aspx-string">Application</span><span class="cr-aspx-string">,</span> <span class="cr-aspx-string">DevExpress</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">ExpressApp</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">Win</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">Templates</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">MdiMode</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">Standard</span><span class="cr-aspx-string">)</span><span class="cr-aspx-string">;</span>
+            <span class="cr-aspx-string">}</span> <span class="cr-aspx-text">else</span> <span class="cr-aspx-text">if</span> <span class="cr-aspx-string">(</span><span class="cr-aspx-string">uiType</span> <span class="cr-aspx-string">==</span> <span class="cr-aspx-string">UIType</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">TabbedMDI</span><span class="cr-aspx-string">)</span> <span class="cr-aspx-string">{</span>
+                <span class="cr-aspx-string">Application</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">ShowViewStrategy</span> <span class="cr-aspx-string">=</span> <span class="cr-aspx-text">new</span> <span class="cr-aspx-string">MyMdiShowViewStrategy</span><span class="cr-aspx-string">(</span><span class="cr-aspx-string">Application</span><span class="cr-aspx-string">,</span> <span class="cr-aspx-string">DevExpress</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">ExpressApp</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">Win</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">Templates</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">MdiMode</span><span class="cr-aspx-string">.</span><span class="cr-aspx-string">Tabbed</span><span class="cr-aspx-string">)</span><span class="cr-aspx-string">;</span>
+            <span class="cr-aspx-string">}</span>
+        <span class="cr-aspx-string">}</span>
+    <span class="cr-aspx-string">}</span>
+<span class="cr-aspx-string">}</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    <div style="float: right; display: block; margin: 40px 0px;">
+            <button class="V3Button alternate toggle-favorite-trigger" id="toggle-favorite-trigger">
+                    <span data-text="Remove from Favorites">Add to Favorites</span>
+            </button>
+    </div>
+</div>
+
+    </div>
+        <div id="sidebar">
+            
+    <div class="modules">
+        <dl class="module details">
+            <dt>ID:</dt>
+            <dd>E1554</dd>
+            <dt>Modified On:</dt>
+            <dd>    <abbr role="datetime" class="date" title="2015-05-26T19:21:42.633Z">5/26/2015 9:21:42 PM</abbr>
+</dd>
+                <dt>Technology:</dt>
+                <dd>.NET</dd>
+                            <dt>Platform:</dt>
+                <dd>Frameworks (XAF &amp; XPO)</dd>
+                            <dt>Product:</dt>
+                <dd>eXpressApp Framework</dd>
+                                </dl>
+            <dl class="module downloads">
+                <dt>
+                    <h4>Downloads</h4>
+                </dt>
+                <dd>
+                    <ul class="clean">
+                        <li>
+                            <a href="https://www.devexpress.com/Support/Center/Attachment/GetExample?projectOid=b8c988a6-6dea-4ddf-a892-67aaab4bfe8e&amp;ticketId=E1554" data-ticket="E1554" id="download-example" class="" rel="nofollow">
+                                <span>Example </span>
+                            </a>
+                        </li>
+                        <li><a href="https://www.devexpress.com/Support/Center/Attachment/GetExampleRunner" id="example-runner"><span>Example Runner</span></a></li>
+                    </ul>
+                </dd>
+            </dl>
+    </div>
+
+            <div id="disclaimer">
+                <b>Disclaimer</b>: The information provided on DevExpress.com and its affiliated web properties is provided
+                "as is" without warranty of any kind. Developer Express Inc disclaims all warranties, either express or implied,
+                including the warranties of merchantability and fitness for a particular purpose. Please refer to the
+                <a target="_blank" href="https://www.devexpress.com/Home/Legal.xml">DevExpress.com Website Terms of Use</a> for more information.
+            </div>
+        </div>
+    <div class="clr">
+    </div>
+</div>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- footer v3 -->
+    
+
+<div class="FooterV3">
+    <div class="Content">
+        <div class="Top">
+        </div>
+        <div class="MainContent">
+            <div class="Left">
+                <div class="Group">
+                    DEVEXPRESS
+                </div>
+                    <div class="ItemLink">
+        <a href="https://www.devexpress.com/Home/Mission.xml" target="_self">About Us</a>
+    </div> 
+
+                    <div class="ItemLink">
+        <a href="https://www.devexpress.com/Home/Announces/" target="_self">News</a>
+    </div> 
+
+                    <div class="ItemLink">
+        <a href="https://www.devexpress.com/Home/awards.xml" target="_self">Our Awards</a>
+    </div> 
+
+                    <div class="ItemLink">
+        <a href="https://www.devexpress.com/Home/Community/" target="_self">Upcoming Events</a>
+    </div> 
+
+                    <div class="ItemLink">
+        <a href="https://www.devexpress.com/Home/Comments.xml" target="_self">User Comments</a>
+    </div> 
+
+                    <div class="ItemLink">
+        <a href="https://www.devexpress.com/Home/Case-Studies/" target="_self">Case Studies</a>
+    </div> 
+
+                    <div class="ItemLink">
+        <a href="https://www.devexpress.com/Home/publications.xml" target="_self">Reviews and Publications</a>
+    </div> 
+
+                    <div class="ItemLink">
+        <a href="https://www.devexpress.com/Support/licensingfaq.xml" target="_self">Licensing</a>
+    </div> 
+
+                    <div class="ItemLink">
+        <a href="https://www.devexpress.com/Support/Order/" target="_self">Purchasing</a>
+    </div> 
+
+                    <div class="ItemLink">
+        <a href="https://www.devexpress.com/Home/Community/mvp.xml" target="_self">MVP Program</a>
+    </div> 
+
+                    <div class="ItemLink">
+        <a href="https://www.devexpress.com/Home/ContactUs.xml" target="_self">Contact Us</a>
+    </div> 
+
+                    <div class="ItemLink">
+        <a href="https://www.devexpress.com/Home/Logos.xml" target="_self">Logos</a>
+    </div> 
+
+            </div>
+            <div class="Middle">
+                <div class="Column">
+                    <div class="Group">
+                        .NET CONTROLS
+                    </div>
+                        <div class="ItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Controls/WinForms/" target="_self">WinForms</a>
+    </div> 
+
+                        <div class="ItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Controls/ASP/" target="_self">ASP.NET</a>
+    </div> 
+
+					    <div class="ItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Controls/ASP/MVC/" target="_self">MVC</a>
+    </div> 
+
+                        <div class="ItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Controls/WPF/" target="_self">WPF</a>
+    </div> 
+
+                        <div class="ItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/" target="_self">Windows 10 Apps</a>
+    </div> 
+
+                    <div class="Group Break">
+                        CROSS PLATFORM				
+                    </div>
+                        <div class="ItemLink">
+        <a href="https://www.devexpress.com/Subscriptions/Reporting/" target="_self">Reporting</a>
+    </div> 
+
+                        <div class="ItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Document-Server/" target="_self">Document Automation</a>
+    </div> 
+
+                </div>
+                <div class="Column">
+                    <div class="Group">
+                        MOBILE
+                    </div>
+                    <div class="ItemLink">
+                        <a href="https://js.devexpress.com/MobileDevelopment" target="_blank">DevExtreme Mobile</a>
+                    </div>
+                    <div class="Group Break">
+                        ENTERPRISE TOOLS
+                    </div>
+                        <div class="ItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Report-Server/" target="_self">Report Server</a>
+    </div> 
+
+                        <div class="ItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Dashboard/" target="_self">Analytics Dashboard</a>
+    </div> 
+
+                    <div class="Group Break">
+                        FRAMEWORKS
+                    </div>
+                        <div class="ItemLink">
+        <a href="https://www.devexpress.com/Products/NET/Application_Framework/" target="_self">eXpressApp Framework</a>
+    </div> 
+
+                    <div class="Group Break">
+                        CODE-DEBUG-REFACTOR
+                    </div>
+                        <div class="ItemLink">
+        <a href="https://www.devexpress.com/Products/Visual_Studio_Add-in/Coding_Assistance/" target="_self">CodeRush for Visual Studio</a>
+    </div> 
+
+                </div>
+                <div class="Column Last">
+                    <div class="Group">
+                        HTML5 JS WIDGETS
+                    </div>
+                    <div class="ItemLink">
+                        <a href="https://js.devexpress.com/WebDevelopment" target="_blank">DevExtreme Web</a>
+                    </div>
+                    <div class="Group Break">
+                        iOS
+                    </div>
+                        <div class="ItemLink">
+        <a href="https://www.devexpress.com/Products/iOS/DataExplorer/" target="_self">DataExplorer</a>
+    </div> 
+
+                    <div class="Group Break">
+                        FUNCTIONAL WEB TESTING
+                    </div>
+                        <div class="ItemLink">
+        <a href="https://www.devexpress.com/Products/HTML5-Testing/" target="_self">TestCafe</a>
+    </div> 
+
+                    <div class="Group Break">
+                        DELPHI C++BUILDER
+                    </div>
+                        <div class="ItemLink">
+        <a href="https://www.devexpress.com/Products/VCL/" target="_self">VCL</a>
+    </div> 
+
+                </div>
+            </div>
+            <div class="Right">
+                <div class="Group">
+                    SUPPORT
+                </div>
+                    <div class="ItemLink">
+        <a href="https://www.devexpress.com/Support/Center/" target="_self">Search the Knowledge Base</a>
+    </div> 
+
+                <div class="ItemLink">
+                    <a href="https://www.devexpress.com/Support/Center/Question/ChangeFilterSet/1?FavoritesOnly=False&amp;MyItemsOnly=True&amp;MyTeamItemsOnly=False&amp;PlatformName=AllPlatforms&amp;ProductName=AllProducts&amp;TicketType=All" target="_self">My Questions</a>
+                </div>
+                <div class="ItemLink">
+                    <a href="https://www.devexpress.com/Support/Center/Example/List" target="_self">Code Examples</a>
+                </div>
+                <div class="ItemLink">
+                    <a href="https://www.devexpress.com/Support/Start/" target="_self">Getting Started</a>
+                </div>
+                <div class="ItemLink">
+                    <a href="https://www.devexpress.com/Support/Demos/" target="_self">Demos</a>
+                </div>
+                <div class="ItemLink">
+                    <a href="https://documentation.devexpress.com/" target="_self">Documentation</a>
+                </div>
+                <div class="ItemLink">
+                    <a href="https://community.devexpress.com/blogs/" target="_self">Blogs</a>
+                </div>
+                    <div class="ItemLink">
+        <a href="https://www.devexpress.com/Home/Training/" target="_self">Training</a>
+    </div> 
+
+                    <div class="ItemLink">
+        <a href="https://www.devexpress.com/Support/Webinars/" target="_self">Webinars</a>
+    </div> 
+
+                <div class="ItemBreak">
+                </div>
+                    <div class="ItemLink">
+        <a href="https://www.devexpress.com/Support/versions.xml" target="_self">Current Version/Build</a>
+    </div> 
+
+                    <div class="ItemLink">
+        <a href="https://www.devexpress.com/Support/WhatsNew/" target="_self">Version History</a>
+    </div> 
+
+            </div>
+            <div class="h-clear">
+            </div>
+        </div>
+        <div class="ChatInfo">
+            <p>If you need additional product information, write to us at <a href="mailto:info@devexpress.com">info@devexpress.com</a> or call us at <strong>+1 (818) 844-3383</strong></p>
+        </div>
+        <div class="FollowUs">
+            <div>
+                FOLLOW US
+            </div>
+            <a title="Facebook" class="FollowIcon Facebook" href="http://www.facebook.com/DevExpress"></a>
+            <a title="Twitter" class="FollowIcon Twitter" href="http://twitter.com/DevExpress"></a>
+            <a title="Google+" class="FollowIcon GPlus" href="https://plus.google.com/+devexpress"></a>
+            <a title="YouTube" class="FollowIcon YouTube" href="http://www.youtube.com/user/DeveloperExpress"></a>
+            <a title="DevExpress Blogs" class="FollowIcon Blogs" href="https://community.devexpress.com/blogs/"></a>
+        </div>
+        <div class="h-clear">
+        </div>
+        <div class="Bottom">
+        </div>
+    </div>
+</div>
+<div class="SubFooterV3 Content">
+	<div class="Left">
+		<p>DevExpress engineers feature-complete Presentation Controls, IDE Productivity Tools, Business Application Frameworks, and Reporting Systems for Visual Studio, along with high-performance HTML JS Mobile Frameworks for developers targeting iOS, Android and Windows Phone. Whether using WPF, ASP.NET, WinForms, HTML5 or Windows 10, DevExpress tools help you build and deliver your best in the shortest time possible.</p>
+	</div><div class="Right Logo">
+
+	</div>
+    
+    <div class="h-clear">
+
+	</div>
+</div>
+<div class="UnderFooterV3">
+	<div class="Content">
+		<div class="Left">
+			<a href="https://www.devexpress.com/Home/Legal.xml">Your Privacy - Legal Statements</a>
+		</div><div class="Right">
+			Copyright © 1998-2015 Developer Express Inc.<br>All trademarks or registered trademarks are property of their respective owners
+		</div><div class="h-clear">
+
+		</div>
+	</div>
+</div>
+
+
+    <div id="kit" class="ninja">
+        <input type="hidden" data-key="UserCookieName" data-type="Constant" value="UserCookieDxt0a781668-1ac8-4817-a264-d9722e55c573">
+        <input type="hidden" data-key="GetHotFix" data-type="Url" value="/Support/Center/Question/GetHotFix">
+        <input type="hidden" data-key="AssignToFiltered" data-type="Url" value="/Support/Center/Question/GetFilteredAssignTo">
+        <input type="hidden" data-key="GetFixedInBuilds" data-type="Url" value="/Support/Center/Question/GetAllFixedIn">
+        <input type="hidden" data-key="FeatureOverview" data-type="Url" value="/Support/Center/FAQ/Overview">
+        <input type="hidden" data-key="GetBuilds" data-type="Url" value="/Support/Center/Category/GetBuilds">    
+        <input type="hidden" data-key="RelatedArticles" data-type="Url" value="/Support/Center/Question/RelatedArticles">
+        <input type="hidden" data-key="AddToFavorite" data-type="Url" value="/Support/Center/Question/AddToFavorite">
+        <input type="hidden" data-key="RemoveFromFavorite" data-type="Url" value="/Support/Center/Question/RemoveFromFavorite">
+        <input type="hidden" data-key="ToggleArchiveState" data-type="Url" value="/Support/Center/Question/SetArchiveState">
+        <input type="hidden" data-key="SetTrackingState" data-type="Url" value="/Support/Center/StopTracking/E1554">
+        <input type="hidden" data-key="GetProductsByPlatform" data-type="Url" value="/Support/Center/Category/GetProductsByPlatform">
+        <input type="hidden" data-key="GetProductsByTechnology" data-type="Url" value="/Support/Center/Category/GetProductsByTechnology">
+        <input type="hidden" data-key="GetOperatingSystems" data-type="Url" value="/Support/Center/Category/GetOperatingSystems">
+        <input type="hidden" data-key="GetIDEs" data-type="Url" value="/Support/Center/Category/GetIDEs">
+        <input type="hidden" data-key="AbsoluteContentUri" data-type="Constant" value="/Support/Center/Content/">
+        <input type="hidden" data-key="EscalateToManagement" data-type="Url" value="/Support/Center/Question/EscalateToManagement">
+        <input type="hidden" data-key="DismissEscalationToManagement" data-type="Url" value="/Support/Center/Question/DismissEscalationToManagement">
+    </div>
+
+
+
+<script aria-hidden="true" type="application/x-lastpass" id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{(function() { for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }})()}catch(e){}</script></body></html>

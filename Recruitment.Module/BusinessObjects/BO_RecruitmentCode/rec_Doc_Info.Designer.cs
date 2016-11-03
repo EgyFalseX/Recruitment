@@ -26,6 +26,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string frec_doc_info_name;
         [DevExpress.Xpo.DisplayName(@"Doc name")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string rec_doc_info_name
         {
             get { return frec_doc_info_name; }

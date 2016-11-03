@@ -26,6 +26,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string frec_call_result_name;
         [DevExpress.Xpo.DisplayName(@"Result")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string rec_call_result_name
         {
             get { return frec_call_result_name; }

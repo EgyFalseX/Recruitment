@@ -27,6 +27,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         string frec_annual_vacation_type_name;
         [Size(50)]
         [DevExpress.Xpo.DisplayName(@"Vacation type")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string rec_annual_vacation_type_name
         {
             get { return frec_annual_vacation_type_name; }

@@ -27,6 +27,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         string frec_lang_level_name;
         [Size(50)]
         [DevExpress.Xpo.DisplayName(@"Level")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string rec_lang_level_name
         {
             get { return frec_lang_level_name; }

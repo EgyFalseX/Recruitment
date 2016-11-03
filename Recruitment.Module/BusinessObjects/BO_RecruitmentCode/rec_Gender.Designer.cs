@@ -26,6 +26,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string frec_gender_name;
         [DevExpress.Xpo.DisplayName(@"Gender_name")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string rec_gender_name
         {
             get { return frec_gender_name; }

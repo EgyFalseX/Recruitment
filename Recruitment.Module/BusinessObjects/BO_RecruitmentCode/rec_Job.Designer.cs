@@ -27,6 +27,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         string fjob_name;
         [Size(50)]
         [DevExpress.Xpo.DisplayName(@"Job name")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string job_name
         {
             get { return fjob_name; }

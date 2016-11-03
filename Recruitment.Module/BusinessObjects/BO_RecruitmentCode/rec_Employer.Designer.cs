@@ -75,6 +75,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string femployer_company_name;
         [DevExpress.Xpo.DisplayName(@"Company name")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string employer_company_name
         {
             get { return femployer_company_name; }

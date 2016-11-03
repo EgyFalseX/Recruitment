@@ -418,8 +418,17 @@
     <Compile Include="Controllers\ctr_IntiNew.Designer.cs">
       <DependentUpon>ctr_IntiNew.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\Filter\NewViewFilterObjectController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\Filter\ShowFilterDialogController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Core\IModelListViewExt.cs" />
     <Compile Include="Core\SqlOp.cs" />
     <Compile Include="Core\Typez.cs" />
+    <Compile Include="Core\ViewFilterContainer.cs" />
+    <Compile Include="BusinessObjects\Filter\ViewFilterObject.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
@@ -581,6 +590,10 @@
     <EmbeddedResource Include="Images\Scheduler16.png" />
     <EmbeddedResource Include="Images\Scheduler32.png" />
     <Content Include="Information.txt" />
+    <None Include="UnusableNodes.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Welcome.html" />
   </ItemGroup>
   <ItemGroup>

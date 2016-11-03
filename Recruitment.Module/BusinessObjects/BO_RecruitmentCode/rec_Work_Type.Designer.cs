@@ -26,6 +26,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string fwork_type_name;
         [DevExpress.Xpo.DisplayName(@"Work type")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string work_type_name
         {
             get { return fwork_type_name; }

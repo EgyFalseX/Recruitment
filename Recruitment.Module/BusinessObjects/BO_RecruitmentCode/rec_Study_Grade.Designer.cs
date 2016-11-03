@@ -26,6 +26,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string fstudy_grade_name;
         [DevExpress.Xpo.DisplayName(@"Grade name")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string study_grade_name
         {
             get { return fstudy_grade_name; }

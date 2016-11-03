@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Linq;
-using System.Text;
 using System.ComponentModel;
 using DevExpress.ExpressApp;
-using DevExpress.ExpressApp.DC;
 using System.Collections.Generic;
-using DevExpress.ExpressApp.Model;
-using DevExpress.ExpressApp.Editors;
-using DevExpress.ExpressApp.Actions;
 using DevExpress.ExpressApp.Updating;
-using DevExpress.ExpressApp.Model.Core;
-using DevExpress.ExpressApp.Model.DomainLogics;
-using DevExpress.ExpressApp.Model.NodeGenerators;
 using DevExpress.Persistent.BaseImpl;
 
 namespace Recruitment.Module.Win {
@@ -41,6 +32,21 @@ namespace Recruitment.Module.Win {
             application.CreateCustomModelDifferenceStore += Application_CreateCustomModelDifferenceStore;
             application.CreateCustomUserModelDifferenceStore += Application_CreateCustomUserModelDifferenceStore;
             // Manage various aspects of the application UI and behavior at the module level.
+
+            application.ModelChanged += new EventHandler(application_ModelChanged);
+        }
+        void application_ModelChanged(object sender, EventArgs e)
+        {
+
+            UIType uiType = ((DevExpress.ExpressApp.Win.SystemModule.IModelOptionsWin)Application.Model.Options).UIType;
+            if (uiType == UIType.StandardMDI)
+            {
+                Application.ShowViewStrategy = new Controllers.Filter.MyMdiShowViewStrategy(Application, DevExpress.ExpressApp.Win.Templates.MdiMode.Standard);
+            }
+            else if (uiType == UIType.TabbedMDI)
+            {
+                Application.ShowViewStrategy = new Controllers.Filter.MyMdiShowViewStrategy(Application, DevExpress.ExpressApp.Win.Templates.MdiMode.Tabbed);
+            }
         }
     }
 }

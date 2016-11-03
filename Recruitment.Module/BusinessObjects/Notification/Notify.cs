@@ -13,6 +13,7 @@ using DevExpress.ExpressApp.Security.Strategy;
 using DevExpress.Persistent.Base.General;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
+using DevExpress.Utils.Filtering;
 
 namespace Recruitment.Module.BusinessObjects.Notification
 {
@@ -26,7 +27,7 @@ namespace Recruitment.Module.BusinessObjects.Notification
     {
         public Notify(Session session) : base(session)
         {
-            RemindIn = new TimeSpan(0, 12, 0, 0);
+            RemindIn = new TimeSpan(0, 0, 0, 0);
         }
         public override void AfterConstruction()
         {
@@ -42,7 +43,7 @@ namespace Recruitment.Module.BusinessObjects.Notification
         }
 
         private string _subject;
-        [RuleRequiredField("", DefaultContexts.Save, "Subject required")]
+        [RuleRequiredField("Notify_Subject_vld_req", DefaultContexts.Save, "Subject required")]
         public string Subject
         {
             get
@@ -68,20 +69,6 @@ namespace Recruitment.Module.BusinessObjects.Notification
                 SetPropertyValue("Description", ref _description, value);
             }
         }
-        private DateTime _dueDate;
-
-        [RuleRequiredField("", DefaultContexts.Save, "StartDate required")]
-        public DateTime DueDate
-        {
-            get
-            {
-                return _dueDate;
-            }
-            set
-            {
-                SetPropertyValue("DueDate", ref _dueDate, value);
-            }
-        }
         private SecuritySystemUser _assignedTo;
         public SecuritySystemUser AssignedTo
         {
@@ -97,13 +84,14 @@ namespace Recruitment.Module.BusinessObjects.Notification
 
         #region ISupportNotifications members
         private DateTime? alarmTime;
-        //[Browsable(false)]
+        [RuleRequiredField("Notify_AlarmTime_vld_req", DefaultContexts.Save, "Alarm Time required")]
         public DateTime? AlarmTime
         {
             get { return alarmTime; }
             set
             {
                 alarmTime = value;
+                RemindIn = new TimeSpan(0, 0, 0, 0);
                 if (value == null)
                 {
                     RemindIn = null;
@@ -113,7 +101,6 @@ namespace Recruitment.Module.BusinessObjects.Notification
         }
 
         private bool _isPostponed;
-        //[Browsable(false)]
         public bool IsPostponed
         {
             get
@@ -126,13 +113,13 @@ namespace Recruitment.Module.BusinessObjects.Notification
             }
         }
         [Browsable(false)]
-        //[NonPersistent]
         public string NotificationMessage
         {
             get { return Subject; }
         }
 
         private TimeSpan? _remindIn;
+        [MemberDesignTimeVisibility(false)]
         public TimeSpan? RemindIn
         {
             get
@@ -145,7 +132,6 @@ namespace Recruitment.Module.BusinessObjects.Notification
             }
         }
         [Browsable(false)]
-        //[NonPersistent]
         public object UniqueId
         {
             get { return Oid; }
@@ -158,10 +144,10 @@ namespace Recruitment.Module.BusinessObjects.Notification
         {
             if (RemindIn.HasValue)
             {
-                AlarmTime = DueDate - RemindIn.Value;
+                AlarmTime = AlarmTime - RemindIn.Value;
             }
             else
-            {
+            { 
                 AlarmTime = null;
             }
             if (AlarmTime == null)
@@ -169,9 +155,10 @@ namespace Recruitment.Module.BusinessObjects.Notification
                 RemindIn = null;
                 IsPostponed = false;
             }
+
         }
-        
-        
+
+
         #endregion
 
 

@@ -1,12 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application>
-  <NavigationItems Id="NavigationItems">
-    <Items Id="Items">
-      <Item Id="SchedulerEvent">
-        <Items Id="Items">
-          <Item Id="Notify" ViewId="Notify_ListView" />
-        </Items>
-      </Item>
-    </Items>
-  </NavigationItems>
+  <Views Id="Views">
+    <DetailView Id="Notify_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Notify">
+              <LayoutGroup Id="Notify_col1" RelativeSize="50">
+                <LayoutItem Id="Subject" RelativeSize="28.571428571428573" />
+                <LayoutItem Id="DueDate" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="AlarmTime" ViewItem="AlarmTime" Index="2" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="AssignedTo" Index="3" RelativeSize="28.571428571428573" />
+              </LayoutGroup>
+              <LayoutGroup Id="Notify_col2" RelativeSize="50">
+                <LayoutItem Id="IsPostponed" Index="0" RelativeSize="28.571428571428573" />
+                <LayoutItem Id="RemindIn" Index="1" RelativeSize="71.428571428571431" />
+                <LayoutItem Id="AlarmTime" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
 </Application>

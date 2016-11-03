@@ -27,6 +27,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         string frec_residence_type_name;
         [Size(50)]
         [DevExpress.Xpo.DisplayName(@"Residence type")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string rec_residence_type_name
         {
             get { return frec_residence_type_name; }

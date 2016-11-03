@@ -26,6 +26,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         string fnationality_name;
         [DevExpress.Xpo.DisplayName(@"Nationality name")]
+        [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string nationality_name
         {
             get { return fnationality_name; }
