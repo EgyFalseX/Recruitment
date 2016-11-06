@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Company="Mohamed Aly Omar" Title="Accounting" Logo="acc_Account16">
   <BOModel>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Account" DefaultListViewShowAutoFilterRow="True" Caption="Accounts">
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Account" DefaultListViewShowAutoFilterRow="True" Caption="Accounts" DefaultListViewImage="acc_Account16" DefaultDetailViewImage="acc_Account16">
       <OwnMembers>
         <Member Name="acc_AccountCollection" Caption="Accounts" />
         <Member Name="acc_Journal_Entry_Details" Caption="Journal Entry Details" />
@@ -13,14 +13,16 @@
         <Member Name="parent_account_id" Caption="Account Parent" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Account_Type" Caption="Account Type">
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Account_Category" DefaultListViewMasterDetailMode="ListViewAndDetailView" DefaultDetailViewImage="acc_Account_Category16" DefaultListViewImage="acc_Account_Category16" />
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Account_Category_Detail" DefaultListViewNewItemRowPosition="Top" DefaultListViewAllowEdit="True" DefaultDetailViewImage="acc_Account_Category16" DefaultListViewImage="acc_Account_Category16" />
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Account_Type" Caption="Account Type" ImageName="">
       <OwnMembers>
         <Member Name="acc_Accounts" Caption="Accounts" />
         <Member Name="account_type_id" Caption="ID" />
         <Member Name="account_type_name" Caption="Name" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Bank" DefaultListViewShowAutoFilterRow="True" Caption="Banks">
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Bank" DefaultListViewShowAutoFilterRow="True" Caption="Banks" DefaultListViewImage="acc_Bank16" DefaultDetailViewImage="acc_Bank16">
       <OwnMembers>
         <Member Name="bank_acc_name" Caption="Bank Account Name" />
         <Member Name="bank_acc_number" Caption="Bank Account Number" />
@@ -32,13 +34,13 @@
         <Member Name="bank_phone" Caption="Bank Phone" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Currency" Caption="Currency">
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Currency" Caption="Currency" DefaultDetailViewImage="acc_Currency16" DefaultListViewImage="acc_Currency16">
       <OwnMembers>
         <Member Name="currency_id" Caption="ID" />
         <Member Name="currency_name" Caption="currency name" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Journal_Entry" Caption="Journal Entry" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Journal_Entry" Caption="Journal Entry" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="acc_Journal_Entry16" DefaultListViewImage="acc_Journal_Entry16">
       <OwnMembers>
         <Member Name="acc_Journal_Entry_Details" Caption="Journal Entry Details" Index="0" />
         <Member Name="AuditTrail" Index="1" />
@@ -52,7 +54,7 @@
         <Member Name="year_id" Caption="Fiscal Year" Index="9" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Journal_Entry_Detail" Caption="Journal Entry Detail" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Journal_Entry_Detail" Caption="Journal Entry Detail" DefaultListViewShowAutoFilterRow="True" DefaultListViewNewItemRowPosition="Top" DefaultListViewAllowEdit="True" DefaultDetailViewImage="acc_Journal_Entry_Detail16" DefaultListViewImage="acc_Journal_Entry_Detail16">
       <OwnMembers>
         <Member Name="account_id" Caption="Account" />
         <Member Name="credit" Caption="Credit" DisplayFormat="{0:#,###,##0.##}" EditMask="#,###,##0.##" />
@@ -70,13 +72,14 @@
         <Member Name="acc_nature_name" Caption="Name" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Option" DefaultListViewShowAutoFilterRow="True" Caption="Accounting Options">
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Opening_Balance" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="acc_Opening_Balance16" DefaultListViewImage="acc_Opening_Balance16" />
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Option" DefaultListViewShowAutoFilterRow="True" Caption="Accounting Options" DefaultListViewImage="acc_Option16" DefaultDetailViewImage="acc_Option16">
       <OwnMembers>
         <Member Name="acc_option_name" Caption="Option Name" />
         <Member Name="acc_option_value" Caption="Option Value" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Year" DefaultListViewShowAutoFilterRow="True" Caption="Fiscal Year">
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Year" DefaultListViewShowAutoFilterRow="True" Caption="Fiscal Year" DefaultDetailViewImage="acc_Year16" DefaultListViewImage="acc_Year16">
       <OwnMembers>
         <Member Name="year_end_date" Caption="End Date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" EditMaskType="DateTime" />
         <Member Name="year_id" Caption="ID" />
@@ -102,6 +105,12 @@
     <Items>
       <Item Id="Accounting" ImageName="acc_Account16" IsNewNode="True">
         <Items IsNewNode="True">
+          <Item Id="acc_Account_Category_Detail_ListView" Removed="True" />
+          <Item Id="acc_Account_Category_ListView" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="acc_Account_Category_Detail_ListView" ViewId="acc_Account_Category_Detail_ListView" ObjectKey="" IsNewNode="True" />
+            </Items>
+          </Item>
           <Item Id="acc_Account_ListView" ViewId="acc_Account_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="acc_Banks_ListView" ViewId="acc_Bank_ListView" IsNewNode="True" />
           <Item Id="acc_Currancy_ListView" ObjectKey="" Caption="Currancy" ViewId="acc_Currency_ListView" IsNewNode="True" />
@@ -146,6 +155,34 @@
     </Rules>
   </Validation>
   <Views>
+    <DetailView Id="acc_Account_Category_Detail_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="acc_Account_Category_Detail" RelativeSize="100">
+              <LayoutItem Id="account_category_id" Index="0" RelativeSize="4.2666666666666666" />
+              <LayoutItem Id="account_id" Index="1" RelativeSize="95.733333333333334" />
+              <LayoutItem Id="account_category_detail_id" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="acc_Account_Category_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="5.0666666666666664">
+            <LayoutGroup Id="acc_Account_Category" Caption="acc_Account_Category" RelativeSize="100">
+              <LayoutItem Id="account_category_name" Index="0" RelativeSize="100" />
+              <LayoutItem Id="account_category_id" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="acc_Account_Category_Details_Group" Direction="Vertical" RelativeSize="94.933333333333337" Caption="Category Details">
+            <LayoutItem Id="acc_Account_Category_Details" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <DetailView Id="acc_Account_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
@@ -156,7 +193,6 @@
                 <LayoutItem Id="account_id" Removed="True" />
               </LayoutGroup>
               <LayoutGroup Id="acc_Account_col2" RelativeSize="50">
-                <LayoutItem Id="account_type_id" RelativeSize="36.363636363636367" />
                 <LayoutItem Id="acc_nature_id" RelativeSize="27.272727272727273" />
                 <LayoutItem Id="closed" RelativeSize="36.363636363636367" />
               </LayoutGroup>
@@ -177,6 +213,12 @@
         <ColumnInfo Id="account_type_id" Width="86" />
         <ColumnInfo Id="acc_nature_id" Width="95" />
         <ColumnInfo Id="closed" Width="52" />
+      </Columns>
+    </ListView>
+    <ListView Id="acc_Account_LookupListView">
+      <Columns>
+        <ColumnInfo Id="account_code" PropertyName="account_code" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="account_name" Index="1" />
       </Columns>
     </ListView>
     <DetailView Id="acc_Account_Type_DetailView">
@@ -241,33 +283,42 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="acc_Journal_Entry_acc_Journal_Entry_Details_ListView">
+      <Columns>
+        <ColumnInfo Id="JournalCaption" Width="137" />
+        <ColumnInfo Id="account_id" Width="88" />
+        <ColumnInfo Id="debit" Width="45" />
+        <ColumnInfo Id="credit" Width="49" />
+        <ColumnInfo Id="entry_text" Width="121" />
+      </Columns>
+    </ListView>
     <DetailView Id="acc_Journal_Entry_Detail_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="12.34718826405868">
             <LayoutGroup Id="acc_Journal_Entry_Detail" RelativeSize="100" Caption="Journal Entry Detail Information">
-              <LayoutGroup Id="acc_Journal_Entry_Detail_col1" RelativeSize="50.049554013875124" Caption="acc_Journal_Entry_Detail_col1">
+              <LayoutGroup Id="acc_Journal_Entry_Detail_col1" RelativeSize="50" Caption="acc_Journal_Entry_Detail_col1">
                 <LayoutItem Id="account_id" ViewItem="account_id" Index="0" RelativeSize="50" IsNewNode="True" Removed="True" />
                 <LayoutItem Id="jour_entry_id" Index="0" RelativeSize="36.363636363636367" Removed="True" />
                 <LayoutItem Id="credit" ViewItem="credit" Index="1" RelativeSize="50" IsNewNode="True" />
                 <LayoutItem Id="jour_entry_detail_id" Removed="True" />
                 <LayoutItem Id="JournalCaption" RelativeSize="36.363636363636367" Removed="True" />
               </LayoutGroup>
-              <LayoutGroup Id="acc_Journal_Entry_Detail_col2" RelativeSize="49.950445986124876" Caption="acc_Journal_Entry_Detail_col2">
+              <LayoutGroup Id="acc_Journal_Entry_Detail_col2" RelativeSize="50" Caption="acc_Journal_Entry_Detail_col2">
                 <LayoutItem Id="credit" RelativeSize="50" Index="0" Removed="True" />
                 <LayoutItem Id="entry_text" ViewItem="entry_text" Index="0" RelativeSize="50" IsNewNode="True" Removed="True" />
                 <LayoutItem Id="debit" ViewItem="debit" Index="1" RelativeSize="50" IsNewNode="True" Removed="True" />
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="SizeableEditors" RelativeSize="43.765281173594133" Caption="Description">
-            <LayoutGroup Id="Auto7c6c11e1-9645-45a0-8e4c-4c618b0fb70a" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="7.5418994413407825" IsNewNode="True">
-              <LayoutItem Id="jour_entry_id" ViewItem="jour_entry_id" Index="0" RelativeSize="49.951597289448209" IsNewNode="True" />
-              <LayoutItem Id="jour_entry_detail_id" ViewItem="jour_entry_detail_id" Index="1" RelativeSize="50.048402710551791" IsNewNode="True" />
+          <LayoutGroup Id="SizeableEditors" RelativeSize="20.660146699266505" Caption="Description">
+            <LayoutGroup Id="Auto7c6c11e1-9645-45a0-8e4c-4c618b0fb70a" ShowCaption="False" Caption="Auto7c6c11e1-9645-45a0-8e4c-4c618b0fb70a(11)" Direction="Horizontal" Index="0" RelativeSize="21.301775147928993" IsNewNode="True">
+              <LayoutItem Id="jour_entry_id" ViewItem="jour_entry_id" Index="0" RelativeSize="49.887387387387385" IsNewNode="True" />
+              <LayoutItem Id="jour_entry_detail_id" ViewItem="jour_entry_detail_id" Index="1" RelativeSize="50.112612612612615" IsNewNode="True" />
             </LayoutGroup>
-            <LayoutItem Id="description" RelativeSize="92.458100558659211" CaptionLocation="Top" Index="1" />
+            <LayoutItem Id="description" RelativeSize="78.698224852071007" CaptionLocation="Top" Index="1" />
           </LayoutGroup>
-          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="43.887530562347187">
+          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="66.992665036674822">
             <LayoutItem Id="AuditTrail" RelativeSize="100" />
           </LayoutGroup>
         </LayoutGroup>
@@ -290,31 +341,31 @@
     <DetailView Id="acc_Journal_Entry_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="18.21515892420538">
-            <LayoutGroup Id="acc_Journal_Entry" Caption="Journal Entry Information" RelativeSize="81.87919463087249">
-              <LayoutGroup Id="acc_Journal_Entry_col1" RelativeSize="49.950445986124876" Caption="acc_Journal_Entry_col1" Direction="Vertical">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="19.315403422982886">
+            <LayoutGroup Id="acc_Journal_Entry" Caption="Journal Entry Information" RelativeSize="77.215189873417728">
+              <LayoutGroup Id="acc_Journal_Entry_col1" RelativeSize="49.88425925925926" Caption="acc_Journal_Entry_col1" Direction="Vertical">
                 <LayoutItem Id="entry_date" RelativeSize="50" Index="0" Removed="True" />
                 <LayoutItem Id="jour_entry_id" RelativeSize="36.363636363636367" Index="0" Removed="True" />
                 <LayoutItem Id="year_id" ViewItem="year_id" Index="0" RelativeSize="36.363636363636367" IsNewNode="True" Removed="True" />
                 <LayoutItem Id="entry_text" ViewItem="entry_text" Index="1" RelativeSize="63.636363636363633" IsNewNode="True" />
                 <LayoutItem Id="JournalCaption" RelativeSize="28.571428571428573" Removed="True" />
               </LayoutGroup>
-              <LayoutGroup Id="acc_Journal_Entry_col2" RelativeSize="50.049554013875124" Caption="acc_Journal_Entry_col2">
+              <LayoutGroup Id="acc_Journal_Entry_col2" RelativeSize="50.11574074074074" Caption="acc_Journal_Entry_col2">
                 <LayoutItem Id="entry_date" ViewItem="entry_date" Index="0" RelativeSize="36.363636363636367" IsNewNode="True" />
                 <LayoutItem Id="entry_text" RelativeSize="27.272727272727273" Index="1" Removed="True" />
                 <LayoutItem Id="voucher_no" ViewItem="voucher_no" Index="1" RelativeSize="27.272727272727273" IsNewNode="True" Removed="True" />
                 <LayoutItem Id="closed" ViewItem="closed" Index="2" RelativeSize="36.363636363636367" IsNewNode="True" Removed="True" />
               </LayoutGroup>
             </LayoutGroup>
-            <LayoutGroup Id="Auto91d8e199-93b0-4d3c-9ce8-028c7ead42d1" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="18.120805369127517" IsNewNode="True">
-              <LayoutItem Id="jour_entry_id" ViewItem="jour_entry_id" Index="0" RelativeSize="49.951597289448209" IsNewNode="True" />
-              <LayoutItem Id="JournalCaption" ViewItem="JournalCaption" Index="1" RelativeSize="50.048402710551791" IsNewNode="True" />
+            <LayoutGroup Id="Auto91d8e199-93b0-4d3c-9ce8-028c7ead42d1" ShowCaption="False" Caption="Auto91d8e199-93b0-4d3c-9ce8-028c7ead42d1(11)" Direction="Horizontal" Index="1" RelativeSize="22.784810126582279" IsNewNode="True">
+              <LayoutItem Id="jour_entry_id" ViewItem="jour_entry_id" Index="0" RelativeSize="49.887387387387385" IsNewNode="True" />
+              <LayoutItem Id="JournalCaption" ViewItem="JournalCaption" Index="1" RelativeSize="50.112612612612615" IsNewNode="True" />
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="SizeableEditors" RelativeSize="42.298288508557455">
+          <LayoutGroup Id="SizeableEditors" RelativeSize="9.9022004889975559">
             <LayoutItem Id="description" CaptionLocation="Top" RelativeSize="100" />
           </LayoutGroup>
-          <TabbedGroup Id="Tabs" RelativeSize="39.486552567237162">
+          <TabbedGroup Id="Tabs" RelativeSize="70.782396088019553">
             <LayoutGroup Id="acc_Journal_Entry_Details" Index="0" RelativeSize="100">
               <LayoutItem Id="acc_Journal_Entry_Details" RelativeSize="100" />
             </LayoutGroup>
@@ -343,6 +394,28 @@
               <LayoutItem Id="AuditTrail" RelativeSize="100" />
             </LayoutGroup>
           </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="acc_Opening_Balance_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="13.866666666666667">
+            <LayoutGroup Id="acc_Opening_Balance" RelativeSize="100">
+              <LayoutGroup Id="acc_Opening_Balance_col1" RelativeSize="50">
+                <LayoutItem Id="account_id" Index="0" RelativeSize="50" />
+                <LayoutItem Id="year_id" Index="1" RelativeSize="50" />
+                <LayoutItem Id="opening_balance_id" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="acc_Opening_Balance_col2" RelativeSize="50">
+                <LayoutItem Id="credit" RelativeSize="50" />
+                <LayoutItem Id="debit" RelativeSize="50" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="86.13333333333334">
+            <LayoutItem Id="AuditTrail" RelativeSize="100" />
+          </LayoutGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>

@@ -30,6 +30,7 @@ namespace Accounting.BusinessObjects.Recruitment
             get { return faccount_type_name; }
             set { SetPropertyValue<string>("account_type_name", ref faccount_type_name, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Accounts")]
         [Association(@"acc_AccountReferencesacc_Account_Type")]
         public XPCollection<acc_Account> acc_Accounts { get { return GetCollection<acc_Account>("acc_Accounts"); } }
     }

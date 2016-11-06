@@ -42,8 +42,12 @@ namespace Accounting.BusinessObjects.Recruitment
             get { return fyear_end_date; }
             set { SetPropertyValue<DateTime>("year_end_date", ref fyear_end_date, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Journal Entries")]
         [Association(@"acc_Journal_EntryReferencesacc_Year")]
         public XPCollection<acc_Journal_Entry> acc_Journal_Entrys { get { return GetCollection<acc_Journal_Entry>("acc_Journal_Entrys"); } }
+        [DevExpress.Xpo.DisplayName(@"Opening Balances")]
+        [Association(@"acc_Opening_BalanceReferencesacc_Year")]
+        public XPCollection<acc_Opening_Balance> acc_Opening_Balances { get { return GetCollection<acc_Opening_Balance>("acc_Opening_Balances"); } }
     }
 
 }

@@ -29,6 +29,9 @@ namespace Recruitment.Module.DatabaseUpdate {
             UpdateSecurityInfo();
             UpdateBasicInfo();
         }
+
+       
+
         private SecuritySystemRole CreateDefaultRole()
         {
             SecuritySystemRole defaultRole = ObjectSpace.FindObject<SecuritySystemRole>(new BinaryOperator("Name", "Default"));
@@ -83,19 +86,18 @@ namespace Recruitment.Module.DatabaseUpdate {
             userAdmin.Roles.Add(adminRole);
             ObjectSpace.CommitChanges();
         }
-
         #region UpdateBasicInfo
 
         private void UpdateBasicInfo()
         {
-            rec_Require_Doc_Status_Data();
-            rec_Applicant_Status_Data();
-            rec_Employer_Order_Status_Data();
-            rec_Annual_Vacation_Type_Data();
-            rec_Delivery_Type_Data();
-            rec_Housing_Type_Data();
-            rec_Medical_Insurance_Types_Data();
-            rec_Residence_Type_Data();
+            //rec_Require_Doc_Status_Data();
+            //rec_Applicant_Status_Data();
+            //rec_Employer_Order_Status_Data();
+            //rec_Annual_Vacation_Type_Data();
+            //rec_Delivery_Type_Data();
+            //rec_Housing_Type_Data();
+            //rec_Medical_Insurance_Types_Data();
+            //rec_Residence_Type_Data();
 
             ObjectSpace.CommitChanges();
         }

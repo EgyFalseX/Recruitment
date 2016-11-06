@@ -19,21 +19,21 @@
         <Member Name="AlarmTime" DisplayFormat="{0:dd/MM/yyyy hh:mm tt}" EditMask="dd/MM/yyyy hh:mm tt" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.acc_Account_Applicant" ImageName="acc_Account16" Caption="Applicant Accounts">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.acc_Account_Applicant" ImageName="acc_Account32" Caption="Applicant Accounts" DefaultListViewImage="acc_Account16" DefaultDetailViewImage="acc_Account16">
       <OwnMembers>
         <Member Name="acc_account_id_applicant_id" Caption="ID" />
         <Member Name="account_id" Caption="Account" />
         <Member Name="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" Caption="Order" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Annual_Vacation_Type" ImageName="rec_Annual_Vacation_Type16" DefaultListViewShowAutoFilterRow="True" Caption="Annual Vacation Type">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Annual_Vacation_Type" ImageName="rec_Annual_Vacation_Type32" DefaultListViewShowAutoFilterRow="True" Caption="Annual Vacation Type" DefaultDetailViewImage="rec_Annual_Vacation_Type16" DefaultListViewImage="rec_Annual_Vacation_Type16">
       <OwnMembers>
         <Member Name="rec_annual_vacation_type_id" Caption="ID" />
         <Member Name="rec_annual_vacation_type_name" Caption="Name" />
         <Member Name="rec_Employer_Order_Details" Caption="Order Details" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant" Caption="Applicant" ImageName="rec_Applicant16" DefaultListViewImage="rec_Applicant16" DefaultDetailViewImage="rec_Applicant16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant" Caption="Applicant" ImageName="rec_Applicant32" DefaultListViewImage="rec_Applicant16" DefaultDetailViewImage="rec_Applicant16" DefaultListViewShowAutoFilterRow="True">
       <OwnMembers>
         <Member Name="applicant_birth_date" Caption="Birth Date" EditMask="dd/MM/yyyy" DisplayFormat="{0:dd/MM/yyyy}" Index="0" />
         <Member Name="applicant_city_id" Caption="City" LookupProperty="city_name" Index="1" />
@@ -73,7 +73,7 @@
         <Member Name="rec_Employer_Order_Detail_Suggest_Applicats" Caption="Suggested In Orders" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Country" Caption="Applicant Country" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Country" Caption="Applicant Country" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Country16" DefaultListViewImage="rec_Country16">
       <OwnMembers>
         <Member Name="app_trv_applicant_id" Caption="Applicant" />
         <Member Name="app_trv_country_id" Caption="Country" />
@@ -81,7 +81,7 @@
         <Member Name="app_trv_year" Caption="Year" DisplayFormat="{0:f0}" EditMask="f0" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Course" Caption="Applicant Course" ImageName="rec_Applicant_Course16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Course" Caption="Applicant Course" ImageName="rec_Applicant_Course32" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Applicant_Course16" DefaultListViewImage="rec_Applicant_Course16">
       <OwnMembers>
         <Member Name="app_crs_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
         <Member Name="app_crs_id" Caption="ID" AllowEdit="False" />
@@ -90,7 +90,7 @@
         <Member Name="app_crs_year" Caption="Year" DisplayFormat="{0:d}" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Education" Caption="Applicant Education" ImageName="rec_Applicant_Education16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Education" Caption="Applicant Education" ImageName="rec_Applicant_Education32" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Applicant_Education16" DefaultListViewImage="rec_Applicant_Education16">
       <OwnMembers>
         <Member Name="app_edu_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
         <Member Name="app_edu_degree_id" Caption="Degree" LookupProperty="degree_name" />
@@ -102,7 +102,7 @@
         <Member Name="app_edu_year" Caption="Year" DisplayFormat="{0:d}" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Experience" Caption="Applicant Experience" ImageName="rec_Applicant_Experience16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Experience" Caption="Applicant Experience" ImageName="rec_Applicant_Experience32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Applicant_Experience16" DefaultDetailViewImage="rec_Applicant_Experience16">
       <OwnMembers>
         <Member Name="app_exp_applicant_id" Caption="Applicant" LookupProperty="applicant_name" Index="0" />
         <Member Name="app_exp_description" Caption="Description" Index="3" />
@@ -118,14 +118,14 @@
         <Member Name="app_exp_job_id" Caption="Job Title" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Industry" Caption="Applicant Industry" ImageName="rec_Industry16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Industry" Caption="Applicant Industry" ImageName="rec_Industry32" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Industry16" DefaultListViewImage="rec_Industry16">
       <OwnMembers>
         <Member Name="app_indus_applicant_id" Caption="Applicant" />
         <Member Name="app_indus_id" Caption="ID" />
         <Member Name="app_indus_industry_id" Caption="Industry" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Langauge" Caption="Applicant Langauge" ImageName="rec_Nationality16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Langauge" Caption="Applicant Langauge" ImageName="rec_Nationality32" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Nationality16" DefaultListViewImage="rec_Nationality16">
       <OwnMembers>
         <Member Name="app_lang_applicant_id" Caption="Applicant" />
         <Member Name="app_lang_id" Caption="ID" />
@@ -133,7 +133,7 @@
         <Member Name="rec_lang_level_id" Caption="Langauge Level" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Project" Caption="Applicant Project" ImageName="rec_Applicant_Project16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Project" Caption="Applicant Project" ImageName="rec_Applicant_Project32" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Applicant_Project16" DefaultListViewImage="rec_Applicant_Project16">
       <OwnMembers>
         <Member Name="app_prj_applicant_id" Caption="Applicant" LookupProperty="applicant_name" Index="0" />
         <Member Name="app_prj_company_name" Caption="Company" Index="1" />
@@ -145,14 +145,14 @@
         <Member Name="AuditTrail" Index="9" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Status" DefaultDetailViewImage="rec_Applicant_Status16" DefaultListViewImage="rec_Applicant_Status16" ImageName="rec_Applicant_Status16" Caption="Applicant Status" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Status" DefaultDetailViewImage="rec_Applicant_Status16" DefaultListViewImage="rec_Applicant_Status16" ImageName="rec_Applicant_Status32" Caption="Applicant Status" DefaultListViewShowAutoFilterRow="True">
       <OwnMembers>
         <Member Name="rec_applicant_status_id" Caption="ID" />
         <Member Name="rec_applicant_status_name" Caption="Name" />
         <Member Name="rec_Employer_Order_Detail_Accept_Applicats" Caption="Order Accepted Applicats" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Tag" Caption="Applicant Tag" ImageName="rec_Applicant_Tag16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Tag" Caption="Applicant Tag" ImageName="rec_Applicant_Tag32" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Applicant_Tag16" DefaultListViewImage="rec_Applicant_Tag16">
       <OwnMembers>
         <Member Name="app_tag_id" Caption="ID" AllowEdit="False" Index="-1" />
         <Member Name="app_tag_applicant_id" Caption="Applicant" LookupProperty="applicant_name" Index="0" />
@@ -160,7 +160,7 @@
         <Member Name="AuditTrail" Index="2" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Call_Result" Caption="Call Result" DefaultDetailViewImage="rec_call_result16" DefaultListViewImage="rec_call_result16" ImageName="rec_call_result16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Call_Result" Caption="Call Result" DefaultDetailViewImage="rec_call_result16" DefaultListViewImage="rec_call_result16" ImageName="rec_call_result32" DefaultListViewShowAutoFilterRow="True">
       <OwnMembers>
         <Member Name="rec_call_result_id" Index="0" Caption="ID" />
         <Member Name="rec_call_result_name" Index="1" Caption="Name" />
@@ -168,7 +168,7 @@
         <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_City" Caption="City" DefaultDetailViewImage="" ImageName="rec_City16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_City" Caption="City" DefaultDetailViewImage="rec_City16" ImageName="rec_City32" DefaultListViewShowAutoFilterRow="True">
       <OwnMembers>
         <Member Name="city_country_id" Caption="Country" LookupProperty="country_name" Index="0" />
         <Member Name="city_id" Caption="ID" AllowEdit="False" Index="1" />
@@ -178,7 +178,7 @@
         <Member Name="rec_Employers" Caption="Employers" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Country" Caption="Country" ImageName="rec_Country16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Country" Caption="Country" ImageName="rec_Country32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Country16" DefaultDetailViewImage="rec_Country16">
       <OwnMembers>
         <Member Name="country_id" Caption="ID" AllowEdit="False" Index="0" />
         <Member Name="country_name" Caption="Name" Index="1" />
@@ -186,7 +186,7 @@
         <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Degree" Caption="Degree" ImageName="rec_Degree16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Degree" Caption="Degree" ImageName="rec_Degree32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Degree16" DefaultDetailViewImage="rec_Degree16">
       <OwnMembers>
         <Member Name="degree_id" Caption="ID" AllowEdit="False" Index="0" />
         <Member Name="degree_name" Caption="Name" Index="1" />
@@ -194,14 +194,14 @@
         <Member Name="AuditTrail" Index="4" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Delivery_Type" ImageName="rec_Delivery_Type16" DefaultListViewShowAutoFilterRow="True" Caption="Order Delivery Type">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Delivery_Type" ImageName="rec_Delivery_Type32" DefaultListViewShowAutoFilterRow="True" Caption="Order Delivery Type">
       <OwnMembers>
         <Member Name="rec_delivery_type_id" Caption="ID" />
         <Member Name="rec_delivery_type_name" Caption="Name" />
         <Member Name="rec_Employer_Orders" Caption="Employer Orders" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Doc_Info" DefaultDetailViewImage="rec_Doc_Info16" DefaultListViewImage="rec_Doc_Info16" ImageName="rec_Doc_Info16" Caption="Document Information" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Doc_Info" DefaultDetailViewImage="rec_Doc_Info16" DefaultListViewImage="rec_Doc_Info16" ImageName="rec_Doc_Info32" Caption="Document Information" DefaultListViewShowAutoFilterRow="True">
       <OwnMembers>
         <Member Name="rec_doc_info_id" Caption="ID" Index="0" />
         <Member Name="rec_doc_info_name" Caption="Name" Index="1" />
@@ -209,7 +209,7 @@
         <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer" Caption="Employer" ImageName="rec_Employer16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer" Caption="Employer" ImageName="rec_Employer32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Employer16" DefaultDetailViewImage="rec_Employer16">
       <OwnMembers>
         <Member Name="employer_Address" Caption="Address" Index="0" />
         <Member Name="employer_id" Caption="ID" AllowEdit="False" Index="1" DisplayFormat="{0:d}" EditMask="d" />
@@ -230,14 +230,14 @@
         <Member Name="rec_Employer_rec_PortfolioFileData_Emp" Caption="Attachment" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Industry" Caption="Employer Industry" ImageName="rec_Employer_Industry16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Industry" Caption="Employer Industry" ImageName="rec_Industry32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Industry16" DefaultDetailViewImage="rec_Industry16">
       <OwnMembers>
         <Member Name="employer_industry_id" Caption="ID" LookupProperty="industry_name" Index="0" />
         <Member Name="employer_id" Caption="Employer" LookupProperty="employer_company_name" />
         <Member Name="industry_id" LookupProperty="industry_name" Caption="Industry" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order" Caption="Employer Orders" DefaultDetailViewImage="rec_employer_order16" DefaultListViewImage="rec_employer_order16" ImageName="rec_employer_order16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order" Caption="Employer Orders" DefaultDetailViewImage="rec_employer_order16" DefaultListViewImage="rec_employer_order16" ImageName="rec_employer_order32" DefaultListViewShowAutoFilterRow="True">
       <AppearanceRules>
         <AppearanceRule Id="rec_Employer_Order_Status_Canceled" TargetItems="*" Enabled="True" Criteria="[rec_employer_order_rec_employer_order_status_id] = 3" FontColor="DarkRed" FontStyle="Strikeout" AppearanceItemType="ViewItem" IsNewNode="True" />
         <AppearanceRule Id="rec_Employer_Order_Status_Completed" TargetItems="*" Criteria="[rec_employer_order_rec_employer_order_status_id] = 2" FontColor="DarkGreen" AppearanceItemType="ViewItem" IsNewNode="True" />
@@ -258,7 +258,7 @@
         <Member Name="RecruitmentProgress" DisplayFormat="{0:#,###,##0.##}" EditMask="#,###,##0.##" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail" Caption="Order Details" DefaultDetailViewImage="rec_employer_order_detail16" DefaultListViewImage="rec_employer_order_detail16" ImageName="rec_employer_order_detail16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail" Caption="Order Details" DefaultDetailViewImage="rec_employer_order_detail16" DefaultListViewImage="rec_employer_order_detail16" ImageName="rec_employer_order_detail32" DefaultListViewShowAutoFilterRow="True">
       <OwnMembers>
         <Member Name="rec_employer_order_detail_id" Index="0" Caption="Order Detail ID" DisplayFormat="{0:d}" EditMask="d" />
         <Member Name="rec_employer_order_detail_rec_employer_order_id" Index="1" Caption="Order" />
@@ -287,7 +287,7 @@
         <Member Name="rec_employer_order_detail_working_hours" DisplayFormat="{0:#,###,##0.##}" EditMask="#,###,##0.##" Caption="Working Hours" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Accept_Applicat" Caption="Order Accepted Applicat" ImageName="rec_employer_order_detail_accept_applicat16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Accept_Applicat" Caption="Order Accepted Applicat" ImageName="rec_employer_order_detail_accept_applicat32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_employer_order_detail_accept_applicat16" DefaultDetailViewImage="rec_employer_order_detail_accept_applicat16">
       <OwnMembers>
         <Member Name="rec_employer_order_detail_accept_applicat_description" Index="2" Caption="Description" />
         <Member Name="rec_Employer_Order_Detail_Accept_Applicat_Docs" Index="3" Caption="Applicat Required Documents" LookupProperty="rec_doc_info_name" />
@@ -296,7 +296,7 @@
         <Member Name="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" Caption="Suggest Applicat" LookupProperty="CustomName" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Accept_Applicat_Doc" Caption="Accepted Applicat Required Documents" ImageName="rec_employer_order_detail_accept_applicat_doc16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Accept_Applicat_Doc" Caption="Accepted Applicat Required Documents" ImageName="rec_employer_order_detail_accept_applicat_doc32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_employer_order_detail_accept_applicat_doc16" DefaultDetailViewImage="rec_employer_order_detail_accept_applicat_doc16">
       <OwnMembers>
         <Member Name="rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_description" Caption="Description" />
         <Member Name="rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_id" Caption="ID" />
@@ -305,7 +305,7 @@
         <Member Name="rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_require_doc_status_id" Caption="Status" LookupProperty="rec_require_doc_status_name" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Call" Caption="Order Call" ImageName="rec_employer_order_detail_call16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Call" Caption="Order Call" ImageName="rec_employer_order_detail_call32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_employer_order_detail_call16" DefaultDetailViewImage="rec_employer_order_detail_call16">
       <OwnMembers>
         <Member Name="rec_employer_order_detail_call_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
         <Member Name="rec_employer_order_detail_call_date" Caption="Date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" />
@@ -315,7 +315,7 @@
         <Member Name="rec_employer_order_detail_call_rec_employer_order_detail_id" Caption="Order detail" LookupProperty="CustomName" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Connection" Caption="Employer Order Connections" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Connection" Caption="Employer Order Connections" DefaultListViewShowAutoFilterRow="True" ImageName="rec_Employer_Order_Detail_Connection32" DefaultListViewImage="rec_Employer_Order_Detail_Connection16" DefaultDetailViewImage="rec_Employer_Order_Detail_Connection16">
       <OwnMembers>
         <Member Name="rec_employer_order_detail_connection_date" Caption="Date" DisplayFormat="{0:dd/MM/yyyy HH:MM tt}" EditMask="dd/MM/yyyy HH:MM tt" EditMaskType="DateTime" />
         <Member Name="rec_Employer_Order_Detail_Connection_Details" Caption="Connection Applicant" />
@@ -323,14 +323,14 @@
         <Member Name="rec_employer_order_detail_id" Caption="Order Detail" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Connection_Detail" Caption="Employer Order Connections Detail" DefaultListViewAllowEdit="True" DefaultListViewNewItemRowPosition="Bottom" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Connection_Detail" Caption="Employer Order Connections Detail" DefaultListViewAllowEdit="True" DefaultListViewNewItemRowPosition="Bottom" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Employer_Order_Detail_Connection16" DefaultDetailViewImage="rec_Employer_Order_Detail_Connection16">
       <OwnMembers>
         <Member Name="rec_employer_order_detail_connection_detail_applicant_id" Caption="Applicant" DataSourceCriteria="[rec_Employer_Order_Detail_Suggest_Applicats][[rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_id] = '@rec_employer_order_detail_connection_id.rec_employer_order_detail_id.rec_employer_order_detail_id'] And Not [rec_Employer_Order_Detail_Connection_Details][[rec_employer_order_detail_connection_id.rec_employer_order_detail_connection_id] = '@rec_employer_order_detail_connection_id.rec_employer_order_detail_connection_id']" />
         <Member Name="rec_employer_order_detail_connection_detail_id" Caption="ID" />
         <Member Name="rec_employer_order_detail_connection_id" Caption="Order Connections" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Suggest_Applicat" Caption="Order Suggested Applicats" ImageName="rec_employer_order_detail_suggest_applicat16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Suggest_Applicat" Caption="Order Suggested Applicats" ImageName="rec_employer_order_detail_suggest_applicat32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_employer_order_detail_suggest_applicat16" DefaultDetailViewImage="rec_employer_order_detail_suggest_applicat16">
       <OwnMembers>
         <Member Name="rec_Employer_Order_Detail_Accept_Applicats" Caption="Order Accepted Applicats" />
         <Member Name="rec_employer_order_detail_suggest_applicat_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
@@ -341,7 +341,7 @@
         <Member Name="rec_employer_order_detail_suggest_applicat_rec_suggest_applicat_source_id" Caption="Applicat Source" LookupProperty="rec_suggest_applicat_source_name" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Interview" Caption="Employer Order Interview" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Interview" Caption="Employer Order Interview" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Employer_Order_Interview16" DefaultDetailViewImage="rec_Employer_Order_Interview16">
       <OwnMembers>
         <Member Name="rec_employer_order_id" Caption="Order" />
         <Member Name="rec_employer_order_interview_date" Caption="Date" />
@@ -349,7 +349,7 @@
         <Member Name="rec_employer_order_interview_note" Caption="Note" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Person" ImageName="rec_Employer_Person16" Caption="Employer Person" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Person" ImageName="rec_Employer_Person32" Caption="Employer Person" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Employer_Person16" DefaultDetailViewImage="rec_Employer_Person16">
       <OwnMembers>
         <Member Name="employer_id" Caption="Employer" LookupProperty="employer_company_name" />
         <Member Name="employer_person_id" Caption="ID" />
@@ -360,7 +360,7 @@
         <Member Name="person_title" Caption="Job Title" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Faculty" Caption="Faculty" ImageName="rec_Faculty16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Faculty" Caption="Faculty" ImageName="rec_Faculty32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Faculty16" DefaultDetailViewImage="rec_Faculty16">
       <OwnMembers>
         <Member Name="faculty_id" Caption="ID" AllowEdit="False" Index="0" />
         <Member Name="faculty_name" Caption="Name" Index="1" />
@@ -368,7 +368,7 @@
         <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Gender" ImageName="rec_Gender16" DefaultListViewShowAutoFilterRow="True" Caption="Gender">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Gender" ImageName="rec_Gender32" DefaultListViewShowAutoFilterRow="True" Caption="Gender" DefaultListViewImage="rec_Gender16" DefaultDetailViewImage="rec_Gender16">
       <OwnMembers>
         <Member Name="rec_Applicants" Index="0" Caption="Applicants" />
         <Member Name="rec_gender_id" Index="1" AllowEdit="False" Caption="ID" />
@@ -376,14 +376,14 @@
         <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Housing_Type" ImageName="rec_Housing_Type16" DefaultListViewShowAutoFilterRow="True" Caption="Housing Type">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Housing_Type" ImageName="rec_Housing_Type32" DefaultListViewShowAutoFilterRow="True" Caption="Housing Type" DefaultListViewImage="rec_Housing_Type16" DefaultDetailViewImage="rec_Housing_Type16">
       <OwnMembers>
         <Member Name="rec_Employer_Order_Details" Caption="Employer Order Details" />
         <Member Name="rec_housing_name" Caption="Name" />
         <Member Name="rec_housing_type_id" Caption="ID" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Industry" Caption="Industry" ImageName="rec_Industry16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Industry" Caption="Industry" ImageName="rec_Industry32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Industry16" DefaultDetailViewImage="rec_Industry16">
       <OwnMembers>
         <Member Name="industry_id" Caption="ID" AllowEdit="False" Index="0" />
         <Member Name="industry_name" Caption="Name" Index="1" />
@@ -397,7 +397,7 @@
         <Member Name="rec_Industry_Require_Doc_Infos" Caption="Industry Require Doc Info" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Industry_Require_Doc_Info" Caption="Industry Required Documents" ImageName="rec_industry_require_doc16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Industry_Require_Doc_Info" Caption="Industry Required Documents" ImageName="rec_industry_require_doc32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_industry_require_doc16" DefaultDetailViewImage="rec_industry_require_doc16">
       <OwnMembers>
         <Member Name="rec_Employer_Order_Detail_Accept_Applicat_Docs" Caption="Order Accepted Applicat Documents" />
         <Member Name="rec_industry_require_doc_info_id" Caption="ID" />
@@ -412,21 +412,21 @@
         <Member Name="rec_Applicant_Experiences" Caption="Applicant Experiences" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Langauge" Caption="Langauge" ImageName="rec_Nationality16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Langauge" Caption="Langauge" DefaultListViewImage="rec_Nationality16" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Nationality16">
       <OwnMembers>
         <Member Name="langauge_id" Caption="ID" />
         <Member Name="langauge_name" Caption="Name" />
         <Member Name="rec_Applicant_Langauges" Caption="Applicant Langauges" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Langauge_Level" Caption="Langauge Level" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Langauge_Level" Caption="Langauge Level" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Nationality16" DefaultDetailViewImage="rec_Nationality16">
       <OwnMembers>
         <Member Name="rec_Applicant_Langauges" Caption="Applicant Langauges" />
         <Member Name="rec_lang_level_id" Caption="ID" />
         <Member Name="rec_lang_level_name" Caption="Name" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Marital_Status" Caption="Marital Status" ImageName="rec_Marital_Status16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Marital_Status" Caption="Marital Status" ImageName="rec_Marital_Status32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Marital_Status16" DefaultDetailViewImage="rec_Marital_Status16">
       <OwnMembers>
         <Member Name="marital_status_id" Caption="ID" AllowEdit="False" Index="0" />
         <Member Name="marital_status_name" Caption="Name" Index="1" />
@@ -434,14 +434,14 @@
         <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Medical_Insurance_Types" ImageName="rec_Medical_Insurance_Types16" DefaultListViewShowAutoFilterRow="True" Caption="Medical Insurance Type">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Medical_Insurance_Types" ImageName="rec_Medical_Insurance_Types32" DefaultListViewShowAutoFilterRow="True" Caption="Medical Insurance Type" DefaultListViewImage="rec_Medical_Insurance_Types16" DefaultDetailViewImage="rec_Medical_Insurance_Types16">
       <OwnMembers>
         <Member Name="rec_Employer_Order_Details" Caption="Order Details" />
         <Member Name="rec_medical_insurance_types_id" Caption="ID" />
         <Member Name="rec_medical_insurance_types_name" Caption="Name" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Military_Status" Caption="Military Status" ImageName="rec_Military_Status16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Military_Status" Caption="Military Status" ImageName="rec_Military_Status32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Military_Status16" DefaultDetailViewImage="rec_Military_Status16">
       <OwnMembers>
         <Member Name="military_id" Caption="ID" AllowEdit="False" Index="0" />
         <Member Name="military_name" Caption="Name" Index="1" />
@@ -449,7 +449,7 @@
         <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Nationality" Caption="Nationality" ImageName="rec_Nationality16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Nationality" Caption="Nationality" ImageName="rec_Nationality32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Nationality16" DefaultDetailViewImage="rec_Nationality16">
       <OwnMembers>
         <Member Name="nationality_id" Caption="ID" AllowEdit="False" Index="0" />
         <Member Name="nationality_name" Caption="Name" Index="1" />
@@ -472,7 +472,7 @@
         <Member Name="AuditTrail" Index="2" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Position" Caption="Position" ImageName="rec_Position16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Position" Caption="Position" ImageName="rec_Position32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Position16" DefaultDetailViewImage="rec_Position16">
       <OwnMembers>
         <Member Name="position_id" Caption="ID" AllowEdit="False" Index="0" />
         <Member Name="position_name" Caption="Name" Index="1" />
@@ -480,49 +480,49 @@
         <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Require_Doc_Status" Caption="Required Document Status" ImageName="rec_require_doc_status16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Require_Doc_Status" Caption="Required Document Status" ImageName="rec_require_doc_status32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_require_doc_status16" DefaultDetailViewImage="rec_require_doc_status16">
       <OwnMembers>
         <Member Name="rec_Employer_Order_Detail_Accept_Applicat_Docs" Caption="Orders Accepted Applicats Documents" />
         <Member Name="rec_require_doc_status_id" Caption="ID" />
         <Member Name="rec_require_doc_status_name" Caption="Name" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Residence_Type" ImageName="rec_Housing_Type16" DefaultListViewShowAutoFilterRow="True" Caption="Residence Type">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Residence_Type" ImageName="rec_Housing_Type32" DefaultListViewShowAutoFilterRow="True" Caption="Residence Type" DefaultListViewImage="rec_Housing_Type16" DefaultDetailViewImage="rec_Housing_Type16">
       <OwnMembers>
         <Member Name="rec_Employer_Order_Details" Caption="Order Details" />
         <Member Name="rec_residence_type_id" Caption="ID" />
         <Member Name="rec_residence_type_name" Caption="Name" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Study_Grade" Caption="Study Grade" ImageName="rec_Study_Grade16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Study_Grade" Caption="Study Grade" ImageName="rec_Study_Grade32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Study_Grade16" DefaultDetailViewImage="rec_Study_Grade16">
       <OwnMembers>
         <Member Name="study_grade_id" Caption="ID" AllowEdit="False" Index="1" />
         <Member Name="study_grade_name" Caption="Name" Index="2" />
         <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Suggest_Applicat_Source" Caption="Applicat Source" ImageName="rec_suggest_applicat_source16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Suggest_Applicat_Source" Caption="Applicat Source" ImageName="rec_suggest_applicat_source32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_suggest_applicat_source16" DefaultDetailViewImage="rec_suggest_applicat_source16">
       <OwnMembers>
         <Member Name="rec_Employer_Order_Detail_Suggest_Applicats" Caption="Orders Applicats" />
         <Member Name="rec_suggest_applicat_source_id" Caption="ID" />
         <Member Name="rec_suggest_applicat_source_name" Caption="Name" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Tag" Caption="Tag" ImageName="rec_Applicant_Tag16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Tag" Caption="Tag" ImageName="rec_Applicant_Tag32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Applicant_Tag16" DefaultDetailViewImage="rec_Applicant_Tag16">
       <OwnMembers>
         <Member Name="tag_id" Caption="ID" AllowEdit="False" Index="0" />
         <Member Name="tag_name" Caption="Name" Index="1" />
         <Member Name="AuditTrail" Index="2" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Ticket_Type" ImageName="rec_Ticket_Type16" DefaultListViewShowAutoFilterRow="True" Caption="Ticket Type">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Ticket_Type" ImageName="rec_Ticket_Type32" DefaultListViewShowAutoFilterRow="True" Caption="Ticket Type" DefaultListViewImage="rec_Ticket_Type16" DefaultDetailViewImage="rec_Ticket_Type16">
       <OwnMembers>
         <Member Name="rec_Employer_Order_Details" Caption="Order Details" />
         <Member Name="rec_ticket_type_id" Caption="ID" />
         <Member Name="rec_ticket_type_name" Caption="Name" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_University" Caption="University" ImageName="rec_University16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_University" Caption="University" ImageName="rec_University32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_University16" DefaultDetailViewImage="rec_University16">
       <OwnMembers>
         <Member Name="rec_Applicant_Educations" Caption="Applicant Educations" Index="0" />
         <Member Name="university_id" Caption="ID" AllowEdit="False" Index="1" />
@@ -530,7 +530,7 @@
         <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Work_Type" Caption="Work Type" ImageName="rec_Work_Type16" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Work_Type" Caption="Work Type" ImageName="rec_Work_Type32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Work_Type16" DefaultDetailViewImage="rec_Work_Type16">
       <OwnMembers>
         <Member Name="rec_Applicant_Experiences" Caption="Applicant Experiences" LookupProperty="app_exp_title" Index="0" />
         <Member Name="rec_Applicants" Caption="Applicants" LookupProperty="applicant_name" Index="1" />

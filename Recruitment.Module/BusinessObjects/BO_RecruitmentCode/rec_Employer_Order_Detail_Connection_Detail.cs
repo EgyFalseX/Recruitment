@@ -9,7 +9,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [NavigationItem("Employer")]
-    [ImageName("rec_Employer_Order_Detail_Connection16")]
+    [ImageName("rec_Employer_Order_Detail_Connection32")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("rec_employer_order_detail_connection_detail_applicant_id")]
     [DevExpress.ExpressApp.DC.XafDisplayName("Order Connection Applicant")]
     public partial class rec_Employer_Order_Detail_Connection_Detail

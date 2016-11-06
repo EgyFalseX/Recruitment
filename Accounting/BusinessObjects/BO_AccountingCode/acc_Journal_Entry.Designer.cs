@@ -37,7 +37,8 @@ namespace Accounting.BusinessObjects.Recruitment
             set { SetPropertyValue<acc_Year>("year_id", ref fyear_id, value); }
         }
         bool fclosed;
-        public bool closed{
+        public bool closed
+        {
             get { return fclosed; }
             set { SetPropertyValue<bool>("closed", ref fclosed, value); }
         }
@@ -61,6 +62,7 @@ namespace Accounting.BusinessObjects.Recruitment
             get { return fentry_text; }
             set { SetPropertyValue<string>("entry_text", ref fentry_text, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Journal Entry Details")]
         [Association(@"acc_Journal_Entry_DetailReferencesacc_Journal_Entry")]
         public XPCollection<acc_Journal_Entry_Detail> acc_Journal_Entry_Details { get { return GetCollection<acc_Journal_Entry_Detail>("acc_Journal_Entry_Details"); } }
     }

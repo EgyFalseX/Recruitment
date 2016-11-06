@@ -35,13 +35,15 @@ namespace Recruitment.Module.Web.Controllers
         private Type _currentReportType;
         protected override void ShowReportPreview(SimpleActionExecuteEventArgs args)
         {
-            _currentReportType = ((IReportDataV2)args.CurrentObject).DataType;
-            base.ShowReportPreview(args);
+            _currentReportType = ((IReportDataV2)args.CurrentObject).DataType;base.ShowReportPreview(args);
 
         }
         private void Ctr_ReportV2SetPreviewType_CreateCustomParametersDetailView(object sender, CreateCustomParametersDetailViewEventArgs e)
         {
-            ((Report.RepParamObjCri) e.ReportParametersObject).ReportType = _currentReportType;
+            if (e.ReportParametersObject.GetType() == typeof(Report.RepParamObjCri))
+            {
+                ((Report.RepParamObjCri)e.ReportParametersObject).ReportType = _currentReportType;
+            }
         }
 
         protected override void OnViewControlsCreated()

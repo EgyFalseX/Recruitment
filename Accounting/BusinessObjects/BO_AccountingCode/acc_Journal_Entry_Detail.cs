@@ -9,7 +9,7 @@ namespace Accounting.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("JournalCaption")]
-    [ImageName("acc_Journal_Entry_Detail16")]
+    [ImageName("acc_Journal_Entry_Detail32")]
     public partial class acc_Journal_Entry_Detail
     {
         public acc_Journal_Entry_Detail(Session session) : base(session) { }

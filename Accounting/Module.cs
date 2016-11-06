@@ -42,9 +42,10 @@ namespace Accounting {
         }
         public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {
             ModuleUpdater updater = new DatabaseUpdate.Updater(objectSpace, versionFromDB);
-            PredefinedReportsUpdater reportsUpdater = new PredefinedReportsUpdater(Application, objectSpace, versionFromDB);
-            //reportsUpdater.UseMultipleUpdaters = true;
-            reportsUpdater.AddPredefinedReport<acc_Journal_Entry_01>("Account Details", typeof(acc_Journal_Entry_Detail));
+            //Register the predefined reports
+            PredefinedReportsUpdater reportsUpdater = new PredefinedReportsUpdater(Application, objectSpace,
+                versionFromDB) {UseMultipleUpdaters = true};
+            reportsUpdater.AddPredefinedReport<acc_Rep_Trial_Balance>("Trial Balance", typeof(sp_Trial_BalanceResult), typeof(RepParam_acc_Rep_Trial_Balance));//
             return new ModuleUpdater[] { updater, reportsUpdater };
         }
         public override void Setup(XafApplication application) {

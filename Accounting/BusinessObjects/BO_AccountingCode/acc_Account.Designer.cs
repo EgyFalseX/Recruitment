@@ -74,10 +74,18 @@ namespace Accounting.BusinessObjects.Recruitment
             get { return faccount_code; }
             set { SetPropertyValue<string>("account_code", ref faccount_code, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Child Accounts")]
         [Association(@"acc_AccountReferencesacc_Account")]
         public XPCollection<acc_Account> acc_AccountCollection { get { return GetCollection<acc_Account>("acc_AccountCollection"); } }
+        [DevExpress.Xpo.DisplayName(@"Journal Entries")]
         [Association(@"acc_Journal_Entry_DetailReferencesacc_Account")]
         public XPCollection<acc_Journal_Entry_Detail> acc_Journal_Entry_Details { get { return GetCollection<acc_Journal_Entry_Detail>("acc_Journal_Entry_Details"); } }
+        [DevExpress.Xpo.DisplayName(@"Opening Balances")]
+        [Association(@"acc_Opening_BalanceReferencesacc_Account")]
+        public XPCollection<acc_Opening_Balance> acc_Opening_Balances { get { return GetCollection<acc_Opening_Balance>("acc_Opening_Balances"); } }
+        [DevExpress.Xpo.DisplayName(@"Category Details")]
+        [Association(@"acc_Account_Category_DetailReferencesacc_Account")]
+        public XPCollection<acc_Account_Category_Detail> acc_Account_Category_Details { get { return GetCollection<acc_Account_Category_Detail>("acc_Account_Category_Details"); } }
     }
 
 }

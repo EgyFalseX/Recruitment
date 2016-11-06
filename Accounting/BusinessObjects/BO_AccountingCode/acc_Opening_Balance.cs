@@ -8,11 +8,12 @@ using DevExpress.Persistent.Base;
 namespace Accounting.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
-    [DevExpress.ExpressApp.DC.XafDefaultProperty("bank_acc_name")]
-    [ImageName("acc_Bank32")]
-    public partial class acc_Bank
+    [NavigationItem("Accounting")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Opening Balance")]
+    [DevExpress.Persistent.Base.ImageName("acc_Opening_Balance32")]
+    public partial class acc_Opening_Balance
     {
-        public acc_Bank(Session session) : base(session) { }
+        public acc_Opening_Balance(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
         //Audit Trail
         private XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> auditTrail;

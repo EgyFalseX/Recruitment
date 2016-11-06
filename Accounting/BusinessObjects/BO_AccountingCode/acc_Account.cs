@@ -13,8 +13,8 @@ using DevExpress.Persistent.Validation;
 namespace Accounting.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
-    [DevExpress.ExpressApp.DC.XafDefaultProperty("account_code")]
-    [ImageName("acc_Account16")]
+    [DevExpress.ExpressApp.DC.XafDefaultProperty("account_name")]
+    [ImageName("acc_Account32")]
 
     public partial class acc_Account : ITreeNode, ITreeNodeImageProvider
     {
