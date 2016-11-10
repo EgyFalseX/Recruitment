@@ -47,9 +47,10 @@ namespace Recruitment.Module {
             base.Setup(application);
             // Manage various aspects of the application UI and behavior at the module level.
             application.LoggedOn += new EventHandler<LogonEventArgs>(application_LoggedOn);
-
+            // for auto association between relation fields
+            DevExpress.ExpressApp.Security.Strategy.SecuritySystemRoleBase.AutoAssociationPermissions = true;
         }
-
+        
         public override void ExtendModelInterfaces(DevExpress.ExpressApp.Model.ModelInterfaceExtenders extenders)
         {
             base.ExtendModelInterfaces(extenders);

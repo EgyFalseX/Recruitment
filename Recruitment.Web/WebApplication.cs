@@ -44,6 +44,7 @@ namespace Recruitment.Web {
         private DevExpress.ExpressApp.Validation.Web.ValidationAspNetModule validationAspNetModule;
         private DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule viewVariantsModule;
         private Accounting.AccountingModule accountingModule1;
+        private ControllerManagement.Module.ControllerManagementModule controllerManagementModule1;
         private DevExpress.ExpressApp.Workflow.WorkflowModule workflowModule;
 
         public RecruitmentAspNetApplication() {
@@ -141,6 +142,7 @@ namespace Recruitment.Web {
             this.viewVariantsModule = new DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule();
             this.workflowModule = new DevExpress.ExpressApp.Workflow.WorkflowModule();
             this.accountingModule1 = new Accounting.AccountingModule();
+            this.controllerManagementModule1 = new ControllerManagement.Module.ControllerManagementModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // securityStrategyComplex1
@@ -223,6 +225,7 @@ namespace Recruitment.Web {
             this.Modules.Add(this.viewVariantsModule);
             this.Modules.Add(this.workflowModule);
             this.Modules.Add(this.accountingModule1);
+            this.Modules.Add(this.controllerManagementModule1);
             this.Modules.Add(this.module3);
             this.Modules.Add(this.chartAspNetModule);
             this.Modules.Add(this.fileAttachmentsAspNetModule);

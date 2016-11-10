@@ -28,24 +28,27 @@
   <Views>
     <DetailView Id="SecuritySystemRole_DetailView">
       <Layout>
-        <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors1" ShowCaption="False" RelativeSize="8.2666666666666675">
-            <LayoutItem Id="Name" RelativeSize="51.612903225806448" />
-            <LayoutItem Id="IsAdministrative" RelativeSize="48.387096774193552" />
+        <LayoutGroup Id="Main" RelativeSize="100" TextAlignMode="UseParentOptions">
+          <LayoutGroup Id="SimpleEditors1" ShowCaption="False" RelativeSize="11.660079051383399">
+            <LayoutItem Id="Name" RelativeSize="54.237288135593218" />
+            <LayoutItem Id="IsAdministrative" RelativeSize="45.762711864406782" />
             <LayoutItem Id="CanEditModel" Removed="True" />
           </LayoutGroup>
-          <TabbedGroup Id="Tabs1" RelativeSize="91.733333333333334">
-            <LayoutGroup Id="Users" ShowCaption="True" RelativeSize="100">
+          <TabbedGroup Id="Tabs1" RelativeSize="88.3399209486166" Index="1">
+            <LayoutGroup Id="Users" ShowCaption="True" RelativeSize="100" TextAlignMode="AlignWithChildren">
               <LayoutItem Id="Users" TextAlignMode="AutoSize" Index="0" RelativeSize="100" />
             </LayoutGroup>
-            <LayoutGroup Id="TypePermissions" ShowCaption="True" RelativeSize="100">
+            <LayoutGroup Id="TypePermissions" ShowCaption="True" RelativeSize="100" TextAlignMode="AlignWithChildren">
               <LayoutItem Id="TypePermissions" TextAlignMode="AutoSize" Index="0" RelativeSize="100" />
             </LayoutGroup>
-            <LayoutGroup Id="ChildRoles" ShowCaption="True" RelativeSize="100">
+            <LayoutGroup Id="ChildRoles" ShowCaption="True" RelativeSize="100" TextAlignMode="AlignWithChildren">
               <LayoutItem Id="ChildRoles" TextAlignMode="AutoSize" Index="0" RelativeSize="100" />
             </LayoutGroup>
-            <LayoutGroup Id="ParentRoles" ShowCaption="True" RelativeSize="100">
+            <LayoutGroup Id="ParentRoles" ShowCaption="True" RelativeSize="100" TextAlignMode="AlignWithChildren">
               <LayoutItem Id="ParentRoles" TextAlignMode="AutoSize" Index="0" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="4" Caption="Data Access Permissions" TextAlignMode="AlignWithChildren" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="TypePermissionMatrix" ViewItem="TypePermissionMatrix" Index="0" RelativeSize="100" IsNewNode="True" />
             </LayoutGroup>
           </TabbedGroup>
         </LayoutGroup>

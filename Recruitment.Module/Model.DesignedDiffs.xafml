@@ -168,7 +168,7 @@
         <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_City" Caption="City" DefaultDetailViewImage="rec_City16" ImageName="rec_City32" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_City" Caption="City" DefaultDetailViewImage="rec_City16" ImageName="rec_City32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_City16">
       <OwnMembers>
         <Member Name="city_country_id" Caption="Country" LookupProperty="country_name" Index="0" />
         <Member Name="city_id" Caption="ID" AllowEdit="False" Index="1" />
@@ -194,7 +194,7 @@
         <Member Name="AuditTrail" Index="4" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Delivery_Type" ImageName="rec_Delivery_Type32" DefaultListViewShowAutoFilterRow="True" Caption="Order Delivery Type">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Delivery_Type" ImageName="rec_Delivery_Type32" DefaultListViewShowAutoFilterRow="True" Caption="Order Delivery Type" DefaultListViewImage="rec_Delivery_Type16" DefaultDetailViewImage="rec_Delivery_Type16">
       <OwnMembers>
         <Member Name="rec_delivery_type_id" Caption="ID" />
         <Member Name="rec_delivery_type_name" Caption="Name" />

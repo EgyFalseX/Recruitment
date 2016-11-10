@@ -22,12 +22,12 @@
     <DetailView Id="SecuritySystemRole_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors1" ShowCaption="False" RelativeSize="8.2666666666666675">
-            <LayoutItem Id="Name" RelativeSize="51.612903225806448" />
-            <LayoutItem Id="IsAdministrative" RelativeSize="48.387096774193552" />
+          <LayoutGroup Id="SimpleEditors1" ShowCaption="False" RelativeSize="11.660079051383399">
+            <LayoutItem Id="Name" RelativeSize="54.237288135593218" />
+            <LayoutItem Id="IsAdministrative" RelativeSize="45.762711864406782" />
             <LayoutItem Id="CanEditModel" Removed="True" />
           </LayoutGroup>
-          <TabbedGroup Id="Tabs1" RelativeSize="91.733333333333334">
+          <TabbedGroup Id="Tabs1" RelativeSize="88.3399209486166">
             <LayoutGroup Id="Users" ShowCaption="True" RelativeSize="100">
               <LayoutItem Id="Users" Index="0" RelativeSize="100" />
             </LayoutGroup>
@@ -39,6 +39,9 @@
             </LayoutGroup>
             <LayoutGroup Id="ParentRoles" ShowCaption="True" RelativeSize="100">
               <LayoutItem Id="ParentRoles" Index="0" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="4" Caption="Data Access Permissions" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="TypePermissionMatrix" ViewItem="TypePermissionMatrix" Index="0" RelativeSize="100" IsNewNode="True" />
             </LayoutGroup>
           </TabbedGroup>
         </LayoutGroup>

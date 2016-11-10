@@ -349,6 +349,10 @@
       <Project>{E1F786D2-E67F-4566-BB09-1B8E2B817911}</Project>
       <Name>Accounting</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ControllerManagement.Module\ControllerManagement.Module.csproj">
+      <Project>{56A1769D-B1C0-42D0-829E-51D87C5DE713}</Project>
+      <Name>ControllerManagement.Module</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Recruitment.Module.Win\Recruitment.Module.Win.csproj">
       <Project>{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}</Project>
       <Name>Recruitment.Module.Win</Name>
