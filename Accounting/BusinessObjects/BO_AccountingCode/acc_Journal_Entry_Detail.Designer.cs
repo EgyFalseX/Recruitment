@@ -24,6 +24,7 @@ namespace Accounting.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("jour_entry_detail_id", ref fjour_entry_detail_id, value); }
         }
         acc_Journal_Entry fjour_entry_id;
+        [Indexed(Name = @"ijour_entry_id_acc_Journal_Entry_Detail")]
         [Association(@"acc_Journal_Entry_DetailReferencesacc_Journal_Entry")]
         public acc_Journal_Entry jour_entry_id
         {
@@ -31,6 +32,7 @@ namespace Accounting.BusinessObjects.Recruitment
             set { SetPropertyValue<acc_Journal_Entry>("jour_entry_id", ref fjour_entry_id, value); }
         }
         acc_Account faccount_id;
+        [Indexed(Name = @"iaccount_id_acc_Journal_Entry_Detail")]
         [Association(@"acc_Journal_Entry_DetailReferencesacc_Account")]
         public acc_Account account_id
         {
@@ -61,6 +63,13 @@ namespace Accounting.BusinessObjects.Recruitment
         {
             get { return fdescription; }
             set { SetPropertyValue<string>("description", ref fdescription, value); }
+        }
+        acc_CostCenter fcostcenter_id;
+        [Association(@"acc_Journal_Entry_DetailReferencesacc_CostCenter")]
+        public acc_CostCenter costcenter_id
+        {
+            get { return fcostcenter_id; }
+            set { SetPropertyValue<acc_CostCenter>("costcenter_id", ref fcostcenter_id, value); }
         }
     }
 

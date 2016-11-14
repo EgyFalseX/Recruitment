@@ -43,7 +43,7 @@ namespace Accounting.DatabaseUpdate {
                                             SELECT 0";
         private static string GetspTrialBalanceSql {
             get { return @"CREATE PROCEDURE dbo.sp_Trial_Balance
-	 @Year INT = 2,
+	 @Year INT,
 	 @StartDate Datetime,
 	 @EndDate Datetime,
 	 @Category INT
