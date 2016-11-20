@@ -19,6 +19,8 @@ namespace Recruitment.Module.Web.Editors {
         }
         protected override WebControl CreateEditModeControlCore() {
             TaskProgressBar result = new TaskProgressBar();
+            result.Minimum = 0;
+            result.Maximum = 1;
             result.Width = Unit.Percentage(100);
             result.ID = "TaskProgressBar";
             return result;
@@ -40,10 +42,16 @@ namespace Recruitment.Module.Web.Editors {
         private float progressValue = 0;
         public object ProgressValue {
             get { return progressValue; }
-            set {
-                progressValue = (float)value;
-                this.Value = Minimum + Maximum * Convert.ToDecimal(progressValue);
+            set
+            {
+                float val;
+                if (float.TryParse(value.ToString(), out val))
+                {
+                    progressValue = val;
+                    this.Value = Minimum + Maximum * Convert.ToDecimal(progressValue) > Maximum ? Maximum : (decimal)val;
+                }
             }
         }
+
     }
 }

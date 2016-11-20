@@ -251,11 +251,12 @@
         <Member Name="rec_employer_order_id" Index="4" Caption="Order ID" DisplayFormat="{0:d}" EditMask="d" />
         <Member Name="CustomName" Index="5" />
         <Member Name="AuditTrail" Index="6" />
+        <Member Name="OperationProgress" DisplayFormat="{0:p}" EditMask="p" />
         <Member Name="rec_employer_order_delivery_date" Caption="Delivery Date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" />
         <Member Name="rec_Employer_Order_Interviews" Caption="Interviews" />
         <Member Name="rec_employer_order_rec_delivery_type_id" LookupProperty="rec_delivery_type_name" Caption="Delivery Type" />
         <Member Name="rec_employer_order_rec_employer_order_status_id" Caption="Status" LookupProperty="" />
-        <Member Name="RecruitmentProgress" DisplayFormat="{0:#,###,##0.##}" EditMask="#,###,##0.##" />
+        <Member Name="RecruitmentProgress" DisplayFormat="{0:p}" EditMask="p" />
       </OwnMembers>
     </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail" Caption="Order Details" DefaultDetailViewImage="rec_employer_order_detail16" DefaultListViewImage="rec_employer_order_detail16" ImageName="rec_employer_order_detail32" DefaultListViewShowAutoFilterRow="True">
