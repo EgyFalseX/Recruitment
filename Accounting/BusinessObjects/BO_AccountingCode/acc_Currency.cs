@@ -9,7 +9,7 @@ namespace Accounting.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("currency_name")]
-    [ImageName("acc_Currency32")]
+    [ImageName("acc_Currency16")]
     public partial class acc_Currency
     {
         public acc_Currency(Session session) : base(session) { }

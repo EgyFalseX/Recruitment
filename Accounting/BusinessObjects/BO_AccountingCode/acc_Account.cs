@@ -14,7 +14,7 @@ namespace Accounting.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("account_name")]
-    [ImageName("acc_Account32")]
+    [ImageName("acc_Account16")]
 
     public partial class acc_Account : ITreeNode, ITreeNodeImageProvider
     {

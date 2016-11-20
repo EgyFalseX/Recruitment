@@ -7,7 +7,7 @@ using DevExpress.Persistent.Base;
 
 namespace Accounting.BusinessObjects.Recruitment
 {
-    [ImageName("acc_Option32")]
+    [ImageName("acc_Option16")]
     public partial class acc_Option
     {
         public acc_Option(Session session) : base(session) { }
