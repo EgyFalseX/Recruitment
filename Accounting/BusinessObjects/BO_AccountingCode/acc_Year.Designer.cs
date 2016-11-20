@@ -25,29 +25,32 @@ namespace Accounting.BusinessObjects.Recruitment
         }
         string fyear_name;
         [Size(50)]
+        [DevExpress.Persistent.Validation.RuleRequiredField("acc_Year_year_name_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Enter A Name")]
         public string year_name
         {
             get { return fyear_name; }
             set { SetPropertyValue<string>("year_name", ref fyear_name, value); }
         }
         DateTime fyear_start_date;
+        [DevExpress.Persistent.Validation.RuleRequiredField("acc_Year_start_date_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Enter Start Date")]
         public DateTime year_start_date
         {
             get { return fyear_start_date; }
             set { SetPropertyValue<DateTime>("year_start_date", ref fyear_start_date, value); }
         }
         DateTime fyear_end_date;
+        [DevExpress.Persistent.Validation.RuleRequiredField("acc_Year_year_end_date_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Enter End Date")]
         public DateTime year_end_date
         {
             get { return fyear_end_date; }
             set { SetPropertyValue<DateTime>("year_end_date", ref fyear_end_date, value); }
         }
-        [DevExpress.Xpo.DisplayName(@"Journal Entries")]
-        [Association(@"acc_Journal_EntryReferencesacc_Year")]
-        public XPCollection<acc_Journal_Entry> acc_Journal_Entrys { get { return GetCollection<acc_Journal_Entry>("acc_Journal_Entrys"); } }
         [DevExpress.Xpo.DisplayName(@"Opening Balances")]
         [Association(@"acc_Opening_BalanceReferencesacc_Year")]
         public XPCollection<acc_Opening_Balance> acc_Opening_Balances { get { return GetCollection<acc_Opening_Balance>("acc_Opening_Balances"); } }
+        [DevExpress.Xpo.DisplayName(@"Periods")]
+        [Association(@"acc_PeriodReferencesacc_Year")]
+        public XPCollection<acc_Period> acc_Periods { get { return GetCollection<acc_Period>("acc_Periods"); } }
     }
 
 }

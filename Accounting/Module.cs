@@ -46,7 +46,8 @@ namespace Accounting {
             PredefinedReportsUpdater reportsUpdater = new PredefinedReportsUpdater(Application, objectSpace,
                 versionFromDB) {UseMultipleUpdaters = true};
             reportsUpdater.AddPredefinedReport<acc_Rep_Trial_Balance>("Trial Balance", typeof(sp_Trial_BalanceResult), typeof(RepParam_acc_Rep_Trial_Balance));
-            reportsUpdater.AddPredefinedReport<acc_Rep_01>("Account Balance", typeof(acc_Rep_01), typeof(RepParam_acc_Rep_01));
+            reportsUpdater.AddPredefinedReport<acc_Rep_01>("Account Balance", typeof(sp_acc_01Result), typeof(RepParam_acc_Rep_01));
+            reportsUpdater.AddPredefinedReport<acc_Rep_liability_and_equity>("Liability And Equity", typeof(acc_Journal_Entry_Detail), typeof(RepParam_acc_Rep_liability_and_equity));
             return new ModuleUpdater[] { updater, reportsUpdater };
         }
         public override void Setup(XafApplication application) {

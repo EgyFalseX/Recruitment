@@ -25,6 +25,7 @@ namespace Accounting.BusinessObjects.Recruitment
         }
         string faccount_type_name;
         [Size(50)]
+        [DevExpress.Persistent.Validation.RuleRequiredField("acc_Account_Type_account_type_name_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Enter Name")]
         public string account_type_name
         {
             get { return faccount_type_name; }

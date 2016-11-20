@@ -25,6 +25,8 @@ namespace Accounting.BusinessObjects.Recruitment
         }
         string facc_nature_name;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Nature Name")]
+        [DevExpress.Persistent.Validation.RuleRequiredField("acc_Nature_acc_nature_name_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Enter A Name")]
         public string acc_nature_name
         {
             get { return facc_nature_name; }

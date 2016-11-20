@@ -27,6 +27,7 @@ namespace Accounting.BusinessObjects.Recruitment
         string faccount_name;
         [Size(50)]
         [DevExpress.Xpo.DisplayName(@"Account name")]
+        [DevExpress.Persistent.Validation.RuleRequiredField("acc_Account_account_name_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Enter Account Name")]
         public string account_name
         {
             get { return faccount_name; }
@@ -44,6 +45,7 @@ namespace Accounting.BusinessObjects.Recruitment
         [Indexed(Name = @"iaccount_type_id_acc_Account")]
         [Association(@"acc_AccountReferencesacc_Account_Type")]
         [DevExpress.Xpo.DisplayName(@"Account type")]
+        [DevExpress.Persistent.Validation.RuleRequiredField("acc_Account_account_type_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Enter Account Type")]
         public acc_Account_Type account_type_id
         {
             get { return faccount_type_id; }
@@ -53,6 +55,7 @@ namespace Accounting.BusinessObjects.Recruitment
         [Indexed(Name = @"iacc_nature_id_acc_Account")]
         [Association(@"acc_AccountReferencesacc_Nature")]
         [DevExpress.Xpo.DisplayName(@"Account nature")]
+        [DevExpress.Persistent.Validation.RuleRequiredField("acc_Account_acc_nature_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Enter Account Nature")]
         public acc_Nature acc_nature_id
         {
             get { return facc_nature_id; }
@@ -60,6 +63,7 @@ namespace Accounting.BusinessObjects.Recruitment
         }
         bool fclosed;
         [DevExpress.Xpo.DisplayName(@"Close account")]
+        [DevExpress.Persistent.Validation.RuleRequiredField("acc_Account_closed_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Enter Closed Account")]
         public bool closed
         {
             get { return fclosed; }

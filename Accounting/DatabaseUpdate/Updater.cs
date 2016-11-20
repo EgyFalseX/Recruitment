@@ -42,7 +42,7 @@ namespace Accounting.DatabaseUpdate {
                                             ELSE
                                             SELECT 0";
         private static string GetspTrialBalanceSql {
-            get { return @"CREATE PROCEDURE dbo.sp_Trial_Balance
+            get { return @"CREATE PROCEDURE [dbo].[sp_Trial_Balance]
 	 @Year INT,
 	 @StartDate Datetime,
 	 @EndDate Datetime,
@@ -55,7 +55,9 @@ BEGIN
 	DECLARE @EntryTbl TABLE (account_id INT NOT NULL PRIMARY KEY CLUSTERED, [debit] FLOAT, [credit] FLOAT)
 	INSERT INTO @EntryTbl
 	SELECT [account_id], SUM([debit]), SUM([credit]) FROM [dbo].[acc_Journal_Entry_Detail] INNER JOIN [dbo].[acc_Journal_Entry] ON [acc_Journal_Entry_Detail].jour_entry_id = [acc_Journal_Entry].jour_entry_id
-	WHERE  [acc_Journal_Entry].year_id = @Year AND [acc_Journal_Entry].entry_date BETWEEN @StartDate AND @EndDate
+	INNER JOIN dbo.acc_Period ON [acc_Journal_Entry].period_id = acc_Period.period_id
+	WHERE  acc_Period.year_id = @Year AND [acc_Journal_Entry].entry_date BETWEEN @StartDate AND @EndDate
+	AND [acc_Journal_Entry].closed = 1
 	GROUP BY [account_id]
 
 	--Fill Opening Balance Table
@@ -64,7 +66,6 @@ BEGIN
 	SELECT [account_id], SUM([debit]), SUM([credit]) FROM acc_Opening_Balance
 	WHERE  year_id = @Year
 	GROUP BY [account_id]
-
 
 
 	;With CTE1 AS
@@ -83,8 +84,6 @@ BEGIN
 	LEFT OUTER JOIN @OBTbl OBTbl ON CTE1.account_id = OBTbl.account_id
 	INNER JOIN acc_Account ON CTE1.Parent_Id = acc_Account.account_id
 	GROUP BY acc_Account.account_name, CTE1.Parent_Id
-
-
 END";
             }
         }

@@ -25,11 +25,14 @@ namespace Accounting.BusinessObjects.Recruitment
         }
         string fcurrency_name;
         [Size(50)]
+        [DevExpress.Persistent.Validation.RuleRequiredField("acc_Currency_currency_name_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Enter A Name")]
         public string currency_name
         {
             get { return fcurrency_name; }
             set { SetPropertyValue<string>("currency_name", ref fcurrency_name, value); }
         }
+        [Association(@"acc_Journal_Entry_DetailReferencesacc_Currency")]
+        public XPCollection<acc_Journal_Entry_Detail> acc_Journal_Entry_Details { get { return GetCollection<acc_Journal_Entry_Detail>("acc_Journal_Entry_Details"); } }
     }
 
 }

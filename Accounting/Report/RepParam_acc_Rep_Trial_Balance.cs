@@ -50,7 +50,7 @@ namespace Accounting.Report
 
         private acc_Year _fiscalyear;
         [RuleRequiredField("RepParamacc_Journal_Entry_01_FiscalYear_vld_req", DefaultContexts.Save, "Fiscal Year should not be empty!")]
-        [System.ComponentModel.DisplayName("Select Fiscal Year (required)")]
+        [System.ComponentModel.DisplayName("Fiscal Year")]
         public acc_Year FiscalYear
         {
             get { return _fiscalyear; }
@@ -59,7 +59,7 @@ namespace Accounting.Report
 
         private DateTime _startdate;
         [RuleRequiredField("RepParamacc_Journal_Entry_01_Startdate_vld_req", DefaultContexts.Save, "From Date should not be empty!")]
-        [System.ComponentModel.DisplayName("Select From Date (required)")]
+        [System.ComponentModel.DisplayName("From Date")]
         public DateTime Startdate
         {
             get { return _startdate; }
@@ -68,7 +68,7 @@ namespace Accounting.Report
 
         private DateTime _enddate;
         [RuleRequiredField("RepParamacc_Journal_Entry_01_Enddate_vld_req", DefaultContexts.Save, "To Date should not be empty!")]
-        [System.ComponentModel.DisplayName("Select To Date (required)")]
+        [System.ComponentModel.DisplayName("To Date")]
         public DateTime Enddate
         {
             get { return _enddate; }
@@ -77,7 +77,7 @@ namespace Accounting.Report
 
         private acc_Account_Category _cateogry;
         [RuleRequiredField("RepParamacc_Journal_Entry_01_Cateogry_vld_req", DefaultContexts.Save, "Cateogry should not be empty!")]
-        [System.ComponentModel.DisplayName("Select Cateogry (required)")]
+        [System.ComponentModel.DisplayName("Cateogry")]
         public acc_Account_Category Cateogry
         {
             get { return _cateogry; }

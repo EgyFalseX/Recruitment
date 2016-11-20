@@ -1,0 +1,1 @@
+DevExpress.ExpressApp.Updater.exe App.config

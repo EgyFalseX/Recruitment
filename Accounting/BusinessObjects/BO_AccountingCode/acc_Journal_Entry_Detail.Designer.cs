@@ -18,6 +18,7 @@ namespace Accounting.BusinessObjects.Recruitment
     {
         int fjour_entry_detail_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"ID")]
         public int jour_entry_detail_id
         {
             get { return fjour_entry_detail_id; }
@@ -26,6 +27,8 @@ namespace Accounting.BusinessObjects.Recruitment
         acc_Journal_Entry fjour_entry_id;
         [Indexed(Name = @"ijour_entry_id_acc_Journal_Entry_Detail")]
         [Association(@"acc_Journal_Entry_DetailReferencesacc_Journal_Entry")]
+        [DevExpress.Xpo.DisplayName(@"Entry ID")]
+        [DevExpress.Persistent.Validation.RuleRequiredField("acc_Journal_Entry_Detail_jour_entry_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select Journal Entry")]
         public acc_Journal_Entry jour_entry_id
         {
             get { return fjour_entry_id; }
@@ -34,24 +37,31 @@ namespace Accounting.BusinessObjects.Recruitment
         acc_Account faccount_id;
         [Indexed(Name = @"iaccount_id_acc_Journal_Entry_Detail")]
         [Association(@"acc_Journal_Entry_DetailReferencesacc_Account")]
+        [DevExpress.Xpo.DisplayName(@"Account")]
+        [DevExpress.Persistent.Validation.RuleRequiredField("acc_Journal_Entry_Detail_account_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select Account")]
         public acc_Account account_id
         {
             get { return faccount_id; }
             set { SetPropertyValue<acc_Account>("account_id", ref faccount_id, value); }
         }
         double fdebit;
+        [DevExpress.Xpo.DisplayName(@"Debit")]
+        [DevExpress.Persistent.Validation.RuleRequiredField("acc_Journal_Entry_Detail_debit_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Enter Debit")]
         public double debit
         {
             get { return fdebit; }
             set { SetPropertyValue<double>("debit", ref fdebit, value); }
         }
         double fcredit;
+        [DevExpress.Xpo.DisplayName(@"Credit")]
+        [DevExpress.Persistent.Validation.RuleRequiredField("acc_Journal_Entry_Detail_credit_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Enter Credit")]
         public double credit
         {
             get { return fcredit; }
             set { SetPropertyValue<double>("credit", ref fcredit, value); }
         }
         string fentry_text;
+        [DevExpress.Xpo.DisplayName(@"Entry text")]
         public string entry_text
         {
             get { return fentry_text; }
@@ -59,17 +69,42 @@ namespace Accounting.BusinessObjects.Recruitment
         }
         string fdescription;
         [Size(500)]
+        [DevExpress.Xpo.DisplayName(@"Description")]
         public string description
         {
             get { return fdescription; }
             set { SetPropertyValue<string>("description", ref fdescription, value); }
         }
         acc_CostCenter fcostcenter_id;
+        [Indexed(Name = @"icostcenter_id_acc_Journal_Entry_Detail")]
         [Association(@"acc_Journal_Entry_DetailReferencesacc_CostCenter")]
+        [DevExpress.Xpo.DisplayName(@"Cost center")]
         public acc_CostCenter costcenter_id
         {
             get { return fcostcenter_id; }
             set { SetPropertyValue<acc_CostCenter>("costcenter_id", ref fcostcenter_id, value); }
+        }
+        double fdebit_currency;
+        [DevExpress.Xpo.DisplayName(@"Debit Original Currency")]
+        public double debit_currency
+        {
+            get { return fdebit_currency; }
+            set { SetPropertyValue<double>("debit_currency", ref fdebit_currency, value); }
+        }
+        double fcredit_currency;
+        [DevExpress.Xpo.DisplayName(@"Credit Original Currency")]
+        public double credit_currency
+        {
+            get { return fcredit_currency; }
+            set { SetPropertyValue<double>("credit_currency", ref fcredit_currency, value); }
+        }
+        acc_Currency fcurrency_id;
+        [Association(@"acc_Journal_Entry_DetailReferencesacc_Currency")]
+        [DevExpress.Xpo.DisplayName(@"Currency")]
+        public acc_Currency currency_id
+        {
+            get { return fcurrency_id; }
+            set { SetPropertyValue<acc_Currency>("currency_id", ref fcurrency_id, value); }
         }
     }
 

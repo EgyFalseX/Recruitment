@@ -53,5 +53,24 @@ namespace Accounting.BusinessObjects.Recruitment
             dataView.PopulateProperties(session.GetClassInfo(typeof(sp_acc_01Result)));
             dataView.LoadData(sprocData);
         }
+        public static DevExpress.Xpo.DB.SelectedData Execsp_liability_and_equity(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
+        {
+            return session.ExecuteSproc("sp_liability_and_equity", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
+        }
+        public static System.Collections.Generic.ICollection<sp_liability_and_equityResult> Execsp_liability_and_equityIntoObjects(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
+        {
+            return session.GetObjectsFromSproc<sp_liability_and_equityResult>("sp_liability_and_equity", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
+        }
+        public static XPDataView Execsp_liability_and_equityIntoDataView(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_liability_and_equity", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
+            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_liability_and_equityResult)), sprocData);
+        }
+        public static void Execsp_liability_and_equityIntoDataView(XPDataView dataView, Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_liability_and_equity", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
+            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_liability_and_equityResult)));
+            dataView.LoadData(sprocData);
+        }
     }
 }

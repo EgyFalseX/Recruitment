@@ -8,6 +8,7 @@ using DevExpress.ExpressApp;
 using DevExpress.Xpo;
 using DevExpress.XtraReports.UI;
 using DevExpress.ExpressApp.Xpo;
+using DevExpress.Xpo.DB;
 using DevExpress.XtraRichEdit.Model;
 
 namespace Accounting.Report
@@ -34,8 +35,12 @@ namespace Accounting.Report
             xrTableCellTo.Text = param.Enddate.ToShortDateString();
             xrTableCellCategory.Text = param.Cateogry.account_category_name;
 
-            XPDataView ds = SprocHelper.Execsp_Trial_BalanceIntoDataView(((XPObjectSpace)param.ObjectSpace).Session, param.FiscalYear.year_id,
+            Session session = ((XPObjectSpace)param.ObjectSpace).Session;
+
+            SelectedData selectedData = SprocHelper.Execsp_Trial_Balance(session, param.FiscalYear.year_id,
                 param.Startdate, param.Enddate, param.Cateogry.account_category_id);
+
+            XPDataView ds = new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_acc_01Result)), selectedData);
 
             DataSource = ds;
             

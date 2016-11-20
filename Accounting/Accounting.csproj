@@ -28,12 +28,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'EasyTest|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -161,12 +162,19 @@
     <Compile Include="BusinessObjects\BO_AccountingCode\acc_Option.Designer.cs">
       <DependentUpon>acc_Option.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_AccountingCode\acc_Period.cs" />
+    <Compile Include="BusinessObjects\BO_AccountingCode\acc_Period.Designer.cs">
+      <DependentUpon>acc_Period.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_AccountingCode\acc_Year.cs" />
     <Compile Include="BusinessObjects\BO_AccountingCode\acc_Year.Designer.cs">
       <DependentUpon>acc_Year.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\BO_AccountingCode\ConnectionHelper.cs" />
     <Compile Include="BusinessObjects\BO_AccountingCode\sp_acc_01Result.cs">
+      <DependentUpon>StoredProcHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_AccountingCode\sp_liability_and_equityResult.cs">
       <DependentUpon>StoredProcHelper.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\BO_AccountingCode\sp_Trial_BalanceResult.cs">
@@ -205,6 +213,12 @@
     <Compile Include="Report\acc_Rep_01.Designer.cs">
       <DependentUpon>acc_Rep_01.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\acc_Rep_liability_and_equity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\acc_Rep_liability_and_equity.Designer.cs">
+      <DependentUpon>acc_Rep_liability_and_equity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\acc_Rep_Trial_Balance.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -212,6 +226,7 @@
       <DependentUpon>acc_Rep_Trial_Balance.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\RepParam_acc_Rep_01.cs" />
+    <Compile Include="Report\RepParam_acc_Rep_liability_and_equity.cs" />
     <Compile Include="Report\RepParam_acc_Rep_Trial_Balance.cs" />
     <Compile Include="Rule\JournalEntryBalanceRule.cs" />
   </ItemGroup>
@@ -228,12 +243,17 @@
     <EmbeddedResource Include="Report\acc_Rep_01.resx">
       <DependentUpon>acc_Rep_01.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\acc_Rep_liability_and_equity.resx">
+      <DependentUpon>acc_Rep_liability_and_equity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\acc_Rep_Trial_Balance.resx">
       <DependentUpon>acc_Rep_Trial_Balance.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="BusinessObjects\BO_Accounting.xpo" />
+    <None Include="BusinessObjects\BO_Accounting.xpo">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="BusinessObjects\BO_Accounting.xpo.diagram">
       <DependentUpon>BO_Accounting.xpo</DependentUpon>
     </None>
