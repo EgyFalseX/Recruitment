@@ -80,10 +80,11 @@ namespace Accounting.Controllers
             {
                 if (entry is acc_Journal_Entry == false)
                     continue;
-                acc_Journal_Entry entryObject = ObjectSpace.GetObject((acc_Journal_Entry)entry);
+                acc_Journal_Entry entryObject = objectSpace.GetObject((acc_Journal_Entry)entry);
                 entryObject.closed = true;
             }
             objectSpace.CommitChanges();
+            objectSpace.Refresh();
         }
     }
 }

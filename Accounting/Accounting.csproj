@@ -174,6 +174,9 @@
     <Compile Include="BusinessObjects\BO_AccountingCode\sp_acc_01Result.cs">
       <DependentUpon>StoredProcHelper.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_AccountingCode\sp_acc_02Result.cs">
+      <DependentUpon>StoredProcHelper.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_AccountingCode\sp_liability_and_equityResult.cs">
       <DependentUpon>StoredProcHelper.cs</DependentUpon>
     </Compile>
@@ -207,6 +210,12 @@
       <DependentUpon>Module.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\acc_Rep_02.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\acc_Rep_02.Designer.cs">
+      <DependentUpon>acc_Rep_02.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\acc_Rep_01.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -219,12 +228,20 @@
     <Compile Include="Report\acc_Rep_liability_and_equity.Designer.cs">
       <DependentUpon>acc_Rep_liability_and_equity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\acc_Rep_Costcenter_Balance.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\acc_Rep_Costcenter_Balance.Designer.cs">
+      <DependentUpon>acc_Rep_Costcenter_Balance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\acc_Rep_Trial_Balance.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report\acc_Rep_Trial_Balance.Designer.cs">
       <DependentUpon>acc_Rep_Trial_Balance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\RepParam_acc_Rep_Costcenter_Balance.cs" />
+    <Compile Include="Report\RepParam_acc_Rep_02.cs" />
     <Compile Include="Report\RepParam_acc_Rep_01.cs" />
     <Compile Include="Report\RepParam_acc_Rep_liability_and_equity.cs" />
     <Compile Include="Report\RepParam_acc_Rep_Trial_Balance.cs" />
@@ -240,11 +257,17 @@
       <DependentUpon>Module.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Report\acc_Rep_02.resx">
+      <DependentUpon>acc_Rep_02.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\acc_Rep_01.resx">
       <DependentUpon>acc_Rep_01.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\acc_Rep_liability_and_equity.resx">
       <DependentUpon>acc_Rep_liability_and_equity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\acc_Rep_Costcenter_Balance.resx">
+      <DependentUpon>acc_Rep_Costcenter_Balance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\acc_Rep_Trial_Balance.resx">
       <DependentUpon>acc_Rep_Trial_Balance.cs</DependentUpon>

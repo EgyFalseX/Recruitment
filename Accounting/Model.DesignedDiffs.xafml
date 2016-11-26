@@ -101,6 +101,15 @@
         <Member Name="entry_date" Caption="Entry date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" />
       </OwnMembers>
     </Class>
+    <Class Name="Accounting.BusinessObjects.Recruitment.sp_acc_02Result" Caption="Account Balance per cost center set">
+      <OwnMembers>
+        <Member Name="account_code" Caption="Account code" />
+        <Member Name="account_name" Caption="Account name" />
+        <Member Name="costcenter_name" Caption="Cost center" />
+        <Member Name="entry_date" Caption="Date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" />
+        <Member Name="Value" Caption="القيمة" DisplayFormat="{0:#,###,##0.##}" EditMask="#,###,##0.##" />
+      </OwnMembers>
+    </Class>
     <Class Name="Accounting.BusinessObjects.Recruitment.sp_Trial_BalanceResult" Caption="Trial Balance">
       <OwnMembers>
         <Member Name="account_name" Caption="Account name" />
@@ -175,7 +184,7 @@
       <RuleRequiredField Id="@acc_Journal_Entry_Detail_debit_vld_req" TargetContextIDs="Save" TargetType="Accounting.BusinessObjects.Recruitment.acc_Journal_Entry_Detail" TargetPropertyName="debit" Name="Journal Entry - Debit required" IsNewNode="True" />
       <RuleRequiredField Id="@acc_Journal_Entry_Detail_jour_entry_id_vld_req" TargetContextIDs="Save" TargetType="Accounting.BusinessObjects.Recruitment.acc_Journal_Entry_Detail" TargetPropertyName="jour_entry_id" Name="Journal Entry Detail - Entry required" IsNewNode="True" />
       <RuleRequiredField Id="@acc_Journal_Entry_entry_date_vld_req" TargetContextIDs="Save" TargetType="Accounting.BusinessObjects.Recruitment.acc_Journal_Entry" TargetPropertyName="entry_date" Name="Journal Entry - Date required" IsNewNode="True" />
-      <RuleRequiredField Id="@acc_Journal_Entry_year_id_vld_req" TargetContextIDs="Save" TargetType="Accounting.BusinessObjects.Recruitment.acc_Journal_Entry" TargetPropertyName="year_id" Name="Journal Entry - Fiscal Year required" IsNewNode="True" />
+      <RuleRequiredField Id="@acc_Journal_Entry_period_id_vld_req" TargetContextIDs="Save" TargetType="Accounting.BusinessObjects.Recruitment.acc_Journal_Entry" TargetPropertyName="period_id" Name="Journal Entry - Fiscal Period required" IsNewNode="True" />
       <RuleRequiredField Id="@acc_Option_acc_option_name_vld_req" TargetContextIDs="Save" TargetType="Accounting.BusinessObjects.Recruitment.acc_Option" TargetPropertyName="acc_option_name" Name="Account Option - Name required" IsNewNode="True" />
       <RuleRequiredField Id="@acc_Option_acc_option_value_vld_req" TargetContextIDs="Save" TargetType="Accounting.BusinessObjects.Recruitment.acc_Option" TargetPropertyName="acc_option_value" Name="Account Option - Value required" IsNewNode="True" />
       <RuleRequiredField Id="@acc_Year_year_end_date_vld_req" TargetContextIDs="Save" TargetType="Accounting.BusinessObjects.Recruitment.acc_Year" TargetPropertyName="year_end_date" Name="Fiscal Year - End date required" IsNewNode="True" />
@@ -375,37 +384,37 @@
     <DetailView Id="acc_Journal_Entry_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="15.28117359413203">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="15.096618357487923">
             <LayoutGroup Id="acc_Journal_Entry" RelativeSize="100">
-              <LayoutGroup Id="acc_Journal_Entry_col1" RelativeSize="50">
+              <LayoutGroup Id="acc_Journal_Entry_col1" RelativeSize="50.057405281285881">
+                <LayoutItem Id="entry_date" RelativeSize="36.363636363636367" Index="0" />
                 <LayoutItem Id="jour_entry_id" RelativeSize="36.363636363636367" Index="0" Removed="True" />
-                <LayoutItem Id="period_id" ViewItem="period_id" Index="0" RelativeSize="36.363636363636367" IsNewNode="True" />
-                <LayoutItem Id="entry_date" RelativeSize="27.272727272727273" Index="1" />
-                <LayoutItem Id="entry_text" ViewItem="entry_text" Index="2" RelativeSize="36.363636363636367" IsNewNode="True" />
+                <LayoutItem Id="entry_text" ViewItem="entry_text" Index="1" RelativeSize="27.272727272727273" IsNewNode="True" />
+                <LayoutItem Id="voucher_no" ViewItem="voucher_no" Index="2" RelativeSize="36.363636363636367" IsNewNode="True" />
                 <LayoutItem Id="closed" RelativeSize="28.571428571428573" Index="3" Removed="True" />
                 <LayoutItem Id="JournalCaption" RelativeSize="28.571428571428573" Removed="True" />
               </LayoutGroup>
-              <LayoutGroup Id="acc_Journal_Entry_col2" RelativeSize="50" Caption="acc_Journal_Entry_col2">
-                <LayoutItem Id="voucher_no" RelativeSize="36.363636363636367" />
+              <LayoutGroup Id="acc_Journal_Entry_col2" RelativeSize="49.942594718714119" Caption="acc_Journal_Entry_col2">
+                <LayoutItem Id="period_id" ViewItem="period_id" Index="0" RelativeSize="36.363636363636367" IsNewNode="True" Removed="True" />
                 <LayoutItem Id="closed" ViewItem="closed" Index="1" RelativeSize="63.636363636363633" IsNewNode="True" />
                 <LayoutItem Id="entry_text" RelativeSize="63.636363636363633" Removed="True" />
-                <LayoutItem Id="period_id" RelativeSize="36.363636363636367" Removed="True" />
+                <LayoutItem Id="voucher_no" RelativeSize="36.363636363636367" Removed="True" />
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="SizeableEditors" RelativeSize="7.7017114914425431" Direction="Horizontal" Caption="Description">
-            <LayoutItem Id="description" RelativeSize="84.226804123711347" />
-            <LayoutGroup Id="Auto0ffd3054-3179-4e32-b369-658a90f1bc90" ShowCaption="False" Caption="" Index="1" RelativeSize="15.773195876288661" IsNewNode="True">
-              <LayoutItem Id="jour_entry_id" ViewItem="jour_entry_id" Index="0" RelativeSize="42.857142857142854" IsNewNode="True" />
-              <LayoutItem Id="JournalCaption" ViewItem="JournalCaption" Index="1" RelativeSize="57.142857142857146" IsNewNode="True" />
+          <LayoutGroup Id="SizeableEditors" RelativeSize="7.6086956521739131" Direction="Horizontal" Caption="Description">
+            <LayoutItem Id="description" RelativeSize="76.089385474860336" />
+            <LayoutGroup Id="Auto0ffd3054-3179-4e32-b369-658a90f1bc90" ShowCaption="False" Caption="Auto0ffd3054-3179-4e32-b369-658a90f1bc90(13)" Index="1" RelativeSize="23.910614525139664" IsNewNode="True">
+              <LayoutItem Id="jour_entry_id" ViewItem="jour_entry_id" Index="0" RelativeSize="47.61904761904762" IsNewNode="True" />
+              <LayoutItem Id="JournalCaption" ViewItem="JournalCaption" Index="1" RelativeSize="52.38095238095238" IsNewNode="True" />
             </LayoutGroup>
           </LayoutGroup>
-          <TabbedGroup Id="Tabs" RelativeSize="77.017114914425434">
-            <LayoutGroup Id="AuditTrail" RelativeSize="100">
-              <LayoutItem Id="AuditTrail" RelativeSize="100" />
-            </LayoutGroup>
-            <LayoutGroup Id="acc_Journal_Entry_Details" RelativeSize="100">
+          <TabbedGroup Id="Tabs" RelativeSize="77.294685990338166">
+            <LayoutGroup Id="acc_Journal_Entry_Details" RelativeSize="100" Index="0">
               <LayoutItem Id="acc_Journal_Entry_Details" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" RelativeSize="100" Index="1">
+              <LayoutItem Id="AuditTrail" RelativeSize="100" />
             </LayoutGroup>
           </TabbedGroup>
         </LayoutGroup>
@@ -529,6 +538,23 @@
                 <LayoutItem Id="Enddate" ViewItem="Enddate" Index="1" RelativeSize="50" IsNewNode="True" />
               </LayoutGroup>
               <LayoutItem Id="Account" Index="2" RelativeSize="88.932806324110672" />
+              <LayoutItem Id="Enddate" Removed="True" />
+              <LayoutItem Id="Startdate" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RepParam_acc_Rep_02_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="RepParam_acc_Rep_02" Caption="RepParam_acc_Rep_02" RelativeSize="100">
+              <LayoutGroup Id="Autoe40644d9-18ae-4b0a-96ba-8e7e7d7ba8ac" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="3.9119804400977993" IsNewNode="True">
+                <LayoutItem Id="Startdate" ViewItem="Startdate" Index="0" RelativeSize="50" IsNewNode="True" />
+                <LayoutItem Id="Enddate" ViewItem="Enddate" Index="1" RelativeSize="50" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Account" Index="1" RelativeSize="96.088019559902207" />
               <LayoutItem Id="Enddate" Removed="True" />
               <LayoutItem Id="Startdate" Removed="True" />
             </LayoutGroup>

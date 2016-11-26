@@ -46,7 +46,13 @@ namespace Recruitment.Win {
                 {
                     winApplication.ConnectionString = FXFW.SqlDB.SqlConStr;// set connection string.
                     winApplication.LoggedOn += Core.AppUpdater.WinApplication_LoggedOn;
+
                     winApplication.Setup();
+                    if (!TestVersion(winApplication))
+                    {
+                        MessageBox.Show($"Data limit reached, ask for Full version {Environment.NewLine} Please call 01004558638");
+                        return;
+                    }
                     winApplication.Start();
                 }
             }
@@ -55,6 +61,12 @@ namespace Recruitment.Win {
             }
         }
 
-        
+        private static bool TestVersion(WinApplication winApplication)
+        {
+            IObjectSpace objectSpace = winApplication.CreateObjectSpace();
+            DateTime dtTime = Module.Core.SqlOp.GetServerDateTime(((DevExpress.ExpressApp.Xpo.XPObjectSpace)objectSpace).Session);
+            return dtTime <= new DateTime(2017,1,31);
+        }
+
     }
 }

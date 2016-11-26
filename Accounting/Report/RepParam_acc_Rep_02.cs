@@ -13,12 +13,12 @@ using DevExpress.Persistent.Validation;
 namespace Accounting.Report
 {
     [DomainComponent]
-    [DevExpress.ExpressApp.DC.XafDisplayName("Account Balance set")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Account Balance per cost center set")]
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113594.aspx.
     // ReSharper disable once InconsistentNaming
-    public class RepParam_acc_Rep_01 : ReportParametersObjectBase
+    public class RepParam_acc_Rep_02 : ReportParametersObjectBase
     {
-        public RepParam_acc_Rep_01(IObjectSpaceCreator provider) : base(provider)
+        public RepParam_acc_Rep_02(IObjectSpaceCreator provider) : base(provider)
         {
         }
         protected override IObjectSpace CreateObjectSpace()
@@ -37,17 +37,8 @@ namespace Accounting.Report
             return sorting;
         }
 
-        private acc_Year _fiscalyear;
-        [RuleRequiredField("RepParam_acc_Rep_01_FiscalYear_vld_req", DefaultContexts.Save, "Fiscal Year should not be empty!")]
-        [System.ComponentModel.DisplayName("Fiscal Year")]
-        public acc_Year FiscalYear
-        {
-            get { return _fiscalyear; }
-            set { _fiscalyear = value; }
-        }
-
         private DateTime _startdate;
-        [RuleRequiredField("RepParam_acc_Rep_01_Startdate_vld_req", DefaultContexts.Save, "From Date should not be empty!")]
+        [RuleRequiredField("RepParam_acc_Rep_02_Startdate_vld_req", DefaultContexts.Save, "From Date should not be empty!")]
         [System.ComponentModel.DisplayName("From Date")]
         public DateTime Startdate
         {
@@ -56,7 +47,7 @@ namespace Accounting.Report
         }
 
         private DateTime _enddate;
-        [RuleRequiredField("RepParam_acc_Rep_01_Enddate_vld_req", DefaultContexts.Save, "To Date should not be empty!")]
+        [RuleRequiredField("RepParam_acc_Rep_02_Enddate_vld_req", DefaultContexts.Save, "To Date should not be empty!")]
         [System.ComponentModel.DisplayName("To Date")]
         public DateTime Enddate
         {
@@ -65,7 +56,7 @@ namespace Accounting.Report
         }
 
         private acc_Account _account;
-        [RuleRequiredField("RepParam_acc_Rep_01_Account_vld_req", DefaultContexts.Save, "Account should not be empty!")]
+        [RuleRequiredField("RepParam_acc_Rep_02_Account_vld_req", DefaultContexts.Save, "Account should not be empty!")]
         [System.ComponentModel.DisplayName("Account")]
         public acc_Account Account
         {

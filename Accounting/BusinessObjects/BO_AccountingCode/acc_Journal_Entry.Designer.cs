@@ -11,6 +11,9 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
+using DevExpress.ExpressApp.Security.Strategy;
+using DevExpress.Persistent.Validation;
+
 namespace Accounting.BusinessObjects.Recruitment
 {
 
@@ -43,7 +46,6 @@ namespace Accounting.BusinessObjects.Recruitment
         string fvoucher_no;
         [Size(50)]
         [DevExpress.Xpo.DisplayName(@"Voucher number")]
-        [DevExpress.Persistent.Validation.RuleRequiredField("acc_Journal_Entry_voucher_no_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Enter Voucher Number")]
         public string voucher_no
         {
             get { return fvoucher_no; }

@@ -22,4 +22,5 @@ _________________________________________________________________________
 2016-11-12
 1- should Recreate sp_Trial_Balance sine changes made in paramters
 2- remove column fical year from JE and place it with period beside remove its relation and add new relation to period table
-
+done
+___________________________________________

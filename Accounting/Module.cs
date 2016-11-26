@@ -45,10 +45,16 @@ namespace Accounting {
             //Register the predefined reports
             PredefinedReportsUpdater reportsUpdater = new PredefinedReportsUpdater(Application, objectSpace,
                 versionFromDB) {UseMultipleUpdaters = true};
-            reportsUpdater.AddPredefinedReport<acc_Rep_Trial_Balance>("Trial Balance", typeof(sp_Trial_BalanceResult), typeof(RepParam_acc_Rep_Trial_Balance));
-            reportsUpdater.AddPredefinedReport<acc_Rep_01>("Account Balance", typeof(sp_acc_01Result), typeof(RepParam_acc_Rep_01));
-            reportsUpdater.AddPredefinedReport<acc_Rep_liability_and_equity>("Liability And Equity", typeof(acc_Journal_Entry_Detail), typeof(RepParam_acc_Rep_liability_and_equity));
+            AddPredefindreports(reportsUpdater);
             return new ModuleUpdater[] { updater, reportsUpdater };
+        }
+        private static void AddPredefindreports(PredefinedReportsUpdater reportsUpdater)
+        {
+            reportsUpdater.AddPredefinedReport<acc_Rep_Trial_Balance>("Trial Balance", typeof (sp_Trial_BalanceResult), typeof (RepParam_acc_Rep_Trial_Balance));
+            reportsUpdater.AddPredefinedReport<acc_Rep_01>("Account Balance", typeof (sp_acc_01Result), typeof (RepParam_acc_Rep_01));
+            reportsUpdater.AddPredefinedReport<acc_Rep_liability_and_equity>("Liability And Equity", typeof (acc_Journal_Entry_Detail), typeof (RepParam_acc_Rep_liability_and_equity));
+            reportsUpdater.AddPredefinedReport<acc_Rep_02>("Account Balance per cost center", typeof (sp_acc_02Result), typeof (RepParam_acc_Rep_02));
+            reportsUpdater.AddPredefinedReport<acc_Rep_Costcenter_Balance>("Cost Center Balance", typeof (acc_Journal_Entry_Detail), typeof (RepParam_acc_Rep_Costcenter_Balance));
         }
         public override void Setup(XafApplication application) {
             base.Setup(application);

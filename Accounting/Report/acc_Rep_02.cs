@@ -13,32 +13,29 @@ using DevExpress.XtraRichEdit.Model;
 
 namespace Accounting.Report
 {
-    public partial class acc_Rep_liability_and_equity : DevExpress.XtraReports.UI.XtraReport
+    public partial class acc_Rep_02 : DevExpress.XtraReports.UI.XtraReport
     {
-        public acc_Rep_liability_and_equity()
+        public acc_Rep_02()
         {
             InitializeComponent();
         }
-        private void acc_Rep_liability_and_equity_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void acc_Rep_02_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-            //xrPageInfoUser.Text = xrPageInfoUser.Text + " - App:" + SecuritySystem.CurrentUserName;
-
             DevExpress.XtraReports.Parameters.Parameter parameter =
                 Parameters[DevExpress.ExpressApp.ReportsV2.ReportDataSourceHelper.XafReportParametersObjectName];
             if (parameter == null)
                 return;
 
-            RepParam_acc_Rep_liability_and_equity param = (RepParam_acc_Rep_liability_and_equity)parameter.Value;
-
+            RepParam_acc_Rep_02 param = (RepParam_acc_Rep_02)parameter.Value;
             //Set header information
-            xrTableCellYear.Text = param.FiscalYear.year_name;
             xrTableCellFrom.Text = param.Startdate.ToShortDateString();
             xrTableCellTo.Text = param.Enddate.ToShortDateString();
-            xrTableCellCategory.Text = param.Cateogry.account_category_name;
+            xrTableCellAccount.Text = param.Account.account_name;
 
-            XPDataView ds = SprocHelper.Execsp_liability_and_equityIntoDataView(((XPObjectSpace)param.ObjectSpace).Session, param.FiscalYear.year_id,
-               param.Startdate, param.Enddate, param.Cateogry.account_category_id);
-
+            Session session = ((XPObjectSpace)param.ObjectSpace).Session;
+            SelectedData selectedData = SprocHelper.Execsp_acc_02(session, param.Startdate, param.Enddate,
+                param.Account.account_id);
+            XPDataView ds = new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_acc_02Result)), selectedData);
             DataSource = ds;
         }
     }

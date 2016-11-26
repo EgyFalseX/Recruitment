@@ -1,6 +1,6 @@
 ﻿namespace Accounting.Report
 {
-    partial class acc_Rep_01
+    partial class acc_Rep_02
     {
         /// <summary>
         /// Required designer variable.
@@ -32,17 +32,15 @@
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrPivotGrid1 = new DevExpress.XtraReports.UI.XRPivotGrid();
             this.dsMain = new DevExpress.Persistent.Base.ReportsV2.CollectionDataSource();
+            this.fieldaccountcode1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.fieldaccountname1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.fieldcostcentername1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.fieldentrydate1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.fieldowner1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.pivotGridField1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.fieldValue1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.xrTable4 = new DevExpress.XtraReports.UI.XRTable();
-            this.xrTableRow6 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell23 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCellYear = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow7 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell31 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCellFrom = new DevExpress.XtraReports.UI.XRTableCell();
@@ -83,10 +81,11 @@
             this.xrPivotGrid1.DataSource = this.dsMain;
             this.xrPivotGrid1.Dpi = 100F;
             this.xrPivotGrid1.Fields.AddRange(new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField[] {
+            this.fieldaccountcode1,
             this.fieldaccountname1,
+            this.fieldcostcentername1,
             this.fieldentrydate1,
-            this.fieldowner1,
-            this.pivotGridField1});
+            this.fieldValue1});
             this.xrPivotGrid1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrPivotGrid1.Name = "xrPivotGrid1";
             this.xrPivotGrid1.OptionsPrint.FilterSeparatorBarPadding = 3;
@@ -99,58 +98,51 @@
             // dsMain
             // 
             this.dsMain.Name = "dsMain";
-            this.dsMain.ObjectTypeName = "Accounting.BusinessObjects.Recruitment.sp_acc_01Result";
+            this.dsMain.ObjectTypeName = "Accounting.BusinessObjects.Recruitment.sp_acc_02Result";
             this.dsMain.TopReturnedRecords = 0;
+            // 
+            // fieldaccountcode1
+            // 
+            this.fieldaccountcode1.AreaIndex = 0;
+            this.fieldaccountcode1.Caption = "كود الحساب";
+            this.fieldaccountcode1.FieldName = "account_code";
+            this.fieldaccountcode1.Name = "fieldaccountcode1";
             // 
             // fieldaccountname1
             // 
-            this.fieldaccountname1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
-            this.fieldaccountname1.AreaIndex = 1;
+            this.fieldaccountname1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.fieldaccountname1.AreaIndex = 0;
             this.fieldaccountname1.Caption = "الحساب";
             this.fieldaccountname1.FieldName = "account_name";
             this.fieldaccountname1.Name = "fieldaccountname1";
             // 
+            // fieldcostcentername1
+            // 
+            this.fieldcostcentername1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
+            this.fieldcostcentername1.AreaIndex = 0;
+            this.fieldcostcentername1.Caption = "مركز التكلفة";
+            this.fieldcostcentername1.FieldName = "costcenter_name";
+            this.fieldcostcentername1.Name = "fieldcostcentername1";
+            // 
             // fieldentrydate1
             // 
             this.fieldentrydate1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.fieldentrydate1.AreaIndex = 0;
+            this.fieldentrydate1.AreaIndex = 1;
             this.fieldentrydate1.Caption = "التاريخ";
-            this.fieldentrydate1.CellFormat.FormatString = "dd/MM/yyyy";
-            this.fieldentrydate1.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.fieldentrydate1.FieldName = "entry_date";
             this.fieldentrydate1.Name = "fieldentrydate1";
             this.fieldentrydate1.ValueFormat.FormatString = "dd/MM/yyyy";
             this.fieldentrydate1.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             // 
-            // fieldowner1
+            // fieldValue1
             // 
-            this.fieldowner1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
-            this.fieldowner1.AreaIndex = 0;
-            this.fieldowner1.Caption = "النوع";
-            this.fieldowner1.FieldName = "owner";
-            this.fieldowner1.Name = "fieldowner1";
-            this.fieldowner1.TotalValueFormat.FormatString = "f2";
-            this.fieldowner1.TotalValueFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            // 
-            // pivotGridField1
-            // 
-            this.pivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.pivotGridField1.AreaIndex = 0;
-            this.pivotGridField1.Caption = "القيمة";
-            this.pivotGridField1.CellFormat.FormatString = "f2";
-            this.pivotGridField1.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.pivotGridField1.GrandTotalCellFormat.FormatString = "f2";
-            this.pivotGridField1.GrandTotalCellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.pivotGridField1.Name = "pivotGridField1";
-            this.pivotGridField1.TotalCellFormat.FormatString = "f2";
-            this.pivotGridField1.TotalCellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.pivotGridField1.TotalValueFormat.FormatString = "f2";
-            this.pivotGridField1.TotalValueFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.pivotGridField1.UnboundExpression = "[credit] - [debit]";
-            this.pivotGridField1.UnboundFieldName = "pivotGridField1";
-            this.pivotGridField1.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.pivotGridField1.ValueFormat.FormatString = "f2";
-            this.pivotGridField1.ValueFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.fieldValue1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldValue1.AreaIndex = 0;
+            this.fieldValue1.Caption = "القيمة";
+            this.fieldValue1.FieldName = "Value";
+            this.fieldValue1.Name = "fieldValue1";
+            this.fieldValue1.ValueFormat.FormatString = "n2";
+            this.fieldValue1.ValueFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             // 
             // TopMargin
             // 
@@ -176,7 +168,7 @@
             this.xrLabel1,
             this.xrpbLogo});
             this.ReportHeader.Dpi = 100F;
-            this.ReportHeader.HeightF = 212.0001F;
+            this.ReportHeader.HeightF = 180.7501F;
             this.ReportHeader.Name = "ReportHeader";
             // 
             // xrTable4
@@ -186,39 +178,12 @@
             this.xrTable4.LocationFloat = new DevExpress.Utils.PointFloat(0F, 110F);
             this.xrTable4.Name = "xrTable4";
             this.xrTable4.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
-            this.xrTableRow6,
             this.xrTableRow7,
             this.xrTableRow8});
-            this.xrTable4.SizeF = new System.Drawing.SizeF(400F, 75F);
+            this.xrTable4.SizeF = new System.Drawing.SizeF(400F, 50F);
             this.xrTable4.StylePriority.UseFont = false;
             this.xrTable4.StylePriority.UseTextAlignment = false;
             this.xrTable4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xrTableRow6
-            // 
-            this.xrTableRow6.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell23,
-            this.xrTableCellYear});
-            this.xrTableRow6.Dpi = 100F;
-            this.xrTableRow6.Name = "xrTableRow6";
-            this.xrTableRow6.Weight = 1D;
-            // 
-            // xrTableCell23
-            // 
-            this.xrTableCell23.Dpi = 100F;
-            this.xrTableCell23.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
-            this.xrTableCell23.Name = "xrTableCell23";
-            this.xrTableCell23.StylePriority.UseFont = false;
-            this.xrTableCell23.Text = "Fiscal Year:";
-            this.xrTableCell23.Weight = 1D;
-            // 
-            // xrTableCellYear
-            // 
-            this.xrTableCellYear.Dpi = 100F;
-            this.xrTableCellYear.ForeColor = System.Drawing.Color.DimGray;
-            this.xrTableCellYear.Name = "xrTableCellYear";
-            this.xrTableCellYear.StylePriority.UseForeColor = false;
-            this.xrTableCellYear.Weight = 3D;
             // 
             // xrTableRow7
             // 
@@ -376,7 +341,7 @@
             // xrTableCell1
             // 
             this.xrTableCell1.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Total")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Value")});
             this.xrTableCell1.Dpi = 100F;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseTextAlignment = false;
@@ -434,7 +399,7 @@
             this.PageHeader.HeightF = 50F;
             this.PageHeader.Name = "PageHeader";
             // 
-            // acc_Rep_01
+            // acc_Rep_02
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail,
@@ -456,7 +421,7 @@
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
             this.Version = "16.1";
             this.VerticalContentSplitting = DevExpress.XtraPrinting.VerticalContentSplitting.Smart;
-            this.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.acc_Rep_01_BeforePrint);
+            this.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.acc_Rep_02_BeforePrint);
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCompany)).EndInit();
@@ -482,9 +447,6 @@
         private DevExpress.XtraReports.UI.XRPageInfo xrPageInfoPage;
         private DevExpress.XtraReports.UI.XRPageInfo xrPageInfoDate;
         private DevExpress.XtraReports.UI.XRTable xrTable4;
-        private DevExpress.XtraReports.UI.XRTableRow xrTableRow6;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell23;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCellYear;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow7;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell31;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCellFrom;
@@ -496,11 +458,12 @@
         private DevExpress.XtraReports.UI.XRPivotGrid xrPivotGrid1;
         private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldaccountname1;
         private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldentrydate1;
-        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldowner1;
-        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField pivotGridField1;
         private DevExpress.XtraReports.UI.XRTable xrTable1;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow1;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell2;
+        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldaccountcode1;
+        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldcostcentername1;
+        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldValue1;
     }
 }

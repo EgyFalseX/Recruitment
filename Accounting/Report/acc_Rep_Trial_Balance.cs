@@ -20,14 +20,17 @@ namespace Accounting.Report
             InitializeComponent();
         }
 
-        private void acc_Rep_Trial_Balance_DataSourceDemanded(object sender, EventArgs e)
+        private void acc_Rep_Trial_Balance_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
             //xrPageInfoUser.Text = xrPageInfoUser.Text + " - App:" + SecuritySystem.CurrentUserName;
 
-            if (Parameters.Count == 0)
+            DevExpress.XtraReports.Parameters.Parameter parameter =
+                Parameters[DevExpress.ExpressApp.ReportsV2.ReportDataSourceHelper.XafReportParametersObjectName];
+            if (parameter == null)
                 return;
 
-            RepParam_acc_Rep_Trial_Balance param = (RepParam_acc_Rep_Trial_Balance) Parameters[0].RawValue;
+
+            RepParam_acc_Rep_Trial_Balance param = (RepParam_acc_Rep_Trial_Balance)parameter.Value;
 
             //Set header information
             xrTableCellYear.Text = param.FiscalYear.year_name;
@@ -40,10 +43,9 @@ namespace Accounting.Report
             SelectedData selectedData = SprocHelper.Execsp_Trial_Balance(session, param.FiscalYear.year_id,
                 param.Startdate, param.Enddate, param.Cateogry.account_category_id);
 
-            XPDataView ds = new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_acc_01Result)), selectedData);
+            XPDataView ds = new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_Trial_BalanceResult)), selectedData);
 
             DataSource = ds;
-            
         }
     }
 }

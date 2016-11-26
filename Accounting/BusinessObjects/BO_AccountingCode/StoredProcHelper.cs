@@ -72,5 +72,24 @@ namespace Accounting.BusinessObjects.Recruitment
             dataView.PopulateProperties(session.GetClassInfo(typeof(sp_liability_and_equityResult)));
             dataView.LoadData(sprocData);
         }
+        public static DevExpress.Xpo.DB.SelectedData Execsp_acc_02(Session session, DateTime StartDate, DateTime EndDate, int account_id)
+        {
+            return session.ExecuteSproc("sp_acc_02", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
+        }
+        public static System.Collections.Generic.ICollection<sp_acc_02Result> Execsp_acc_02IntoObjects(Session session, DateTime StartDate, DateTime EndDate, int account_id)
+        {
+            return session.GetObjectsFromSproc<sp_acc_02Result>("sp_acc_02", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
+        }
+        public static XPDataView Execsp_acc_02IntoDataView(Session session, DateTime StartDate, DateTime EndDate, int account_id)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_acc_02", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
+            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_acc_02Result)), sprocData);
+        }
+        public static void Execsp_acc_02IntoDataView(XPDataView dataView, Session session, DateTime StartDate, DateTime EndDate, int account_id)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_acc_02", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
+            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_acc_02Result)));
+            dataView.LoadData(sprocData);
+        }
     }
 }
