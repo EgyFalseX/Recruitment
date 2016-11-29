@@ -23,7 +23,9 @@ namespace Recruitment.Web {
 #if EASYTEST
             DevExpress.ExpressApp.Web.TestScripts.TestScriptsManager.EasyTestEnabled = true;
 #endif
-        }
+            //This is requered to make report scripts run
+            DevExpress.XtraReports.Security.ScriptPermissionManager.GlobalInstance = new DevExpress.XtraReports.Security.ScriptPermissionManager(DevExpress.XtraReports.Security.ExecutionMode.Unrestricted);
+            }
         protected void Session_Start(Object sender, EventArgs e) {
             WebApplication.SetInstance(Session, new RecruitmentAspNetApplication());
             WebApplication.Instance.SwitchToNewStyle();

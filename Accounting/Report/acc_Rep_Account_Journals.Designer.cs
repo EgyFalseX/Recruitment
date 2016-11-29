@@ -31,6 +31,7 @@
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary3 = new DevExpress.XtraReports.UI.XRSummary();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(acc_Rep_Account_Journals));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -171,12 +172,12 @@
             // xrTableCell7
             // 
             this.xrTableCell7.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "voucher_no")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "account_name")});
             this.xrTableCell7.Dpi = 100F;
             this.xrTableCell7.Name = "xrTableCell7";
             this.xrTableCell7.StylePriority.UseTextAlignment = false;
             this.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell7.Weight = 1.001133650546215D;
+            this.xrTableCell7.Weight = 2.3406789747678491D;
             // 
             // xrTableCell8
             // 
@@ -186,17 +187,17 @@
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.StylePriority.UseTextAlignment = false;
             this.xrTableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell8.Weight = 2.0163682421488471D;
+            this.xrTableCell8.Weight = 1.9881652898555424D;
             // 
             // xrTableCell9
             // 
             this.xrTableCell9.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "account_name")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "voucher_no")});
             this.xrTableCell9.Dpi = 100F;
             this.xrTableCell9.Name = "xrTableCell9";
             this.xrTableCell9.StylePriority.UseTextAlignment = false;
             this.xrTableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell9.Weight = 2.0304692018267527D;
+            this.xrTableCell9.Weight = 0.90243331698186657D;
             // 
             // xrTableCell10
             // 
@@ -206,7 +207,7 @@
             this.xrTableCell10.Name = "xrTableCell10";
             this.xrTableCell10.StylePriority.UseTextAlignment = false;
             this.xrTableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell10.Weight = 1.3536456970846622D;
+            this.xrTableCell10.Weight = 1.1703392100012195D;
             // 
             // TopMargin
             // 
@@ -451,7 +452,7 @@
             xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell12.Summary = xrSummary1;
             this.xrTableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell12.Weight = 1.3536458714913366D;
+            this.xrTableCell12.Weight = 1.0998371674238345D;
             // 
             // xrTableCell16
             // 
@@ -464,7 +465,7 @@
             xrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell16.Summary = xrSummary2;
             this.xrTableCell16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell16.Weight = 1.3536458714913371D;
+            this.xrTableCell16.Weight = 1.0575359405083833D;
             // 
             // xrTableCell21
             // 
@@ -473,7 +474,7 @@
             this.xrTableCell21.StylePriority.UseTextAlignment = false;
             this.xrTableCell21.Text = "الاجمالي";
             this.xrTableCell21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell21.Weight = 7.4450522887180481D;
+            this.xrTableCell21.Weight = 7.9949709237685038D;
             // 
             // xrTableRow4
             // 
@@ -495,7 +496,7 @@
             xrSummary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell22.Summary = xrSummary3;
             this.xrTableCell22.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell22.Weight = 1.3536458714913366D;
+            this.xrTableCell22.Weight = 1.0998372706988187D;
             // 
             // xrTableCell24
             // 
@@ -503,7 +504,7 @@
             this.xrTableCell24.Name = "xrTableCell24";
             this.xrTableCell24.StylePriority.UseTextAlignment = false;
             this.xrTableCell24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell24.Weight = 8.7986981602093852D;
+            this.xrTableCell24.Weight = 9.0525067610019025D;
             // 
             // PageHeader
             // 
@@ -572,8 +573,8 @@
             this.xrTableCell1.Dpi = 100F;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseTextAlignment = false;
-            this.xrTableCell1.Text = "الرقم التابع";
-            this.xrTableCell1.Weight = 1.2905394655691735D;
+            this.xrTableCell1.Text = "حساب";
+            this.xrTableCell1.Weight = 3.01731773967504D;
             // 
             // xrTableCell4
             // 
@@ -582,16 +583,16 @@
             this.xrTableCell4.StylePriority.UseTextAlignment = false;
             this.xrTableCell4.Text = "البيان";
             this.xrTableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell4.Weight = 2.599255907964988D;
+            this.xrTableCell4.Weight = 2.5629025627265021D;
             // 
             // xrTableCell3
             // 
             this.xrTableCell3.Dpi = 100F;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.StylePriority.UseTextAlignment = false;
-            this.xrTableCell3.Text = "الحساب";
+            this.xrTableCell3.Text = "رقم";
             this.xrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell3.Weight = 2.6174329212444274D;
+            this.xrTableCell3.Weight = 1.1633049028391072D;
             // 
             // xrTableCell5
             // 
@@ -600,7 +601,7 @@
             this.xrTableCell5.StylePriority.UseTextAlignment = false;
             this.xrTableCell5.Text = "التاريخ";
             this.xrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell5.Weight = 1.7449555054147217D;
+            this.xrTableCell5.Weight = 1.5086585949526614D;
             // 
             // calcTotal
             // 
@@ -631,8 +632,10 @@
             this.DataSource = this.dsMain;
             this.DisplayName = "Report";
             this.Margins = new System.Drawing.Printing.Margins(51, 49, 8, 19);
+            this.ScriptReferencesString = resources.GetString("$this.ScriptReferencesString");
+            this.Scripts.OnBeforePrint = "acc_Rep_Account_Journals_BeforePrint";
+            this.ScriptsSource = resources.GetString("$this.ScriptsSource");
             this.Version = "16.1";
-            this.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.acc_Rep_Trial_Balance_BeforePrint);
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCompany)).EndInit();

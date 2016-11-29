@@ -123,4 +123,44 @@
   <metadata name="dsCompany.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 134</value>
   </metadata>
+  <data name="$this.ScriptReferencesString" xml:space="preserve">
+    <value>DevExpress.ExpressApp.v16.1.dll
+Accounting.dll
+DevExpress.Xpo.v16.1.dll
+DevExpress.ExpressApp.Xpo.v16.1.dll
+DevExpress.ExpressApp.Security.Xpo.v16.1.dll
+DevExpress.ExpressApp.Reports.v16.1.dll
+DevExpress.ExpressApp.ReportsV2.v16.1.dll
+DevExpress.XtraReports.v16.1.dll
+DevExpress.XtraReports.v16.1.Extensions.dll
+DevExpress.Persistent.Base.v16.1.dll</value>
+  </data>
+  <data name="$this.ScriptsSource" xml:space="preserve">
+    <value>
+private void acc_Rep_01_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e) {
+DevExpress.XtraReports.Parameters.Parameter parameter = Parameters[DevExpress.ExpressApp.ReportsV2.ReportDataSourceHelper.XafReportParametersObjectName];
+            if (parameter == null)
+                return;
+
+		Accounting.Report.RepParam_acc_Rep_01 param = (Accounting.Report.RepParam_acc_Rep_01)parameter.Value;
+            //Set header information
+            xrTableCellYear.Text = param.FiscalYear.year_name;
+            xrTableCellFrom.Text = param.Startdate.ToShortDateString();
+            xrTableCellTo.Text = param.Enddate.ToShortDateString();
+            xrTableCellAccount.Text = param.Account.account_name;
+
+
+            DevExpress.Xpo.Session session = ((DevExpress.ExpressApp.Xpo.XPObjectSpace)param.ObjectSpace).Session;
+
+            DevExpress.Xpo.DB.SelectedData selectedData = Accounting.BusinessObjects.Recruitment.SprocHelper.Execsp_acc_01(session,
+                param.FiscalYear.year_id,
+                param.Startdate, param.Enddate, param.Account.account_id);
+
+            DevExpress.Xpo.XPDataView ds = new DevExpress.Xpo.XPDataView(session.Dictionary, session.GetClassInfo(typeof(Accounting.BusinessObjects.Recruitment.sp_acc_01Result)), selectedData);
+
+            DataSource = ds;
+
+}
+</value>
+  </data>
 </root>

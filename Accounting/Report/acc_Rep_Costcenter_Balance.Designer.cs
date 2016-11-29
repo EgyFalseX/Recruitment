@@ -30,6 +30,7 @@
         {
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(acc_Rep_Costcenter_Balance));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -391,8 +392,10 @@
             this.DataSource = this.dsMain;
             this.DisplayName = "Report";
             this.Margins = new System.Drawing.Printing.Margins(51, 49, 8, 14);
+            this.ScriptReferencesString = resources.GetString("$this.ScriptReferencesString");
+            this.Scripts.OnBeforePrint = "acc_Rep_Costcenter_Balance_BeforePrint";
+            this.ScriptsSource = resources.GetString("$this.ScriptsSource");
             this.Version = "16.1";
-            this.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.acc_Rep_Trial_Balance_BeforePrint);
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCompany)).EndInit();

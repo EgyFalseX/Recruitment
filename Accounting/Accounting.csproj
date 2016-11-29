@@ -229,6 +229,12 @@
     <Compile Include="Report\acc_Rep_01.Designer.cs">
       <DependentUpon>acc_Rep_01.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\acc_Rep_Account_Journals_Consolidated.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\acc_Rep_Account_Journals_Consolidated.Designer.cs">
+      <DependentUpon>acc_Rep_Account_Journals_Consolidated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\acc_Rep_liability_and_equity.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -276,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\acc_Rep_01.resx">
       <DependentUpon>acc_Rep_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\acc_Rep_Account_Journals_Consolidated.resx">
+      <DependentUpon>acc_Rep_Account_Journals_Consolidated.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\acc_Rep_liability_and_equity.resx">
       <DependentUpon>acc_Rep_liability_and_equity.cs</DependentUpon>

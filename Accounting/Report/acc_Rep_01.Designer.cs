@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(acc_Rep_01));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrPivotGrid1 = new DevExpress.XtraReports.UI.XRPivotGrid();
             this.dsMain = new DevExpress.Persistent.Base.ReportsV2.CollectionDataSource();
@@ -455,9 +456,11 @@
             this.PageHeight = 827;
             this.PageWidth = 1169;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
+            this.ScriptReferencesString = resources.GetString("$this.ScriptReferencesString");
+            this.Scripts.OnBeforePrint = "acc_Rep_01_BeforePrint";
+            this.ScriptsSource = resources.GetString("$this.ScriptsSource");
             this.Version = "16.1";
             this.VerticalContentSplitting = DevExpress.XtraPrinting.VerticalContentSplitting.Smart;
-            this.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.acc_Rep_01_BeforePrint);
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCompany)).EndInit();

@@ -20,17 +20,5 @@ namespace Accounting.Report
             InitializeComponent();
         }
 
-        private void acc_Rep_Trial_Balance_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
-        {
-            //xrPageInfoUser.Text = xrPageInfoUser.Text + " - App:" + SecuritySystem.CurrentUserName;
-            DevExpress.XtraReports.Parameters.Parameter parameter = Parameters[DevExpress.ExpressApp.ReportsV2.ReportDataSourceHelper.XafReportParametersObjectName];
-            if (parameter == null)
-                return;
-            RepParam_acc_Rep_Costcenter_Balance param = (RepParam_acc_Rep_Costcenter_Balance)parameter.Value;
-            //Set header information
-            xrTableCellFrom.Text = param.Startdate.ToShortDateString();
-            xrTableCellTo.Text = param.Enddate.ToShortDateString();
-
-        }
     }
 }

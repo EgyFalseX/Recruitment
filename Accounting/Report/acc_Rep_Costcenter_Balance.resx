@@ -123,4 +123,29 @@
   <metadata name="dsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="$this.ScriptReferencesString" xml:space="preserve">
+    <value>DevExpress.ExpressApp.v16.1.dll
+Accounting.dll
+DevExpress.Xpo.v16.1.dll
+DevExpress.ExpressApp.Xpo.v16.1.dll
+DevExpress.ExpressApp.Security.Xpo.v16.1.dll
+DevExpress.ExpressApp.Reports.v16.1.dll
+DevExpress.ExpressApp.ReportsV2.v16.1.dll
+DevExpress.XtraReports.v16.1.dll
+DevExpress.XtraReports.v16.1.Extensions.dll
+DevExpress.Persistent.Base.v16.1.dll</value>
+  </data>
+  <data name="$this.ScriptsSource" xml:space="preserve">
+    <value>
+private void acc_Rep_Costcenter_Balance_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e) {
+DevExpress.XtraReports.Parameters.Parameter parameter = Parameters[DevExpress.ExpressApp.ReportsV2.ReportDataSourceHelper.XafReportParametersObjectName];
+            if (parameter == null)
+                return;
+            Accounting.Report.RepParam_acc_Rep_Costcenter_Balance param = (Accounting.Report.RepParam_acc_Rep_Costcenter_Balance)parameter.Value;
+            //Set header information
+            xrTableCellFrom.Text = param.Startdate.ToShortDateString();
+            xrTableCellTo.Text = param.Enddate.ToShortDateString();
+}
+</value>
+  </data>
 </root>
