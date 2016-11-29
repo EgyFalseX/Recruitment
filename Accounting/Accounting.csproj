@@ -130,6 +130,10 @@
     <Compile Include="BusinessObjects\BO_AccountingCode\acc_Account_Type.Designer.cs">
       <DependentUpon>acc_Account_Type.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_AccountingCode\acc_AppCompany.cs" />
+    <Compile Include="BusinessObjects\BO_AccountingCode\acc_AppCompany.Designer.cs">
+      <DependentUpon>acc_AppCompany.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_AccountingCode\acc_Bank.cs" />
     <Compile Include="BusinessObjects\BO_AccountingCode\acc_Bank.Designer.cs">
       <DependentUpon>acc_Bank.cs</DependentUpon>
@@ -175,6 +179,9 @@
       <DependentUpon>StoredProcHelper.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\BO_AccountingCode\sp_acc_02Result.cs">
+      <DependentUpon>StoredProcHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_AccountingCode\sp_acc_Account_JournalsResult.cs">
       <DependentUpon>StoredProcHelper.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\BO_AccountingCode\sp_liability_and_equityResult.cs">
@@ -234,12 +241,19 @@
     <Compile Include="Report\acc_Rep_Costcenter_Balance.Designer.cs">
       <DependentUpon>acc_Rep_Costcenter_Balance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\acc_Rep_Account_Journals.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\acc_Rep_Account_Journals.Designer.cs">
+      <DependentUpon>acc_Rep_Account_Journals.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\acc_Rep_Trial_Balance.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report\acc_Rep_Trial_Balance.Designer.cs">
       <DependentUpon>acc_Rep_Trial_Balance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\RepParam_acc_Rep_Account_Journals.cs" />
     <Compile Include="Report\RepParam_acc_Rep_Costcenter_Balance.cs" />
     <Compile Include="Report\RepParam_acc_Rep_02.cs" />
     <Compile Include="Report\RepParam_acc_Rep_01.cs" />
@@ -268,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\acc_Rep_Costcenter_Balance.resx">
       <DependentUpon>acc_Rep_Costcenter_Balance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\acc_Rep_Account_Journals.resx">
+      <DependentUpon>acc_Rep_Account_Journals.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\acc_Rep_Trial_Balance.resx">
       <DependentUpon>acc_Rep_Trial_Balance.cs</DependentUpon>
@@ -334,6 +351,10 @@
   <ItemGroup>
     <EmbeddedResource Include="Images\acc_CostCenter16.png" />
     <EmbeddedResource Include="Images\acc_CostCenter32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Accounting16.png" />
+    <EmbeddedResource Include="Images\Accounting32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

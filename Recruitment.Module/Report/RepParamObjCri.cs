@@ -12,6 +12,7 @@ using DevExpress.Persistent.Validation;
 namespace Recruitment.Module.Report
 {
     [DomainComponent]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Filter Parameters")]
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113594.aspx.
     // ReSharper disable once InconsistentNaming
     public class RepParamObjCri : ReportParametersObjectBase
@@ -43,8 +44,8 @@ namespace Recruitment.Module.Report
         }
         
         private string _criteria;
-        [RuleRequiredField("Filter-Required", DefaultContexts.Save, "An Filter must be selected!")]
-        [System.ComponentModel.DisplayName("Select Filter (required)")]
+        [RuleRequiredField("RepParamObjCri_Filter_Req", DefaultContexts.Save, "An Filter must be selected!")]
+        [System.ComponentModel.DisplayName("Filter")]
         [CriteriaOptions("ReportType"), Size(SizeAttribute.Unlimited)]
         public string Criteria
         {

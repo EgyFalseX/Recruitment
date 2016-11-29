@@ -55,6 +55,7 @@ namespace Accounting {
             reportsUpdater.AddPredefinedReport<acc_Rep_liability_and_equity>("Liability And Equity", typeof (acc_Journal_Entry_Detail), typeof (RepParam_acc_Rep_liability_and_equity));
             reportsUpdater.AddPredefinedReport<acc_Rep_02>("Account Balance per cost center", typeof (sp_acc_02Result), typeof (RepParam_acc_Rep_02));
             reportsUpdater.AddPredefinedReport<acc_Rep_Costcenter_Balance>("Cost Center Balance", typeof (acc_Journal_Entry_Detail), typeof (RepParam_acc_Rep_Costcenter_Balance));
+            reportsUpdater.AddPredefinedReport<acc_Rep_Account_Journals>("Account Journals", typeof(sp_acc_Account_JournalsResult), typeof(RepParam_acc_Rep_Account_Journals));
         }
         public override void Setup(XafApplication application) {
             base.Setup(application);

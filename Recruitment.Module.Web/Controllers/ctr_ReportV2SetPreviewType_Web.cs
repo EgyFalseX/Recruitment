@@ -16,6 +16,7 @@ using DevExpress.ExpressApp.Utils;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.Validation;
 
+
 namespace Recruitment.Module.Web.Controllers
 {
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppViewControllertopic.aspx.
@@ -40,9 +41,9 @@ namespace Recruitment.Module.Web.Controllers
         }
         private void Ctr_ReportV2SetPreviewType_CreateCustomParametersDetailView(object sender, CreateCustomParametersDetailViewEventArgs e)
         {
-            if (e.ReportParametersObject.GetType() == typeof(Report.RepParamObjCri))
+            if (e.ReportParametersObject.GetType() == typeof(Module.Report.RepParamObjCri))
             {
-                ((Report.RepParamObjCri)e.ReportParametersObject).ReportType = _currentReportType;
+                ((Module.Report.RepParamObjCri)e.ReportParametersObject).ReportType = _currentReportType;
             }
         }
 

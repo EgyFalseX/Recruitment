@@ -41,9 +41,9 @@ namespace Recruitment.Module.Win.Controllers
         }
         private void Ctr_ReportV2SetPreviewType_CreateCustomParametersDetailView(object sender, CreateCustomParametersDetailViewEventArgs e)
         {
-            if (e.ReportParametersObject.GetType() == typeof(Report.RepParamObjCri))
+            if (e.ReportParametersObject.GetType() == typeof(Module.Report.RepParamObjCri))
             {
-                ((Report.RepParamObjCri)e.ReportParametersObject).ReportType = _currentReportType;
+                ((Module.Report.RepParamObjCri)e.ReportParametersObject).ReportType = _currentReportType;
             }
         }
 

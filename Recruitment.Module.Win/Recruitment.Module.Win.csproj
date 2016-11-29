@@ -249,7 +249,11 @@
     <Compile Include="Controllers\Filter\WinShowFilterDialogController.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controllers\ReportWizardModifyController.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Editors\WinProgressPropertyEditor.cs" />
+    <Compile Include="Report\ReportWizardParametersX.cs" />
     <Compile Include="WinModule.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -91,5 +91,24 @@ namespace Accounting.BusinessObjects.Recruitment
             dataView.PopulateProperties(session.GetClassInfo(typeof(sp_acc_02Result)));
             dataView.LoadData(sprocData);
         }
+        public static DevExpress.Xpo.DB.SelectedData Execsp_acc_Account_Journals(Session session, DateTime StartDate, DateTime EndDate, int account_id)
+        {
+            return session.ExecuteSproc("sp_acc_Account_Journals", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
+        }
+        public static System.Collections.Generic.ICollection<sp_acc_Account_JournalsResult> Execsp_acc_Account_JournalsIntoObjects(Session session, DateTime StartDate, DateTime EndDate, int account_id)
+        {
+            return session.GetObjectsFromSproc<sp_acc_Account_JournalsResult>("sp_acc_Account_Journals", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
+        }
+        public static XPDataView Execsp_acc_Account_JournalsIntoDataView(Session session, DateTime StartDate, DateTime EndDate, int account_id)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_acc_Account_Journals", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
+            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_acc_Account_JournalsResult)), sprocData);
+        }
+        public static void Execsp_acc_Account_JournalsIntoDataView(XPDataView dataView, Session session, DateTime StartDate, DateTime EndDate, int account_id)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_acc_Account_Journals", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
+            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_acc_Account_JournalsResult)));
+            dataView.LoadData(sprocData);
+        }
     }
 }

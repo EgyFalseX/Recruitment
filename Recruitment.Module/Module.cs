@@ -38,12 +38,14 @@ namespace Recruitment.Module {
                 versionFromDB) {UseMultipleUpdaters = true};
             reportsUpdater.AddPredefinedReport<rec_Applicant_01>("Applicant Information", typeof (rec_Applicant),
                 typeof (RepParamObjCri));
+            
 
             return new ModuleUpdater[] {updater, reportsUpdater};
         }
 
         public override void Setup(XafApplication application)
         {
+            ReportDataProvider.ReportsStorage = new ReportsStorageX();
             base.Setup(application);
             // Manage various aspects of the application UI and behavior at the module level.
             application.LoggedOn += new EventHandler<LogonEventArgs>(application_LoggedOn);

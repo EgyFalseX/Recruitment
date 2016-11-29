@@ -206,7 +206,11 @@
     <Compile Include="Controllers\ctr_ReportV2SetPreviewType_Web.Designer.cs">
       <DependentUpon>ctr_ReportV2SetPreviewType_Web.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\ReportWizardModifyController.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Editors\WebProgressPropertyEditor.cs" />
+    <Compile Include="Report\ReportWizardParametersX.cs" />
     <Compile Include="WebModule.cs">
       <SubType>Component</SubType>
     </Compile>

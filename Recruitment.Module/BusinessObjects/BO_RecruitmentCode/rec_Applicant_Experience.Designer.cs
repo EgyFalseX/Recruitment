@@ -33,13 +33,6 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return fapp_exp_applicant_id; }
             set { SetPropertyValue<rec_Applicant>("app_exp_applicant_id", ref fapp_exp_applicant_id, value); }
         }
-        string fapp_exp_title;
-        [DevExpress.Xpo.DisplayName(@"Title")]
-        public string app_exp_title
-        {
-            get { return fapp_exp_title; }
-            set { SetPropertyValue<string>("app_exp_title", ref fapp_exp_title, value); }
-        }
         string femployer_name;
         [DevExpress.Xpo.DisplayName(@"Employer Name")]
         public string employer_name

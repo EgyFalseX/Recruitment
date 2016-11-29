@@ -315,7 +315,7 @@
             // dsCompany
             // 
             this.dsCompany.Name = "dsCompany";
-            this.dsCompany.ObjectTypeName = "Accounting.BusinessObjects.Recruitment.vacc_AppCompany";
+            this.dsCompany.ObjectTypeName = "Accounting.BusinessObjects.Recruitment.acc_AppCompany";
             this.dsCompany.TopReturnedRecords = 0;
             // 
             // xrpbLogo
@@ -326,6 +326,7 @@
             this.xrpbLogo.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrpbLogo.Name = "xrpbLogo";
             this.xrpbLogo.SizeF = new System.Drawing.SizeF(96F, 96F);
+            this.xrpbLogo.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
             // 
             // ReportFooter
             // 

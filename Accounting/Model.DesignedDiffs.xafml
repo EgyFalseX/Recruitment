@@ -92,7 +92,7 @@
         <Member Name="year_start_date" Caption="Start Date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" EditMaskType="DateTime" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.sp_acc_01Result">
+    <Class Name="Accounting.BusinessObjects.Recruitment.sp_acc_01Result" Caption="Account Balance Set">
       <OwnMembers>
         <Member Name="account_id" Caption="Account Id" />
         <Member Name="account_name" Caption="Account name" />
@@ -101,7 +101,7 @@
         <Member Name="entry_date" Caption="Entry date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.sp_acc_02Result" Caption="Account Balance per cost center set">
+    <Class Name="Accounting.BusinessObjects.Recruitment.sp_acc_02Result" Caption="Account Balance Per Cost Center Set">
       <OwnMembers>
         <Member Name="account_code" Caption="Account code" />
         <Member Name="account_name" Caption="Account name" />
@@ -110,7 +110,9 @@
         <Member Name="Value" Caption="القيمة" DisplayFormat="{0:#,###,##0.##}" EditMask="#,###,##0.##" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.sp_Trial_BalanceResult" Caption="Trial Balance">
+    <Class Name="Accounting.BusinessObjects.Recruitment.sp_acc_Account_JournalsResult" Caption="Account Journals Set" />
+    <Class Name="Accounting.BusinessObjects.Recruitment.sp_liability_and_equityResult" Caption="Liability And Equity Set" />
+    <Class Name="Accounting.BusinessObjects.Recruitment.sp_Trial_BalanceResult" Caption="Trial Balance Set">
       <OwnMembers>
         <Member Name="account_name" Caption="Account name" />
         <Member Name="Entry_credit" Caption="Credit" />
@@ -279,6 +281,42 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <DetailView Id="acc_AppCompany_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="21.5158924205379">
+            <LayoutGroup Id="acc_AppCompany" RelativeSize="100">
+              <LayoutGroup Id="acc_AppCompany_col1" RelativeSize="49.942462600690448">
+                <LayoutItem Id="company_name" Index="0" RelativeSize="23.529411764705884" />
+                <LayoutItem Id="company_address" Index="1" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="company_mobile" Index="2" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="company_phone" ViewItem="company_phone" Index="3" RelativeSize="17.647058823529413" IsNewNode="True" />
+                <LayoutItem Id="company_fax" ViewItem="company_fax" Index="4" RelativeSize="23.529411764705884" IsNewNode="True" />
+                <LayoutItem Id="company_id" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="acc_AppCompany_col2" RelativeSize="50.057537399309552" Caption="acc_AppCompany_col2">
+                <LayoutItem Id="company_logo" RelativeSize="100" Index="0" />
+                <LayoutItem Id="company_fax" RelativeSize="27.272727272727273" Removed="True" />
+                <LayoutItem Id="company_phone" RelativeSize="28.571428571428573" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="78.4841075794621">
+            <LayoutItem Id="AuditTrail" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="acc_AppCompany_ListView">
+      <Columns>
+        <ColumnInfo Id="company_logo" Index="0" />
+        <ColumnInfo Id="company_name" Index="1" />
+        <ColumnInfo Id="company_address" Index="2" />
+        <ColumnInfo Id="company_mobile" Index="3" />
+        <ColumnInfo Id="company_phone" Index="4" />
+        <ColumnInfo Id="company_fax" Index="5" />
+      </Columns>
+    </ListView>
     <DetailView Id="acc_Bank_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">

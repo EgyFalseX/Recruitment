@@ -13,6 +13,7 @@ using DevExpress.Persistent.Validation;
 namespace Accounting.Report
 {
     [DomainComponent]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Liability And Equity Parameters")]
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113594.aspx.
     // ReSharper disable once InconsistentNaming
     public class RepParam_acc_Rep_liability_and_equity : ReportParametersObjectBase

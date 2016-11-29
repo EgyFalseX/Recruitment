@@ -25,8 +25,6 @@
         private void InitializeComponent() {
             this.module1 = new DevExpress.ExpressApp.SystemModule.SystemModule();
             this.module2 = new DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule();
-            this.module3 = new Recruitment.Module.RecruitmentModule();
-            this.module4 = new Recruitment.Module.Win.RecruitmentWindowsFormsModule();
             this.securityModule1 = new DevExpress.ExpressApp.Security.SecurityModule();
             this.securityStrategyComplex1 = new DevExpress.ExpressApp.Security.SecurityStrategyComplex();
             this.authenticationStandard1 = new DevExpress.ExpressApp.Security.AuthenticationStandard();
@@ -61,6 +59,8 @@
             this.workflowWindowsFormsModule = new DevExpress.ExpressApp.Workflow.Win.WorkflowWindowsFormsModule();
             this.accountingModule1 = new Accounting.AccountingModule();
             this.controllerManagementModule1 = new ControllerManagement.Module.ControllerManagementModule();
+            this.module3 = new Recruitment.Module.RecruitmentModule();
+            this.module4 = new Recruitment.Module.Win.RecruitmentWindowsFormsModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // securityStrategyComplex1
@@ -92,7 +92,7 @@
             // reportsModuleV2
             // 
             this.reportsModuleV2.EnableInplaceReports = true;
-            this.reportsModuleV2.ReportDataType = typeof(DevExpress.Persistent.BaseImpl.ReportDataV2);
+            this.reportsModuleV2.ReportDataType = typeof(Recruitment.Module.Report.ReportDataX);
             this.reportsModuleV2.ReportStoreMode = DevExpress.ExpressApp.ReportsV2.ReportStoreModes.XML;
             // 
             // stateMachineModule

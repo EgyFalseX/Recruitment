@@ -3,20 +3,18 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
-using DevExpress.ExpressApp.DC;
 using DevExpress.Persistent.Base;
-using DevExpress.Persistent.Validation;
 
-namespace Recruitment.Module.BusinessObjects.Recruitment
+namespace Accounting.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
-    [NavigationItem("General")]
-    [ImageName("Recruitment16")]
+    [NavigationItem("Accounting")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Company Information (Accounting)")]
+    [DevExpress.Persistent.Base.ImageName("Accounting16")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("company_name")]
-    [XafDisplayName("Company Information (Recruitment)")]
-    public partial class AppCompany
+    public partial class acc_AppCompany
     {
-        public AppCompany(Session session) : base(session) { }
+        public acc_AppCompany(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
         //Audit Trail
         private XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> auditTrail;

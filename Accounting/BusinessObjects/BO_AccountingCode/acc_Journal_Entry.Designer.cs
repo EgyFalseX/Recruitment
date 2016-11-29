@@ -11,9 +11,6 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
-using DevExpress.ExpressApp.Security.Strategy;
-using DevExpress.Persistent.Validation;
-
 namespace Accounting.BusinessObjects.Recruitment
 {
 

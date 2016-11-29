@@ -444,6 +444,8 @@
     <Compile Include="Report\rec_Applicant_01.Designer.cs">
       <DependentUpon>rec_Applicant_01.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\ReportDataX.cs" />
+    <Compile Include="Report\ReportsStorageX.cs" />
     <Compile Include="Report\RepParamObjCri.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -592,6 +594,10 @@
     <EmbeddedResource Include="Images\Scheduler32.png" />
     <Content Include="Information.txt" />
     <None Include="UnusableNodes.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes1.xml">
       <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
       <SubType>Designer</SubType>
     </None>

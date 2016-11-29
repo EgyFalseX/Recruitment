@@ -73,7 +73,7 @@
         <Member Name="rec_Employer_Order_Detail_Suggest_Applicats" Caption="Suggested In Orders" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Country" Caption="Applicant Country" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Country16" DefaultListViewImage="rec_Country16">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Country" Caption="Applicant Country" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Country16" DefaultListViewImage="rec_Country16" DefaultListViewAllowEdit="True" DefaultListViewNewItemRowPosition="Top">
       <OwnMembers>
         <Member Name="app_trv_applicant_id" Caption="Applicant" />
         <Member Name="app_trv_country_id" Caption="Country" />
@@ -81,7 +81,7 @@
         <Member Name="app_trv_year" Caption="Year" DisplayFormat="{0:f0}" EditMask="f0" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Course" Caption="Applicant Course" ImageName="rec_Applicant_Course32" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Applicant_Course16" DefaultListViewImage="rec_Applicant_Course16">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Course" Caption="Applicant Course" ImageName="rec_Applicant_Course32" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Applicant_Course16" DefaultListViewImage="rec_Applicant_Course16" DefaultListViewAllowEdit="True" DefaultListViewNewItemRowPosition="Top">
       <OwnMembers>
         <Member Name="app_crs_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
         <Member Name="app_crs_id" Caption="ID" AllowEdit="False" />
@@ -90,7 +90,7 @@
         <Member Name="app_crs_year" Caption="Year" DisplayFormat="{0:d}" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Education" Caption="Applicant Education" ImageName="rec_Applicant_Education32" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Applicant_Education16" DefaultListViewImage="rec_Applicant_Education16">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Education" Caption="Applicant Education" ImageName="rec_Applicant_Education32" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Applicant_Education16" DefaultListViewImage="rec_Applicant_Education16" DefaultListViewNewItemRowPosition="Top" DefaultListViewAllowEdit="True">
       <OwnMembers>
         <Member Name="app_edu_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
         <Member Name="app_edu_degree_id" Caption="Degree" LookupProperty="degree_name" />
@@ -102,7 +102,7 @@
         <Member Name="app_edu_year" Caption="Year" DisplayFormat="{0:d}" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Experience" Caption="Applicant Experience" ImageName="rec_Applicant_Experience32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Applicant_Experience16" DefaultDetailViewImage="rec_Applicant_Experience16">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Experience" Caption="Applicant Experience" ImageName="rec_Applicant_Experience32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Applicant_Experience16" DefaultDetailViewImage="rec_Applicant_Experience16" DefaultListViewNewItemRowPosition="Top" DefaultListViewAllowEdit="True">
       <OwnMembers>
         <Member Name="app_exp_applicant_id" Caption="Applicant" LookupProperty="applicant_name" Index="0" />
         <Member Name="app_exp_description" Caption="Description" Index="3" />
@@ -110,7 +110,6 @@
         <Member Name="app_exp_id" Caption="ID" AllowEdit="False" Index="5" />
         <Member Name="app_exp_industry_id" Caption="Industry" Index="6" LookupProperty="industry_name" />
         <Member Name="app_exp_start_date" Caption="Start Date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" Index="7" />
-        <Member Name="app_exp_title" Caption="Title" Index="8" />
         <Member Name="app_exp_work_type_id" Caption="Work Type" Index="10" LookupProperty="work_type_name" />
         <Member Name="employer_name" Caption="Employer" Index="11" />
         <Member Name="AuditTrail" Index="12" />
@@ -118,14 +117,14 @@
         <Member Name="app_exp_job_id" Caption="Job Title" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Industry" Caption="Applicant Industry" ImageName="rec_Industry32" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Industry16" DefaultListViewImage="rec_Industry16">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Industry" Caption="Applicant Industry" ImageName="rec_Industry32" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Industry16" DefaultListViewImage="rec_Industry16" DefaultListViewNewItemRowPosition="Top" DefaultListViewAllowEdit="True">
       <OwnMembers>
         <Member Name="app_indus_applicant_id" Caption="Applicant" />
         <Member Name="app_indus_id" Caption="ID" />
         <Member Name="app_indus_industry_id" Caption="Industry" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Langauge" Caption="Applicant Langauge" ImageName="rec_Nationality32" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Nationality16" DefaultListViewImage="rec_Nationality16">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Langauge" Caption="Applicant Langauge" ImageName="rec_Nationality32" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Nationality16" DefaultListViewImage="rec_Nationality16" DefaultListViewNewItemRowPosition="Top" DefaultListViewAllowEdit="True">
       <OwnMembers>
         <Member Name="app_lang_applicant_id" Caption="Applicant" />
         <Member Name="app_lang_id" Caption="ID" />
@@ -133,7 +132,7 @@
         <Member Name="rec_lang_level_id" Caption="Langauge Level" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Project" Caption="Applicant Project" ImageName="rec_Applicant_Project32" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Applicant_Project16" DefaultListViewImage="rec_Applicant_Project16">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Project" Caption="Applicant Project" ImageName="rec_Applicant_Project32" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Applicant_Project16" DefaultListViewImage="rec_Applicant_Project16" DefaultListViewNewItemRowPosition="Top" DefaultListViewAllowEdit="True">
       <OwnMembers>
         <Member Name="app_prj_applicant_id" Caption="Applicant" LookupProperty="applicant_name" Index="0" />
         <Member Name="app_prj_company_name" Caption="Company" Index="1" />
@@ -145,14 +144,14 @@
         <Member Name="AuditTrail" Index="9" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Status" DefaultDetailViewImage="rec_Applicant_Status16" DefaultListViewImage="rec_Applicant_Status16" ImageName="rec_Applicant_Status32" Caption="Applicant Status" DefaultListViewShowAutoFilterRow="True">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Status" DefaultDetailViewImage="rec_Applicant_Status16" DefaultListViewImage="rec_Applicant_Status16" ImageName="rec_Applicant_Status32" Caption="Applicant Status" DefaultListViewShowAutoFilterRow="True" DefaultListViewNewItemRowPosition="Top" DefaultListViewAllowEdit="True">
       <OwnMembers>
         <Member Name="rec_applicant_status_id" Caption="ID" />
         <Member Name="rec_applicant_status_name" Caption="Name" />
         <Member Name="rec_Employer_Order_Detail_Accept_Applicats" Caption="Order Accepted Applicats" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Tag" Caption="Applicant Tag" ImageName="rec_Applicant_Tag32" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Applicant_Tag16" DefaultListViewImage="rec_Applicant_Tag16">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Tag" Caption="Applicant Tag" ImageName="rec_Applicant_Tag32" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Applicant_Tag16" DefaultListViewImage="rec_Applicant_Tag16" DefaultListViewNewItemRowPosition="Top" DefaultListViewAllowEdit="True">
       <OwnMembers>
         <Member Name="app_tag_id" Caption="ID" AllowEdit="False" Index="-1" />
         <Member Name="app_tag_applicant_id" Caption="Applicant" LookupProperty="applicant_name" Index="0" />
@@ -230,7 +229,7 @@
         <Member Name="rec_Employer_rec_PortfolioFileData_Emp" Caption="Attachment" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Industry" Caption="Employer Industry" ImageName="rec_Industry32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Industry16" DefaultDetailViewImage="rec_Industry16">
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Industry" Caption="Employer Industry" ImageName="rec_Industry32" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_Industry16" DefaultDetailViewImage="rec_Industry16" DefaultListViewNewItemRowPosition="Top" DefaultListViewAllowEdit="True">
       <OwnMembers>
         <Member Name="employer_industry_id" Caption="ID" LookupProperty="industry_name" Index="0" />
         <Member Name="employer_id" Caption="Employer" LookupProperty="employer_company_name" />
@@ -641,7 +640,11 @@
         </Items>
       </Item>
       <Item Id="KPI" ImageName="BO_KPI_Definition" />
-      <Item Id="Reports" ImageName="Action_Report_ShowDesigner" />
+      <Item Id="Reports" ImageName="Action_Report_ShowDesigner">
+        <Items>
+          <Item Id="ReportsV2" Removed="True" />
+        </Items>
+      </Item>
       <Item Id="SchedulerEvent" Caption="Scheduler &amp; Event" ImageName="BO_Scheduler" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="Notify_ListView" Caption="Notification" IsNewNode="True" />
@@ -677,13 +680,10 @@
       <RuleRequiredField Id="@rec_Applicant_Country_app_trv_applicant_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Country" TargetPropertyName="app_trv_applicant_id" Name="Applicant Country - Applicant required" IsNewNode="True" />
       <RuleRequiredField Id="@rec_Applicant_Country_app_trv_country_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Country" TargetPropertyName="app_trv_country_id" Name="Applicant Country - Country required" IsNewNode="True" />
       <RuleRequiredField Id="@rec_Applicant_Course_app_crs_applicant_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Course" TargetPropertyName="app_crs_applicant_id" Name="Applicant Course - applicant required" IsNewNode="True" />
-      <RuleRequiredField Id="@rec_Applicant_Course_app_crs_provider_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Course" TargetPropertyName="app_crs_provider" Name="Applicant Course - provider required" IsNewNode="True" />
       <RuleRequiredField Id="@rec_Applicant_Course_app_crs_title_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Course" TargetPropertyName="app_crs_title" Name="Applicant Course - title required" IsNewNode="True" />
       <RuleRequiredField Id="@rec_Applicant_Education_app_edu_applicant_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Education" TargetPropertyName="app_edu_applicant_id" Name="Applicant Education - applicant required" IsNewNode="True" />
       <RuleRequiredField Id="@rec_Applicant_Experience_app_exp_applicant_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Experience" TargetPropertyName="app_exp_applicant_id" Name="Applicant Experience - applicant required" IsNewNode="True" />
-      <RuleRequiredField Id="@rec_Applicant_Experience_app_exp_end_date_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Experience" TargetPropertyName="app_exp_end_date" Name="Applicant Experience - end date required" IsNewNode="True" />
       <RuleRequiredField Id="@rec_Applicant_Experience_app_exp_job_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Experience" TargetPropertyName="app_exp_job_id" Name="Applicant Experience -  Job Title required" IsNewNode="True" />
-      <RuleRequiredField Id="@rec_Applicant_Experience_app_exp_start_date_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Experience" TargetPropertyName="app_exp_start_date" Name="Applicant Experience -  start date required" IsNewNode="True" />
       <RuleRequiredField Id="@rec_Applicant_Industry_app_indus_applicant_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Industry" TargetPropertyName="app_indus_applicant_id" Name="Applicant Industry - Applicant required" IsNewNode="True" />
       <RuleRequiredField Id="@rec_Applicant_Industry_app_indus_industry_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Industry" TargetPropertyName="app_indus_industry_id" Name="Applicant Industry - Industry required" IsNewNode="True" />
       <RuleRequiredField Id="@rec_Applicant_Langauge_app_lang_langauge_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant_Langauge" TargetPropertyName="app_lang_langauge_id" Name="Applicant Langauge - Langauge required" IsNewNode="True" />
@@ -1053,8 +1053,7 @@
               <LayoutGroup Id="rec_Applicant_Experience_col1" RelativeSize="50.094876660341555">
                 <LayoutItem Id="app_exp_applicant_id" Index="0" RelativeSize="28.571428571428573" />
                 <LayoutItem Id="app_exp_start_date" RelativeSize="21.428571428571427" Index="1" />
-                <LayoutItem Id="app_exp_title" Index="1" RelativeSize="17.647058823529413" Removed="True" />
-                <LayoutItem Id="app_exp_end_date" ViewItem="app_exp_end_date" Index="2" RelativeSize="21.428571428571427" IsNewNode="True" />
+                <LayoutItem Id="app_exp_end_date" Index="2" RelativeSize="21.428571428571427" ViewItem="app_exp_end_date" IsNewNode="True" />
                 <LayoutItem Id="employer_name" Index="2" RelativeSize="17.647058823529413" Removed="True" />
                 <LayoutItem Id="app_exp_end_date_till_now" ViewItem="app_exp_end_date_till_now" Index="3" RelativeSize="28.571428571428573" IsNewNode="True" />
                 <LayoutItem Id="app_exp_id" Removed="True" />
@@ -1065,7 +1064,6 @@
                 <LayoutItem Id="app_exp_industry_id" RelativeSize="21.428571428571427" Index="2" />
                 <LayoutItem Id="app_exp_end_date_till_now" Index="3" RelativeSize="28.571428571428573" Removed="True" />
                 <LayoutItem Id="app_exp_work_type_id" RelativeSize="28.571428571428573" Index="3" />
-                <LayoutItem Id="app_exp_end_date" RelativeSize="28.571428571428573" Removed="True" />
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
@@ -2463,5 +2461,11 @@
     </DetailView>
     <ListView Id="rec_Work_Type_ListView" NewItemRowPosition="Top" AllowEdit="True" />
     <ListView Id="rec_Work_Type_rec_Applicants_ListView" IsGroupPanelVisible="True" IsFooterVisible="True" />
+    <ListView Id="ReportDataV2_ListView" IsGroupPanelVisible="False">
+      <Columns>
+        <ColumnInfo Id="DataTypeCaption" Width="100" />
+        <ColumnInfo Id="IsPredefined" Index="2" Width="86" CaptionForFalse="Predefined" CaptionForTrue="User Custom" />
+      </Columns>
+    </ListView>
   </Views>
 </Application>
