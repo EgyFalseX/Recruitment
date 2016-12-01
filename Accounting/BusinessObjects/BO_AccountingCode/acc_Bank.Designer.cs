@@ -79,13 +79,13 @@ namespace Accounting.BusinessObjects.Recruitment
             get { return fbank_note; }
             set { SetPropertyValue<string>("bank_note", ref fbank_note, value); }
         }
-        string fbank_acc_id;
-        [Size(50)]
-        [DevExpress.Xpo.DisplayName(@"Account id")]
-        public string bank_acc_id
+        acc_Account fbank_acc_id;
+        [Association(@"acc_BankReferencesacc_Account")]
+        [DevExpress.Xpo.DisplayName(@"Account")]
+        public acc_Account bank_acc_id
         {
             get { return fbank_acc_id; }
-            set { SetPropertyValue<string>("bank_acc_id", ref fbank_acc_id, value); }
+            set { SetPropertyValue<acc_Account>("bank_acc_id", ref fbank_acc_id, value); }
         }
     }
 

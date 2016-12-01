@@ -184,6 +184,9 @@
     <Compile Include="BusinessObjects\BO_AccountingCode\sp_acc_Account_JournalsResult.cs">
       <DependentUpon>StoredProcHelper.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_AccountingCode\sp_acc_Account_Journals_FeeResult.cs">
+      <DependentUpon>StoredProcHelper.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_AccountingCode\sp_liability_and_equityResult.cs">
       <DependentUpon>StoredProcHelper.cs</DependentUpon>
     </Compile>
@@ -229,6 +232,12 @@
     <Compile Include="Report\acc_Rep_01.Designer.cs">
       <DependentUpon>acc_Rep_01.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\acc_Rep_Account_Journals_Fee.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\acc_Rep_Account_Journals_Fee.Designer.cs">
+      <DependentUpon>acc_Rep_Account_Journals_Fee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\acc_Rep_Account_Journals_Consolidated.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -259,6 +268,7 @@
     <Compile Include="Report\acc_Rep_Trial_Balance.Designer.cs">
       <DependentUpon>acc_Rep_Trial_Balance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\RepParam_acc_Rep_Account_Journals_Fee.cs" />
     <Compile Include="Report\RepParam_acc_Rep_Account_Journals.cs" />
     <Compile Include="Report\RepParam_acc_Rep_Costcenter_Balance.cs" />
     <Compile Include="Report\RepParam_acc_Rep_02.cs" />
@@ -282,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\acc_Rep_01.resx">
       <DependentUpon>acc_Rep_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\acc_Rep_Account_Journals_Fee.resx">
+      <DependentUpon>acc_Rep_Account_Journals_Fee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\acc_Rep_Account_Journals_Consolidated.resx">
       <DependentUpon>acc_Rep_Account_Journals_Consolidated.cs</DependentUpon>

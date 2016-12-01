@@ -32,9 +32,6 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return findustry_name; }
             set { SetPropertyValue<string>("industry_name", ref findustry_name, value); }
         }
-        [DevExpress.Xpo.DisplayName(@"Applicants")]
-        [Association(@"rec_ApplicantReferencesrec_Industry")]
-        public XPCollection<rec_Applicant> rec_Applicants { get { return GetCollection<rec_Applicant>("rec_Applicants"); } }
         [DevExpress.Xpo.DisplayName(@"Applicant Educations")]
         [Association(@"rec_Applicant_EducationReferencesrec_Industry")]
         public XPCollection<rec_Applicant_Education> rec_Applicant_Educations { get { return GetCollection<rec_Applicant_Education>("rec_Applicant_Educations"); } }

@@ -60,13 +60,14 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return fapplicant_rec_applicant_status_id; }
             set { SetPropertyValue<Typez.enum_rec_Applicant_Status>("applicant_rec_applicant_status_id", ref fapplicant_rec_applicant_status_id, value); }
         }
-        byte[] frec_Applicant_image;
-        [Size(SizeAttribute.Unlimited)]
-        [ImageEditor(DetailViewImageEditorFixedHeight = 64, DetailViewImageEditorFixedWidth = 64, ListViewImageEditorCustomHeight = 64, ImageSizeMode = ImageSizeMode.Zoom)]
-        public byte[] rec_Applicant_image
-        {
-            get { return frec_Applicant_image; }
-            set { SetPropertyValue<byte[]>("rec_Applicant_image", ref frec_Applicant_image, value); }
-        }}
+        //byte[] frec_Applicant_image;
+        //[Size(SizeAttribute.Unlimited)]
+        //[ImageEditor(DetailViewImageEditorFixedHeight = 64, DetailViewImageEditorFixedWidth = 64, ListViewImageEditorCustomHeight = 64, ImageSizeMode = ImageSizeMode.Zoom)]
+        //public byte[] rec_Applicant_image
+        //{
+        //    get { return frec_Applicant_image; }
+        //    set { SetPropertyValue<byte[]>("rec_Applicant_image", ref frec_Applicant_image, value); }
+        //}
+    }
 
 }

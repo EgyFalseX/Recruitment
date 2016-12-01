@@ -24,3 +24,7 @@ _________________________________________________________________________
 2- remove column fical year from JE and place it with period beside remove its relation and add new relation to period table
 done
 ___________________________________________
+2016-11-30
+1- change bank_acc_id to int
+2- Create sp_acc_Account_Journals_Fee
+3- remove and recreate predefind reports

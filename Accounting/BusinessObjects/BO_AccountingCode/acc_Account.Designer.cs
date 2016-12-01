@@ -78,6 +78,13 @@ namespace Accounting.BusinessObjects.Recruitment
             get { return faccount_code; }
             set { SetPropertyValue<string>("account_code", ref faccount_code, value); }
         }
+        double faccount_fees;
+        [DevExpress.Xpo.DisplayName(@"Fees")]
+        public double account_fees
+        {
+            get { return faccount_fees; }
+            set { SetPropertyValue<double>("account_fees", ref faccount_fees, value); }
+        }
         [DevExpress.Xpo.DisplayName(@"Child Accounts")]
         [Association(@"acc_AccountReferencesacc_Account")]
         public XPCollection<acc_Account> acc_AccountCollection { get { return GetCollection<acc_Account>("acc_AccountCollection"); } }
@@ -90,6 +97,9 @@ namespace Accounting.BusinessObjects.Recruitment
         [DevExpress.Xpo.DisplayName(@"Category Details")]
         [Association(@"acc_Account_Category_DetailReferencesacc_Account")]
         public XPCollection<acc_Account_Category_Detail> acc_Account_Category_Details { get { return GetCollection<acc_Account_Category_Detail>("acc_Account_Category_Details"); } }
+        [DevExpress.Xpo.DisplayName(@"Banks")]
+        [Association(@"acc_BankReferencesacc_Account")]
+        public XPCollection<acc_Bank> acc_Banks { get { return GetCollection<acc_Bank>("acc_Banks"); } }
     }
 
 }

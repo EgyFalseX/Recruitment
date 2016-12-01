@@ -56,6 +56,15 @@ namespace Accounting.BusinessObjects.Recruitment
                 imageName = "BO_Product";
             return ImageLoader.Instance.GetImageInfo(imageName).Image;
         }
+        protected override void OnChanged(string propertyName, object oldValue, object newValue)
+        {
+            base.OnChanged(propertyName, oldValue, newValue);
+            if (IsLoading || oldValue == newValue || (propertyName != "parent_account_id")) return;
+
+            acc_nature_id = parent_account_id.acc_nature_id ?? Session.GetObjectByKey<acc_Nature>(parent_account_id.account_type_id.account_type_id);
+            account_type_id = parent_account_id.account_type_id ?? Session.GetObjectByKey<acc_Account_Type>(parent_account_id.account_type_id.account_type_id);
+
+        }
 
     }
 

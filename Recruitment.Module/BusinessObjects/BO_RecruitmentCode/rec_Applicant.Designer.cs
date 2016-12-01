@@ -114,15 +114,6 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return fapplicant_salary; }
             set { SetPropertyValue<double>("applicant_salary", ref fapplicant_salary, value); }
         }
-        rec_Industry fapplicant_industry_id;
-        [Indexed(Name = @"iapplicant_industry_id_rec_Applicant")]
-        [Association(@"rec_ApplicantReferencesrec_Industry")]
-        [DevExpress.Xpo.DisplayName(@"Industry")]
-        public rec_Industry applicant_industry_id
-        {
-            get { return fapplicant_industry_id; }
-            set { SetPropertyValue<rec_Industry>("applicant_industry_id", ref fapplicant_industry_id, value); }
-        }
         rec_Position fapplicant_position_id;
         [Indexed(Name = @"iapplicant_position_id_rec_Applicant")]
         [Association(@"rec_ApplicantReferencesrec_Position")]
@@ -187,6 +178,15 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         {
             get { return fapplicant_mobile2; }
             set { SetPropertyValue<string>("applicant_mobile2", ref fapplicant_mobile2, value); }
+        }
+        byte[] frec_Applicant_image;
+        [Size(SizeAttribute.Unlimited)]
+        [DevExpress.Xpo.DisplayName(@"Photo")]
+        [DevExpress.Persistent.Base.ImageEditor(DetailViewImageEditorFixedHeight = 64, DetailViewImageEditorFixedWidth = 64, ListViewImageEditorCustomHeight = 64, ImageSizeMode = DevExpress.Persistent.Base.ImageSizeMode.Zoom)]
+        public byte[] rec_Applicant_image
+        {
+            get { return frec_Applicant_image; }
+            set { SetPropertyValue<byte[]>("rec_Applicant_image", ref frec_Applicant_image, value); }
         }
         [DevExpress.Xpo.DisplayName(@"Applicant Courses")]
         [Association(@"rec_Applicant_CourseReferencesrec_Applicant")]

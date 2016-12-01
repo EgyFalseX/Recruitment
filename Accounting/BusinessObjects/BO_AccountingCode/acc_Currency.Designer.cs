@@ -31,6 +31,7 @@ namespace Accounting.BusinessObjects.Recruitment
             get { return fcurrency_name; }
             set { SetPropertyValue<string>("currency_name", ref fcurrency_name, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Journal Entry Details")]
         [Association(@"acc_Journal_Entry_DetailReferencesacc_Currency")]
         public XPCollection<acc_Journal_Entry_Detail> acc_Journal_Entry_Details { get { return GetCollection<acc_Journal_Entry_Detail>("acc_Journal_Entry_Details"); } }
     }

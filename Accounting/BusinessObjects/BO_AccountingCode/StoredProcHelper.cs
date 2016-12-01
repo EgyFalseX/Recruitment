@@ -110,5 +110,24 @@ namespace Accounting.BusinessObjects.Recruitment
             dataView.PopulateProperties(session.GetClassInfo(typeof(sp_acc_Account_JournalsResult)));
             dataView.LoadData(sprocData);
         }
+        public static DevExpress.Xpo.DB.SelectedData Execsp_acc_Account_Journals_Fee(Session session, DateTime StartDate, DateTime EndDate, int account_id, bool ShowFeeNotEquelCredit)
+        {
+            return session.ExecuteSproc("sp_acc_Account_Journals_Fee", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id), new OperandValue(ShowFeeNotEquelCredit));
+        }
+        public static System.Collections.Generic.ICollection<sp_acc_Account_Journals_FeeResult> Execsp_acc_Account_Journals_FeeIntoObjects(Session session, DateTime StartDate, DateTime EndDate, int account_id, bool ShowFeeNotEquelCredit)
+        {
+            return session.GetObjectsFromSproc<sp_acc_Account_Journals_FeeResult>("sp_acc_Account_Journals_Fee", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id), new OperandValue(ShowFeeNotEquelCredit));
+        }
+        public static XPDataView Execsp_acc_Account_Journals_FeeIntoDataView(Session session, DateTime StartDate, DateTime EndDate, int account_id, bool ShowFeeNotEquelCredit)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_acc_Account_Journals_Fee", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id), new OperandValue(ShowFeeNotEquelCredit));
+            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_acc_Account_Journals_FeeResult)), sprocData);
+        }
+        public static void Execsp_acc_Account_Journals_FeeIntoDataView(XPDataView dataView, Session session, DateTime StartDate, DateTime EndDate, int account_id, bool ShowFeeNotEquelCredit)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_acc_Account_Journals_Fee", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id), new OperandValue(ShowFeeNotEquelCredit));
+            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_acc_Account_Journals_FeeResult)));
+            dataView.LoadData(sprocData);
+        }
     }
 }
