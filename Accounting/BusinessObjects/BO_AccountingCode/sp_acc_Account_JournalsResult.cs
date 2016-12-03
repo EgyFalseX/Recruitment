@@ -24,6 +24,8 @@ namespace Accounting.BusinessObjects.Recruitment
         public string account_name { get; set; }
         public DateTime entry_date { get; set; }
         public string voucher_no { get; set; }
+        public int factor { get; set; }
+        public double Balance { get; set; }
     }
 
 }

@@ -5,6 +5,8 @@
         public acc_Rep_Account_Journals()
         {
             InitializeComponent();
+
+
         }
     }
 }

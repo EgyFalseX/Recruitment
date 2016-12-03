@@ -5,6 +5,7 @@
         public acc_Rep_Account_Journals_Consolidated()
         {
             InitializeComponent();
+            
         }
     }
 }

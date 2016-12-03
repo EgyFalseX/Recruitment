@@ -152,11 +152,12 @@ DevExpress.Persistent.Base.v16.1.dll</value>
             DevExpress.Xpo.Session session = ((DevExpress.ExpressApp.Xpo.XPObjectSpace)param.ObjectSpace).Session;
 
             DevExpress.Xpo.DB.SelectedData selectedData = Accounting.BusinessObjects.Recruitment.SprocHelper.Execsp_acc_Account_Journals(session,
-                param.Startdate, param.Enddate, param.Account.account_id);
+                param.FiscalYear.year_id, param.Startdate, param.Enddate, param.Account.account_id);
 
             DevExpress.Xpo.XPDataView ds = new DevExpress.Xpo.XPDataView(session.Dictionary, session.GetClassInfo(typeof(Accounting.BusinessObjects.Recruitment.sp_acc_Account_JournalsResult)), selectedData);
 
-            DataSource = ds;}
+            DataSource = ds;
+}
 </value>
   </data>
 </root>

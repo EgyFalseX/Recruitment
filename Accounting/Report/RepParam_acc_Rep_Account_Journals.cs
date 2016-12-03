@@ -37,6 +37,15 @@ namespace Accounting.Report
             return sorting;
         }
 
+        private acc_Year _fiscalyear;
+        [RuleRequiredField("RepParam_acc_Rep_Account_Journals_FiscalYear_vld_req", DefaultContexts.Save, "Fiscal Year should not be empty!")]
+        [System.ComponentModel.DisplayName("Fiscal Year")]
+        public acc_Year FiscalYear
+        {
+            get { return _fiscalyear; }
+            set { _fiscalyear = value; }
+        }
+
         private DateTime _startdate;
         [RuleRequiredField("RepParam_acc_Rep_Account_Journals_Startdate_vld_req", DefaultContexts.Save, "From Date should not be empty!")]
         [System.ComponentModel.DisplayName("From Date")]

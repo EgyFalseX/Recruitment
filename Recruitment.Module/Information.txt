@@ -28,3 +28,11 @@ ___________________________________________
 1- change bank_acc_id to int
 2- Create sp_acc_Account_Journals_Fee
 3- remove and recreate predefind reports
+___________________________________________
+2016-12-01
+1- Recreate sp_acc_Account_Journals
+2- Recreate sp_acc_Account_Journals_Fee
+3- Recreate sp_liability_and_equity
+4- Create View vacc_Journal_Entry_Detail
+5- Add factor column in acc_Nature (Set its value)
+
