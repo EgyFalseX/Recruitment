@@ -15,14 +15,12 @@ namespace Accounting.BusinessObjects.Recruitment
 {
 
     [NonPersistent]
-    public partial class sp_Trial_BalanceResult
+    public partial class sp_Income_StatementResult
     {
         public int Parent_Id { get; set; }
         public string account_name { get; set; }
-        public double Entry_debit { get; set; }
-        public double Entry_credit { get; set; }
-        public double OB_debit { get; set; }
-        public double OB_credit { get; set; }
+        public double NetValue { get; set; }
+        public string acc_nature_name { get; set; }
         public int appear_order { get; set; }
     }
 

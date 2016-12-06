@@ -143,7 +143,7 @@ DevExpress.XtraReports.Parameters.Parameter parameter =
             if (parameter == null)
                 return;
 
-            Accounting.Report.RepParam_acc_Rep_liability_and_equity param = (Accounting.Report.RepParam_acc_Rep_liability_and_equity)parameter.Value;
+            Accounting.Report.RepParam_acc_Rep_Income_Statement param = (Accounting.Report.RepParam_acc_Rep_Income_Statement)parameter.Value;
 
             //Set header information
             xrTableCellYear.Text = param.FiscalYear.year_name;
@@ -151,7 +151,7 @@ DevExpress.XtraReports.Parameters.Parameter parameter =
             xrTableCellTo.Text = param.Enddate.ToShortDateString();
             xrTableCellCategory.Text = param.Cateogry.account_category_name;
 
-            DevExpress.Xpo.XPDataView ds = Accounting.BusinessObjects.Recruitment.SprocHelper.Execsp_liability_and_equityIntoDataView(((DevExpress.ExpressApp.Xpo.XPObjectSpace)param.ObjectSpace).Session, param.FiscalYear.year_id,
+            DevExpress.Xpo.XPDataView ds = Accounting.BusinessObjects.Recruitment.SprocHelper.Execsp_Income_StatementIntoDataView(((DevExpress.ExpressApp.Xpo.XPObjectSpace)param.ObjectSpace).Session, param.FiscalYear.year_id,
                param.Startdate, param.Enddate, param.Cateogry.account_category_id);
 
             DataSource = ds;

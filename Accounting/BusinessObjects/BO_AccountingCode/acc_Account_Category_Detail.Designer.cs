@@ -25,6 +25,7 @@ namespace Accounting.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("account_category_detail_id", ref faccount_category_detail_id, value); }
         }
         acc_Account_Category faccount_category_id;
+        [Indexed(Name = @"iaccount_category_id_acc_Account_Category_Detail")]
         [Association(@"acc_Account_Category_DetailReferencesacc_Account_Category")]
         [DevExpress.Xpo.DisplayName(@"Category")]
         [DevExpress.Persistent.Validation.RuleRequiredField("acc_Account_Category_Detail_account_category_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select Category")]
@@ -34,6 +35,7 @@ namespace Accounting.BusinessObjects.Recruitment
             set { SetPropertyValue<acc_Account_Category>("account_category_id", ref faccount_category_id, value); }
         }
         acc_Account faccount_id;
+        [Indexed(Name = @"iaccount_id_acc_Account_Category_Detail")]
         [Association(@"acc_Account_Category_DetailReferencesacc_Account")]
         [DevExpress.Xpo.DisplayName(@"Account")]
         [DevExpress.Persistent.Validation.RuleRequiredField("acc_Account_Category_Detail_account_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select An Account")]
@@ -41,6 +43,13 @@ namespace Accounting.BusinessObjects.Recruitment
         {
             get { return faccount_id; }
             set { SetPropertyValue<acc_Account>("account_id", ref faccount_id, value); }
+        }
+        int fappear_order;
+        [DevExpress.Xpo.DisplayName(@"Order")]
+        public int appear_order
+        {
+            get { return fappear_order; }
+            set { SetPropertyValue<int>("appear_order", ref fappear_order, value); }
         }
     }
 

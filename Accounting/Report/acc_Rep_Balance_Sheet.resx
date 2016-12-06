@@ -117,13 +117,45 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="act_Closed.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>129, 17</value>
+  <metadata name="dsCompany.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 134</value>
   </metadata>
-  <metadata name="act_Refund.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="dsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="$this.TrayLargeIcon" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
+  <data name="$this.ScriptReferencesString" xml:space="preserve">
+    <value>DevExpress.ExpressApp.v16.1.dll
+Accounting.dll
+DevExpress.Xpo.v16.1.dll
+DevExpress.ExpressApp.Xpo.v16.1.dll
+DevExpress.ExpressApp.Security.Xpo.v16.1.dll
+DevExpress.ExpressApp.Reports.v16.1.dll
+DevExpress.ExpressApp.ReportsV2.v16.1.dll
+DevExpress.XtraReports.v16.1.dll
+DevExpress.XtraReports.v16.1.Extensions.dll
+DevExpress.Persistent.Base.v16.1.dll</value>
+  </data>
+  <data name="$this.ScriptsSource" xml:space="preserve">
+    <value>
+private void acc_Rep_liability_and_equity_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e) {
+          DevExpress.XtraReports.Parameters.Parameter parameter =
+          Parameters[DevExpress.ExpressApp.ReportsV2.ReportDataSourceHelper.XafReportParametersObjectName];
+            if (parameter == null)
+                return;
+
+            Accounting.Report.RepParam_acc_Rep_Balance_Sheet param = (Accounting.Report.RepParam_acc_Rep_Balance_Sheet)parameter.Value;
+
+            //Set header information
+            xrTableCellYear.Text = param.FiscalYear.year_name;
+            xrTableCellFrom.Text = param.Startdate.ToShortDateString();
+            xrTableCellTo.Text = param.Enddate.ToShortDateString();
+            xrTableCellCategory.Text = param.Cateogry.account_category_name;
+
+            DevExpress.Xpo.XPDataView ds = Accounting.BusinessObjects.Recruitment.SprocHelper.Execsp_Balance_SheetIntoDataView(((DevExpress.ExpressApp.Xpo.XPObjectSpace)param.ObjectSpace).Session, param.FiscalYear.year_id,
+               param.Startdate, param.Enddate, param.Cateogry.account_category_id);
+
+            DataSource = ds;      
+}
+</value>
+  </data>
 </root>

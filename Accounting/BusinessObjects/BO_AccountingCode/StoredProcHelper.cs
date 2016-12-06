@@ -15,25 +15,6 @@ namespace Accounting.BusinessObjects.Recruitment
 {
     public static class SprocHelper
     {
-        public static DevExpress.Xpo.DB.SelectedData Execsp_Trial_Balance(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
-        {
-            return session.ExecuteSproc("sp_Trial_Balance", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
-        }
-        public static System.Collections.Generic.ICollection<sp_Trial_BalanceResult> Execsp_Trial_BalanceIntoObjects(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
-        {
-            return session.GetObjectsFromSproc<sp_Trial_BalanceResult>("sp_Trial_Balance", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
-        }
-        public static XPDataView Execsp_Trial_BalanceIntoDataView(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
-        {
-            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Trial_Balance", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
-            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_Trial_BalanceResult)), sprocData);
-        }
-        public static void Execsp_Trial_BalanceIntoDataView(XPDataView dataView, Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
-        {
-            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Trial_Balance", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
-            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_Trial_BalanceResult)));
-            dataView.LoadData(sprocData);
-        }
         public static DevExpress.Xpo.DB.SelectedData Execsp_acc_01(Session session, int Year, DateTime StartDate, DateTime EndDate, int account_id)
         {
             return session.ExecuteSproc("sp_acc_01", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
@@ -51,25 +32,6 @@ namespace Accounting.BusinessObjects.Recruitment
         {
             DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_acc_01", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
             dataView.PopulateProperties(session.GetClassInfo(typeof(sp_acc_01Result)));
-            dataView.LoadData(sprocData);
-        }
-        public static DevExpress.Xpo.DB.SelectedData Execsp_liability_and_equity(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
-        {
-            return session.ExecuteSproc("sp_liability_and_equity", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
-        }
-        public static System.Collections.Generic.ICollection<sp_liability_and_equityResult> Execsp_liability_and_equityIntoObjects(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
-        {
-            return session.GetObjectsFromSproc<sp_liability_and_equityResult>("sp_liability_and_equity", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
-        }
-        public static XPDataView Execsp_liability_and_equityIntoDataView(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
-        {
-            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_liability_and_equity", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
-            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_liability_and_equityResult)), sprocData);
-        }
-        public static void Execsp_liability_and_equityIntoDataView(XPDataView dataView, Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
-        {
-            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_liability_and_equity", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
-            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_liability_and_equityResult)));
             dataView.LoadData(sprocData);
         }
         public static DevExpress.Xpo.DB.SelectedData Execsp_acc_02(Session session, DateTime StartDate, DateTime EndDate, int account_id)
@@ -91,23 +53,23 @@ namespace Accounting.BusinessObjects.Recruitment
             dataView.PopulateProperties(session.GetClassInfo(typeof(sp_acc_02Result)));
             dataView.LoadData(sprocData);
         }
-        public static DevExpress.Xpo.DB.SelectedData Execsp_acc_Account_Journals_Fee(Session session, DateTime StartDate, DateTime EndDate, int account_id, bool ShowFeeNotEquelCredit)
+        public static DevExpress.Xpo.DB.SelectedData Execsp_Trial_Balance(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
         {
-            return session.ExecuteSproc("sp_acc_Account_Journals_Fee", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id), new OperandValue(ShowFeeNotEquelCredit));
+            return session.ExecuteSproc("sp_Trial_Balance", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
         }
-        public static System.Collections.Generic.ICollection<sp_acc_Account_Journals_FeeResult> Execsp_acc_Account_Journals_FeeIntoObjects(Session session, DateTime StartDate, DateTime EndDate, int account_id, bool ShowFeeNotEquelCredit)
+        public static System.Collections.Generic.ICollection<sp_Trial_BalanceResult> Execsp_Trial_BalanceIntoObjects(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
         {
-            return session.GetObjectsFromSproc<sp_acc_Account_Journals_FeeResult>("sp_acc_Account_Journals_Fee", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id), new OperandValue(ShowFeeNotEquelCredit));
+            return session.GetObjectsFromSproc<sp_Trial_BalanceResult>("sp_Trial_Balance", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
         }
-        public static XPDataView Execsp_acc_Account_Journals_FeeIntoDataView(Session session, DateTime StartDate, DateTime EndDate, int account_id, bool ShowFeeNotEquelCredit)
+        public static XPDataView Execsp_Trial_BalanceIntoDataView(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
         {
-            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_acc_Account_Journals_Fee", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id), new OperandValue(ShowFeeNotEquelCredit));
-            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_acc_Account_Journals_FeeResult)), sprocData);
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Trial_Balance", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
+            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_Trial_BalanceResult)), sprocData);
         }
-        public static void Execsp_acc_Account_Journals_FeeIntoDataView(XPDataView dataView, Session session, DateTime StartDate, DateTime EndDate, int account_id, bool ShowFeeNotEquelCredit)
+        public static void Execsp_Trial_BalanceIntoDataView(XPDataView dataView, Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
         {
-            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_acc_Account_Journals_Fee", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id), new OperandValue(ShowFeeNotEquelCredit));
-            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_acc_Account_Journals_FeeResult)));
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Trial_Balance", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
+            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_Trial_BalanceResult)));
             dataView.LoadData(sprocData);
         }
         public static DevExpress.Xpo.DB.SelectedData Execsp_acc_Account_Journals(Session session, int Year, DateTime StartDate, DateTime EndDate, int account_id)
@@ -127,6 +89,63 @@ namespace Accounting.BusinessObjects.Recruitment
         {
             DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_acc_Account_Journals", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
             dataView.PopulateProperties(session.GetClassInfo(typeof(sp_acc_Account_JournalsResult)));
+            dataView.LoadData(sprocData);
+        }
+        public static DevExpress.Xpo.DB.SelectedData Execsp_acc_Account_Journals_Fee(Session session, DateTime StartDate, DateTime EndDate, int account_id, bool ShowFeeNotEquelCredit)
+        {
+            return session.ExecuteSproc("sp_acc_Account_Journals_Fee", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id), new OperandValue(ShowFeeNotEquelCredit));
+        }
+        public static System.Collections.Generic.ICollection<sp_acc_Account_Journals_FeeResult> Execsp_acc_Account_Journals_FeeIntoObjects(Session session, DateTime StartDate, DateTime EndDate, int account_id, bool ShowFeeNotEquelCredit)
+        {
+            return session.GetObjectsFromSproc<sp_acc_Account_Journals_FeeResult>("sp_acc_Account_Journals_Fee", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id), new OperandValue(ShowFeeNotEquelCredit));
+        }
+        public static XPDataView Execsp_acc_Account_Journals_FeeIntoDataView(Session session, DateTime StartDate, DateTime EndDate, int account_id, bool ShowFeeNotEquelCredit)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_acc_Account_Journals_Fee", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id), new OperandValue(ShowFeeNotEquelCredit));
+            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_acc_Account_Journals_FeeResult)), sprocData);
+        }
+        public static void Execsp_acc_Account_Journals_FeeIntoDataView(XPDataView dataView, Session session, DateTime StartDate, DateTime EndDate, int account_id, bool ShowFeeNotEquelCredit)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_acc_Account_Journals_Fee", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id), new OperandValue(ShowFeeNotEquelCredit));
+            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_acc_Account_Journals_FeeResult)));
+            dataView.LoadData(sprocData);
+        }
+        public static DevExpress.Xpo.DB.SelectedData Execsp_Income_Statement(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
+        {
+            return session.ExecuteSproc("sp_Income_Statement", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
+        }
+        public static System.Collections.Generic.ICollection<sp_Income_StatementResult> Execsp_Income_StatementIntoObjects(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
+        {
+            return session.GetObjectsFromSproc<sp_Income_StatementResult>("sp_Income_Statement", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
+        }
+        public static XPDataView Execsp_Income_StatementIntoDataView(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Income_Statement", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
+            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_Income_StatementResult)), sprocData);
+        }
+        public static void Execsp_Income_StatementIntoDataView(XPDataView dataView, Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Income_Statement", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
+            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_Income_StatementResult)));
+            dataView.LoadData(sprocData);
+        }
+        public static DevExpress.Xpo.DB.SelectedData Execsp_Balance_Sheet(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
+        {
+            return session.ExecuteSproc("sp_Balance_Sheet", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
+        }
+        public static System.Collections.Generic.ICollection<sp_Balance_SheetResult> Execsp_Balance_SheetIntoObjects(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
+        {
+            return session.GetObjectsFromSproc<sp_Balance_SheetResult>("sp_Balance_Sheet", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
+        }
+        public static XPDataView Execsp_Balance_SheetIntoDataView(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Balance_Sheet", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
+            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_Balance_SheetResult)), sprocData);
+        }
+        public static void Execsp_Balance_SheetIntoDataView(XPDataView dataView, Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Balance_Sheet", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
+            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_Balance_SheetResult)));
             dataView.LoadData(sprocData);
         }
     }

@@ -35,27 +35,15 @@ namespace Accounting.Controllers
                 Frame.GetController<ModificationsController>().SaveAndCloseAction.Active.SetItemValue("Can't Modify Closed Entry", active);
                 Frame.GetController<ModificationsController>().SaveAndNewAction.Active.SetItemValue("Can't Modify Closed Entry", active);
                 Frame.GetController<DeleteObjectsViewController>().DeleteAction.Active.SetItemValue("Can't Modify Closed Entry", active);
-                //Frame.GetController<ctr_Order_Suggest_App>().Actions["action_Order_Suggest_App_Status_Changer"].Active.SetItemValue("Can't Modify Closed Entry", active);
                 return;
             }
             if (View.ObjectTypeInfo.Type == typeof(acc_Journal_Entry_Detail))
             {
                 bool active = View.SelectedObjects.Cast<acc_Journal_Entry_Detail>().All(entry => !entry.jour_entry_id?.closed ?? false);
-                //foreach (acc_Journal_Entry_Detail accJournalEntryDetail in View.SelectedObjects)
-                //{
-                //    if (accJournalEntryDetail.jour_entry_id == null || accJournalEntryDetail.jour_entry_id.closed == false)
-                //        active = true;
-                //    else
-                //    {
-                //        active = false;
-                //        break;
-                //    }
-                //}
                 Frame.GetController<ModificationsController>().SaveAction.Active.SetItemValue("Can't Modify Closed Entry", active);
                 Frame.GetController<ModificationsController>().SaveAndCloseAction.Active.SetItemValue("Can't Modify Closed Entry", active);
                 Frame.GetController<ModificationsController>().SaveAndNewAction.Active.SetItemValue("Can't Modify Closed Entry", active);
                 Frame.GetController<DeleteObjectsViewController>().DeleteAction.Active.SetItemValue("Can't Modify Closed Entry", active);
-                //Frame.GetController<ctr_Order_Suggest_App>().Actions["action_Order_Suggest_App_Status_Changer"].Active.SetItemValue("Can't Modify Closed Entry", active);
                 return;
             }
         }

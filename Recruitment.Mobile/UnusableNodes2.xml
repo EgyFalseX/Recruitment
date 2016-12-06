@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="acc_Year_acc_Journal_Entrys_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="JournalCaption" Index="-1" />
+        <ColumnInfo Id="jour_entry_id" Index="0" Width="34" />
+        <ColumnInfo Id="entry_text" Index="1" Width="165" />
+        <ColumnInfo Id="year_id" Index="2" />
+        <ColumnInfo Id="entry_date" Index="3" />
+        <ColumnInfo Id="closed" Index="4" />
+        <ColumnInfo Id="voucher_no" Index="5" />
+      </Columns>
+    </ListView>
+    <DetailView Id="acc_Journal_Entry_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="JournalCaption" ViewItem="JournalCaption" />
+          <LayoutItem Id="year_id" ViewItem="year_id" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="acc_Journal_Entry_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="year_id" Index="3" Width="71" />
+      </Columns>
+    </ListView>
+    <DetailView Id="acc_Year_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="acc_Journal_Entrys" RelativeSize="100" Index="0">
+              <LayoutItem Id="acc_Journal_Entrys" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Applicant_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="GeneralInfo">
+            <LayoutGroup Id="CareerItem">
+              <LayoutItem Id="applicant_industry_id" RelativeSize="7.5709779179810726" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Applicant_Experience_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="app_exp_title" ViewItem="app_exp_title" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="rec_Applicant_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="applicant_industry_id" Index="3" />
+      </Columns>
+    </ListView>
+  </Views>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="Reports">
+        <Items Id="Items">
+          <Item Id="ReportsV2" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

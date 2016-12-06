@@ -88,7 +88,6 @@ END";
             }
         }
     
-
         public override void UpdateDatabaseBeforeUpdateSchema() {
             base.UpdateDatabaseBeforeUpdateSchema();
         }

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="Accounting.BusinessObjects.Recruitment.sp_liability_and_equityResult" Caption="Liability And Equity Set" />
+  </BOModel>
+  <Views Id="Views">
+    <DetailView Id="RepParam_acc_Rep_liability_and_equity_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="RepParam_acc_Rep_liability_and_equity" RelativeSize="100">
+              <LayoutItem Id="FiscalYear" RelativeSize="6.3241106719367588" />
+              <LayoutGroup Id="Autobc9b58bb-abc2-44ec-a133-c5218fff2d1a" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="4.7430830039525693">
+                <LayoutItem Id="Startdate" ViewItem="Startdate" Index="0" RelativeSize="50" />
+                <LayoutItem Id="Enddate" ViewItem="Enddate" Index="1" RelativeSize="50" />
+              </LayoutGroup>
+              <LayoutItem Id="Cateogry" Index="2" RelativeSize="88.932806324110672" />
+              <LayoutItem Id="Enddate" Removed="True" />
+              <LayoutItem Id="Startdate" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

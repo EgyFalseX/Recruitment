@@ -70,11 +70,6 @@
           <Item Id="ReportsV2" ViewId="ReportDataV2_ListView" ObjectKey="" Caption="Reports" IsNewNode="True" />
         </Items>
       </Item>
-      <Item Id="Reports">
-        <Items>
-          <Item Id="ReportsV2" Removed="True" />
-        </Items>
-      </Item>
     </Items>
   </NavigationItems>
   <SchemaModules>
@@ -328,7 +323,6 @@
         <ColumnInfo Id="jour_entry_id" Index="0" Width="31" />
         <ColumnInfo Id="entry_text" Index="1" Width="120" />
         <ColumnInfo Id="entry_date" Index="2" Width="72" />
-        <ColumnInfo Id="year_id" Index="3" Width="71" />
         <ColumnInfo Id="closed" Index="4" Width="52" />
         <ColumnInfo Id="voucher_no" Index="5" Width="86" />
       </Columns>
@@ -371,17 +365,6 @@
         <ColumnInfo Id="acc_option_name" Index="0" />
       </Columns>
     </ListView>
-    <ListView Id="acc_Year_acc_Journal_Entrys_ListView">
-      <Columns>
-        <ColumnInfo Id="JournalCaption" Index="-1" />
-        <ColumnInfo Id="jour_entry_id" Index="0" Width="34" />
-        <ColumnInfo Id="entry_text" Index="1" Width="165" />
-        <ColumnInfo Id="year_id" Index="2" />
-        <ColumnInfo Id="entry_date" Index="3" />
-        <ColumnInfo Id="closed" Index="4" />
-        <ColumnInfo Id="voucher_no" Index="5" />
-      </Columns>
-    </ListView>
     <DetailView Id="acc_Year_DetailView">
       <Layout>
         <LayoutGroup Id="Main">
@@ -389,9 +372,6 @@
           <LayoutItem Id="year_start_date" ViewItem="year_start_date" Index="1" RelativeSize="2.93398533007335" IsNewNode="True" />
           <LayoutItem Id="year_end_date" ViewItem="year_end_date" Index="2" RelativeSize="2.93398533007335" IsNewNode="True" />
           <TabbedGroup Id="Tabs" RelativeSize="90.2200488997555" Index="3">
-            <LayoutGroup Id="acc_Journal_Entrys" RelativeSize="100" Index="0">
-              <LayoutItem Id="acc_Journal_Entrys" RelativeSize="100" />
-            </LayoutGroup>
             <LayoutGroup Id="AuditTrail" RelativeSize="100" Index="1">
               <LayoutItem Id="AuditTrail" RelativeSize="100" />
             </LayoutGroup>
@@ -526,7 +506,6 @@
             <LayoutGroup Id="CareerItem">
               <LayoutItem Id="applicant_rec_applicant_status_id" RelativeSize="8.8328075709779181" />
               <LayoutItem Id="applicant_position_id" RelativeSize="7.5709779179810726" />
-              <LayoutItem Id="applicant_industry_id" RelativeSize="7.5709779179810726" />
               <LayoutItem Id="applicant_salary" RelativeSize="7.5709779179810726" />
               <LayoutItem Id="applicant_work_type_id" RelativeSize="68.454258675078862" />
             </LayoutGroup>
@@ -657,7 +636,6 @@
         <ColumnInfo Id="applicant_work_type_id" Index="-1" />
         <ColumnInfo Id="rec_Applicant_image" Index="-1" />
         <ColumnInfo Id="applicant_mobile" Index="2" />
-        <ColumnInfo Id="applicant_industry_id" Index="3" />
       </Columns>
     </ListView>
     <ListView Id="rec_Applicant_ListView_Lite" IsGroupPanelVisible="False" Removed="True">

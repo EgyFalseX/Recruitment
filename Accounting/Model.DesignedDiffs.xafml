@@ -112,7 +112,14 @@
       </OwnMembers>
     </Class>
     <Class Name="Accounting.BusinessObjects.Recruitment.sp_acc_Account_JournalsResult" Caption="Account Journals Set" />
-    <Class Name="Accounting.BusinessObjects.Recruitment.sp_liability_and_equityResult" Caption="Liability And Equity Set" />
+    <Class Name="Accounting.BusinessObjects.Recruitment.sp_Income_StatementResult" Caption="Income Statement Set">
+      <OwnMembers>
+        <Member Name="acc_nature_name" Caption="Category name" />
+        <Member Name="account_name" Caption="Account name" />
+        <Member Name="NetValue" Caption="Value" />
+        <Member Name="Parent_Id" Caption="Parent Id" />
+      </OwnMembers>
+    </Class>
     <Class Name="Accounting.BusinessObjects.Recruitment.sp_Trial_BalanceResult" Caption="Trial Balance Set">
       <OwnMembers>
         <Member Name="account_name" Caption="Account name" />
@@ -464,9 +471,9 @@
     <DetailView Id="acc_Journal_Entry_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="15.096618357487923">
-            <LayoutGroup Id="acc_Journal_Entry" RelativeSize="100">
-              <LayoutGroup Id="acc_Journal_Entry_col1" RelativeSize="50.057405281285881">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="16.666666666666668">
+            <LayoutGroup Id="acc_Journal_Entry" RelativeSize="100" Caption="Entry Information">
+              <LayoutGroup Id="acc_Journal_Entry_col1" RelativeSize="50">
                 <LayoutItem Id="entry_date" RelativeSize="36.363636363636367" Index="0" />
                 <LayoutItem Id="jour_entry_id" RelativeSize="36.363636363636367" Index="0" Removed="True" />
                 <LayoutItem Id="entry_text" ViewItem="entry_text" Index="1" RelativeSize="27.272727272727273" IsNewNode="True" />
@@ -474,7 +481,7 @@
                 <LayoutItem Id="closed" RelativeSize="28.571428571428573" Index="3" Removed="True" />
                 <LayoutItem Id="JournalCaption" RelativeSize="28.571428571428573" Removed="True" />
               </LayoutGroup>
-              <LayoutGroup Id="acc_Journal_Entry_col2" RelativeSize="49.942594718714119" Caption="acc_Journal_Entry_col2">
+              <LayoutGroup Id="acc_Journal_Entry_col2" RelativeSize="50" Caption="acc_Journal_Entry_col2">
                 <LayoutItem Id="period_id" ViewItem="period_id" Index="0" RelativeSize="36.363636363636367" IsNewNode="True" Removed="True" />
                 <LayoutItem Id="closed" ViewItem="closed" Index="1" RelativeSize="63.636363636363633" IsNewNode="True" />
                 <LayoutItem Id="entry_text" RelativeSize="63.636363636363633" Removed="True" />
@@ -482,14 +489,14 @@
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="SizeableEditors" RelativeSize="7.6086956521739131" Direction="Horizontal" Caption="Description">
-            <LayoutItem Id="description" RelativeSize="76.089385474860336" />
-            <LayoutGroup Id="Auto0ffd3054-3179-4e32-b369-658a90f1bc90" ShowCaption="False" Caption="Auto0ffd3054-3179-4e32-b369-658a90f1bc90(13)" Index="1" RelativeSize="23.910614525139664" IsNewNode="True">
+          <LayoutGroup Id="SizeableEditors" RelativeSize="8.4" Direction="Horizontal" Caption="Description">
+            <LayoutItem Id="description" RelativeSize="76" />
+            <LayoutGroup Id="Auto0ffd3054-3179-4e32-b369-658a90f1bc90" ShowCaption="False" Caption="Auto0ffd3054-3179-4e32-b369-658a90f1bc90(13)" Index="1" RelativeSize="24" IsNewNode="True">
               <LayoutItem Id="jour_entry_id" ViewItem="jour_entry_id" Index="0" RelativeSize="47.61904761904762" IsNewNode="True" />
               <LayoutItem Id="JournalCaption" ViewItem="JournalCaption" Index="1" RelativeSize="52.38095238095238" IsNewNode="True" />
             </LayoutGroup>
           </LayoutGroup>
-          <TabbedGroup Id="Tabs" RelativeSize="77.294685990338166">
+          <TabbedGroup Id="Tabs" RelativeSize="74.933333333333337">
             <LayoutGroup Id="acc_Journal_Entry_Details" RelativeSize="100" Index="0">
               <LayoutItem Id="acc_Journal_Entry_Details" RelativeSize="100" />
             </LayoutGroup>
@@ -670,17 +677,17 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
-    <DetailView Id="RepParam_acc_Rep_liability_and_equity_DetailView">
+    <DetailView Id="RepParam_acc_Rep_Income_Statement_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="100">
-            <LayoutGroup Id="RepParam_acc_Rep_liability_and_equity" RelativeSize="100">
-              <LayoutItem Id="FiscalYear" RelativeSize="6.3241106719367588" />
-              <LayoutGroup Id="Autobc9b58bb-abc2-44ec-a133-c5218fff2d1a" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="4.7430830039525693" IsNewNode="True">
+            <LayoutGroup Id="RepParam_acc_Rep_Income_Statement" RelativeSize="100">
+              <LayoutItem Id="FiscalYear" RelativeSize="3.9119804400977993" />
+              <LayoutGroup Id="Autofb387d44-f938-46da-bd91-d0eb268452b0" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="2.93398533007335" IsNewNode="True">
                 <LayoutItem Id="Startdate" ViewItem="Startdate" Index="0" RelativeSize="50" IsNewNode="True" />
                 <LayoutItem Id="Enddate" ViewItem="Enddate" Index="1" RelativeSize="50" IsNewNode="True" />
               </LayoutGroup>
-              <LayoutItem Id="Cateogry" Index="2" RelativeSize="88.932806324110672" />
+              <LayoutItem Id="Cateogry" Index="2" RelativeSize="93.154034229828852" />
               <LayoutItem Id="Enddate" Removed="True" />
               <LayoutItem Id="Startdate" Removed="True" />
             </LayoutGroup>

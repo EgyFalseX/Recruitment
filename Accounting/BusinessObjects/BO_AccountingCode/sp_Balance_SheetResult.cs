@@ -15,12 +15,13 @@ namespace Accounting.BusinessObjects.Recruitment
 {
 
     [NonPersistent]
-    public partial class sp_liability_and_equityResult
+    public partial class sp_Balance_SheetResult
     {
         public int Parent_Id { get; set; }
         public string account_name { get; set; }
         public double NetValue { get; set; }
-        public string acc_nature_name { get; set; }
+        public string Parent_Name { get; set; }
+        public int appear_order { get; set; }
     }
 
 }

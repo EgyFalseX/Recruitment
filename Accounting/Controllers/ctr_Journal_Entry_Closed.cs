@@ -31,17 +31,16 @@ namespace Accounting.Controllers
         {
             base.OnActivated();
             // Perform various tasks depending on the target View.
-
-
+            
             View.SelectionChanged += (sender, args) => { ActivateControls(); };
         }
 
         private void ActivateControls()
         {
             bool entryClosed = View.SelectedObjects.Cast<acc_Journal_Entry>().All(entry => entry.closed == false);
-            //bool entryBalanced = View.SelectedObjects.Cast<acc_Journal_Entry>().All(entry => Math.Abs(entry.acc_Journal_Entry_Details.Sum(detail => detail.credit - detail.debit) - Convert.ToDouble(0)) > 0.0);
             bool entryBalanced = View.SelectedObjects.Cast<acc_Journal_Entry>().All(EntryBalanced);
-            Active.SetItemValue("All selected entry must be open and balanced", entryClosed && entryBalanced);
+            act_Closed.Active.SetItemValue("All selected entry must be open and balanced", entryClosed && entryBalanced);
+            
         }
 
         private bool EntryBalanced(acc_Journal_Entry entry)
@@ -54,8 +53,6 @@ namespace Accounting.Controllers
                 debit += detail.debit;
                 credit += detail.credit;
             }
-            double aaa =
-            Math.Abs(debit - credit);
             return !(Math.Abs(debit - credit) > 0);
         }
         protected override void OnViewControlsCreated()
@@ -84,7 +81,37 @@ namespace Accounting.Controllers
                 entryObject.closed = true;
             }
             objectSpace.CommitChanges();
-            objectSpace.Refresh();
+            ObjectSpace.Refresh();
+        }
+
+        private void act_Refund_Execute(object sender, SimpleActionExecuteEventArgs e)
+        {
+            IList selectedEntries = e.SelectedObjects;
+            if (selectedEntries.Count != 1)
+                return;
+            IObjectSpace objectSpace = Application.CreateObjectSpace();
+            acc_Journal_Entry entry = (acc_Journal_Entry)selectedEntries[0];
+            acc_Journal_Entry newEntry = objectSpace.CreateObject<acc_Journal_Entry>();
+            newEntry.entry_date = Core.SqlOp.GetServerDateTime(objectSpace);
+            newEntry.closed = false;
+            newEntry.entry_text = "Refund Entry Id " + entry.jour_entry_id;
+            newEntry.description = $"Auto refund entry {entry.jour_entry_id}, requested from action Refund";
+            foreach (acc_Journal_Entry_Detail accJournalEntryDetail in entry.acc_Journal_Entry_Details)
+            {
+                acc_Journal_Entry_Detail newEntryDetail = objectSpace.CreateObject<acc_Journal_Entry_Detail>();
+                newEntryDetail.jour_entry_id = newEntry;
+                newEntryDetail.account_id = objectSpace.GetObject(accJournalEntryDetail.account_id);
+                newEntryDetail.debit = accJournalEntryDetail.debit*-1;
+                newEntryDetail.credit = accJournalEntryDetail.credit * -1;
+                newEntryDetail.costcenter_id = objectSpace.GetObject(accJournalEntryDetail.costcenter_id);
+                newEntryDetail.entry_text = accJournalEntryDetail.entry_text + " (Refund)";
+                newEntryDetail.description = accJournalEntryDetail.description + " (Refund)";
+                newEntryDetail.debit_currency = accJournalEntryDetail.debit_currency;
+                newEntryDetail.credit_currency = accJournalEntryDetail.credit_currency;
+                newEntryDetail.currency_id = objectSpace.GetObject(accJournalEntryDetail.currency_id);
+            }
+            objectSpace.CommitChanges();
+            ObjectSpace.Refresh();
         }
     }
 }

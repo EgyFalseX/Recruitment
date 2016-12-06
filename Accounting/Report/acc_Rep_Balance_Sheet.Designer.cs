@@ -1,6 +1,6 @@
 ﻿namespace Accounting.Report
 {
-    partial class acc_Rep_liability_and_equity
+    partial class acc_Rep_Balance_Sheet
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(acc_Rep_liability_and_equity));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(acc_Rep_Balance_Sheet));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -91,6 +91,8 @@
             this.Detail.HeightF = 25F;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.Detail.SortFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
+            new DevExpress.XtraReports.UI.GroupField("appear_order", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // xrTable2
@@ -295,7 +297,7 @@
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UseForeColor = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "Liability and Equity";
+            this.xrLabel2.Text = "Balance Sheet";
             this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // xrLabel1
@@ -391,6 +393,7 @@
             this.xrTable3.StylePriority.UseForeColor = false;
             this.xrTable3.StylePriority.UseTextAlignment = false;
             this.xrTable3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrTable3.Visible = false;
             // 
             // xrTableRow4
             // 
@@ -412,7 +415,7 @@
             xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell22.Summary = xrSummary1;
             this.xrTableCell22.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell22.Weight = 8.121875225958485D;
+            this.xrTableCell22.Weight = 2.5098853282794318D;
             // 
             // xrTableCell24
             // 
@@ -421,7 +424,7 @@
             this.xrTableCell24.StylePriority.UseTextAlignment = false;
             this.xrTableCell24.Text = "الاجمالي";
             this.xrTableCell24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell24.Weight = 2.0304688057422373D;
+            this.xrTableCell24.Weight = 7.6424587034212905D;
             // 
             // PageHeader
             // 
@@ -432,7 +435,7 @@
             // dsMain
             // 
             this.dsMain.Name = "dsMain";
-            this.dsMain.ObjectTypeName = "Accounting.BusinessObjects.Recruitment.sp_liability_and_equityResult";
+            this.dsMain.ObjectTypeName = "Accounting.BusinessObjects.Recruitment.sp_Balance_SheetResult";
             this.dsMain.TopReturnedRecords = 0;
             // 
             // GroupHeader1
@@ -441,7 +444,7 @@
             this.xrTable5});
             this.GroupHeader1.Dpi = 100F;
             this.GroupHeader1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-            new DevExpress.XtraReports.UI.GroupField("acc_nature_name", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            new DevExpress.XtraReports.UI.GroupField("Parent_Name", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
             this.GroupHeader1.HeightF = 47.91667F;
             this.GroupHeader1.Name = "GroupHeader1";
             // 
@@ -472,7 +475,7 @@
             // xrTableCell3
             // 
             this.xrTableCell3.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "acc_nature_name")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Parent_Name")});
             this.xrTableCell3.Dpi = 100F;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.StylePriority.UseTextAlignment = false;
@@ -493,7 +496,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable6.Dpi = 100F;
-            this.xrTable6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.xrTable6.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
             this.xrTable6.ForeColor = System.Drawing.Color.Maroon;
             this.xrTable6.LocationFloat = new DevExpress.Utils.PointFloat(0F, 10F);
             this.xrTable6.Name = "xrTable6";
@@ -526,20 +529,19 @@
             xrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.xrTableCell1.Summary = xrSummary2;
             this.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell1.Weight = 8.121875225958485D;
+            this.xrTableCell1.Weight = 4.7236597955031474D;
             // 
             // xrTableCell4
             // 
             this.xrTableCell4.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "acc_nature_name", "{0} اجمالي  ")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Parent_Name", "اجمالي  {0} ")});
             this.xrTableCell4.Dpi = 100F;
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StylePriority.UseTextAlignment = false;
-            this.xrTableCell4.Text = "الاجمالي";
             this.xrTableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell4.Weight = 2.0304688057422373D;
+            this.xrTableCell4.Weight = 5.4286842361975758D;
             // 
-            // acc_Rep_liability_and_equity
+            // acc_Rep_Balance_Sheet
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail,
