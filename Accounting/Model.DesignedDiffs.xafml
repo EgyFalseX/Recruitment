@@ -34,7 +34,7 @@
         <Member Name="bank_phone" Caption="Bank Phone" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_CostCenter" DefaultListViewShowAutoFilterRow="True" DefaultListViewNewItemRowPosition="Top" DefaultListViewAllowEdit="True" />
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_CostCenter" DefaultListViewShowAutoFilterRow="True" DefaultListViewNewItemRowPosition="None" DefaultListViewAllowEdit="False" />
     <Class Name="Accounting.BusinessObjects.Recruitment.acc_Currency" Caption="Currency" DefaultDetailViewImage="acc_Currency16" DefaultListViewImage="acc_Currency16">
       <OwnMembers>
         <Member Name="currency_id" Caption="ID" />
@@ -72,20 +72,20 @@
         <Member Name="acc_nature_name" Caption="Name" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Opening_Balance" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="acc_Opening_Balance16" DefaultListViewImage="acc_Opening_Balance16" />
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Opening_Balance" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="acc_Opening_Balance16" DefaultListViewImage="acc_Opening_Balance16" DefaultListViewAllowEdit="False" />
     <Class Name="Accounting.BusinessObjects.Recruitment.acc_Option" DefaultListViewShowAutoFilterRow="True" Caption="Accounting Options" DefaultListViewImage="acc_Option16" DefaultDetailViewImage="acc_Option16">
       <OwnMembers>
         <Member Name="acc_option_name" Caption="Option Name" />
         <Member Name="acc_option_value" Caption="Option Value" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Period" DefaultListViewShowAutoFilterRow="True" DefaultListViewNewItemRowPosition="Top" DefaultListViewAllowEdit="True">
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Period" DefaultListViewShowAutoFilterRow="True" DefaultListViewNewItemRowPosition="None" DefaultListViewAllowEdit="False">
       <OwnMembers>
         <Member Name="end_date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" />
         <Member Name="start_date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Year" DefaultListViewShowAutoFilterRow="True" Caption="Fiscal Year" DefaultDetailViewImage="acc_Year16" DefaultListViewImage="acc_Year16" DefaultListViewNewItemRowPosition="Top" DefaultListViewAllowEdit="True">
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Year" DefaultListViewShowAutoFilterRow="True" Caption="Fiscal Year" DefaultDetailViewImage="acc_Year16" DefaultListViewImage="acc_Year16" DefaultListViewNewItemRowPosition="None" DefaultListViewAllowEdit="False">
       <OwnMembers>
         <Member Name="year_end_date" Caption="End Date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" EditMaskType="DateTime" />
         <Member Name="year_id" Caption="ID" />
@@ -111,7 +111,11 @@
         <Member Name="Value" Caption="القيمة" DisplayFormat="{0:#,###,##0.##}" EditMask="#,###,##0.##" />
       </OwnMembers>
     </Class>
+    <Class Name="Accounting.BusinessObjects.Recruitment.sp_acc_Account_Journals_FeeResult" Caption="Account Journals Fee Set" />
+    <Class Name="Accounting.BusinessObjects.Recruitment.sp_acc_Account_Journals_SubAcc_currencyResult" Caption="Account Journals (Sub Account) Currency Set" />
+    <Class Name="Accounting.BusinessObjects.Recruitment.sp_acc_Account_Journals_SubAccResult" Caption="Account Journals (Sub Account) Set" />
     <Class Name="Accounting.BusinessObjects.Recruitment.sp_acc_Account_JournalsResult" Caption="Account Journals Set" />
+    <Class Name="Accounting.BusinessObjects.Recruitment.sp_Balance_SheetResult" Caption="Balance Sheet Set" />
     <Class Name="Accounting.BusinessObjects.Recruitment.sp_Income_StatementResult" Caption="Income Statement Set">
       <OwnMembers>
         <Member Name="acc_nature_name" Caption="Category name" />
@@ -389,6 +393,7 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="acc_CostCenter_ListView" AllowEdit="True" NewItemRowPosition="Top" />
     <DetailView Id="acc_Currency_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
@@ -400,7 +405,8 @@
           </LayoutGroup>
           <TabbedGroup Id="Tabs">
             <LayoutGroup Id="acc_Journal_Entry_Details" Index="0" />
-            <LayoutGroup Id="AuditTrail" Index="1" />
+            <LayoutGroup Id="acc_Opening_Balances" Index="1" />
+            <LayoutGroup Id="AuditTrail" Index="2" />
           </TabbedGroup>
         </LayoutGroup>
       </Layout>
@@ -539,7 +545,6 @@
                 <LayoutItem Id="opening_balance_id" Removed="True" />
               </LayoutGroup>
               <LayoutGroup Id="acc_Opening_Balance_col2" RelativeSize="50">
-                <LayoutItem Id="credit" RelativeSize="50" />
                 <LayoutItem Id="debit" RelativeSize="50" />
               </LayoutGroup>
             </LayoutGroup>
@@ -550,6 +555,7 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="acc_Opening_Balance_ListView" AllowEdit="True" NewItemRowPosition="Top" />
     <DetailView Id="acc_Period_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
@@ -586,6 +592,7 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="acc_Period_ListView" AllowEdit="True" NewItemRowPosition="Top" />
     <DetailView Id="acc_Year_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
@@ -615,6 +622,7 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="acc_Year_ListView" AllowEdit="True" NewItemRowPosition="Top" />
     <ListView Id="AuditDataItemPersistent_ListView">
       <Columns>
         <ColumnInfo Id="UserName" Width="83" />

@@ -25,6 +25,7 @@ namespace Accounting.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("opening_balance_id", ref fopening_balance_id, value); }
         }
         acc_Account faccount_id;
+        [Indexed(Name = @"iaccount_id_acc_Opening_Balance")]
         [Association(@"acc_Opening_BalanceReferencesacc_Account")]
         [DevExpress.Xpo.DisplayName(@"Account")]
         [DevExpress.Persistent.Validation.RuleRequiredField("acc_Opening_Balance_account_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please select an account")
@@ -35,6 +36,7 @@ namespace Accounting.BusinessObjects.Recruitment
             set { SetPropertyValue<acc_Account>("account_id", ref faccount_id, value); }
         }
         acc_Year fyear_id;
+        [Indexed(Name = @"iyear_id_acc_Opening_Balance")]
         [Association(@"acc_Opening_BalanceReferencesacc_Year")]
         [DevExpress.Xpo.DisplayName(@"Fiscal Year")]
         [DevExpress.Persistent.Validation.RuleRequiredField("acc_Opening_Balance_year_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please select a Fiscal Year")]
@@ -58,6 +60,28 @@ namespace Accounting.BusinessObjects.Recruitment
         {
             get { return fdebit; }
             set { SetPropertyValue<double>("debit", ref fdebit, value); }
+        }
+        double fcredit_currency;
+        [DevExpress.Xpo.DisplayName(@"Credit Original Currency")]
+        public double credit_currency
+        {
+            get { return fcredit_currency; }
+            set { SetPropertyValue<double>("credit_currency", ref fcredit_currency, value); }
+        }
+        double fdebit_currency;
+        [DevExpress.Xpo.DisplayName(@"Debit Original Currency")]
+        public double debit_currency
+        {
+            get { return fdebit_currency; }
+            set { SetPropertyValue<double>("debit_currency", ref fdebit_currency, value); }
+        }
+        acc_Currency fcurrency_id;
+        [Association(@"acc_Opening_BalanceReferencesacc_Currency")]
+        [DevExpress.Xpo.DisplayName(@"Currency")]
+        public acc_Currency currency_id
+        {
+            get { return fcurrency_id; }
+            set { SetPropertyValue<acc_Currency>("currency_id", ref fcurrency_id, value); }
         }
     }
 

@@ -34,6 +34,9 @@ namespace Accounting.BusinessObjects.Recruitment
         [DevExpress.Xpo.DisplayName(@"Journal Entry Details")]
         [Association(@"acc_Journal_Entry_DetailReferencesacc_Currency")]
         public XPCollection<acc_Journal_Entry_Detail> acc_Journal_Entry_Details { get { return GetCollection<acc_Journal_Entry_Detail>("acc_Journal_Entry_Details"); } }
+        [DevExpress.Xpo.DisplayName(@"Opening Balances")]
+        [Association(@"acc_Opening_BalanceReferencesacc_Currency")]
+        public XPCollection<acc_Opening_Balance> acc_Opening_Balances { get { return GetCollection<acc_Opening_Balance>("acc_Opening_Balances"); } }
     }
 
 }

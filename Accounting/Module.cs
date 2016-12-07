@@ -58,6 +58,9 @@ namespace Accounting {
             reportsUpdater.AddPredefinedReport<acc_Rep_Costcenter_Balance>("Cost Center Balance", typeof (acc_Journal_Entry_Detail), typeof (RepParam_acc_Rep_Costcenter_Balance));
             reportsUpdater.AddPredefinedReport<acc_Rep_Account_Journals>("Account Journals", typeof(sp_acc_Account_JournalsResult), typeof(RepParam_acc_Rep_Account_Journals));
             reportsUpdater.AddPredefinedReport<acc_Rep_Account_Journals_Consolidated>("Account Journals Consolidated", typeof(sp_acc_Account_JournalsResult), typeof(RepParam_acc_Rep_Account_Journals));
+            reportsUpdater.AddPredefinedReport<acc_Rep_Account_Journals_SubAcc>("Account Journals (Sub Account)", typeof(sp_acc_Account_Journals_SubAccResult), typeof(RepParam_acc_Rep_Account_Journals_SubAcc));
+            reportsUpdater.AddPredefinedReport<acc_Rep_Account_Journals_SubAcc_Consolidated>("Account Journals Consolidated (Sub Account)", typeof(sp_acc_Account_Journals_SubAccResult), typeof(RepParam_acc_Rep_Account_Journals_SubAcc));
+            reportsUpdater.AddPredefinedReport<acc_Rep_Account_Journals_SubAcc_Currency_Consolidated>("Account Journals Consolidated (Sub Account) Per Currency", typeof(sp_acc_Account_Journals_SubAcc_currencyResult), typeof(RepParam_acc_Rep_Account_Journals_SubAcc_Currency));
             reportsUpdater.AddPredefinedReport<acc_Rep_Account_Journals_Fee>("Account Journals Vs Fee", typeof(sp_acc_Account_Journals_FeeResult), typeof(RepParam_acc_Rep_Account_Journals_Fee));
         }
         public override void Setup(XafApplication application) {

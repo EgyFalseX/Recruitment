@@ -148,5 +148,43 @@ namespace Accounting.BusinessObjects.Recruitment
             dataView.PopulateProperties(session.GetClassInfo(typeof(sp_Balance_SheetResult)));
             dataView.LoadData(sprocData);
         }
+        public static DevExpress.Xpo.DB.SelectedData Execsp_acc_Account_Journals_SubAcc(Session session, int Year, DateTime StartDate, DateTime EndDate, int account_id)
+        {
+            return session.ExecuteSproc("sp_acc_Account_Journals_SubAcc", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
+        }
+        public static System.Collections.Generic.ICollection<sp_acc_Account_Journals_SubAccResult> Execsp_acc_Account_Journals_SubAccIntoObjects(Session session, int Year, DateTime StartDate, DateTime EndDate, int account_id)
+        {
+            return session.GetObjectsFromSproc<sp_acc_Account_Journals_SubAccResult>("sp_acc_Account_Journals_SubAcc", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
+        }
+        public static XPDataView Execsp_acc_Account_Journals_SubAccIntoDataView(Session session, int Year, DateTime StartDate, DateTime EndDate, int account_id)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_acc_Account_Journals_SubAcc", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
+            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_acc_Account_Journals_SubAccResult)), sprocData);
+        }
+        public static void Execsp_acc_Account_Journals_SubAccIntoDataView(XPDataView dataView, Session session, int Year, DateTime StartDate, DateTime EndDate, int account_id)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_acc_Account_Journals_SubAcc", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
+            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_acc_Account_Journals_SubAccResult)));
+            dataView.LoadData(sprocData);
+        }
+        public static DevExpress.Xpo.DB.SelectedData Execsp_acc_Account_Journals_SubAcc_currency(Session session, int Year, DateTime StartDate, DateTime EndDate, int account_id)
+        {
+            return session.ExecuteSproc("sp_acc_Account_Journals_SubAcc_currency", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
+        }
+        public static System.Collections.Generic.ICollection<sp_acc_Account_Journals_SubAcc_currencyResult> Execsp_acc_Account_Journals_SubAcc_currencyIntoObjects(Session session, int Year, DateTime StartDate, DateTime EndDate, int account_id)
+        {
+            return session.GetObjectsFromSproc<sp_acc_Account_Journals_SubAcc_currencyResult>("sp_acc_Account_Journals_SubAcc_currency", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
+        }
+        public static XPDataView Execsp_acc_Account_Journals_SubAcc_currencyIntoDataView(Session session, int Year, DateTime StartDate, DateTime EndDate, int account_id)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_acc_Account_Journals_SubAcc_currency", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
+            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_acc_Account_Journals_SubAcc_currencyResult)), sprocData);
+        }
+        public static void Execsp_acc_Account_Journals_SubAcc_currencyIntoDataView(XPDataView dataView, Session session, int Year, DateTime StartDate, DateTime EndDate, int account_id)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_acc_Account_Journals_SubAcc_currency", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
+            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_acc_Account_Journals_SubAcc_currencyResult)));
+            dataView.LoadData(sprocData);
+        }
     }
 }

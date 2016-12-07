@@ -36,3 +36,8 @@ ___________________________________________
 5- Add factor column in acc_Nature (Set its value)
 6- Delete sp_liability_and_equity
 7- Create sp_Income_Statement
+_________________________________________
+2016-12-06
+1- Recreate sp
+2- Delete Reports
+3- columns added to opening balance
