@@ -6,15 +6,6 @@
         {
             InitializeComponent();
 
-           
-
-
-
-        }
-
-        private void acc_Rep_Account_Journals_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
-        {
-            
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Accounting.BusinessObjects.Recruitment
 {
 
     [NonPersistent]
-    public partial class sp_acc_Account_JournalsResult
+    public partial class sp_acc_Account_Journals_CurrencyResult
     {
         public string entry_text { get; set; }
         public string costcenter_name { get; set; }
@@ -26,6 +26,9 @@ namespace Accounting.BusinessObjects.Recruitment
         public double debit { get; set; }
         public double credit { get; set; }
         public double Balance { get; set; }
+        public double debit_currency { get; set; }
+        public double credit_currency { get; set; }
+        public double Balance_currency { get; set; }
     }
 
 }

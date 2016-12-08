@@ -137,12 +137,10 @@ DevExpress.Persistent.Base.v16.1.dll</value>
   </data>
   <data name="$this.ScriptsSource" xml:space="preserve">
     <value>private void acc_Rep_Account_Journals_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e) {
-
 DevExpress.XtraReports.Parameters.Parameter parameter = Parameters[DevExpress.ExpressApp.ReportsV2.ReportDataSourceHelper.XafReportParametersObjectName];
             if (parameter == null)
                 return;
-
-            Accounting.Report.RepParam_acc_Rep_Account_Journals param = (Accounting.Report.RepParam_acc_Rep_Account_Journals)parameter.Value;
+            Accounting.Report.RepParam_acc_Rep_Account_Journals_Currency param = (Accounting.Report.RepParam_acc_Rep_Account_Journals_Currency)parameter.Value;
 
             //Set header information
             xrTableCellFrom.Text = param.Startdate.ToShortDateString();
@@ -150,12 +148,8 @@ DevExpress.XtraReports.Parameters.Parameter parameter = Parameters[DevExpress.Ex
             xrTableCellCategory.Text = param.Account.account_name;
             DevExpress.Xpo.Session session = ((DevExpress.ExpressApp.Xpo.XPObjectSpace)param.ObjectSpace).Session;
 
-            DevExpress.Xpo.DB.SelectedData selectedData = Accounting.BusinessObjects.Recruitment.SprocHelper.Execsp_acc_Account_Journals(session,
+            DataSource = Accounting.BusinessObjects.Recruitment.SprocHelper.Execsp_acc_Account_Journals_CurrencyIntoDataView(session,
                 param.FiscalYear.year_id, param.Startdate, param.Enddate, param.Account.account_id);
-
-            DevExpress.Xpo.XPDataView ds = new DevExpress.Xpo.XPDataView(session.Dictionary, session.GetClassInfo(typeof(Accounting.BusinessObjects.Recruitment.sp_acc_Account_JournalsResult)), selectedData);
-
-            DataSource = ds;
 
 }
 </value>
