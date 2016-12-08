@@ -57,7 +57,6 @@
             this.xrTableCellCategory = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.dsCompany = new DevExpress.Persistent.Base.ReportsV2.CollectionDataSource();
             this.xrpbLogo = new DevExpress.XtraReports.UI.XRPictureBox();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.xrPageInfoUser = new DevExpress.XtraReports.UI.XRPageInfo();
@@ -81,12 +80,13 @@
             this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
             this.calcTotal = new DevExpress.XtraReports.UI.CalculatedField();
+            this.dsCompany = new DevExpress.Persistent.Base.ReportsV2.CollectionDataSource();
             this.dsMain = new DevExpress.Persistent.Base.ReportsV2.CollectionDataSource();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -139,7 +139,7 @@
             // xrTableCell18
             // 
             this.xrTableCell18.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Balance")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Balance", "{0:#,#.##}")});
             this.xrTableCell18.Dpi = 100F;
             this.xrTableCell18.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrTableCell18.Name = "xrTableCell18";
@@ -371,12 +371,6 @@
             this.xrLabel1.Text = "xrLabel1";
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
-            // dsCompany
-            // 
-            this.dsCompany.Name = "dsCompany";
-            this.dsCompany.ObjectTypeName = "Accounting.BusinessObjects.Recruitment.acc_AppCompany";
-            this.dsCompany.TopReturnedRecords = 0;
-            // 
             // xrpbLogo
             // 
             this.xrpbLogo.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
@@ -469,6 +463,7 @@
             this.xrTableCell19.Name = "xrTableCell19";
             this.xrTableCell19.NullValueText = "0";
             this.xrTableCell19.StylePriority.UseTextAlignment = false;
+            xrSummary1.FormatString = "{0:#,#.##}";
             xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell19.Summary = xrSummary1;
             this.xrTableCell19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -621,6 +616,12 @@
             this.calcTotal.Expression = "([credit] - [debit])  * [factor]";
             this.calcTotal.Name = "calcTotal";
             // 
+            // dsCompany
+            // 
+            this.dsCompany.Name = "dsCompany";
+            this.dsCompany.ObjectTypeName = "Accounting.BusinessObjects.Recruitment.acc_AppCompany";
+            this.dsCompany.TopReturnedRecords = 0;
+            // 
             // dsMain
             // 
             this.dsMain.Name = "dsMain";
@@ -649,11 +650,12 @@
             this.Scripts.OnBeforePrint = "acc_Rep_Account_Journals_BeforePrint";
             this.ScriptsSource = resources.GetString("$this.ScriptsSource");
             this.Version = "16.1";
+            this.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.acc_Rep_Account_Journals_BeforePrint);
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

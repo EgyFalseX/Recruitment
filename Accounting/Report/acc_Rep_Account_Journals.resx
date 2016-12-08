@@ -137,8 +137,7 @@ DevExpress.Persistent.Base.v16.1.dll</value>
   </data>
   <data name="$this.ScriptsSource" xml:space="preserve">
     <value>private void acc_Rep_Account_Journals_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e) {
-
- DevExpress.XtraReports.Parameters.Parameter parameter = Parameters[DevExpress.ExpressApp.ReportsV2.ReportDataSourceHelper.XafReportParametersObjectName];
+DevExpress.XtraReports.Parameters.Parameter parameter = Parameters[DevExpress.ExpressApp.ReportsV2.ReportDataSourceHelper.XafReportParametersObjectName];
             if (parameter == null)
                 return;
 
@@ -148,7 +147,6 @@ DevExpress.Persistent.Base.v16.1.dll</value>
             xrTableCellFrom.Text = param.Startdate.ToShortDateString();
             xrTableCellTo.Text = param.Enddate.ToShortDateString();
             xrTableCellCategory.Text = param.Account.account_name;
-
             DevExpress.Xpo.Session session = ((DevExpress.ExpressApp.Xpo.XPObjectSpace)param.ObjectSpace).Session;
 
             DevExpress.Xpo.DB.SelectedData selectedData = Accounting.BusinessObjects.Recruitment.SprocHelper.Execsp_acc_Account_Journals(session,
