@@ -22,13 +22,13 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             base.AfterConstruction();
             this.frec_employer_order_rec_employer_order_status_id = Typez.enum_rec_Employer_Order_Status.InProgress;
         }
-        Core.Typez.enum_rec_Employer_Order_Status frec_employer_order_rec_employer_order_status_id;
+        //Core.Typez.enum_rec_Employer_Order_Status frec_employer_order_rec_employer_order_status_id;
         //[Association(@"rec_Employer_OrderReferencesrec_Employer_Order_Status")]
-        public Core.Typez.enum_rec_Employer_Order_Status rec_employer_order_rec_employer_order_status_id
-        {
-            get { return frec_employer_order_rec_employer_order_status_id; }
-            set { SetPropertyValue<Core.Typez.enum_rec_Employer_Order_Status>("rec_employer_order_rec_employer_order_status_id", ref frec_employer_order_rec_employer_order_status_id, value); }
-        }
+        //public Core.Typez.enum_rec_Employer_Order_Status rec_employer_order_rec_employer_order_status_id
+        //{
+        //    get { return frec_employer_order_rec_employer_order_status_id; }
+        //    set { SetPropertyValue<Core.Typez.enum_rec_Employer_Order_Status>("rec_employer_order_rec_employer_order_status_id", ref frec_employer_order_rec_employer_order_status_id, value); }
+        //}
         //Audit Trail
         private XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> auditTrail;
         public XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> AuditTrail
@@ -65,7 +65,6 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         {
             get
             {
-
                 //XPCollection<rec_Employer_Order> order = new XPCollection<rec_Employer_Order>(Session);
                 //XPCollection<rec_Employer_Order_Detail> details = new XPCollection<rec_Employer_Order_Detail>(Session);
                 //XPCollection<rec_Employer_Order_Detail_Suggest_Applicat> sug = new XPCollection<rec_Employer_Order_Detail_Suggest_Applicat>(Session);
@@ -124,5 +123,6 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
 
             }
         }
+
     }
-    }
+}

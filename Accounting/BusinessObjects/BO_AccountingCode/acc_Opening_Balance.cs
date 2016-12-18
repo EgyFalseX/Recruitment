@@ -10,7 +10,7 @@ namespace Accounting.BusinessObjects.Recruitment
     [DefaultClassOptions]
     [NavigationItem("Accounting")]
     [DevExpress.ExpressApp.DC.XafDisplayName("Opening Balance")]
-    [DevExpress.Persistent.Base.ImageName("acc_Opening_Balance16")]
+    [DevExpress.Persistent.Base.ImageName("acc_Opening_Balance")]
     public partial class acc_Opening_Balance
     {
         public acc_Opening_Balance(Session session) : base(session) { }

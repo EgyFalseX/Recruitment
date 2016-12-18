@@ -63,3 +63,7 @@ namespace Recruitment.Module.Report
     }
 
 }
+_______________________________________________________________________________________
+DevExpress.Persistent.Base.DataSourceCriteria("advance_activity != '@This.rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id.start_activity'")
+
+

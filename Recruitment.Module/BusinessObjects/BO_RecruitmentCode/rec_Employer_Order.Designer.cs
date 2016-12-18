@@ -64,12 +64,22 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return frec_employer_order_delivery_date; }
             set { SetPropertyValue<DateTime>("rec_employer_order_delivery_date", ref frec_employer_order_delivery_date, value); }
         }
+        Core.Typez.enum_rec_Employer_Order_Status frec_employer_order_rec_employer_order_status_id;
+        [Indexed(Name = @"irec_employer_order_rec_employer_order_status_id_rec_Employer_Order")]
+        public Core.Typez.enum_rec_Employer_Order_Status rec_employer_order_rec_employer_order_status_id
+        {
+            get { return frec_employer_order_rec_employer_order_status_id; }
+            set { SetPropertyValue<Core.Typez.enum_rec_Employer_Order_Status>("rec_employer_order_rec_employer_order_status_id", ref frec_employer_order_rec_employer_order_status_id, value); }
+        }
         [DevExpress.Xpo.DisplayName(@"Order Details")]
         [Association(@"rec_Employer_Order_DetailReferencesrec_Employer_Order")]
         public XPCollection<rec_Employer_Order_Detail> rec_Employer_Order_Details { get { return GetCollection<rec_Employer_Order_Detail>("rec_Employer_Order_Details"); } }
         [DevExpress.Xpo.DisplayName(@"Order Interviews")]
         [Association(@"rec_Employer_Order_InterviewReferencesrec_Employer_Order")]
         public XPCollection<rec_Employer_Order_Interview> rec_Employer_Order_Interviews { get { return GetCollection<rec_Employer_Order_Interview>("rec_Employer_Order_Interviews"); } }
+        [DevExpress.Xpo.DisplayName(@"Employer Order Activities")]
+        [Association(@"rec_Employer_Order_ActivityReferencesrec_Employer_Order")]
+        public XPCollection<rec_Employer_Order_Activity> rec_Employer_Order_Activitys { get { return GetCollection<rec_Employer_Order_Activity>("rec_Employer_Order_Activitys"); } }
     }
 
 }

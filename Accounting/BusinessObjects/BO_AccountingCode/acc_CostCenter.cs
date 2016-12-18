@@ -10,7 +10,7 @@ namespace Accounting.BusinessObjects.Recruitment
     [DefaultClassOptions]
     [NavigationItem("Accounting")]
     [DevExpress.ExpressApp.DC.XafDisplayName("Cost Center")]
-    [DevExpress.Persistent.Base.ImageName("acc_CostCenter16")]
+    [DevExpress.Persistent.Base.ImageName("acc_CostCenter")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("costcenter_name")]
     public partial class acc_CostCenter
     {

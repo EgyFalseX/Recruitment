@@ -103,12 +103,12 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return femployer_postal_code; }
             set { SetPropertyValue<int>("employer_postal_code", ref femployer_postal_code, value); }
         }
-        int faccount_id;
-        [DevExpress.Xpo.DisplayName(@"Account id")]
-        public int account_id
+        Accounting.BusinessObjects.Recruitment.acc_Account faccount_id;
+        [DevExpress.Xpo.DisplayName(@"Account")]
+        public Accounting.BusinessObjects.Recruitment.acc_Account account_id
         {
             get { return faccount_id; }
-            set { SetPropertyValue<int>("account_id", ref faccount_id, value); }
+            set { SetPropertyValue<Accounting.BusinessObjects.Recruitment.acc_Account>("account_id", ref faccount_id, value); }
         }
         [DevExpress.Xpo.DisplayName(@"Employer Orders")]
         [Association(@"rec_Employer_OrderReferencesrec_Employer")]

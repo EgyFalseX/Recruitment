@@ -41,3 +41,11 @@ _________________________________________
 1- Recreate sp
 2- Delete Reports
 3- columns added to opening balance
+_________________________________________
+2016-12-10
+1- Remove table acc_Account_Applicant
+2- Add in acc_options, rec_Cash, rec_Activity, rec_Activity_Type required rows
+3- (for web) activity_type_id in rec_Activity
+
+
+

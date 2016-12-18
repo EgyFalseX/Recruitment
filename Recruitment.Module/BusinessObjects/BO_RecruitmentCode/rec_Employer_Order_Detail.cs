@@ -75,8 +75,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
                 //if (rec_Employer_Order_Detail_Suggest_Applicats != null)
                 //{
                 //    foreach (rec_Employer_Order_Detail_Suggest_Applicat Suggest in rec_Employer_Order_Detail_Suggest_Applicats)
-                //    {
-                //        if (Suggest.rec_Employer_Order_Detail_Accept_Applicats == null)
+                //    {//        if (Suggest.rec_Employer_Order_Detail_Accept_Applicats == null)
                 //            continue;
                 //        foreach (rec_Employer_Order_Detail_Accept_Applicat Accept in Suggest.rec_Employer_Order_Detail_Accept_Applicats)
                 //            accepted_doc += Accept.OperationProgress;

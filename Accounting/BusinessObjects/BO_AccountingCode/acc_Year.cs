@@ -9,7 +9,7 @@ namespace Accounting.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("year_name")]
-    [ImageName("acc_Year16")]
+    [ImageName("acc_Year")]
     public partial class acc_Year
     {
         public acc_Year(Session session) : base(session) { }

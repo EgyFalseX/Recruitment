@@ -10,7 +10,7 @@ namespace Accounting.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("JournalCaption")]
-    [ImageName("acc_Journal_Entry_Detail16")]
+    [ImageName("acc_Journal_Entry_Detail")]
     [Appearance("Entry_Details_Closed", TargetItems = "*", Criteria = "jour_entry_id.closed = true ", Enabled = false, Priority = 1)]
     public partial class acc_Journal_Entry_Detail
     {

@@ -164,10 +164,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessObjects\BO_RecruitmentCode\acc_Account_Applicant.cs" />
-    <Compile Include="BusinessObjects\BO_RecruitmentCode\acc_Account_Applicant.Designer.cs">
-      <DependentUpon>acc_Account_Applicant.cs</DependentUpon>
-    </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\AppCompany.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\AppCompany.Designer.cs">
       <DependentUpon>AppCompany.cs</DependentUpon>
@@ -179,6 +175,14 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\ConnectionHelper.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\PortfolioFileData_Emp.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\PortfolioFileData.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Accept_App_Activity.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Accept_App_Activity.Designer.cs">
+      <DependentUpon>rec_Accept_App_Activity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Activity.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Activity.Designer.cs">
+      <DependentUpon>rec_Activity.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Annual_Vacation_Type.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Annual_Vacation_Type.Designer.cs">
       <DependentUpon>rec_Annual_Vacation_Type.cs</DependentUpon>
@@ -227,6 +231,10 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Call_Result.Designer.cs">
       <DependentUpon>rec_Call_Result.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Cash.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Cash.Designer.cs">
+      <DependentUpon>rec_Cash.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_City.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_City.Designer.cs">
       <DependentUpon>rec_City.cs</DependentUpon>
@@ -258,6 +266,10 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order.Designer.cs">
       <DependentUpon>rec_Employer_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Activity.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Activity.Designer.cs">
+      <DependentUpon>rec_Employer_Order_Activity.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail.Designer.cs">
@@ -383,9 +395,18 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Work_Type.Designer.cs">
       <DependentUpon>rec_Work_Type.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\sp_Activity_01Result.cs">
+      <DependentUpon>StoredProcHelper.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\StoredProcHelper.cs" />
     <Compile Include="BusinessObjects\dc_Msg.cs" />
     <Compile Include="BusinessObjects\Notification\Notify.cs" />
+    <Compile Include="Controllers\ctr_Accept_Applicat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ctr_Accept_Applicat.Designer.cs">
+      <DependentUpon>ctr_Accept_Applicat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\ctr_Order_Suggest_App.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -438,6 +459,12 @@
       <DependentUpon>Module.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\rec_Rep_Activity_01.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rec_Rep_Activity_01.Designer.cs">
+      <DependentUpon>rec_Rep_Activity_01.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\rec_Applicant_01.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -447,8 +474,12 @@
     <Compile Include="Report\ReportDataX.cs" />
     <Compile Include="Report\ReportsStorageX.cs" />
     <Compile Include="Report\RepParamObjCri.cs" />
+    <Compile Include="Report\RepParam_rec_Rep_Activity_01.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controllers\ctr_Accept_Applicat.resx">
+      <DependentUpon>ctr_Accept_Applicat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controllers\ctr_Order_Suggest_App.resx">
       <DependentUpon>ctr_Order_Suggest_App.cs</DependentUpon>
     </EmbeddedResource>
@@ -469,6 +500,9 @@
       <DependentUpon>Module.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Report\rec_Rep_Activity_01.resx">
+      <DependentUpon>rec_Rep_Activity_01.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\rec_Applicant_01.resx">
       <DependentUpon>rec_Applicant_01.cs</DependentUpon>
     </EmbeddedResource>
@@ -498,100 +532,104 @@
     <None Include="FunctionalTests\config.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\rec_Applicant32.png" />
-    <EmbeddedResource Include="Images\rec_Applicant16.png" />
-    <EmbeddedResource Include="Images\Recruitment16.png" />
-    <EmbeddedResource Include="Images\Recruitment32.png" />
-    <EmbeddedResource Include="Images\rec_Applicant_Course16.png" />
-    <EmbeddedResource Include="Images\rec_Applicant_Course32.png" />
-    <EmbeddedResource Include="Images\rec_Applicant_Education16.png" />
-    <EmbeddedResource Include="Images\rec_Applicant_Education32.png" />
-    <EmbeddedResource Include="Images\rec_Applicant_Experience16.png" />
-    <EmbeddedResource Include="Images\rec_Applicant_Experience32.png" />
-    <EmbeddedResource Include="Images\rec_Applicant_Project16.png" />
-    <EmbeddedResource Include="Images\rec_Applicant_Project32.png" />
-    <EmbeddedResource Include="Images\rec_Applicant_Study16.png" />
-    <EmbeddedResource Include="Images\rec_Applicant_Study32.png" />
-    <EmbeddedResource Include="Images\rec_Applicant_Tag16.png" />
-    <EmbeddedResource Include="Images\rec_Applicant_Tag32.png" />
-    <EmbeddedResource Include="Images\rec_City16.png" />
-    <EmbeddedResource Include="Images\rec_City32.png" />
-    <EmbeddedResource Include="Images\rec_Country16.png" />
-    <EmbeddedResource Include="Images\rec_Country32.png" />
-    <EmbeddedResource Include="Images\rec_Degree16.png" />
-    <EmbeddedResource Include="Images\rec_Degree32.png" />
-    <EmbeddedResource Include="Images\rec_Employer16.png" />
-    <EmbeddedResource Include="Images\rec_Employer32.png" />
-    <EmbeddedResource Include="Images\rec_Faculty16.png" />
-    <EmbeddedResource Include="Images\rec_Faculty32.png" />
-    <EmbeddedResource Include="Images\rec_Gender16.png" />
-    <EmbeddedResource Include="Images\rec_Gender32.png" />
-    <EmbeddedResource Include="Images\rec_Industry16.png" />
-    <EmbeddedResource Include="Images\rec_Industry32.png" />
-    <EmbeddedResource Include="Images\rec_Marital_Status16.png" />
-    <EmbeddedResource Include="Images\rec_Marital_Status32.png" />
-    <EmbeddedResource Include="Images\rec_Military_Status16.png" />
-    <EmbeddedResource Include="Images\rec_Military_Status32.png" />
-    <EmbeddedResource Include="Images\rec_Nationality16.png" />
-    <EmbeddedResource Include="Images\rec_Nationality32.png" />
-    <EmbeddedResource Include="Images\rec_Position16.png" />
-    <EmbeddedResource Include="Images\rec_Position32.png" />
-    <EmbeddedResource Include="Images\rec_Study_Grade16.png" />
-    <EmbeddedResource Include="Images\rec_Study_Grade32.png" />
-    <EmbeddedResource Include="Images\rec_University16.png" />
-    <EmbeddedResource Include="Images\rec_University32.png" />
-    <EmbeddedResource Include="Images\rec_Work_Type16.png" />
-    <EmbeddedResource Include="Images\rec_Work_Type32.png" />
-    <EmbeddedResource Include="Images\rec_call_result16.png" />
-    <EmbeddedResource Include="Images\rec_call_result32.png" />
-    <EmbeddedResource Include="Images\rec_Applicant_Status16.png" />
-    <EmbeddedResource Include="Images\rec_Applicant_Status32.png" />
-    <EmbeddedResource Include="Images\rec_Doc_Info16.png" />
-    <EmbeddedResource Include="Images\rec_Doc_Info32.png" />
-    <EmbeddedResource Include="Images\rec_employer_order16.png" />
-    <EmbeddedResource Include="Images\rec_employer_order32.png" />
-    <EmbeddedResource Include="Images\rec_employer_order_detail16.png" />
-    <EmbeddedResource Include="Images\rec_employer_order_detail32.png" />
-    <EmbeddedResource Include="Images\rec_employer_order_detail_accept_applicat16.png" />
-    <EmbeddedResource Include="Images\rec_employer_order_detail_accept_applicat32.png" />
-    <EmbeddedResource Include="Images\rec_employer_order_detail_accept_applicat_doc16.png" />
-    <EmbeddedResource Include="Images\rec_employer_order_detail_accept_applicat_doc32.png" />
-    <EmbeddedResource Include="Images\rec_employer_order_detail_call16.png" />
-    <EmbeddedResource Include="Images\rec_employer_order_detail_call32.png" />
-    <EmbeddedResource Include="Images\rec_employer_order_detail_suggest_applicat16.png" />
-    <EmbeddedResource Include="Images\rec_employer_order_detail_suggest_applicat32.png" />
-    <EmbeddedResource Include="Images\rec_industry_require_doc16.png" />
-    <EmbeddedResource Include="Images\rec_industry_require_doc32.png" />
-    <EmbeddedResource Include="Images\rec_require_doc_status16.png" />
-    <EmbeddedResource Include="Images\rec_require_doc_status32.png" />
-    <EmbeddedResource Include="Images\rec_suggest_applicat_source16.png" />
-    <EmbeddedResource Include="Images\rec_suggest_applicat_source32.png" />
-    <EmbeddedResource Include="Images\rec_Employer_Order_Status16.png" />
-    <EmbeddedResource Include="Images\rec_Employer_Order_Status32.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Applicant.png" />
+    <EmbeddedResource Include="Images\Recruitment.png" />
+    <EmbeddedResource Include="Images\Recruitment_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Course.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Course_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Education.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Education_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Experience.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Experience_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Project.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Project_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Study.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Study_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Tag.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Tag_32x32.png" />
+    <EmbeddedResource Include="Images\rec_City.png" />
+    <EmbeddedResource Include="Images\rec_City_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Country.png" />
+    <EmbeddedResource Include="Images\rec_Country_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Degree.png" />
+    <EmbeddedResource Include="Images\rec_Degree_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Employer.png" />
+    <EmbeddedResource Include="Images\rec_Employer_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Faculty.png" />
+    <EmbeddedResource Include="Images\rec_Faculty_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Gender.png" />
+    <EmbeddedResource Include="Images\rec_Gender_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Industry.png" />
+    <EmbeddedResource Include="Images\rec_Industry_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Marital_Status.png" />
+    <EmbeddedResource Include="Images\rec_Marital_Status_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Military_Status.png" />
+    <EmbeddedResource Include="Images\rec_Military_Status_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Nationality.png" />
+    <EmbeddedResource Include="Images\rec_Nationality_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Position.png" />
+    <EmbeddedResource Include="Images\rec_Position_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Study_Grade.png" />
+    <EmbeddedResource Include="Images\rec_Study_Grade_32x32.png" />
+    <EmbeddedResource Include="Images\rec_University.png" />
+    <EmbeddedResource Include="Images\rec_University_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Work_Type.png" />
+    <EmbeddedResource Include="Images\rec_Work_Type_32x32.png" />
+    <EmbeddedResource Include="Images\rec_call_result.png" />
+    <EmbeddedResource Include="Images\rec_call_result_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Status.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_Status_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Doc_Info.png" />
+    <EmbeddedResource Include="Images\rec_Doc_Info_32x32.png" />
+    <EmbeddedResource Include="Images\rec_employer_order.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_32x32.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail_32x32.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail_accept_applicat.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail_accept_applicat_32x32.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail_accept_applicat_doc.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail_accept_applicat_doc_32x32.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail_call.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail_call_32x32.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail_suggest_applicat.png" />
+    <EmbeddedResource Include="Images\rec_employer_order_detail_suggest_applicat_32x32.png" />
+    <EmbeddedResource Include="Images\rec_industry_require_doc.png" />
+    <EmbeddedResource Include="Images\rec_industry_require_doc_32x32.png" />
+    <EmbeddedResource Include="Images\rec_require_doc_status.png" />
+    <EmbeddedResource Include="Images\rec_require_doc_status_32x32.png" />
+    <EmbeddedResource Include="Images\rec_suggest_applicat_source.png" />
+    <EmbeddedResource Include="Images\rec_suggest_applicat_source_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Employer_Order_Status.png" />
+    <EmbeddedResource Include="Images\rec_Employer_Order_Status_32x32.png" />
     <EmbeddedResource Include="Images\State_Task_Pause.png" />
-    <EmbeddedResource Include="Images\rec_Employer_Industry16.png" />
-    <EmbeddedResource Include="Images\rec_Employer_Industry32.png" />
-    <EmbeddedResource Include="Images\rec_Employer_Person16.png" />
-    <EmbeddedResource Include="Images\rec_Employer_Person32.png" />
-    <EmbeddedResource Include="Images\rec_Delivery_Type16.png" />
-    <EmbeddedResource Include="Images\rec_Delivery_Type32.png" />
-    <EmbeddedResource Include="Images\rec_Housing_Type16.png" />
-    <EmbeddedResource Include="Images\rec_Housing_Type32.png" />
-    <EmbeddedResource Include="Images\rec_Annual_Vacation_Type16.png" />
-    <EmbeddedResource Include="Images\rec_Annual_Vacation_Type32.png" />
-    <EmbeddedResource Include="Images\rec_Medical_Insurance_Types16.png" />
-    <EmbeddedResource Include="Images\rec_Medical_Insurance_Types32.png" />
-    <EmbeddedResource Include="Images\rec_Ticket_Type16.png" />
-    <EmbeddedResource Include="Images\rec_Ticket_Type32.png" />
-    <EmbeddedResource Include="Images\rec_Employer_Order_Interview16.png" />
-    <EmbeddedResource Include="Images\rec_Employer_Order_Interview32.png" />
-    <EmbeddedResource Include="Images\rec_Employer_Order_Detail_Connection16.png" />
-    <EmbeddedResource Include="Images\rec_Employer_Order_Detail_Connection32.png" />
+    <EmbeddedResource Include="Images\rec_Employer_Industry.png" />
+    <EmbeddedResource Include="Images\rec_Employer_Industry_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Employer_Person.png" />
+    <EmbeddedResource Include="Images\rec_Employer_Person_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Delivery_Type.png" />
+    <EmbeddedResource Include="Images\rec_Delivery_Type_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Housing_Type.png" />
+    <EmbeddedResource Include="Images\rec_Housing_Type_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Annual_Vacation_Type.png" />
+    <EmbeddedResource Include="Images\rec_Annual_Vacation_Type_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Medical_Insurance_Types.png" />
+    <EmbeddedResource Include="Images\rec_Medical_Insurance_Types_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Ticket_Type.png" />
+    <EmbeddedResource Include="Images\rec_Ticket_Type_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Employer_Order_Interview.png" />
+    <EmbeddedResource Include="Images\rec_Employer_Order_Interview_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Employer_Order_Detail_Connection.png" />
+    <EmbeddedResource Include="Images\rec_Employer_Order_Detail_Connection_32x32.png" />
     <Content Include="backup code.txt" />
-    <EmbeddedResource Include="Images\Event16.png" />
-    <EmbeddedResource Include="Images\Event32.png" />
-    <EmbeddedResource Include="Images\Scheduler16.png" />
-    <EmbeddedResource Include="Images\Scheduler32.png" />
+    <EmbeddedResource Include="Images\Event.png" />
+    <EmbeddedResource Include="Images\Event_32x32.png" />
+    <EmbeddedResource Include="Images\Scheduler.png" />
+    <EmbeddedResource Include="Images\Scheduler_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Activity.png" />
+    <EmbeddedResource Include="Images\rec_Activity_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Cash.png" />
+    <EmbeddedResource Include="Images\rec_Cash_32x32.png" />
     <Content Include="Information.txt" />
     <Content Include="Welcome.html" />
   </ItemGroup>

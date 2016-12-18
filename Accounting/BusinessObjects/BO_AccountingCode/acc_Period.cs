@@ -10,7 +10,7 @@ namespace Accounting.BusinessObjects.Recruitment
     [DefaultClassOptions]
     [NavigationItem("Accounting")]
     [DevExpress.ExpressApp.DC.XafDisplayName("Period")]
-    [DevExpress.Persistent.Base.ImageName("acc_Year16")]
+    [DevExpress.Persistent.Base.ImageName("acc_Year")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("period_name")]
     public partial class acc_Period
     {

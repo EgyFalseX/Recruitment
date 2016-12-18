@@ -12,7 +12,7 @@ using DevExpress.ExpressApp.Utils;
 namespace Recruitment.Module.BusinessObjects.Filter
 {
     [DefaultProperty("FilterName")]
-    [ImageName("Recruitment16")]
+    [ImageName("Recruitment")]
     public class ViewFilterObject : BaseObject {
         public ViewFilterObject(Session session) : base(session) { }
         private Type _ObjectType;

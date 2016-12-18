@@ -10,7 +10,7 @@ namespace Accounting.BusinessObjects.Recruitment
     [DefaultClassOptions]
     [NavigationItem("Accounting")]
     [DevExpress.ExpressApp.DC.XafDisplayName("Company Information (Accounting)")]
-    [DevExpress.Persistent.Base.ImageName("Accounting16")]
+    [DevExpress.Persistent.Base.ImageName("Accounting")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("company_name")]
     public partial class acc_AppCompany
     {

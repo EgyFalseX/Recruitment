@@ -9,7 +9,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [NavigationItem("Employer")]
-    [ImageName("rec_Employer_Order_Interview32")]
+    [ImageName("rec_Employer_Order_Interview")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("rec_employer_order_interview_date")]
     [DevExpress.ExpressApp.DC.XafDisplayName("Order Interview")]
     public partial class rec_Employer_Order_Interview

@@ -10,7 +10,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     [DefaultClassOptions]
     [NavigationItem("Applicant")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("applicant_name")]
-    [ImageName("rec_Country32")]
+    [ImageName("rec_Country")]
     [DevExpress.ExpressApp.DC.XafDisplayName("Applicant Country")]
     public partial class rec_Applicant_Country
     {

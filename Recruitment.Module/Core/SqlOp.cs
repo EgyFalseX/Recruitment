@@ -15,5 +15,11 @@ namespace Recruitment.Module.Core
                 new DevExpress.Data.Filtering.FunctionOperator(DevExpress.Data.Filtering.FunctionOperatorType.Now);
             return (DateTime)session.Evaluate(typeof(XPObjectType), funcNow, null);
         }
+        public static DateTime GetServerDateTime(DevExpress.ExpressApp.IObjectSpace session)
+        {
+            DevExpress.Data.Filtering.CriteriaOperator funcNow =
+                new DevExpress.Data.Filtering.FunctionOperator(DevExpress.Data.Filtering.FunctionOperatorType.Now);
+            return (DateTime)session.Evaluate(typeof(XPObjectType), funcNow, null);
+        }
     }
 }

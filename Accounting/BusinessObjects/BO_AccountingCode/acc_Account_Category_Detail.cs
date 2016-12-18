@@ -10,7 +10,7 @@ namespace Accounting.BusinessObjects.Recruitment
     [DefaultClassOptions]
     [NavigationItem("Accounting")]
     [DevExpress.ExpressApp.DC.XafDisplayName("Account Cateogry Details")]
-    [DevExpress.Persistent.Base.ImageName("acc_Account_Category16")]
+    [DevExpress.Persistent.Base.ImageName("acc_Account_Category")]
     
     public partial class acc_Account_Category_Detail
     {

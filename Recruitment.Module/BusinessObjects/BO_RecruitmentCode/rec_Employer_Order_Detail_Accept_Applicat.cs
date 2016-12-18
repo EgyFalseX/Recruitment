@@ -12,9 +12,11 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [DevExpress.ExpressApp.DC.XafDisplayName("Accepted Applicat")]
+    [DevExpress.ExpressApp.DC.XafDefaultProperty("CustomName")]
     [Appearance("Apr_Status", TargetItems = "*", Criteria = "frec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id IS NOT NULL " +
                                                                                  " And frec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id <> 1 " +
-                                                                                 " And frec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id <> 4", Enabled = false)]
+                                                                                 " And frec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id <> 4", Enabled = false, Priority = 1)]
+    [Appearance("Accept_Applicat_start_activity_Must_Disabled", TargetItems = "start_activity", Criteria = "true = true", Enabled = false, Priority = 2)]
     public partial class rec_Employer_Order_Detail_Accept_Applicat
     {
        
@@ -91,6 +93,9 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
                 //return output;
             }
         }
+        [NonPersistent]
+        [DevExpress.Xpo.DisplayName(@"Order - Applicant")]
+        public string CustomName => $"{rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_id} - {rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id.rec_employer_order_detail_suggest_applicat_applicant_id.applicant_name}";
     }
 
 }

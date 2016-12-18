@@ -9,7 +9,8 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [NavigationItem("Employer")]
-    [ImageName("rec_Industry32")]
+    [ImageName("rec_Industry" +
+               "")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("company_name")]
     [DevExpress.ExpressApp.DC.XafDisplayName("Employer Industry")]
     public partial class rec_Employer_Industry

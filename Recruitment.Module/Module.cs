@@ -2,6 +2,7 @@
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.DC;
 using System.Collections.Generic;
+using Accounting;
 using DevExpress.Data.Filtering;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.ExpressApp.Updating;
@@ -27,20 +28,23 @@ namespace Recruitment.Module {
         {
             base.CustomizeTypesInfo(typesInfo);
             CalculatedPersistentAliasHelper.CustomizeTypesInfo(typesInfo);
+            
         }
 
         public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB)
         {
             ModuleUpdater updater = new DatabaseUpdate.Updater(objectSpace, versionFromDB);
-
-            //Register Predefined Reports
-            PredefinedReportsUpdater reportsUpdater = new PredefinedReportsUpdater(Application, objectSpace,
-                versionFromDB) {UseMultipleUpdaters = true};
-            reportsUpdater.AddPredefinedReport<rec_Applicant_01>("Applicant Information", typeof (rec_Applicant),
-                typeof (RepParamObjCri));
-            
-
+            PredefinedReportsUpdater reportsUpdater = RegisterPredefindReports(objectSpace, versionFromDB);
             return new ModuleUpdater[] {updater, reportsUpdater};
+        }
+
+        private PredefinedReportsUpdater RegisterPredefindReports(IObjectSpace objectSpace, Version versionFromDB)
+        {
+            //Register Predefined Reports
+            PredefinedReportsUpdater reportsUpdater = new PredefinedReportsUpdater(Application, objectSpace, versionFromDB) {UseMultipleUpdaters = true};
+            reportsUpdater.AddPredefinedReport<rec_Applicant_01>("Applicant Information", typeof (rec_Applicant), typeof (RepParamObjCri));
+            reportsUpdater.AddPredefinedReport<rec_Rep_Activity_01>("Employer Activity", typeof(sp_Activity_01Result), typeof(RepParam_rec_Rep_Activity_01));
+            return reportsUpdater;
         }
 
         public override void Setup(XafApplication application)

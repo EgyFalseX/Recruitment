@@ -8,6 +8,10 @@ namespace Recruitment.Module.Core
 {
     public static class Typez
     {
+        public static string OptionAdvanceRevenue => "Advance Revenue";
+        public static string OptionRevenueDue => "Revenue Due";
+        public static string OptionCustomers => "Customers";
+
         public enum enum_Doc_Status
         {
             [DevExpress.Persistent.Base.ImageName("State_Task_Completed")]
@@ -20,7 +24,8 @@ namespace Recruitment.Module.Core
             Ready = 1,
             [DevExpress.Persistent.Base.ImageName("State_Task_Deferred")]
             Busy = 2,
-        }public enum enum_rec_Suggest_Applicant_Status
+        }
+        public enum enum_rec_Suggest_Applicant_Status
         {
             [DevExpress.Persistent.Base.ImageName("State_Task_Completed")]
             Accepted = 3,
@@ -41,6 +46,17 @@ namespace Recruitment.Module.Core
             Pasued = 4,
 
         }
+
+        public enum enum_rec_Activity_Type
+        {
+            //[DevExpress.Persistent.Base.ImageName("State_Task_InProgress")]
+            BudgetRevenue = 1,
+            //[DevExpress.Persistent.Base.ImageName("State_Task_Completed")]
+            ActualRevenue = 2,
+            //[DevExpress.Persistent.Base.ImageName("Action_Delete")]
+            Expenses = 3,
+        }
+
 
     }
 }

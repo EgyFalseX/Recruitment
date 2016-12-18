@@ -19,5 +19,24 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         {
             return session.ExecuteSproc("sp_ClearDB");
         }
+        public static DevExpress.Xpo.DB.SelectedData Execsp_Activity_01(Session session, DateTime StartDate, DateTime EndDate, int employer_id)
+        {
+            return session.ExecuteSproc("sp_Activity_01", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(employer_id));
+        }
+        public static System.Collections.Generic.ICollection<sp_Activity_01Result> Execsp_Activity_01IntoObjects(Session session, DateTime StartDate, DateTime EndDate, int employer_id)
+        {
+            return session.GetObjectsFromSproc<sp_Activity_01Result>("sp_Activity_01", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(employer_id));
+        }
+        public static XPDataView Execsp_Activity_01IntoDataView(Session session, DateTime StartDate, DateTime EndDate, int employer_id)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Activity_01", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(employer_id));
+            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_Activity_01Result)), sprocData);
+        }
+        public static void Execsp_Activity_01IntoDataView(XPDataView dataView, Session session, DateTime StartDate, DateTime EndDate, int employer_id)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Activity_01", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(employer_id));
+            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_Activity_01Result)));
+            dataView.LoadData(sprocData);
+        }
     }
 }

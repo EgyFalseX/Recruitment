@@ -11,7 +11,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [NavigationItem("General")]
-    [ImageName("Recruitment16")]
+    [ImageName("Recruitment")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("company_name")]
     [XafDisplayName("Company Information (Recruitment)")]
     public partial class AppCompany

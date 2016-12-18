@@ -9,7 +9,7 @@ namespace Accounting.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("bank_acc_name")]
-    [ImageName("acc_Bank16")]
+    [ImageName("acc_Bank")]
     public partial class acc_Bank
     {
         public acc_Bank(Session session) : base(session) { }

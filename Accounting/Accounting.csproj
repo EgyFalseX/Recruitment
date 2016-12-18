@@ -394,54 +394,54 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\acc_Account16.png" />
-    <EmbeddedResource Include="Images\acc_Account32.png" />
+    <EmbeddedResource Include="Images\acc_Account.png" />
+    <EmbeddedResource Include="Images\acc_Account_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\rec_Applicant16.png" />
-    <EmbeddedResource Include="Images\rec_Applicant32.png" />
+    <EmbeddedResource Include="Images\rec_Applicant.png" />
+    <EmbeddedResource Include="Images\rec_Applicant_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\acc_Bank16.png" />
-    <EmbeddedResource Include="Images\acc_Bank32.png" />
+    <EmbeddedResource Include="Images\acc_Bank.png" />
+    <EmbeddedResource Include="Images\acc_Bank_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\acc_Year16.png" />
-    <EmbeddedResource Include="Images\acc_Year32.png" />
+    <EmbeddedResource Include="Images\acc_Year.png" />
+    <EmbeddedResource Include="Images\acc_Year_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\acc_Option16.png" />
-    <EmbeddedResource Include="Images\acc_Option32.png" />
+    <EmbeddedResource Include="Images\acc_Option.png" />
+    <EmbeddedResource Include="Images\acc_Option_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\acc_Journal_Entry16.png" />
-    <EmbeddedResource Include="Images\acc_Journal_Entry32.png" />
-    <EmbeddedResource Include="Images\acc_Journal_Entry_Detail16.png" />
-    <EmbeddedResource Include="Images\acc_Journal_Entry_Detail32.png" />
+    <EmbeddedResource Include="Images\acc_Journal_Entry.png" />
+    <EmbeddedResource Include="Images\acc_Journal_Entry_32x32.png" />
+    <EmbeddedResource Include="Images\acc_Journal_Entry_Detail.png" />
+    <EmbeddedResource Include="Images\acc_Journal_Entry_Detail_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\acc_Currency16.png" />
-    <EmbeddedResource Include="Images\acc_Currency32.png" />
+    <EmbeddedResource Include="Images\acc_Currency.png" />
+    <EmbeddedResource Include="Images\acc_Currency_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\acc_Opening_Balance16.png" />
-    <EmbeddedResource Include="Images\acc_Opening_Balance32.png" />
+    <EmbeddedResource Include="Images\acc_Opening_Balance.png" />
+    <EmbeddedResource Include="Images\acc_Opening_Balance_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\acc_Account_Category16.png" />
-    <EmbeddedResource Include="Images\acc_Account_Category32.png" />
+    <EmbeddedResource Include="Images\acc_Account_Category.png" />
+    <EmbeddedResource Include="Images\acc_Account_Category_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\acc_CostCenter16.png" />
-    <EmbeddedResource Include="Images\acc_CostCenter32.png" />
+    <EmbeddedResource Include="Images\acc_CostCenter.png" />
+    <EmbeddedResource Include="Images\acc_CostCenter_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\Accounting16.png" />
-    <EmbeddedResource Include="Images\Accounting32.png" />
+    <EmbeddedResource Include="Images\Accounting.png" />
+    <EmbeddedResource Include="Images\Accounting_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\acc_refund16.png" />
-    <EmbeddedResource Include="Images\acc_refund32.png" />
+    <EmbeddedResource Include="Images\acc_refund.png" />
+    <EmbeddedResource Include="Images\acc_refund_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

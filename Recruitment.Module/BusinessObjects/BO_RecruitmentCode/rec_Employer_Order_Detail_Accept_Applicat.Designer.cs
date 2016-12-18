@@ -42,12 +42,19 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return frec_employer_order_detail_accept_applicat_rec_applicant_status_id; }
             set { SetPropertyValue<rec_Applicant_Status>("rec_employer_order_detail_accept_applicat_rec_applicant_status_id", ref frec_employer_order_detail_accept_applicat_rec_applicant_status_id, value); }
         }
+        bool fstart_activity;
+        [DevExpress.Xpo.DisplayName(@"Start Activity")]
+        public bool start_activity
+        {
+            get { return fstart_activity; }
+            set { SetPropertyValue<bool>("start_activity", ref fstart_activity, value); }
+        }
         [DevExpress.Xpo.DisplayName(@"Accepted Applicants Docs")]
         [Association(@"rec_Employer_Order_Detail_Accept_Applicat_DocReferencesrec_Employer_Order_Detail_Accept_Applicat")]
         public XPCollection<rec_Employer_Order_Detail_Accept_Applicat_Doc> rec_Employer_Order_Detail_Accept_Applicat_Docs { get { return GetCollection<rec_Employer_Order_Detail_Accept_Applicat_Doc>("rec_Employer_Order_Detail_Accept_Applicat_Docs"); } }
-        [DevExpress.Xpo.DisplayName(@"Applicant Accounts")]
-        [Association(@"acc_Account_ApplicantReferencesrec_Employer_Order_Detail_Accept_Applicat")]
-        public XPCollection<acc_Account_Applicant> acc_Account_Applicants { get { return GetCollection<acc_Account_Applicant>("acc_Account_Applicants"); } }
+        [DevExpress.Xpo.DisplayName(@"Accepted Applicant Activities")]
+        [Association(@"rec_Accept_App_ActivityReferencesrec_Employer_Order_Detail_Accept_Applicat")]
+        public XPCollection<rec_Accept_App_Activity> rec_Accept_App_Activitys { get { return GetCollection<rec_Accept_App_Activity>("rec_Accept_App_Activitys"); } }
     }
 
 }

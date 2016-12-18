@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application Company="Mohamed Aly Omar" Title="Accounting" Logo="acc_Account16">
+<Application Company="Mohamed Aly Omar" Title="Accounting" Logo="acc_Account">
   <BOModel>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Account" DefaultListViewShowAutoFilterRow="True" Caption="Accounts" DefaultListViewImage="acc_Account16" DefaultDetailViewImage="acc_Account16">
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Account" DefaultListViewShowAutoFilterRow="True" Caption="Accounts" DefaultListViewImage="acc_Account" DefaultDetailViewImage="acc_Account">
       <OwnMembers>
         <Member Name="acc_AccountCollection" Caption="Accounts" />
         <Member Name="acc_Journal_Entry_Details" Caption="Journal Entry Details" />
@@ -13,8 +13,8 @@
         <Member Name="parent_account_id" Caption="Account Parent" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Account_Category" DefaultListViewMasterDetailMode="ListViewAndDetailView" DefaultDetailViewImage="acc_Account_Category16" DefaultListViewImage="acc_Account_Category16" />
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Account_Category_Detail" DefaultListViewNewItemRowPosition="Top" DefaultListViewAllowEdit="True" DefaultDetailViewImage="acc_Account_Category16" DefaultListViewImage="acc_Account_Category16" />
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Account_Category" DefaultListViewMasterDetailMode="ListViewAndDetailView" DefaultDetailViewImage="acc_Account_Category" DefaultListViewImage="acc_Account_Category" />
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Account_Category_Detail" DefaultListViewNewItemRowPosition="Top" DefaultListViewAllowEdit="True" DefaultDetailViewImage="acc_Account_Category" DefaultListViewImage="acc_Account_Category" />
     <Class Name="Accounting.BusinessObjects.Recruitment.acc_Account_Type" Caption="Account Type" ImageName="">
       <OwnMembers>
         <Member Name="acc_Accounts" Caption="Accounts" />
@@ -22,7 +22,7 @@
         <Member Name="account_type_name" Caption="Name" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Bank" DefaultListViewShowAutoFilterRow="True" Caption="Banks" DefaultListViewImage="acc_Bank16" DefaultDetailViewImage="acc_Bank16">
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Bank" DefaultListViewShowAutoFilterRow="True" Caption="Banks" DefaultListViewImage="acc_Bank" DefaultDetailViewImage="acc_Bank">
       <OwnMembers>
         <Member Name="bank_acc_name" Caption="Bank Account Name" />
         <Member Name="bank_acc_number" Caption="Bank Account Number" />
@@ -35,13 +35,13 @@
       </OwnMembers>
     </Class>
     <Class Name="Accounting.BusinessObjects.Recruitment.acc_CostCenter" DefaultListViewShowAutoFilterRow="True" DefaultListViewNewItemRowPosition="None" DefaultListViewAllowEdit="False" />
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Currency" Caption="Currency" DefaultDetailViewImage="acc_Currency16" DefaultListViewImage="acc_Currency16">
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Currency" Caption="Currency" DefaultDetailViewImage="acc_Currency" DefaultListViewImage="acc_Currency">
       <OwnMembers>
         <Member Name="currency_id" Caption="ID" />
         <Member Name="currency_name" Caption="currency name" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Journal_Entry" Caption="Journal Entry" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="acc_Journal_Entry16" DefaultListViewImage="acc_Journal_Entry16">
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Journal_Entry" Caption="Journal Entry" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="acc_Journal_Entry" DefaultListViewImage="acc_Journal_Entry">
       <OwnMembers>
         <Member Name="acc_Journal_Entry_Details" Caption="Journal Entry Details" Index="0" />
         <Member Name="AuditTrail" Index="1" />
@@ -54,7 +54,7 @@
         <Member Name="voucher_no" Caption="Voucher Number" Index="8" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Journal_Entry_Detail" Caption="Journal Entry Detail" DefaultListViewShowAutoFilterRow="True" DefaultListViewNewItemRowPosition="Top" DefaultListViewAllowEdit="True" DefaultDetailViewImage="acc_Journal_Entry_Detail16" DefaultListViewImage="acc_Journal_Entry_Detail16">
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Journal_Entry_Detail" Caption="Journal Entry Detail" DefaultListViewShowAutoFilterRow="True" DefaultListViewNewItemRowPosition="Top" DefaultListViewAllowEdit="True" DefaultDetailViewImage="acc_Journal_Entry_Detail" DefaultListViewImage="acc_Journal_Entry_Detail">
       <OwnMembers>
         <Member Name="account_id" Caption="Account" />
         <Member Name="credit" Caption="Credit" DisplayFormat="{0:#,###,##0.##}" EditMask="#,###,##0.##" />
@@ -72,8 +72,8 @@
         <Member Name="acc_nature_name" Caption="Name" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Opening_Balance" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="acc_Opening_Balance16" DefaultListViewImage="acc_Opening_Balance16" DefaultListViewAllowEdit="False" />
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Option" DefaultListViewShowAutoFilterRow="True" Caption="Accounting Options" DefaultListViewImage="acc_Option16" DefaultDetailViewImage="acc_Option16">
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Opening_Balance" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="acc_Opening_Balance" DefaultListViewImage="acc_Opening_Balance" DefaultListViewAllowEdit="False" />
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Option" DefaultListViewShowAutoFilterRow="True" Caption="Accounting Options" DefaultListViewImage="acc_Option" DefaultDetailViewImage="acc_Option">
       <OwnMembers>
         <Member Name="acc_option_name" Caption="Option Name" />
         <Member Name="acc_option_value" Caption="Option Value" />
@@ -85,7 +85,7 @@
         <Member Name="start_date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Year" DefaultListViewShowAutoFilterRow="True" Caption="Fiscal Year" DefaultDetailViewImage="acc_Year16" DefaultListViewImage="acc_Year16" DefaultListViewNewItemRowPosition="None" DefaultListViewAllowEdit="False">
+    <Class Name="Accounting.BusinessObjects.Recruitment.acc_Year" DefaultListViewShowAutoFilterRow="True" Caption="Fiscal Year" DefaultDetailViewImage="acc_Year" DefaultListViewImage="acc_Year" DefaultListViewNewItemRowPosition="None" DefaultListViewAllowEdit="False">
       <OwnMembers>
         <Member Name="year_end_date" Caption="End Date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" EditMaskType="DateTime" />
         <Member Name="year_id" Caption="ID" />
@@ -150,7 +150,7 @@
   </BOModel>
   <NavigationItems>
     <Items>
-      <Item Id="Accounting" ImageName="acc_Account16" IsNewNode="True">
+      <Item Id="Accounting" ImageName="acc_Account" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="acc_Account_Category_Detail_ListView" Removed="True" />
           <Item Id="acc_Account_Category_ListView" IsNewNode="True">
@@ -161,9 +161,9 @@
           <Item Id="acc_Account_ListView" ViewId="acc_Account_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="acc_Banks_ListView" ViewId="acc_Bank_ListView" IsNewNode="True" />
           <Item Id="acc_Currancy_ListView" ObjectKey="" Caption="Currancy" ViewId="acc_Currency_ListView" IsNewNode="True" />
-          <Item Id="acc_Journal_Entry_ListView" ViewId="acc_Journal_Entry_ListView" ImageName="acc_Journal_Entry16" IsNewNode="True">
+          <Item Id="acc_Journal_Entry_ListView" ViewId="acc_Journal_Entry_ListView" ImageName="acc_Journal_Entry" IsNewNode="True">
             <Items IsNewNode="True">
-              <Item Id="acc_Journal_Entry_Detail_ListView" ViewId="acc_Journal_Entry_Detail_ListView" ImageName="acc_Journal_Entry_Detail16" IsNewNode="True" />
+              <Item Id="acc_Journal_Entry_Detail_ListView" ViewId="acc_Journal_Entry_Detail_ListView" ImageName="acc_Journal_Entry_Detail" IsNewNode="True" />
             </Items>
           </Item>
           <Item Id="acc_Period_ListView" Removed="True" />

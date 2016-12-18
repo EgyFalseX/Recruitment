@@ -1,8 +1,5 @@
-﻿using System;
-using DevExpress.Xpo;
+﻿using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
-using System.Collections.Generic;
-using System.ComponentModel;
 using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.Validation;
@@ -11,13 +8,14 @@ namespace Accounting.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("JournalCaption")]
-    [ImageName("acc_Journal_Entry16")]
+    [ImageName("acc_Journal_Entry")]
     [Appearance("Entry_period", TargetItems = "period_id", Criteria = "true = true ", Enabled = false, Priority = 0)]
     [Appearance("Entry_Closed", TargetItems = "*", Criteria = "closed = true ", Enabled = false, Priority = 1)]
     [Appearance("Entry_Closed_Must_Disabled", TargetItems = "closed", Criteria = "true = true", Enabled = false, Priority = 2)]
     [Appearance("Entry_Closed_Color_Open", TargetItems = "*", Criteria = "closed = false", Context = "ListView", FontColor = "Blue", Priority = 3)]
     [Appearance("Entry_Color_Unbalanced", TargetItems = "*", Criteria = "[acc_Journal_Entry_Details][].Sum([debit]) <> [acc_Journal_Entry_Details][].Sum([credit])", Context = "ListView", FontColor = "Red", Priority = 4)]
     [RuleCriteria("acc_Journal_Entry_period_id_vld_open", DefaultContexts.Save, "period_id.closed != true", "Selected date within closed period", SkipNullOrEmptyValues = false)]
+    [RuleCriteria("acc_Journal_Entry_period_id_vld_Delete", DefaultContexts.Delete, "period_id.closed != true", "Can't delete closed period", SkipNullOrEmptyValues = false)]
     public partial class acc_Journal_Entry{public acc_Journal_Entry(Session session) : base(session) { }
         public override void AfterConstruction() {
             base.AfterConstruction();

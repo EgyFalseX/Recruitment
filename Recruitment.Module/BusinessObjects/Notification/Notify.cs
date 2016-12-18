@@ -19,7 +19,7 @@ namespace Recruitment.Module.BusinessObjects.Notification
 {
     [DefaultClassOptions]
     [NavigationItem("SchedulerEvent")]
-    [ImageName("Event16")]
+    [ImageName("Event")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("Subject")]
     [VisibleInReports]
     //[RuleCriteria("DueDate >= StartDate")]
