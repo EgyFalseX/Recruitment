@@ -79,36 +79,36 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
                 entry_text = entryText,
                 jour_entry_id = entry
             };
-            //Create Revenue Due Recoreds
-            if (activity_id.activity_type_id == Typez.enum_rec_Activity_Type.ActualRevenue)
-            {
-                acc_Account accountRevenueDue = SqlOp.GetOptionAccount(Session, Typez.OptionRevenueDue);
-                acc_Account accountCustomers = SqlOp.GetOptionAccount(Session, Typez.OptionCustomers);
-                // Create Revenue Due Entry Details
-                acc_Journal_Entry_Detail detailRevenueDue = new acc_Journal_Entry_Detail(Session)
-                {
-                    account_id = accountRevenueDue,
-                    credit = value1,
-                    debit = 0,
-                    credit_currency = org_value,
-                    debit_currency = 0,
-                    currency_id = currency_id,
-                    entry_text = entryText,
-                    jour_entry_id = entry
-                };
-                // Create Customers Entry Details
-                acc_Journal_Entry_Detail detailCustomers = new acc_Journal_Entry_Detail(Session)
-                {
-                    account_id = accountCustomers,
-                    credit = 0,
-                    debit = value1,
-                    credit_currency = 0,
-                    debit_currency = org_value,
-                    currency_id = currency_id,
-                    entry_text = entryText,
-                    jour_entry_id = entry
-                };
-            }
+            ////Create Revenue Due Recoreds
+            //if (activity_id.activity_type_id == Typez.enum_rec_Activity_Type.ActualRevenue)
+            //{
+            //    acc_Account accountRevenueDue = SqlOp.GetOptionAccount(Session, Typez.OptionRevenueDue);
+            //    acc_Account accountCustomers = SqlOp.GetOptionAccount(Session, Typez.OptionCustomers);
+            //    // Create Revenue Due Entry Details
+            //    acc_Journal_Entry_Detail detailRevenueDue = new acc_Journal_Entry_Detail(Session)
+            //    {
+            //        account_id = accountRevenueDue,
+            //        credit = value1,
+            //        debit = 0,
+            //        credit_currency = org_value,
+            //        debit_currency = 0,
+            //        currency_id = currency_id,
+            //        entry_text = entryText,
+            //        jour_entry_id = entry
+            //    };
+            //    // Create Customers Entry Details
+            //    acc_Journal_Entry_Detail detailCustomers = new acc_Journal_Entry_Detail(Session)
+            //    {
+            //        account_id = accountCustomers,
+            //        credit = 0,
+            //        debit = value1,
+            //        credit_currency = 0,
+            //        debit_currency = org_value,
+            //        currency_id = currency_id,
+            //        entry_text = entryText,
+            //        jour_entry_id = entry
+            //    };
+            //}
         }
         private void EditEntry()
         {

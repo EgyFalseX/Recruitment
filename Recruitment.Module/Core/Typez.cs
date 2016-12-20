@@ -55,6 +55,7 @@ namespace Recruitment.Module.Core
             ActualRevenue = 2,
             //[DevExpress.Persistent.Base.ImageName("Action_Delete")]
             Expenses = 3,
+            AdvanceRevenue = 4,
         }
 
 

@@ -29,5 +29,10 @@ namespace Recruitment.Module.Core
             acc_Option option = session.FindObject<acc_Option>(CriteriaOperator.Parse("acc_option_name = ?", optionName));
             return session.FindObject<acc_Account>(CriteriaOperator.Parse("account_id = ?", option.acc_option_value));
         }
+        public static acc_Account GetOptionAccount(DevExpress.ExpressApp.IObjectSpace objectSpace, string optionName)
+        {
+            acc_Option option = objectSpace.FindObject<acc_Option>(CriteriaOperator.Parse("acc_option_name = ?", optionName));
+            return objectSpace.FindObject<acc_Account>(CriteriaOperator.Parse("account_id = ?", option.acc_option_value));
+        }
     }
 }

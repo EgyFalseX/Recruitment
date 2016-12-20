@@ -4,7 +4,9 @@ using Accounting.BusinessObjects.Recruitment;
 using DevExpress.Data.Filtering;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Actions;
+using DevExpress.Xpo;
 using Recruitment.Module.BusinessObjects.Recruitment;
+using Recruitment.Module.Core;
 
 namespace Recruitment.Module.Controllers
 {
@@ -50,12 +52,11 @@ namespace Recruitment.Module.Controllers
                 accepted.rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id
                     .rec_employer_order_detail_suggest_applicat_applicant_id;
             // Load Options Accounts
-            acc_Option optionAdvanceRevenue = objectSpace.GetObjectByKey<acc_Option>(Core.Typez.OptionAdvanceRevenue);
-            acc_Account accountAdvanceRevenue = objectSpace.GetObjectByKey<acc_Account>(Convert.ToInt32(optionAdvanceRevenue.acc_option_value));
-            acc_Option optionCustomers = objectSpace.GetObjectByKey<acc_Option>(Core.Typez.OptionCustomers);
-            acc_Account accountCustomers = objectSpace.GetObjectByKey<acc_Account>(Convert.ToInt32(optionCustomers.acc_option_value));
-            acc_Option optionRevenueDue = objectSpace.GetObjectByKey<acc_Option>(Core.Typez.OptionRevenueDue);
-            acc_Account accountRevenueDue = objectSpace.GetObjectByKey<acc_Account>(Convert.ToInt32(optionRevenueDue.acc_option_value));
+            acc_Account accountAdvanceRevenue = SqlOp.GetOptionAccount(objectSpace, Typez.OptionAdvanceRevenue);
+            acc_Account accountRevenueDue = SqlOp.GetOptionAccount(objectSpace, Typez.OptionRevenueDue);
+            //acc_Option optionCustomers = objectSpace.GetObjectByKey<acc_Option>(Core.Typez.OptionCustomers);
+            //acc_Account accountCustomers = objectSpace.GetObjectByKey<acc_Account>(Convert.ToInt32(optionCustomers.acc_option_value));
+
             // Create Entry
             acc_Journal_Entry entry = objectSpace.CreateObject<acc_Journal_Entry>();
             entry.closed = true;
@@ -75,27 +76,28 @@ namespace Recruitment.Module.Controllers
                     continue;
                 foreach (acc_Journal_Entry_Detail accJournalEntryDetail in recAcceptAppActivity.jour_entry_id.acc_Journal_Entry_Details)
                 {
-                    if (accJournalEntryDetail.account_id.account_id != Convert.ToInt32(optionAdvanceRevenue.acc_option_value))
+                    if (accJournalEntryDetail.account_id.account_id != Convert.ToInt32(accountAdvanceRevenue.account_id))
                         continue;
                     // Create Advance Revenue Entry Details
                     acc_Journal_Entry_Detail detailAdvanceRevenue = objectSpace.CreateObject<acc_Journal_Entry_Detail>();
-                    detailAdvanceRevenue.account_id = accountAdvanceRevenue; detailAdvanceRevenue.credit = accJournalEntryDetail.debit;
+                    detailAdvanceRevenue.account_id = accountAdvanceRevenue;
+                    detailAdvanceRevenue.credit = accJournalEntryDetail.debit;
                     detailAdvanceRevenue.debit = accJournalEntryDetail.credit;
                     detailAdvanceRevenue.credit_currency = accJournalEntryDetail.debit_currency;
                     detailAdvanceRevenue.debit_currency = accJournalEntryDetail.credit_currency;
                     detailAdvanceRevenue.currency_id = objectSpace.GetObject(accJournalEntryDetail.currency_id);
                     detailAdvanceRevenue.entry_text = $"{accountAdvanceRevenue.account_name} - {applicant.applicant_name} - {employer.employer_company_name}";
                     detailAdvanceRevenue.jour_entry_id = entry;
-                    // Create Employer Account Entry Details
-                    acc_Journal_Entry_Detail detailEmployerAccount = objectSpace.CreateObject<acc_Journal_Entry_Detail>();
-                    detailEmployerAccount.account_id = objectSpace.GetObject(employer.account_id);
-                    detailEmployerAccount.credit = accJournalEntryDetail.credit;
-                    detailEmployerAccount.debit = accJournalEntryDetail.debit;
-                    detailEmployerAccount.credit_currency = accJournalEntryDetail.credit_currency;
-                    detailEmployerAccount.debit_currency = accJournalEntryDetail.debit_currency;
-                    detailEmployerAccount.currency_id = objectSpace.GetObject(accJournalEntryDetail.currency_id);
-                    detailEmployerAccount.entry_text = $"{detailEmployerAccount.account_id.Name} - {applicant.applicant_name} - {employer.employer_company_name}";
-                    detailEmployerAccount.jour_entry_id = entry;
+                    // Create Revenue Due Entry Details
+                    acc_Journal_Entry_Detail detailaccountRevenueDue = objectSpace.CreateObject<acc_Journal_Entry_Detail>();
+                    detailaccountRevenueDue.account_id = objectSpace.GetObject(accountRevenueDue);
+                    detailaccountRevenueDue.credit = accJournalEntryDetail.credit;
+                    detailaccountRevenueDue.debit = accJournalEntryDetail.debit;
+                    detailaccountRevenueDue.credit_currency = accJournalEntryDetail.credit_currency;
+                    detailaccountRevenueDue.debit_currency = accJournalEntryDetail.debit_currency;
+                    detailaccountRevenueDue.currency_id = objectSpace.GetObject(accJournalEntryDetail.currency_id);
+                    detailaccountRevenueDue.entry_text = $"{detailaccountRevenueDue.account_id.Name} - {applicant.applicant_name} - {employer.employer_company_name}";
+                    detailaccountRevenueDue.jour_entry_id = entry;
                     //// Create Revenue Due Entry Details
                     //acc_Journal_Entry_Detail detailRevenueDue = objectSpace.CreateObject<acc_Journal_Entry_Detail>();
                     //detailRevenueDue.account_id = accountRevenueDue;
