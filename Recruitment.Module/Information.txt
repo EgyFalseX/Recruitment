@@ -46,6 +46,11 @@ _________________________________________
 1- Remove table acc_Account_Applicant
 2- Add in acc_options, rec_Cash, rec_Activity, rec_Activity_Type required rows
 3- (for web) activity_type_id in rec_Activity
-
-
-
+_________________________________________
+2016-12-18
+1- remove/Recreate SPs
+2- sp_Balance_Sheet not change make sure its OK
+_________________________________________
+2016-12-19
+1- Add description field in activity app&emp
+2- recreate sp_Activity_02,

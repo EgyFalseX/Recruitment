@@ -854,23 +854,26 @@
     <DetailView Id="rec_Accept_App_Activity_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="18.581907090464547">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="21.5158924205379">
             <LayoutGroup Id="rec_Accept_App_Activity" Caption="Accepted Applicant Activity" RelativeSize="100">
-              <LayoutGroup Id="rec_Accept_App_Activity_col1" RelativeSize="49.941927990708479">
-                <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" RelativeSize="28.571428571428573" Index="0" />
-                <LayoutItem Id="activity_date" RelativeSize="21.428571428571427" Index="1" />
-                <LayoutItem Id="activity_id" RelativeSize="21.428571428571427" Index="2" />
-                <LayoutItem Id="cash_id" Index="3" RelativeSize="28.571428571428573" ViewItem="cash_id" IsNewNode="True" />
+              <LayoutGroup Id="rec_Accept_App_Activity_col1" RelativeSize="49.820143884892083">
+                <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" RelativeSize="23.529411764705884" Index="0" />
+                <LayoutItem Id="activity_date" RelativeSize="17.647058823529413" Index="1" />
+                <LayoutItem Id="activity_id" RelativeSize="17.647058823529413" Index="2" />
+                <LayoutItem Id="cash_id" Index="3" RelativeSize="17.647058823529413" ViewItem="cash_id" IsNewNode="True" />
+                <LayoutItem Id="value1" ViewItem="value1" Index="4" RelativeSize="23.529411764705884" IsNewNode="True" />
                 <LayoutItem Id="accept_app_activity_id" RelativeSize="28.571428571428573" Removed="True" />
               </LayoutGroup>
-              <LayoutGroup Id="rec_Accept_App_Activity_col2" RelativeSize="50.058072009291521">
-                <LayoutItem Id="value1" RelativeSize="28.571428571428573" Index="0" />
-                <LayoutItem Id="org_value" RelativeSize="21.428571428571427" Index="1" />
-                <LayoutItem Id="currency_id" RelativeSize="50" Index="2" />
+              <LayoutGroup Id="rec_Accept_App_Activity_col2" RelativeSize="50.179856115107917">
+                <LayoutItem Id="org_value" RelativeSize="23.529411764705884" Index="0" />
+                <LayoutItem Id="value1" RelativeSize="23.529411764705884" Index="0" Removed="True" />
+                <LayoutItem Id="currency_id" RelativeSize="17.647058823529413" Index="1" />
+                <LayoutItem Id="voucher_no" Index="2" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="jour_entry_id" Index="3" RelativeSize="41.1764705882353" />
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="81.418092909535446">
+          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="78.4841075794621">
             <LayoutItem Id="AuditTrail" RelativeSize="100" />
           </LayoutGroup>
         </LayoutGroup>
@@ -1529,26 +1532,27 @@
     <DetailView Id="rec_Employer_Order_Activity_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="20.266666666666666">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="21.5158924205379">
             <LayoutGroup Id="rec_Employer_Order_Activity" Caption="Employer Order Activity" RelativeSize="100">
               <LayoutGroup Id="rec_Employer_Order_Activity_col1" RelativeSize="50">
                 <LayoutItem Id="emp_order_activity_id" RelativeSize="23.529411764705884" Index="0" Removed="True" />
-                <LayoutItem Id="rec_employer_order_id" RelativeSize="28.571428571428573" Index="0" />
-                <LayoutItem Id="activity_date" RelativeSize="21.428571428571427" Index="1" />
-                <LayoutItem Id="activity_id" RelativeSize="21.428571428571427" Index="2" />
-                <LayoutItem Id="cash_id" RelativeSize="28.571428571428573" Index="3" />
+                <LayoutItem Id="rec_employer_order_id" RelativeSize="23.529411764705884" Index="0" />
+                <LayoutItem Id="activity_date" RelativeSize="17.647058823529413" Index="1" />
+                <LayoutItem Id="activity_id" RelativeSize="17.647058823529413" Index="2" />
+                <LayoutItem Id="cash_id" RelativeSize="17.647058823529413" Index="3" />
+                <LayoutItem Id="value1" ViewItem="value1" Index="4" RelativeSize="23.529411764705884" IsNewNode="True" />
                 <LayoutItem Id="CustomName" RelativeSize="20" Removed="True" />
               </LayoutGroup>
               <LayoutGroup Id="rec_Employer_Order_Activity_col2" RelativeSize="50">
-                <LayoutItem Id="value1" RelativeSize="28.571428571428573" />
-                <LayoutItem Id="org_value" RelativeSize="21.428571428571427" />
-                <LayoutItem Id="currency_id" RelativeSize="21.428571428571427" />
-                <LayoutItem Id="voucher_no" RelativeSize="28.571428571428573" Index="3" />
-                <LayoutItem Id="jour_entry_id" RelativeSize="17.647058823529413" Removed="True" />
+                <LayoutItem Id="org_value" RelativeSize="23.529411764705884" Index="0" />
+                <LayoutItem Id="currency_id" RelativeSize="17.647058823529413" Index="1" />
+                <LayoutItem Id="voucher_no" RelativeSize="17.647058823529413" Index="2" />
+                <LayoutItem Id="jour_entry_id" ViewItem="jour_entry_id" Index="3" RelativeSize="41.1764705882353" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="value1" RelativeSize="28.571428571428573" Removed="True" />
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="79.733333333333334">
+          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="78.4841075794621">
             <LayoutItem Id="AuditTrail" RelativeSize="100" />
           </LayoutGroup>
         </LayoutGroup>

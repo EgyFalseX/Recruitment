@@ -44,7 +44,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         rec_Activity factivity_id;
         [Association(@"rec_Employer_Order_ActivityReferencesrec_Activity")]
         [DevExpress.Xpo.DisplayName(@"Activity")]
-        [DevExpress.Persistent.Validation.RuleRequiredField("rec_Employer_Order_Activity_activity_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select Activity"), DevExpress.Persistent.Base.DataSourceCriteria("[advance_activity] = False")]
+        [DevExpress.Persistent.Validation.RuleRequiredField("rec_Employer_Order_Activity_activity_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select Activity")]
         public rec_Activity activity_id
         {
             get { return factivity_id; }

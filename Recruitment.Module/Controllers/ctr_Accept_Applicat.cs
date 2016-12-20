@@ -96,25 +96,26 @@ namespace Recruitment.Module.Controllers
                     detailEmployerAccount.currency_id = objectSpace.GetObject(accJournalEntryDetail.currency_id);
                     detailEmployerAccount.entry_text = $"{detailEmployerAccount.account_id.Name} - {applicant.applicant_name} - {employer.employer_company_name}";
                     detailEmployerAccount.jour_entry_id = entry;
-                    // Create Revenue Due Entry Details
-                    acc_Journal_Entry_Detail detailRevenueDue = objectSpace.CreateObject<acc_Journal_Entry_Detail>();
-                    detailRevenueDue.account_id = accountRevenueDue; detailRevenueDue.credit = accJournalEntryDetail.debit;
-                    detailRevenueDue.debit = accJournalEntryDetail.credit;
-                    detailRevenueDue.credit_currency = accJournalEntryDetail.debit_currency;
-                    detailRevenueDue.debit_currency = accJournalEntryDetail.credit_currency;
-                    detailRevenueDue.currency_id = objectSpace.GetObject(accJournalEntryDetail.currency_id);
-                    detailRevenueDue.entry_text = $"{detailRevenueDue.account_id.Name} - {applicant.applicant_name} - {employer.employer_company_name}";
-                    detailRevenueDue.jour_entry_id = entry;
-                    // Create Customers Entry Details
-                    acc_Journal_Entry_Detail detailCustomers = objectSpace.CreateObject<acc_Journal_Entry_Detail>();
-                    detailCustomers.account_id = accountCustomers;
-                    detailCustomers.credit = accJournalEntryDetail.credit;
-                    detailCustomers.debit = accJournalEntryDetail.debit;
-                    detailCustomers.credit_currency = accJournalEntryDetail.credit_currency;
-                    detailCustomers.debit_currency = accJournalEntryDetail.debit_currency;
-                    detailCustomers.currency_id = objectSpace.GetObject(accJournalEntryDetail.currency_id);
-                    detailCustomers.entry_text = $"{detailCustomers.account_id.Name} - {applicant.applicant_name} - {employer.employer_company_name}";
-                    detailCustomers.jour_entry_id = entry;
+                    //// Create Revenue Due Entry Details
+                    //acc_Journal_Entry_Detail detailRevenueDue = objectSpace.CreateObject<acc_Journal_Entry_Detail>();
+                    //detailRevenueDue.account_id = accountRevenueDue;
+                    //detailRevenueDue.credit = accJournalEntryDetail.credit;
+                    //detailRevenueDue.debit = accJournalEntryDetail.debit;
+                    //detailRevenueDue.credit_currency = accJournalEntryDetail.credit_currency;
+                    //detailRevenueDue.debit_currency = accJournalEntryDetail.debit_currency;
+                    //detailRevenueDue.currency_id = objectSpace.GetObject(accJournalEntryDetail.currency_id);
+                    //detailRevenueDue.entry_text = $"{detailRevenueDue.account_id.Name} - {applicant.applicant_name} - {employer.employer_company_name}";
+                    //detailRevenueDue.jour_entry_id = entry;
+                    //// Create Customers Entry Details
+                    //acc_Journal_Entry_Detail detailCustomers = objectSpace.CreateObject<acc_Journal_Entry_Detail>();
+                    //detailCustomers.account_id = accountCustomers;
+                    //detailCustomers.credit = accJournalEntryDetail.debit;
+                    //detailCustomers.debit = accJournalEntryDetail.credit;
+                    //detailCustomers.credit_currency = accJournalEntryDetail.debit_currency;
+                    //detailCustomers.debit_currency = accJournalEntryDetail.credit_currency;
+                    //detailCustomers.currency_id = objectSpace.GetObject(accJournalEntryDetail.currency_id);
+                    //detailCustomers.entry_text = $"{detailCustomers.account_id.Name} - {applicant.applicant_name} - {employer.employer_company_name}";
+                    //detailCustomers.jour_entry_id = entry;
                 }
             }
             // Rollback if didn't find any Adv Rev            

@@ -43,7 +43,10 @@ namespace Recruitment.Module {
             //Register Predefined Reports
             PredefinedReportsUpdater reportsUpdater = new PredefinedReportsUpdater(Application, objectSpace, versionFromDB) {UseMultipleUpdaters = true};
             reportsUpdater.AddPredefinedReport<rec_Applicant_01>("Applicant Information", typeof (rec_Applicant), typeof (RepParamObjCri));
-            reportsUpdater.AddPredefinedReport<rec_Rep_Activity_01>("Employer Activity", typeof(sp_Activity_01Result), typeof(RepParam_rec_Rep_Activity_01));
+            reportsUpdater.AddPredefinedReport<rec_Rep_Activity_01>("Employer Activity - Per Employer And Activity", typeof(sp_Activity_01Result), typeof(RepParam_rec_Rep_Activity_01));
+            reportsUpdater.AddPredefinedReport<rec_Rep_Activity_01A>("Employer Activity - Per Employer", typeof(sp_Activity_01Result), typeof(RepParam_rec_Rep_Activity_01A));
+            reportsUpdater.AddPredefinedReport<rec_Rep_Activity_02>("Employer Activity - Detailed", typeof(sp_Activity_02Result), typeof(RepParam_rec_Rep_Activity_02));
+            reportsUpdater.AddPredefinedReport<rec_Rep_Activity_03>("Employer Activity - Per Applicant", typeof(sp_Activity_03Result), typeof(RepParam_rec_Rep_Activity_03));
             return reportsUpdater;
         }
 
@@ -80,7 +83,6 @@ namespace Recruitment.Module {
                 e.Criteria = CriteriaOperator.Parse("AssignedTo is null || AssignedTo.Oid == CurrentUserId()");
             }
         }
-
 
     }
 

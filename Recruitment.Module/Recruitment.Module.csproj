@@ -255,6 +255,10 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Doc_Info.Designer.cs">
       <DependentUpon>rec_Doc_Info.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employee_Activity.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employee_Activity.Designer.cs">
+      <DependentUpon>rec_Employee_Activity.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer.Designer.cs">
       <DependentUpon>rec_Employer.cs</DependentUpon>
@@ -398,6 +402,12 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\sp_Activity_01Result.cs">
       <DependentUpon>StoredProcHelper.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\sp_Activity_02Result.cs">
+      <DependentUpon>StoredProcHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\sp_Activity_03Result.cs">
+      <DependentUpon>StoredProcHelper.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\StoredProcHelper.cs" />
     <Compile Include="BusinessObjects\dc_Msg.cs" />
     <Compile Include="BusinessObjects\Notification\Notify.cs" />
@@ -459,6 +469,24 @@
       <DependentUpon>Module.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\rec_Rep_Activity_03.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rec_Rep_Activity_03.Designer.cs">
+      <DependentUpon>rec_Rep_Activity_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rec_Rep_Activity_02.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rec_Rep_Activity_02.Designer.cs">
+      <DependentUpon>rec_Rep_Activity_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rec_Rep_Activity_01A.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rec_Rep_Activity_01A.Designer.cs">
+      <DependentUpon>rec_Rep_Activity_01A.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\rec_Rep_Activity_01.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -474,6 +502,9 @@
     <Compile Include="Report\ReportDataX.cs" />
     <Compile Include="Report\ReportsStorageX.cs" />
     <Compile Include="Report\RepParamObjCri.cs" />
+    <Compile Include="Report\RepParam_rec_Rep_Activity_03.cs" />
+    <Compile Include="Report\RepParam_rec_Rep_Activity_02.cs" />
+    <Compile Include="Report\RepParam_rec_Rep_Activity_01A.cs" />
     <Compile Include="Report\RepParam_rec_Rep_Activity_01.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -500,6 +531,15 @@
       <DependentUpon>Module.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Report\rec_Rep_Activity_03.resx">
+      <DependentUpon>rec_Rep_Activity_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rec_Rep_Activity_02.resx">
+      <DependentUpon>rec_Rep_Activity_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rec_Rep_Activity_01A.resx">
+      <DependentUpon>rec_Rep_Activity_01A.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\rec_Rep_Activity_01.resx">
       <DependentUpon>rec_Rep_Activity_01.cs</DependentUpon>
     </EmbeddedResource>

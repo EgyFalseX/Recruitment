@@ -51,8 +51,6 @@ namespace Accounting {
         private static void AddPredefindreports(PredefinedReportsUpdater reportsUpdater)
         {
             reportsUpdater.AddPredefinedReport<acc_Rep_Trial_Balance>("Trial Balance", typeof (sp_Trial_BalanceResult), typeof (RepParam_acc_Rep_Trial_Balance));
-            //reportsUpdater.AddPredefinedReport<acc_Rep_01>("Account Balance", typeof (sp_acc_01Result), typeof (RepParam_acc_Rep_01));
-            //reportsUpdater.AddPredefinedReport<acc_Rep_02>("Account Balance per cost center", typeof(sp_acc_02Result), typeof(RepParam_acc_Rep_02));
             reportsUpdater.AddPredefinedReport<acc_Rep_Income_Statement>("Income Statement", typeof(sp_Income_StatementResult), typeof (RepParam_acc_Rep_Income_Statement));
             reportsUpdater.AddPredefinedReport<acc_Rep_Balance_Sheet>("Balance Sheet", typeof(sp_Balance_SheetResult), typeof(RepParam_acc_Rep_Balance_Sheet));
             reportsUpdater.AddPredefinedReport<acc_Rep_Costcenter_Balance>("Cost Center Balance", typeof (acc_Journal_Entry_Detail), typeof (RepParam_acc_Rep_Costcenter_Balance));
@@ -62,7 +60,6 @@ namespace Accounting {
             reportsUpdater.AddPredefinedReport<acc_Rep_Account_Journals_SubAcc>("Account Journals (Sub Account)", typeof(sp_acc_Account_Journals_SubAccResult), typeof(RepParam_acc_Rep_Account_Journals_SubAcc));
             reportsUpdater.AddPredefinedReport<acc_Rep_Account_Journals_SubAcc_Consolidated>("Account Journals Consolidated (Sub Account)", typeof(sp_acc_Account_Journals_SubAccResult), typeof(RepParam_acc_Rep_Account_Journals_SubAcc));
             reportsUpdater.AddPredefinedReport<acc_Rep_Account_Journals_SubAcc_Currency_Consolidated>("Account Journals Consolidated (Sub Account) Per Currency", typeof(sp_acc_Account_Journals_SubAcc_currencyResult), typeof(RepParam_acc_Rep_Account_Journals_SubAcc_Currency));
-            reportsUpdater.AddPredefinedReport<acc_Rep_Account_Journals_Fee>("Account Journals Vs Fee", typeof(sp_acc_Account_Journals_FeeResult), typeof(RepParam_acc_Rep_Account_Journals_Fee));
         }
         public override void Setup(XafApplication application) {
             base.Setup(application);

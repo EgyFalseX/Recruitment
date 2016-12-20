@@ -14,7 +14,7 @@ using Recruitment.Module.BusinessObjects.Recruitment;
 namespace Recruitment.Module.Report
 {
     [DomainComponent]
-    [DevExpress.ExpressApp.DC.XafDisplayName("Employer Activity Parameters")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Employer Activity - Per Employer And Activity Parameters")]
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113594.aspx.
     // ReSharper disable once InconsistentNaming
     public class RepParam_rec_Rep_Activity_01 : ReportParametersObjectBase

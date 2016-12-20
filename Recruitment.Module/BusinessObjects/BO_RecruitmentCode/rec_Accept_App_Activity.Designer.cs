@@ -88,6 +88,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<Accounting.BusinessObjects.Recruitment.acc_Currency>("currency_id", ref fcurrency_id, value); }
         }
         Accounting.BusinessObjects.Recruitment.acc_Journal_Entry fjour_entry_id;
+        [Indexed(Name = @"ijour_entry_id_rec_Accept_App_Activity")]
         [DevExpress.Xpo.DisplayName(@"Journal Entry")]
         public Accounting.BusinessObjects.Recruitment.acc_Journal_Entry jour_entry_id
         {
@@ -101,6 +102,13 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         {
             get { return fvoucher_no; }
             set { SetPropertyValue<string>("voucher_no", ref fvoucher_no, value); }
+        }
+        string fdescription;
+        [Size(1000)]
+        public string description
+        {
+            get { return fdescription; }
+            set { SetPropertyValue<string>("description", ref fdescription, value); }
         }
     }
 

@@ -38,5 +38,43 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             dataView.PopulateProperties(session.GetClassInfo(typeof(sp_Activity_01Result)));
             dataView.LoadData(sprocData);
         }
+        public static DevExpress.Xpo.DB.SelectedData Execsp_Activity_03(Session session, DateTime StartDate, DateTime EndDate, int employer_id, int applicant_id, bool Unbalanced)
+        {
+            return session.ExecuteSproc("sp_Activity_03", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(employer_id), new OperandValue(applicant_id), new OperandValue(Unbalanced));
+        }
+        public static System.Collections.Generic.ICollection<sp_Activity_03Result> Execsp_Activity_03IntoObjects(Session session, DateTime StartDate, DateTime EndDate, int employer_id, int applicant_id, bool Unbalanced)
+        {
+            return session.GetObjectsFromSproc<sp_Activity_03Result>("sp_Activity_03", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(employer_id), new OperandValue(applicant_id), new OperandValue(Unbalanced));
+        }
+        public static XPDataView Execsp_Activity_03IntoDataView(Session session, DateTime StartDate, DateTime EndDate, int employer_id, int applicant_id, bool Unbalanced)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Activity_03", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(employer_id), new OperandValue(applicant_id), new OperandValue(Unbalanced));
+            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_Activity_03Result)), sprocData);
+        }
+        public static void Execsp_Activity_03IntoDataView(XPDataView dataView, Session session, DateTime StartDate, DateTime EndDate, int employer_id, int applicant_id, bool Unbalanced)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Activity_03", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(employer_id), new OperandValue(applicant_id), new OperandValue(Unbalanced));
+            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_Activity_03Result)));
+            dataView.LoadData(sprocData);
+        }
+        public static DevExpress.Xpo.DB.SelectedData Execsp_Activity_02(Session session, DateTime StartDate, DateTime EndDate, int employer_id, int applicant_id)
+        {
+            return session.ExecuteSproc("sp_Activity_02", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(employer_id), new OperandValue(applicant_id));
+        }
+        public static System.Collections.Generic.ICollection<sp_Activity_02Result> Execsp_Activity_02IntoObjects(Session session, DateTime StartDate, DateTime EndDate, int employer_id, int applicant_id)
+        {
+            return session.GetObjectsFromSproc<sp_Activity_02Result>("sp_Activity_02", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(employer_id), new OperandValue(applicant_id));
+        }
+        public static XPDataView Execsp_Activity_02IntoDataView(Session session, DateTime StartDate, DateTime EndDate, int employer_id, int applicant_id)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Activity_02", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(employer_id), new OperandValue(applicant_id));
+            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_Activity_02Result)), sprocData);
+        }
+        public static void Execsp_Activity_02IntoDataView(XPDataView dataView, Session session, DateTime StartDate, DateTime EndDate, int employer_id, int applicant_id)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Activity_02", new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(employer_id), new OperandValue(applicant_id));
+            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_Activity_02Result)));
+            dataView.LoadData(sprocData);
+        }
     }
 }

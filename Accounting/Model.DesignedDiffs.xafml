@@ -93,25 +93,6 @@
         <Member Name="year_start_date" Caption="Start Date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" EditMaskType="DateTime" />
       </OwnMembers>
     </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.sp_acc_01Result" Caption="Account Balance Set">
-      <OwnMembers>
-        <Member Name="account_id" Caption="Account Id" />
-        <Member Name="account_name" Caption="Account name" />
-        <Member Name="credit" Caption="Credit" />
-        <Member Name="debit" Caption="Debit" />
-        <Member Name="entry_date" Caption="Entry date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" />
-      </OwnMembers>
-    </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.sp_acc_02Result" Caption="Account Balance Per Cost Center Set">
-      <OwnMembers>
-        <Member Name="account_code" Caption="Account code" />
-        <Member Name="account_name" Caption="Account name" />
-        <Member Name="costcenter_name" Caption="Cost center" />
-        <Member Name="entry_date" Caption="Date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" />
-        <Member Name="Value" Caption="القيمة" DisplayFormat="{0:#,###,##0.##}" EditMask="#,###,##0.##" />
-      </OwnMembers>
-    </Class>
-    <Class Name="Accounting.BusinessObjects.Recruitment.sp_acc_Account_Journals_FeeResult" Caption="Account Journals Fee Set" />
     <Class Name="Accounting.BusinessObjects.Recruitment.sp_acc_Account_Journals_SubAcc_currencyResult" Caption="Account Journals (Sub Account) Currency Set" />
     <Class Name="Accounting.BusinessObjects.Recruitment.sp_acc_Account_Journals_SubAccResult" Caption="Account Journals (Sub Account) Set" />
     <Class Name="Accounting.BusinessObjects.Recruitment.sp_acc_Account_JournalsResult" Caption="Account Journals Set" />
