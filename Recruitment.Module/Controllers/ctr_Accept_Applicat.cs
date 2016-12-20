@@ -56,12 +56,12 @@ namespace Recruitment.Module.Controllers
             acc_Account accountRevenueDue = SqlOp.GetOptionAccount(objectSpace, Typez.OptionRevenueDue);
             //acc_Option optionCustomers = objectSpace.GetObjectByKey<acc_Option>(Core.Typez.OptionCustomers);
             //acc_Account accountCustomers = objectSpace.GetObjectByKey<acc_Account>(Convert.ToInt32(optionCustomers.acc_option_value));
-
+            
             // Create Entry
-            acc_Journal_Entry entry = objectSpace.CreateObject<acc_Journal_Entry>();
-            entry.closed = true;
-            entry.entry_date = Core.SqlOp.GetServerDateTime(ObjectSpace);
-            entry.entry_text = $"{employer.account_id.account_name} - {applicant.applicant_name} - {employer.employer_company_name}";
+            //acc_Journal_Entry entry = objectSpace.CreateObject<acc_Journal_Entry>();
+            //entry.closed = true;
+            //entry.entry_date = 
+            //entry.entry_text = $"{employer.account_id.account_name} - {applicant.applicant_name} - {employer.employer_company_name}";
             // Load Activities
             IList<rec_Accept_App_Activity> activities =
                 objectSpace.GetObjects<rec_Accept_App_Activity>(
@@ -70,6 +70,7 @@ namespace Recruitment.Module.Controllers
                         accepted.rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id
                             .rec_employer_order_detail_suggest_applicat_id, BinaryOperatorType.Equal));
             // Search activities for Adv Rev and create details entry
+            double value = 0;
             foreach (rec_Accept_App_Activity recAcceptAppActivity in activities)
             {
                 if (recAcceptAppActivity.jour_entry_id == null)
@@ -78,60 +79,38 @@ namespace Recruitment.Module.Controllers
                 {
                     if (accJournalEntryDetail.account_id.account_id != Convert.ToInt32(accountAdvanceRevenue.account_id))
                         continue;
-                    // Create Advance Revenue Entry Details
-                    acc_Journal_Entry_Detail detailAdvanceRevenue = objectSpace.CreateObject<acc_Journal_Entry_Detail>();
-                    detailAdvanceRevenue.account_id = accountAdvanceRevenue;
-                    detailAdvanceRevenue.credit = accJournalEntryDetail.debit;
-                    detailAdvanceRevenue.debit = accJournalEntryDetail.credit;
-                    detailAdvanceRevenue.credit_currency = accJournalEntryDetail.debit_currency;
-                    detailAdvanceRevenue.debit_currency = accJournalEntryDetail.credit_currency;
-                    detailAdvanceRevenue.currency_id = objectSpace.GetObject(accJournalEntryDetail.currency_id);
-                    detailAdvanceRevenue.entry_text = $"{accountAdvanceRevenue.account_name} - {applicant.applicant_name} - {employer.employer_company_name}";
-                    detailAdvanceRevenue.jour_entry_id = entry;
-                    // Create Revenue Due Entry Details
-                    acc_Journal_Entry_Detail detailaccountRevenueDue = objectSpace.CreateObject<acc_Journal_Entry_Detail>();
-                    detailaccountRevenueDue.account_id = objectSpace.GetObject(accountRevenueDue);
-                    detailaccountRevenueDue.credit = accJournalEntryDetail.credit;
-                    detailaccountRevenueDue.debit = accJournalEntryDetail.debit;
-                    detailaccountRevenueDue.credit_currency = accJournalEntryDetail.credit_currency;
-                    detailaccountRevenueDue.debit_currency = accJournalEntryDetail.debit_currency;
-                    detailaccountRevenueDue.currency_id = objectSpace.GetObject(accJournalEntryDetail.currency_id);
-                    detailaccountRevenueDue.entry_text = $"{detailaccountRevenueDue.account_id.Name} - {applicant.applicant_name} - {employer.employer_company_name}";
-                    detailaccountRevenueDue.jour_entry_id = entry;
-                    //// Create Revenue Due Entry Details
-                    //acc_Journal_Entry_Detail detailRevenueDue = objectSpace.CreateObject<acc_Journal_Entry_Detail>();
-                    //detailRevenueDue.account_id = accountRevenueDue;
-                    //detailRevenueDue.credit = accJournalEntryDetail.credit;
-                    //detailRevenueDue.debit = accJournalEntryDetail.debit;
-                    //detailRevenueDue.credit_currency = accJournalEntryDetail.credit_currency;
-                    //detailRevenueDue.debit_currency = accJournalEntryDetail.debit_currency;
-                    //detailRevenueDue.currency_id = objectSpace.GetObject(accJournalEntryDetail.currency_id);
-                    //detailRevenueDue.entry_text = $"{detailRevenueDue.account_id.Name} - {applicant.applicant_name} - {employer.employer_company_name}";
-                    //detailRevenueDue.jour_entry_id = entry;
-                    //// Create Customers Entry Details
-                    //acc_Journal_Entry_Detail detailCustomers = objectSpace.CreateObject<acc_Journal_Entry_Detail>();
-                    //detailCustomers.account_id = accountCustomers;
-                    //detailCustomers.credit = accJournalEntryDetail.debit;
-                    //detailCustomers.debit = accJournalEntryDetail.credit;
-                    //detailCustomers.credit_currency = accJournalEntryDetail.debit_currency;
-                    //detailCustomers.debit_currency = accJournalEntryDetail.credit_currency;
-                    //detailCustomers.currency_id = objectSpace.GetObject(accJournalEntryDetail.currency_id);
-                    //detailCustomers.entry_text = $"{detailCustomers.account_id.Name} - {applicant.applicant_name} - {employer.employer_company_name}";
-                    //detailCustomers.jour_entry_id = entry;
+                    value += accJournalEntryDetail.credit;
                 }
             }
+            rec_Activity activityRevenueDue = objectSpace.FindObject<rec_Activity>(
+                        CriteriaOperator.And(CriteriaOperator.Parse("activity_type_id = ?", (int)Typez.enum_rec_Activity_Type.BudgetRevenue),
+                        CriteriaOperator.Parse("account_id = ?", accountRevenueDue.account_id)));
+            rec_Cash cashAdvanceRevenue = objectSpace.FindObject<rec_Cash>(CriteriaOperator.Parse("account_id = ?", accountAdvanceRevenue.account_id));
+            rec_Accept_App_Activity activity = objectSpace.CreateObject<rec_Accept_App_Activity>();
+            activity.rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id =
+                accepted;
+            activity.activity_date = Core.SqlOp.GetServerDateTime(ObjectSpace);
+            activity.activity_id = activityRevenueDue;
+            activity.cash_id = cashAdvanceRevenue;
+            activity.value1 = value;
+            activity.org_value = 0;
+            activity.description = "Start Activity";
+
             // Rollback if didn't find any Adv Rev            
-            if (entry.acc_Journal_Entry_Details == null || entry.acc_Journal_Entry_Details.Count == 0)
+            if (value > 0)
+            {
+                objectSpace.CommitChanges();
+            }
+            else
             {
                 objectSpace.Rollback();
                 IObjectSpace objectSpace2 = Application.CreateObjectSpace();
-                rec_Employer_Order_Detail_Accept_Applicat accepted2 = objectSpace2.GetObject((rec_Employer_Order_Detail_Accept_Applicat)e.SelectedObjects[0]);
+                rec_Employer_Order_Detail_Accept_Applicat accepted2 =
+                    objectSpace2.GetObject((rec_Employer_Order_Detail_Accept_Applicat)e.SelectedObjects[0]);
                 accepted2.start_activity = true;
                 objectSpace2.CommitChanges();
             }
-            else
-                objectSpace.CommitChanges();
-            
+
             ObjectSpace.Refresh();
         }
 
