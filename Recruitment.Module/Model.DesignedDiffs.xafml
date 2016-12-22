@@ -2533,5 +2533,83 @@
         <ColumnInfo Id="IsPredefined" Index="2" Width="86" CaptionForFalse="Predefined" CaptionForTrue="User Custom" />
       </Columns>
     </ListView>
+    <DetailView Id="RepParam_rec_Rep_Activity_01_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="RepParam_rec_Rep_Activity_01" Caption="RepParam_rec_Rep_Activity_01" RelativeSize="100">
+              <LayoutItem Id="Employer" RelativeSize="3.9119804400977993" />
+              <LayoutGroup Id="Auto459136b3-1ee5-476b-8b98-3d2bec840d39" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="96.088019559902207" IsNewNode="True">
+                <LayoutItem Id="Startdate" ViewItem="Startdate" Index="0" RelativeSize="49.917627677100491" IsNewNode="True" />
+                <LayoutItem Id="Enddate" ViewItem="Enddate" Index="1" RelativeSize="50.082372322899509" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Enddate" Removed="True" />
+              <LayoutItem Id="Startdate" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RepParam_rec_Rep_Activity_01A_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="RepParam_rec_Rep_Activity_01A" Direction="Horizontal" RelativeSize="100">
+              <LayoutItem Id="Startdate" RelativeSize="49.917627677100491" />
+              <LayoutItem Id="Enddate" RelativeSize="50.082372322899509" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RepParam_rec_Rep_Activity_02_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="RepParam_rec_Rep_Activity_02" RelativeSize="100">
+              <LayoutItem Id="Employer" RelativeSize="3.9119804400977993" />
+              <LayoutItem Id="Applicant" RelativeSize="2.93398533007335" />
+              <LayoutGroup Id="Auto136fbb11-d30c-4995-b8c6-7f25a9fc83be" ShowCaption="False" Caption="" Direction="Horizontal" Index="2" RelativeSize="93.154034229828852" IsNewNode="True">
+                <LayoutItem Id="Startdate" ViewItem="Startdate" Index="0" RelativeSize="49.917627677100491" IsNewNode="True" />
+                <LayoutItem Id="Enddate" ViewItem="Enddate" Index="1" RelativeSize="50.082372322899509" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Enddate" Removed="True" />
+              <LayoutItem Id="Startdate" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RepParam_rec_Rep_Activity_03_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100" Direction="Vertical" Caption="SimpleEditors">
+            <LayoutItem Id="Employer" ViewItem="Employer" Index="0" RelativeSize="3.9119804400977993" IsNewNode="True" />
+            <LayoutItem Id="Applicant" ViewItem="Applicant" Index="1" RelativeSize="2.93398533007335" IsNewNode="True" />
+            <LayoutGroup Id="Auto2e048ceb-96d1-44e5-a1b9-e4254cb63f20" ShowCaption="False" Caption="" Direction="Horizontal" Index="2" RelativeSize="2.93398533007335" IsNewNode="True">
+              <LayoutItem Id="Startdate" ViewItem="Startdate" Index="0" RelativeSize="49.917627677100491" IsNewNode="True" />
+              <LayoutItem Id="Enddate" ViewItem="Enddate" Index="1" RelativeSize="50.082372322899509" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutItem Id="UnBalance" ViewItem="UnBalance" Index="3" RelativeSize="90.2200488997555" IsNewNode="True" />
+            <LayoutGroup Id="RepParam_rec_Rep_Activity_03" RelativeSize="100" Removed="True">
+              <LayoutGroup Id="Auto85ac42aa-2118-4750-93ac-41ff10a7d7fd" ShowCaption="False" Caption="" Index="0" RelativeSize="50.137741046831955" IsNewNode="True">
+                <LayoutItem Id="Employer" ViewItem="Employer" Index="0" RelativeSize="4.5197740112994351" IsNewNode="True" />
+                <LayoutItem Id="Applicant" ViewItem="Applicant" Index="1" RelativeSize="3.3898305084745761" IsNewNode="True" />
+                <LayoutItem Id="Startdate" ViewItem="Startdate" Index="2" RelativeSize="92.090395480226" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Auto9d03dfc3-3415-4237-8f62-a50a61cfc4c8" ShowCaption="False" Caption="" Index="1" RelativeSize="49.862258953168045" IsNewNode="True">
+                <LayoutItem Id="Enddate" ViewItem="Enddate" Index="0" RelativeSize="4.5197740112994351" IsNewNode="True" />
+                <LayoutItem Id="UnBalance" ViewItem="UnBalance" Index="1" RelativeSize="95.480225988700568" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="RepParam_rec_Rep_Activity_03_col1" Removed="True" />
+              <LayoutGroup Id="RepParam_rec_Rep_Activity_03_col2" RelativeSize="49.862258953168045" Removed="True">
+                <LayoutItem Id="Enddate" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="UnBalance" RelativeSize="95.480225988700568" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
   </Views>
 </Application>
