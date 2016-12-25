@@ -408,8 +408,8 @@
     <DetailView Id="acc_Journal_Entry_Detail_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="21.149144254278728">
-            <LayoutGroup Id="acc_Journal_Entry_Detail" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="23.066666666666666">
+            <LayoutGroup Id="acc_Journal_Entry_Detail" RelativeSize="100" Caption="Journal Entry Detail">
               <LayoutGroup Id="acc_Journal_Entry_Detail_col1" RelativeSize="50">
                 <LayoutItem Id="jour_entry_detail_id" RelativeSize="23.529411764705884" Index="0" Removed="True" />
                 <LayoutItem Id="jour_entry_id" RelativeSize="23.529411764705884" Index="0" />
@@ -428,14 +428,14 @@
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="SizeableEditors" RelativeSize="7.7017114914425431" Direction="Horizontal" Caption="Description">
-            <LayoutItem Id="description" RelativeSize="80.515463917525778" />
-            <LayoutGroup Id="Auto65b948e5-d494-445a-b88d-8bc5a53d4da7" ShowCaption="False" Caption="" Index="1" RelativeSize="19.484536082474225" IsNewNode="True">
-              <LayoutItem Id="jour_entry_detail_id" ViewItem="jour_entry_detail_id" Index="0" RelativeSize="42.857142857142854" IsNewNode="True" />
-              <LayoutItem Id="JournalCaption" ViewItem="JournalCaption" Index="1" RelativeSize="57.142857142857146" IsNewNode="True" />
+          <LayoutGroup Id="SizeableEditors" RelativeSize="8.4" Direction="Horizontal" Caption="Description">
+            <LayoutItem Id="description" RelativeSize="74.8" />
+            <LayoutGroup Id="Auto65b948e5-d494-445a-b88d-8bc5a53d4da7" ShowCaption="False" Caption="Auto65b948e5-d494-445a-b88d-8bc5a53d4da7(17)" Index="1" RelativeSize="25.2" IsNewNode="True">
+              <LayoutItem Id="jour_entry_detail_id" ViewItem="jour_entry_detail_id" Index="0" RelativeSize="47.61904761904762" IsNewNode="True" />
+              <LayoutItem Id="JournalCaption" ViewItem="JournalCaption" Index="1" RelativeSize="52.38095238095238" IsNewNode="True" />
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="71.149144254278724">
+          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="68.533333333333331">
             <LayoutItem Id="AuditTrail" RelativeSize="100" />
           </LayoutGroup>
         </LayoutGroup>
@@ -518,19 +518,23 @@
     <DetailView Id="acc_Opening_Balance_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="13.866666666666667">
-            <LayoutGroup Id="acc_Opening_Balance" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="18.581907090464547">
+            <LayoutGroup Id="acc_Opening_Balance" RelativeSize="100" Caption="Opening Balance">
               <LayoutGroup Id="acc_Opening_Balance_col1" RelativeSize="50">
-                <LayoutItem Id="account_id" Index="0" RelativeSize="50" />
-                <LayoutItem Id="year_id" Index="1" RelativeSize="50" />
+                <LayoutItem Id="account_id" Index="0" RelativeSize="28.571428571428573" />
+                <LayoutItem Id="year_id" Index="1" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="credit" Index="2" RelativeSize="50" />
                 <LayoutItem Id="opening_balance_id" Removed="True" />
               </LayoutGroup>
               <LayoutGroup Id="acc_Opening_Balance_col2" RelativeSize="50">
-                <LayoutItem Id="debit" RelativeSize="50" />
+                <LayoutItem Id="debit" RelativeSize="28.571428571428573" />
+                <LayoutItem Id="credit_currency" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="debit_currency" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="currency_id" RelativeSize="28.571428571428573" />
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="86.13333333333334">
+          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="81.418092909535446">
             <LayoutItem Id="AuditTrail" RelativeSize="100" />
           </LayoutGroup>
         </LayoutGroup>
@@ -698,6 +702,190 @@
               <LayoutItem Id="Enddate" Removed="True" />
               <LayoutItem Id="Startdate" Removed="True" />
             </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="sp_acc_Account_Journals_CurrencyResult_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="sp_acc_Account_Journals_CurrencyResult" Caption="Result" RelativeSize="100">
+              <LayoutGroup Id="sp_acc_Account_Journals_CurrencyResult_col1" RelativeSize="50">
+                <LayoutItem Id="entry_text" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="costcenter_name" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="account_name" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="entry_date" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="voucher_no" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="factor" RelativeSize="81.920903954802256" />
+              </LayoutGroup>
+              <LayoutGroup Id="sp_acc_Account_Journals_CurrencyResult_col2" RelativeSize="50">
+                <LayoutItem Id="debit" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="credit" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="Balance" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="debit_currency" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="credit_currency" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="Balance_currency" RelativeSize="81.920903954802256" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="sp_acc_Account_Journals_SubAcc_currencyResult_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="sp_acc_Account_Journals_SubAcc_currencyResult" Caption="Result" RelativeSize="100">
+              <LayoutGroup Id="sp_acc_Account_Journals_SubAcc_currencyResult_col1" RelativeSize="50">
+                <LayoutItem Id="level_id" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="entry_text" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="costcenter_name" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="account_name" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="entry_date" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="voucher_no" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="factor" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="debit" RelativeSize="75.141242937853107" />
+              </LayoutGroup>
+              <LayoutGroup Id="sp_acc_Account_Journals_SubAcc_currencyResult_col2" RelativeSize="50">
+                <LayoutItem Id="credit" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="Balance" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="debit_currency" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="credit_currency" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="Balance_currency" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="currency_id" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="currency_name" RelativeSize="78.531073446327682" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="sp_acc_Account_Journals_SubAccResult_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="sp_acc_Account_Journals_SubAccResult" Caption="Result" RelativeSize="100">
+              <LayoutGroup Id="sp_acc_Account_Journals_SubAccResult_col1" RelativeSize="50">
+                <LayoutItem Id="level_id" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="entry_text" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="costcenter_name" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="account_name" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="entry_date" RelativeSize="85.31073446327683" />
+              </LayoutGroup>
+              <LayoutGroup Id="sp_acc_Account_Journals_SubAccResult_col2" RelativeSize="50">
+                <LayoutItem Id="voucher_no" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="factor" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="debit" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="credit" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="Balance" RelativeSize="85.31073446327683" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="sp_acc_Account_JournalsResult_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="sp_acc_Account_JournalsResult" Caption="Result" RelativeSize="100">
+              <LayoutGroup Id="sp_acc_Account_JournalsResult_col1" RelativeSize="50">
+                <LayoutItem Id="entry_text" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="costcenter_name" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="account_name" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="entry_date" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="voucher_no" RelativeSize="85.31073446327683" />
+              </LayoutGroup>
+              <LayoutGroup Id="sp_acc_Account_JournalsResult_col2" RelativeSize="50">
+                <LayoutItem Id="factor" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="debit" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="credit" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="Balance" RelativeSize="88.700564971751419" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="sp_Balance_SheetResult_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="sp_Balance_SheetResult" Caption="Result" RelativeSize="100">
+              <LayoutGroup Id="sp_Balance_SheetResult_col1" RelativeSize="50">
+                <LayoutItem Id="Parent_Id" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="account_name" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="NetValue" RelativeSize="92.090395480226" />
+              </LayoutGroup>
+              <LayoutGroup Id="sp_Balance_SheetResult_col2" RelativeSize="50">
+                <LayoutItem Id="Parent_Name" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="appear_order" RelativeSize="95.480225988700568" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="sp_Income_StatementResult_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="sp_Income_StatementResult" Caption="Result" RelativeSize="100">
+              <LayoutGroup Id="sp_Income_StatementResult_col1" RelativeSize="50">
+                <LayoutItem Id="Parent_Id" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="account_name" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="NetValue" RelativeSize="92.090395480226" />
+              </LayoutGroup>
+              <LayoutGroup Id="sp_Income_StatementResult_col2" RelativeSize="50">
+                <LayoutItem Id="acc_nature_name" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="appear_order" RelativeSize="95.480225988700568" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="sp_Trial_BalanceResult_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="sp_Trial_BalanceResult" Caption="Result" RelativeSize="100">
+              <LayoutGroup Id="sp_Trial_BalanceResult_col1" RelativeSize="50">
+                <LayoutItem Id="Parent_Id" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="account_name" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="Entry_debit" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="Entry_credit" RelativeSize="88.700564971751419" />
+              </LayoutGroup>
+              <LayoutGroup Id="sp_Trial_BalanceResult_col2" RelativeSize="50">
+                <LayoutItem Id="OB_debit" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="OB_credit" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="appear_order" RelativeSize="92.090395480226" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="vacc_AppCompany_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="17.066666666666666">
+            <LayoutGroup Id="vacc_AppCompany" Caption="Information" RelativeSize="100">
+              <LayoutGroup Id="vacc_AppCompany_col1" RelativeSize="50">
+                <LayoutItem Id="company_id" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="company_name" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="company_address" RelativeSize="36.363636363636367" />
+              </LayoutGroup>
+              <LayoutGroup Id="vacc_AppCompany_col2" RelativeSize="50">
+                <LayoutItem Id="company_mobile" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="company_phone" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="company_fax" RelativeSize="36.363636363636367" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="company_logo_Group" Direction="Vertical" RelativeSize="82.933333333333337">
+            <LayoutItem Id="company_logo" RelativeSize="100" />
           </LayoutGroup>
         </LayoutGroup>
       </Layout>

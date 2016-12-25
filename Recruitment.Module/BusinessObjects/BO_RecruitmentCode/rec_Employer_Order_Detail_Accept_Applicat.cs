@@ -11,7 +11,7 @@ using DevExpress.ExpressApp.ConditionalAppearance;
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
-    [DevExpress.ExpressApp.DC.XafDisplayName("Accepted Applicat")]
+    [DevExpress.ExpressApp.DC.XafDisplayName("Accepted Applicant")]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("CustomName")]
     [Appearance("Apr_Status", TargetItems = "*", Criteria = "frec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id IS NOT NULL " +
                                                                                  " And frec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id.rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id <> 1 " +
