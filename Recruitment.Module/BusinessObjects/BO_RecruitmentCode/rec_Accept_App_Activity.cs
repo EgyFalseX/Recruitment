@@ -49,7 +49,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
                     .rec_employer_order_detail_rec_employer_order_id.rec_employer_order_employer_id
                     .employer_company_name;
 
-            string entryText = $"{activity_id.description} - {applicantName} - {employerName}";
+            string entryText = $"{activity_id.description} - {applicantName} - {employerName} - {description}";
 
             acc_Journal_Entry entry = new acc_Journal_Entry(Session)
             {
@@ -130,7 +130,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
                     .rec_employer_order_detail_rec_employer_order_id.rec_employer_order_employer_id
                     .employer_company_name;
 
-            string entryText = $"{activity_id.description} - {applicantName} - {employerName}";
+            string entryText = $"{activity_id.description} - {applicantName} - {employerName} - {description}";
             //Edit Entry
             acc_Journal_Entry entry = Session.GetObjectByKey<acc_Journal_Entry>(jour_entry_id.jour_entry_id);
             entry.entry_date = activity_date;

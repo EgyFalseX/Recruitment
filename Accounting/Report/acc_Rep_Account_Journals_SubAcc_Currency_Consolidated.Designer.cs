@@ -65,6 +65,7 @@
             this.xrTableCellCategory = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.dsCompany = new DevExpress.Persistent.Base.ReportsV2.CollectionDataSource();
             this.xrpbLogo = new DevExpress.XtraReports.UI.XRPictureBox();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.xrPageInfoUser = new DevExpress.XtraReports.UI.XRPageInfo();
@@ -91,13 +92,13 @@
             this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
             this.calcTotal = new DevExpress.XtraReports.UI.CalculatedField();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.dsCompany = new DevExpress.Persistent.Base.ReportsV2.CollectionDataSource();
             this.dsMain = new DevExpress.Persistent.Base.ReportsV2.CollectionDataSource();
+            this.calcTotal_currency = new DevExpress.XtraReports.UI.CalculatedField();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -393,6 +394,12 @@
             this.xrLabel1.Text = "xrLabel1";
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
+            // dsCompany
+            // 
+            this.dsCompany.Name = "dsCompany";
+            this.dsCompany.ObjectTypeName = "Accounting.BusinessObjects.Recruitment.acc_AppCompany";
+            this.dsCompany.TopReturnedRecords = 0;
+            // 
             // xrpbLogo
             // 
             this.xrpbLogo.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
@@ -483,7 +490,7 @@
             // xrTableCell20
             // 
             this.xrTableCell20.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Balance_currency")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "calcTotal_currency")});
             this.xrTableCell20.Dpi = 100F;
             this.xrTableCell20.Name = "xrTableCell20";
             this.xrTableCell20.StylePriority.UseTextAlignment = false;
@@ -676,18 +683,17 @@
             this.GroupHeader1.HeightF = 26.04167F;
             this.GroupHeader1.Name = "GroupHeader1";
             // 
-            // dsCompany
-            // 
-            this.dsCompany.Name = "dsCompany";
-            this.dsCompany.ObjectTypeName = "Accounting.BusinessObjects.Recruitment.acc_AppCompany";
-            this.dsCompany.TopReturnedRecords = 0;
-            // 
             // dsMain
             // 
             this.dsMain.Name = "dsMain";
             this.dsMain.ObjectTypeName = "Accounting.BusinessObjects.Recruitment.sp_acc_Account_Journals_SubAcc_currencyRes" +
     "ult";
             this.dsMain.TopReturnedRecords = 0;
+            // 
+            // calcTotal_currency
+            // 
+            this.calcTotal_currency.Expression = "([credit_currency] - [debit_currency])  * [factor]";
+            this.calcTotal_currency.Name = "calcTotal_currency";
             // 
             // acc_Rep_Account_Journals_SubAcc_Currency_Consolidated
             // 
@@ -701,7 +707,8 @@
             this.GroupHeader1});
             this.Bookmark = "Report";
             this.CalculatedFields.AddRange(new DevExpress.XtraReports.UI.CalculatedField[] {
-            this.calcTotal});
+            this.calcTotal,
+            this.calcTotal_currency});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.dsMain,
             this.dsCompany});
@@ -714,9 +721,9 @@
             this.Version = "16.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
@@ -776,5 +783,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell20;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell24;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell19;
+        private DevExpress.XtraReports.UI.CalculatedField calcTotal_currency;
     }
 }

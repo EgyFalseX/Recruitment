@@ -22,6 +22,7 @@ namespace Accounting.BusinessObjects.Recruitment
         public double NetValue { get; set; }
         public string Parent_Name { get; set; }
         public int appear_order { get; set; }
+        public int Sort { get; set; }
     }
 
 }

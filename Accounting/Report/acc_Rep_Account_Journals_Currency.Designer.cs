@@ -94,6 +94,7 @@
             this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
             this.calcTotal = new DevExpress.XtraReports.UI.CalculatedField();
             this.dsMain = new DevExpress.Persistent.Base.ReportsV2.CollectionDataSource();
+            this.calcTotal_currency = new DevExpress.XtraReports.UI.CalculatedField();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCompany)).BeginInit();
@@ -514,10 +515,11 @@
             // xrTableCell30
             // 
             this.xrTableCell30.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Balance_currency")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "calcTotal_currency")});
             this.xrTableCell30.Dpi = 100F;
             this.xrTableCell30.Name = "xrTableCell30";
             this.xrTableCell30.StylePriority.UseTextAlignment = false;
+            xrSummary1.FormatString = "{0:#,#.##}";
             xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell30.Summary = xrSummary1;
             this.xrTableCell30.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -530,6 +532,7 @@
             this.xrTableCell29.Dpi = 100F;
             this.xrTableCell29.Name = "xrTableCell29";
             this.xrTableCell29.StylePriority.UseTextAlignment = false;
+            xrSummary2.FormatString = "{0:#,#.##}";
             xrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell29.Summary = xrSummary2;
             this.xrTableCell29.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -542,6 +545,7 @@
             this.xrTableCell28.Dpi = 100F;
             this.xrTableCell28.Name = "xrTableCell28";
             this.xrTableCell28.StylePriority.UseTextAlignment = false;
+            xrSummary3.FormatString = "{0:#,#.##}";
             xrSummary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell28.Summary = xrSummary3;
             this.xrTableCell28.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -738,6 +742,11 @@
             this.dsMain.ObjectTypeName = "Accounting.BusinessObjects.Recruitment.sp_acc_Account_Journals_CurrencyResult";
             this.dsMain.TopReturnedRecords = 0;
             // 
+            // calcTotal_currency
+            // 
+            this.calcTotal_currency.Expression = "([credit_currency] - [debit_currency])  * [factor]";
+            this.calcTotal_currency.Name = "calcTotal_currency";
+            // 
             // acc_Rep_Account_Journals_Currency
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -749,7 +758,8 @@
             this.PageHeader});
             this.Bookmark = "Report";
             this.CalculatedFields.AddRange(new DevExpress.XtraReports.UI.CalculatedField[] {
-            this.calcTotal});
+            this.calcTotal,
+            this.calcTotal_currency});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.dsMain,
             this.dsCompany});
@@ -834,5 +844,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell30;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell29;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell28;
+        private DevExpress.XtraReports.UI.CalculatedField calcTotal_currency;
     }
 }

@@ -53,25 +53,6 @@ namespace Accounting.BusinessObjects.Recruitment
             dataView.PopulateProperties(session.GetClassInfo(typeof(sp_Income_StatementResult)));
             dataView.LoadData(sprocData);
         }
-        public static DevExpress.Xpo.DB.SelectedData Execsp_Balance_Sheet(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
-        {
-            return session.ExecuteSproc("sp_Balance_Sheet", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
-        }
-        public static System.Collections.Generic.ICollection<sp_Balance_SheetResult> Execsp_Balance_SheetIntoObjects(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
-        {
-            return session.GetObjectsFromSproc<sp_Balance_SheetResult>("sp_Balance_Sheet", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
-        }
-        public static XPDataView Execsp_Balance_SheetIntoDataView(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
-        {
-            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Balance_Sheet", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
-            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_Balance_SheetResult)), sprocData);
-        }
-        public static void Execsp_Balance_SheetIntoDataView(XPDataView dataView, Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
-        {
-            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Balance_Sheet", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
-            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_Balance_SheetResult)));
-            dataView.LoadData(sprocData);
-        }
         public static DevExpress.Xpo.DB.SelectedData Execsp_acc_Account_Journals_SubAcc(Session session, int Year, DateTime StartDate, DateTime EndDate, int account_id)
         {
             return session.ExecuteSproc("sp_acc_Account_Journals_SubAcc", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
@@ -146,6 +127,25 @@ namespace Accounting.BusinessObjects.Recruitment
         {
             DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_acc_Account_Journals_Currency", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(account_id));
             dataView.PopulateProperties(session.GetClassInfo(typeof(sp_acc_Account_Journals_CurrencyResult)));
+            dataView.LoadData(sprocData);
+        }
+        public static DevExpress.Xpo.DB.SelectedData Execsp_Balance_Sheet(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
+        {
+            return session.ExecuteSproc("sp_Balance_Sheet", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
+        }
+        public static System.Collections.Generic.ICollection<sp_Balance_SheetResult> Execsp_Balance_SheetIntoObjects(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
+        {
+            return session.GetObjectsFromSproc<sp_Balance_SheetResult>("sp_Balance_Sheet", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
+        }
+        public static XPDataView Execsp_Balance_SheetIntoDataView(Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Balance_Sheet", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
+            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_Balance_SheetResult)), sprocData);
+        }
+        public static void Execsp_Balance_SheetIntoDataView(XPDataView dataView, Session session, int Year, DateTime StartDate, DateTime EndDate, int Category)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Balance_Sheet", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate), new OperandValue(Category));
+            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_Balance_SheetResult)));
             dataView.LoadData(sprocData);
         }
     }
