@@ -5,13 +5,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.Persistent.Base;
+using DevExpress.Persistent.Validation;
 
 namespace Accounting.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
     [DevExpress.ExpressApp.DC.XafDefaultProperty("JournalCaption")]
     [ImageName("acc_Journal_Entry_Detail")]
-    [Appearance("Entry_Details_Closed", TargetItems = "*", Criteria = "jour_entry_id.closed = true ", Enabled = false, Priority = 1)]
+    [Appearance("Entry_Details_Closed", TargetItems = "*", Criteria = "jour_entry_id.period_id.closed = true ", Enabled = false, Priority = 1)]
     public partial class acc_Journal_Entry_Detail
     {
         public acc_Journal_Entry_Detail(Session session) : base(session) { }

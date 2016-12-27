@@ -101,13 +101,13 @@ namespace Accounting.Controllers
                 acc_Journal_Entry_Detail newEntryDetail = objectSpace.CreateObject<acc_Journal_Entry_Detail>();
                 newEntryDetail.jour_entry_id = newEntry;
                 newEntryDetail.account_id = objectSpace.GetObject(accJournalEntryDetail.account_id);
-                newEntryDetail.debit = accJournalEntryDetail.debit*-1;
-                newEntryDetail.credit = accJournalEntryDetail.credit * -1;
+                newEntryDetail.debit = accJournalEntryDetail.credit;
+                newEntryDetail.credit = accJournalEntryDetail.debit;
                 newEntryDetail.costcenter_id = objectSpace.GetObject(accJournalEntryDetail.costcenter_id);
                 newEntryDetail.entry_text = accJournalEntryDetail.entry_text + " (Refund)";
                 newEntryDetail.description = accJournalEntryDetail.description + " (Refund)";
-                newEntryDetail.debit_currency = accJournalEntryDetail.debit_currency;
-                newEntryDetail.credit_currency = accJournalEntryDetail.credit_currency;
+                newEntryDetail.debit_currency = accJournalEntryDetail.credit_currency;
+                newEntryDetail.credit_currency = accJournalEntryDetail.debit_currency;
                 newEntryDetail.currency_id = objectSpace.GetObject(accJournalEntryDetail.currency_id);
             }
             objectSpace.CommitChanges();

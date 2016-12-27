@@ -443,7 +443,7 @@
             this.xrTable5});
             this.GroupHeader1.Dpi = 100F;
             this.GroupHeader1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-            new DevExpress.XtraReports.UI.GroupField("acc_nature_name", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            new DevExpress.XtraReports.UI.GroupField("acc_nature_name", DevExpress.XtraReports.UI.XRColumnSortOrder.Descending)});
             this.GroupHeader1.HeightF = 47.91667F;
             this.GroupHeader1.Name = "GroupHeader1";
             // 
