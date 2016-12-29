@@ -147,32 +147,32 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
                 detailsCash.currency_id = currency_id;
                 detailsCash.entry_text = entryText;
             }
-            //Edit Revenue Due Recoreds
-            if (activity_id.activity_type_id == Typez.enum_rec_Activity_Type.ActualRevenue)
-            {
-                acc_Account accountRevenueDue = SqlOp.GetOptionAccount(Session, Typez.OptionRevenueDue);
-                acc_Account accountCustomers = SqlOp.GetOptionAccount(Session, Typez.OptionCustomers);
-                acc_Journal_Entry_Detail detailsRevenueDue = Session.FindObject<acc_Journal_Entry_Detail>(CriteriaOperator.And(CriteriaOperator.Parse("jour_entry_id = ?", jour_entry_id.jour_entry_id), CriteriaOperator.Parse("account_id = ?", accountRevenueDue.account_id)));
-                if (detailsRevenueDue != null)
-                {
-                    detailsRevenueDue.credit = value1;
-                    detailsRevenueDue.debit = 0;
-                    detailsRevenueDue.credit_currency = org_value;
-                    detailsRevenueDue.debit_currency = 0;
-                    detailsRevenueDue.currency_id = currency_id;
-                    detailsRevenueDue.entry_text = entryText;
-                }
-                acc_Journal_Entry_Detail detailsCustomers = Session.FindObject<acc_Journal_Entry_Detail>(CriteriaOperator.And(CriteriaOperator.Parse("jour_entry_id = ?", jour_entry_id.jour_entry_id), CriteriaOperator.Parse("account_id = ?", accountCustomers.account_id)));
-                if (detailsCustomers != null)
-                {
-                    detailsCustomers.credit = 0;
-                    detailsCustomers.debit = value1;
-                    detailsCustomers.credit_currency = 0;
-                    detailsCustomers.debit_currency = org_value;
-                    detailsCustomers.currency_id = currency_id;
-                    detailsCustomers.entry_text = entryText;
-                }
-            }
+            ////Edit Revenue Due Recoreds
+            //if (activity_id.activity_type_id == Typez.enum_rec_Activity_Type.ActualRevenue)
+            //{
+            //    acc_Account accountRevenueDue = SqlOp.GetOptionAccount(Session, Typez.OptionRevenueDue);
+            //    acc_Account accountCustomers = SqlOp.GetOptionAccount(Session, Typez.OptionCustomers);
+            //    acc_Journal_Entry_Detail detailsRevenueDue = Session.FindObject<acc_Journal_Entry_Detail>(CriteriaOperator.And(CriteriaOperator.Parse("jour_entry_id = ?", jour_entry_id.jour_entry_id), CriteriaOperator.Parse("account_id = ?", accountRevenueDue.account_id)));
+            //    if (detailsRevenueDue != null)
+            //    {
+            //        detailsRevenueDue.credit = value1;
+            //        detailsRevenueDue.debit = 0;
+            //        detailsRevenueDue.credit_currency = org_value;
+            //        detailsRevenueDue.debit_currency = 0;
+            //        detailsRevenueDue.currency_id = currency_id;
+            //        detailsRevenueDue.entry_text = entryText;
+            //    }
+            //    acc_Journal_Entry_Detail detailsCustomers = Session.FindObject<acc_Journal_Entry_Detail>(CriteriaOperator.And(CriteriaOperator.Parse("jour_entry_id = ?", jour_entry_id.jour_entry_id), CriteriaOperator.Parse("account_id = ?", accountCustomers.account_id)));
+            //    if (detailsCustomers != null)
+            //    {
+            //        detailsCustomers.credit = 0;
+            //        detailsCustomers.debit = value1;
+            //        detailsCustomers.credit_currency = 0;
+            //        detailsCustomers.debit_currency = org_value;
+            //        detailsCustomers.currency_id = currency_id;
+            //        detailsCustomers.entry_text = entryText;
+            //    }
+            //}
         }
         protected override void OnSaving()
         {

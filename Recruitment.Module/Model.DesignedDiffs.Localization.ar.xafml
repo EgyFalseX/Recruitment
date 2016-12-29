@@ -3074,15 +3074,6 @@
       <Items>
         <PropertyEditor Id="OperationProgress" EditMask="#,###,##0.##############################" DisplayFormat="{0:#,###,##0.##############################}" />
       </Items>
-      <Layout>
-        <LayoutGroup Id="Main">
-          <LayoutGroup Id="SimpleEditors">
-            <LayoutGroup Id="rec_Employer_Order_Detail_Accept_Applicat">
-              <LayoutGroup Id="Autocf74de74-9e4e-4d68-bb2b-4007f3a4b4f1" Caption="Autocf74de74-9e4e-4d68-bb2b-4007f3a4b4f1(4)" />
-            </LayoutGroup>
-          </LayoutGroup>
-        </LayoutGroup>
-      </Layout>
     </DetailView>
     <DetailView Id="rec_Employer_Order_Detail_Accept_Applicat_Doc_DetailView" RequiredFieldMark="*" CaptionColon=":">
       <Items>

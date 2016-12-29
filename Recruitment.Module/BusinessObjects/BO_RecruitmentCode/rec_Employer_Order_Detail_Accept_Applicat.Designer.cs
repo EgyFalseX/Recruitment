@@ -49,12 +49,47 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return fstart_activity; }
             set { SetPropertyValue<bool>("start_activity", ref fstart_activity, value); }
         }
+        string fnet_number;
+        [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Net Number")]
+        public string net_number
+        {
+            get { return fnet_number; }
+            set { SetPropertyValue<string>("net_number", ref fnet_number, value); }
+        }
+        string fpassport;
+        [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Passport")]
+        public string passport
+        {
+            get { return fpassport; }
+            set { SetPropertyValue<string>("passport", ref fpassport, value); }
+        }
+        string fvisa_number;
+        [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Visa Number")]
+        public string visa_number
+        {
+            get { return fvisa_number; }
+            set { SetPropertyValue<string>("visa_number", ref fvisa_number, value); }
+        }
+        string fregistration_no;
+        [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Registration No")]
+        public string registration_no
+        {
+            get { return fregistration_no; }
+            set { SetPropertyValue<string>("registration_no", ref fregistration_no, value); }
+        }
         [DevExpress.Xpo.DisplayName(@"Accepted Applicants Docs")]
         [Association(@"rec_Employer_Order_Detail_Accept_Applicat_DocReferencesrec_Employer_Order_Detail_Accept_Applicat")]
         public XPCollection<rec_Employer_Order_Detail_Accept_Applicat_Doc> rec_Employer_Order_Detail_Accept_Applicat_Docs { get { return GetCollection<rec_Employer_Order_Detail_Accept_Applicat_Doc>("rec_Employer_Order_Detail_Accept_Applicat_Docs"); } }
         [DevExpress.Xpo.DisplayName(@"Accepted Applicant Activities")]
         [Association(@"rec_Accept_App_ActivityReferencesrec_Employer_Order_Detail_Accept_Applicat")]
         public XPCollection<rec_Accept_App_Activity> rec_Accept_App_Activitys { get { return GetCollection<rec_Accept_App_Activity>("rec_Accept_App_Activitys"); } }
+        [DevExpress.Xpo.DisplayName(@"Follow Up")]
+        [Association(@"rec_Employer_Order_Detail_Accept_Applicat_FollowUpReferencesrec_Employer_Order_Detail_Accept_Applicat")]
+        public XPCollection<rec_Employer_Order_Detail_Accept_Applicat_FollowUp> rec_Employer_Order_Detail_Accept_Applicat_FollowUps { get { return GetCollection<rec_Employer_Order_Detail_Accept_Applicat_FollowUp>("rec_Employer_Order_Detail_Accept_Applicat_FollowUps"); } }
     }
 
 }

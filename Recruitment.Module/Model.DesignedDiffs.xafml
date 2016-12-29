@@ -505,6 +505,11 @@
         <Member Name="rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_require_doc_status_id" Caption="Status" LookupProperty="rec_require_doc_status_name" />
       </OwnMembers>
     </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Accept_Applicat_FollowUp" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="follow_date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" />
+      </OwnMembers>
+    </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer_Order_Detail_Call" Caption="Order Call" ImageName="rec_employer_order_detail_call" DefaultListViewShowAutoFilterRow="True" DefaultListViewImage="rec_employer_order_detail_call" DefaultDetailViewImage="rec_employer_order_detail_call">
       <OwnMembers>
         <Member Name="rec_employer_order_detail_call_applicant_id" Caption="Applicant" LookupProperty="applicant_name" />
@@ -855,6 +860,7 @@
                       <Item Id="rec_Employer_Order_Detail_Accept_Applicat_ListView" ViewId="rec_Employer_Order_Detail_Accept_Applicat_ListView" ObjectKey="" Index="7" IsNewNode="True">
                         <Items IsNewNode="True">
                           <Item Id="rec_Employer_Order_Detail_Accept_Applicat_Doc_ListView" ViewId="rec_Employer_Order_Detail_Accept_Applicat_Doc_ListView" ObjectKey="" Index="8" IsNewNode="True" />
+                          <Item Id="rec_Employer_Order_Detail_Accept_Applicat_FollowUp_ListView" ViewId="rec_Employer_Order_Detail_Accept_Applicat_FollowUp_ListView" ObjectKey="" IsNewNode="True" />
                         </Items>
                       </Item>
                     </Items>
@@ -869,6 +875,7 @@
               <Item Id="rec_Employer_Order_Interview_ListView" ViewId="rec_Employer_Order_Interview_ListView" ObjectKey="" IsNewNode="True" />
             </Items>
           </Item>
+          <Item Id="rec_Employer_Order_Detail_Accept_Applicat_FollowUp_ListView" Removed="True" />
           <Item Id="rec_Employer_Order_Detail_Connection_Detail_ListView" Removed="True" />
           <Item Id="rec_Employer_Order_Detail_Connection_ListView" Removed="True" />
           <Item Id="rec_Employer_Order_Interview_ListView" Removed="True" />
@@ -910,6 +917,24 @@
       <ValidationContext Id="EntryIsNotValid" Caption="Entry is not valid" AllowInplaceValidation="False" IsNewNode="True" />
     </Contexts>
     <Rules>
+      <RuleRequiredField Id="@acc_Account_acc_nature_id_vld_req" Removed="True" />
+      <RuleRequiredField Id="@acc_Account_account_name_vld_req" Removed="True" />
+      <RuleRequiredField Id="@acc_Account_account_type_id_vld_req" Removed="True" />
+      <RuleRequiredField Id="@acc_Account_closed_vld_req" Removed="True" />
+      <RuleRequiredField Id="@acc_Bank_bank_name_vld_req" Removed="True" />
+      <RuleRequiredField Id="@acc_Currency_currency_name_vld_req" Removed="True" />
+      <RuleRequiredField Id="@acc_Journal_Entry_closed_vld_req" Removed="True" />
+      <RuleRequiredField Id="@acc_Journal_Entry_Detail_account_id_vld_req" Removed="True" />
+      <RuleRequiredField Id="@acc_Journal_Entry_Detail_credit_vld_req" Removed="True" />
+      <RuleRequiredField Id="@acc_Journal_Entry_Detail_debit_vld_req" Removed="True" />
+      <RuleRequiredField Id="@acc_Journal_Entry_Detail_jour_entry_id_vld_req" Removed="True" />
+      <RuleRequiredField Id="@acc_Journal_Entry_entry_date_vld_req" Removed="True" />
+      <RuleRequiredField Id="@acc_Journal_Entry_period_id_vld_req" Removed="True" />
+      <RuleRequiredField Id="@acc_Option_acc_option_name_vld_req" Removed="True" />
+      <RuleRequiredField Id="@acc_Option_acc_option_value_vld_req" Removed="True" />
+      <RuleRequiredField Id="@acc_Year_year_end_date_vld_req" Removed="True" />
+      <RuleRequiredField Id="@acc_Year_year_name_vld_req" Removed="True" />
+      <RuleRequiredField Id="@acc_Year_year_start_date_vld_req" Removed="True" />
       <RuleRequiredField Id="@Langauge_job_name_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Job" TargetPropertyName="job_name" Name="Langauge - Name required" IsNewNode="True" />
       <RuleRequiredField Id="@rec_Applicant_applicant_gender_id_vld_req" TargetContextIDs="Save" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant" TargetPropertyName="applicant_gender_id" Name="Applicant - Gender required" IsNewNode="True" />
       <RuleUniqueValue Id="@rec_Applicant_applicant_mobile_vld_dub" TargetType="Recruitment.Module.BusinessObjects.Recruitment.rec_Applicant" TargetPropertyName="applicant_mobile" TargetContextIDs="Save" Name="Applicant - Mobile Unique" IsNewNode="True" />
@@ -2479,33 +2504,52 @@
     </ListView>
     <DetailView Id="rec_Employer_Order_Detail_Accept_Applicat_DetailView">
       <Items>
+        <PropertyEditor Id="CustomName" Removed="True" />
+        <PropertyEditor Id="rec_employer_order_detail_accept_applicat_rec_applicant_status_id" Removed="True" />
         <PropertyEditor Id="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" PropertyName="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" DataSourceCriteria="[rec_employer_order_detail_suggest_applicat_rec_employer_order_detail_id.rec_employer_order_detail_rec_employer_order_id.rec_employer_order_rec_employer_order_status_id] = ##Enum#Recruitment.Module.Core.Typez+enum_rec_Employer_Order_Status,InProgress#" IsNewNode="True" />
+        <PropertyEditor Id="start_activity" Removed="True" />
       </Items>
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="10.513447432762836">
-            <LayoutGroup Id="rec_Employer_Order_Detail_Accept_Applicat" RelativeSize="100" Direction="Horizontal">
-              <LayoutGroup Id="Autocf74de74-9e4e-4d68-bb2b-4007f3a4b4f1" ShowCaption="False" Caption="Autocf74de74-9e4e-4d68-bb2b-4007f3a4b4f1(4)" Index="0" RelativeSize="46.666666666666664" IsNewNode="True">
-                <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" ViewItem="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" Index="0" RelativeSize="37.2093023255814" IsNewNode="True" />
-                <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_applicant_status_id" ViewItem="rec_employer_order_detail_accept_applicat_rec_applicant_status_id" Index="1" RelativeSize="27.906976744186046" IsNewNode="True" />
-                <LayoutItem Id="start_activity" ViewItem="start_activity" Index="2" RelativeSize="34.883720930232556" IsNewNode="True" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="24.083129584352079">
+            <LayoutGroup Id="rec_Employer_Order_Detail_Accept_Applicat" RelativeSize="100" Direction="Vertical" Caption="Accepted Applicant Details">
+              <LayoutGroup Id="Autobedf6e59-102b-46aa-b776-3c216ee0f25f" ShowCaption="False" Caption="Autobedf6e59-102b-46aa-b776-3c216ee0f25f(4)" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" ViewItem="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" Index="0" RelativeSize="20" IsNewNode="True" />
+                <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_applicant_status_id" ViewItem="" Index="1" RelativeSize="15" IsNewNode="True" />
+                <LayoutItem Id="net_number" ViewItem="net_number" Index="2" RelativeSize="15" IsNewNode="True" />
+                <LayoutItem Id="passport" ViewItem="passport" Index="3" RelativeSize="15" IsNewNode="True" />
+                <LayoutItem Id="visa_number" ViewItem="visa_number" Index="4" RelativeSize="15" IsNewNode="True" />
+                <LayoutItem Id="registration_no" ViewItem="registration_no" Index="5" RelativeSize="20" IsNewNode="True" />
               </LayoutGroup>
-              <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_applicant_status_id" Index="0" RelativeSize="82.666666666666671" Removed="True" />
-              <LayoutItem Id="OperationProgress" CaptionLocation="Top" Index="1" RelativeSize="53.333333333333336" />
-              <LayoutItem Id="start_activity" Removed="True" />
+              <LayoutGroup Id="rec_Employer_Order_Detail_Accept_Applicat_col1" Index="1" RelativeSize="66.6965085049239" Removed="True">
+                <LayoutItem Id="CustomName" RelativeSize="13.043478260869565" />
+                <LayoutItem Id="OperationProgress" RelativeSize="17.391304347826086" />
+                <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_applicant_status_id" RelativeSize="34.782608695652172" />
+                <LayoutItem Id="start_activity" RelativeSize="34.782608695652172" />
+              </LayoutGroup>
+              <LayoutGroup Id="rec_Employer_Order_Detail_Accept_Applicat_col2" Index="2" RelativeSize="33.39301700984781" Caption="rec_Employer_Order_Detail_Accept_Applicat_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="passport" RelativeSize="28.571428571428573" Index="0" Removed="True" />
+                <LayoutItem Id="registration_no" RelativeSize="100" Index="0" Removed="True" />
+                <LayoutItem Id="visa_number" RelativeSize="23.529411764705884" Index="0" Removed="True" />
+                <LayoutItem Id="net_number" RelativeSize="28.571428571428573" Removed="True" />
+              </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="SizeableEditors" RelativeSize="7.7017114914425431">
-            <LayoutItem Id="rec_employer_order_detail_accept_applicat_description" RelativeSize="100" />
+          <LayoutGroup Id="SizeableEditors" RelativeSize="7.7017114914425431" Direction="Horizontal" Caption="Description">
+            <LayoutItem Id="rec_employer_order_detail_accept_applicat_description" RelativeSize="70.201577563540752" />
+            <LayoutItem Id="OperationProgress" ViewItem="OperationProgress" Index="1" RelativeSize="29.798422436459248" IsNewNode="True" />
           </LayoutGroup>
-          <TabbedGroup Id="Tabs" RelativeSize="81.784841075794617">
+          <TabbedGroup Id="Tabs" RelativeSize="68.215158924205383">
             <LayoutGroup Id="rec_Employer_Order_Detail_Accept_Applicat_Docs" Index="0" RelativeSize="100">
               <LayoutItem Id="rec_Employer_Order_Detail_Accept_Applicat_Docs" RelativeSize="100" />
             </LayoutGroup>
-            <LayoutGroup Id="rec_Accept_App_Activitys" RelativeSize="100" Index="1">
+            <LayoutGroup Id="rec_Employer_Order_Detail_Accept_Applicat_FollowUps" Index="1" RelativeSize="100">
+              <LayoutItem Id="rec_Employer_Order_Detail_Accept_Applicat_FollowUps" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="rec_Accept_App_Activitys" RelativeSize="100" Index="2">
               <LayoutItem Id="rec_Accept_App_Activitys" RelativeSize="100" />
             </LayoutGroup>
-            <LayoutGroup Id="AuditTrail" Index="2" RelativeSize="100">
+            <LayoutGroup Id="AuditTrail" Index="3" RelativeSize="100">
               <LayoutItem Id="AuditTrail" RelativeSize="100" />
             </LayoutGroup>
           </TabbedGroup>
@@ -2553,6 +2597,37 @@
         <ColumnInfo Id="rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_id" DisplayFormat="{0:N0}" />
       </Columns>
     </ListView>
+    <DetailView Id="rec_Employer_Order_Detail_Accept_Applicat_FollowUp_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="7.5794621026894866">
+            <LayoutGroup Id="rec_Employer_Order_Detail_Accept_Applicat_FollowUp" RelativeSize="100">
+              <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" Index="0" RelativeSize="51.612903225806448" />
+              <LayoutItem Id="follow_date" Index="1" RelativeSize="48.387096774193552" />
+              <LayoutItem Id="CustomName" RelativeSize="37.2093023255814" Removed="True" />
+              <LayoutItem Id="follow_id" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="7.7017114914425431" Direction="Horizontal" Caption="Notes">
+            <LayoutItem Id="notes" RelativeSize="82.033304119193687" />
+            <LayoutGroup Id="Auto89a6a918-a5b1-4cbe-ba4a-ae675e2071e5" ShowCaption="False" Caption="" Index="1" RelativeSize="17.966695880806309" IsNewNode="True">
+              <LayoutItem Id="CustomName" ViewItem="CustomName" Index="0" RelativeSize="42.857142857142854" IsNewNode="True" />
+              <LayoutItem Id="follow_id" ViewItem="follow_id" Index="1" RelativeSize="57.142857142857146" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="84.718826405867972">
+            <LayoutItem Id="AuditTrail" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="rec_Employer_Order_Detail_Accept_Applicat_FollowUp_LookupListView" IsGroupPanelVisible="False">
+      <Columns>
+        <ColumnInfo Id="CustomName" Index="-1" />
+        <ColumnInfo Id="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" PropertyName="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" Index="0" Width="164" IsNewNode="True" />
+        <ColumnInfo Id="follow_date" PropertyName="follow_date" Index="1" IsNewNode="True" />
+      </Columns>
+    </ListView>
     <ListView Id="rec_Employer_Order_Detail_Accept_Applicat_ListView">
       <Columns>
         <ColumnInfo Id="rec_employer_order_detail_accept_applicat_description" Index="-1" Width="90" />
@@ -2580,6 +2655,13 @@
     <ListView Id="rec_Employer_Order_Detail_Accept_Applicat_rec_Employer_Order_Detail_Accept_Applicat_Docs_ListView">
       <Columns>
         <ColumnInfo Id="rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_id" DisplayFormat="{0:N0}" />
+      </Columns>
+    </ListView>
+    <ListView Id="rec_Employer_Order_Detail_Accept_Applicat_rec_Employer_Order_Detail_Accept_Applicat_FollowUps_ListView" AllowEdit="True" NewItemRowPosition="Top">
+      <Columns>
+        <ColumnInfo Id="CustomName" Index="-1" />
+        <ColumnInfo Id="notes" Index="0" Width="243" />
+        <ColumnInfo Id="follow_date" Index="1" />
       </Columns>
     </ListView>
     <DetailView Id="rec_Employer_Order_Detail_Call_DetailView">

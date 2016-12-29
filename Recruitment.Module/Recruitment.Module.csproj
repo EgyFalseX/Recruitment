@@ -287,6 +287,10 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Accept_Applicat_Doc.Designer.cs">
       <DependentUpon>rec_Employer_Order_Detail_Accept_Applicat_Doc.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Accept_Applicat_FollowUp.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Accept_Applicat_FollowUp.Designer.cs">
+      <DependentUpon>rec_Employer_Order_Detail_Accept_Applicat_FollowUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Call.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employer_Order_Detail_Call.Designer.cs">
       <DependentUpon>rec_Employer_Order_Detail_Call.cs</DependentUpon>
@@ -680,6 +684,8 @@
     <EmbeddedResource Include="Images\rec_Activity_32x32.png" />
     <EmbeddedResource Include="Images\rec_Cash.png" />
     <EmbeddedResource Include="Images\rec_Cash_32x32.png" />
+    <EmbeddedResource Include="Images\FollowUp.png" />
+    <EmbeddedResource Include="Images\FollowUp_32x32.png" />
     <Content Include="Information.txt" />
     <Content Include="Welcome.html" />
   </ItemGroup>
