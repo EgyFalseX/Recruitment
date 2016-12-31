@@ -421,12 +421,6 @@
     <Compile Include="Controllers\ctr_Accept_Applicat.Designer.cs">
       <DependentUpon>ctr_Accept_Applicat.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\rec_ctr_Journal_Entry_Edit.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controllers\rec_ctr_Journal_Entry_Edit.Designer.cs">
-      <DependentUpon>rec_ctr_Journal_Entry_Edit.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\ctr_Order_Suggest_App.cs">
       <SubType>Component</SubType>
     </Compile>

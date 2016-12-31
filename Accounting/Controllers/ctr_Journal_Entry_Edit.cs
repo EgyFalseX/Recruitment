@@ -30,7 +30,7 @@ namespace Accounting.Controllers
         {
             if (View.ObjectTypeInfo.Type == typeof(acc_Journal_Entry))
             {
-                bool active = View.SelectedObjects.Cast<acc_Journal_Entry>().All(entry => entry.period_id.closed == false);
+                bool active = View.SelectedObjects.Cast<acc_Journal_Entry>().All(entry => entry.period_id == null || entry.period_id.closed == false);
                 Frame.GetController<ModificationsController>().SaveAction.Active.SetItemValue("Can't Modify Closed Entry", active);
                 Frame.GetController<ModificationsController>().SaveAndCloseAction.Active.SetItemValue("Can't Modify Closed Entry", active);
                 Frame.GetController<ModificationsController>().SaveAndNewAction.Active.SetItemValue("Can't Modify Closed Entry", active);
@@ -39,7 +39,7 @@ namespace Accounting.Controllers
             }
             if (View.ObjectTypeInfo.Type == typeof(acc_Journal_Entry_Detail))
             {
-                bool active = View.SelectedObjects.Cast<acc_Journal_Entry_Detail>().All(entry => !entry.jour_entry_id?.period_id.closed ?? false);
+                bool active = View.SelectedObjects.Cast<acc_Journal_Entry_Detail>().All(entry => !entry.jour_entry_id?.period_id?.closed ?? false);
                 Frame.GetController<ModificationsController>().SaveAction.Active.SetItemValue("Can't Modify Closed Entry", active);
                 Frame.GetController<ModificationsController>().SaveAndCloseAction.Active.SetItemValue("Can't Modify Closed Entry", active);
                 Frame.GetController<ModificationsController>().SaveAndNewAction.Active.SetItemValue("Can't Modify Closed Entry", active);
