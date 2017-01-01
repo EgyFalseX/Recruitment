@@ -35,6 +35,9 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         [DevExpress.Xpo.DisplayName(@"Industry Required Doc")]
         [Association(@"rec_Industry_Require_Doc_InfoReferencesrec_Doc_Info")]
         public XPCollection<rec_Industry_Require_Doc_Info> rec_Industry_Require_Doc_Infos { get { return GetCollection<rec_Industry_Require_Doc_Info>("rec_Industry_Require_Doc_Infos"); } }
+        [DevExpress.Xpo.DisplayName(@"Document Service Order Details")]
+        [Association(@"rec_DocSrv_Order_DetailReferencesrec_Doc_Info")]
+        public XPCollection<rec_DocSrv_Order_Detail> rec_DocSrv_Order_Details { get { return GetCollection<rec_DocSrv_Order_Detail>("rec_DocSrv_Order_Details"); } }
     }
 
 }

@@ -392,6 +392,29 @@
         <Member Name="AuditTrail" Index="3" />
       </OwnMembers>
     </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_DocSrv_Order" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="order_date" AllowEdit="False" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_DocSrv_Order_Detail" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="delivered" AllowEdit="False" />
+        <Member Name="delivered_date" AllowEdit="False" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" />
+        <Member Name="receive_date" AllowEdit="False" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_DocSrv_Order_Detail_Srv" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="completion_date" AllowEdit="False" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" />
+        <Member Name="is_completed" AllowEdit="False" />
+        <Member Name="jour_entry_id" AllowEdit="False" />
+        <Member Name="jour_entry_id_Paid" AllowEdit="False" />
+        <Member Name="paid" AllowEdit="False" />
+        <Member Name="price" AllowEdit="False" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_DocSrv_Type" DefaultListViewShowAutoFilterRow="True" />
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employee_Activity">
       <OwnMembers>
         <Member Name="activity_date" Caption="activity_date" />
@@ -886,6 +909,22 @@
           <Item Id="rec_Applicant_Country_ListView" Removed="True" />
           <Item Id="rec_Applicant_Industry_ListView" Removed="True" />
           <Item Id="rec_Applicant_Langauge_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Document Service" ImageName="rec_DocSrv_Order">
+        <Items>
+          <Item Id="rec_DocSrv_Type_ListView" Index="0" />
+          <Item Id="rec_DocSrv_Order_Detail_ListView" Removed="True" />
+          <Item Id="rec_DocSrv_Order_Detail_Srv_ListView" Removed="True" />
+          <Item Id="rec_DocSrv_Order_ListView">
+            <Items>
+              <Item Id="rec_DocSrv_Order_Detail_ListView" ViewId="rec_DocSrv_Order_Detail_ListView" ObjectKey="" IsNewNode="True">
+                <Items IsNewNode="True">
+                  <Item Id="rec_DocSrv_Order_Detail_Srv_ListView" ViewId="rec_DocSrv_Order_Detail_Srv_ListView" ObjectKey="" IsNewNode="True" />
+                </Items>
+              </Item>
+            </Items>
+          </Item>
         </Items>
       </Item>
       <Item Id="KPI" ImageName="BO_KPI_Definition" />
@@ -2316,6 +2355,203 @@
         <ColumnInfo Id="rec_industry_require_doc_info_id" DisplayFormat="{0:N0}" />
       </Columns>
     </ListView>
+    <DetailView Id="rec_DocSrv_Order_Detail_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="24.703557312252965" Direction="Horizontal">
+            <LayoutGroup Id="rec_DocSrv_Order_Detail_col1" ShowCaption="True" Caption="Document Information" Index="0" RelativeSize="50.079744816586924" IsNewNode="True">
+              <LayoutItem Id="docsrv_order_id" ViewItem="docsrv_order_id" Index="0" RelativeSize="36.363636363636367" IsNewNode="True" />
+              <LayoutItem Id="rec_doc_info_id" ViewItem="rec_doc_info_id" Index="1" RelativeSize="27.272727272727273" IsNewNode="True" />
+              <LayoutItem Id="doc_owner" ViewItem="doc_owner" Index="2" RelativeSize="36.363636363636367" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="rec_DocSrv_Order_Detail_col2" ShowCaption="True" Caption="Recipient Information" Index="1" RelativeSize="49.920255183413076" IsNewNode="True">
+              <LayoutItem Id="recipient_name" ViewItem="recipient_name" Index="0" RelativeSize="36.363636363636367" IsNewNode="True" />
+              <LayoutItem Id="recipient_mobile" ViewItem="recipient_mobile" Index="1" RelativeSize="27.272727272727273" IsNewNode="True" />
+              <LayoutItem Id="recipient_phone" ViewItem="recipient_phone" Index="2" RelativeSize="36.363636363636367" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="rec_DocSrv_Order_Detail" RelativeSize="100" Caption="Order Details" Removed="True">
+              <LayoutGroup Id="rec_DocSrv_Order_Detail_col1" ShowCaption="True" Index="0" RelativeSize="50.057405281285881" Caption="Document Information" IsNewNode="True" Removed="True">
+                <LayoutItem Id="docsrv_order_id" ViewItem="docsrv_order_id" Index="0" RelativeSize="23.529411764705884" IsNewNode="True" />
+                <LayoutItem Id="rec_doc_info_id" ViewItem="rec_doc_info_id" Index="1" RelativeSize="17.647058823529413" IsNewNode="True" />
+                <LayoutItem Id="receive_date" ViewItem="receive_date" Index="2" RelativeSize="17.647058823529413" IsNewNode="True" />
+                <LayoutItem Id="doc_owner" ViewItem="doc_owner" Index="3" RelativeSize="17.647058823529413" IsNewNode="True" />
+                <LayoutItem Id="delivered_date" ViewItem="delivered_date" Index="4" RelativeSize="23.529411764705884" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="rec_DocSrv_Order_Detail_col2" RelativeSize="49.942594718714119" ShowCaption="True" Caption="Recipient Information">
+                <LayoutItem Id="recipient_name" RelativeSize="23.529411764705884" Index="0" />
+                <LayoutItem Id="recipient_mobile" RelativeSize="17.647058823529413" Index="1" />
+                <LayoutItem Id="recipient_phone" RelativeSize="58.8235294117647" Index="2" />
+                <LayoutItem Id="delivered_date" RelativeSize="28.571428571428573" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" Direction="Horizontal" RelativeSize="20.750988142292488" Caption="Notes">
+            <LayoutItem Id="notes" RelativeSize="64.274322169059" />
+            <LayoutGroup Id="Auto82420724-108f-4a76-8902-2f776cce09d4" ShowCaption="False" Caption="" Index="1" RelativeSize="35.725677830940988" IsNewNode="True">
+              <LayoutItem Id="docsrv_order_detail" ViewItem="docsrv_order_detail" Index="0" RelativeSize="25.714285714285715" IsNewNode="True" />
+              <LayoutItem Id="receive_date" ViewItem="receive_date" Index="1" RelativeSize="22.857142857142858" IsNewNode="True" />
+              <LayoutItem Id="delivered" ViewItem="delivered" Index="2" RelativeSize="22.857142857142858" IsNewNode="True" />
+              <LayoutItem Id="delivered_date" ViewItem="delivered_date" Index="3" RelativeSize="28.571428571428573" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="54.545454545454547">
+            <LayoutGroup Id="rec_DocSrv_Order_Detail_Srvs" RelativeSize="100" Index="0">
+              <LayoutItem Id="rec_DocSrv_Order_Detail_Srvs" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" RelativeSize="100" Index="1">
+              <LayoutItem Id="AuditTrail" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="rec_DocSrv_Order_Detail_LookupListView">
+      <Columns>
+        <ColumnInfo Id="rec_doc_info_id.rec_doc_info_name" Index="-1" />
+        <ColumnInfo Id="rec_doc_info_id" PropertyName="rec_doc_info_id" Index="0" Width="122" IsNewNode="True" />
+        <ColumnInfo Id="doc_owner" PropertyName="doc_owner" Index="1" Width="133" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="rec_DocSrv_Order_Detail_rec_DocSrv_Order_Detail_Srvs_ListView" AllowEdit="True" NewItemRowPosition="Top" />
+    <DetailView Id="rec_DocSrv_Order_Detail_Srv_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <TabbedGroup Id="Item1" CaptionLocation="Top" Index="0" RelativeSize="37.154150197628461" IsNewNode="True">
+            <LayoutGroup Id="SimpleEditors" ShowCaption="True" Index="0" RelativeSize="100" Caption="Service Information" Direction="Vertical" IsNewNode="True">
+              <LayoutItem Id="docsrv_order_detail" ViewItem="docsrv_order_detail" Index="0" RelativeSize="21.621621621621621" IsNewNode="True" />
+              <LayoutItem Id="docsrv_type_id" ViewItem="docsrv_type_id" Index="1" RelativeSize="21.621621621621621" IsNewNode="True" />
+              <LayoutGroup Id="Autod31d9c1b-d4d0-4e3b-82d0-02fbf16bb1f5" ShowCaption="False" Caption="" Direction="Horizontal" Index="2" RelativeSize="56.756756756756758" IsNewNode="True">
+                <LayoutItem Id="notes" ViewItem="notes" Index="0" RelativeSize="57.5" IsNewNode="True" />
+                <LayoutGroup Id="Autocf84b555-b0b8-4448-b8e4-de6917ebf3e0" ShowCaption="False" Caption="" Index="1" RelativeSize="42.5" IsNewNode="True">
+                  <LayoutItem Id="docsrv_order_detail_srv_id" ViewItem="docsrv_order_detail_srv_id" Index="0" RelativeSize="35.714285714285715" IsNewNode="True" />
+                  <LayoutItem Id="is_completed" ViewItem="is_completed" Index="1" RelativeSize="28.571428571428573" IsNewNode="True" />
+                  <LayoutItem Id="completion_date" ViewItem="completion_date" Index="2" RelativeSize="35.714285714285715" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="1" RelativeSize="100" Caption="Accounting" IsNewNode="True">
+              <LayoutItem Id="price" ViewItem="price" Index="0" RelativeSize="16.216216216216218" IsNewNode="True" />
+              <LayoutItem Id="paid" ViewItem="paid" Index="1" RelativeSize="16.216216216216218" IsNewNode="True" />
+              <LayoutItem Id="jour_entry_id" ViewItem="jour_entry_id" Index="2" RelativeSize="16.216216216216218" IsNewNode="True" />
+              <LayoutItem Id="jour_entry_id_Paid" ViewItem="jour_entry_id_Paid" Index="3" RelativeSize="51.351351351351354" IsNewNode="True" />
+            </LayoutGroup>
+          </TabbedGroup>
+          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="62.845849802371539" Index="1">
+            <LayoutItem Id="AuditTrail" RelativeSize="100" />
+          </LayoutGroup>
+          <LayoutGroup Id="SimpleEditors" RelativeSize="19.960474308300395" Removed="True">
+            <LayoutGroup Id="rec_DocSrv_Order_Detail_Srv" Caption="Service Information" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="Auto7f6973d7-03a8-4b03-9f1e-18d7b748829d" ShowCaption="False" Caption="Auto7f6973d7-03a8-4b03-9f1e-18d7b748829d(4)" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="docsrv_order_detail" ViewItem="docsrv_order_detail" Index="0" RelativeSize="50" IsNewNode="True" />
+                <LayoutItem Id="docsrv_type_id" ViewItem="docsrv_type_id" Index="1" RelativeSize="50" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="rec_DocSrv_Order_Detail_Srv_col1" RelativeSize="50" Removed="True">
+                <LayoutItem Id="docsrv_order_detail" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="docsrv_order_detail_srv_id" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="docsrv_type_id" RelativeSize="36.363636363636367" />
+              </LayoutGroup>
+              <LayoutGroup Id="rec_DocSrv_Order_Detail_Srv_col2" RelativeSize="50" Removed="True">
+                <LayoutItem Id="completion_date" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="paid" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="price" RelativeSize="27.272727272727273" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="0.19762845849802371" Direction="Vertical" Caption="Notes" Removed="True">
+            <LayoutGroup Id="Auto2889c756-e7d6-4543-ac99-cfa1dd3b607b" ShowCaption="False" Caption="Auto2889c756-e7d6-4543-ac99-cfa1dd3b607b(9)" Index="0" RelativeSize="100" Direction="Horizontal" IsNewNode="True" />
+            <LayoutItem Id="notes" RelativeSize="60.6687898089172" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="rec_DocSrv_Order_Detail_Srv_LookupListView">
+      <Columns>
+        <ColumnInfo Id="docsrv_type_id.docsrv_type_name" Index="-1" />
+        <ColumnInfo Id="docsrv_type_id" PropertyName="docsrv_type_id" Index="0" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="rec_DocSrv_Order_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="13.438735177865613" Direction="Vertical" Caption="SimpleEditors">
+            <LayoutItem Id="person_name" ViewItem="person_name" Index="0" RelativeSize="47.058823529411768" IsNewNode="True" />
+            <LayoutGroup Id="Autoa340235e-435d-4f71-a0b7-f0b8b5071983" ShowCaption="False" Caption="Autoa340235e-435d-4f71-a0b7-f0b8b5071983(4)" Direction="Horizontal" Index="1" RelativeSize="52.941176470588232" IsNewNode="True">
+              <LayoutItem Id="person_mobile" ViewItem="person_mobile" Index="0" RelativeSize="49.681528662420384" IsNewNode="True" />
+              <LayoutItem Id="person_phone" ViewItem="person_phone" Index="1" RelativeSize="50.318471337579616" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="rec_DocSrv_Order" RelativeSize="100" Removed="True">
+              <LayoutGroup Id="rec_DocSrv_Order_col1" RelativeSize="49.955237242614146">
+                <LayoutItem Id="order_date" Index="1" RelativeSize="63.636363636363633" />
+                <LayoutItem Id="CustomName" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="docsrv_order_id" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="rec_DocSrv_Order_col2" RelativeSize="50.044762757385854">
+                <LayoutItem Id="person_mobile" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="person_name" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="person_phone" RelativeSize="36.363636363636367" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" Direction="Horizontal" RelativeSize="12.450592885375494" Caption="Notes">
+            <LayoutItem Id="notes" RelativeSize="71.815286624203821" />
+            <LayoutGroup Id="Auto51c2a0b5-838b-40b1-bea1-3d28b5e6ee76" ShowCaption="False" Caption="Auto51c2a0b5-838b-40b1-bea1-3d28b5e6ee76(9)" Index="1" RelativeSize="28.184713375796179" IsNewNode="True">
+              <LayoutItem Id="docsrv_order_id" ViewItem="docsrv_order_id" Index="0" RelativeSize="47.61904761904762" IsNewNode="True" />
+              <LayoutItem Id="order_date" ViewItem="order_date" Index="1" RelativeSize="52.38095238095238" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="74.110671936758891">
+            <LayoutGroup Id="rec_DocSrv_Order_Details" RelativeSize="100" Index="0">
+              <LayoutItem Id="rec_DocSrv_Order_Details" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" RelativeSize="100" Index="1">
+              <LayoutItem Id="AuditTrail" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="rec_DocSrv_Order_ListView">
+      <Columns>
+        <ColumnInfo Id="CustomName" Index="-1" />
+        <ColumnInfo Id="order_date" Index="0" />
+        <ColumnInfo Id="person_name" Index="1" />
+        <ColumnInfo Id="person_mobile" Index="2" />
+        <ColumnInfo Id="person_phone" Index="3" />
+      </Columns>
+    </ListView>
+    <ListView Id="rec_DocSrv_Order_LookupListView">
+      <Columns>
+        <ColumnInfo Id="CustomName" Index="-1" />
+        <ColumnInfo Id="person_name" PropertyName="person_name" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="order_date" PropertyName="order_date" Index="1" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="rec_DocSrv_Order_rec_DocSrv_Order_Details_ListView" AllowEdit="True" NewItemRowPosition="Top" />
+    <DetailView Id="rec_DocSrv_Type_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="12.252964426877471">
+            <LayoutGroup Id="rec_DocSrv_Type" RelativeSize="100">
+              <LayoutItem Id="docsrv_type_name" Index="0" RelativeSize="51.612903225806448" />
+              <LayoutItem Id="docsrv_type_price" Index="1" RelativeSize="48.387096774193552" />
+              <LayoutItem Id="docsrv_type_id" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" Direction="Horizontal" RelativeSize="12.450592885375494" Caption="Notes">
+            <LayoutItem Id="notes" RelativeSize="72.29299363057325" />
+            <LayoutItem Id="docsrv_type_id" ViewItem="docsrv_type_id" Index="1" RelativeSize="27.70700636942675" IsNewNode="True" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="75.296442687747032">
+            <LayoutGroup Id="rec_DocSrv_Order_Detail_Srvs" RelativeSize="100" Index="0">
+              <LayoutItem Id="rec_DocSrv_Order_Detail_Srvs" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" RelativeSize="100" Index="1">
+              <LayoutItem Id="AuditTrail" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <DetailView Id="rec_Employee_Activity_DetailView">
       <Items>
         <PropertyEditor Id="activity_id" DisplayFormat="{0:N0}" />

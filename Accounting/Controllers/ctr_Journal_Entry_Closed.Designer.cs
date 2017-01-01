@@ -40,6 +40,7 @@
             this.act_Closed.ConfirmationMessage = "You are about to closed Entries, Are you sure you want to continue?";
             this.act_Closed.Id = "SetEntryClosed";
             this.act_Closed.ImageName = "Action_Grant";
+            this.act_Closed.SelectionDependencyType = DevExpress.ExpressApp.Actions.SelectionDependencyType.RequireSingleObject;
             this.act_Closed.TargetObjectsCriteriaMode = DevExpress.ExpressApp.Actions.TargetObjectsCriteriaMode.TrueForAll;
             this.act_Closed.TargetObjectType = typeof(Accounting.BusinessObjects.Recruitment.acc_Journal_Entry);
             this.act_Closed.ToolTip = null;

@@ -10,7 +10,9 @@ namespace Recruitment.Module.Core
     {
         public static string OptionAdvanceRevenue => "Advance Revenue";
         public static string OptionRevenueDue => "Revenue Due";
-        public static string OptionCustomers => "Customers";
+        public static string OptionDocumentRevenue => "Document Revenue";
+        public static string OptionCash => "Cash";
+
 
         public enum enum_Doc_Status
         {

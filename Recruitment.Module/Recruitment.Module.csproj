@@ -251,6 +251,22 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Delivery_Type.Designer.cs">
       <DependentUpon>rec_Delivery_Type.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_DocSrv_Order.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_DocSrv_Order.Designer.cs">
+      <DependentUpon>rec_DocSrv_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_DocSrv_Order_Detail.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_DocSrv_Order_Detail.Designer.cs">
+      <DependentUpon>rec_DocSrv_Order_Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_DocSrv_Order_Detail_Srv.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_DocSrv_Order_Detail_Srv.Designer.cs">
+      <DependentUpon>rec_DocSrv_Order_Detail_Srv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_DocSrv_Type.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_DocSrv_Type.Designer.cs">
+      <DependentUpon>rec_DocSrv_Type.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Doc_Info.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Doc_Info.Designer.cs">
       <DependentUpon>rec_Doc_Info.cs</DependentUpon>
@@ -439,6 +455,18 @@
     <Compile Include="Controllers\ctr_PrintConnection.Designer.cs">
       <DependentUpon>ctr_PrintConnection.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\ctr_rec_DocSrv_Order_Detail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ctr_rec_DocSrv_Order_Detail.Designer.cs">
+      <DependentUpon>ctr_rec_DocSrv_Order_Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ctr_rec_DocSrv_Order_Detail_Srv.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ctr_rec_DocSrv_Order_Detail_Srv.Designer.cs">
+      <DependentUpon>ctr_rec_DocSrv_Order_Detail_Srv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\ctr_RoleCRUD.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -520,6 +548,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\ctr_PrintConnection.resx">
       <DependentUpon>ctr_PrintConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\ctr_rec_DocSrv_Order_Detail.resx">
+      <DependentUpon>ctr_rec_DocSrv_Order_Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\ctr_rec_DocSrv_Order_Detail_Srv.resx">
+      <DependentUpon>ctr_rec_DocSrv_Order_Detail_Srv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\ctr_RoleCRUD.resx">
       <DependentUpon>ctr_RoleCRUD.cs</DependentUpon>
@@ -680,6 +714,20 @@
     <EmbeddedResource Include="Images\rec_Cash_32x32.png" />
     <EmbeddedResource Include="Images\FollowUp.png" />
     <EmbeddedResource Include="Images\FollowUp_32x32.png" />
+    <EmbeddedResource Include="Images\rec_DocSrv_Order.png" />
+    <EmbeddedResource Include="Images\rec_DocSrv_Order_32x32.png" />
+    <EmbeddedResource Include="Images\rec_DocSrv_Order_Detail.png" />
+    <EmbeddedResource Include="Images\rec_DocSrv_Order_Detail_32x32.png" />
+    <EmbeddedResource Include="Images\rec_DocSrv_Order_Detail_Srv.png" />
+    <EmbeddedResource Include="Images\rec_DocSrv_Order_Detail_Srv_32x32.png" />
+    <EmbeddedResource Include="Images\rec_DocSrv_Order_Detail_Srv_Completed.png" />
+    <EmbeddedResource Include="Images\rec_DocSrv_Order_Detail_Srv_Completed_32x32.png" />
+    <EmbeddedResource Include="Images\rec_DocSrv_Type.png" />
+    <EmbeddedResource Include="Images\rec_DocSrv_Type_32x32.png" />
+    <EmbeddedResource Include="Images\rec_DocSrv_Order_Detail_Srv_Paid.png" />
+    <EmbeddedResource Include="Images\rec_DocSrv_Order_Detail_Srv_Paid_32x32.png" />
+    <EmbeddedResource Include="Images\rec_DocSrv_Order_Detail_Delivered.png" />
+    <EmbeddedResource Include="Images\rec_DocSrv_Order_Detail_Delivered_32x32.png" />
     <Content Include="Information.txt" />
     <Content Include="Welcome.html" />
   </ItemGroup>
