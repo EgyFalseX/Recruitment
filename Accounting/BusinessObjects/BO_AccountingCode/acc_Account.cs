@@ -59,8 +59,8 @@ namespace Accounting.BusinessObjects.Recruitment
         protected override void OnChanged(string propertyName, object oldValue, object newValue)
         {
             base.OnChanged(propertyName, oldValue, newValue);
-            if (IsLoading || oldValue == newValue || (propertyName != "parent_account_id")) return;
-
+            if (IsLoading || IsDeleted || oldValue == newValue || (propertyName != "parent_account_id")) return;
+            
             acc_nature_id = parent_account_id.acc_nature_id ?? Session.GetObjectByKey<acc_Nature>(parent_account_id.account_type_id.account_type_id);
             account_type_id = parent_account_id.account_type_id ?? Session.GetObjectByKey<acc_Account_Type>(parent_account_id.account_type_id.account_type_id);
 

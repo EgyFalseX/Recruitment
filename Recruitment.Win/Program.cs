@@ -42,6 +42,8 @@ namespace Recruitment.Win {
             
             try {
                 //((WinApplication)winApplication).GetUserChoice("Eshtaaaaaaaaaa?", MessageBoxButtons.YesNo);
+                DevExpress.Persistent.AuditTrail.AuditTrailService.Instance.TimestampStrategy = new Module.Core.ServerTimestampStrategy();// Set server time for Audit trail Service instead of using local time
+
                 if (FXFW.SqlDB.LoadSqlDBPath("Recruitment") /*&& Authentication()*/)
                 {
                     winApplication.ConnectionString = FXFW.SqlDB.SqlConStr;// set connection string.

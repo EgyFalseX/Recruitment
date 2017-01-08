@@ -193,6 +193,9 @@
     <Compile Include="BusinessObjects\BO_AccountingCode\sp_Income_StatementResult.cs">
       <DependentUpon>StoredProcHelper.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_AccountingCode\sp_Income_Statement_fixedResult.cs">
+      <DependentUpon>StoredProcHelper.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_AccountingCode\sp_Trial_BalanceResult.cs">
       <DependentUpon>StoredProcHelper.cs</DependentUpon>
     </Compile>
@@ -277,6 +280,12 @@
     <Compile Include="Report\acc_Rep_Account_Journals_Currency.Designer.cs">
       <DependentUpon>acc_Rep_Account_Journals_Currency.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\acc_Rep_Income_Statement_Fixed.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\acc_Rep_Income_Statement_Fixed.Designer.cs">
+      <DependentUpon>acc_Rep_Income_Statement_Fixed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\acc_Rep_Trial_Balance.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -292,6 +301,7 @@
     <Compile Include="Report\RepParam_acc_Rep_01.cs" />
     <Compile Include="Report\RepParam_acc_Rep_Balance_Sheet.cs" />
     <Compile Include="Report\RepParam_acc_Rep_Income_Statement.cs" />
+    <Compile Include="Report\RepParam_acc_Rep_Income_Statement_Fixed.cs" />
     <Compile Include="Report\RepParam_acc_Rep_Trial_Balance.cs" />
     <Compile Include="Rule\JournalEntryBalanceRule.cs" />
   </ItemGroup>
@@ -331,6 +341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\acc_Rep_Account_Journals_Currency.resx">
       <DependentUpon>acc_Rep_Account_Journals_Currency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\acc_Rep_Income_Statement_Fixed.resx">
+      <DependentUpon>acc_Rep_Income_Statement_Fixed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\acc_Rep_Trial_Balance.resx">
       <DependentUpon>acc_Rep_Trial_Balance.cs</DependentUpon>

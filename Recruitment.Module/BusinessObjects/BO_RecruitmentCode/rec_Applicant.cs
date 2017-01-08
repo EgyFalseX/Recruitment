@@ -25,7 +25,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
      , CriteriaEvaluationBehavior = CriteriaEvaluationBehavior.BeforeTransaction
      , InvertResult = true
      , LooksFor = typeof(rec_Applicant)
-     , SkipNullOrEmptyValues = false
+     , SkipNullOrEmptyValues = true
      )
  ]
     public partial class rec_Applicant

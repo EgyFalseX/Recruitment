@@ -341,6 +341,7 @@
             this.ReportFooter.Dpi = 100F;
             this.ReportFooter.HeightF = 140.7083F;
             this.ReportFooter.Name = "ReportFooter";
+            this.ReportFooter.PrintAtBottom = true;
             // 
             // xrPageInfoUser
             // 

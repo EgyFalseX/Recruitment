@@ -148,5 +148,24 @@ namespace Accounting.BusinessObjects.Recruitment
             dataView.PopulateProperties(session.GetClassInfo(typeof(sp_Balance_SheetResult)));
             dataView.LoadData(sprocData);
         }
+        public static DevExpress.Xpo.DB.SelectedData Execsp_Income_Statement_fixed(Session session, int Year, DateTime StartDate, DateTime EndDate)
+        {
+            return session.ExecuteSproc("sp_Income_Statement_fixed", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate));
+        }
+        public static System.Collections.Generic.ICollection<sp_Income_Statement_fixedResult> Execsp_Income_Statement_fixedIntoObjects(Session session, int Year, DateTime StartDate, DateTime EndDate)
+        {
+            return session.GetObjectsFromSproc<sp_Income_Statement_fixedResult>("sp_Income_Statement_fixed", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate));
+        }
+        public static XPDataView Execsp_Income_Statement_fixedIntoDataView(Session session, int Year, DateTime StartDate, DateTime EndDate)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Income_Statement_fixed", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate));
+            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_Income_Statement_fixedResult)), sprocData);
+        }
+        public static void Execsp_Income_Statement_fixedIntoDataView(XPDataView dataView, Session session, int Year, DateTime StartDate, DateTime EndDate)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_Income_Statement_fixed", new OperandValue(Year), new OperandValue(StartDate), new OperandValue(EndDate));
+            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_Income_Statement_fixedResult)));
+            dataView.LoadData(sprocData);
+        }
     }
 }

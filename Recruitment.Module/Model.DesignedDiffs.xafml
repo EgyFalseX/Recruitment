@@ -148,7 +148,7 @@
     <Class Name="DevExpress.Persistent.BaseImpl.AuditDataItemPersistent" DefaultListViewShowAutoFilterRow="True">
       <OwnMembers>
         <Member Name="UserName" Index="0" />
-        <Member Name="ModifiedOn" DisplayFormat="{0:yyyy-MM-dd HH:MM}" EditMask="yyyy-MM-dd HH:MM" EditMaskType="DateTime" Index="1" />
+        <Member Name="ModifiedOn" DisplayFormat="{0:yyyy-MM-dd hh:mm tt}" EditMask="yyyy-MM-dd hh:mm tt" EditMaskType="DateTime" Index="1" />
         <Member Name="OperationType" Index="2" />
         <Member Name="PropertyName" Size="200" Index="3" />
         <Member Name="OldValue" Index="4" />

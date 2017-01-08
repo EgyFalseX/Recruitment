@@ -60,6 +60,7 @@ namespace Accounting {
             reportsUpdater.AddPredefinedReport<acc_Rep_Account_Journals_SubAcc>("Account Journals (Sub Account)", typeof(sp_acc_Account_Journals_SubAccResult), typeof(RepParam_acc_Rep_Account_Journals_SubAcc));
             reportsUpdater.AddPredefinedReport<acc_Rep_Account_Journals_SubAcc_Consolidated>("Account Journals Consolidated (Sub Account)", typeof(sp_acc_Account_Journals_SubAccResult), typeof(RepParam_acc_Rep_Account_Journals_SubAcc));
             reportsUpdater.AddPredefinedReport<acc_Rep_Account_Journals_SubAcc_Currency_Consolidated>("Account Journals Consolidated (Sub Account) Per Currency", typeof(sp_acc_Account_Journals_SubAcc_currencyResult), typeof(RepParam_acc_Rep_Account_Journals_SubAcc_Currency));
+            reportsUpdater.AddPredefinedReport<acc_Rep_Income_Statement_Fixed>("Income Statement 2", typeof(sp_Income_Statement_fixedResult), typeof(RepParam_acc_Rep_Income_Statement_Fixed));
         }
         public override void Setup(XafApplication application) {
             base.Setup(application);

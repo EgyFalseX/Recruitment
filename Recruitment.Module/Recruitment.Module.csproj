@@ -489,6 +489,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Core\IModelListViewExt.cs" />
+    <Compile Include="Core\ServerTimestampStrategy.cs" />
     <Compile Include="Core\SqlOp.cs" />
     <Compile Include="Core\Typez.cs" />
     <Compile Include="Core\ViewFilterContainer.cs" />

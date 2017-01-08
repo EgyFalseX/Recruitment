@@ -61,7 +61,7 @@ namespace Recruitment.Module.Controllers
             acc_Journal_Entry entry = objectSpace.CreateObject<acc_Journal_Entry>();
             entry.closed = true;
             entry.entry_date = Core.SqlOp.GetServerDateTime(ObjectSpace);
-            entry.entry_text = $"{employer.account_id.account_name} - {applicant.applicant_name} - {employer.employer_company_name}";
+            entry.entry_text = $"Start Activity - {applicant.applicant_name} - {employer.employer_company_name}";
             // Load Activities
             IList<rec_Accept_App_Activity> activities =
                 objectSpace.GetObjects<rec_Accept_App_Activity>(

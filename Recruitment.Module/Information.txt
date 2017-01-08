@@ -54,3 +54,7 @@ _________________________________________
 2016-12-19
 1- Add description field in activity app&emp
 2- recreate sp_Activity_02,
+___________________________________________
+2017-01-01
+1- adding certif revenue in account tree
+2- adding cash + certif revenue in options

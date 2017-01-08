@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using DevExpress.Persistent.Base;
 using DevExpress.ExpressApp;
+using DevExpress.Persistent.BaseImpl;
+
 namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     [DefaultClassOptions]
@@ -42,6 +44,23 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
                 }
                 return auditTrail;
             }
+        }
+        protected override void OnDeleting()
+        {
+            //Deleting Audit when deleting the object
+            if (!(Session is NestedUnitOfWork))
+            {
+                AuditedObjectWeakReference auditObjectWr = Session.FindObject<AuditedObjectWeakReference>(
+                    new GroupOperator(
+                        new BinaryOperator("TargetType", Session.GetObjectType(this)),
+                        new BinaryOperator("TargetKey",
+                            AuditedObjectWeakReference.KeyToString(Session.GetKeyValue(this)))
+                        ));
+                for (int i = auditObjectWr.AuditDataItems.Count - 1; i >= 0; i--)
+                    auditObjectWr.AuditDataItems[i].Delete();
+                auditObjectWr.Delete();
+            }
+            base.OnDeleting();
         }
     }
 

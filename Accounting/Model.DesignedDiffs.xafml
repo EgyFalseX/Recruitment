@@ -571,9 +571,6 @@
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="acc_Journal_Entrys_Group" Direction="Vertical" RelativeSize="85.819070904645471">
-            <LayoutItem Id="acc_Journal_Entrys" RelativeSize="100" />
-          </LayoutGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>
