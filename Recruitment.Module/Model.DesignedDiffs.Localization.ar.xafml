@@ -1014,20 +1014,6 @@
         <Member Name="AuditTrail" Caption="تفاصيل إدخال دفتر اليومية" />
       </OwnMembers>
     </Class>
-    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employee_Activity" Caption="rec_Employee_Activity">
-      <OwnMembers>
-        <Member Name="activity_date" DisplayFormat="{0:d}" />
-        <Member Name="activity_id" DisplayFormat="{0:N0}" Caption="activity_id" />
-        <Member Name="cash_id" DisplayFormat="{0:N0}" />
-        <Member Name="currency_id" DisplayFormat="{0:N0}" />
-        <Member Name="employee_activity_id" DisplayFormat="{0:N0}" Caption="employee_activity_id" />
-        <Member Name="employee_id" DisplayFormat="{0:N0}" Caption="employee_id" />
-        <Member Name="jour_entry_id" DisplayFormat="{0:N0}" Caption="jour_entry_id" />
-        <Member Name="org_value" EditMask="#,###,##0.##############################" DisplayFormat="{0:#,###,##0.##############################}" Caption="org_value" />
-        <Member Name="value1" EditMask="#,###,##0.##############################" DisplayFormat="{0:#,###,##0.##############################}" Caption="القيمة 1" />
-        <Member Name="voucher_no" Caption="voucher_no" />
-      </OwnMembers>
-    </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Employer" Caption="صاحب العمل">
       <OwnMembers>
         <Member Name="employer_Address" Caption="عنوان" />
@@ -1508,12 +1494,6 @@
         <LocalizationItem Name="OfficeDocument" Value="مستند office" />
         <LocalizationItem Name="ScreenShots" Value="لقطات الشاشة" />
         <LocalizationItem Name="Unknown" Value="المجهول" />
-      </LocalizationGroup>
-      <LocalizationGroup Name="Recruitment.Module.Core.Typez+enum_rec_Activity_Type" Value="enum_rec_Activity_Type">
-        <LocalizationItem Name="ActualRevenue" Value="الإيرادات الفعلية" />
-        <LocalizationItem Name="AdvanceRevenue" Value="الإيرادات مقدما" />
-        <LocalizationItem Name="BudgetRevenue" Value="إيرادات الميزانية" />
-        <LocalizationItem Name="Expenses" Value="النفقات" />
       </LocalizationGroup>
       <LocalizationGroup Name="Recruitment.Module.Core.Typez+enum_rec_Applicant_Status" Value="enum_rec_Applicant_Status">
         <LocalizationItem Name="Busy" Value="مشغول" />
@@ -2957,52 +2937,6 @@
       <Columns>
         <ColumnInfo Id="rec_industry_require_doc_info_id" DisplayFormat="{0:N0}" />
         <ColumnInfo Id="rec_industry_require_doc_info_rec_doc_info_id" Caption="الوثيقة" />
-      </Columns>
-    </ListView>
-    <DetailView Id="rec_Employee_Activity_DetailView" RequiredFieldMark="*" CaptionColon=":">
-      <Items>
-        <PropertyEditor Id="activity_date" DisplayFormat="{0:d}" />
-        <PropertyEditor Id="activity_id" DisplayFormat="{0:N0}" />
-        <PropertyEditor Id="cash_id" DisplayFormat="{0:N0}" />
-        <PropertyEditor Id="currency_id" DisplayFormat="{0:N0}" />
-        <PropertyEditor Id="employee_activity_id" DisplayFormat="{0:N0}" />
-        <PropertyEditor Id="employee_id" DisplayFormat="{0:N0}" />
-        <PropertyEditor Id="jour_entry_id" DisplayFormat="{0:N0}" />
-        <PropertyEditor Id="org_value" EditMask="#,###,##0.##############################" DisplayFormat="{0:#,###,##0.##############################}" />
-        <PropertyEditor Id="value1" EditMask="#,###,##0.##############################" DisplayFormat="{0:#,###,##0.##############################}" />
-      </Items>
-      <Layout>
-        <LayoutGroup Id="Main">
-          <LayoutGroup Id="SimpleEditors">
-            <LayoutGroup Id="rec_Employee_Activity" Caption="rec_Employee_Activity" />
-          </LayoutGroup>
-        </LayoutGroup>
-      </Layout>
-    </DetailView>
-    <ListView Id="rec_Employee_Activity_ListView">
-      <Columns>
-        <ColumnInfo Id="employee_activity_id" DisplayFormat="{0:N0}" />
-        <ColumnInfo Id="employee_id" DisplayFormat="{0:N0}" />
-        <ColumnInfo Id="activity_id" DisplayFormat="{0:N0}" />
-        <ColumnInfo Id="activity_date" DisplayFormat="{0:d}" />
-        <ColumnInfo Id="cash_id" DisplayFormat="{0:N0}" />
-        <ColumnInfo Id="value1" EditMask="#,###,##0.##############################" DisplayFormat="{0:#,###,##0.##############################}" />
-        <ColumnInfo Id="org_value" EditMask="#,###,##0.##############################" DisplayFormat="{0:#,###,##0.##############################}" />
-        <ColumnInfo Id="currency_id" DisplayFormat="{0:N0}" />
-        <ColumnInfo Id="jour_entry_id" DisplayFormat="{0:N0}" />
-      </Columns>
-    </ListView>
-    <ListView Id="rec_Employee_Activity_LookupListView">
-      <Columns>
-        <ColumnInfo Id="employee_activity_id" DisplayFormat="{0:N0}" />
-        <ColumnInfo Id="employee_id" DisplayFormat="{0:N0}" />
-        <ColumnInfo Id="activity_id" DisplayFormat="{0:N0}" />
-        <ColumnInfo Id="activity_date" DisplayFormat="{0:d}" />
-        <ColumnInfo Id="cash_id" DisplayFormat="{0:N0}" />
-        <ColumnInfo Id="value1" EditMask="#,###,##0.##############################" DisplayFormat="{0:#,###,##0.##############################}" />
-        <ColumnInfo Id="org_value" EditMask="#,###,##0.##############################" DisplayFormat="{0:#,###,##0.##############################}" />
-        <ColumnInfo Id="currency_id" DisplayFormat="{0:N0}" />
-        <ColumnInfo Id="jour_entry_id" DisplayFormat="{0:N0}" />
       </Columns>
     </ListView>
     <DetailView Id="rec_Employer_DetailView" RequiredFieldMark="*" CaptionColon=":">

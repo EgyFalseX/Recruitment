@@ -34,6 +34,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<rec_Employer>("employer_id", ref femployer_id, value); }
         }
         rec_Industry findustry_id;
+        [Indexed(Name = @"iindustry_id_rec_Employer_Industry")]
         [Association(@"rec_Employer_IndustryReferencesrec_Industry")]
         [DevExpress.Xpo.DisplayName(@"Industry")]
         public rec_Industry industry_id

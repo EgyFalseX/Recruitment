@@ -1,19 +1,11 @@
 ﻿using System;
-using System.Linq;
-using System.Text;
 using DevExpress.Xpo;
 using DevExpress.ExpressApp;
 using System.ComponentModel;
-using DevExpress.ExpressApp.DC;
-using DevExpress.Data.Filtering;
 using DevExpress.Persistent.Base;
-using System.Collections.Generic;
-using DevExpress.ExpressApp.Model;
 using DevExpress.ExpressApp.Security.Strategy;
 using DevExpress.Persistent.Base.General;
-using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
-using DevExpress.Utils.Filtering;
 
 namespace Recruitment.Module.BusinessObjects.Notification
 {
@@ -32,14 +24,14 @@ namespace Recruitment.Module.BusinessObjects.Notification
         public override void AfterConstruction()
         {
             base.AfterConstruction();
-
         }
-        long fOid;
+
+        private int _fOid;
         [Key(AutoGenerate = true), Browsable(false)]
-        public long Oid
+        public int Oid
         {
-            get { return fOid; }
-            set { SetPropertyValue<long>("Oid", ref fOid, value); }
+            get { return _fOid; }
+            set { SetPropertyValue<int>("Oid", ref _fOid, value); }
         }
 
         private string _subject;
@@ -83,14 +75,14 @@ namespace Recruitment.Module.BusinessObjects.Notification
         }
 
         #region ISupportNotifications members
-        private DateTime? alarmTime;
+        private DateTime? _alarmTime;
         [RuleRequiredField("Notify_AlarmTime_vld_req", DefaultContexts.Save, "Alarm Time required")]
         public DateTime? AlarmTime
         {
-            get { return alarmTime; }
+            get { return _alarmTime; }
             set
             {
-                alarmTime = value;
+                _alarmTime = value;
                 RemindIn = new TimeSpan(0, 0, 0, 0);
                 if (value == null)
                 {
@@ -139,8 +131,8 @@ namespace Recruitment.Module.BusinessObjects.Notification
         #endregion
         #region IXafEntityObject members
         public void OnCreated() { }
-        public void OnLoaded() { }
-        public void OnSaving()
+        public new void OnLoaded() { }
+        public new void OnSaving()
         {
             if (RemindIn.HasValue)
             {

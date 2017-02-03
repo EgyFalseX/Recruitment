@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="Accounting">
+        <Items Id="Items">
+          <Item Id="@82db964a-c6c9-40a7-aaa8-3c19f09f2eda" ViewId="@f42b0558-a52a-4b3f-8c13-85630bf802fb" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

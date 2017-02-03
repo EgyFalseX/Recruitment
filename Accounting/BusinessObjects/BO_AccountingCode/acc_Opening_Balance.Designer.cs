@@ -14,6 +14,7 @@ using System.ComponentModel;
 namespace Accounting.BusinessObjects.Recruitment
 {
 
+    [Indices(@"account_id;year_id")]
     public partial class acc_Opening_Balance : XPLiteObject
     {
         int fopening_balance_id;
@@ -76,6 +77,7 @@ namespace Accounting.BusinessObjects.Recruitment
             set { SetPropertyValue<double>("debit_currency", ref fdebit_currency, value); }
         }
         acc_Currency fcurrency_id;
+        [Indexed(Name = @"icurrency_id_acc_Opening_Balance")]
         [Association(@"acc_Opening_BalanceReferencesacc_Currency")]
         [DevExpress.Xpo.DisplayName(@"Currency")]
         public acc_Currency currency_id

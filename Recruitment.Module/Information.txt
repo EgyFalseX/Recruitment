@@ -58,3 +58,7 @@ ___________________________________________
 2017-01-01
 1- adding certif revenue in account tree
 2- adding cash + certif revenue in options
+_____________________________________________
+2017-01-18
+change columns size of table "ViewFilterObject"
+Add Salary Record in "rec_Activity_Type" Table

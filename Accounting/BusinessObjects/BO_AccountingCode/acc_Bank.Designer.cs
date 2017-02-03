@@ -80,6 +80,7 @@ namespace Accounting.BusinessObjects.Recruitment
             set { SetPropertyValue<string>("bank_note", ref fbank_note, value); }
         }
         acc_Account fbank_acc_id;
+        [Indexed(Name = @"ibank_acc_id_acc_Bank")]
         [Association(@"acc_BankReferencesacc_Account")]
         [DevExpress.Xpo.DisplayName(@"Account")]
         public acc_Account bank_acc_id

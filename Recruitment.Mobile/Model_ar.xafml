@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="rec_Applicant_ListView" Caption="مقدم الطلب" />
+          <Item Id="rec_Employer_ListView">
+            <Items>
+              <Item Id="rec_Employer_Person" Caption="الشخص صاحب العمل" />
+              <Item Id="rec_Employer_Industry" Caption="صناعة رب العمل" />
+            </Items>
+          </Item>
+          <Item Id="acc_Currancy_ListView" Caption="كورانسي" />
+          <Item Id="Notify_ListView" Caption="إعلام" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

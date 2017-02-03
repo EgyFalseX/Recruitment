@@ -175,6 +175,14 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return frec_employer_order_detail_experience_years_end; }
             set { SetPropertyValue<short>("rec_employer_order_detail_experience_years_end", ref frec_employer_order_detail_experience_years_end, value); }
         }
+        Accounting.BusinessObjects.Recruitment.acc_Currency frec_employer_order_detail_currency_id;
+        [Indexed(Name = @"irec_employer_order_detail_currency_id_rec_Employer_Order_Detail")]
+        [DevExpress.Xpo.DisplayName(@"Currency")]
+        public Accounting.BusinessObjects.Recruitment.acc_Currency rec_employer_order_detail_currency_id
+        {
+            get { return frec_employer_order_detail_currency_id; }
+            set { SetPropertyValue<Accounting.BusinessObjects.Recruitment.acc_Currency>("rec_employer_order_detail_currency_id", ref frec_employer_order_detail_currency_id, value); }
+        }
         [DevExpress.Xpo.DisplayName(@"Order Calls")]
         [Association(@"rec_Employer_Order_Detail_CallReferencesrec_Employer_Order_Detail")]
         public XPCollection<rec_Employer_Order_Detail_Call> rec_Employer_Order_Detail_Calls { get { return GetCollection<rec_Employer_Order_Detail_Call>("rec_Employer_Order_Detail_Calls"); } }

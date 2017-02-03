@@ -32,6 +32,12 @@ namespace Accounting.BusinessObjects.Recruitment
             get { return facc_nature_name; }
             set { SetPropertyValue<string>("acc_nature_name", ref facc_nature_name, value); }
         }
+        int ffactor;
+        public int factor
+        {
+            get { return ffactor; }
+            set { SetPropertyValue<int>("factor", ref ffactor, value); }
+        }
         [DevExpress.Xpo.DisplayName(@"Accounts")]
         [Association(@"acc_AccountReferencesacc_Nature")]
         public XPCollection<acc_Account> acc_Accounts { get { return GetCollection<acc_Account>("acc_Accounts"); } }

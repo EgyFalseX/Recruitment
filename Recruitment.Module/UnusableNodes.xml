@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="rec_Employee_Activity_LookupListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="employee_activity_id" DisplayFormat="{0:N0}" />
+        <ColumnInfo Id="employee_id" DisplayFormat="{0:N0}" />
+        <ColumnInfo Id="activity_id" DisplayFormat="{0:N0}" />
+        <ColumnInfo Id="cash_id" DisplayFormat="{0:N0}" />
+        <ColumnInfo Id="currency_id" DisplayFormat="{0:N0}" />
+        <ColumnInfo Id="jour_entry_id" DisplayFormat="{0:N0}" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

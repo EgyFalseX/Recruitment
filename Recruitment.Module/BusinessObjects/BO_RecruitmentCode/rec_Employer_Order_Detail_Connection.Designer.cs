@@ -25,6 +25,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("rec_employer_order_detail_connection_id", ref frec_employer_order_detail_connection_id, value); }
         }
         rec_Employer_Order_Detail frec_employer_order_detail_id;
+        [Indexed(Name = @"irec_employer_order_detail_id_rec_Employer_Order_Detail_Connection")]
         [Association(@"rec_Employer_Order_Detail_ConnectionReferencesrec_Employer_Order_Detail")]
         [DevExpress.Xpo.DisplayName(@"Order detail")]
         public rec_Employer_Order_Detail rec_employer_order_detail_id

@@ -25,6 +25,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("rec_industry_require_doc_info_id", ref frec_industry_require_doc_info_id, value); }
         }
         rec_Doc_Info frec_industry_require_doc_info_rec_doc_info_id;
+        [Indexed(Name = @"irec_industry_require_doc_info_rec_doc_info_id_rec_Industry_Require_Doc_Info")]
         [Association(@"rec_Industry_Require_Doc_InfoReferencesrec_Doc_Info")]
         [DevExpress.Xpo.DisplayName(@"Document")]
         public rec_Doc_Info rec_industry_require_doc_info_rec_doc_info_id
@@ -33,6 +34,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<rec_Doc_Info>("rec_industry_require_doc_info_rec_doc_info_id", ref frec_industry_require_doc_info_rec_doc_info_id, value); }
         }
         rec_Industry frec_industry_require_doc_info_industry_id;
+        [Indexed(Name = @"irec_industry_require_doc_info_industry_id_rec_Industry_Require_Doc_Info")]
         [Association(@"rec_Industry_Require_Doc_InfoReferencesrec_Industry")]
         [DevExpress.Xpo.DisplayName(@"Industry")]
         public rec_Industry rec_industry_require_doc_info_industry_id

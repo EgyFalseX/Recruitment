@@ -34,6 +34,7 @@ namespace Accounting.BusinessObjects.Recruitment
             set { SetPropertyValue<string>("period_name", ref fperiod_name, value); }
         }
         acc_Year fyear_id;
+        [Indexed(Name = @"iyear_id_acc_Period")]
         [Association(@"acc_PeriodReferencesacc_Year")]
         [DevExpress.Xpo.DisplayName(@"Piscal year")]
         [DevExpress.Persistent.Validation.RuleRequiredField("acc_Period_year_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select Fiscal Year")]

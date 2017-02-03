@@ -25,6 +25,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("emp_order_activity_id", ref femp_order_activity_id, value); }
         }
         rec_Employer_Order frec_employer_order_id;
+        [Indexed(Name = @"irec_employer_order_id_rec_Employer_Order_Activity")]
         [Association(@"rec_Employer_Order_ActivityReferencesrec_Employer_Order")]
         [DevExpress.Xpo.DisplayName(@"Order")]
         [DevExpress.Persistent.Validation.RuleRequiredField("rec_Employer_Order_Activity_rec_employer_order_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Enter Select Employee")]
@@ -42,6 +43,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<DateTime>("activity_date", ref factivity_date, value); }
         }
         rec_Activity factivity_id;
+        [Indexed(Name = @"iactivity_id_rec_Employer_Order_Activity")]
         [Association(@"rec_Employer_Order_ActivityReferencesrec_Activity")]
         [DevExpress.Xpo.DisplayName(@"Activity")]
         [DevExpress.Persistent.Validation.RuleRequiredField("rec_Employer_Order_Activity_activity_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select Activity")]
@@ -51,6 +53,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<rec_Activity>("activity_id", ref factivity_id, value); }
         }
         rec_Cash fcash_id;
+        [Indexed(Name = @"icash_id_rec_Employer_Order_Activity")]
         [Association(@"rec_Employer_Order_ActivityReferencesrec_Cash")]
         [DevExpress.Xpo.DisplayName(@"Cash")]
         [DevExpress.Persistent.Validation.RuleRequiredField("rec_Employer_Order_Activity_cash_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select Cash")]
@@ -77,6 +80,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<double>("org_value", ref forg_value, value); }
         }
         Accounting.BusinessObjects.Recruitment.acc_Currency fcurrency_id;
+        [Indexed(Name = @"icurrency_id_rec_Employer_Order_Activity")]
         [DevExpress.Xpo.DisplayName(@"Currency")]
         public Accounting.BusinessObjects.Recruitment.acc_Currency currency_id
         {
@@ -84,6 +88,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<Accounting.BusinessObjects.Recruitment.acc_Currency>("currency_id", ref fcurrency_id, value); }
         }
         Accounting.BusinessObjects.Recruitment.acc_Journal_Entry fjour_entry_id;
+        [Indexed(Name = @"ijour_entry_id_rec_Employer_Order_Activity")]
         [DevExpress.Xpo.DisplayName(@"Journal Entry")]
         public Accounting.BusinessObjects.Recruitment.acc_Journal_Entry jour_entry_id
         {

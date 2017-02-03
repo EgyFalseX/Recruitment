@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="acc_Account_Applicant_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" ViewItem="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" Index="0" RelativeSize="3.9119804400977993" />
+          <LayoutItem Id="account_id" ViewItem="account_id" Index="1" RelativeSize="2.93398533007335" />
+          <LayoutGroup Id="AuditTrail_Group" RelativeSize="93.154034229828852" Index="2" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="7.5794621026894866" Removed="True">
+            <LayoutItem Id="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" ViewItem="rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id" Index="0" RelativeSize="51.612903225806448" />
+            <LayoutItem Id="account_id" ViewItem="account_id" Index="1" RelativeSize="48.387096774193552" />
+            <LayoutGroup Id="acc_Account_Applicant" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="acc_Journal_Entry_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="JournalCaption" ViewItem="JournalCaption" />
+          <LayoutItem Id="year_id" ViewItem="year_id" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Applicant_Experience_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="app_exp_title" ViewItem="app_exp_title" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

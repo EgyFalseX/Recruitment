@@ -176,7 +176,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.9.0.2-beta1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.2-beta2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System">
@@ -275,6 +275,10 @@
       <Project>{E1F786D2-E67F-4566-BB09-1B8E2B817911}</Project>
       <Name>Accounting</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ControllerManagement.Module\ControllerManagement.Module.csproj">
+      <Project>{56A1769D-B1C0-42D0-829E-51D87C5DE713}</Project>
+      <Name>ControllerManagement.Module</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Recruitment.Module\Recruitment.Module.csproj">
       <Project>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</Project>
       <Name>Recruitment.Module</Name>
@@ -286,6 +290,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="Model_ar.xafml">
+      <DependentUpon>Model.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Properties\PublishProfiles\RecruitmentCTP-myAsp.pubxml" />
     <None Include="ReadMe.txt" />
     <Content Include="Properties\PublishProfiles\RecruitmentCTP-myAsp.pubxml.user" />

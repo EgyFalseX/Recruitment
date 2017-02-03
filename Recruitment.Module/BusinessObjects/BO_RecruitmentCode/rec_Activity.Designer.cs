@@ -70,13 +70,14 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return fdescription; }
             set { SetPropertyValue<string>("description", ref fdescription, value); }
         }
-        Core.Typez.enum_rec_Activity_Type factivity_type_id;
+        rec_Activity_Type factivity_type_id;
+        [Association(@"rec_ActivityReferencesrec_Activity_Type")]
         [DevExpress.Xpo.DisplayName(@"Activity Type")]
         [DevExpress.Persistent.Validation.RuleRequiredField("rec_Activity_activity_activity_type_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select Activity Type")]
-        public Core.Typez.enum_rec_Activity_Type activity_type_id
+        public rec_Activity_Type activity_type_id
         {
             get { return factivity_type_id; }
-            set { SetPropertyValue<Core.Typez.enum_rec_Activity_Type>("activity_type_id", ref factivity_type_id, value); }
+            set { SetPropertyValue<rec_Activity_Type>("activity_type_id", ref factivity_type_id, value); }
         }
         [DevExpress.Xpo.DisplayName(@"Accepted Applicant Activities")]
         [Association(@"rec_Accept_App_ActivityReferencesrec_Activity")]
@@ -84,6 +85,9 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         [DevExpress.Xpo.DisplayName(@"Employer Order Activities")]
         [Association(@"rec_Employer_Order_ActivityReferencesrec_Activity")]
         public XPCollection<rec_Employer_Order_Activity> rec_Employer_Order_Activitys { get { return GetCollection<rec_Employer_Order_Activity>("rec_Employer_Order_Activitys"); } }
+        [DevExpress.Xpo.DisplayName(@"Employee Activities")]
+        [Association(@"rec_Employee_ActivityReferencesrec_Activity")]
+        public XPCollection<rec_Employee_Activity> rec_Employee_Activitys { get { return GetCollection<rec_Employee_Activity>("rec_Employee_Activitys"); } }
     }
 
 }

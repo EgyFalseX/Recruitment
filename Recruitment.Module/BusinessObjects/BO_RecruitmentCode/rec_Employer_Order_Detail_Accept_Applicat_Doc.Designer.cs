@@ -25,6 +25,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_id", ref frec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_id, value); }
         }
         rec_Employer_Order_Detail_Accept_Applicat frec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_employer_order_detail_accept_applicat_id;
+        [Indexed(Name = @"irec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_employer_order_detail_accept_applicat_id_r_951B4CEE")]
         [Association(@"rec_Employer_Order_Detail_Accept_Applicat_DocReferencesrec_Employer_Order_Detail_Accept_Applicat")]
         [DevExpress.Xpo.DisplayName(@"Accepted_Applicant")]
         public rec_Employer_Order_Detail_Accept_Applicat rec_employer_order_detail_accept_applicat_rec_industry_require_doc_type_rec_employer_order_detail_accept_applicat_id

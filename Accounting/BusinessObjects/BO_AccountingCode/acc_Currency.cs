@@ -13,7 +13,9 @@ namespace Accounting.BusinessObjects.Recruitment
     public partial class acc_Currency
     {
         public acc_Currency(Session session) : base(session) { }
-        public override void AfterConstruction() { base.AfterConstruction(); }
+        public override void AfterConstruction() { base.AfterConstruction();
+            exchange_price = 0;
+        }
         //Audit Trail
         private XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> auditTrail;
         public XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> AuditTrail
@@ -27,6 +29,7 @@ namespace Accounting.BusinessObjects.Recruitment
                 return auditTrail;
             }
         }
+
     }
 
 }

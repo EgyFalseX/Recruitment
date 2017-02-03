@@ -43,6 +43,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<rec_Langauge>("app_lang_langauge_id", ref fapp_lang_langauge_id, value); }
         }
         rec_Langauge_Level frec_lang_level_id;
+        [Indexed(Name = @"irec_lang_level_id_rec_Applicant_Langauge")]
         [Association(@"rec_Applicant_LangaugeReferencesrec_Langauge_Level")]
         [DevExpress.Xpo.DisplayName(@"Level")]
         public rec_Langauge_Level rec_lang_level_id

@@ -25,6 +25,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("industry_id", ref findustry_id, value); }
         }
         string findustry_name;
+        [Indexed(Name = @"irec_Industry_industry_name")]
         [DevExpress.Xpo.DisplayName(@"Industry name")]
         [DevExpress.Persistent.Validation.RuleUniqueValue("", DevExpress.Persistent.Validation.DefaultContexts.Save, "Object with the same name exists")]
         public string industry_name

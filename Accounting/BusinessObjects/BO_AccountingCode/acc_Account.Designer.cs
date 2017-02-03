@@ -34,6 +34,7 @@ namespace Accounting.BusinessObjects.Recruitment
             set { SetPropertyValue<string>("account_name", ref faccount_name, value); }
         }
         acc_Account fparent_account_id;
+        [Indexed(Name = @"iparent_account_id_acc_Account")]
         [Association(@"acc_AccountReferencesacc_Account")]
         [DevExpress.Xpo.DisplayName(@"Parent account")]
         public acc_Account parent_account_id

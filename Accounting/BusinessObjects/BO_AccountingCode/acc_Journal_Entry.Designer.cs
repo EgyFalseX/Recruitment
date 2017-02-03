@@ -64,6 +64,7 @@ namespace Accounting.BusinessObjects.Recruitment
             set { SetPropertyValue<string>("entry_text", ref fentry_text, value); }
         }
         acc_Period fperiod_id;
+        [Indexed(Name = @"iyear_id_acc_Journal_Entry")]
         [Association(@"acc_Journal_EntryReferencesacc_Period")]
         [DevExpress.Xpo.DisplayName(@"Period")]
         [DevExpress.Persistent.Validation.RuleRequiredField("acc_Journal_Entry_period_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select A Period")]

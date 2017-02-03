@@ -58,6 +58,8 @@ namespace Recruitment.Module.Core
             //[DevExpress.Persistent.Base.ImageName("Action_Delete")]
             Expenses = 3,
             AdvanceRevenue = 4,
+            Salary = 5,
+
         }
 
 

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="acc_Journal_Entry_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="JournalCaption" ViewItem="JournalCaption" />
+          <LayoutItem Id="year_id" ViewItem="year_id" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="rec_Applicant_Experience_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="app_exp_title" ViewItem="app_exp_title" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

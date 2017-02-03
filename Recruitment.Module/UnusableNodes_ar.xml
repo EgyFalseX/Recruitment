@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Localization Id="Localization">
+    <LocalizationGroup Name="Enums">
+      <LocalizationGroup Name="Recruitment.Module.Core.Typez+enum_rec_Activity_Type" Value="enum_rec_Activity_Type">
+        <LocalizationItem Name="ActualRevenue" Value="الإيرادات الفعلية" />
+        <LocalizationItem Name="AdvanceRevenue" Value="الإيرادات مقدما" />
+        <LocalizationItem Name="BudgetRevenue" Value="إيرادات الميزانية" />
+        <LocalizationItem Name="Expenses" Value="النفقات" />
+      </LocalizationGroup>
+    </LocalizationGroup>
+  </Localization>
+  <Views Id="Views">
+    <ListView Id="rec_Employee_Activity_LookupListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="employee_activity_id" DisplayFormat="{0:N0}" />
+        <ColumnInfo Id="employee_id" DisplayFormat="{0:N0}" />
+        <ColumnInfo Id="activity_id" DisplayFormat="{0:N0}" />
+        <ColumnInfo Id="cash_id" DisplayFormat="{0:N0}" />
+        <ColumnInfo Id="currency_id" DisplayFormat="{0:N0}" />
+        <ColumnInfo Id="jour_entry_id" DisplayFormat="{0:N0}" />
+        <ColumnInfo Id="activity_date" DisplayFormat="{0:d}" />
+        <ColumnInfo Id="value1" EditMask="#,###,##0.##############################" DisplayFormat="{0:#,###,##0.##############################}" />
+        <ColumnInfo Id="org_value" EditMask="#,###,##0.##############################" DisplayFormat="{0:#,###,##0.##############################}" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

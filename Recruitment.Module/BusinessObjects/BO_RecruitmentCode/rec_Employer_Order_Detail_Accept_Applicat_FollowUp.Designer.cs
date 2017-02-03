@@ -25,6 +25,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("follow_id", ref ffollow_id, value); }
         }
         rec_Employer_Order_Detail_Accept_Applicat frec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id;
+        [Indexed(Name = @"irec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id_rec_Employer_Order_Detail_Acce_859162E2")]
         [Association(@"rec_Employer_Order_Detail_Accept_Applicat_FollowUpReferencesrec_Employer_Order_Detail_Accept_Applicat")]
         [DevExpress.Xpo.DisplayName(@"Accepted Applicant")]
         [DevExpress.Persistent.Validation.RuleRequiredField("rec_Employer_Order_Detail_Accept_Applicat_FollowUp_rec_employer_order_detail_accept_applicat_rec_employer_order_detail_suggest_applicat_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select Accepted Applicant")]

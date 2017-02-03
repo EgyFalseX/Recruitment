@@ -183,6 +183,10 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Activity.Designer.cs">
       <DependentUpon>rec_Activity.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Activity_Type.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Activity_Type.Designer.cs">
+      <DependentUpon>rec_Activity_Type.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Annual_Vacation_Type.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Annual_Vacation_Type.Designer.cs">
       <DependentUpon>rec_Annual_Vacation_Type.cs</DependentUpon>
@@ -270,6 +274,10 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Doc_Info.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Doc_Info.Designer.cs">
       <DependentUpon>rec_Doc_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employee.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employee.Designer.cs">
+      <DependentUpon>rec_Employee.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employee_Activity.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Employee_Activity.Designer.cs">
@@ -729,7 +737,17 @@
     <EmbeddedResource Include="Images\rec_DocSrv_Order_Detail_Srv_Paid_32x32.png" />
     <EmbeddedResource Include="Images\rec_DocSrv_Order_Detail_Delivered.png" />
     <EmbeddedResource Include="Images\rec_DocSrv_Order_Detail_Delivered_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Employee.png" />
+    <EmbeddedResource Include="Images\rec_Employee_32x32.png" />
+    <EmbeddedResource Include="Images\rec_Employee_Activity.png" />
+    <EmbeddedResource Include="Images\rec_Employee_Activity_32x32.png" />
+    <EmbeddedResource Include="Images\Settings.png" />
+    <EmbeddedResource Include="Images\Settings_32x32.png" />
     <Content Include="Information.txt" />
+    <None Include="UnusableNodes1.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Welcome.html" />
   </ItemGroup>
   <ItemGroup>

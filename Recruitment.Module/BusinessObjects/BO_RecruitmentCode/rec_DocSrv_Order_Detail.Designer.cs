@@ -25,6 +25,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("docsrv_order_detail", ref fdocsrv_order_detail, value); }
         }
         rec_DocSrv_Order fdocsrv_order_id;
+        [Indexed(Name = @"idocsrv_order_id_rec_DocSrv_Order_Detail")]
         [Association(@"rec_DocSrv_Order_DetailReferencesrec_DocSrv_Order")]
         [DevExpress.Xpo.DisplayName(@"Document Service Order")]
         public rec_DocSrv_Order docsrv_order_id
@@ -33,6 +34,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<rec_DocSrv_Order>("docsrv_order_id", ref fdocsrv_order_id, value); }
         }
         rec_Doc_Info frec_doc_info_id;
+        [Indexed(Name = @"irec_doc_info_id_rec_DocSrv_Order_Detail")]
         [Association(@"rec_DocSrv_Order_DetailReferencesrec_Doc_Info")]
         [DevExpress.Xpo.DisplayName(@"Document")]
         [DevExpress.Persistent.Validation.RuleRequiredField("rec_DocSrv_Order_Detail_rec_doc_info_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select Document")]

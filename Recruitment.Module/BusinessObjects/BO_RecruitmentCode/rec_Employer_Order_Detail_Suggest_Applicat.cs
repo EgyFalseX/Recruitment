@@ -23,6 +23,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         Typez.enum_rec_Suggest_Applicant_Status frec_employer_order_detail_suggest_applicat_rec_applicant_status_id;
         //[Association(@"rec_Employer_Order_Detail_Suggest_ApplicatReferencesrec_Applicant_Status")]
+        [Indexed(Name = @"irec_employer_order_detail_suggest_applicat_rec_applicant_status_id_rec_Employer_Order_Detail_Suggest_Applicat")]
         public Typez.enum_rec_Suggest_Applicant_Status rec_employer_order_detail_suggest_applicat_rec_applicant_status_id
         {
             get { return frec_employer_order_detail_suggest_applicat_rec_applicant_status_id; }

@@ -25,6 +25,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("app_prj_id", ref fapp_prj_id, value); }
         }
         rec_Applicant fapp_prj_applicant_id;
+        [Indexed(Name = @"iapp_prj_applicant_id_rec_Applicant_Project")]
         [Association(@"rec_Applicant_ProjectReferencesrec_Applicant")]
         [DevExpress.Xpo.DisplayName(@"Applicant")]
         public rec_Applicant app_prj_applicant_id

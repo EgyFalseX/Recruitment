@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="Accounting">
+        <Items Id="Items">
+          <Item Id="rec_Activity_ListView">
+            <Items Id="Items">
+              <Item Id="rec_Employee_Activity_ListView">
+                <Items Id="Items">
+                  <Item Id="rec_Employee_Activity_PivotView" ViewId="rec_Employee_Activity_PivotView" />
+                </Items>
+              </Item>
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

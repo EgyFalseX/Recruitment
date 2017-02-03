@@ -25,6 +25,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("docsrv_order_detail_srv_id", ref fdocsrv_order_detail_srv_id, value); }
         }
         rec_DocSrv_Order_Detail fdocsrv_order_detail;
+        [Indexed(Name = @"idocsrv_order_detail_rec_DocSrv_Order_Detail_Srv")]
         [Association(@"rec_DocSrv_Order_Detail_SrvReferencesrec_DocSrv_Order_Detail")]
         [DevExpress.Xpo.DisplayName(@"Document Service Order Detail")]
         public rec_DocSrv_Order_Detail docsrv_order_detail
@@ -33,6 +34,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<rec_DocSrv_Order_Detail>("docsrv_order_detail", ref fdocsrv_order_detail, value); }
         }
         rec_DocSrv_Type fdocsrv_type_id;
+        [Indexed(Name = @"idocsrv_type_id_rec_DocSrv_Order_Detail_Srv")]
         [Association(@"rec_DocSrv_Order_Detail_SrvReferencesrec_DocSrv_Type")]
         [DevExpress.Xpo.DisplayName(@"Service Type")]
         [DevExpress.Persistent.Validation.RuleRequiredField("rec_DocSrv_Type_docsrv_type_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select Service Type")]
@@ -79,6 +81,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<bool>("is_completed", ref fis_completed, value); }
         }
         Accounting.BusinessObjects.Recruitment.acc_Journal_Entry fjour_entry_id;
+        [Indexed(Name = @"ijour_entry_id_rec_DocSrv_Order_Detail_Srv")]
         [DevExpress.Xpo.DisplayName(@"Revenue Entry")]
         public Accounting.BusinessObjects.Recruitment.acc_Journal_Entry jour_entry_id
         {
@@ -86,6 +89,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<Accounting.BusinessObjects.Recruitment.acc_Journal_Entry>("jour_entry_id", ref fjour_entry_id, value); }
         }
         Accounting.BusinessObjects.Recruitment.acc_Journal_Entry fjour_entry_id_Paid;
+        [Indexed(Name = @"ijour_entry_id_Paid_rec_DocSrv_Order_Detail_Srv")]
         [DevExpress.Xpo.DisplayName(@"Paid Entry")]
         public Accounting.BusinessObjects.Recruitment.acc_Journal_Entry jour_entry_id_Paid
         {

@@ -37,6 +37,7 @@ namespace Recruitment.Mobile {
         private DevExpress.ExpressApp.Validation.ValidationModule validationModule;
         private DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule viewVariantsModule;
         private Accounting.AccountingModule accountingModule1;
+        private ControllerManagement.Module.ControllerManagementModule controllerManagementModule1;
         private DevExpress.ExpressApp.Workflow.WorkflowModule workflowModule;
 
         public RecruitmentMobileApplication() {
@@ -124,6 +125,7 @@ namespace Recruitment.Mobile {
             this.viewVariantsModule = new DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule();
             this.workflowModule = new DevExpress.ExpressApp.Workflow.WorkflowModule();
             this.accountingModule1 = new Accounting.AccountingModule();
+            this.controllerManagementModule1 = new ControllerManagement.Module.ControllerManagementModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // securityStrategyComplex1
@@ -156,7 +158,6 @@ namespace Recruitment.Mobile {
             // 
             this.reportsModuleV2.EnableInplaceReports = true;
             this.reportsModuleV2.ReportDataType = typeof(DevExpress.Persistent.BaseImpl.ReportDataV2);
-            this.reportsModuleV2.ReportStoreMode = DevExpress.ExpressApp.ReportsV2.ReportStoreModes.XML;
             // 
             // stateMachineModule
             // 
@@ -202,6 +203,7 @@ namespace Recruitment.Mobile {
             this.Modules.Add(this.viewVariantsModule);
             this.Modules.Add(this.workflowModule);
             this.Modules.Add(this.accountingModule1);
+            this.Modules.Add(this.controllerManagementModule1);
             this.Modules.Add(this.module3);
             this.Modules.Add(this.reportsMobileModuleV2);
             this.Modules.Add(this.module4);

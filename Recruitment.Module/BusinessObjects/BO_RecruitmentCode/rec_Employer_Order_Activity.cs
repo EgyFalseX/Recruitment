@@ -36,7 +36,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             }
         }
         [NonPersistent]
-        public string CustomName => $"{activity_id?.activity_name} - {activity_date}";
+        public string CustomName => $"{activity_id?.activity_name} - {activity_date.ToShortDateString()}";
         private void CreateEntry()
         {
             string employerName =
@@ -196,6 +196,32 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             entry.Delete();
             Session.Delete(entry);
             base.OnDeleting();
+        }
+        protected override void OnChanged(string propertyName, object oldValue, object newValue)
+        {
+            base.OnChanged(propertyName, oldValue, newValue);
+            if (IsLoading || IsDeleted || oldValue == newValue || currency_id == null || (propertyName != "value1" && propertyName != "org_value" && propertyName != "currency_id")) return;
+            double exchangePrice = currency_id.exchange_price;
+            if (Math.Abs(exchangePrice) < 0.001) return;
+            
+            switch (propertyName)
+            {
+                case "value1":
+                    if (Math.Abs(org_value - value1 / exchangePrice) > 0.001)
+                        org_value = value1 / exchangePrice;
+                    break;
+                case "org_value":
+                    if (Math.Abs(value1 - org_value * exchangePrice) > 0.001)
+                        value1 = org_value * exchangePrice;
+                    break;
+                case "currency_id":
+                    if (value1 > 0 && Math.Abs(org_value - value1 / exchangePrice) > 0.001)
+                        org_value = value1 / exchangePrice;
+                    else if (org_value > 0 && Math.Abs(value1 - org_value * exchangePrice) > 0.001)
+                        value1 = org_value * exchangePrice;
+                    break;
+            }
+            
         }
 
     }

@@ -77,6 +77,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("app_edu_year", ref fapp_edu_year, value); }
         }
         rec_Study_Grade fapp_edu_study_grade_id;
+        [Indexed(Name = @"iapp_edu_study_grade_id_rec_Applicant_Education")]
         [Association(@"rec_Applicant_EducationReferencesrec_Study_Grade")]
         [DevExpress.Xpo.DisplayName(@"Grade")]
         public rec_Study_Grade app_edu_study_grade_id

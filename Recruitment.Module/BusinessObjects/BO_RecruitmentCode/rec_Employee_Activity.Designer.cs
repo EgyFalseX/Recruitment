@@ -18,62 +18,79 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
     {
         int femployee_activity_id;
         [Key(true)]
+        [DevExpress.Xpo.DisplayName(@"ID")]
         public int employee_activity_id
         {
             get { return femployee_activity_id; }
             set { SetPropertyValue<int>("employee_activity_id", ref femployee_activity_id, value); }
         }
-        int femployee_id;
-        public int employee_id
+        rec_Employee femployee_id;
+        [Association(@"rec_Employee_ActivityReferencesrec_Employee")]
+        [DevExpress.Xpo.DisplayName(@"Employee")]
+        [DevExpress.Persistent.Validation.RuleRequiredField("rec_Employee_Activity_employee_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select Employee"), DevExpress.Persistent.Base.DataSourceCriteria("active = true")]
+        public rec_Employee employee_id
         {
             get { return femployee_id; }
-            set { SetPropertyValue<int>("employee_id", ref femployee_id, value); }
+            set { SetPropertyValue<rec_Employee>("employee_id", ref femployee_id, value); }
         }
-        int factivity_id;
-        public int activity_id
+        rec_Activity factivity_id;
+        [Association(@"rec_Employee_ActivityReferencesrec_Activity")]
+        [DevExpress.Xpo.DisplayName(@"Activity")]
+        [DevExpress.Persistent.Validation.RuleRequiredField("rec_Employee_Activity_activity_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select Activity")]
+        public rec_Activity activity_id
         {
             get { return factivity_id; }
-            set { SetPropertyValue<int>("activity_id", ref factivity_id, value); }
+            set { SetPropertyValue<rec_Activity>("activity_id", ref factivity_id, value); }
         }
         DateTime factivity_date;
+        [DevExpress.Xpo.DisplayName(@"Activity date")]
+        [DevExpress.Persistent.Validation.RuleRequiredField("rec_Employee_Activity_activity_date_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Enter Date")]
         public DateTime activity_date
         {
             get { return factivity_date; }
             set { SetPropertyValue<DateTime>("activity_date", ref factivity_date, value); }
         }
-        int fcash_id;
-        public int cash_id
+        rec_Cash fcash_id;
+        [Association(@"rec_Employee_ActivityReferencesrec_Cash")]
+        [DevExpress.Xpo.DisplayName(@"Cash")]
+        [DevExpress.Persistent.Validation.RuleRequiredField("rec_Employee_Activity_cash_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select Cash")]
+        public rec_Cash cash_id
         {
             get { return fcash_id; }
-            set { SetPropertyValue<int>("cash_id", ref fcash_id, value); }
+            set { SetPropertyValue<rec_Cash>("cash_id", ref fcash_id, value); }
         }
         double fvalue1;
         [Persistent(@"value")]
+        [DevExpress.Xpo.DisplayName(@"Value")]
         public double value1
         {
             get { return fvalue1; }
             set { SetPropertyValue<double>("value1", ref fvalue1, value); }
         }
         double forg_value;
+        [DevExpress.Xpo.DisplayName(@"Original Value")]
         public double org_value
         {
             get { return forg_value; }
             set { SetPropertyValue<double>("org_value", ref forg_value, value); }
         }
-        int fcurrency_id;
-        public int currency_id
+        Accounting.BusinessObjects.Recruitment.acc_Currency fcurrency_id;
+        [DevExpress.Xpo.DisplayName(@"Currency")]
+        public Accounting.BusinessObjects.Recruitment.acc_Currency currency_id
         {
             get { return fcurrency_id; }
-            set { SetPropertyValue<int>("currency_id", ref fcurrency_id, value); }
+            set { SetPropertyValue<Accounting.BusinessObjects.Recruitment.acc_Currency>("currency_id", ref fcurrency_id, value); }
         }
-        int fjour_entry_id;
-        public int jour_entry_id
+        Accounting.BusinessObjects.Recruitment.acc_Journal_Entry fjour_entry_id;
+        [DevExpress.Xpo.DisplayName(@"Journal entry")]
+        public Accounting.BusinessObjects.Recruitment.acc_Journal_Entry jour_entry_id
         {
             get { return fjour_entry_id; }
-            set { SetPropertyValue<int>("jour_entry_id", ref fjour_entry_id, value); }
+            set { SetPropertyValue<Accounting.BusinessObjects.Recruitment.acc_Journal_Entry>("jour_entry_id", ref fjour_entry_id, value); }
         }
         string fvoucher_no;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Voucher No")]
         public string voucher_no
         {
             get { return fvoucher_no; }

@@ -25,6 +25,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("app_indus_id", ref fapp_indus_id, value); }
         }
         rec_Applicant fapp_indus_applicant_id;
+        [Indexed(Name = @"iapp_indus_applicant_id_rec_Applicant_Industry")]
         [Association(@"rec_Applicant_IndustryReferencesrec_Applicant")]
         [DevExpress.Xpo.DisplayName(@"Applicant")]
         public rec_Applicant app_indus_applicant_id
@@ -33,6 +34,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<rec_Applicant>("app_indus_applicant_id", ref fapp_indus_applicant_id, value); }
         }
         rec_Industry fapp_indus_industry_id;
+        [Indexed(Name = @"iapp_indus_industry_id_rec_Applicant_Industry")]
         [Association(@"rec_Applicant_IndustryReferencesrec_Industry")]
         [DevExpress.Xpo.DisplayName(@"Industry")]
         public rec_Industry app_indus_industry_id

@@ -104,6 +104,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("employer_postal_code", ref femployer_postal_code, value); }
         }
         Accounting.BusinessObjects.Recruitment.acc_Account faccount_id;
+        [Indexed(Name = @"iaccount_id_rec_Employer")]
         [DevExpress.Xpo.DisplayName(@"Account")]
         public Accounting.BusinessObjects.Recruitment.acc_Account account_id
         {

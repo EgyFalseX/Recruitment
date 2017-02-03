@@ -99,6 +99,7 @@ namespace Accounting.BusinessObjects.Recruitment
             set { SetPropertyValue<double>("credit_currency", ref fcredit_currency, value); }
         }
         acc_Currency fcurrency_id;
+        [Indexed(Name = @"icurrency_id_acc_Journal_Entry_Detail")]
         [Association(@"acc_Journal_Entry_DetailReferencesacc_Currency")]
         [DevExpress.Xpo.DisplayName(@"Currency")]
         public acc_Currency currency_id

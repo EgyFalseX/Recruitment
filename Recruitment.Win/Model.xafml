@@ -15,7 +15,7 @@
       <Item Id="Workflow" ImageName="BO_WorkflowDefinition" />
     </Items>
   </NavigationItems>
-  <Options Skin="Visual Studio 2013 Blue" UIType="TabbedMDI" FormStyle="Ribbon">
+  <Options Skin="Office 2016 Colorful" UIType="TabbedMDI" FormStyle="Ribbon">
     <RibbonOptions RibbonControlStyle="Office2013" />
   </Options>
   <SchemaModules>

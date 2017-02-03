@@ -7,4 +7,7 @@
     <SchemaModule Name="SystemModule" Version="16.1.6.0" IsNewNode="True" />
     <SchemaModule Name="SystemWindowsFormsModule" Version="16.1.6.0" IsNewNode="True" />
   </SchemaModules>
+  <Views>
+    <ListView Id="rec_Employee_Activity_PivotView" EditorTypeName="DevExpress.ExpressApp.PivotGrid.Win.PivotGridListEditor" />
+  </Views>
 </Application>
