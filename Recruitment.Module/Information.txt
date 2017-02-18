@@ -63,3 +63,8 @@ _____________________________________________
 change columns size of table "ViewFilterObject"
 Add Salary Record in "rec_Activity_Type" Table
 _____________________________________________
+2017-02-14
+Remove Index "NonClusteredIndex-20160328-053112" from Table "rec_Employer_Order_Detail"
+Rename Column rec_employer_order_detail_salary to "rec_employer_order_detail_salary_from" in table "rec_Employer_Order_Detail"
+Add Column "rec_employer_order_detail_salary_to" in table "rec_Employer_Order_Detail"
+Update column rec_employer_order_detail_salary_to = rec_employer_order_detail_salary_from

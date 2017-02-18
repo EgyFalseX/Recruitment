@@ -29,6 +29,12 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         //    get { return frec_employer_order_rec_employer_order_status_id; }
         //    set { SetPropertyValue<Core.Typez.enum_rec_Employer_Order_Status>("rec_employer_order_rec_employer_order_status_id", ref frec_employer_order_rec_employer_order_status_id, value); }
         //}
+
+        [DevExpress.Xpo.DisplayName(@"Attachments")]
+        [Association(@"rec_Order-PortfolioFileData")]
+        public XPCollection<rec_PortfolioFileData_Order> rec_Employer_Order_rec_PortfolioFileData_Order
+        { get { return GetCollection<rec_PortfolioFileData_Order>("rec_Employer_Order_rec_PortfolioFileData_Order"); } }
+
         //Audit Trail
         private XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> auditTrail;
         public XPCollection<DevExpress.Persistent.BaseImpl.AuditDataItemPersistent> AuditTrail

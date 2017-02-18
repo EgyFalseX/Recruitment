@@ -183,6 +183,20 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return frec_employer_order_detail_currency_id; }
             set { SetPropertyValue<Accounting.BusinessObjects.Recruitment.acc_Currency>("rec_employer_order_detail_currency_id", ref frec_employer_order_detail_currency_id, value); }
         }
+        double frec_employer_order_detail_salary_from;
+        [DevExpress.Xpo.DisplayName(@"Salary start from")]
+        public double rec_employer_order_detail_salary_from
+        {
+            get { return frec_employer_order_detail_salary_from; }
+            set { SetPropertyValue<double>("rec_employer_order_detail_salary_from", ref frec_employer_order_detail_salary_from, value); }
+        }
+        double frec_employer_order_detail_salary_to;
+        [DevExpress.Xpo.DisplayName(@"Salary start to")]
+        public double rec_employer_order_detail_salary_to
+        {
+            get { return frec_employer_order_detail_salary_to; }
+            set { SetPropertyValue<double>("rec_employer_order_detail_salary_to", ref frec_employer_order_detail_salary_to, value); }
+        }
         [DevExpress.Xpo.DisplayName(@"Order Calls")]
         [Association(@"rec_Employer_Order_Detail_CallReferencesrec_Employer_Order_Detail")]
         public XPCollection<rec_Employer_Order_Detail_Call> rec_Employer_Order_Detail_Calls { get { return GetCollection<rec_Employer_Order_Detail_Call>("rec_Employer_Order_Detail_Calls"); } }

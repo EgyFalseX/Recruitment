@@ -173,6 +173,7 @@
       <DependentUpon>AppDependenceFile.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\ConnectionHelper.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\PortfolioFileData_Order.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\PortfolioFileData_Emp.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\PortfolioFileData.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Accept_App_Activity.cs" />
@@ -254,6 +255,10 @@
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Delivery_Type.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_Delivery_Type.Designer.cs">
       <DependentUpon>rec_Delivery_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_DocSrv_Activity.cs" />
+    <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_DocSrv_Activity.Designer.cs">
+      <DependentUpon>rec_DocSrv_Activity.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_DocSrv_Order.cs" />
     <Compile Include="BusinessObjects\BO_RecruitmentCode\rec_DocSrv_Order.Designer.cs">

@@ -71,6 +71,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<string>("description", ref fdescription, value); }
         }
         rec_Activity_Type factivity_type_id;
+        [Indexed(Name = @"iactivity_type_id_rec_Activity")]
         [Association(@"rec_ActivityReferencesrec_Activity_Type")]
         [DevExpress.Xpo.DisplayName(@"Activity Type")]
         [DevExpress.Persistent.Validation.RuleRequiredField("rec_Activity_activity_activity_type_id_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select Activity Type")]
@@ -88,6 +89,9 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         [DevExpress.Xpo.DisplayName(@"Employee Activities")]
         [Association(@"rec_Employee_ActivityReferencesrec_Activity")]
         public XPCollection<rec_Employee_Activity> rec_Employee_Activitys { get { return GetCollection<rec_Employee_Activity>("rec_Employee_Activitys"); } }
+        [DevExpress.Xpo.DisplayName(@"Document Service Activities")]
+        [Association(@"rec_DocSrv_ActivityReferencesrec_Activity")]
+        public XPCollection<rec_DocSrv_Activity> rec_DocSrv_Activitys { get { return GetCollection<rec_DocSrv_Activity>("rec_DocSrv_Activitys"); } }
     }
 
 }

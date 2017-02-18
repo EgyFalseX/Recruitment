@@ -96,6 +96,9 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return fjour_entry_id_Paid; }
             set { SetPropertyValue<Accounting.BusinessObjects.Recruitment.acc_Journal_Entry>("jour_entry_id_Paid", ref fjour_entry_id_Paid, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Document Service Activities")]
+        [Association(@"rec_DocSrv_ActivityReferencesrec_DocSrv_Order_Detail_Srv")]
+        public XPCollection<rec_DocSrv_Activity> rec_DocSrv_Activitys { get { return GetCollection<rec_DocSrv_Activity>("rec_DocSrv_Activitys"); } }
     }
 
 }

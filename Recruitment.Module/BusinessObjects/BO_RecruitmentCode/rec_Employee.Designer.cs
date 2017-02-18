@@ -55,6 +55,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return factive; }
             set { SetPropertyValue<bool>("active", ref factive, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Employee Activities")]
         [Association(@"rec_Employee_ActivityReferencesrec_Employee")]
         public XPCollection<rec_Employee_Activity> rec_Employee_Activitys { get { return GetCollection<rec_Employee_Activity>("rec_Employee_Activitys"); } }
     }

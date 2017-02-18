@@ -50,6 +50,9 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         [DevExpress.Xpo.DisplayName(@"Employee Activities")]
         [Association(@"rec_Employee_ActivityReferencesrec_Cash")]
         public XPCollection<rec_Employee_Activity> rec_Employee_Activitys { get { return GetCollection<rec_Employee_Activity>("rec_Employee_Activitys"); } }
+        [DevExpress.Xpo.DisplayName(@"Document Service Activities")]
+        [Association(@"rec_DocSrv_ActivityReferencesrec_Cash")]
+        public XPCollection<rec_DocSrv_Activity> rec_DocSrv_Activitys { get { return GetCollection<rec_DocSrv_Activity>("rec_DocSrv_Activitys"); } }
     }
 
 }
