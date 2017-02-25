@@ -15,7 +15,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
 {
     public static class ConnectionHelper
     {
-        public const string ConnectionString = @"XpoProvider=MSSqlServer;data source=.;user id=sa;password=123456;initial catalog=Recruitment;Persist Security Info=true";
+        public const string ConnectionString = @"XpoProvider=MSSqlServer;data source=10.0.0.11;user id=sa;password=123456;initial catalog=Recruitment;Persist Security Info=true";
         public static void Connect(DevExpress.Xpo.DB.AutoCreateOption autoCreateOption)
         {
             XpoDefault.DataLayer = XpoDefault.GetDataLayer(ConnectionString, autoCreateOption);

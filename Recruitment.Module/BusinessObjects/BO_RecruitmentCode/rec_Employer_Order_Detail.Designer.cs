@@ -197,6 +197,22 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return frec_employer_order_detail_salary_to; }
             set { SetPropertyValue<double>("rec_employer_order_detail_salary_to", ref frec_employer_order_detail_salary_to, value); }
         }
+        rec_Gender frec_employer_order_detail_rec_gender_id;
+        [Association(@"rec_Employer_Order_DetailReferencesrec_Gender")]
+        [DevExpress.Xpo.DisplayName(@"Gender")]
+        public rec_Gender rec_employer_order_detail_rec_gender_id
+        {
+            get { return frec_employer_order_detail_rec_gender_id; }
+            set { SetPropertyValue<rec_Gender>("rec_employer_order_detail_rec_gender_id", ref frec_employer_order_detail_rec_gender_id, value); }
+        }
+        string frec_employer_order_detail_qualification;
+        [Size(1000)]
+        [DevExpress.Xpo.DisplayName(@"Qualification")]
+        public string rec_employer_order_detail_qualification
+        {
+            get { return frec_employer_order_detail_qualification; }
+            set { SetPropertyValue<string>("rec_employer_order_detail_qualification", ref frec_employer_order_detail_qualification, value); }
+        }
         [DevExpress.Xpo.DisplayName(@"Order Calls")]
         [Association(@"rec_Employer_Order_Detail_CallReferencesrec_Employer_Order_Detail")]
         public XPCollection<rec_Employer_Order_Detail_Call> rec_Employer_Order_Detail_Calls { get { return GetCollection<rec_Employer_Order_Detail_Call>("rec_Employer_Order_Detail_Calls"); } }
