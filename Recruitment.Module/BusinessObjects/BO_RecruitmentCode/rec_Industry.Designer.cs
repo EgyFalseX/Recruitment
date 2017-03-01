@@ -51,6 +51,9 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         [DevExpress.Xpo.DisplayName(@"Applicant Industries")]
         [Association(@"rec_Applicant_IndustryReferencesrec_Industry")]
         public XPCollection<rec_Applicant_Industry> rec_Applicant_Industrys { get { return GetCollection<rec_Applicant_Industry>("rec_Applicant_Industrys"); } }
+        [DevExpress.Xpo.DisplayName(@"Online Apply")]
+        [Association(@"rec_job_postReferencesrec_Industry")]
+        public XPCollection<rec_job_post> rec_job_posts { get { return GetCollection<rec_job_post>("rec_job_posts"); } }
     }
 
 }

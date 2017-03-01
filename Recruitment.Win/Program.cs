@@ -75,7 +75,7 @@ namespace Recruitment.Win {
         {
             IObjectSpace objectSpace = winApplication.CreateObjectSpace();
             DateTime dtTime = Module.Core.SqlOp.GetServerDateTime(((DevExpress.ExpressApp.Xpo.XPObjectSpace)objectSpace).Session);
-            return dtTime <= new DateTime(2017,2,28);
+            return dtTime <= new DateTime(2017,3,31);
         }
 
     }

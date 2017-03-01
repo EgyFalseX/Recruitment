@@ -653,6 +653,19 @@
         <Member Name="rec_Applicant_Experiences" Caption="Applicant Experiences" />
       </OwnMembers>
     </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_job_post" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="jp_date_end" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" />
+        <Member Name="jp_date_start" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" />
+        <Member Name="jp_view_count" AllowEdit="False" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_job_post_apply" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="applicant_id" AllowEdit="False" />
+        <Member Name="apply_date" DisplayFormat="{0:dd/MM/yyyy}" EditMask="dd/MM/yyyy" />
+      </OwnMembers>
+    </Class>
     <Class Name="Recruitment.Module.BusinessObjects.Recruitment.rec_Langauge" Caption="Langauge" DefaultListViewImage="rec_Nationality" DefaultListViewShowAutoFilterRow="True" DefaultDetailViewImage="rec_Nationality">
       <OwnMembers>
         <Member Name="langauge_id" Caption="ID" DisplayFormat="{0:N0}" />
@@ -957,6 +970,16 @@
         </Items>
       </Item>
       <Item Id="KPI" ImageName="BO_KPI_Definition" />
+      <Item Id="Online" Caption="Online" ImageName="Online" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="rec_job_post_apply_ListView" Removed="True" />
+          <Item Id="rec_job_post_ListView" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="rec_job_post_apply_ListView" ViewId="rec_job_post_apply_ListView" ObjectKey="" IsNewNode="True" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
       <Item Id="Options" ImageName="Settings" />
       <Item Id="Reports" ImageName="Action_Report_ShowDesigner">
         <Items>
@@ -3838,6 +3861,117 @@
     <ListView Id="rec_Job_ListView">
       <Columns>
         <ColumnInfo Id="job_id" DisplayFormat="{0:N0}" />
+      </Columns>
+    </ListView>
+    <DetailView Id="rec_job_post_apply_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="21.5158924205379">
+            <LayoutGroup Id="rec_job_post_apply" RelativeSize="100" Direction="Vertical" Caption="Apply information">
+              <LayoutItem Id="job_post_id" ViewItem="job_post_id" Index="0" RelativeSize="23.529411764705884" IsNewNode="True" />
+              <LayoutGroup Id="Autofa1ec49a-81be-4bc1-bade-46280e4e535d" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="17.647058823529413" IsNewNode="True">
+                <LayoutItem Id="apply_name" ViewItem="apply_name" Index="0" RelativeSize="49.939098660170522" IsNewNode="True" />
+                <LayoutItem Id="apply_nationality_id" ViewItem="apply_nationality_id" Index="1" RelativeSize="50.060901339829478" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Auto3ac234fe-94a1-47bc-9760-7df8e6778d66" ShowCaption="False" Caption="" Index="2" RelativeSize="58.8235294117647" IsNewNode="True">
+                <LayoutGroup Id="Autoa6409265-db36-4b50-bd85-a00cb194c1f5" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="30" IsNewNode="True">
+                  <LayoutItem Id="apply_gender_id" ViewItem="apply_gender_id" Index="0" RelativeSize="49.939098660170522" IsNewNode="True" />
+                  <LayoutItem Id="apply_mobile" ViewItem="apply_mobile" Index="1" RelativeSize="50.060901339829478" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto7ba121c5-d571-40ca-8427-bf5f30ae576c" ShowCaption="False" Caption="" Index="1" RelativeSize="70" IsNewNode="True">
+                  <LayoutItem Id="attach_file" ViewItem="attach_file" Index="0" RelativeSize="42.857142857142854" IsNewNode="True" />
+                  <LayoutGroup Id="Auto1cc448b3-3bf2-43d1-a9bb-9eab2177426c" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="57.142857142857146" IsNewNode="True">
+                    <LayoutItem Id="apply_date" ViewItem="apply_date" Index="0" RelativeSize="49.939098660170522" IsNewNode="True" />
+                    <LayoutItem Id="applicant_id" ViewItem="applicant_id" Index="1" RelativeSize="50.060901339829478" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="rec_job_post_apply_col1" Removed="True" />
+              <LayoutGroup Id="rec_job_post_apply_col2" RelativeSize="50" Removed="True">
+                <LayoutItem Id="applicant_id" RelativeSize="41.1764705882353" />
+                <LayoutItem Id="apply_mobile" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="apply_nationality_id" RelativeSize="23.529411764705884" />
+                <LayoutItem Id="attach_file" RelativeSize="17.647058823529413" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="AuditTrail_Group" Direction="Vertical" RelativeSize="78.4841075794621">
+            <LayoutItem Id="AuditTrail" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="rec_job_post_apply_ListView">
+      <Columns>
+        <ColumnInfo Id="apply_gender_id" Index="-1" />
+        <ColumnInfo Id="attach_file" Index="-1" />
+        <ColumnInfo Id="apply_nationality_id" Index="3" />
+        <ColumnInfo Id="apply_mobile" Index="4" />
+        <ColumnInfo Id="applicant_id" Index="5" />
+      </Columns>
+    </ListView>
+    <ListView Id="rec_job_post_apply_LookupListView">
+      <Columns>
+        <ColumnInfo Id="apply_name" Width="74" />
+        <ColumnInfo Id="job_post_id" PropertyName="job_post_id" Index="1" Width="41" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="rec_job_post_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="21.149144254278728">
+            <LayoutGroup Id="rec_job_post" RelativeSize="100" Direction="Horizontal" Caption="Apply information">
+              <LayoutGroup Id="Autodeea0080-5bf0-40f8-8fb5-448de1679e48" ShowCaption="False" Caption="Autodeea0080-5bf0-40f8-8fb5-448de1679e48(4)" Index="0" RelativeSize="80.969267139479911" IsNewNode="True">
+                <LayoutItem Id="jp_title" ViewItem="jp_title" Index="0" RelativeSize="23.529411764705884" IsNewNode="True" />
+                <LayoutItem Id="jp_industry_id" ViewItem="jp_industry_id" Index="1" RelativeSize="17.647058823529413" IsNewNode="True" />
+                <LayoutItem Id="jp_date_start" ViewItem="jp_date_start" Index="2" RelativeSize="17.647058823529413" IsNewNode="True" />
+                <LayoutItem Id="jp_date_end" ViewItem="jp_date_end" Index="3" RelativeSize="17.647058823529413" IsNewNode="True" />
+                <LayoutItem Id="jp_visible" ViewItem="jp_visible" Index="4" RelativeSize="23.529411764705884" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="jp_image" ShowCaption="False" ViewItem="jp_image" Index="1" RelativeSize="19.030732860520093" IsNewNode="True" />
+              <LayoutGroup Id="rec_job_post_col1" Removed="True" />
+              <LayoutGroup Id="rec_job_post_col2" RelativeSize="50" Removed="True">
+                <LayoutItem Id="jp_industry_id" RelativeSize="28.571428571428573" />
+                <LayoutItem Id="jp_view_count" RelativeSize="50" />
+                <LayoutItem Id="jp_visible" RelativeSize="21.428571428571427" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="43.887530562347187" Caption="Content">
+            <LayoutItem Id="jp_content" RelativeSize="91.64345403899722" />
+            <LayoutItem Id="jp_view_count" ViewItem="jp_view_count" Index="1" RelativeSize="8.3565459610027855" IsNewNode="True" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="34.963325183374081" Index="2">
+            <LayoutGroup Id="rec_job_post_applys" RelativeSize="100" Index="0">
+              <LayoutItem Id="rec_job_post_applys" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AuditTrail" ShowCaption="True" Caption="Audit Trail" Index="1" RelativeSize="100" IsNewNode="True" Removed="True">
+              <LayoutItem Id="AuditTrail" ViewItem="AuditTrail" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="rec_job_post_ListView">
+      <Columns>
+        <ColumnInfo Id="jp_image" Index="-1" />
+        <ColumnInfo Id="jp_visible" Index="4" />
+        <ColumnInfo Id="jp_view_count" Index="5" />
+      </Columns>
+    </ListView>
+    <ListView Id="rec_job_post_LookupListView">
+      <Columns>
+        <ColumnInfo Id="jp_date_start" PropertyName="jp_date_start" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="jp_industry_id" PropertyName="jp_industry_id" Index="2" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="rec_job_post_rec_job_post_applys_ListView">
+      <Columns>
+        <ColumnInfo Id="apply_gender_id" Index="-1" />
+        <ColumnInfo Id="apply_nationality_id" Index="-1" />
+        <ColumnInfo Id="apply_mobile" Index="2" />
+        <ColumnInfo Id="attach_file" Index="3" />
+        <ColumnInfo Id="applicant_id" Index="4" />
       </Columns>
     </ListView>
     <ListView Id="rec_Job_rec_Applicant_Experiences_ListView">

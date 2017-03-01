@@ -38,6 +38,9 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         [DevExpress.Xpo.DisplayName(@"Employers")]
         [Association(@"rec_EmployerReferencesrec_Nationality")]
         public XPCollection<rec_Employer> rec_Employers { get { return GetCollection<rec_Employer>("rec_Employers"); } }
+        [DevExpress.Xpo.DisplayName(@"Online Apply")]
+        [Association(@"rec_job_post_applyReferencesrec_Nationality")]
+        public XPCollection<rec_job_post_apply> rec_job_post_applys { get { return GetCollection<rec_job_post_apply>("rec_job_post_applys"); } }
     }
 
 }

@@ -189,6 +189,13 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             get { return frec_Applicant_image; }
             set { SetPropertyValue<byte[]>("rec_Applicant_image", ref frec_Applicant_image, value); }
         }
+        Core.Typez.enum_rec_Applicant_Status fapplicant_rec_applicant_status_id;
+        [Indexed(Name = @"iapplicant_rec_applicant_status_id_rec_Applicant")]
+        public Core.Typez.enum_rec_Applicant_Status applicant_rec_applicant_status_id
+        {
+            get { return fapplicant_rec_applicant_status_id; }
+            set { SetPropertyValue<Core.Typez.enum_rec_Applicant_Status>("applicant_rec_applicant_status_id", ref fapplicant_rec_applicant_status_id, value); }
+        }
         [DevExpress.Xpo.DisplayName(@"Applicant Courses")]
         [Association(@"rec_Applicant_CourseReferencesrec_Applicant")]
         public XPCollection<rec_Applicant_Course> rec_Applicant_Courses { get { return GetCollection<rec_Applicant_Course>("rec_Applicant_Courses"); } }
@@ -222,6 +229,9 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         [DevExpress.Xpo.DisplayName(@"Order Connections")]
         [Association(@"rec_Employer_Order_Detail_Connection_DetailReferencesrec_Applicant")]
         public XPCollection<rec_Employer_Order_Detail_Connection_Detail> rec_Employer_Order_Detail_Connection_Details { get { return GetCollection<rec_Employer_Order_Detail_Connection_Detail>("rec_Employer_Order_Detail_Connection_Details"); } }
+        [DevExpress.Xpo.DisplayName(@"Online Apply")]
+        [Association(@"rec_job_post_applyReferencesrec_Applicant")]
+        public XPCollection<rec_job_post_apply> rec_job_post_applys { get { return GetCollection<rec_job_post_apply>("rec_job_post_applys"); } }
     }
 
 }
