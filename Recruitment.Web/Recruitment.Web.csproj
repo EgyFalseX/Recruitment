@@ -302,6 +302,8 @@
     <Content Include="img\products\2.jpg" />
     <Content Include="img\products\3.jpg" />
     <Content Include="img\triangular_%402X.png" />
+    <Content Include="Jobs\Apply.aspx" />
+    <Content Include="Jobs\Jobs.aspx" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\contact.js" />
@@ -316,7 +318,6 @@
     <Content Include="UC\MainPage_Download_UC.ascx" />
     <Content Include="UC\MainPage_Project_UC.ascx" />
     <Content Include="UC\MainPage_Service_UC.ascx" />
-    <Content Include="Jobs.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">
@@ -340,6 +341,20 @@
     </Content>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Jobs\Apply.aspx.cs">
+      <DependentUpon>Apply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Jobs\Apply.aspx.designer.cs">
+      <DependentUpon>Apply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Jobs\Jobs.aspx.cs">
+      <DependentUpon>Jobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Jobs\Jobs.aspx.designer.cs">
+      <DependentUpon>Jobs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -393,13 +408,6 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Jobs.aspx.cs">
-      <DependentUpon>Jobs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Jobs.aspx.designer.cs">
-      <DependentUpon>Jobs.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

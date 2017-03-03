@@ -2419,10 +2419,7 @@
     </ListView>
     <DetailView Id="NotificationsObject_DetailView" RequiredFieldMark="*" CaptionColon=":">
       <Items>
-        <ActionContainerViewItem Id="Dismiss" Caption="الغاء(18)" />
-        <ActionContainerViewItem Id="DismissAll" Caption="الغاء الكل(19)" />
         <ActionContainerViewItem Id="RefreshNotifications" Caption="تحديث الإشعارات&#xD;&#xA;(5)" />
-        <ActionContainerViewItem Id="Snooze" Caption="غفوة(17)" />
       </Items>
     </DetailView>
     <ListView Id="NotificationsObject_Notifications_ListView">

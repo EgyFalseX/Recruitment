@@ -69,6 +69,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         System.Drawing.Image fcompany_logo;
         [Size(SizeAttribute.Unlimited)]
         [ValueConverter(typeof(DevExpress.Xpo.Metadata.ImageValueConverter))]
+        [MemberDesignTimeVisibility(true)]
         [DevExpress.Xpo.DisplayName(@"Company Logo")]
         [DevExpress.Persistent.Validation.RulePropertiesRequired(true)]
         public System.Drawing.Image company_logo

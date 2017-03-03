@@ -33,6 +33,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         byte[] fFileData;
         [Size(SizeAttribute.Unlimited)]
+        [MemberDesignTimeVisibility(true)]
         [DevExpress.Xpo.DisplayName(@"File Data")]
         public byte[] FileData
         {

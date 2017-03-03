@@ -71,6 +71,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         System.Drawing.Image fjp_image;
         [Size(SizeAttribute.Unlimited)]
         [ValueConverter(typeof(DevExpress.Xpo.Metadata.ImageValueConverter))]
+        [MemberDesignTimeVisibility(true)]
         [DevExpress.Xpo.DisplayName(@"Photo")]
         [DevExpress.Persistent.Validation.RuleRequiredField("rec_job_post_jp_image_vld_req", DevExpress.Persistent.Validation.DefaultContexts.Save, "Please Select Photo")]
         public System.Drawing.Image jp_image

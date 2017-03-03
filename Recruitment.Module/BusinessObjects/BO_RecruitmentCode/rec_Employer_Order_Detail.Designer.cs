@@ -198,6 +198,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<double>("rec_employer_order_detail_salary_to", ref frec_employer_order_detail_salary_to, value); }
         }
         rec_Gender frec_employer_order_detail_rec_gender_id;
+        [Indexed(Name = @"irec_employer_order_detail_rec_gender_id_rec_Employer_Order_Detail")]
         [Association(@"rec_Employer_Order_DetailReferencesrec_Gender")]
         [DevExpress.Xpo.DisplayName(@"Gender")]
         public rec_Gender rec_employer_order_detail_rec_gender_id
@@ -212,6 +213,20 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         {
             get { return frec_employer_order_detail_qualification; }
             set { SetPropertyValue<string>("rec_employer_order_detail_qualification", ref frec_employer_order_detail_qualification, value); }
+        }
+        int frec_employer_order_detail_age_min;
+        [DevExpress.Xpo.DisplayName(@"Age Min")]
+        public int rec_employer_order_detail_age_min
+        {
+            get { return frec_employer_order_detail_age_min; }
+            set { SetPropertyValue<int>("rec_employer_order_detail_age_min", ref frec_employer_order_detail_age_min, value); }
+        }
+        int frec_employer_order_detail_age_max;
+        [DevExpress.Xpo.DisplayName(@"Age Max")]
+        public int rec_employer_order_detail_age_max
+        {
+            get { return frec_employer_order_detail_age_max; }
+            set { SetPropertyValue<int>("rec_employer_order_detail_age_max", ref frec_employer_order_detail_age_max, value); }
         }
         [DevExpress.Xpo.DisplayName(@"Order Calls")]
         [Association(@"rec_Employer_Order_Detail_CallReferencesrec_Employer_Order_Detail")]

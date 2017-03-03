@@ -1000,9 +1000,9 @@
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
   <SchemaModules>
-    <SchemaModule Name="CloneObjectModule" Version="16.1.6.0" IsNewNode="True" />
-    <SchemaModule Name="SchedulerModuleBase" Version="16.1.6.0" IsNewNode="True" />
-    <SchemaModule Name="SystemModule" Version="16.1.6.0" IsNewNode="True" />
+    <SchemaModule Name="CloneObjectModule" Version="16.2.5.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="16.2.5.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="16.2.5.0" IsNewNode="True" />
   </SchemaModules>
   <Validation>
     <Contexts>
@@ -1475,10 +1475,7 @@
     </ListView>
     <DetailView Id="NotificationsObject_DetailView">
       <Items>
-        <ActionContainerViewItem Id="Dismiss" Caption="Dismiss(18)" />
-        <ActionContainerViewItem Id="DismissAll" Caption="DismissAll(19)" />
         <ActionContainerViewItem Id="RefreshNotifications" Caption="RefreshNotifications(5)" />
-        <ActionContainerViewItem Id="Snooze" Caption="Snooze(17)" />
       </Items>
       <Layout>
         <LayoutGroup Id="MasterGroup" Index="0" RelativeSize="100">
@@ -1508,8 +1505,6 @@
               </LayoutGroup>
               <LayoutItem Id="DismissAll" ViewItem="DismissAll" SizeConstraintsType="Custom" MinSize="234, 36" Index="1" RelativeSize="53.731343283582092" IsNewNode="True" />
             </LayoutGroup>
-            <LayoutItem Id="Dismiss" Removed="True" />
-            <LayoutItem Id="Snooze" Removed="True" />
           </LayoutGroup>
         </LayoutGroup>
       </Layout>
@@ -3231,12 +3226,12 @@
       </Items>
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="56.271777003484324">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="39.486552567237162">
             <LayoutGroup Id="rec_Employer_Order_Detail" RelativeSize="100" Caption="General information" Direction="Vertical">
               <LayoutGroup Id="Auto30596165-e336-4222-acdd-d0629365021f" ShowCaption="False" Caption="Auto30596165-e336-4222-acdd-d0629365021f(4)" Index="0" RelativeSize="100" IsNewNode="True">
                 <LayoutItem Id="rec_employer_order_detail_rec_employer_order_id" ViewItem="rec_employer_order_detail_rec_employer_order_id" Index="0" RelativeSize="11.188811188811188" IsNewNode="True" />
                 <LayoutGroup Id="Auto75c91984-b346-435f-8ebc-8f4cefe96c07" ShowCaption="False" Caption="Auto75c91984-b346-435f-8ebc-8f4cefe96c07(6)" Direction="Horizontal" Index="1" RelativeSize="88.811188811188813" IsNewNode="True">
-                  <LayoutGroup Id="Auto456690df-ec7e-47a3-965f-c801c0630ee0" ShowCaption="False" Caption="Auto456690df-ec7e-47a3-965f-c801c0630ee0(7)" Index="0" RelativeSize="40.857142857142854" IsNewNode="True">
+                  <LayoutGroup Id="Auto456690df-ec7e-47a3-965f-c801c0630ee0" ShowCaption="False" Caption="Auto456690df-ec7e-47a3-965f-c801c0630ee0(7)" Index="0" RelativeSize="40.793918918918919" IsNewNode="True">
                     <LayoutItem Id="rec_employer_order_detail_industry_id" ViewItem="rec_employer_order_detail_industry_id" Index="0" RelativeSize="11.811023622047244" IsNewNode="True" />
                     <LayoutItem Id="rec_employer_order_detail_annual_vacation_days" ViewItem="rec_employer_order_detail_annual_vacation_days" Index="1" RelativeSize="9.4488188976377945" IsNewNode="True" />
                     <LayoutItem Id="rec_employer_order_detail_rec_housing_type" ViewItem="rec_employer_order_detail_rec_housing_type" Index="2" RelativeSize="9.4488188976377945" IsNewNode="True" />
@@ -3248,17 +3243,25 @@
                     <LayoutItem Id="rec_employer_order_detail_currency_id" ViewItem="rec_employer_order_detail_currency_id" Index="8" RelativeSize="9.4488188976377945" IsNewNode="True" />
                     <LayoutItem Id="rec_employer_order_detail_visa_name" ViewItem="rec_employer_order_detail_visa_name" Index="9" RelativeSize="12.598425196850394" IsNewNode="True" />
                   </LayoutGroup>
-                  <LayoutGroup Id="Auto6d4ecafc-9c17-4f9f-ba7b-ed2458bf8337" ShowCaption="False" Caption="Auto6d4ecafc-9c17-4f9f-ba7b-ed2458bf8337(16)" Index="1" RelativeSize="59.142857142857146" IsNewNode="True">
+                  <LayoutGroup Id="Auto6d4ecafc-9c17-4f9f-ba7b-ed2458bf8337" ShowCaption="False" Caption="Auto6d4ecafc-9c17-4f9f-ba7b-ed2458bf8337(16)" Index="1" RelativeSize="59.206081081081081" IsNewNode="True">
                     <LayoutItem Id="rec_employer_order_detail_count" ViewItem="rec_employer_order_detail_count" Index="0" RelativeSize="11.811023622047244" IsNewNode="True" />
                     <LayoutItem Id="rec_employer_order_detail_rec_annual_vacation_type_id" ViewItem="rec_employer_order_detail_rec_annual_vacation_type_id" Index="1" RelativeSize="9.4488188976377945" IsNewNode="True" />
                     <LayoutItem Id="rec_employer_order_detail_can_bring_family" ViewItem="rec_employer_order_detail_can_bring_family" Index="2" RelativeSize="9.4488188976377945" IsNewNode="True" />
                     <LayoutItem Id="rec_employer_order_detail_housing_value" ViewItem="rec_employer_order_detail_housing_value" Index="3" RelativeSize="9.4488188976377945" IsNewNode="True" />
                     <LayoutItem Id="rec_employer_order_detail_rec_medical_insurance_types_id" ViewItem="rec_employer_order_detail_rec_medical_insurance_types_id" Index="4" RelativeSize="9.4488188976377945" IsNewNode="True" />
-                    <LayoutItem Id="rec_employer_order_detail_salary_from" ViewItem="rec_employer_order_detail_salary_from" Index="5" RelativeSize="9.4488188976377945" IsNewNode="True" />
-                    <LayoutItem Id="rec_employer_order_detail_salary_to" ViewItem="rec_employer_order_detail_salary_to" Index="6" RelativeSize="9.4488188976377945" IsNewNode="True" />
-                    <LayoutItem Id="rec_employer_order_detail_overtime" ViewItem="rec_employer_order_detail_overtime" Index="7" RelativeSize="9.4488188976377945" IsNewNode="True" />
-                    <LayoutItem Id="rec_employer_order_detail_rec_ticket_type_id" ViewItem="rec_employer_order_detail_rec_ticket_type_id" Index="8" RelativeSize="9.4488188976377945" IsNewNode="True" />
-                    <LayoutItem Id="rec_employer_order_detail_rec_gender_id" ViewItem="rec_employer_order_detail_rec_gender_id" Index="9" RelativeSize="12.598425196850394" IsNewNode="True" />
+                    <LayoutGroup Id="Auto7e0b0b2d-555b-41bc-8f16-f106a4dfb16e" ShowCaption="False" Caption="" Direction="Horizontal" Index="5" RelativeSize="9.4488188976377945" IsNewNode="True">
+                      <LayoutItem Id="rec_employer_order_detail_salary_from" ViewItem="rec_employer_order_detail_salary_from" Index="0" RelativeSize="49.928673323823112" IsNewNode="True" />
+                      <LayoutItem Id="rec_employer_order_detail_salary_to" ViewItem="rec_employer_order_detail_salary_to" Index="1" RelativeSize="50.071326676176888" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Auto7b749c8e-864a-496e-901b-cad292dbaf72" ShowCaption="False" Caption="" Index="6" RelativeSize="40.944881889763778" IsNewNode="True">
+                      <LayoutItem Id="rec_employer_order_detail_overtime" ViewItem="rec_employer_order_detail_overtime" Index="0" RelativeSize="23.076923076923077" IsNewNode="True" />
+                      <LayoutItem Id="rec_employer_order_detail_rec_ticket_type_id" ViewItem="rec_employer_order_detail_rec_ticket_type_id" Index="1" RelativeSize="23.076923076923077" IsNewNode="True" />
+                      <LayoutItem Id="rec_employer_order_detail_rec_gender_id" ViewItem="rec_employer_order_detail_rec_gender_id" Index="2" RelativeSize="23.076923076923077" IsNewNode="True" />
+                      <LayoutGroup Id="Auto48b4fa11-f023-458b-bd69-42942afed4a9" ShowCaption="False" Caption="" Direction="Horizontal" Index="3" RelativeSize="30.76923076923077" IsNewNode="True">
+                        <LayoutItem Id="rec_employer_order_detail_age_min" ViewItem="rec_employer_order_detail_age_min" Index="0" RelativeSize="49.928673323823112" IsNewNode="True" />
+                        <LayoutItem Id="rec_employer_order_detail_age_max" ViewItem="rec_employer_order_detail_age_max" Index="1" RelativeSize="50.071326676176888" IsNewNode="True" />
+                      </LayoutGroup>
+                    </LayoutGroup>
                   </LayoutGroup>
                 </LayoutGroup>
               </LayoutGroup>
@@ -3274,19 +3277,19 @@
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="SizeableEditors" RelativeSize="22.473867595818817" Caption="Description" Direction="Horizontal">
-            <LayoutGroup Id="Auto6436e10f-8b48-46ce-9d05-b86809fab352" ShowCaption="False" Caption="Auto6436e10f-8b48-46ce-9d05-b86809fab352(26)" Index="0" RelativeSize="78.038674033149178" IsNewNode="True">
-              <LayoutItem Id="rec_employer_order_detail_qualification" ViewItem="rec_employer_order_detail_qualification" Index="0" RelativeSize="48.837209302325583" IsNewNode="True" />
-              <LayoutItem Id="rec_employer_order_detail_description" ViewItem="rec_employer_order_detail_description" Index="1" RelativeSize="51.162790697674417" IsNewNode="True" />
+          <LayoutGroup Id="SizeableEditors" RelativeSize="14.669926650366747" Caption="Description" Direction="Horizontal">
+            <LayoutGroup Id="Auto6436e10f-8b48-46ce-9d05-b86809fab352" ShowCaption="False" Caption="Auto6436e10f-8b48-46ce-9d05-b86809fab352(26)" Index="0" RelativeSize="77.980132450331126" IsNewNode="True">
+              <LayoutItem Id="rec_employer_order_detail_qualification" ViewItem="rec_employer_order_detail_qualification" Index="0" RelativeSize="50" IsNewNode="True" />
+              <LayoutItem Id="rec_employer_order_detail_description" ViewItem="rec_employer_order_detail_description" Index="1" RelativeSize="50" IsNewNode="True" />
             </LayoutGroup>
-            <LayoutGroup Id="Auto70dae70a-ffca-4610-87fd-a0f597facd23" ShowCaption="False" Caption="Auto70dae70a-ffca-4610-87fd-a0f597facd23(29)" Index="1" RelativeSize="21.961325966850829" IsNewNode="True">
-              <LayoutItem Id="RecruitmentProgress" ViewItem="RecruitmentProgress" CaptionLocation="Top" Index="0" RelativeSize="37.2093023255814" IsNewNode="True" />
-              <LayoutItem Id="OperationProgress" ViewItem="OperationProgress" CaptionLocation="Top" Index="1" RelativeSize="62.7906976744186" IsNewNode="True" />
+            <LayoutGroup Id="Auto70dae70a-ffca-4610-87fd-a0f597facd23" ShowCaption="False" Caption="Auto70dae70a-ffca-4610-87fd-a0f597facd23(29)" Index="1" RelativeSize="22.019867549668874" IsNewNode="True">
+              <LayoutItem Id="RecruitmentProgress" ViewItem="RecruitmentProgress" CaptionLocation="Top" Index="0" RelativeSize="40" IsNewNode="True" />
+              <LayoutItem Id="OperationProgress" ViewItem="OperationProgress" CaptionLocation="Top" Index="1" RelativeSize="60" IsNewNode="True" />
             </LayoutGroup>
             <LayoutItem Id="rec_employer_order_detail_description" RelativeSize="42.857142857142854" Index="2" Removed="True" />
             <LayoutItem Id="rec_employer_order_detail_qualification" ViewItem="rec_employer_order_detail_qualification" Index="2" RelativeSize="25.138121546961326" Removed="True" />
           </LayoutGroup>
-          <TabbedGroup Id="Tabs" RelativeSize="21.254355400696863">
+          <TabbedGroup Id="Tabs" RelativeSize="45.843520782396091">
             <LayoutGroup Id="rec_Employer_Order_Detail_Suggest_Applicats" Index="0" Caption="Order Suggested Applicats" RelativeSize="100">
               <LayoutItem Id="rec_Employer_Order_Detail_Suggest_Applicats" RelativeSize="100" />
             </LayoutGroup>

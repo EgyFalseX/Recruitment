@@ -182,6 +182,7 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
         }
         byte[] frec_Applicant_image;
         [Size(SizeAttribute.Unlimited)]
+        [MemberDesignTimeVisibility(true)]
         [DevExpress.Xpo.DisplayName(@"Photo")]
         [DevExpress.Persistent.Base.ImageEditor(DetailViewImageEditorFixedHeight = 64, DetailViewImageEditorFixedWidth = 64, ListViewImageEditorCustomHeight = 64, ImageSizeMode = DevExpress.Persistent.Base.ImageSizeMode.Zoom)]
         public byte[] rec_Applicant_image
