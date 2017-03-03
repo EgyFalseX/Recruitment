@@ -85,6 +85,33 @@ namespace Recruitment.Web {
         protected global::DevExpress.Web.ASPxUploadControl ASPxUploadControlCV;
         
         /// <summary>
+        /// UploadedFilesTokenBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTokenBox UploadedFilesTokenBox;
+        
+        /// <summary>
+        /// ValidationSummary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxValidationSummary ValidationSummary;
+        
+        /// <summary>
+        /// SubmitButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton SubmitButton;
+        
+        /// <summary>
         /// XpoDSGender control.
         /// </summary>
         /// <remarks>

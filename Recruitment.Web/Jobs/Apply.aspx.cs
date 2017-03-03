@@ -11,13 +11,16 @@ using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Web;
 using DevExpress.ExpressApp.Xpo;
 using Recruitment.Module.BusinessObjects.Recruitment;
+using DevExpress.Web;
+
 
 namespace Recruitment.Web
 {
     public partial class Apply : System.Web.UI.Page
     {
+        private string _dataFolder = "~/App_Data/tempfiles/";
+        
         public rec_job_post Job = null;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (this.Request.QueryString["id"] == null)
@@ -26,12 +29,26 @@ namespace Recruitment.Web
             XpoDSGender.Session = ((XPObjectSpace)WebApplication.Instance.CreateObjectSpace()).Session;
             XpoDSNationality.Session = ((XPObjectSpace)WebApplication.Instance.CreateObjectSpace()).Session;
             GetJobInfo(Convert.ToInt32(Request.QueryString["id"]));
+            if (!IsPostBack)
+            {
+                Session["filename"] = null;
+                UpdateCounting(Convert.ToInt32(Request.QueryString["id"]));
+            }
         }
-
+        private void UpdateCounting(int id)
+        {
+            IObjectSpace objectspace = WebApplication.Instance.CreateObjectSpace();
+            Job = objectspace.FindObject<rec_job_post>(CriteriaOperator.Parse($"job_post_id = {id} And jp_date_start <= #{DateTime.Now.ToShortDateString()}# And jp_date_end >= #{DateTime.Now.ToShortDateString()}# And jp_visible = True"));
+            if (Job == null)
+                Response.Redirect("Jobs.aspx");
+            Job.jp_view_count += 1;
+            Job.Save();
+            objectspace.CommitChanges();
+        }
         private void GetJobInfo(int id)
         {
             IObjectSpace objectspace = WebApplication.Instance.CreateObjectSpace();
-            Job = objectspace.FindObject<rec_job_post>(CriteriaOperator.TryParse($"job_post_id = {id} And jp_date_start <= {DateTime.Now.ToShortDateString()} And jp_date_end >= {DateTime.Now.ToShortDateString()} jp_visible = True"));
+            Job = objectspace.FindObject<rec_job_post>(CriteriaOperator.Parse($"job_post_id = {id} And jp_date_start <= #{DateTime.Now.ToShortDateString()}# And jp_date_end >= #{DateTime.Now.ToShortDateString()}# And jp_visible = True"));
             if (Job == null)
                 Response.Redirect("Jobs.aspx");
 
@@ -49,6 +66,25 @@ namespace Recruitment.Web
                 bmp.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
                 return stream.ToArray();
             }
+        }
+
+        protected void DocumentsUploadControl_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
+        {
+            string filename = _dataFolder + DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day +
+                              DateTime.Now.Hour + DateTime.Now.Minute + DateTime.Now.Second;
+            e.UploadedFile.SaveAs(MapPath(filename));
+            if (e.IsValid)
+            {
+                e.CallbackData = filename;
+                Session["filename"] = filename;
+            }
+        }
+
+        protected void SubmitButton_Click(object sender, EventArgs e)
+        {
+            bool allFilesExist = true;
+            if (Session["filename"] == null || !File.Exists(Session["filename"].ToString()))
+                allFilesExist = false;
         }
     }
 }

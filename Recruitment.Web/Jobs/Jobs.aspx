@@ -16,30 +16,32 @@
             <dx:ASPxPanel ID="SelectorPanel" runat="server" ClientInstanceName="SelectorPanel" Paddings-PaddingTop="80" FixedPosition="WindowTop" >
             <PanelCollection>
                 <dx:PanelContent>
+                    <div class="container ">
                     <dx:ASPxComboBox runat="server" ID="ASPxComboBoxIndustry" ClientInstanceName="ASPxComboBoxIndustry"
                         DataSourceID="XpoDSIndustry" TextField="industry_name" ValueField="industry_id" ValueType="System.Int32"
-                        Height="100%" Width="80%" Caption="Industry" Theme="Moderno">
+                        Height="100%" Width="100%" Caption="Industry" Theme="Moderno">
                         <ClientSideEvents ValueChanged="Combo_ValueChanged" />
                     </dx:ASPxComboBox>
+                        </div>
                 </dx:PanelContent>
             </PanelCollection>
             <Paddings Padding="8px" />
         </dx:ASPxPanel>
     <dx:ASPxDataView ID="dataView" runat="server" DataSourceID="XpoDS" EnableCallbackAnimation="True" EnablePagingCallbackAnimation="True" 
-        Width="850px" PagerAlign="Justify" ItemSpacing="15" ClientInstanceName="dataView"  Theme="Moderno" OnCustomCallback="dataView_CustomCallback">
+        Width="100%" PagerAlign="Justify" ClientInstanceName="dataView"  OnCustomCallback="dataView_CustomCallback" Theme="Moderno">
         <SettingsTableLayout ColumnCount="1" RowsPerPage="10" />
         <PagerSettings ShowNumericButtons="False" EnableAdaptivity="True">
         </PagerSettings>
         <ItemTemplate>
             <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-sm-4 col-lg-12 col-md-8">
                                 <table>
                                     <tr class="thumbnail">
-                                        <td class="col-sm-1 col-lg-1 col-md-1">
-                                            <dx:ASPxBinaryImage ID="ASPxBinaryImage1" runat="server" ContentBytes='<%# ConvertToByte((System.Drawing.Bitmap)Eval("jp_image")) %>' />
-                                        </td>
-                                        <td class="col-sm-2 col-lg-2 col-md-2 caption">
-                                            <h4><a href="#"><%# System.Web.HttpUtility.HtmlEncode(Eval("jp_title")) %></a></h4>
+                                <td class="col-sm-1 col-lg-1 col-md-1">
+                                            <dx:ASPxBinaryImage ID="ASPxBinaryImage1" Height="300px" runat="server" ContentBytes='<%# ConvertToByte((System.Drawing.Bitmap)Eval("jp_image")) %>' />
+                                        </td>         
+                                        <td class="col-sm-2 col-lg-2 col-md-2 caption" rowspan="2">
+                                            <h4><a href="Apply.aspx?id=<%# System.Web.HttpUtility.HtmlEncode(Eval("job_post_id")) %>"><%# System.Web.HttpUtility.HtmlEncode(Eval("jp_title")) %></a></h4>
                                             <p>
                                                 <span class="fa fa-calendar"></span> <%# System.Web.HttpUtility.HtmlEncode(Eval("jp_date_start", "{0:yyyy-MM-dd}")) %> 
                                                 <span class="fa fa-industry"></span> <%# System.Web.HttpUtility.HtmlEncode(Eval("jp_industry_id[0].industry_name")) %>
@@ -53,14 +55,12 @@
                                               </button>
                                             </div>
                                         </td>
-
                                     </tr>
-
                                 </table>
                             </div>
                         </div>
         </ItemTemplate>
-        <ItemStyle Width="700px" />
+        <ItemStyle Width="300px" />
     </dx:ASPxDataView>
         <dx:XpoDataSource ID="XpoDSIndustry" runat="server" 
         TypeName="Recruitment.Module.BusinessObjects.Recruitment.rec_Industry">
@@ -69,7 +69,7 @@
         TypeName="Recruitment.Module.BusinessObjects.Recruitment.rec_job_post"
         DefaultSorting="jp_date_start Descending">
         <CriteriaParameters>
-            <%--<asp:SessionParameter Name="IndustyParam" SessionField="IndustyParam" Type="Int32" DefaultValue="1" DbType="Object" />--%>
+           <%--<asp:SessionParameter Name="IndustyParam" SessionField="IndustyParam" Type="Int32" />--%>
             <asp:Parameter Name="IndustyParam" />
             <asp:Parameter Name="Now" />
         </CriteriaParameters>

@@ -18,23 +18,27 @@ namespace Recruitment.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //XpoDS.Session.ConnectionString = WebApplication.Instance.ConnectionString;
-            //XpoDSIndustry.Session.ConnectionString = WebApplication.Instance.ConnectionString;
             XpoDS.CriteriaParameters["Now"].DefaultValue = DateTime.Now.ToShortDateString();
+            //if (Session["IndustyParam"] != null)
+            //{
+            //    XpoDS.CriteriaParameters["IndustyParam"].DefaultValue = Session["IndustyParam"].ToString();
+            //    dataView.DataBind();
+            //}
+
             XpoDS.Session = ((XPObjectSpace)WebApplication.Instance.CreateObjectSpace()).Session;
             XpoDSIndustry.Session = ((XPObjectSpace)WebApplication.Instance.CreateObjectSpace()).Session;
             if (!IsPostBack)
             {
                 Session["IndustyParam"] = null;
-                //DataViewEndlessPagingMode mode = (DataViewEndlessPagingMode)Enum.Parse(typeof(DataViewEndlessPagingMode), "OnClick");
-                //dataView.PagerSettings.EndlessPagingMode = mode;
+
+                dataView.PagerSettings.EndlessPagingMode = (DataViewEndlessPagingMode)Enum.Parse(typeof(DataViewEndlessPagingMode), "OnClick");
             }
-            //if (IsCallback)
-            //{
-            //    // Intentionally pauses server-side processing, 
-            //    // to demonstrate the Loading Panel functionality.
-            //    System.Threading.Thread.Sleep(500);
-            //}
+            if (IsCallback)
+            {
+                // Intentionally pauses server-side processing, 
+                // to demonstrate the Loading Panel functionality.
+                System.Threading.Thread.Sleep(500);
+            }
 
         }
 
@@ -49,9 +53,12 @@ namespace Recruitment.Web
 
         protected void dataView_CustomCallback(object sender, CallbackEventArgsBase e)
         {
+            Session["IndustyParam"] = e.Parameter;
             XpoDS.CriteriaParameters["IndustyParam"].DefaultValue = e.Parameter;
             XpoDS.Criteria =
                 "[jp_date_start] <= ?Now And [jp_date_end] >= ?Now And [jp_visible] = True And [jp_industry_id] = " + e.Parameter;
+            dataView.PagerSettings.EndlessPagingMode = (DataViewEndlessPagingMode)Enum.Parse(typeof(DataViewEndlessPagingMode), "Disabled");
+            dataView.AllowPaging = false;
             dataView.DataBind();
         }
     }

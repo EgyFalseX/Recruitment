@@ -3,6 +3,71 @@
 <%@ Register Assembly="DevExpress.Web.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <%@ Register Assembly="DevExpress.Xpo.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Xpo" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
+    <script type="text/javascript">
+        var uploadInProgress = false,
+            submitInitiated = false,
+            uploadErrorOccurred = false;
+            uploadedFiles = [];
+        function onFileUploadComplete(s, e) {
+            var callbackData = e.callbackData.split("|"),
+                uploadedFileName = callbackData[0],
+                isSubmissionExpired = callbackData[1] === "True";
+            uploadedFiles.push(uploadedFileName);
+            if(e.errorText.length > 0 || !e.isValid)
+                uploadErrorOccurred = true;
+            if(isSubmissionExpired && UploadedFilesTokenBox.GetText().length > 0) {
+                var removedAfterTimeoutFiles = UploadedFilesTokenBox.GetTokenCollection().join("\n");
+                alert("The following files have been removed from the server due to the defined 5 minute timeout: \n\n" + removedAfterTimeoutFiles);
+                UploadedFilesTokenBox.ClearTokenCollection();
+            }
+        }
+        function onFileUploadStart(s, e) {
+            uploadInProgress = true;
+            uploadErrorOccurred = false;
+            UploadedFilesTokenBox.SetIsValid(true);
+        }
+        function onFilesUploadComplete(s, e) {
+            uploadInProgress = false;
+            for(var i = 0; i < uploadedFiles.length; i++)
+                UploadedFilesTokenBox.AddToken(uploadedFiles[i]);
+            updateTokenBoxVisibility();
+            uploadedFiles = [];
+            if(submitInitiated) {
+                SubmitButton.SetEnabled(true);
+                SubmitButton.DoClick();
+            }
+        }
+        function onSubmitButtonInit(s, e) {
+            s.SetEnabled(true);
+        }
+        function onSubmitButtonClick(s, e) {
+            ASPxClientEdit.ValidateGroup();
+            if(!formIsValid())
+                e.processOnServer = false;
+            else if(uploadInProgress) {
+                s.SetEnabled(false);
+                submitInitiated = true;
+                e.processOnServer = false;
+            }
+        }
+        function onTokenBoxValidation(s, e) {
+            var isValid = DocumentsUploadControl.GetText().length > 0 || UploadedFilesTokenBox.GetText().length > 0;
+            e.isValid = isValid;
+            if(!isValid) {
+                e.errorText = "No files have been uploaded. Upload at least one file.";
+            }
+        }
+        function onTokenBoxValueChanged(s, e) {
+            updateTokenBoxVisibility();
+        }
+        function updateTokenBoxVisibility() {
+            var isTokenBoxVisible = UploadedFilesTokenBox.GetTokenCollection().length > 0;
+            UploadedFilesTokenBox.SetVisible(isTokenBoxVisible);
+        }
+        function formIsValid() {
+            return !ValidationSummary.IsVisible() && DescriptionTextBox.GetIsValid() && UploadedFilesTokenBox.GetIsValid() && !uploadErrorOccurred;
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Body" runat="server">
     <br />
@@ -37,8 +102,6 @@
             </div>
         </div>
         <h1><i class="fa fa-address-card" aria-hidden="true"></i> Apply Information</h1>
-        
-
         <br />
         <div class="input-group">
             <span class="input-group-addon" id="basic-addon1"><span class="fa fa-user"></span></span>
@@ -68,7 +131,9 @@
         <br />
         <div class="input-group">
             <span class="input-group-addon" id="basic-addon1"><span class="fa fa-file-word-o"></span></span>
-            <dx:ASPxUploadControl ID="ASPxUploadControlCV" runat="server" CssClass="form-control" BrowseButtonStyle-CssClass="input-group-addon" Height="100%" Width="100%" ClientInstanceName="uploader" AdvancedModeSettings-EnableMultiSelect="True" ShowProgressPanel="True" Theme="Moderno" AutoStartUpload="False" UploadMode="Auto" NullText="Your CV File" ToolTip="Please select your CV document to send it.">
+            <dx:ASPxUploadControl ID="ASPxUploadControlCV" runat="server" CssClass="form-control" BrowseButtonStyle-CssClass="input-group-addon" Height="100%" Width="100%" ClientInstanceName="DocumentsUploadControl" 
+                AdvancedModeSettings-EnableMultiSelect="True" ShowProgressPanel="True" Theme="Moderno" AutoStartUpload="True" UploadMode="Auto" NullText="Your CV File" ToolTip="Please select your CV document to send it."
+                FileUploadMode="OnPageLoad" OnFileUploadComplete="DocumentsUploadControl_FileUploadComplete">
                 <ValidationSettings AllowedFileExtensions=".doc, .docm, .docx, .docx, .pdf, .zip, .rar, .7z" MaxFileCount="1" MaxFileSize="4194304">
                 </ValidationSettings>
                 <BrowseButton Text="Browse CV...">
@@ -77,10 +142,24 @@
                 </AdvancedModeSettings>
                 <BrowseButtonStyle CssClass="input-group-addon">
                 </BrowseButtonStyle>
+                 <ClientSideEvents FileUploadComplete="onFileUploadComplete" FilesUploadComplete="onFilesUploadComplete" FilesUploadStart="onFileUploadStart" />
             </dx:ASPxUploadControl>
+             <dx:ASPxTokenBox runat="server" Width="100%" ID="UploadedFilesTokenBox" ClientInstanceName="UploadedFilesTokenBox"
+                                                NullText="Select the documents to submit" AllowCustomTokens="false" ClientVisible="false">
+                                                <ClientSideEvents Init="updateTokenBoxVisibility" ValueChanged="onTokenBoxValueChanged" Validation="onTokenBoxValidation" />
+                                                <ValidationSettings EnableCustomValidation="true"></ValidationSettings>
+                                            </dx:ASPxTokenBox>
         </div>
+<dx:ASPxValidationSummary runat="server" ID="ValidationSummary" ClientInstanceName="ValidationSummary"
+                                                RenderMode="Table" Width="250px" ShowErrorAsLink="false">
+                                            </dx:ASPxValidationSummary>
         <br/>
         <button type="submit" class="btn label-success btn-default btn-lg">Apply <span class="glyphicon glyphicon-ok"></span>   </button>
+         <dx:ASPxButton runat="server" ID="SubmitButton" ClientInstanceName="SubmitButton" CssClass="btn label-success btn-default btn-lg" Text="Apply" AutoPostBack="False"
+                                    OnClick="SubmitButton_Click" ValidateInvisibleEditors="true" ClientEnabled="false" Theme="Moderno">
+                                    <ClientSideEvents
+                                        Init="onSubmitButtonInit" Click="onSubmitButtonClick" />
+                                </dx:ASPxButton>
     </div>
     <dx:XpoDataSource ID="XpoDSGender" runat="server"
         TypeName="Recruitment.Module.BusinessObjects.Recruitment.rec_Gender">
