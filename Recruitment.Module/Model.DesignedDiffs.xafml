@@ -3922,16 +3922,16 @@
     <DetailView Id="rec_job_post_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="21.149144254278728">
-            <LayoutGroup Id="rec_job_post" RelativeSize="100" Direction="Horizontal" Caption="Apply information">
-              <LayoutGroup Id="Autodeea0080-5bf0-40f8-8fb5-448de1679e48" ShowCaption="False" Caption="Autodeea0080-5bf0-40f8-8fb5-448de1679e48(4)" Index="0" RelativeSize="80.969267139479911" IsNewNode="True">
-                <LayoutItem Id="jp_title" ViewItem="jp_title" Index="0" RelativeSize="23.529411764705884" IsNewNode="True" />
-                <LayoutItem Id="jp_industry_id" ViewItem="jp_industry_id" Index="1" RelativeSize="17.647058823529413" IsNewNode="True" />
-                <LayoutItem Id="jp_date_start" ViewItem="jp_date_start" Index="2" RelativeSize="17.647058823529413" IsNewNode="True" />
-                <LayoutItem Id="jp_date_end" ViewItem="jp_date_end" Index="3" RelativeSize="17.647058823529413" IsNewNode="True" />
-                <LayoutItem Id="jp_visible" ViewItem="jp_visible" Index="4" RelativeSize="23.529411764705884" IsNewNode="True" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="24.083129584352079">
+            <LayoutGroup Id="rec_job_post" RelativeSize="100" Direction="Vertical" Caption="Apply information">
+              <LayoutGroup Id="Autodeea0080-5bf0-40f8-8fb5-448de1679e48" ShowCaption="False" Caption="Autodeea0080-5bf0-40f8-8fb5-448de1679e48(4)" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="jp_title" ViewItem="jp_title" Index="0" RelativeSize="20" IsNewNode="True" />
+                <LayoutItem Id="jp_industry_id" ViewItem="jp_industry_id" Index="1" RelativeSize="15" IsNewNode="True" />
+                <LayoutItem Id="jp_date_start" ViewItem="jp_date_start" Index="2" RelativeSize="15" IsNewNode="True" />
+                <LayoutItem Id="jp_date_end" ViewItem="jp_date_end" Index="3" RelativeSize="15" IsNewNode="True" />
+                <LayoutItem Id="jp_visible" ViewItem="jp_visible" Index="4" RelativeSize="15" IsNewNode="True" />
+                <LayoutItem Id="jp_image" ShowCaption="False" ViewItem="jp_image" Index="5" RelativeSize="20" IsNewNode="True" />
               </LayoutGroup>
-              <LayoutItem Id="jp_image" ShowCaption="False" ViewItem="jp_image" Index="1" RelativeSize="19.030732860520093" IsNewNode="True" />
               <LayoutGroup Id="rec_job_post_col1" Removed="True" />
               <LayoutGroup Id="rec_job_post_col2" RelativeSize="50" Removed="True">
                 <LayoutItem Id="jp_industry_id" RelativeSize="28.571428571428573" />
@@ -3940,11 +3940,11 @@
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="SizeableEditors" RelativeSize="43.887530562347187" Caption="Content">
-            <LayoutItem Id="jp_content" RelativeSize="91.64345403899722" />
-            <LayoutItem Id="jp_view_count" ViewItem="jp_view_count" Index="1" RelativeSize="8.3565459610027855" IsNewNode="True" />
+          <LayoutGroup Id="SizeableEditors" RelativeSize="35.941320293398533" Caption="Content">
+            <LayoutItem Id="jp_content" RelativeSize="89.795918367346943" />
+            <LayoutItem Id="jp_view_count" ViewItem="jp_view_count" Index="1" RelativeSize="10.204081632653061" IsNewNode="True" />
           </LayoutGroup>
-          <TabbedGroup Id="Tabs" RelativeSize="34.963325183374081" Index="2">
+          <TabbedGroup Id="Tabs" RelativeSize="39.975550122249388" Index="2">
             <LayoutGroup Id="rec_job_post_applys" RelativeSize="100" Index="0">
               <LayoutItem Id="rec_job_post_applys" RelativeSize="100" />
             </LayoutGroup>

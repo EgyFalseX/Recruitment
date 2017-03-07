@@ -53,6 +53,7 @@ namespace Recruitment.Web {
         }
         protected void Application_Error(Object sender, EventArgs e) {
             ErrorHandling.Instance.ProcessApplicationError();
+
         }
         protected void Session_End(Object sender, EventArgs e) {
             WebApplication.LogOff(Session);

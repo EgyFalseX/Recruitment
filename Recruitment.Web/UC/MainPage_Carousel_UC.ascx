@@ -8,9 +8,8 @@
                     Width="100px" Height="50px" /></li>
             <li data-target='#carousel-example-generic' data-slide-to='1'>
                 <asp:Image ID="Image2" runat="server" ImageUrl="~/img/13.jpg" Width="100px" Height="50px" /></li>
-            </li>
             <li data-target='#carousel-example-generic' data-slide-to='2'>
-                <asp:Image ID="Image3" runat="server" ImageUrl="~/img/14.jpg" Width="100px" Height="50px" /></li></li>
+                <asp:Image ID="Image3" runat="server" ImageUrl="~/img/14.jpg" Width="100px" Height="50px" /></li>
         </ol>
         <!-- Wrapper for slides -->
         <div class="carousel-inner">

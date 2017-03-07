@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="NotificationsObject_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="MasterGroup">
+          <LayoutGroup Id="LayoutGroupActions">
+            <LayoutGroup Id="Auto639169cb-7f80-4d73-b21d-251703cbe7d3">
+              <LayoutItem Id="DismissAll" ViewItem="DismissAll" />
+              <LayoutGroup Id="Auto9f03af6e-194f-439f-85c8-9b31505bf992">
+                <LayoutItem Id="Dismiss" ViewItem="Dismiss" />
+                <LayoutItem Id="Snooze" ViewItem="Snooze" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

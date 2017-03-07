@@ -814,9 +814,9 @@ h2 {
         }
 
 .navbar-inverse {
-    background-color: #007acc;
+    background-color: #323a45;
     background-image: none;
-    border-color: #00bfff;
+    border-color: #60656d;
 }
 
     .navbar-inverse .navbar-brand {
@@ -832,12 +832,12 @@ h2 {
         }
 
 .dropdown-menu {
-    background-color: #000566;
+    background-color: #323a45;
 }
 
     .dropdown-menu > li > a:hover,
     .dropdown-menu > li > a:focus {
-        background-color: #007acc;
+        background-color: #60656d;
     }
 
     .dropdown-menu > li > a:hover,
@@ -848,7 +848,7 @@ h2 {
 
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-    color: #8488d8;
+    color: #60656d;
 }
 
 .dropdown-menu > li > a {
@@ -1163,7 +1163,7 @@ h2 {
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
-    background-color: #00bfff;
+    background-color: #222222;
 }
 
     .navbar-inverse .navbar-nav > .active > a:hover,
@@ -1269,4 +1269,21 @@ h2 {
     #portfolio .portfolio-item {
         margin: 0 0 30px;
     }
+}
+.omar {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    display: block;
+    --width: 100%;
+    --Height: 100%;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    --padding-bottom: 75%;
+    --padding-top: 75%;
+    position: relative;
 }

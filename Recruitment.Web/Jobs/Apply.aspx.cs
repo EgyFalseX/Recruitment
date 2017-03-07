@@ -10,6 +10,7 @@ using DevExpress.Data.Filtering;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Web;
 using DevExpress.ExpressApp.Xpo;
+using DevExpress.Persistent.BaseImpl;
 using Recruitment.Module.BusinessObjects.Recruitment;
 using DevExpress.Web;
 
@@ -70,21 +71,36 @@ namespace Recruitment.Web
 
         protected void DocumentsUploadControl_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
         {
-            string filename = _dataFolder + DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day +
+
+            string filename = "file" + DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day +
                               DateTime.Now.Hour + DateTime.Now.Minute + DateTime.Now.Second;
-            e.UploadedFile.SaveAs(MapPath(filename));
+            e.UploadedFile.SaveAs(MapPath(_dataFolder + filename));
             if (e.IsValid)
             {
                 e.CallbackData = filename;
-                Session["filename"] = filename;
+                //Session["filename"] = filename;
             }
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
-            bool allFilesExist = true;
-            if (Session["filename"] == null || !File.Exists(Session["filename"].ToString()))
-                allFilesExist = false;
+            IObjectSpace objectspace = WebApplication.Instance.CreateObjectSpace();
+            rec_job_post job = objectspace.GetObject(Job);
+            rec_job_post_apply apply = objectspace.CreateObject<rec_job_post_apply>();
+            apply.attach_file = new FileData(((XPObjectSpace)objectspace).Session);
+            apply.attach_file.LoadFromStream("File from web", File.OpenRead(MapPath(_dataFolder + UploadedFilesTokenBox.Tokens[0].ToString())));
+            apply.job_post_id = job;
+            apply.apply_date = DateTime.Now;
+            rec_Gender gender = objectspace.GetObjectByKey<rec_Gender>((int)ASPxComboBoxGender.SelectedItem.Value);
+            rec_Nationality nationalty = objectspace.GetObjectByKey< rec_Nationality>((int)ASPxComboBoxNationality.SelectedItem.Value);
+            apply.apply_gender_id = gender;
+            apply.apply_nationality_id = nationalty;
+            apply.apply_mobile = tbMobile.Value.ToString();
+            apply.apply_name = tbName.Value.ToString();
+            apply.Save();
+            objectspace.CommitChanges();
+            pcMsg.ShowOnPageLoad = true;
+
         }
     }
 }

@@ -58,6 +58,15 @@ namespace Recruitment.Web {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl jp_content;
         
         /// <summary>
+        /// tbName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox tbName;
+        
+        /// <summary>
         /// ASPxComboBoxGender control.
         /// </summary>
         /// <remarks>
@@ -74,6 +83,15 @@ namespace Recruitment.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox ASPxComboBoxNationality;
+        
+        /// <summary>
+        /// tbMobile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox tbMobile;
         
         /// <summary>
         /// ASPxUploadControlCV control.
@@ -128,5 +146,23 @@ namespace Recruitment.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Xpo.XpoDataSource XpoDSNationality;
+        
+        /// <summary>
+        /// pcMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxPopupControl pcMsg;
+        
+        /// <summary>
+        /// Panel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxPanel Panel1;
     }
 }
