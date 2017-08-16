@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Recruitment.Web.UC {
+namespace Recruitment.Web.ControlPanel {
     
     
-    public partial class MainPage_Carousel_UC {
+    public partial class Default {
     }
 }

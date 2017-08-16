@@ -5,7 +5,8 @@
             <div class="row">
                 <h2 class="background double animated wow fadeInUp" data-wow-delay="0.2s"><span><strong>F</strong>eatures</span></h2>
             </div>
-            <!-- ./ end row -->
+            <%= LoadContains() %>
+        <%--    <!-- ./ end row -->
             <div class="row">
                 <div class="col-md-4">
                     <i class="fa fa-laptop animated wow fadeInDown"></i>
@@ -77,7 +78,7 @@
                 </div>
                 <!-- ./ end service box -->
             </div>
-            <!-- ./ end row -->
+            <!-- ./ end row -->--%>
         </div>
         <div class="clearfix">
         </div>

@@ -180,22 +180,7 @@ h6 {
     background: #E46653;
 }
 
-.carousel .one {
-    background: url(../img/12.jpg) no-repeat;
-    background-position: right -10px bottom -50px;
-}
 
-.carousel .two {
-    background: url(../img/13.jpg) no-repeat;
-    background-position: right -10px bottom -80px;
-    background-attachment: scroll;
-}
-
-.carousel .three {
-    background: url(../img/14.jpg) no-repeat;
-    background-position: right -10px bottom -80px;
-    background-attachment: scroll;
-}
 
 .carousel-fade .carousel-inner .item {
     opacity: 0;

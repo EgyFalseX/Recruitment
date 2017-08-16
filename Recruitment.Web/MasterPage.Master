@@ -56,6 +56,7 @@
                                 runat="server"></span></a>
                             <ul class="dropdown-menu" data-dropdown-in="fadeInUp" data-dropdown-out="fadeOutDown">
                                 <li><a class="dropdown fa fa-gears" href="Default.aspx"> Recruitment App</a></li>
+                                <li><a class="dropdown fa fa-edit" href="ControlPanel/Default.aspx"> Control Panel</a></li>
                                 <li><a class="dropdown fa fa-phone-square" href="Blog.aspx"> Blog</a></li>
                                 <li><a class="dropdown fa fa-support" href="Contact.aspx"> Contact</a></li>
                                 <li><a class="dropdown fa fa-question-circle" href="About.aspx"> About</a></li>
