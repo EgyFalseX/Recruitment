@@ -196,6 +196,7 @@
     <Reference Include="DevExpress.RichEdit.v17.1.Core">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.Web.Bootstrap.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.v17.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -373,7 +374,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="dsData.Designer.cs">
+    <Compile Include="App_Code\dsData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsData.xsd</DependentUpon>
@@ -388,6 +389,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Core.cs" />
     <Compile Include="Jobs\Apply.aspx.cs">
       <DependentUpon>Apply.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -440,6 +442,7 @@
     <Compile Include="UC\MainPage_Service_UC.ascx.designer.cs">
       <DependentUpon>MainPage_Service_UC.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\UserManager.cs" />
     <Compile Include="WebApplication.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -505,16 +508,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="dsData.xsc">
+    <Content Include="App_Code\dsData.xsc">
       <DependentUpon>dsData.xsd</DependentUpon>
     </Content>
     <Content Include="ControlPanel\master.master" />
-    <None Include="dsData.xsd">
+    <None Include="App_Code\dsData.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsData.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="dsData.xss">
+    <Content Include="App_Code\dsData.xss">
       <DependentUpon>dsData.xsd</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\Local_Recruitment.pubxml" />
@@ -535,7 +538,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Code\" />
     <Folder Include="App_Data\tempfiles\" />
     <Folder Include="img\carousel\" />
     <Folder Include="img\other\" />

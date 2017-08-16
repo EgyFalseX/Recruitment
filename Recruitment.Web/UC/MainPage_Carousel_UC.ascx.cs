@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Recruitment.Web.dsDataTableAdapters;
+using Recruitment.Web.App_Code;
+using Recruitment.Web.App_Code.dsDataTableAdapters;
 
 namespace Recruitment.Web.UC
 {

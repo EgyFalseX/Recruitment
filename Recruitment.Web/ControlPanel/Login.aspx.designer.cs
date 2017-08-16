@@ -13,21 +13,39 @@ namespace Recruitment.Web.ControlPanel {
     public partial class Login {
         
         /// <summary>
+        /// txtUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.Bootstrap.BootstrapTextBox txtUser;
+        
+        /// <summary>
+        /// txtPass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.Bootstrap.BootstrapTextBox txtPass;
+        
+        /// <summary>
         /// btnLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
+        protected global::DevExpress.Web.Bootstrap.BootstrapButton btnLogin;
         
         /// <summary>
-        /// lblStatus control.
+        /// txtStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lblStatus;
+        protected global::DevExpress.Web.Bootstrap.BootstrapTextBox txtStatus;
     }
 }

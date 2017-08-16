@@ -9,12 +9,21 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Body" runat="server">
     <br/><br/><br/><br/><br/><br/>
-    <dx:ASPxGridView ID="ASPxGridViewMain" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceMain" EnableTheming="True" KeyFieldName="AutoId" Theme="Moderno" Width="100%" EnablePagingCallbackAnimation="True">
+    <dx:ASPxGridView ID="ASPxGridViewMain" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceMain" EnableTheming="True" KeyFieldName="AutoId" Theme="Moderno" Width="100%" EnablePagingCallbackAnimation="True" OnStartRowEditing="ASPxGridViewMain_StartRowEditing">
         <Columns>
             <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" ShowNewButtonInHeader="True" VisibleIndex="0">
             </dx:GridViewCommandColumn>
             <dx:GridViewDataTextColumn FieldName="ImgPath" VisibleIndex="2">
                 <EditFormSettings ColumnSpan="2" />
+                <DataItemTemplate>
+                    <dx:ASPxImage ID="ASPxImageMain" runat="server" Height="64px" ImageUrl='<%# Eval("ImgPath", "~/img/carousel/{0}") %>' ShowLoadingImage="True" Width="64px">
+                    </dx:ASPxImage>
+                </DataItemTemplate>
+                <EditItemTemplate>
+                    <dx:ASPxUploadControl ID="ASPxUploadControlMain" runat="server" AutoStartUpload="True" OnFileUploadComplete="ASPxUploadControlMain_FileUploadComplete" ShowProgressPanel="True" ShowUploadButton="True" Theme="Moderno" UploadMode="Advanced" UploadStorage="FileSystem" Width="280px">
+                        <FileSystemSettings UploadFolder="~/img/carousel/" />
+                    </dx:ASPxUploadControl>
+                </EditItemTemplate>
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn FieldName="Header" VisibleIndex="3">
                 <EditFormSettings ColumnSpan="2" />
@@ -37,7 +46,7 @@
             </dx:GridViewDataCheckColumn>
         </Columns>
     </dx:ASPxGridView>
-    <asp:SqlDataSource ID="SqlDataSourceMain" runat="server" ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Recruitment.mdb;Persist Security Info=True" DeleteCommand="DELETE FROM [Carousel] WHERE [AutoId] = ?" InsertCommand="INSERT INTO [Carousel] ( [ImgPath], [Header], [SortNumber], [Enabled]) VALUES ( ?, ?, ?, ?)" ProviderName="System.Data.OleDb" SelectCommand="SELECT [AutoId], [ImgPath], [Header], [SortNumber], [Enabled] FROM [Carousel]" UpdateCommand="UPDATE [Carousel] SET [ImgPath] = ?, [Header] = ?, [SortNumber] = ?, [Enabled] = ? WHERE [AutoId] = ?">
+    <asp:SqlDataSource ID="SqlDataSourceMain" runat="server" ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Recruitment.mdb;Persist Security Info=True" DeleteCommand="DELETE FROM [Carousel] WHERE [AutoId] = ?" InsertCommand="INSERT INTO [Carousel] ( [ImgPath], [Header], [SortNumber], [Enabled]) VALUES ( ?, ?, ?, ?)" ProviderName="System.Data.OleDb" SelectCommand="SELECT [AutoId], [ImgPath], [Header], [SortNumber], [Enabled] FROM [Carousel]" UpdateCommand="UPDATE [Carousel] SET [ImgPath] = ?, [Header] = ?, [SortNumber] = ?, [Enabled] = ? WHERE [AutoId] = ?" OnInserting="SqlDataSourceMain_Inserting" OnUpdating="SqlDataSourceMain_Updating">
         <DeleteParameters>
             <asp:Parameter Name="AutoId" Type="Int32" />
         </DeleteParameters>
