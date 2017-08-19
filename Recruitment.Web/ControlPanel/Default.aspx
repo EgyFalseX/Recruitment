@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ControlPanel/master.master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Recruitment.Web.ControlPanel.Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="master.master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Recruitment.Web.ControlPanel.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Body" runat="server">

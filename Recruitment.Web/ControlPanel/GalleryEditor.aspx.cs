@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DevExpress.Web;
-using DevExpress.Web.ASPxHtmlEditor;
 
 namespace Recruitment.Web
 {
-    public partial class CarouselEditor : System.Web.UI.Page
+    public partial class GalleryEditor : Page
     {
 
         protected void Page_Load(object sender, EventArgs e)
@@ -17,24 +13,24 @@ namespace Recruitment.Web
             if (!Infrastructure.UserManager.Authenticated)
                 Response.Redirect("Login.aspx");
         }
-        protected void ASPxUploadControlMain_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
+        protected void ASPxUploadControlMain_FileUploadComplete(object sender, FileUploadCompleteEventArgs e)
         {
             ASPxUploadControl uploader = (ASPxUploadControl)sender;
-            Session["CarouselEditorFilename"] = uploader.UploadedFiles[0].FileNameInStorage;
+            Session["GallaryEditorFilename"] = uploader.UploadedFiles[0].FileNameInStorage;
         }
         protected void ASPxGridViewMain_StartRowEditing(object sender, DevExpress.Web.Data.ASPxStartRowEditingEventArgs e)
         {
-            Session["CarouselEditorFilename"] = null;
+            Session["GallaryEditorFilename"] = null;
         }
         protected void SqlDataSourceMain_Inserting(object sender, SqlDataSourceCommandEventArgs e)
         {
-            if (Session["CarouselEditorFilename"] != null)
-                e.Command.Parameters["ImgPath"].Value = Session["CarouselEditorFilename"];
+            if (Session["GallaryEditorFilename"] != null)
+                e.Command.Parameters["ImageURL"].Value = Session["GallaryEditorFilename"];
         }
         protected void SqlDataSourceMain_Updating(object sender, SqlDataSourceCommandEventArgs e)
         {
-            if (Session["CarouselEditorFilename"] != null)
-                e.Command.Parameters["ImgPath"].Value = Session["CarouselEditorFilename"];
+            if (Session["GallaryEditorFilename"] != null)
+                e.Command.Parameters["ImageURL"].Value = Session["GallaryEditorFilename"];
         }
 
     }

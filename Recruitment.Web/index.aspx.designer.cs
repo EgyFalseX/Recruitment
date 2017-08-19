@@ -31,13 +31,13 @@ namespace Recruitment.Web {
         protected global::Recruitment.Web.UC.MainPage_Service_UC MainPage_Service_UC;
         
         /// <summary>
-        /// MainPage_Project_UC control.
+        /// Gallary_UC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Recruitment.Web.UC.MainPage_Project_UC MainPage_Project_UC;
+        protected global::Recruitment.Web.UC.Gallary_UC Gallary_UC;
         
         /// <summary>
         /// MainPage_Download_UC control.

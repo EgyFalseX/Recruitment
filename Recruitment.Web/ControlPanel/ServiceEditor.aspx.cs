@@ -12,7 +12,8 @@ namespace Recruitment.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Infrastructure.UserManager.Authenticated)
+                Response.Redirect("Login.aspx");
         }
 
         

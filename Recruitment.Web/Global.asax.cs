@@ -44,6 +44,7 @@ namespace Recruitment.Web {
             }
             WebApplication.Instance.Setup();
             WebApplication.Instance.Start();
+            Infrastructure.Core.StatUp();
         }
         protected void Application_BeginRequest(Object sender, EventArgs e) {
         }

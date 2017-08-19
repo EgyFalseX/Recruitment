@@ -3,7 +3,8 @@
 <%@ Register Src="~/UC/MainPage_Carousel_UC.ascx" TagPrefix="uc1" TagName="MainPage_Carousel_UC" %>
 <%@ Register Src="~/UC/MainPage_Service_UC.ascx" TagPrefix="uc1" TagName="MainPage_Service_UC" %>
 <%@ Register Src="~/UC/MainPage_Download_UC.ascx" TagPrefix="uc1" TagName="MainPage_Download_UC" %>
-<%@ Register Src="~/UC/MainPage_Project_UC.ascx" TagPrefix="uc1" TagName="MainPage_Project_UC" %>
+<%--<%@ Register Src="~/UC/MainPage_Project_UC.ascx" TagPrefix="uc1" TagName="MainPage_Project_UC" %>--%>
+<%@ Register Src="~/UC/Gallary_UC.ascx" TagPrefix="uc1" TagName="Gallary_UC" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_Header" runat="server">
 </asp:Content>
@@ -61,7 +62,8 @@
         </div>
     </div>
     <!-- /.container -->
-    <uc1:MainPage_Project_UC runat="server" ID="MainPage_Project_UC" />
+    <%--<uc1:MainPage_Project_UC runat="server" ID="MainPage_Project_UC" />--%>
+    <uc1:Gallary_UC runat="server" ID="Gallary_UC" />
     <uc1:MainPage_Download_UC runat="server" id="MainPage_Download_UC" />
     
     <!-- End Production Section -->

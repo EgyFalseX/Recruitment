@@ -5,14 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Recruitment.Web.ControlPanel
+namespace Recruitment.Web.UC
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Gallary_UC : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Infrastructure.UserManager.Authenticated)
-                Response.Redirect("Login.aspx");
+
         }
     }
 }

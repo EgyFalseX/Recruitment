@@ -11,12 +11,27 @@ namespace Recruitment.Web.ControlPanel
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Url.AbsolutePath.EndsWith("CarouselEditor.aspx"))
+            if (Request.Url.AbsolutePath.EndsWith("CompanyInforEditor.aspx"))
+            {
+                OutCompanyInfo.Attributes["class"] = "active-menu";
+            }else if (Request.Url.AbsolutePath.EndsWith("CarouselEditor.aspx"))
             {
                 CarouselLink.Attributes["class"] = "active-menu";
             }else if (Request.Url.AbsolutePath.EndsWith("ServiceEditor.aspx"))
             {
                 ServicesLink.Attributes["class"] = "active-menu";
+            }
+            else if (Request.Url.AbsolutePath.EndsWith("CompanyEditor.aspx"))
+            {
+                CompaniesLink.Attributes["class"] = "active-menu";
+            }
+            else if (Request.Url.AbsolutePath.EndsWith("GalleryEditor.aspx"))
+            {
+                GalleryLink.Attributes["class"] = "active-menu";
+            }
+            else if (Request.Url.AbsolutePath.EndsWith("ContactUsEditor.aspx"))
+            {
+                FeedbackLink.Attributes["class"] = "active-menu";
             }
         }
     }

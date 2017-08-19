@@ -22,6 +22,24 @@ namespace Recruitment.Web.ControlPanel {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder_Header;
         
         /// <summary>
+        /// form1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// OutCompanyInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor OutCompanyInfo;
+        
+        /// <summary>
         /// CarouselLink control.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,33 @@ namespace Recruitment.Web.ControlPanel {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor ServicesLink;
+        
+        /// <summary>
+        /// CompaniesLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor CompaniesLink;
+        
+        /// <summary>
+        /// GalleryLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor GalleryLink;
+        
+        /// <summary>
+        /// FeedbackLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor FeedbackLink;
         
         /// <summary>
         /// ContentPlaceHolder_Body control.

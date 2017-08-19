@@ -273,10 +273,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ControlPanel\GalleryEditor.aspx" />
+    <Content Include="ControlPanel\CompanyEditor.aspx" />
     <Content Include="ControlPanel\Default.aspx" />
     <Content Include="ControlPanel\Login.aspx" />
+    <Content Include="ControlPanel\CompanyInforEditor.aspx" />
+    <Content Include="ControlPanel\ContactUsEditor.aspx" />
     <Content Include="css\custom.css" />
-    <Content Include="adminpanelassets\img\find_user.png" />
+    <Content Include="ControlPanel\img\find_user.png" />
     <Content Include="ControlPanel\ServiceEditor.aspx" />
     <Content Include="ControlPanel\Error.aspx" />
     <Content Include="Default.aspx" />
@@ -299,6 +303,7 @@
     <Content Include="img\agsquare_%402X.png" />
     <Content Include="img\banner.jpg" />
     <Content Include="img\banner1.jpg" />
+    <Content Include="img\company\logo01.jpg" />
     <Content Include="img\logo.png" />
     <Content Include="img\portfolio\item01.jpg" />
     <Content Include="img\portfolio\item02.jpg" />
@@ -327,17 +332,47 @@
     <Content Include="index.aspx" />
     <Content Include="UC\MainPage_Carousel_UC.ascx" />
     <Content Include="UC\MainPage_Download_UC.ascx" />
+    <Content Include="UC\Gallary_UC.ascx" />
     <Content Include="UC\MainPage_Project_UC.ascx" />
     <Content Include="UC\MainPage_Service_UC.ascx" />
     <Content Include="ControlPanel\CarouselEditor.aspx" />
+    <Content Include="ContactUs.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlPanel\GalleryEditor.aspx.cs">
+      <DependentUpon>GalleryEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\GalleryEditor.aspx.designer.cs">
+      <DependentUpon>GalleryEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPanel\CompanyEditor.aspx.cs">
+      <DependentUpon>CompanyEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\CompanyEditor.aspx.designer.cs">
+      <DependentUpon>CompanyEditor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ControlPanel\master.master.cs">
       <DependentUpon>master.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ControlPanel\master.master.designer.cs">
       <DependentUpon>master.master</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPanel\CompanyInforEditor.aspx.cs">
+      <DependentUpon>CompanyInforEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\CompanyInforEditor.aspx.designer.cs">
+      <DependentUpon>CompanyInforEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPanel\ContactUsEditor.aspx.cs">
+      <DependentUpon>ContactUsEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\ContactUsEditor.aspx.designer.cs">
+      <DependentUpon>ContactUsEditor.aspx</DependentUpon>
     </Compile>
     <Compile Include="ControlPanel\ServiceEditor.aspx.cs">
       <DependentUpon>ServiceEditor.aspx</DependentUpon>
@@ -428,6 +463,13 @@
     <Compile Include="UC\MainPage_Download_UC.ascx.designer.cs">
       <DependentUpon>MainPage_Download_UC.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UC\Gallary_UC.ascx.cs">
+      <DependentUpon>Gallary_UC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Gallary_UC.ascx.designer.cs">
+      <DependentUpon>Gallary_UC.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UC\MainPage_Project_UC.ascx.cs">
       <DependentUpon>MainPage_Project_UC.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -464,6 +506,13 @@
     </Compile>
     <Compile Include="ControlPanel\CarouselEditor.aspx.designer.cs">
       <DependentUpon>CarouselEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -540,6 +589,7 @@
   <ItemGroup>
     <Folder Include="App_Data\tempfiles\" />
     <Folder Include="img\carousel\" />
+    <Folder Include="img\gallary\" />
     <Folder Include="img\other\" />
   </ItemGroup>
   <PropertyGroup>
