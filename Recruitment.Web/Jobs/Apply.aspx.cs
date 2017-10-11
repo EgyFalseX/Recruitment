@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -10,25 +11,35 @@ using DevExpress.Data.Filtering;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Web;
 using DevExpress.ExpressApp.Xpo;
-using DevExpress.Persistent.BaseImpl;
-using Recruitment.Module.BusinessObjects.Recruitment;
 using DevExpress.Web;
+using DevExpress.Xpo;
+using Recruitment.Web.BO.Recruitment;
+using FileData = DevExpress.Persistent.BaseImpl.FileData;
 
 
 namespace Recruitment.Web
 {
-    public partial class Apply : System.Web.UI.Page
+    public partial class Apply : Page
     {
-        private string _dataFolder = "~/App_Data/tempfiles/";
+        private string _dataFolder = "~/Jobs/attachments/";
         
         public rec_job_post Job = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (this.Request.QueryString["id"] == null)
+            if (Request.QueryString["id"] == null)
                 Response.Redirect("Jobs.aspx");
-
-            XpoDSGender.Session = ((XPObjectSpace)WebApplication.Instance.CreateObjectSpace()).Session;
-            XpoDSNationality.Session = ((XPObjectSpace)WebApplication.Instance.CreateObjectSpace()).Session;
+            XpoDSGender.Session = new Session
+            {
+                ConnectionString = ConfigurationManager.ConnectionStrings["RecruitmentConnectionString"]
+                    .ConnectionString
+            };
+            XpoDSNationality.Session = new Session
+            {
+                ConnectionString = ConfigurationManager.ConnectionStrings["RecruitmentConnectionString"]
+                    .ConnectionString
+            };
+            //XpoDSGender.Session = ((XPObjectSpace)WebApplication.Instance.CreateObjectSpace()).Session;
+            //XpoDSNationality.Session = ((XPObjectSpace)WebApplication.Instance.CreateObjectSpace()).Session;
             GetJobInfo(Convert.ToInt32(Request.QueryString["id"]));
             if (!IsPostBack)
             {
@@ -38,22 +49,33 @@ namespace Recruitment.Web
         }
         private void UpdateCounting(int id)
         {
-            IObjectSpace objectspace = WebApplication.Instance.CreateObjectSpace();
-            Job = objectspace.FindObject<rec_job_post>(CriteriaOperator.Parse($"job_post_id = {id} And jp_date_start <= #{DateTime.Now.ToShortDateString()}# And jp_date_end >= #{DateTime.Now.ToShortDateString()}# And jp_visible = True"));
+            Session session = new Session
+            {
+                ConnectionString = ConfigurationManager.ConnectionStrings["RecruitmentConnectionString"]
+                    .ConnectionString
+            };
+            //session.BeginTransaction();
+            Job = session.FindObject<rec_job_post>(CriteriaOperator.Parse($"job_post_id = {id} And jp_date_start <= #{DateTime.Now.ToShortDateString()}# And jp_date_end >= #{DateTime.Now.ToShortDateString()}# And jp_visible = True"));
             if (Job == null)
                 Response.Redirect("Jobs.aspx");
             Job.jp_view_count += 1;
             Job.Save();
-            objectspace.CommitChanges();
+            //session.CommitTransaction();
+
         }
         private void GetJobInfo(int id)
         {
-            IObjectSpace objectspace = WebApplication.Instance.CreateObjectSpace();
-            Job = objectspace.FindObject<rec_job_post>(CriteriaOperator.Parse($"job_post_id = {id} And jp_date_start <= #{DateTime.Now.ToShortDateString()}# And jp_date_end >= #{DateTime.Now.ToShortDateString()}# And jp_visible = True"));
+            Session session = new Session
+            {
+                ConnectionString = ConfigurationManager.ConnectionStrings["RecruitmentConnectionString"]
+                    .ConnectionString
+            };
+            //IObjectSpace objectspace = WebApplication.Instance.CreateObjectSpace();
+            Job = session.FindObject<rec_job_post>(CriteriaOperator.Parse($"job_post_id = {id} And jp_date_start <= #{DateTime.Now.ToShortDateString()}# And jp_date_end >= #{DateTime.Now.ToShortDateString()}# And jp_visible = True"));
             if (Job == null)
                 Response.Redirect("Jobs.aspx");
 
-            jp_image.ContentBytes = ConvertToByte((System.Drawing.Bitmap) Job.jp_image);
+            jp_image.ContentBytes = Job.jp_image;
             jp_date_start.InnerText = Job.jp_date_start.ToShortDateString();
             industry_name.InnerText = Job.jp_industry_id.industry_name;
             jp_view_count.InnerText = Job.jp_view_count.ToString() + " Views";
@@ -69,36 +91,41 @@ namespace Recruitment.Web
             }
         }
 
-        protected void DocumentsUploadControl_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
+        protected void DocumentsUploadControl_FileUploadComplete(object sender, FileUploadCompleteEventArgs e)
         {
-
-            string filename = "file" + DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day +
-                              DateTime.Now.Hour + DateTime.Now.Minute + DateTime.Now.Second;
+            string filename = DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day +
+                              DateTime.Now.Hour + DateTime.Now.Minute + DateTime.Now.Second + "_" + e.UploadedFile.FileName;
             e.UploadedFile.SaveAs(MapPath(_dataFolder + filename));
             if (e.IsValid)
             {
                 e.CallbackData = filename;
-                //Session["filename"] = filename;
+                Session["filename"] = filename;
             }
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
-            IObjectSpace objectspace = WebApplication.Instance.CreateObjectSpace();
-            rec_job_post job = objectspace.GetObject(Job);
-            rec_job_post_apply apply = objectspace.CreateObject<rec_job_post_apply>();
-            apply.attach_file = new FileData(((XPObjectSpace)objectspace).Session);
-            apply.attach_file.LoadFromStream("File from web", File.OpenRead(MapPath(_dataFolder + UploadedFilesTokenBox.Tokens[0].ToString())));
-            apply.job_post_id = job;
-            apply.apply_date = DateTime.Now;
-            rec_Gender gender = objectspace.GetObjectByKey<rec_Gender>((int)ASPxComboBoxGender.SelectedItem.Value);
-            rec_Nationality nationalty = objectspace.GetObjectByKey< rec_Nationality>((int)ASPxComboBoxNationality.SelectedItem.Value);
-            apply.apply_gender_id = gender;
-            apply.apply_nationality_id = nationalty;
-            apply.apply_mobile = tbMobile.Value.ToString();
-            apply.apply_name = tbName.Value.ToString();
+            Session session = new Session
+            {
+                ConnectionString = ConfigurationManager.ConnectionStrings["RecruitmentConnectionString"]
+                    .ConnectionString
+            };
+            rec_job_post job = session.GetObjectByKey<rec_job_post>(Job.job_post_id);
+            rec_job_post_apply apply =
+                new rec_job_post_apply(session)
+                {
+                    attach_file = Session["filename"]?.ToString() ?? "",
+                    job_post_id = job,
+                    apply_date = DateTime.Now,
+                    apply_gender_id =
+                        session.GetObjectByKey<rec_Gender>((int) ASPxComboBoxNationality.SelectedItem.Value),
+                    apply_nationality_id =
+                        session.GetObjectByKey<rec_Nationality>((int) ASPxComboBoxNationality.SelectedItem.Value),
+                    apply_mobile = tbMobile.Value.ToString(),
+                    apply_name = tbName.Value.ToString()
+                };
             apply.Save();
-            objectspace.CommitChanges();
+            //session.CommitTransaction();
             pcMsg.ShowOnPageLoad = true;
 
         }

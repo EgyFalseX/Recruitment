@@ -25,6 +25,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -339,6 +340,67 @@
     <Content Include="ContactUs.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BO\DataModelCode\Carousel.cs" />
+    <Compile Include="BO\DataModelCode\Carousel.Designer.cs">
+      <DependentUpon>Carousel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DataModelCode\Company.cs" />
+    <Compile Include="BO\DataModelCode\Company.Designer.cs">
+      <DependentUpon>Company.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DataModelCode\CompanyInfo.cs" />
+    <Compile Include="BO\DataModelCode\CompanyInfo.Designer.cs">
+      <DependentUpon>CompanyInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DataModelCode\ConnectionHelper.cs" />
+    <Compile Include="BO\DataModelCode\Feedback.cs" />
+    <Compile Include="BO\DataModelCode\Feedback.Designer.cs">
+      <DependentUpon>Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DataModelCode\Gallary.cs" />
+    <Compile Include="BO\DataModelCode\Gallary.Designer.cs">
+      <DependentUpon>Gallary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DataModelCode\rec_Applicant.cs" />
+    <Compile Include="BO\DataModelCode\rec_Applicant.Designer.cs">
+      <DependentUpon>rec_Applicant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DataModelCode\rec_Gender.cs" />
+    <Compile Include="BO\DataModelCode\rec_Gender.Designer.cs">
+      <DependentUpon>rec_Gender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DataModelCode\rec_Industry.cs" />
+    <Compile Include="BO\DataModelCode\rec_Industry.Designer.cs">
+      <DependentUpon>rec_Industry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DataModelCode\rec_Job.cs" />
+    <Compile Include="BO\DataModelCode\rec_Job.Designer.cs">
+      <DependentUpon>rec_Job.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DataModelCode\rec_job_post.cs" />
+    <Compile Include="BO\DataModelCode\rec_job_post.Designer.cs">
+      <DependentUpon>rec_job_post.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DataModelCode\rec_job_post_apply.cs" />
+    <Compile Include="BO\DataModelCode\rec_job_post_apply.Designer.cs">
+      <DependentUpon>rec_job_post_apply.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DataModelCode\rec_Nationality.cs" />
+    <Compile Include="BO\DataModelCode\rec_Nationality.Designer.cs">
+      <DependentUpon>rec_Nationality.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DataModelCode\Service.cs" />
+    <Compile Include="BO\DataModelCode\Service.Designer.cs">
+      <DependentUpon>Service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DataModelCode\Symbol.cs" />
+    <Compile Include="BO\DataModelCode\Symbol.Designer.cs">
+      <DependentUpon>Symbol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DataModelCode\User.cs" />
+    <Compile Include="BO\DataModelCode\User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlPanel\GalleryEditor.aspx.cs">
       <DependentUpon>GalleryEditor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -568,6 +630,10 @@
     </None>
     <Content Include="App_Code\dsData.xss">
       <DependentUpon>dsData.xsd</DependentUpon>
+    </Content>
+    <Content Include="BO\DataModel.xpo" />
+    <Content Include="BO\DataModel.xpo.diagram">
+      <DependentUpon>DataModel.xpo</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\Local_Recruitment.pubxml" />
     <None Include="Properties\PublishProfiles\MyAsp_Recruitment.pubxml" />

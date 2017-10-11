@@ -11,6 +11,7 @@ using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Web;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.Web;
+using DevExpress.Xpo;
 
 namespace Recruitment.Web
 {
@@ -25,12 +26,21 @@ namespace Recruitment.Web
             //    dataView.DataBind();
             //}
 
-            XpoDS.Session = ((XPObjectSpace)WebApplication.Instance.CreateObjectSpace()).Session;
-            XpoDSIndustry.Session = ((XPObjectSpace)WebApplication.Instance.CreateObjectSpace()).Session;
+            XpoDS.Session = new Session
+            {
+                ConnectionString = ConfigurationManager.ConnectionStrings["RecruitmentConnectionString"]
+                .ConnectionString
+            };
+            XpoDSIndustry.Session = new Session
+            {
+                ConnectionString = ConfigurationManager.ConnectionStrings["RecruitmentConnectionString"]
+                .ConnectionString
+            };
+            //XpoDS.Session = ((XPObjectSpace)WebApplication.Instance.CreateObjectSpace()).Session;
+            //XpoDSIndustry.Session = ((XPObjectSpace)WebApplication.Instance.CreateObjectSpace()).Session;
             if (!IsPostBack)
             {
                 Session["IndustyParam"] = null;
-
                 dataView.PagerSettings.EndlessPagingMode = (DataViewEndlessPagingMode)Enum.Parse(typeof(DataViewEndlessPagingMode), "OnClick");
             }
             if (IsCallback)

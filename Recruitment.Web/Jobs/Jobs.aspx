@@ -38,7 +38,7 @@
                                 <table>
                                     <tr class="thumbnail">
                                 <td class="col-sm-1 col-lg-1 col-md-1">
-                                            <dx:ASPxBinaryImage ID="ASPxBinaryImage1" Height="300px" runat="server" ContentBytes='<%# ConvertToByte((System.Drawing.Bitmap)Eval("jp_image")) %>' />
+                                            <dx:ASPxBinaryImage ID="ASPxBinaryImage1" Height="300px" runat="server" ContentBytes='<%# /*ConvertToByte((System.Drawing.Bitmap))*/Eval("jp_image") %>' />
                                         </td>         
                                         <td class="col-sm-2 col-lg-2 col-md-2 caption" rowspan="2">
                                             <h4><a href="Apply.aspx?id=<%# System.Web.HttpUtility.HtmlEncode(Eval("job_post_id")) %>"><%# System.Web.HttpUtility.HtmlEncode(Eval("jp_title")) %></a></h4>
@@ -63,10 +63,10 @@
         <ItemStyle Width="300px" />
     </dx:ASPxDataView>
         <dx:XpoDataSource ID="XpoDSIndustry" runat="server" 
-        TypeName="Recruitment.Module.BusinessObjects.Recruitment.rec_Industry">
+        TypeName="Recruitment.Web.BO.Recruitment.rec_Industry">
     </dx:XpoDataSource>
     <dx:XpoDataSource ID="XpoDS" runat="server" Criteria="[jp_date_start] &lt;= ?Now And [jp_date_end] &gt;= ?Now And [jp_visible] = True And (?IndustyParam Is Null Or [jp_industry_id] = ?IndustyParam)" 
-        TypeName="Recruitment.Module.BusinessObjects.Recruitment.rec_job_post"
+        TypeName="Recruitment.Web.BO.Recruitment.rec_job_post"
         DefaultSorting="jp_date_start Descending">
         <CriteriaParameters>
            <%--<asp:SessionParameter Name="IndustyParam" SessionField="IndustyParam" Type="Int32" />--%>

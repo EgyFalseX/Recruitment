@@ -182,10 +182,10 @@
          </div>
     </div>
     <dx:XpoDataSource ID="XpoDSGender" runat="server"
-        TypeName="Recruitment.Module.BusinessObjects.Recruitment.rec_Gender">
+        TypeName="Recruitment.Web.BO.Recruitment.rec_Gender">
     </dx:XpoDataSource>
     <dx:XpoDataSource ID="XpoDSNationality" runat="server"
-        TypeName="Recruitment.Module.BusinessObjects.Recruitment.rec_Nationality">
+        TypeName="Recruitment.Web.BO.Recruitment.rec_Nationality">
     </dx:XpoDataSource>
 
     <dx:ASPxPopupControl ID="pcMsg" runat="server" CloseAction="CloseButton" CloseOnEscape="true" Modal="True"
