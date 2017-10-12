@@ -19,7 +19,7 @@ namespace Recruitment.Web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxBinaryImage jp_image;
+        protected global::DevExpress.Web.ASPxImage jp_image;
         
         /// <summary>
         /// jp_date_start control.

@@ -70,12 +70,11 @@ namespace Recruitment.Web
                 ConnectionString = ConfigurationManager.ConnectionStrings["RecruitmentConnectionString"]
                     .ConnectionString
             };
-            //IObjectSpace objectspace = WebApplication.Instance.CreateObjectSpace();
             Job = session.FindObject<rec_job_post>(CriteriaOperator.Parse($"job_post_id = {id} And jp_date_start <= #{DateTime.Now.ToShortDateString()}# And jp_date_end >= #{DateTime.Now.ToShortDateString()}# And jp_visible = True"));
             if (Job == null)
                 Response.Redirect("Jobs.aspx");
 
-            jp_image.ContentBytes = Job.jp_image;
+            jp_image.ImageUrl = "~/img/job/" + Job.jp_image;
             jp_date_start.InnerText = Job.jp_date_start.ToShortDateString();
             industry_name.InnerText = Job.jp_industry_id.industry_name;
             jp_view_count.InnerText = Job.jp_view_count.ToString() + " Views";

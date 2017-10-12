@@ -293,7 +293,7 @@
             <field Id="a05b42d1-c9ee-448c-add7-27accb68045f" name="jp_date_start" columnType="DateTime" persistent="jp_date_start" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="ec8b2b34-5f3a-4fe8-b7af-8ee1be118738">
-            <field Id="cfce960f-4e1d-4fe5-859a-0710a0a31a54" name="jp_image" columnType="ByteArray" persistent="jp_image" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="cfce960f-4e1d-4fe5-859a-0710a0a31a54" name="jp_image" persistent="jp_image" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="1bf031e2-52ba-46fc-afa4-c24de8b4a016">
             <field Id="e6baca78-b04f-4185-9494-99e3b9f5637e" name="jp_industry_id" columnType="Int32" persistent="jp_industry_id" virtualColumnType="rec_Industry" logicalType="rec_Industry" delayedUpdateModifiedOnly="false" />

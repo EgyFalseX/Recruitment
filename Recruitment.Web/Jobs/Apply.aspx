@@ -83,7 +83,7 @@
                 <table class="thumbnail">
                     <tr>
                         <td class="col-sm-1 col-lg-1 col-md-1  omar">
-                            <dx:ASPxBinaryImage ID="jp_image" runat="server" />
+                            <dx:ASPxImage ID="jp_image" runat="server" />
                         </td>
                     </tr>
                     <tr>

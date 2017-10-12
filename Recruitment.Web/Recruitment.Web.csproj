@@ -274,6 +274,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ControlPanel\JobsEditor.aspx" />
     <Content Include="ControlPanel\GalleryEditor.aspx" />
     <Content Include="ControlPanel\CompanyEditor.aspx" />
     <Content Include="ControlPanel\Default.aspx" />
@@ -400,6 +401,13 @@
     <Compile Include="BO\DataModelCode\User.cs" />
     <Compile Include="BO\DataModelCode\User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPanel\JobsEditor.aspx.cs">
+      <DependentUpon>JobsEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\JobsEditor.aspx.designer.cs">
+      <DependentUpon>JobsEditor.aspx</DependentUpon>
     </Compile>
     <Compile Include="ControlPanel\GalleryEditor.aspx.cs">
       <DependentUpon>GalleryEditor.aspx</DependentUpon>
@@ -656,6 +664,7 @@
     <Folder Include="App_Data\tempfiles\" />
     <Folder Include="img\carousel\" />
     <Folder Include="img\gallary\" />
+    <Folder Include="img\job\" />
     <Folder Include="img\other\" />
   </ItemGroup>
   <PropertyGroup>

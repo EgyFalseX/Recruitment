@@ -42,13 +42,11 @@ namespace Recruitment.Web.BO.Recruitment
             get { return fjp_date_start; }
             set { SetPropertyValue<DateTime>("jp_date_start", ref fjp_date_start, value); }
         }
-        byte[] fjp_image;
-        [Size(SizeAttribute.Unlimited)]
-        [MemberDesignTimeVisibility(true)]
-        public byte[] jp_image
+        string fjp_image;
+        public string jp_image
         {
             get { return fjp_image; }
-            set { SetPropertyValue<byte[]>("jp_image", ref fjp_image, value); }
+            set { SetPropertyValue<string>("jp_image", ref fjp_image, value); }
         }
         rec_Industry fjp_industry_id;
         [Association(@"rec_job_postReferencesrec_Industry")]

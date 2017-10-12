@@ -38,7 +38,8 @@
                                 <table>
                                     <tr class="thumbnail">
                                 <td class="col-sm-1 col-lg-1 col-md-1">
-                                            <dx:ASPxBinaryImage ID="ASPxBinaryImage1" Height="300px" runat="server" ContentBytes='<%# /*ConvertToByte((System.Drawing.Bitmap))*/Eval("jp_image") %>' />
+                                    <%--<dx:ASPxBinaryImage ID="ASPxBinaryImage2" Height="300px" runat="server" ContentBytes='<%# /*ConvertToByte((System.Drawing.Bitmap))*/Eval("jp_image") %>' />--%>
+                                    <dx:ASPxImage ID="ASPxBinaryImage1"  Height="300px"  runat="server" ImageUrl='<%# Eval("jp_image", "~/img/job/{0}") %>' />
                                         </td>         
                                         <td class="col-sm-2 col-lg-2 col-md-2 caption" rowspan="2">
                                             <h4><a href="Apply.aspx?id=<%# System.Web.HttpUtility.HtmlEncode(Eval("job_post_id")) %>"><%# System.Web.HttpUtility.HtmlEncode(Eval("jp_title")) %></a></h4>
