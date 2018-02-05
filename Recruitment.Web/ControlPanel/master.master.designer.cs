@@ -85,6 +85,33 @@ namespace Recruitment.Web.ControlPanel {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor FeedbackLink;
         
         /// <summary>
+        /// IndustryEditorLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor IndustryEditorLink;
+        
+        /// <summary>
+        /// JobsEditorLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor JobsEditorLink;
+        
+        /// <summary>
+        /// JobApplyEditorLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor JobApplyEditorLink;
+        
+        /// <summary>
         /// ContentPlaceHolder_Body control.
         /// </summary>
         /// <remarks>

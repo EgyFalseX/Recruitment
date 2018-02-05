@@ -3,7 +3,7 @@
     <section id="services" class="padding50">
         <div class="container">
             <div class="row">
-                <h2 class="background double animated wow fadeInUp" data-wow-delay="0.2s"><span><strong>F</strong>eatures</span></h2>
+                <h2 class="background double animated wow fadeInUp" data-wow-delay="0.2s"><span><strong>R</strong>ecruitment <strong>S</strong>olutions</span></h2>
             </div>
             <%= LoadContains() %>
         <%--    <!-- ./ end row -->

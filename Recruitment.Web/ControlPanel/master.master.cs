@@ -33,6 +33,18 @@ namespace Recruitment.Web.ControlPanel
             {
                 FeedbackLink.Attributes["class"] = "active-menu";
             }
+            else if (Request.Url.AbsolutePath.EndsWith("IndustryEditor.aspx"))
+            {
+                IndustryEditorLink.Attributes["class"] = "active-menu";
+            }
+            else if (Request.Url.AbsolutePath.EndsWith("JobsEditor.aspx"))
+            {
+                JobsEditorLink.Attributes["class"] = "active-menu";
+            }
+            else if (Request.Url.AbsolutePath.EndsWith("JobApplyEditor.aspx"))
+            {
+                JobApplyEditorLink.Attributes["class"] = "active-menu";
+            }
         }
     }
 }

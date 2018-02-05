@@ -43,7 +43,7 @@ namespace Recruitment.Web.UC
             {
                 string active = i != 0 ? "background-attachment: scroll;" : "";
                 itemTemplate += ".carousel .i" + i + " {"
-                                + "background: url(.." + _imagepath + _itemList[i].ImgPath + ") no-repeat;background-position: right -10px bottom -80px;background-size:100%;"
+                                + "background: url(.." + _imagepath + _itemList[i].ImgPath + ") no-repeat;background-position: right -10px top 10px;background-size:100%;"
                                 + active + " }" + Environment.NewLine;
             }
             return itemTemplate;

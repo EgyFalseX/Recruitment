@@ -274,6 +274,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="ControlPanel\JobApplyEditor.aspx" />
+    <Content Include="ControlPanel\IndustryEditor.aspx" />
     <Content Include="ControlPanel\JobsEditor.aspx" />
     <Content Include="ControlPanel\GalleryEditor.aspx" />
     <Content Include="ControlPanel\CompanyEditor.aspx" />
@@ -401,6 +404,27 @@
     <Compile Include="BO\DataModelCode\User.cs" />
     <Compile Include="BO\DataModelCode\User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPanel\JobApplyEditor.aspx.cs">
+      <DependentUpon>JobApplyEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\JobApplyEditor.aspx.designer.cs">
+      <DependentUpon>JobApplyEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPanel\IndustryEditor.aspx.cs">
+      <DependentUpon>IndustryEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\IndustryEditor.aspx.designer.cs">
+      <DependentUpon>IndustryEditor.aspx</DependentUpon>
     </Compile>
     <Compile Include="ControlPanel\JobsEditor.aspx.cs">
       <DependentUpon>JobsEditor.aspx</DependentUpon>

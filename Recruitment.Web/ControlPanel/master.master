@@ -53,6 +53,15 @@
                         <li>
                             <a runat="server" id="FeedbackLink" href="ContactUsEditor.aspx"><i class="fa fa-rss fa-3x"></i>Guest Feedback</a>
                         </li>
+                        <li>
+                            <a runat="server" id="IndustryEditorLink" href="IndustryEditor.aspx"><i class="fa fa-industry fa-3x"></i>Industry Editor</a>
+                        </li>
+                        <li>
+                            <a runat="server" id="JobsEditorLink" href="JobsEditor.aspx"><i class="fa fa-user-circle fa-3x"></i>Jobs Editor</a>
+                        </li>
+                        <li>
+                            <a runat="server" id="JobApplyEditorLink" href="JobApplyEditor.aspx"><i class="fa fa-check fa-3x"></i>Job Apply Editor</a>
+                        </li>
                         <%--<li>
                         <a href="tab-panel.html"><i class="fa fa-qrcode fa-3x"></i>Tabs & Panels</a>
                     </li>
