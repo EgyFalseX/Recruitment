@@ -25,7 +25,6 @@ namespace Recruitment.Module.BusinessObjects.Recruitment
             set { SetPropertyValue<int>("rec_employer_order_interview_id", ref frec_employer_order_interview_id, value); }
         }
         rec_Employer_Order frec_employer_order_id;
-        [Indexed(Name = @"irec_employer_order_detail_suggest_applicat_rec_suggest_applicat_source_id_rec_Employer_Order_Detail_Suggest_Applicat")]
         [Association(@"rec_Employer_Order_InterviewReferencesrec_Employer_Order")]
         [DevExpress.Xpo.DisplayName(@"b")]
         public rec_Employer_Order rec_employer_order_id
