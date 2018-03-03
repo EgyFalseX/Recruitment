@@ -31,6 +31,7 @@ namespace Recruitment.Web {
             WebApplication.Instance.SwitchToNewStyle();
             if(ConfigurationManager.ConnectionStrings["ConnectionString"] != null) {
                 WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                //WebApplication.Instance.ConnectionString = DevExpress.Xpo.DB.SQLiteConnectionProvider.GetConnectionString(@"c:\!Activity\Recruitment.db");
             }
             //Show Navigation Icons
             DevExpress.ExpressApp.Web.Templates.ActionContainers.NavigationActionContainer.ShowImages = true;

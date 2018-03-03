@@ -13,7 +13,7 @@
     <uc1:MainPage_Carousel_UC runat="server" id="MainPage_Carousel_UC" />
     <uc1:MainPage_Service_UC runat="server" id="MainPage_Service_UC" />
     <!-- Page Content -->
-    <div class="padding100" id="blog">
+    <%--<div class="padding100" id="blog">
         <div class="container">
             <!-- Page Heading -->
             <div class="row">
@@ -46,7 +46,7 @@
             </div>
             <!-- /.row -->
             <!-- Pagination -->
-            <!--<div class="row text-center">
+            <div class="row text-center">
             <div class="col-lg-12">
                 <ul class="pagination">
                     <li><a href="#">&laquo;</a> </li>
@@ -58,9 +58,9 @@
                     <li><a href="#">&raquo;</a> </li>
                 </ul>
             </div>
-        </div>      -->
+        </div>      
         </div>
-    </div>
+    </div>--%>
     <!-- /.container -->
     <%--<uc1:MainPage_Project_UC runat="server" ID="MainPage_Project_UC" />--%>
     <uc1:Gallary_UC runat="server" ID="Gallary_UC" />

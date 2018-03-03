@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Recruitment.Web by False-X">
     <meta name="author" content="Mohamed Aly Omar">
-    <title>Recruitment.Web</title>
+    <title>Arkan Group</title>
     <!-- Bootstrap Core CSS -->
     <link href="~/css/bootstrap.min.css" rel="stylesheet">
     <!-- SmartMenus jQuery Bootstrap Addon CSS -->
@@ -58,7 +58,7 @@
                             <ul class="dropdown-menu" data-dropdown-in="fadeInUp" data-dropdown-out="fadeOutDown">
                                 <li><a class="dropdown fa fa-gears" href="Default.aspx"> Recruitment App</a></li>
                                 <li><a class="dropdown fa fa-edit" href="ControlPanel/Default.aspx"> Control Panel</a></li>
-                                <li><a class="dropdown fa fa-phone-square" href="Blog.aspx"> Blog</a></li>
+                                <li><%--<a class="dropdown fa fa-phone-square" href="Blog.aspx"> Blog</a>--%></li>
                                 <li><a class="dropdown fa fa-support" href="ContactUs.aspx"> Contact</a></li>
                                 <li><a class="dropdown fa fa-question-circle" href="About.aspx"> About</a></li>
                             </ul>
@@ -91,7 +91,7 @@
 								<li><a href="#">Tour</a></li>
 								<li><a href="ContactUs.aspx">Company</a></li>
 								<li><a href="Jobs/Jobs.aspx">Jobs</a></li>
-								<li><a href="#">Blog</a></li>
+								<%--<li><a href="#">Blog</a></li>--%>
 								<li><a href="#">New Features</a></li>
 								<li><a href="ContactUs.aspx">Contact Us</a></li>
 							</ul>
